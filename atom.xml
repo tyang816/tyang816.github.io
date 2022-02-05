@@ -3,11 +3,11 @@
   <title>村雨</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2022-02-05T07:19:11.245Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://tyang816.github.io/"/>
+  <updated>2022-02-05T15:24:35.625Z</updated>
+  <id>https://tyang816.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>npm --save的含义</title>
-    <link href="http://example.com/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/"/>
-    <id>http://example.com/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</id>
+    <link href="https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/"/>
+    <id>https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</id>
     <published>2022-02-05T07:09:20.000Z</published>
-    <updated>2022-02-05T07:19:11.245Z</updated>
+    <updated>2022-02-05T15:24:35.625Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>npm 5.0.0 之前，有 –save 参数才会把模块写入到packages.json,现在已经是内置参数，不用额外写了。</strong></p><p>npm文档：<a href="https://links.jianshu.com/go?to=https://docs.npmjs.com/cli/install">https://docs.npmjs.com/cli/install</a></p><h2 id="npm常用安装命令"><a href="#npm常用安装命令" class="headerlink" title="npm常用安装命令"></a>npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure><h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p><p> <code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p><p>一般这个配置在<code>package.json</code>文件中。</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>npm 5.0.0 之前，有 –save 参数才会把模块写入到packages.json,现在已经是内置参数，不用额外写了。</strong></p><p>npm文档：<a href="https://links.jianshu.com/go?to=https://docs.npmjs.com/cli/install">https://docs.npmjs.com/cli/install</a></p><h2 id="npm常用安装命令"><a href="#npm常用安装命令" class="headerlink" title="npm常用安装命令"></a>npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure><h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p><p> <code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p><p>一般这个配置在 <code>package.json</code>文件中。</p>]]></content>
     
     
       
@@ -34,17 +34,17 @@
     
     
     
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="nodejs" scheme="http://example.com/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://tyang816.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2022/02/05/hello-world/"/>
-    <id>http://example.com/2022/02/05/hello-world/</id>
+    <link href="https://tyang816.github.io/2022/02/05/hello-world/"/>
+    <id>https://tyang816.github.io/2022/02/05/hello-world/</id>
     <published>2022-02-05T04:37:17.124Z</published>
     <updated>2022-02-05T04:37:17.124Z</updated>
     
