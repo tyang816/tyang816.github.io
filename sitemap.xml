@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/index.html</loc>
+    
+    <lastmod>2022-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
     
     <lastmod>2022-02-05</lastmod>
@@ -29,15 +38,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/links/index.html</loc>
-    
-    <lastmod>2022-02-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/repository/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>http://example.com/links/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
     
