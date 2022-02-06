@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/about/index.html</loc>
+    
+    <lastmod>2022-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/</loc>
     
     <lastmod>2022-02-06</lastmod>
@@ -356,15 +365,6 @@
     <loc>https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
     
     <lastmod>2022-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/about/index.html</loc>
-    
-    <lastmod>2022-02-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
