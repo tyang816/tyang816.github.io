@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-02-06T02:58:00.706Z</updated>
+  <updated>2022-02-06T14:34:19.945Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IJCAI-2021 Graph-Augmented Code Summarization in Computational Notebooks</title>
+    <link href="https://tyang816.github.io/2022/02/06/Graph-Augmented%20Code%20Summarization%20in%20Computational%20Notebooks/"/>
+    <id>https://tyang816.github.io/2022/02/06/Graph-Augmented%20Code%20Summarization%20in%20Computational%20Notebooks/</id>
+    <published>2022-02-06T12:00:00.000Z</published>
+    <updated>2022-02-06T14:34:19.945Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://www.ijcai.org/proceedings/2021/717">Graph-Augmented Code Summarization in Computational Notebooks</a></p></blockquote><h2 id="themisto通过计算本生成文档的端到端系统"><a class="markdownIt-Anchor" href="#themisto通过计算本生成文档的端到端系统"></a> Themisto：通过计算本生成文档的端到端系统</h2><ol><li>针对 jupyter notebook 的代码块生成注释，有三种方法：①基于HAConvGNN；②基于查询在线api文档；③基于代码结果推动用户自己编写注释。上述方法可以分为“描述为什么写这块代码”和“这块代码的结果是什么”</li><li>HAConvGNN 是在 <a href="http://arxiv.org/abs/2004.02843">[LeClair et al, 2020]</a> 的补充，多编码了相邻的四个代码块获取更高层次的注意力权重</li><li>这是篇系统实现文章，要看 HAConvGNN 的文章</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://www.ijcai.org/proceedings/2021/717&quot;&gt;Graph-Augmented Code Summarization in Computational Notebooks&lt;/a&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
+    
+    <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
   
   <entry>
     <title>npm --save的含义</title>
@@ -530,33 +557,6 @@
     <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
     
     <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TNNLS-2019 A Comprehensive Survey on Graph Neural Networks</title>
-    <link href="https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/"/>
-    <id>https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/</id>
-    <published>2021-12-29T04:19:47.000Z</published>
-    <updated>2022-02-06T04:36:35.522Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1901.00596">A Comprehensive Survey on Graph Neural Networks</a></p></blockquote><h2 id="图神经网络综述"><a class="markdownIt-Anchor" href="#图神经网络综述"></a> 图神经网络综述</h2><ol><li><p>将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器</p><p>1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息/消息，直到达到稳定的平衡。它启发了后来对卷积图神经网络的研究，消息传递的思想被基于空间的卷积图神经网络所继承。</p><p>1.2 卷积图神经网络（ConvGNNs）将卷积运算从网格数据推广到了图形数据。主要思想是通过聚合节点自身的特征和邻居的特征来生成节点的表示</p><p>1.3 图自动编码器（GAEs）是无监督的学习框架，可将节点/图编码到潜在的矢量空间中，并通过编码后的信息重建图数据。GAEs用于学习网络嵌入和图生成分布。对于网络嵌入，GAEs通过重建图结构信息（例如图邻接矩阵）来学习潜在节点表示。对于图生成，某些方法逐步生成图的节点和边，而其他方法则一次全部输出图形</p><p>1.4 时空图神经网络（STGNNs）旨在从时空图中学习隐藏的模式，这种模式在各种应用中变得越来越重要，例如交通速度预测，驾驶员操纵预期和人类动作识别。STGNNs的关键思想是同时考虑空间依赖性和时间依赖性。许多当前的方法将用来捕获空间依赖性的图卷积和用来对时间依赖性进行建模的RNNs或CNNs集成在一起。</p></li><li><p>用于图的无监督学习：</p><p>当图中没有可用的类标签时，可以在端到端框架中以完全无监督的方式学习图嵌入。这些算法以两种方式利用边级信息。一种简单的方法是采用自动编码器框架，其编码器使用图卷积层将图嵌入到潜在表示中，在其上使用解码器来重构图结构。另一种流行的方法是利用负采样方法，该方法将一部分节点对采样为负对，而图中具有链接的现有节点对为正对。然后应用逻辑回归层来区分正对和负对。</p></li><li><p>用于节点级分类的半监督学习</p><p>给定带有部分标记节点而其他节点未被标记的单个网络，ConvGNNs可以学习一个健壮的模型，该模型可以有效地标识未标记节点的类标签。为此，可以通过堆叠几个图卷积层，然后堆叠一个用于多分类的softmax层，来构建端到端框架。</p></li><li><p>用于图级分类的监督学习</p><p>图分类旨在预测整个图的类标签。可以通过图卷积层，图池层和/或读出层的组合来实现此任务的端到端学习。图卷积层负责精确的高级节点表示，而图池化层则充当下采样的角色，从而每次将每个图都粗化为子结构。</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1901.00596&quot;&gt;A Comprehensive Survey on Graph Neural Networks&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
     
   </entry>
   
