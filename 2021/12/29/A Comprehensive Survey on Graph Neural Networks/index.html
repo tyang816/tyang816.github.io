@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>TNNLS-2019 A Comprehensive Survey on Graph Neural Networks | tyang</title>
+  <meta name="description" content="论文地址：A Comprehensive Survey on Graph Neural Networks   图神经网络综述   将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器 1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息&#x2F;消息，直到达到稳定的平衡。它启发了后来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TNNLS-2019 A Comprehensive Survey on Graph Neural Networks">
+<meta property="og:url" content="https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：A Comprehensive Survey on Graph Neural Networks   图神经网络综述   将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器 1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息&#x2F;消息，直到达到稳定的平衡。它启发了后来">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-29T04:19:47.000Z">
+<meta property="article:modified_time" content="2022-02-06T04:36:35.522Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="GNN">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://gitee.com/tyang816/img.io/raw/master/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://gitee.com/tyang816/img.io/raw/master/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-软件工程 本科在读</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎访问村雨的博客~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">39</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GAN/" rel="tag">GAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code-sumry/" rel="tag">code_sumry</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/contra-lern/" rel="tag">contra_lern</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recom-sys/" rel="tag">recom_sys</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transformer/" rel="tag">transformer</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 14px;">CV</a> <a href="/tags/GAN/" style="font-size: 13px;">GAN</a> <a href="/tags/GNN/" style="font-size: 13.43px;">GNN</a> <a href="/tags/NLP/" style="font-size: 13.29px;">NLP</a> <a href="/tags/code-sumry/" style="font-size: 13.71px;">code_sumry</a> <a href="/tags/contra-lern/" style="font-size: 13.86px;">contra_lern</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/recom-sys/" style="font-size: 13px;">recom_sys</a> <a href="/tags/transformer/" style="font-size: 13.57px;">transformer</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/" class="title">npm --save的含义</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-05T07:09:20.000Z" itemprop="datePublished">2022-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/" class="title">ICCV-2021 Emerging Properties in Self-Supervised Vision Transformers</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-04T02:30:58.000Z" itemprop="datePublished">2022-02-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/" class="title">ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-01T05:29:21.000Z" itemprop="datePublished">2022-02-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/" class="title">CVPR-2020 Exploring Simple Siamese Representation Learning</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-27T07:25:11.000Z" itemprop="datePublished">2022-01-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/" class="title">NIPS-2020 BYOL works even without batch statistics</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-24T05:11:10.000Z" itemprop="datePublished">2022-01-24</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-A Comprehensive Survey on Graph Neural Networks" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TNNLS-2019 A Comprehensive Survey on Graph Neural Networks
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/" class="article-date">
+	  <time datetime="2021-12-29T04:19:47.000Z" itemprop="datePublished">2021-12-29</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/GNN/" rel="tag">GNN</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 852(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1901.00596">A Comprehensive Survey on Graph Neural Networks</a></p>
+</blockquote>
+<h2 id="图神经网络综述"><a class="markdownIt-Anchor" href="#图神经网络综述"></a> 图神经网络综述</h2>
+<ol>
+<li>
+<p>将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器</p>
+<p>1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息/消息，直到达到稳定的平衡。它启发了后来对卷积图神经网络的研究，消息传递的思想被基于空间的卷积图神经网络所继承。</p>
+<p>1.2 卷积图神经网络（ConvGNNs）将卷积运算从网格数据推广到了图形数据。主要思想是通过聚合节点自身的特征和邻居的特征来生成节点的表示</p>
+<p>1.3 图自动编码器（GAEs）是无监督的学习框架，可将节点/图编码到潜在的矢量空间中，并通过编码后的信息重建图数据。GAEs用于学习网络嵌入和图生成分布。对于网络嵌入，GAEs通过重建图结构信息（例如图邻接矩阵）来学习潜在节点表示。对于图生成，某些方法逐步生成图的节点和边，而其他方法则一次全部输出图形</p>
+<p>1.4 时空图神经网络（STGNNs）旨在从时空图中学习隐藏的模式，这种模式在各种应用中变得越来越重要，例如交通速度预测，驾驶员操纵预期和人类动作识别。STGNNs的关键思想是同时考虑空间依赖性和时间依赖性。许多当前的方法将用来捕获空间依赖性的图卷积和用来对时间依赖性进行建模的RNNs或CNNs集成在一起。</p>
+</li>
+<li>
+<p>用于图的无监督学习：</p>
+<p>当图中没有可用的类标签时，可以在端到端框架中以完全无监督的方式学习图嵌入。这些算法以两种方式利用边级信息。一种简单的方法是采用自动编码器框架，其编码器使用图卷积层将图嵌入到潜在表示中，在其上使用解码器来重构图结构。另一种流行的方法是利用负采样方法，该方法将一部分节点对采样为负对，而图中具有链接的现有节点对为正对。然后应用逻辑回归层来区分正对和负对。</p>
+</li>
+<li>
+<p>用于节点级分类的半监督学习</p>
+<p>给定带有部分标记节点而其他节点未被标记的单个网络，ConvGNNs可以学习一个健壮的模型，该模型可以有效地标识未标记节点的类标签。为此，可以通过堆叠几个图卷积层，然后堆叠一个用于多分类的softmax层，来构建端到端框架。</p>
+</li>
+<li>
+<p>用于图级分类的监督学习</p>
+<p>图分类旨在预测整个图的类标签。可以通过图卷积层，图池层和/或读出层的组合来实现此任务的端到端学习。图卷积层负责精确的高级节点表示，而图池化层则充当下采样的角色，从而每次将每个图都粗化为子结构。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/" title="TNNLS-2019 A Comprehensive Survey on Graph Neural Networks" target="_blank" rel="external">https://tyang816.github.io/2021/12/29/A Comprehensive Survey on Graph Neural Networks/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://gitee.com/tyang816/img.io/raw/master/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/01/02/Contrastive%20Multiview%20Coding/" title="ECCV-2020 Contrastive Multiview Coding"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/12/23/Graph2seq/" title="ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://gitee.com/tyang816/img.io/raw/master/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://gitee.com/tyang816/img.io/raw/master/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

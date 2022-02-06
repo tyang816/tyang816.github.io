@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-02-05T15:24:35.625Z</updated>
+  <updated>2022-02-06T02:58:00.706Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/"/>
     <id>https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</id>
     <published>2022-02-05T07:09:20.000Z</published>
-    <updated>2022-02-05T15:24:35.625Z</updated>
+    <updated>2022-02-06T02:58:00.706Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>npm 5.0.0 之前，有 –save 参数才会把模块写入到packages.json,现在已经是内置参数，不用额外写了。</strong></p><p>npm文档：<a href="https://links.jianshu.com/go?to=https://docs.npmjs.com/cli/install">https://docs.npmjs.com/cli/install</a></p><h2 id="npm常用安装命令"><a href="#npm常用安装命令" class="headerlink" title="npm常用安装命令"></a>npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure><h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p><p> <code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p><p>一般这个配置在 <code>package.json</code>文件中。</p>]]></content>
+    <content type="html"><![CDATA[<p>npm文档：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.npmjs.com%2Fcli%2Finstall">https://docs.npmjs.com/cli/install</a></p><h2 id="npm常用安装命令"><a class="markdownIt-Anchor" href="#npm常用安装命令"></a> npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure><h2 id="命令详解"><a class="markdownIt-Anchor" href="#命令详解"></a> 命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure><h2 id="作用"><a class="markdownIt-Anchor" href="#作用"></a> 作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p><p><code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p><p>一般这个配置在 <code>package.json</code>文件中。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;npm 5.0.0 之前，有 –save 参数才会把模块写入到packages.json,现在已经是内置参数，不用额外写了。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;npm文档：&lt;a href=&quot;https://links.jianshu.com/go?to=htt</summary>
-      
+    <summary type="html">npm 5.0.0 之前，有 –save 参数才会把模块写入到packages.json,现在已经是内置参数，不用额外写了。</summary>
     
     
     
@@ -42,22 +38,525 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://tyang816.github.io/2022/02/05/hello-world/"/>
-    <id>https://tyang816.github.io/2022/02/05/hello-world/</id>
-    <published>2022-02-05T04:37:17.124Z</published>
-    <updated>2022-02-05T04:37:17.124Z</updated>
+    <title>ICCV-2021 Emerging Properties in Self-Supervised Vision Transformers</title>
+    <link href="https://tyang816.github.io/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/"/>
+    <id>https://tyang816.github.io/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/</id>
+    <published>2022-02-04T02:30:58.000Z</published>
+    <updated>2022-02-06T05:34:06.793Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2104.14294">Emerging Properties in Self-Supervised Vision Transformers</a></p></blockquote><h2 id="dino融入vit的对比学习不用标签训练的自注意效果好"><a class="markdownIt-Anchor" href="#dino融入vit的对比学习不用标签训练的自注意效果好"></a> DINO：融入ViT的对比学习，不用标签训练的自注意效果好</h2><ol><li>不用标签训练的自注意图效果极好，媲美直接对物体做语义分割</li><li>防止训练坍塌，对teacher网络进行centering，指把一个batch作均值后减掉，防止模型坍塌</li></ol><p><img src="https://gitee.com/tyang816/img.io/raw/master/DINO/DINO-img1.png" alt="avatar" /></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2104.14294&quot;&gt;Emerging Properties in Self-Supervised Vision Transformers&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquo</summary>
       
     
     
     
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="transformer" scheme="https://tyang816.github.io/tags/transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers</title>
+    <link href="https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/"/>
+    <id>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</id>
+    <published>2022-02-01T05:29:21.000Z</published>
+    <updated>2022-02-06T05:30:37.634Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2104.02057">An Empirical Study of Training Self-Supervised Vision Transformers</a></p></blockquote><h2 id="moco-v3冻住patch-projection在训练时更加平滑"><a class="markdownIt-Anchor" href="#moco-v3冻住patch-projection在训练时更加平滑"></a> MoCo v3：冻住patch projection在训练时更加平滑</h2><ol><li>自监督训练的ViT不稳定，在大batch的情况下应该会更好，但是训练中发现更差，于是观察每一层梯度回传的情况。发现当训练产生较大loss的时候梯度会有波峰，波峰发生在第一层，即patch projection</li><li>在不想修改transformer本身的情况下，只能修改开头或结尾。于是意识到第一步，即tokenization阶段的重要性，</li></ol><p>Comment: Camera-ready, ICCV 2021, Oral. Code: <a href="https://github.com/facebookresearch/moco-v3">https://github.com/facebookresearch/moco-v3</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2104.02057&quot;&gt;An Empirical Study of Training Self-Supervised Vision Transformers&lt;/a&gt;&lt;/p&gt;
+&lt;/</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="transformer" scheme="https://tyang816.github.io/tags/transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVPR-2020 Exploring Simple Siamese Representation Learning</title>
+    <link href="https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/"/>
+    <id>https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/</id>
+    <published>2022-01-27T07:25:11.000Z</published>
+    <updated>2022-02-06T05:28:25.200Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：Exploring Simple Siamese Representation Learning</p></blockquote><h2 id="simsiam提出孪生网络对比学习同时作总结性工作"><a class="markdownIt-Anchor" href="#simsiam提出孪生网络对比学习同时作总结性工作"></a> SimSiam：提出孪生网络对比学习，同时作总结性工作</h2><ol><li>化繁为简，最后可以理解一个K-means问题。</li><li>孪生网络既不需要大的batch size，也不需要动量编码器，也不需要负样本效果依然不错。但在实际操作中，动量编码器好用，稳定、能提点</li><li>stop gradient很重要，可以将simSiam看作一种EM算法，通过逐步更新的方式避免模型坍塌</li></ol><p><img src="https://gitee.com/tyang816/img.io/raw/master/SimSiam/SimSiam-img1.png" alt="avatar" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：Exploring Simple Siamese Representation Learning&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;simsiam提出孪生网络对比学习同时作总结性工作&quot;&gt;&lt;a class=&quot;markdow</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIPS-2020 BYOL works even without batch statistics</title>
+    <link href="https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/"/>
+    <id>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</id>
+    <published>2022-01-24T05:11:10.000Z</published>
+    <updated>2022-02-06T05:13:00.647Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2010.10241">BYOL works even without batch statistics</a></p></blockquote><h2 id="byol-v2回应-batch-norm不只是byol的创新性"><a class="markdownIt-Anchor" href="#byol-v2回应-batch-norm不只是byol的创新性"></a> BYOL v2：回应 Batch Norm不只是BYOL的创新性</h2><ol><li>通过大量消融实验找到特例与解释。当simCLR不用在projector和编码器中用batch norm的时候simCLR也失败了，说明当不用归一化的时候，不光BYOL，simCLR也不行，用了负样本也训练不出来，这就证明了batch norm不是提供了一个隐式的负样本。</li><li>最后达成的结论是batch norm主要是帮助模型稳定的训练从而使模型不会坍塌。以及说明如果一开始模型初始化就比较好，那么离开了batch norm也没有问题</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2010.10241&quot;&gt;BYOL works even without batch statistics&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;byol-v</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot;(BYOL)</title>
+    <link href="https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/"/>
+    <id>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</id>
+    <published>2022-01-22T02:07:35.000Z</published>
+    <updated>2022-02-06T05:11:38.538Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>博客地址：<a href="https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/">Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot; (BYOL)</a></p></blockquote><h2 id="为什么byol模型学习没有坍塌增加-batch-norm"><a class="markdownIt-Anchor" href="#为什么byol模型学习没有坍塌增加-batch-norm"></a> 为什么BYOL模型学习没有坍塌：增加 Batch Norm</h2><p>做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低。做了Batch Norm其实是把一个Batch的样本拿过来算了均值方差，然后用来做归一化，也就意味着在算某个正样本的loss的时候其实也看到了其他样本的特征，有信息泄露。因为有这种信息泄露的存在，所以这种学习可以理解是不是光是正样本在自己学习，相当于做了隐式的对比学习，让一个batch中的样本与平均样本进行对比学习。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博客地址：&lt;a href=&quot;https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/&quot;&gt;Understan</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIPS-2020 Bootstrap your own latent:A new approach to self-supervised Learning</title>
+    <link href="https://tyang816.github.io/2022/01/21/BYOL/"/>
+    <id>https://tyang816.github.io/2022/01/21/BYOL/</id>
+    <published>2022-01-21T05:14:01.000Z</published>
+    <updated>2022-02-06T05:24:43.802Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2006.07733">Bootstrap your own latent: A new approach to self-supervised Learning</a></p></blockquote><h2 id="byol不用负样本把匹配改为预测任务"><a class="markdownIt-Anchor" href="#byol不用负样本把匹配改为预测任务"></a> BYOL：不用负样本，把匹配改为预测任务</h2><ol><li>对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型ta）。加上负样本是不光相似的物体要有相似的特征，不相似的物体也要有不相似的特征，因为如果输出都一样，算负样本时loss就会非常大，被迫学习更健壮的特征</li><li>前向过程： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>θ</mi></msub></mrow><annotation encoding="application/x-tex">f_\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>  采用梯度更新，  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>ξ</mi></msub></mrow><annotation encoding="application/x-tex">f_\xi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04601em;">ξ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 采用动量编码器， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>θ</mi></msub></mrow><annotation encoding="application/x-tex">g_\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>θ</mi></msub></mrow><annotation encoding="application/x-tex">q_\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 都是 MLP 层。上面相当于query编码器，下面相当于key编码器。用的目标函数也不一样，算的MSE loss</li></ol><p><img src="https://gitee.com/tyang816/img.io/raw/master/BYOL/BYOL-img1.png" alt="avatar" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2006.07733&quot;&gt;Bootstrap your own latent: A new approach to self-supervised Learning&lt;/a&gt;&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nature-2021 Highly accurate protein structure prediction with AlphaFold</title>
+    <link href="https://tyang816.github.io/2022/01/21/Highly%20accurate%20protein%20structure%20prediction%20with%20AlphaFold/"/>
+    <id>https://tyang816.github.io/2022/01/21/Highly%20accurate%20protein%20structure%20prediction%20with%20AlphaFold/</id>
+    <published>2022-01-21T05:03:58.000Z</published>
+    <updated>2022-02-06T05:07:22.468Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://www.nature.com/articles/s41586-021-03819-2">Highly accurate protein structure prediction with AlphaFold</a></p></blockquote><h2 id="alphafold2根据氨基酸预测蛋白质结构"><a class="markdownIt-Anchor" href="#alphafold2根据氨基酸预测蛋白质结构"></a> AlphaFold2：根据氨基酸预测蛋白质结构</h2><ol><li><p>达到了原子级别的预测，2021年nature的最佳论文</p></li><li><p>特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间的关系，得到氨基酸之间的特征</p><p>2.1 同时也在结构蛋白质数据库搜索，解析出氨基酸空间距离的模板。</p></li><li><p>Evoformer在原始的多头注意力上做了三个改进</p><p>3.1 row-wise：在MSA中每次拿出一行做为序列，投影后得到q，k，v</p><p>3.2 gated：通过线性、激活函数后与注意力权重相乘</p><p>3.3 pair bias：计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">k_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 做点乘时，拿出第  个对表示加在这后面</p></li><li><p>3D结构表示采用相对位置</p></li><li><p>解码器把原点的氨基酸变形为目标形状，输入是编码器输出、对表示模板和3D结构的骨干框架，每次做一部分结构调整</p></li><li><p>训练：</p><p>6.1 使用没有标号的数据，使用噪音学生自蒸馏方法，先用有标号数据训练模型，然后用模型去预测没有标号的大数据集，然后把那些比较置信的标号拿出来，跟之前有标号的数据拼起来形成更大数据重新训练。核心是加噪音进去，不然一个错误的标号可能导致训练错上加错。</p><p>6.2 来自bert，把蛋白质序列随机遮住一些氨基酸去预测</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://www.nature.com/articles/s41586-021-03819-2&quot;&gt;Highly accurate protein structure prediction with AlphaFol</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="other" scheme="https://tyang816.github.io/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIPS-2020 Unsupervised Learning of Visual Features by Contrasting Cluster Assignments</title>
+    <link href="https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/"/>
+    <id>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</id>
+    <published>2022-01-18T04:59:24.000Z</published>
+    <updated>2022-02-06T05:03:21.571Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2006.09882">Unsupervised Learning of Visual Features by Contrasting Cluster Assignments</a></p></blockquote><h2 id="swav对比学习聚类借助先验不和大量负样本比跟聚类中心比"><a class="markdownIt-Anchor" href="#swav对比学习聚类借助先验不和大量负样本比跟聚类中心比"></a> SwAV：对比学习+聚类，借助先验不和大量负样本比，跟聚类中心比</h2><ol><li><p>聚类的相关工作有：deep cluster等，留待看</p></li><li><p>相较于上万的负样本，与3000个聚类中心比更小</p><p>2.1 前向过程    <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 数据增强得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_1,x_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>；通过编码器得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">z_1,z_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> 和聚类中心 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 通过clustering方法生成目标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">q_1,q_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">z_1,z_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 相似，按道理可以互相作预测，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>⋅</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">z_1 \cdot c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.04398em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 可以去预测 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">q_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，反之亦然</p></li><li><p>聚类中心有明确的语义含义，而先前抽取的有的负样本还可能是正样本，也可能类别不均衡不够有效</p></li><li><p>新的正样本提取方法(Multi-crop)，增加view的情况下尽可能减少计算量</p><p>4.1 方法    原本是从256x256的图片裁剪出2张224x224的图片，改为裁剪出2x160+4x96合计6张图片。因为原本的裁剪方法更多是关注于整体特征，这样可以关注整体+局部特征，效果更好，提点明显，也比较通用</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2006.09882&quot;&gt;Unsupervised Learning of Visual Features by Contrasting Cluster Assignments&lt;/</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIPS-2020 Big Self-Supervised Models are Strong Semi-Supervised Learners</title>
+    <link href="https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/"/>
+    <id>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</id>
+    <published>2022-01-16T02:57:35.000Z</published>
+    <updated>2022-02-06T04:58:59.938Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2006.10029">Big Self-Supervised Models are Strong Semi-Supervised Learners</a></p></blockquote><h2 id="simclr-v2半监督学习"><a class="markdownIt-Anchor" href="#simclr-v2半监督学习"></a> SimCLR v2+半监督学习</h2><ol><li><p>在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器</p></li><li><p>还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调，微调结束了就相当于有一个teacher模型，用teacher模型生成伪标签，这样可以在更多无标签的数据上做自学习，受启发于google 19年的noisy student</p><p>2.1 noisy student是在imgaeNet上训练了一个teacher模型，然后生成伪标签，然后生成student模型</p></li></ol><p>Comment: NeurIPS’2020. Code and pretrained models at <a href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2006.10029&quot;&gt;Big Self-Supervised Models are Strong Semi-Supervised Learners&lt;/a&gt;&lt;/p&gt;
+&lt;/bloc</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows</title>
+    <link href="https://tyang816.github.io/2022/01/15/Swin/"/>
+    <id>https://tyang816.github.io/2022/01/15/Swin/</id>
+    <published>2022-01-15T02:24:09.000Z</published>
+    <updated>2022-02-06T04:57:04.661Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2103.14030">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</a></p></blockquote><h2 id="swin-transformer层级式的transformer使用了patch-merging和移动窗口"><a class="markdownIt-Anchor" href="#swin-transformer层级式的transformer使用了patch-merging和移动窗口"></a> Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2><ol><li><p>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</p></li><li><p>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</p></li><li><p>Patch Merging：类似于卷积的操作</p><p><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img1.png" alt="avatar" /></p></li><li><p>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</p></li><li><p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p><p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量<br /><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img2.png" alt="avatar" /></p><p>5.2 于是分割填补，同时部署于同一区域的patch不做自注意力计算，即采用masked MSA，然后还原图片，避免图片一直位移</p><p><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img3.png" alt="avatar" /></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2103.14030&quot;&gt;Swin Transformer: Hierarchical Vision Transformer using Shifted Windows&lt;/a&gt;&lt;/</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="transformer" scheme="https://tyang816.github.io/tags/transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICML-2020 A Simple Framework for Contrastive Learning of Visual Representations</title>
+    <link href="https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/"/>
+    <id>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</id>
+    <published>2022-01-12T06:41:38.000Z</published>
+    <updated>2022-02-06T04:42:38.229Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2002.05709">A Simple Framework for Contrastive Learning of Visual Representations</a></p></blockquote><h2 id="simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"><a class="markdownIt-Anchor" href="#simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"></a> SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2><ol><li>同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重</li><li>simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)</li><li>对比学习需要更多的数据增强技术，裁剪/旋转/改变色彩/高斯噪声/高斯模糊/…，以及做了数据增强的消融实验，最有效的是随即裁剪和色彩变换</li><li>batch size比较大，训练更久，网络特征会比较好，用lars优化器在大batch size下优化</li></ol><p>Comment: ICML’2020. Code and pretrained models at <a href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2002.05709&quot;&gt;A Simple Framework for Contrastive Learning of Visual Representations&lt;/a&gt;&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVPR-2020 Improved Baselines with Momentum Contrastive Learning</title>
+    <link href="https://tyang816.github.io/2022/01/10/Improved%20Baselines%20with%20Momentum%20Contrastive%20Learning/"/>
+    <id>https://tyang816.github.io/2022/01/10/Improved%20Baselines%20with%20Momentum%20Contrastive%20Learning/</id>
+    <published>2022-01-10T05:39:03.000Z</published>
+    <updated>2022-02-06T04:41:06.387Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2003.04297">Improved Baselines with Momentum Contrastive Learning</a></p></blockquote><h2 id="moco-v2增加none-linear和数据增强策略等取得更好结果"><a class="markdownIt-Anchor" href="#moco-v2增加none-linear和数据增强策略等取得更好结果"></a> MoCo v2：增加none-linear和数据增强策略等取得更好结果</h2><ol><li>把SimCLR的MLP projection head和更多数据增强拿来用，同时增加了cos学习率，训练更多个epoch，刷新了成绩</li><li>相较SimCLR能在更短时间取得更好的结果，同时需要的显卡/内存等更少，更小的batch size</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2003.04297&quot;&gt;Improved Baselines with Momentum Contrastive Learning&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nature-2021 Advancing mathematics by guiding human intuition with AI</title>
+    <link href="https://tyang816.github.io/2022/01/08/Advancing%20mathematics%20by%20guiding%20human%20intuition%20with%20AI/"/>
+    <id>https://tyang816.github.io/2022/01/08/Advancing%20mathematics%20by%20guiding%20human%20intuition%20with%20AI/</id>
+    <published>2022-01-08T06:34:43.000Z</published>
+    <updated>2022-02-06T04:36:10.268Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://www.nature.com/articles/s41586-021-04086-x">Advancing mathematics by guiding human intuition with AI</a></p></blockquote><h2 id="ai指导数学家的直觉从而提出新的理论猜想"><a class="markdownIt-Anchor" href="#ai指导数学家的直觉从而提出新的理论猜想"></a> AI指导数学家的“直觉”从而提出新的理论/猜想</h2><ol><li>在数学领域提出猜想，然后进行证明可以极大的推动数学届的发展，例如1900提出的24个数学猜想和千禧年提出的8个猜想</li><li>机器学习（AI）在数学领域要么泛化性不足要么效果不够好，需要一种居于两者之间的方法，这种方法可以作为一种帮助数学家建立“直觉”的工具，从而推动数学的发展</li><li>数学直觉是指对两个需要研究的对象X和Y的关系的直觉，如果数学家觉得两者间存在关系的话就可以提出X和Y相关这种猜想，这种猜想也往往来源于数学家的直觉。例如高中数学的题可以通过解析几何建系做出来，也可以通过传统的边角关系去证明，这两种都属于描述对象的语言，很精确，它们或许也存在关系。</li><li>归因技术即从多个特征中获取有效的特征，文中用到的方法叫做gradient saliency，即对每个特征计算梯度，梯度大的说明该属性比较重要，对结果影响较大，可以研究出哪些属性是真的work的</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://www.nature.com/articles/s41586-021-04086-x&quot;&gt;Advancing mathematics by guiding human intuition with AI&lt;/</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="other" scheme="https://tyang816.github.io/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICLR-2018 Learning to Represent Programs with Graphs</title>
+    <link href="https://tyang816.github.io/2022/01/06/Learning%20to%20Represent%20Programs%20with%20Graphs/"/>
+    <id>https://tyang816.github.io/2022/01/06/Learning%20to%20Represent%20Programs%20with%20Graphs/</id>
+    <published>2022-01-06T04:32:46.000Z</published>
+    <updated>2022-02-06T04:37:52.542Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1711.00740">Learning to Represent Programs with Graphs</a></p></blockquote><h2 id="varmisuse和varnaming两个任务还可以帮助代码查询bug"><a class="markdownIt-Anchor" href="#varmisuse和varnaming两个任务还可以帮助代码查询bug"></a> VarMisuse和VarNaming两个任务，还可以帮助代码查询bug</h2><ol><li>AST表示代码结构，NextToken为边表示顺序；</li><li>表示数据流，如LastWrite/LastRead等边结构利用更多的类型信息</li><li>泛化到新项目上有损失，可能源于类型缺失和词库不够</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1711.00740&quot;&gt;Learning to Represent Programs with Graphs&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;varm</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
+    
+    <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVPR-2018 Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination</title>
+    <link href="https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/"/>
+    <id>https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/</id>
+    <published>2022-01-05T05:21:02.000Z</published>
+    <updated>2022-02-06T04:38:32.668Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1805.01978">Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination</a></p></blockquote><h2 id="instdisc个体判别代理任务nce-loss对比表征学习bank-memory数据结构"><a class="markdownIt-Anchor" href="#instdisc个体判别代理任务nce-loss对比表征学习bank-memory数据结构"></a> InstDisc：个体判别代理任务+NCE loss对比表征学习+bank memory数据结构</h2><ol><li>正样本256，负样本从Memory bank随机选取，可以是4096或更大</li><li>提出了新的存储数据结构Memory bank，以及动量更新方法也影响了moco</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1805.01978&quot;&gt;Unsupervised Feature Learning via Non-Parametric Instance-level Discriminatio</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIPS-2019 Representation Learning with Contrastive Predictive Coding</title>
+    <link href="https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/"/>
+    <id>https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/</id>
+    <published>2022-01-04T06:29:20.000Z</published>
+    <updated>2022-02-06T04:30:22.609Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1807.03748">Representation Learning with Contrastive Predictive Coding</a></p></blockquote><p>CPC：预测代理任务，模型可泛用到文本、音频、图片等</p><ol><li>通过t时刻前的输入编码器z，经过自回归（RNN/LSTM等）后得到足够好的上下文c_t，可以做预测为pre</li><li>正样本就是t时刻后的输入编码器后得到的z，这时候pre就等于query，t时刻后的z就是类似于正样本，就可以做对比学习了</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1807.03748&quot;&gt;Representation Learning with Contrastive Predictive Coding&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquo</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVPR-2019 Unsupervised Embedding Learning via Invariant and Spreading Instance Feature</title>
+    <link href="https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/"/>
+    <id>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</id>
+    <published>2022-01-03T02:27:48.000Z</published>
+    <updated>2022-02-06T04:38:27.793Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1904.03436">Unsupervised Embedding Learning via Invariant and Spreading Instance Feature</a></p></blockquote><h2 id="invaspread个体判别代理任务nce-loss端到端学习"><a class="markdownIt-Anchor" href="#invaspread个体判别代理任务nce-loss端到端学习"></a> InvaSpread：个体判别代理任务+NCE loss+端到端学习</h2><ol><li>同一个encoder的minibatch选择正负样本，因为没有TPU，所以是端到端的学习且不需要外部数据结构，提升了速度。但实际上在更多的负样本的情况下训练效果会更好</li><li>解释了instance-wise优化任务的数学逻辑，为什么可以学习到spread-out和invariant特征性质</li><li>强调通过学习更深层次的特征embedding可以获取更好的泛化效果</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1904.03436&quot;&gt;Unsupervised Embedding Learning via Invariant and Spreading Instance Feature&lt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECCV-2020 Contrastive Multiview Coding</title>
+    <link href="https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/"/>
+    <id>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</id>
+    <published>2022-01-02T05:22:11.000Z</published>
+    <updated>2022-02-06T04:37:08.359Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1906.05849">Contrastive Multiview Coding</a></p></blockquote><h2 id="cmc增大视角间的互信息代理任务是多视角多模态"><a class="markdownIt-Anchor" href="#cmc增大视角间的互信息代理任务是多视角多模态"></a> CMC：增大视角间的互信息，代理任务是多视角（多模态）</h2><ol><li><p>摘要写得很精彩：无论是看到了狗，还是听到了狗叫，都能判断出狗，引出要学习视角的不变性</p></li><li><p>正样本：虽然输入来自不同传感器（模态），对应的其实仍然是一个图片，特征空间应该接近；</p><p>负样本：从其他图片来的视角；</p></li><li><p>多视角下输入的不同可能需要多个编码器，可能几个视角需要几个编码器，计算代价变高，transformer可能可以同时处理多模态，不需要做特有的改进</p></li></ol><p>Comment: Code: <a href="http://github.com/HobbitLong/CMC/">http://github.com/HobbitLong/CMC/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1906.05849&quot;&gt;Contrastive Multiview Coding&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;cmc增大视角间的互信息代理任务是多</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TNNLS-2019 A Comprehensive Survey on Graph Neural Networks</title>
+    <link href="https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/"/>
+    <id>https://tyang816.github.io/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/</id>
+    <published>2021-12-29T04:19:47.000Z</published>
+    <updated>2022-02-06T04:36:35.522Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1901.00596">A Comprehensive Survey on Graph Neural Networks</a></p></blockquote><h2 id="图神经网络综述"><a class="markdownIt-Anchor" href="#图神经网络综述"></a> 图神经网络综述</h2><ol><li><p>将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器</p><p>1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息/消息，直到达到稳定的平衡。它启发了后来对卷积图神经网络的研究，消息传递的思想被基于空间的卷积图神经网络所继承。</p><p>1.2 卷积图神经网络（ConvGNNs）将卷积运算从网格数据推广到了图形数据。主要思想是通过聚合节点自身的特征和邻居的特征来生成节点的表示</p><p>1.3 图自动编码器（GAEs）是无监督的学习框架，可将节点/图编码到潜在的矢量空间中，并通过编码后的信息重建图数据。GAEs用于学习网络嵌入和图生成分布。对于网络嵌入，GAEs通过重建图结构信息（例如图邻接矩阵）来学习潜在节点表示。对于图生成，某些方法逐步生成图的节点和边，而其他方法则一次全部输出图形</p><p>1.4 时空图神经网络（STGNNs）旨在从时空图中学习隐藏的模式，这种模式在各种应用中变得越来越重要，例如交通速度预测，驾驶员操纵预期和人类动作识别。STGNNs的关键思想是同时考虑空间依赖性和时间依赖性。许多当前的方法将用来捕获空间依赖性的图卷积和用来对时间依赖性进行建模的RNNs或CNNs集成在一起。</p></li><li><p>用于图的无监督学习：</p><p>当图中没有可用的类标签时，可以在端到端框架中以完全无监督的方式学习图嵌入。这些算法以两种方式利用边级信息。一种简单的方法是采用自动编码器框架，其编码器使用图卷积层将图嵌入到潜在表示中，在其上使用解码器来重构图结构。另一种流行的方法是利用负采样方法，该方法将一部分节点对采样为负对，而图中具有链接的现有节点对为正对。然后应用逻辑回归层来区分正对和负对。</p></li><li><p>用于节点级分类的半监督学习</p><p>给定带有部分标记节点而其他节点未被标记的单个网络，ConvGNNs可以学习一个健壮的模型，该模型可以有效地标识未标记节点的类标签。为此，可以通过堆叠几个图卷积层，然后堆叠一个用于多分类的softmax层，来构建端到端框架。</p></li><li><p>用于图级分类的监督学习</p><p>图分类旨在预测整个图的类标签。可以通过图卷积层，图池层和/或读出层的组合来实现此任务的端到端学习。图卷积层负责精确的高级节点表示，而图池化层则充当下采样的角色，从而每次将每个图都粗化为子结构。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1901.00596&quot;&gt;A Comprehensive Survey on Graph Neural Networks&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
     
   </entry>
   
