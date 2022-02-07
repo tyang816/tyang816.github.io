@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/02/07/HAConvGNN/</loc>
+    <lastmod>2022-02-07</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/06/Graph-Augmented%20Code%20Summarization%20in%20Computational%20Notebooks/</loc>
     <lastmod>2022-02-06</lastmod>
   </url>

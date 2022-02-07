@@ -17,22 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale | tyang</title>
-  <meta name="description" content="论文地址：An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale   ViT，打破了NLP和CV的壁垒，同时在多模态领域也挖坑  将图片分割为16x16的各个patch，视作一个个的词，然后输入transformer结构中 在数据量足够大的情况下效果很好，能够学习到全局特征，并且暂时没有看到性能瓶颈  C">
+  <title>ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks | tyang</title>
+  <meta name="description" content="论文地址：HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks   HAConvGNN：  1. 总结  发现github上约25%的note都没有注释，同时这类数据较少，于是创建了新的 jup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale">
-<meta property="og:url" content="https://tyang816.github.io/2021/12/08/ViT/index.html">
+<meta property="og:title" content="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks">
+<meta property="og:url" content="https://tyang816.github.io/2022/02/07/HAConvGNN/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale   ViT，打破了NLP和CV的壁垒，同时在多模态领域也挖坑  将图片分割为16x16的各个patch，视作一个个的词，然后输入transformer结构中 在数据量足够大的情况下效果很好，能够学习到全局特征，并且暂时没有看到性能瓶颈  C">
+<meta property="og:description" content="论文地址：HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks   HAConvGNN：  1. 总结  发现github上约25%的note都没有注释，同时这类数据较少，于是创建了新的 jup">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-08T05:57:22.000Z">
-<meta property="article:modified_time" content="2022-02-06T04:38:37.056Z">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/HAConvNN/HAConvNN-img1.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/HAConvNN/HAConvNN-img2.png">
+<meta property="article:published_time" content="2022-02-07T15:53:42.000Z">
+<meta property="article:modified_time" content="2022-02-07T07:12:59.215Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CV">
-<meta property="article:tag" content="transformer">
+<meta property="article:tag" content="GNN">
+<meta property="article:tag" content="code_sumry">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tyang816/img.io/raw/master/HAConvNN/HAConvNN-img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2021/12/08/ViT/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/02/07/HAConvGNN/index.html">
   
     <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -42,6 +45,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -331,14 +336,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-ViT" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-HAConvGNN" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale
+      ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks
     </h1>
   
 
@@ -346,8 +351,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/08/ViT/" class="article-date">
-	  <time datetime="2021-12-08T05:57:22.000Z" itemprop="datePublished">2021-12-08</time>
+	<a href="/2022/02/07/HAConvGNN/" class="article-date">
+	  <time datetime="2022-02-07T15:53:42.000Z" itemprop="datePublished">2022-02-07</time>
 	</a>
 </span>
         
@@ -359,7 +364,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/transformer/" rel="tag">transformer</a>
+	<a class="article-tag-link-link" href="/tags/GNN/" rel="tag">GNN</a>, <a class="article-tag-link-link" href="/tags/code-sumry/" rel="tag">code_sumry</a>
   </span>
 
 
@@ -374,15 +379,15 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2021/12/08/ViT/" class="leancloud_visitors"  data-flag-title="ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale">
+    	<span id="/2022/02/07/HAConvGNN/" class="leancloud_visitors"  data-flag-title="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/08/ViT/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/07/HAConvGNN/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 155(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 342(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -393,14 +398,36 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2104.01002">HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks</a></p>
 </blockquote>
-<h2 id="vit打破了nlp和cv的壁垒同时在多模态领域也挖坑"><a class="markdownIt-Anchor" href="#vit打破了nlp和cv的壁垒同时在多模态领域也挖坑"></a> ViT，打破了NLP和CV的壁垒，同时在多模态领域也挖坑</h2>
+<h2 id="haconvgnn"><a class="markdownIt-Anchor" href="#haconvgnn"></a> HAConvGNN：</h2>
+<h3 id="1-总结"><a class="markdownIt-Anchor" href="#1-总结"></a> 1. 总结</h3>
 <ol>
-<li>将图片分割为16x16的各个patch，视作一个个的词，然后输入transformer结构中</li>
-<li>在数据量足够大的情况下效果很好，能够学习到全局特征，并且暂时没有看到性能瓶颈</li>
+<li>发现github上约25%的note都没有注释，同时这类数据较少，于是创建了<a target="_blank" rel="noopener" href="https://ibm.biz/Bdfpk6">新的 jupyter note 的数据集</a>，特点是一个注释可能对应至多4个代码块（实际上代码与markdown注释比为2.2195）。代码注释有三类①处理（Process and Headline）；②结果（result）；③推断和教育（Reson and Education）</li>
+<li>提供了注释其实可以为人类和AI共同完成的想法</li>
+<li>新的基于图的高层次注意力架构和人工评估有效性</li>
 </ol>
-<p>Comment: Fine-tuning code and pre-trained models are available at <a target="_blank" rel="noopener" href="https://github.com/google-research/vision_transformer">https://github.com/google-research/vision_transformer</a>. ICLR camera-ready version with 2 small modifications: 1) Added a discussion of CLS vs GAP classifier in the appendix, 2) Fixed an error in exaFLOPs computation in Figure 5 and Table 6 (relative performance of models is basically not affected)</p>
+<h3 id="2-模型架构"><a class="markdownIt-Anchor" href="#2-模型架构"></a> 2. 模型架构</h3>
+<h4 id="21-输入"><a class="markdownIt-Anchor" href="#21-输入"></a> 2.1 输入</h4>
+<ol>
+<li>tokenized code sequence</li>
+<li>tokennized documentation sequence</li>
+<li>从 code sequence 生成的 AST 图的节点</li>
+<li>从 code sequence 生成的 AST 图的边（拓扑）</li>
+</ol>
+<h4 id="22-embeddings"><a class="markdownIt-Anchor" href="#22-embeddings"></a> 2.2 Embeddings</h4>
+<p>三个嵌入层，code embedding，document embedding，Code AST embedding</p>
+<h4 id="23-encoder"><a class="markdownIt-Anchor" href="#23-encoder"></a> 2.3 Encoder</h4>
+<p>一个编码器编码原代码序列，附加四个编码器去编码至多4个 code cells 的 AST 图，以及使用一个高层次的 GRU 编码器层来对上述4个 AST 图生成一个更高层次的输出</p>
+<h4 id="24-haconvgnn"><a class="markdownIt-Anchor" href="#24-haconvgnn"></a> 2.4 HAConvGNN</h4>
+<p>低层次注意力+高层次注意力</p>
+<p><img src="https://gitee.com/tyang816/img.io/raw/master/HAConvNN/HAConvNN-img1.png" alt="avatar" /></p>
+<h3 id="3-人工评估"><a class="markdownIt-Anchor" href="#3-人工评估"></a> 3. 人工评估</h3>
+<ol>
+<li>评估指标信息性、可读性、正确性</li>
+<li>每次选三十对代码和文档，每对给5个参与人员，从4种候选结果中选择，其中一种是 groundtruth。</li>
+</ol>
+<p><img src="https://gitee.com/tyang816/img.io/raw/master/HAConvNN/HAConvNN-img2.png" alt="avatar" /></p>
 
       
     </div>
@@ -410,7 +437,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2021/12/08/ViT/" title="ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale" target="_blank" rel="external">https://tyang816.github.io/2021/12/08/ViT/</a>
+      <a href="https://tyang816.github.io/2022/02/07/HAConvGNN/" title="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks" target="_blank" rel="external">https://tyang816.github.io/2022/02/07/HAConvGNN/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -456,13 +483,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/12/09/Intriguing%20Properties%20of%20Vision%20Transformers/" title="NIPS-2021 Intriguing Properties of Vision Transformers"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/12/06/Towards%20Context-Aware%20Code%20Comment%20Generation/" title="ACL-2020 Towards Context-Aware Code Comment Generation"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/02/06/Graph-Augmented%20Code%20Summarization%20in%20Computational%20Notebooks/" title="IJCAI-2021 Graph-Augmented Code Summarization in Computational Notebooks"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
