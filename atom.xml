@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-02-07T07:17:01.761Z</updated>
+  <updated>2022-02-07T08:58:27.685Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AAAI-2017 SeqGAN:Sequence Generative Adversarial Nets with Policy Gradient</title>
+    <link href="https://tyang816.github.io/2022/02/08/SeqGAN/"/>
+    <id>https://tyang816.github.io/2022/02/08/SeqGAN/</id>
+    <published>2022-02-08T08:56:22.000Z</published>
+    <updated>2022-02-07T08:58:27.685Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://arxiv.org/abs/2104.01002">SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient</a></p></blockquote><h2 id="seqgan"><a class="markdownIt-Anchor" href="#seqgan"></a> SeqGAN：</h2><h3 id="1-总结"><a class="markdownIt-Anchor" href="#1-总结"></a> 1. 总结</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://arxiv.org/abs/2104.01002&quot;&gt;SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient&lt;/a&gt;&lt;/p&gt;
+&lt;/</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://tyang816.github.io/tags/NLP/"/>
+    
+    <category term="GAN" scheme="https://tyang816.github.io/tags/GAN/"/>
+    
+  </entry>
   
   <entry>
     <title>ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks</title>
@@ -40,6 +68,33 @@
     <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
     
     <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog-2022 Novelty in Science</title>
+    <link href="https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/"/>
+    <id>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</id>
+    <published>2022-02-07T10:21:46.000Z</published>
+    <updated>2022-02-07T10:49:41.926Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>博客地址：<a href="https://perceiving-systems.blog/en/news/novelty-in-science">Novelty in Science</a></p></blockquote><h2 id="论文的新意度"><a class="markdownIt-Anchor" href="#论文的新意度"></a> 论文的新意度</h2><p>作者 <a href="http://ps.is.mpg.de/person/black">Michael J. Black</a> 是德国马普所所长之一。</p><ol><li>理论研究者对于一个文章的判断往往在于：① 深刻，文章是否解释了深层次/本质的东西；② 优美，定理和证明是不是有美感。作者建议把“新意度”这个说法换成“优美度”，因为解释什么算有新意很困难，所以作者就说明什么算是新意度的误区。</li><li>“美”常见的误区<ol><li>简单或许不等于没有新意。比如就是改了一个损失函数，前面工作和前人一致，如果前人没有想到，且这种工作确实有效的话，那就应该是有新意的文章。否则的话投稿人就会想怎么把方法做得更加复杂，这样才会显得工作的价值更高一些。实际上将一个神经网络拿来改了一项达到很好效果，远胜于换成一个全新的，但更复杂的网络。</li><li>困难或许不等于有新意。一个简单/显然的想法如果比sota还要好，那就说明这就不简单/显然了。</li><li>惊讶或许不等于有新意。a+b的工作听上去确实很显然，但或许只是开了上帝视角的后知后觉。</li><li>技术或许不能衡量新意。数据集能提供别的数据集没有的东西这也算有新意，比如 ImageNet，这个数据集特点就是大，能提供别的数据集提供不了的数据量支撑神经网络等，间接性带动了 CV 领域。一个老方法用在别的地方也算新，或者一个复杂的算法换成一个简单算法，并提供一些 insight 也是有效的（用简单模型替代复杂模型来获得可解释性）。</li><li>没有实用性或许不能衡量新意。</li></ol></li><li>总结作者认为：新意度 != 复杂度、困难度、惊讶度、技术新意、有效性。更多是文章是否优美。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博客地址：&lt;a href=&quot;https://perceiving-systems.blog/en/news/novelty-in-science&quot;&gt;Novelty in Science&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;论</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="other" scheme="https://tyang816.github.io/tags/other/"/>
     
   </entry>
   
@@ -233,11 +288,11 @@
   </entry>
   
   <entry>
-    <title>Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot;(BYOL)</title>
+    <title>Blog-2020 Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot;(BYOL)</title>
     <link href="https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/"/>
     <id>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</id>
     <published>2022-01-22T02:07:35.000Z</published>
-    <updated>2022-02-06T05:11:38.538Z</updated>
+    <updated>2022-02-07T10:23:15.894Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>博客地址：<a href="https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/">Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot; (BYOL)</a></p></blockquote><h2 id="为什么byol模型学习没有坍塌增加-batch-norm"><a class="markdownIt-Anchor" href="#为什么byol模型学习没有坍塌增加-batch-norm"></a> 为什么BYOL模型学习没有坍塌：增加 Batch Norm</h2><p>做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低。做了Batch Norm其实是把一个Batch的样本拿过来算了均值方差，然后用来做归一化，也就意味着在算某个正样本的loss的时候其实也看到了其他样本的特征，有信息泄露。因为有这种信息泄露的存在，所以这种学习可以理解是不是光是正样本在自己学习，相当于做了隐式的对比学习，让一个batch中的样本与平均样本进行对比学习。</p>]]></content>
     
@@ -500,61 +555,6 @@
     <category term="GNN" scheme="https://tyang816.github.io/tags/GNN/"/>
     
     <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVPR-2018 Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination</title>
-    <link href="https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/"/>
-    <id>https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/</id>
-    <published>2022-01-05T05:21:02.000Z</published>
-    <updated>2022-02-06T04:38:32.668Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1805.01978">Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination</a></p></blockquote><h2 id="instdisc个体判别代理任务nce-loss对比表征学习bank-memory数据结构"><a class="markdownIt-Anchor" href="#instdisc个体判别代理任务nce-loss对比表征学习bank-memory数据结构"></a> InstDisc：个体判别代理任务+NCE loss对比表征学习+bank memory数据结构</h2><ol><li>正样本256，负样本从Memory bank随机选取，可以是4096或更大</li><li>提出了新的存储数据结构Memory bank，以及动量更新方法也影响了moco</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1805.01978&quot;&gt;Unsupervised Feature Learning via Non-Parametric Instance-level Discriminatio</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NIPS-2019 Representation Learning with Contrastive Predictive Coding</title>
-    <link href="https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/"/>
-    <id>https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/</id>
-    <published>2022-01-04T06:29:20.000Z</published>
-    <updated>2022-02-06T04:30:22.609Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1807.03748">Representation Learning with Contrastive Predictive Coding</a></p></blockquote><p>CPC：预测代理任务，模型可泛用到文本、音频、图片等</p><ol><li>通过t时刻前的输入编码器z，经过自回归（RNN/LSTM等）后得到足够好的上下文c_t，可以做预测为pre</li><li>正样本就是t时刻后的输入编码器后得到的z，这时候pre就等于query，t时刻后的z就是类似于正样本，就可以做对比学习了</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1807.03748&quot;&gt;Representation Learning with Contrastive Predictive Coding&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquo</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
     
   </entry>
   

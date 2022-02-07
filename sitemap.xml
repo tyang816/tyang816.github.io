@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
+    
+    <lastmod>2022-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2021/11/07/A%20Gentle%20Introduction%20to%20Graph%20Neural%20Networks/</loc>
+    
+    <lastmod>2022-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
+    
+    <lastmod>2022-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/08/SeqGAN/</loc>
+    
+    <lastmod>2022-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/02/07/Generative%20Adversarial%20Network%20for%20Abstractive%20Text%20Summarization/</loc>
     
     <lastmod>2022-02-07</lastmod>
@@ -75,15 +111,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</loc>
-    
-    <lastmod>2022-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
     
     <lastmod>2022-02-06</lastmod>
     
@@ -372,15 +399,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/</loc>
-    
-    <lastmod>2022-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2021/11/07/A%20Gentle%20Introduction%20to%20Graph%20Neural%20Networks/</loc>
     
     <lastmod>2022-02-06</lastmod>
     
