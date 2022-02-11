@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/02/09/SeqGAN/</loc>
+    <lastmod>2022-02-11</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
     <lastmod>2022-02-07</lastmod>
   </url>
@@ -10,10 +14,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
-    <lastmod>2022-02-07</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/02/08/SeqGAN/</loc>
     <lastmod>2022-02-07</lastmod>
   </url>
   <url>
