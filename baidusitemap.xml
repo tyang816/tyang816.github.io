@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
+    <lastmod>2022-02-12</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/09/SeqGAN/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
