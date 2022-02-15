@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/02/15/Structured%20Neural%20Summarization/</loc>
+    <lastmod>2022-02-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
-    <lastmod>2022-02-12</lastmod>
+    <lastmod>2022-02-15</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
