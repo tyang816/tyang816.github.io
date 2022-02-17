@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-02-15T16:40:38.994Z</updated>
+  <updated>2022-02-17T07:41:50.399Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ICSE-2019 A Novel Neural Source Code Representation Based on Abstract Syntax Tree</title>
+    <link href="https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/"/>
+    <id>https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/</id>
+    <published>2022-02-17T10:55:13.000Z</published>
+    <updated>2022-02-17T07:41:50.399Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://ieeexplore.ieee.org/document/8812062/">A Novel Neural Source Code Representation Based on Abstract Syntax Tree</a></p></blockquote><h2 id="astnn将大ast拆分为小ast树"><a class="markdownIt-Anchor" href="#astnn将大ast拆分为小ast树"></a> ASTNN：将大AST拆分为小AST树</h2><h3 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1. 简介</h3><ol><li><p>基于AST的神经网络两大缺陷</p><p>1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027/76 和 15217/192，使用滑动窗口等方法又易导致长距离信息损失</p><p>1.2 为了简单和高效将 AST 直接视作二叉树，损失了句法结构也加深了 AST 的深度，弱化了抓取更复杂的语义信息的能力</p></li><li><p>解决限制的方法</p><p>引入控制流和数据依赖图，使用图嵌入技术来表示代码，比如变量和函数的长距离依赖定位（PDG），构建代码块的控制流图（CFG）。前者非常依赖中间代码表示，对于不能编译的，不完整的代码段很难应用</p></li><li><p>于是作者提出了一种新的表示代码段的方法，它<strong>不需要代码段可编译</strong>，叫做 ASTNN ，通过将函数或方法的 AST 树分解为以句子为单位的小型AST树再分别embedding成向量后采用双向RNN网络来处理生成代码表征。这样即解决了深度问题，也解决了结构表示问题。</p></li></ol><h3 id="2-模型"><a class="markdownIt-Anchor" href="#2-模型"></a> 2. 模型</h3><img src="https://gitee.com/tyang816/img.io/raw/master/ASTNN/ASTNN-img1.png" alt="avatar" style="zoom:80%;" /><p>首先是如何对AST树进行拆分。本文按照句子的粒度进行拆分，首先先序遍历得到语句树序列S，则S中的每个s都代表这一个语句。对于嵌套语句而言，其由header和body组成，header类似try或while语句。这样以节点s为根节点的语句树就是s所有子节点的语句树的集合。</p><p>由上图可见，将示例程序分成了7个AST子树，每个子树代表一个语句，由header和body组成，得到子树先序遍历AST子树的节点，得到的节点序列作为ASTNN的原始输入，也就是作为后续RNN网络的原始输入进行表征提取。</p><img src="https://gitee.com/tyang816/img.io/raw/master/ASTNN/ASTNN-img2.png" alt="avatar" style="zoom: 67%;" /><p>得到线序遍历的AST子树节点序列后，首先对每个单词进行embedding，之后如上图所示，接着不断的迭代递归的将当前节点的embedding作为新的输入进行计算，最终遍历所有节点得到AST子树对应的子树向量，整个过程可以看作是一个pooling过程。</p><img src="https://gitee.com/tyang816/img.io/raw/master/ASTNN/ASTNN-img3.png" alt="avatar" style="zoom: 67%;" /><p>该图中的statement encoder相当于上图中AST子树编码结构，得到AST子树向量后，将其输入到RNN中，再经过一层pooling层得到最终的代码表征输出。</p><h3 id="3-实验"><a class="markdownIt-Anchor" href="#3-实验"></a> 3. 实验</h3><img src="https://gitee.com/tyang816/img.io/raw/master/ASTNN/ASTNN-img4.png" alt="avatar" style="zoom: 67%;" /><img src="https://gitee.com/tyang816/img.io/raw/master/ASTNN/ASTNN-img5.png" alt="avatar" style="zoom: 67%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://ieeexplore.ieee.org/document/8812062/&quot;&gt;A Novel Neural Source Code Representation Based on Abstract Syn</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICSE-2019 A Neural Model for Generating Natural Language Summaries of Program Subroutines</title>
+    <link href="https://tyang816.github.io/2022/02/16/A%20Neural%20Model%20for%20Generating%20Natural%20Language%20Summaries%20of%20Program%20Subroutines/"/>
+    <id>https://tyang816.github.io/2022/02/16/A%20Neural%20Model%20for%20Generating%20Natural%20Language%20Summaries%20of%20Program%20Subroutines/</id>
+    <published>2022-02-16T09:44:32.000Z</published>
+    <updated>2022-02-16T10:50:57.996Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/1902.01954">A Neural Model for Generating Natural Language Summaries of Program Subroutines</a></p></blockquote><h2 id="ast-attentiongru"><a class="markdownIt-Anchor" href="#ast-attentiongru"></a> ast-attentiongru</h2><h3 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1. 简介</h3><ol><li>将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入</li><li>设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST</li></ol><h3 id="2-模型"><a class="markdownIt-Anchor" href="#2-模型"></a> 2. 模型</h3><p>作者提出模型ast-attendgru，使用的attention-based encoder-decoder架构。在表示代码方面，使用了代码的token sequence和代码的结构AST，并且这两个部分分别进行encode，架构图如下：</p><img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" /><p>数据集：自己收集的Java method 语料，51 million Java method form 50000 projects，经过处理后得到大约2.1m methods。</p><ul><li>baselines：<ul><li>attendgru</li><li>SBT (ICPC 18)</li><li>CODE-NN (Iyer 19)</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1902.01954&quot;&gt;A Neural Model for Generating Natural Language Summaries of Program Subroutin</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
   
   <entry>
     <title>ICLR-2019 Structured Neural Summarization</title>
@@ -492,60 +542,6 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2006.10029&quot;&gt;Big Self-Supervised Models are Strong Semi-Supervised Learners&lt;/a&gt;&lt;/p&gt;
 &lt;/bloc</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows</title>
-    <link href="https://tyang816.github.io/2022/01/15/Swin/"/>
-    <id>https://tyang816.github.io/2022/01/15/Swin/</id>
-    <published>2022-01-15T02:24:09.000Z</published>
-    <updated>2022-02-06T04:57:04.661Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2103.14030">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</a></p></blockquote><h2 id="swin-transformer层级式的transformer使用了patch-merging和移动窗口"><a class="markdownIt-Anchor" href="#swin-transformer层级式的transformer使用了patch-merging和移动窗口"></a> Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2><ol><li><p>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</p></li><li><p>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</p></li><li><p>Patch Merging：类似于卷积的操作</p><p><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img1.png" alt="avatar" /></p></li><li><p>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</p></li><li><p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p><p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量<br /><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img2.png" alt="avatar" /></p><p>5.2 于是分割填补，同时部署于同一区域的patch不做自注意力计算，即采用masked MSA，然后还原图片，避免图片一直位移</p><p><img src="https://gitee.com/tyang816/img.io/raw/master/Swin/swin-img3.png" alt="avatar" /></p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2103.14030&quot;&gt;Swin Transformer: Hierarchical Vision Transformer using Shifted Windows&lt;/a&gt;&lt;/</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="transformer" scheme="https://tyang816.github.io/tags/transformer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICML-2020 A Simple Framework for Contrastive Learning of Visual Representations</title>
-    <link href="https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/"/>
-    <id>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</id>
-    <published>2022-01-12T06:41:38.000Z</published>
-    <updated>2022-02-06T04:42:38.229Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2002.05709">A Simple Framework for Contrastive Learning of Visual Representations</a></p></blockquote><h2 id="simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"><a class="markdownIt-Anchor" href="#simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"></a> SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2><ol><li>同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重</li><li>simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)</li><li>对比学习需要更多的数据增强技术，裁剪/旋转/改变色彩/高斯噪声/高斯模糊/…，以及做了数据增强的消融实验，最有效的是随即裁剪和色彩变换</li><li>batch size比较大，训练更久，网络特征会比较好，用lars优化器在大batch size下优化</li></ol><p>Comment: ICML’2020. Code and pretrained models at <a href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2002.05709&quot;&gt;A Simple Framework for Contrastive Learning of Visual Representations&lt;/a&gt;&lt;/p&gt;</summary>
       
     
     
