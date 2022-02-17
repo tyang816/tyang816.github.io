@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
+    <lastmod>2022-02-17</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/</loc>
     <lastmod>2022-02-17</lastmod>
   </url>
@@ -31,10 +35,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/02/09/SeqGAN/</loc>
     <lastmod>2022-02-11</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
-    <lastmod>2022-02-07</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2021/11/07/A%20Gentle%20Introduction%20to%20Graph%20Neural%20Networks/</loc>

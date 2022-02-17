@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
+    
+    <lastmod>2022-02-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/</loc>
     
     <lastmod>2022-02-17</lastmod>
@@ -77,15 +86,6 @@
     <loc>https://tyang816.github.io/about/index.html</loc>
     
     <lastmod>2022-02-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
-    
-    <lastmod>2022-02-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -604,6 +604,13 @@
   
   <url>
     <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
