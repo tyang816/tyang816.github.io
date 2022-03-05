@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/03/05/Commit%20Message%20Generation%20for%20Source%20Code%20Changes/</loc>
+    
+    <lastmod>2022-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/</loc>
     
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -562,7 +571,7 @@
 
   <url>
     <loc>https://tyang816.github.io/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -570,77 +579,77 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/nodejs/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/pytorch/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/GNN/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/code-sumry/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/NLP/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/transformer/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/CV/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/contra-lern/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/GAN/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/recom-sys/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -649,28 +658,28 @@
   
   <url>
     <loc>https://tyang816.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/03/05/Commit%20Message%20Generation%20for%20Source%20Code%20Changes/</loc>
+    <lastmod>2022-03-05</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/</loc>
-    <lastmod>2022-02-28</lastmod>
+    <lastmod>2022-03-05</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/28/Learning%20Sequential%20and%20Structural%20Information%20for%20Source%20Code%20Summarization/</loc>
