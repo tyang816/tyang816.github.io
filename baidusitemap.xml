@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/</loc>
+    <lastmod>2022-03-07</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/03/05/Commit%20Message%20Generation%20for%20Source%20Code%20Changes/</loc>
     <lastmod>2022-03-05</lastmod>
   </url>

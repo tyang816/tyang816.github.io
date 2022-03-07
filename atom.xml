@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-03-05T10:26:34.552Z</updated>
+  <updated>2022-03-07T02:45:18.527Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ASE-2020 Automating just-in-time comment updating</title>
+    <link href="https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/"/>
+    <id>https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/</id>
+    <published>2022-03-06T10:29:22.000Z</published>
+    <updated>2022-03-07T02:45:18.527Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://dl.acm.org/doi/10.1145/3324884.3416581">Automating just-in-time comment updating</a></p></blockquote><h2 id="cup新的分词器和单独编码器"><a class="markdownIt-Anchor" href="#cup新的分词器和单独编码器"></a> CUP：新的分词器和单独编码器</h2><h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3><p>帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法</p><p>做了几种定制的增强：特殊的分词器和联合注意力机制</p><p>比之前最好的baseline好7倍</p><h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3><ul><li><p>坏的变更注释文本容易误导且没用</p></li><li><p>这种方法不是从零开始更新代码注释的，所以需要注意两点：① 保持新旧注释的一致性；② 旧注释是更新的基石，需要端到端模型去学习代码的修改和旧代码表示</p><ul><li>新的tokenizer和copy机制</li><li>对代码变更和旧注释分别用两个编码器</li><li>构建代码和注释联合词库，使用预训练的fastText模型获取词嵌入</li><li>增加联合注意力机制</li></ul></li><li><p>数据：1496个GitHub的Java项目，构建了108K个代码注释和修改的样本</p></li></ul><h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img1.png" alt="avatar" style="zoom:50%;" /></div><h4 id="data-flattening"><a class="markdownIt-Anchor" href="#data-flattening"></a> Data Flattening</h4><ul><li><p>分词</p><ul><li>移除空格，标点保留，复合词拆分，如果两个邻接的词没有用空格分开，就插入一个 <code>&lt;con&gt;</code> 符号</li><li>主流的分词有三种：不改变复合词，直接拆分，添加特殊符号 <code>&lt;/t&gt;</code> ，比如<code>“inputBufer” -&gt; “inputBufer&lt;/t&gt;”</code>，第一种不能消除 OOV单词，第二种丢失了格式，第三种不能处理当复合词的子词元被视作独立词元预测的情况</li></ul></li><li><p>代码更新表示</p><ul><li><p>一个edit由三块组成</p></li><li><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img2.png" alt="avatar" style="zoom:50%;" /></div></li></ul></li></ul><h4 id="seq2seq-model"><a class="markdownIt-Anchor" href="#seq2seq-model"></a> Seq2Seq Model</h4><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img3.png" alt="avatar" style="zoom:50%;" /></div><ul><li>每个编码器有四层：嵌入层，上下文嵌入层，联合主力一层，模型层<ul><li>嵌入层：用统一的词库，fastText模型预训练</li></ul></li></ul><h3 id="data"><a class="markdownIt-Anchor" href="#data"></a> Data</h3><ul><li>收集了1496个至少500次提交的仓库</li><li>修改的方法提取：使用GumTree来计算在两次修改中的方法分布</li><li>数据处理太长了，实现的时候再看原文</li></ul><h3 id="experiment"><a class="markdownIt-Anchor" href="#experiment"></a> Experiment</h3><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img4.png" alt="avatar" style="zoom:50%;" /></div><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img5.png" alt="avatar" style="zoom:50%;" /></div><div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img6.png" alt="avatar" style="zoom:50%;" /></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3324884.3416581&quot;&gt;Automating just-in-time comment updating&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="code_sumry" scheme="https://tyang816.github.io/tags/code-sumry/"/>
+    
+  </entry>
   
   <entry>
     <title>IJCAI-2019 Commit Message Generation for Source Code Changes</title>
@@ -520,35 +546,6 @@
     <category term="transformer" scheme="https://tyang816.github.io/tags/transformer/"/>
     
     <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVPR-2020 Exploring Simple Siamese Representation Learning</title>
-    <link href="https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/"/>
-    <id>https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/</id>
-    <published>2022-01-27T07:25:11.000Z</published>
-    <updated>2022-02-06T05:28:25.200Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：Exploring Simple Siamese Representation Learning</p></blockquote><h2 id="simsiam提出孪生网络对比学习同时作总结性工作"><a class="markdownIt-Anchor" href="#simsiam提出孪生网络对比学习同时作总结性工作"></a> SimSiam：提出孪生网络对比学习，同时作总结性工作</h2><ol><li>化繁为简，最后可以理解一个K-means问题。</li><li>孪生网络既不需要大的batch size，也不需要动量编码器，也不需要负样本效果依然不错。但在实际操作中，动量编码器好用，稳定、能提点</li><li>stop gradient很重要，可以将simSiam看作一种EM算法，通过逐步更新的方式避免模型坍塌</li></ol><p><img src="https://gitee.com/tyang816/img.io/raw/master/SimSiam/SimSiam-img1.png" alt="avatar" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：Exploring Simple Siamese Representation Learning&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;simsiam提出孪生网络对比学习同时作总结性工作&quot;&gt;&lt;a class=&quot;markdow</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="contra_lern" scheme="https://tyang816.github.io/tags/contra-lern/"/>
     
   </entry>
   
