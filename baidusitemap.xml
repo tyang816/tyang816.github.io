@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/03/21/Language%20Models%20are%20Few-Shot%20Learners/</loc>
+    <lastmod>2022-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/03/21/Language%20Models%20are%20Unsupervised%20Multitask%20Learners/</loc>
+    <lastmod>2022-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/03/21/Improving%20Language%20Understanding%20by%20Generative%20Pre-Training/</loc>
+    <lastmod>2022-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2021/11/23/BERT/</loc>
+    <lastmod>2022-03-21</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/</loc>
     <lastmod>2022-03-07</lastmod>
   </url>
@@ -198,10 +214,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2021/12/12/code2seq/</loc>
-    <lastmod>2022-02-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2021/11/23/BERT/</loc>
     <lastmod>2022-02-06</lastmod>
   </url>
   <url>
