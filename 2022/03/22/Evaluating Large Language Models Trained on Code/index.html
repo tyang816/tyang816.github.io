@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICML-2021 Evaluating Large Language Models Trained on Code | tyang</title>
+  <meta name="description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码   Codex：基于GPT的code任务，应用创新而非算法  Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICML-2021 Evaluating Large Language Models Trained on Code">
+<meta property="og:url" content="https://tyang816.github.io/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码   Codex：基于GPT的code任务，应用创新而非算法  Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img1.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img2.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img3.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img4.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img5.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img6.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img7.png">
+<meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img8.png">
+<meta property="article:published_time" content="2022-03-22T03:39:00.000Z">
+<meta property="article:modified_time" content="2022-03-22T08:41:24.461Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://gitee.com/tyang816/img.io/raw/master/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://gitee.com/tyang816/img.io/raw/master/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-软件工程 本科在读</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">博文</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">57</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/SE/" style="font-size: 13.71px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.57px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.14px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.43px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-Transformer/" style="font-size: 13.29px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/22/1.1%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="title">1.1 课程介绍【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-22T07:05:04.000Z" itemprop="datePublished">2022-03-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/" class="title">ICML-2021 Evaluating Large Language Models Trained on Code</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-22T03:39:00.000Z" itemprop="datePublished">2022-03-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/21/Improving%20Language%20Understanding%20by%20Generative%20Pre-Training/" class="title">NIPS-2018 Improving Language Understanding by Generative Pre-Training</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-21T06:56:30.000Z" itemprop="datePublished">2022-03-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/21/Language%20Models%20are%20Unsupervised%20Multitask%20Learners/" class="title">ICML-2019 Language Models are Unsupervised Multitask Learners</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-21T06:54:38.000Z" itemprop="datePublished">2022-03-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/21/Language%20Models%20are%20Few-Shot%20Learners/" class="title">OpenAI-2020 Language Models are Few-Shot Learners</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-21T02:48:09.000Z" itemprop="datePublished">2022-03-21</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/Evaluating Large Language Models Trained on Code" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICML-2021 Evaluating Large Language Models Trained on Code
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/" class="article-date">
+	  <time datetime="2022-03-22T03:39:00.000Z" itemprop="datePublished">2022-03-22</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/" class="leancloud_visitors"  data-flag-title="ICML-2021 Evaluating Large Language Models Trained on Code">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.6k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.03374">Evaluating Large Language Models Trained on Code</a></p>
+<p>来自OpenAI团队的Codex，辅助程序员生成代码</p>
+</blockquote>
+<h2 id="codex基于gpt的code任务应用创新而非算法"><a class="markdownIt-Anchor" href="#codex基于gpt的code任务应用创新而非算法"></a> Codex：基于GPT的code任务，应用创新而非算法</h2>
+<h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
+<p>OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允许重复采样的话，即假设采样100个结果，有一个解决了那就算解决了问题，那准确率可以提升到70.2%</p>
+<h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
+<p>GPT-3可以生成简单代码，但复杂的不行，所以重新训练了一下。</p>
+<p>作者关注的是Python的docstring，即函数前的注释，生成的代码通过单元测试来验证正确性。作者造了一个数据集叫humaneval(<a target="_blank" rel="noopener" href="https://www.github.com/openai/human-eval">https://www.github.com/openai/human-eval</a>)，一些简单的数学，编程面试等问题。</p>
+<p>生成多个答案，看是不是有答案能通过单元测试。使用120亿参数的模型能达到28.8%精度，3个亿参数能达到13.2%，而GPT-J使用60亿参数只能达到11.4%精度，而其他的GPT基本是0%。</p>
+<p>为了进一步体现作者模型的性能，又收集了一个数据集。在上面微调的模型叫做codex-s，只是用一个例子也能提升到37.7%。如果允许生成100个答案，那么其中有一个正确的概率就变成77.5%。</p>
+<p>现实肯定是不能这么用的，不能给用户100个结果让用户自己去挑，所以如果提供一个排序算法，得到的最好的结果能达到44.5%的精度（通过率）。</p>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>还是有上升趋势，如果用更大的数据更大的模型说不定更好</p>
+<h3 id="evaluation-framework"><a class="markdownIt-Anchor" href="#evaluation-framework"></a> Evaluation Framework</h3>
+<h4 id="评价指标"><a class="markdownIt-Anchor" href="#评价指标"></a> 评价指标</h4>
+<p>用 <code>pass@k</code> 评估，选k个，有1个通过就算成功，这个k的值如果选很大就不太能反映出这个模型的好坏。因为在真实的生产环境中，给用户生成一堆代码肯定也要给出置信度是多少，对结果进行<strong>排序</strong>，k太大了就对模型过度乐观了。</p>
+<h4 id="计算方法"><a class="markdownIt-Anchor" href="#计算方法"></a> 计算方法</h4>
+<p>每次生成k个答案再判断能否通过的方法不太稳定，需要重复做多次实验。所以作者采用了生成n个样本，n&gt;k，然后再抽k个，c表示正确答案：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>s</mi><mi>s</mi><mi mathvariant="normal">@</mi><mi>k</mi><mo>:</mo><mo>=</mo><msub><mi mathvariant="double-struck">E</mi><mrow><mi>P</mi><mi>r</mi><mi>o</mi><mi>b</mi><mi>l</mi><mi>e</mi><mi>m</mi><mi>s</mi></mrow></msub><mrow><mo fence="true">[</mo><mn>1</mn><mo>−</mo><mfrac><msubsup><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mi>c</mi></mrow><mi>k</mi></msubsup><msubsup><mi>C</mi><mi>n</mi><mi>k</mi></msubsup></mfrac><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">pass@k:=\mathbb{E}_{Problems}\left[ 1-\frac{ C_{n-c}^k}{ C_n^k}\right ]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord">@</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.494469em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">E</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5444390000000001em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7751079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.6953310000000004em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305331em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.933em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span></p>
+<h4 id="验证集"><a class="markdownIt-Anchor" href="#验证集"></a> 验证集</h4>
+<p>手写的，因为网上找容易是训练集里见过答案的（数据泄露）</p>
+<h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3>
+<h4 id="数据收集"><a class="markdownIt-Anchor" href="#数据收集"></a> 数据收集</h4>
+<p>收集了179GB个python文件，但没有过滤协议，这也产生了一些冲突与批评</p>
+<h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h4>
+<p>微调：作者原本认为把GPT-3的权重拿过来微调会有好处，但实际没用，但训练收敛更快，这也体现出微调的模型可能有好处可能没好处，但一般收敛都会加快。</p>
+<p>词元处理：把不同长度的空格用特殊词元表示，避免模型一个个去认，这样能减少30%的词元</p>
+<p>停止：\nclass，\ndef，\n#，\nif或\nprint</p>
+<p>预测：下一个词预测时没有采用最大概率或束搜索，采用了一个**核采样（nucleus sampling）**方法。</p>
+<ul>
+<li>具体是指在任意时刻对于候选词有一个概率，然后把这些词的概率从大排到小，依次留下来，直到拿到的所有词的概率加起来大于等于0.95就停止，从这些候选词中采样一个词作为序列后的预测。</li>
+<li>这样能够保证每次运行能得到不一样的结果，且能保证一定多样性，去除特别不靠谱的词</li>
+</ul>
+<h3 id="result"><a class="markdownIt-Anchor" href="#result"></a> Result</h3>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img2.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>softmax除以一个较高的温度会使候选词概率更加接近，较低的温度值就会比较区分开。也就是说温度值较低的时候，最好的几个词概率会更大，总会采样最好的几个词。温度较高时概率相差不大，就比较均匀。</p>
+<p>允许的采样数增加时，温度也应该增加。</p>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>挑选答案时的排序算法，较好的方法是看每个候选词在softmax里的概率，做log后计算均值，均值最高的解拿出来</p>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>BLEU分数很难区分出答案的正确性，很难保证代码的语义正确</p>
+<h3 id="supervised-fine-tuning"><a class="markdownIt-Anchor" href="#supervised-fine-tuning"></a> Supervised Fine-Tuning</h3>
+<p>额外准备了一个带标准答案的数据集，意思是训练集和human eval还是有一点区别，如果有训练集和human eval一致说不定还能提升</p>
+<ul>
+<li>从各种程序比赛中拿到了10000个问题</li>
+<li>敏捷开发中每次代码提交都会出发持续集成（Continuous Integration）这个服务，将所有单元测试跑一遍。从持续集成中拿数据，能够看到里面要跑哪些任务，大概4万个</li>
+</ul>
+<p>拿到问题后又做了一个过滤，把最大的模型拿出来，生成100个结论，如果至少有1个是单元测试通过了就把问题留下来，如果通过不了说明问题太难或单元测试不正确，对模型训练没多大帮助</p>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img6.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img7.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="docstring-generation"><a class="markdownIt-Anchor" href="#docstring-generation"></a> Docstring Generation</h3>
+<p>因为python里面注释是在函数签名和函数本体中间的，这个GPT这种预测不了中间这种。所以就又重新做了一个数据集，把注释挪到最后。</p>
+<p>这种模型叫Codex-D</p>
+<p>评估办法：</p>
+<ul>
+<li>眼睛看</li>
+<li>先用Codex-D生成文档，再根据文档和函数签名反过来实现答案，再通过单元测试</li>
+</ul>
+<div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img8.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="limitation"><a class="markdownIt-Anchor" href="#limitation"></a> Limitation</h3>
+<ol>
+<li>样本有效性不够，需要看很多代码</li>
+<li>docstring的提示应该怎么做？作者发现当docstring比较长的时候，生成出来的代码就会打折
+<ul>
+<li>组合了13个building block，每个模块是对字符串做一个操作，比如转成小写，转大写，换位置，这13个块可以任意组合，让代码依次完成</li>
+<li>这种块连起来用的越多，精度越低</li>
+</ul>
+</li>
+<li>数学不好，精确复杂操作理解有问题</li>
+<li>人可能过度依赖模型生成的代码</li>
+<li>模型可能能干要求的事情，但是不是按我们需要的要求。比如让模型生成注释，那模型会更倾向于生成跟训练数据更一致的注释</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/" title="ICML-2021 Evaluating Large Language Models Trained on Code" target="_blank" rel="external">https://tyang816.github.io/2022/03/22/Evaluating Large Language Models Trained on Code/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://gitee.com/tyang816/img.io/raw/master/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/03/22/1.1%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" title="1.1 课程介绍【斯坦福21秋季：实用机器学习】"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/03/21/Improving%20Language%20Understanding%20by%20Generative%20Pre-Training/" title="NIPS-2018 Improving Language Understanding by Generative Pre-Training"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://gitee.com/tyang816/img.io/raw/master/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://gitee.com/tyang816/img.io/raw/master/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
