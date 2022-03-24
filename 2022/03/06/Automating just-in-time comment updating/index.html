@@ -20,12 +20,12 @@
   
   
   <title>ASE-2020 Automating just-in-time comment updating | tyang</title>
-  <meta name="description" content="论文地址：Automating just-in-time comment updating   CUP：新的分词器和单独编码器  Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍  Introduction   坏的">
+  <meta name="description" content="论文地址：Automating just-in-time comment updating  CUP：新的分词器和单独编码器 Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍 Introduction   坏的变更注">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASE-2020 Automating just-in-time comment updating">
 <meta property="og:url" content="https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Automating just-in-time comment updating   CUP：新的分词器和单独编码器  Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍  Introduction   坏的">
+<meta property="og:description" content="论文地址：Automating just-in-time comment updating  CUP：新的分词器和单独编码器 Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍 Introduction   坏的变更注">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img1.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img2.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img5.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img6.png">
 <meta property="article:published_time" content="2022-03-06T10:29:22.000Z">
-<meta property="article:modified_time" content="2022-03-22T03:15:07.828Z">
+<meta property="article:modified_time" content="2022-03-24T06:23:47.167Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CL">
 <meta property="article:tag" content="SE">
@@ -212,7 +212,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">57</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">58</span></li></ul>
     </div>
   </div>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +241,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -260,10 +260,55 @@
                 <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/22/1.1%20%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/" class="title">1.1 课程介绍【斯坦福21秋季：实用机器学习】</a>
+                <a href="/2022/03/24/2.1%20%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="title">2.1 探索性数据分析【斯坦福21秋季：实用机器学习】</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-22T07:05:04.000Z" itemprop="datePublished">2022-03-22</time>
+                <time datetime="2022-03-24T06:16:28.000Z" itemprop="datePublished">2022-03-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/24/1.4%20%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8/" class="title">1.4 数据标注【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-24T05:48:03.000Z" itemprop="datePublished">2022-03-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/23/1.3%20%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/" class="title">1.3 网页数据抓取【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-23T09:39:42.000Z" itemprop="datePublished">2022-03-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/03/23/1.2%20%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/" class="title">1.2 数据获取【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-03-23T09:15:45.000Z" itemprop="datePublished">2022-03-23</time>
               </p>
             </div>
           </li>
@@ -275,55 +320,10 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/" class="title">ICML-2021 Evaluating Large Language Models Trained on Code</a>
+                <a href="/2022/03/23/Competition-Level%20Code%20Generation%20with%20AlphaCode/" class="title">DeepMind-2022 Competition-Level Code Generation with AlphaCode</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-22T03:39:00.000Z" itemprop="datePublished">2022-03-22</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/03/21/Improving%20Language%20Understanding%20by%20Generative%20Pre-Training/" class="title">NIPS-2018 Improving Language Understanding by Generative Pre-Training</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-03-21T06:56:30.000Z" itemprop="datePublished">2022-03-21</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/03/21/Language%20Models%20are%20Unsupervised%20Multitask%20Learners/" class="title">ICML-2019 Language Models are Unsupervised Multitask Learners</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-03-21T06:54:38.000Z" itemprop="datePublished">2022-03-21</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/03/21/Language%20Models%20are%20Few-Shot%20Learners/" class="title">OpenAI-2020 Language Models are Few-Shot Learners</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-03-21T02:48:09.000Z" itemprop="datePublished">2022-03-21</time>
+                <time datetime="2022-03-23T07:04:08.000Z" itemprop="datePublished">2022-03-23</time>
               </p>
             </div>
           </li>
@@ -405,12 +405,12 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3324884.3416581">Automating just-in-time comment updating</a></p>
 </blockquote>
-<h2 id="cup新的分词器和单独编码器"><a class="markdownIt-Anchor" href="#cup新的分词器和单独编码器"></a> CUP：新的分词器和单独编码器</h2>
-<h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
+<h2 id="CUP：新的分词器和单独编码器">CUP：新的分词器和单独编码器</h2>
+<h3 id="Abstract">Abstract</h3>
 <p>帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法</p>
 <p>做了几种定制的增强：特殊的分词器和联合注意力机制</p>
 <p>比之前最好的baseline好7倍</p>
-<h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
+<h3 id="Introduction">Introduction</h3>
 <ul>
 <li>
 <p>坏的变更注释文本容易误导且没用</p>
@@ -428,9 +428,9 @@
 <p>数据：1496个GitHub的Java项目，构建了108K个代码注释和修改的样本</p>
 </li>
 </ul>
-<h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3>
+<h3 id="Model">Model</h3>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img1.png" alt="avatar" style="zoom:50%;" /></div>
-<h4 id="data-flattening"><a class="markdownIt-Anchor" href="#data-flattening"></a> Data Flattening</h4>
+<h4 id="Data-Flattening">Data Flattening</h4>
 <ul>
 <li>
 <p>分词</p>
@@ -449,7 +449,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="seq2seq-model"><a class="markdownIt-Anchor" href="#seq2seq-model"></a> Seq2Seq Model</h4>
+<h4 id="Seq2Seq-Model">Seq2Seq Model</h4>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img3.png" alt="avatar" style="zoom:50%;" /></div>
 <ul>
 <li>每个编码器有四层：嵌入层，上下文嵌入层，联合主力一层，模型层
@@ -458,16 +458,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="data"><a class="markdownIt-Anchor" href="#data"></a> Data</h3>
+<h3 id="Data">Data</h3>
 <ul>
 <li>收集了1496个至少500次提交的仓库</li>
 <li>修改的方法提取：使用GumTree来计算在两次修改中的方法分布</li>
 <li>数据处理太长了，实现的时候再看原文</li>
 </ul>
-<h3 id="experiment"><a class="markdownIt-Anchor" href="#experiment"></a> Experiment</h3>
+<h3 id="Experiment">Experiment</h3>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img4.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img5.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img6.png" alt="avatar" style="zoom:50%;" /></div>
+<HR align=left color=#987cb9 SIZE=1>
 
       
     </div>
