@@ -20,12 +20,12 @@
   
   
   <title>ICML-2021 Learning Transferable Visual Models From Natural Language Supervision | tyang</title>
-  <meta name="description" content="论文地址：Learning Transferable Visual Models From Natural Language Supervision  CLIP：单模态正样本换成多模态，用文本提示做迁移学习  1. 引言和相关工作   CLIP 强大的一个主要原因是 OpenAI 收集了4亿个图片和文本的配对，打破了固定类别标签的做法。   彻底摆脱了 categorical label 的限制">
+  <meta name="description" content="论文地址：Learning Transferable Visual Models From Natural Language Supervision   CLIP：单模态正样本换成多模态，用文本提示做迁移学习   1. 引言和相关工作   CLIP 强大的一个主要原因是 OpenAI 收集了4亿个图片和文本的配对，打破了固定类别标签的做法。   彻底摆脱了 categorical label 的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2021 Learning Transferable Visual Models From Natural Language Supervision">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Learning Transferable Visual Models From Natural Language Supervision  CLIP：单模态正样本换成多模态，用文本提示做迁移学习  1. 引言和相关工作   CLIP 强大的一个主要原因是 OpenAI 收集了4亿个图片和文本的配对，打破了固定类别标签的做法。   彻底摆脱了 categorical label 的限制">
+<meta property="og:description" content="论文地址：Learning Transferable Visual Models From Natural Language Supervision   CLIP：单模态正样本换成多模态，用文本提示做迁移学习   1. 引言和相关工作   CLIP 强大的一个主要原因是 OpenAI 收集了4亿个图片和文本的配对，打破了固定类别标签的做法。   彻底摆脱了 categorical label 的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CLIP/CLIP-img1.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CLIP/CLIP-img2.png">
@@ -405,9 +405,9 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2103.00020">Learning Transferable Visual Models From Natural Language Supervision</a></p>
 </blockquote>
-<h2 id="CLIP：单模态正样本换成多模态，用文本提示做迁移学习">CLIP：单模态正样本换成多模态，用文本提示做迁移学习</h2>
-<p><img src="https://gitee.com/tyang816/img.io/raw/master/CLIP/CLIP-img1.png" alt="avatar"></p>
-<h3 id="1-引言和相关工作">1. 引言和相关工作</h3>
+<h2 id="clip单模态正样本换成多模态用文本提示做迁移学习"><a class="markdownIt-Anchor" href="#clip单模态正样本换成多模态用文本提示做迁移学习"></a> CLIP：单模态正样本换成多模态，用文本提示做迁移学习</h2>
+<p><img src="https://gitee.com/tyang816/img.io/raw/master/CLIP/CLIP-img1.png" alt="avatar" /></p>
+<h3 id="1-引言和相关工作"><a class="markdownIt-Anchor" href="#1-引言和相关工作"></a> 1. 引言和相关工作</h3>
 <ol>
 <li>
 <p>CLIP 强大的一个主要原因是 OpenAI 收集了4亿个<strong>图片和文本的配对，打破了固定类别标签的做法</strong>。</p>
@@ -428,7 +428,7 @@
 <p>即使预训练的模型训练好了之后把它冻住（Linear-Probe），只抽特征训练最后分类头训练分类任务也比 ImageNet 上的效果好，而且计算高效</p>
 </li>
 </ol>
-<h3 id="2-方法">2. 方法</h3>
+<h3 id="2-方法"><a class="markdownIt-Anchor" href="#2-方法"></a> 2. 方法</h3>
 <img src="https://gitee.com/tyang816/img.io/raw/master/CLIP/CLIP-img2.png" alt="avatar" style="zoom:50%;" />
 <ol>
 <li>
@@ -449,7 +449,7 @@
 <p>模型可以选择 ResNet，也可以选择 Transformer</p>
 </li>
 </ol>
-<h3 id="3-实验-2">3. 实验</h3>
+<h3 id="3-实验"><a class="markdownIt-Anchor" href="#3-实验"></a> 3. 实验</h3>
 <ol>
 <li>
 <p>之前的无监督或无监督的方法主要研究特征学习的能力，目标是学习泛化性比较好的特征，比如MOCO，SimCLR，DINO等，但应用到下游任务时还是需要有标签的数据进行微调，能不能有一种不用调的</p>
@@ -484,7 +484,7 @@
 <ol start="6">
 <li>同时也做了人和 CLIP 对类别识别难易的对比，对人难识别的类对 CLIP 也难</li>
 </ol>
-<h3 id="4-局限性">4. 局限性</h3>
+<h3 id="4-局限性"><a class="markdownIt-Anchor" href="#4-局限性"></a> 4. 局限性</h3>
 <ol>
 <li>性能强是和 Res50 比较，实际上和各种 SOTA 比还是差了许多，估计得x1000才能达到。肯定需要新的方法在计算和数据的高效性上提高</li>
 <li>在有些数据集上 zero-shot 的结果也并不好，比如细分类等，也无法处理抽象和难的任务，可能在很多领域 CLIP 和瞎猜一样</li>

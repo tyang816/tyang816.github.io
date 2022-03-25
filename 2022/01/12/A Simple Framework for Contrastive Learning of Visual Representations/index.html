@@ -20,12 +20,12 @@
   
   
   <title>ICML-2020 A Simple Framework for Contrastive Learning of Visual Representations | tyang</title>
-  <meta name="description" content="论文地址：A Simple Framework for Contrastive Learning of Visual Representations  SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size  同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-">
+  <meta name="description" content="论文地址：A Simple Framework for Contrastive Learning of Visual Representations   SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size  同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2020 A Simple Framework for Contrastive Learning of Visual Representations">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：A Simple Framework for Contrastive Learning of Visual Representations  SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size  同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-">
+<meta property="og:description" content="论文地址：A Simple Framework for Contrastive Learning of Visual Representations   SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size  同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-12T06:41:38.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:23:21.913Z">
@@ -396,7 +396,7 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2002.05709">A Simple Framework for Contrastive Learning of Visual Representations</a></p>
 </blockquote>
-<h2 id="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size">SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2>
+<h2 id="simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"><a class="markdownIt-Anchor" href="#simclr缝合了很多技术在特征提取后添加mlp层和激活函数用更多的数据增强策略大batch_size"></a> SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2>
 <ol>
 <li>同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重</li>
 <li>simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)</li>

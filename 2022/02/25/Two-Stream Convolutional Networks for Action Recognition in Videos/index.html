@@ -20,12 +20,12 @@
   
   
   <title>NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos | tyang</title>
-  <meta name="description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos  双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果 Abstract   学到 appearance(空间) 信息和 m">
+  <meta name="description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos   双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果  Abstract   学到 appearance(空间) 信息和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos  双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果 Abstract   学到 appearance(空间) 信息和 m">
+<meta property="og:description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos   双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果  Abstract   学到 appearance(空间) 信息和">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img1.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img2.png">
@@ -403,9 +403,9 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html">Two-Stream Convolutional Networks for Action Recognition in Videos</a></p>
 </blockquote>
-<h2 id="双流卷积网络：空间-时间，视频处理开山作">双流卷积网络：空间+时间，视频处理开山作</h2>
+<h2 id="双流卷积网络空间时间视频处理开山作"><a class="markdownIt-Anchor" href="#双流卷积网络空间时间视频处理开山作"></a> 双流卷积网络：空间+时间，视频处理开山作</h2>
 <p>神经网络开始难以学习到物体的特征，现在从传统方法的<strong>光流</strong>直接把抽取好的运动信息特征塞进去，让网络学习映射，<strong>提供先验信息或许能够大幅提高网络效果</strong></p>
-<h3 id="Abstract-11">Abstract</h3>
+<h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <ol>
 <li>
 <p>学到 appearance(空间) 信息和 motion(时间) 信息</p>
@@ -417,22 +417,22 @@
 <p>2.3 弥补训练上的不足，提出 multitask learning 在两个数据集上训练骨干网络</p>
 </li>
 </ol>
-<h3 id="Introduction-11">Introduction</h3>
+<h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
 <ol>
 <li>视频里的时序信息能够给图像分类提供重要线索，并且视频天生能提供很好的<strong>数据增强</strong></li>
 <li>简单粗暴的把数据丢进网络效果不好，甚至不如手工提取特征。于是作者发现手工方法都是按<strong>光流</strong>，能够很好的提取运动信息，于是提出双流，使用 late fusion 在 logits 上做合并</li>
 <li>从人脑受到启发</li>
 </ol>
-<h3 id="Related-Work">Related Work</h3>
+<h3 id="related-work"><a class="markdownIt-Anchor" href="#related-work"></a> Related Work</h3>
 <ol>
 <li>spatio-teporal features 演变成了 3D 网络， dense point trajectories 演变成了双流法</li>
 <li>如果把视频帧一张一张的输入 2D 网络，和一系列的视频帧叠加丢进 3D 网络或 2D 网络进行时空学习效果一样，比传统方法低了20个点。说明这种方法并没有抓取到动作和时序信息，也让大家意识到这种动作和时序信息的重要性</li>
 </ol>
-<h3 id="Model-10">Model</h3>
+<h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3>
 <img src="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img1.png" alt="avatar" style="zoom:67%;" />
-<h4 id="Spatial-stream-ConvNet">Spatial stream ConvNet</h4>
+<h4 id="spatial-stream-convnet"><a class="markdownIt-Anchor" href="#spatial-stream-convnet"></a> Spatial stream ConvNet</h4>
 <p>实际上是一帧一帧的处理，和视频关系不大，类似于图像分类，结果还是不错的。但这种静止的信息往往有很强的线索，如果用 ImgaeNet 上预训练好的模型来微调其实也很不错</p>
-<h4 id="Optical-flow-ConvNet">Optical flow ConvNet</h4>
+<h4 id="optical-flow-convnet"><a class="markdownIt-Anchor" href="#optical-flow-convnet"></a> Optical flow ConvNet</h4>
 <img src="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img2.png" alt="avatar" style="zoom:67%;" />
 <ol>
 <li>
@@ -449,13 +449,13 @@
 <p>双向光流，这种双向方法起码不掉点</p>
 </li>
 </ol>
-<h3 id="Implementation-Details">Implementation Details</h3>
+<h3 id="implementation-details"><a class="markdownIt-Anchor" href="#implementation-details"></a> Implementation Details</h3>
 <ol>
 <li>视频等间距取出25帧，不管视频原本有多少帧</li>
 <li>测试视角数五花八门</li>
 <li>光流抽取非常耗时，而且光流是密集表示，非常耗空间，于是作者也提出了压缩方法</li>
 </ol>
-<h3 id="Evaluation-3">Evaluation</h3>
+<h3 id="evaluation"><a class="markdownIt-Anchor" href="#evaluation"></a> Evaluation</h3>
 <img src="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img4.png" alt="avatar" style="zoom:67%;" />
 <img src="https://gitee.com/tyang816/img.io/raw/master/2StreamConvNet/2StreamConvNet-img5.png" alt="avatar" style="zoom:67%;" />
 <HR align=left color=#987cb9 SIZE=1>

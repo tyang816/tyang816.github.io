@@ -20,12 +20,12 @@
   
   
   <title>ICML-2021 Evaluating Large Language Models Trained on Code | tyang</title>
-  <meta name="description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码  Codex：基于GPT的code任务，应用创新而非算法 Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允">
+  <meta name="description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码   Codex：基于GPT的code任务，应用创新而非算法  Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2021 Evaluating Large Language Models Trained on Code">
 <meta property="og:url" content="https://tyang816.github.io/2022/03/22/Evaluating%20Large%20Language%20Models%20Trained%20on%20Code/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码  Codex：基于GPT的code任务，应用创新而非算法 Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允">
+<meta property="og:description" content="论文地址：Evaluating Large Language Models Trained on Code 来自OpenAI团队的Codex，辅助程序员生成代码   Codex：基于GPT的code任务，应用创新而非算法  Abstract OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img1.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img2.png">
@@ -408,10 +408,10 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.03374">Evaluating Large Language Models Trained on Code</a></p>
 <p>来自OpenAI团队的Codex，辅助程序员生成代码</p>
 </blockquote>
-<h2 id="Codex：基于GPT的code任务，应用创新而非算法">Codex：基于GPT的code任务，应用创新而非算法</h2>
-<h3 id="Abstract-5">Abstract</h3>
+<h2 id="codex基于gpt的code任务应用创新而非算法"><a class="markdownIt-Anchor" href="#codex基于gpt的code任务应用创新而非算法"></a> Codex：基于GPT的code任务，应用创新而非算法</h2>
+<h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <p>OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允许重复采样的话，即假设采样100个结果，有一个解决了那就算解决了问题，那准确率可以提升到70.2%</p>
-<h3 id="Introduction-5">Introduction</h3>
+<h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
 <p>GPT-3可以生成简单代码，但复杂的不行，所以重新训练了一下。</p>
 <p>作者关注的是Python的docstring，即函数前的注释，生成的代码通过单元测试来验证正确性。作者造了一个数据集叫humaneval(<a target="_blank" rel="noopener" href="https://www.github.com/openai/human-eval">https://www.github.com/openai/human-eval</a>)，一些简单的数学，编程面试等问题。</p>
 <p>生成多个答案，看是不是有答案能通过单元测试。使用120亿参数的模型能达到28.8%精度，3个亿参数能达到13.2%，而GPT-J使用60亿参数只能达到11.4%精度，而其他的GPT基本是0%。</p>
@@ -419,20 +419,19 @@
 <p>现实肯定是不能这么用的，不能给用户100个结果让用户自己去挑，所以如果提供一个排序算法，得到的最好的结果能达到44.5%的精度（通过率）。</p>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>还是有上升趋势，如果用更大的数据更大的模型说不定更好</p>
-<h3 id="Evaluation-Framework">Evaluation Framework</h3>
-<h4 id="评价指标">评价指标</h4>
+<h3 id="evaluation-framework"><a class="markdownIt-Anchor" href="#evaluation-framework"></a> Evaluation Framework</h3>
+<h4 id="评价指标"><a class="markdownIt-Anchor" href="#评价指标"></a> 评价指标</h4>
 <p>用 <code>pass@k</code> 评估，选k个，有1个通过就算成功，这个k的值如果选很大就不太能反映出这个模型的好坏。因为在真实的生产环境中，给用户生成一堆代码肯定也要给出置信度是多少，对结果进行<strong>排序</strong>，k太大了就对模型过度乐观了。</p>
-<h4 id="计算方法">计算方法</h4>
-<p>每次生成k个答案再判断能否通过的方法不太稳定，需要重复做多次实验。所以作者采用了生成n个样本，n&gt;k，然后再抽k个，c表示正确答案：<br>
-$$<br>
-pass@k:=\mathbb{E}<em>{Problems}\left[ 1-\frac{ C</em>{n-c}^k}{ C_n^k}\right ]<br>
-$$</p>
-<h4 id="验证集">验证集</h4>
+<h4 id="计算方法"><a class="markdownIt-Anchor" href="#计算方法"></a> 计算方法</h4>
+<p>每次生成k个答案再判断能否通过的方法不太稳定，需要重复做多次实验。所以作者采用了生成n个样本，n&gt;k，然后再抽k个，c表示正确答案：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>s</mi><mi>s</mi><mi mathvariant="normal">@</mi><mi>k</mi><mo>:</mo><mo>=</mo><msub><mi mathvariant="double-struck">E</mi><mrow><mi>P</mi><mi>r</mi><mi>o</mi><mi>b</mi><mi>l</mi><mi>e</mi><mi>m</mi><mi>s</mi></mrow></msub><mrow><mo fence="true">[</mo><mn>1</mn><mo>−</mo><mfrac><msubsup><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mi>c</mi></mrow><mi>k</mi></msubsup><msubsup><mi>C</mi><mi>n</mi><mi>k</mi></msubsup></mfrac><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">pass@k:=\mathbb{E}_{Problems}\left[ 1-\frac{ C_{n-c}^k}{ C_n^k}\right ]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord">@</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.494469em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">E</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5444390000000001em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7751079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.6953310000000004em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">c</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305331em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.933em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span></p>
+<h4 id="验证集"><a class="markdownIt-Anchor" href="#验证集"></a> 验证集</h4>
 <p>手写的，因为网上找容易是训练集里见过答案的（数据泄露）</p>
-<h3 id="Model-4">Model</h3>
-<h4 id="数据收集">数据收集</h4>
+<h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3>
+<h4 id="数据收集"><a class="markdownIt-Anchor" href="#数据收集"></a> 数据收集</h4>
 <p>收集了179GB个python文件，但没有过滤协议，这也产生了一些冲突与批评</p>
-<h4 id="方法">方法</h4>
+<h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h4>
 <p>微调：作者原本认为把GPT-3的权重拿过来微调会有好处，但实际没用，但训练收敛更快，这也体现出微调的模型可能有好处可能没好处，但一般收敛都会加快。</p>
 <p>词元处理：把不同长度的空格用特殊词元表示，避免模型一个个去认，这样能减少30%的词元</p>
 <p>停止：\nclass，\ndef，\n#，\nif或\nprint</p>
@@ -441,7 +440,7 @@ $$</p>
 <li>具体是指在任意时刻对于候选词有一个概率，然后把这些词的概率从大排到小，依次留下来，直到拿到的所有词的概率加起来大于等于0.95就停止，从这些候选词中采样一个词作为序列后的预测。</li>
 <li>这样能够保证每次运行能得到不一样的结果，且能保证一定多样性，去除特别不靠谱的词</li>
 </ul>
-<h3 id="Result-2">Result</h3>
+<h3 id="result"><a class="markdownIt-Anchor" href="#result"></a> Result</h3>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img2.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img3.png" alt="avatar" style="zoom:60%;" /></div>
 <p>softmax除以一个较高的温度会使候选词概率更加接近，较低的温度值就会比较区分开。也就是说温度值较低的时候，最好的几个词概率会更大，总会采样最好的几个词。温度较高时概率相差不大，就比较均匀。</p>
@@ -450,7 +449,7 @@ $$</p>
 <p>挑选答案时的排序算法，较好的方法是看每个候选词在softmax里的概率，做log后计算均值，均值最高的解拿出来</p>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>BLEU分数很难区分出答案的正确性，很难保证代码的语义正确</p>
-<h3 id="Supervised-Fine-Tuning">Supervised Fine-Tuning</h3>
+<h3 id="supervised-fine-tuning"><a class="markdownIt-Anchor" href="#supervised-fine-tuning"></a> Supervised Fine-Tuning</h3>
 <p>额外准备了一个带标准答案的数据集，意思是训练集和human eval还是有一点区别，如果有训练集和human eval一致说不定还能提升</p>
 <ul>
 <li>从各种程序比赛中拿到了10000个问题</li>
@@ -459,7 +458,7 @@ $$</p>
 <p>拿到问题后又做了一个过滤，把最大的模型拿出来，生成100个结论，如果至少有1个是单元测试通过了就把问题留下来，如果通过不了说明问题太难或单元测试不正确，对模型训练没多大帮助</p>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img6.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img7.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Docstring-Generation">Docstring Generation</h3>
+<h3 id="docstring-generation"><a class="markdownIt-Anchor" href="#docstring-generation"></a> Docstring Generation</h3>
 <p>因为python里面注释是在函数签名和函数本体中间的，这个GPT这种预测不了中间这种。所以就又重新做了一个数据集，把注释挪到最后。</p>
 <p>这种模型叫Codex-D</p>
 <p>评估办法：</p>
@@ -468,7 +467,7 @@ $$</p>
 <li>先用Codex-D生成文档，再根据文档和函数签名反过来实现答案，再通过单元测试</li>
 </ul>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/codex/codex-img8.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Limitation">Limitation</h3>
+<h3 id="limitation"><a class="markdownIt-Anchor" href="#limitation"></a> Limitation</h3>
 <ol>
 <li>样本有效性不够，需要看很多代码</li>
 <li>docstring的提示应该怎么做？作者发现当docstring比较长的时候，生成出来的代码就会打折

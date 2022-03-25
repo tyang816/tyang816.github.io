@@ -20,12 +20,12 @@
   
   
   <title>ASE-2020 Automating just-in-time comment updating | tyang</title>
-  <meta name="description" content="论文地址：Automating just-in-time comment updating  CUP：新的分词器和单独编码器 Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍 Introduction   坏的变更注">
+  <meta name="description" content="论文地址：Automating just-in-time comment updating   CUP：新的分词器和单独编码器  Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍  Introduction   坏的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASE-2020 Automating just-in-time comment updating">
 <meta property="og:url" content="https://tyang816.github.io/2022/03/06/Automating%20just-in-time%20comment%20updating/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Automating just-in-time comment updating  CUP：新的分词器和单独编码器 Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍 Introduction   坏的变更注">
+<meta property="og:description" content="论文地址：Automating just-in-time comment updating   CUP：新的分词器和单独编码器  Abstract 帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法 做了几种定制的增强：特殊的分词器和联合注意力机制 比之前最好的baseline好7倍  Introduction   坏的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img1.png">
 <meta property="og:image" content="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img2.png">
@@ -405,12 +405,12 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3324884.3416581">Automating just-in-time comment updating</a></p>
 </blockquote>
-<h2 id="CUP：新的分词器和单独编码器">CUP：新的分词器和单独编码器</h2>
-<h3 id="Abstract">Abstract</h3>
+<h2 id="cup新的分词器和单独编码器"><a class="markdownIt-Anchor" href="#cup新的分词器和单独编码器"></a> CUP：新的分词器和单独编码器</h2>
+<h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <p>帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法</p>
 <p>做了几种定制的增强：特殊的分词器和联合注意力机制</p>
 <p>比之前最好的baseline好7倍</p>
-<h3 id="Introduction">Introduction</h3>
+<h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
 <ul>
 <li>
 <p>坏的变更注释文本容易误导且没用</p>
@@ -428,9 +428,9 @@
 <p>数据：1496个GitHub的Java项目，构建了108K个代码注释和修改的样本</p>
 </li>
 </ul>
-<h3 id="Model">Model</h3>
+<h3 id="model"><a class="markdownIt-Anchor" href="#model"></a> Model</h3>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img1.png" alt="avatar" style="zoom:50%;" /></div>
-<h4 id="Data-Flattening">Data Flattening</h4>
+<h4 id="data-flattening"><a class="markdownIt-Anchor" href="#data-flattening"></a> Data Flattening</h4>
 <ul>
 <li>
 <p>分词</p>
@@ -449,7 +449,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Seq2Seq-Model">Seq2Seq Model</h4>
+<h4 id="seq2seq-model"><a class="markdownIt-Anchor" href="#seq2seq-model"></a> Seq2Seq Model</h4>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img3.png" alt="avatar" style="zoom:50%;" /></div>
 <ul>
 <li>每个编码器有四层：嵌入层，上下文嵌入层，联合主力一层，模型层
@@ -458,13 +458,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="Data">Data</h3>
+<h3 id="data"><a class="markdownIt-Anchor" href="#data"></a> Data</h3>
 <ul>
 <li>收集了1496个至少500次提交的仓库</li>
 <li>修改的方法提取：使用GumTree来计算在两次修改中的方法分布</li>
 <li>数据处理太长了，实现的时候再看原文</li>
 </ul>
-<h3 id="Experiment">Experiment</h3>
+<h3 id="experiment"><a class="markdownIt-Anchor" href="#experiment"></a> Experiment</h3>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img4.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img5.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center"><img src="https://gitee.com/tyang816/img.io/raw/master/CUP/CUP-img6.png" alt="avatar" style="zoom:50%;" /></div>

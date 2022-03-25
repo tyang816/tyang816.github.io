@@ -20,12 +20,12 @@
   
   
   <title>Nature-2021 Highly accurate protein structure prediction with AlphaFold | tyang</title>
-  <meta name="description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨">
+  <meta name="description" content="论文地址：Highly accurate protein structure prediction with AlphaFold   AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nature-2021 Highly accurate protein structure prediction with AlphaFold">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/21/Highly%20accurate%20protein%20structure%20prediction%20with%20AlphaFold/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨">
+<meta property="og:description" content="论文地址：Highly accurate protein structure prediction with AlphaFold   AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-21T05:03:58.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:26:05.134Z">
@@ -395,7 +395,7 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41586-021-03819-2">Highly accurate protein structure prediction with AlphaFold</a></p>
 </blockquote>
-<h2 id="AlphaFold2：根据氨基酸预测蛋白质结构">AlphaFold2：根据氨基酸预测蛋白质结构</h2>
+<h2 id="alphafold2根据氨基酸预测蛋白质结构"><a class="markdownIt-Anchor" href="#alphafold2根据氨基酸预测蛋白质结构"></a> AlphaFold2：根据氨基酸预测蛋白质结构</h2>
 <ol>
 <li>
 <p>达到了原子级别的预测，2021年nature的最佳论文</p>
@@ -408,7 +408,7 @@
 <p>Evoformer在原始的多头注意力上做了三个改进</p>
 <p>3.1 row-wise：在MSA中每次拿出一行做为序列，投影后得到q，k，v</p>
 <p>3.2 gated：通过线性、激活函数后与注意力权重相乘</p>
-<p>3.3 pair bias：计算 $q_i$ 和 $k_j$ 做点乘时，拿出第  个对表示加在这后面</p>
+<p>3.3 pair bias：计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">k_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 做点乘时，拿出第  个对表示加在这后面</p>
 </li>
 <li>
 <p>3D结构表示采用相对位置</p>
