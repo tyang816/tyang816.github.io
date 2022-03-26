@@ -19,23 +19,33 @@
 
   
   
-  <title>ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers | tyang</title>
-  <meta name="description" content="论文地址：An Empirical Study of Training Self-Supervised Vision Transformers  MoCo v3：冻住patch projection在训练时更加平滑  自监督训练的ViT不稳定，在大batch的情况下应该会更好，但是训练中发现更差，于是观察每一层梯度回传的情况。发现当训练产生较大loss的时候梯度会有波峰，波峰发生在第一层，即pa">
+  <title>ACL-2020 Contrastive Code Representation Learning | tyang</title>
+  <meta name="description" content="论文地址：Contrastive Code Representation Learning 论文代码：https:&#x2F;&#x2F;github.com&#x2F;parasj&#x2F;contracode  ContraCode：基于MoCo的代码对比学习 Abstract 作者指出RoBERTa模型对于源代码的修改太敏感了，即使这种修改是保留了语义的，所以提出了ContraCode，是基于预训练的方法能够识别相似的变种。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers">
-<meta property="og:url" content="https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/index.html">
+<meta property="og:title" content="ACL-2020 Contrastive Code Representation Learning">
+<meta property="og:url" content="https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：An Empirical Study of Training Self-Supervised Vision Transformers  MoCo v3：冻住patch projection在训练时更加平滑  自监督训练的ViT不稳定，在大batch的情况下应该会更好，但是训练中发现更差，于是观察每一层梯度回传的情况。发现当训练产生较大loss的时候梯度会有波峰，波峰发生在第一层，即pa">
+<meta property="og:description" content="论文地址：Contrastive Code Representation Learning 论文代码：https:&#x2F;&#x2F;github.com&#x2F;parasj&#x2F;contracode  ContraCode：基于MoCo的代码对比学习 Abstract 作者指出RoBERTa模型对于源代码的修改太敏感了，即使这种修改是保留了语义的，所以提出了ContraCode，是基于预训练的方法能够识别相似的变种。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-01T05:29:21.000Z">
-<meta property="article:modified_time" content="2022-03-24T06:23:33.484Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img9.png">
+<meta property="article:published_time" content="2022-03-25T05:58:32.000Z">
+<meta property="article:modified_time" content="2022-03-26T11:34:09.282Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CV">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
 <meta property="article:tag" content="cs.ContraLern">
-<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -335,14 +345,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/An Empirical Study of Training Self-Supervised Vision Transformers" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/Contrastive Code Representation Learning" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers
+      ACL-2020 Contrastive Code Representation Learning
     </h1>
   
 
@@ -350,8 +360,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/" class="article-date">
-	  <time datetime="2022-02-01T05:29:21.000Z" itemprop="datePublished">2022-02-01</time>
+	<a href="/2022/03/25/Contrastive%20Code%20Representation%20Learning/" class="article-date">
+	  <time datetime="2022-03-25T05:58:32.000Z" itemprop="datePublished">2022-03-25</time>
 	</a>
 </span>
         
@@ -363,7 +373,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a>
   </span>
 
 
@@ -378,18 +388,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/" class="leancloud_visitors"  data-flag-title="ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers">
+    	<span id="/2022/03/25/Contrastive%20Code%20Representation%20Learning/" class="leancloud_visitors"  data-flag-title="ACL-2020 Contrastive Code Representation Learning">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/25/Contrastive%20Code%20Representation%20Learning/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 152(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 607(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
@@ -397,14 +407,59 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2104.02057">An Empirical Study of Training Self-Supervised Vision Transformers</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2007.04973">Contrastive Code Representation Learning</a></p>
+<p>论文代码：<a target="_blank" rel="noopener" href="https://github.com/parasj/contracode">https://github.com/parasj/contracode</a></p>
 </blockquote>
-<h2 id="MoCo-v3：冻住patch-projection在训练时更加平滑">MoCo v3：冻住patch projection在训练时更加平滑</h2>
-<ol>
-<li>自监督训练的ViT不稳定，在大batch的情况下应该会更好，但是训练中发现更差，于是观察每一层梯度回传的情况。发现当训练产生较大loss的时候梯度会有波峰，波峰发生在第一层，即patch projection</li>
-<li>在不想修改transformer本身的情况下，只能修改开头或结尾。于是意识到第一步，即tokenization阶段的重要性，</li>
-</ol>
-<p>Comment: Camera-ready, ICCV 2021, Oral. Code: <a target="_blank" rel="noopener" href="https://github.com/facebookresearch/moco-v3">https://github.com/facebookresearch/moco-v3</a></p>
+<h2 id="ContraCode：基于MoCo的代码对比学习">ContraCode：基于MoCo的代码对比学习</h2>
+<h3 id="Abstract-4">Abstract</h3>
+<p>作者指出RoBERTa模型对于源代码的修改太敏感了，即使这种修改是保留了语义的，所以提出了ContraCode，是基于预训练的方法能够识别相似的变种。</p>
+<h3 id="Introduction-4">Introduction</h3>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>在不改变语义的对抗性修改下，RoBERTa表现甚至比随机分类还差。</p>
+<p>作者采用一些源到源的基于编译器的转换技术，比如删除”死“代码：移除不改变代码输出结果的操作</p>
+<h3 id="Model-4">Model</h3>
+<p>代码转换技术主要分为三类：</p>
+<ul>
+<li>代码压缩：改变代码的语法结构，并执行修正构造转换，如预计算常数表达式</li>
+<li>标识符识别：随机替代方法和变量名</li>
+<li>正则化变换：通过减少具有高文本重叠的平凡正对的数量来改进模型的泛化</li>
+</ul>
+<p>通过转换丢弃算法保证多样性，主要是为了保证变换后的代码是修改过的。作者发现再经过20个随机的序列转换方法后有89%的方法有不止一个替代产生。</p>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>预训练对比学习：</p>
+<ul>
+<li>扩展了MoCo，从同一程序中生成正样本对，从不同程序中生成负样本</li>
+<li>一样采用了队列来存储负样本</li>
+<li>大负样本集，超过10万</li>
+</ul>
+<p>ContraCode对于编码器架构是无所谓的，作者试验了双层双向LSTM和六层Transformer</p>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img3.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Evaluation-2">Evaluation</h3>
+<p>作者做了三个角度的实验，zero-shot推理的克隆检测，基于微调的类型推断。简略代码总结生成</p>
+<h4 id="zero-shot-Code-Clone-Detection">zero-shot Code Clone Detection</h4>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img4.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img5.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Fine-tuning-for-Type-Inference">Fine-tuning for Type Inference</h4>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img6.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img7.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Extreme-Code-Summarization">Extreme Code Summarization</h4>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img8.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img9.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Understanding-augumentation-importance">Understanding augumentation importance</h4>
+<p>对于序列到序列的总结，使用了以下增强技术</p>
+<ul>
+<li>Line subsampling（LS）：随机从方法中采用部分行（P=0.9），这种方法没有保留语义，属于正则的一种</li>
+<li>Subword regularization（SW）：将文本分词成不同形式，单个词或subtoken</li>
+<li>Variable renaming（VR），identifier managling（IM）：改变量名，改标识符</li>
+<li>Dead-code insertion（DCI）：插入空指令或log指令</li>
+</ul>
+<p>对于类型推断，使用了 LS和SW</p>
+<p>还有一些代码增强技术：</p>
+<ul>
+<li>Dead-code elimination（DCE）：删除无用代码</li>
+<li>Type upconversion（T）：把 <code>&amp;</code> 换成 <code>and</code> 或把 <code>true</code> 换成 <code>1</code>之类的</li>
+<li>Constant folding（CF）：预计算变量结果，比如把 <code>(2+3) * 4</code> 换成 <code>20</code></li>
+</ul>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -415,7 +470,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/" title="ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers" target="_blank" rel="external">https://tyang816.github.io/2022/02/01/An Empirical Study of Training Self-Supervised Vision Transformers/</a>
+      <a href="https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/" title="ACL-2020 Contrastive Code Representation Learning" target="_blank" rel="external">https://tyang816.github.io/2022/03/25/Contrastive Code Representation Learning/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -461,13 +516,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/" title="ICCV-2021 Emerging Properties in Self-Supervised Vision Transformers"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/" title="CVPR-2020 Exploring Simple Siamese Representation Learning"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/03/24/2.1%20%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="2.1 探索性数据分析【斯坦福21秋季：实用机器学习】"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
