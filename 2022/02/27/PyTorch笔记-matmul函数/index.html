@@ -406,24 +406,29 @@
 </ul>
 <blockquote>
 <p>点积在数学中，又称为数量积（dot product; sclar product），是指接收在实数 R 上的两个 1D 张量并返回一个实数值 0D 张量的二元运算</p>
-<p>若 1D 张量 $a=[1,2]$，1D 张量 $b=[3,4]$，则：</p>
-<script type="math/tex; mode=display">
-a\cdot b=1\times 3 + 2\times 4=11</script></blockquote>
+<p>若 1D 张量 $a=[1,2]$，1D 张量 $b=[3,4]$，则：<br>
+$$<br>
+a\cdot b=1\times 3 + 2\times 4=11<br>
+$$</p>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># a,b 都是 1D 张量</span></span><br><span class="line">a = torch.tensor([<span class="number">1.</span>,<span class="number">2.</span>])</span><br><span class="line">b = torch.tensor([<span class="number">3.</span>,<span class="number">4.</span>])</span><br><span class="line"></span><br><span class="line">res = torch.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"><span class="comment"># tensor(11.)</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>若 a 为 2D 张量，b 为 2D 张量，则返回两个张量的矩阵乘积</li>
 </ul>
 <blockquote>
 <p>矩阵相乘最重要的方法是一般矩阵乘积。它只有在第一个 2D 张量（矩阵）的列数和第二个 2D 张量（矩阵）的行数相同时才有意义</p>
-<p>若 2D 张量 $a=\left[ \begin{array}{c} 1 &amp; 2 \ 3 &amp; 4 \end{array} \right]$，2D 张量 $b=\left[ \begin{array}{c} 5 &amp; 6 &amp; 7 \ 8 &amp; 9 &amp; 10 \end{array} \right]$，则</p>
-<script type="math/tex; mode=display">
-\begin{align}
-a\times b&= \left[ \begin{array}{c} 1 & 2 \\ 3 & 4 \end{array} \right] \times \left[ \begin{array}{c} 5 & 6 & 7 \\ 8 & 9 & 10 \end{array} \right]\\ 
-&=\left[ \begin{array}{c} 21 & 24 & 27 \\ 47 & 54 & 61 \end{array} \right] 
-\end{align}</script></blockquote>
+<p>若 2D 张量 $a=\left[ \begin{array}{c} 1 &amp; 2 \ 3 &amp; 4 \end{array} \right]$，2D 张量 $b=\left[ \begin{array}{c} 5 &amp; 6 &amp; 7 \ 8 &amp; 9 &amp; 10 \end{array} \right]$，则<br>
+$$<br>
+\begin{align}<br>
+a\times b&amp;= \left[ \begin{array}{c} 1 &amp; 2 \ 3 &amp; 4 \end{array} \right] \times \left[ \begin{array}{c} 5 &amp; 6 &amp; 7 \ 8 &amp; 9 &amp; 10 \end{array} \right]\<br>
+&amp;=\left[ \begin{array}{c} 21 &amp; 24 &amp; 27 \ 47 &amp; 54 &amp; 61 \end{array} \right]<br>
+\end{align}<br>
+$$</p>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># a,b 都是 2D 张量</span></span><br><span class="line">a = torch.tensor([[<span class="number">1.</span>, <span class="number">2.</span>], [<span class="number">3.</span>, <span class="number">4.</span>]])</span><br><span class="line">b = torch.tensor([[<span class="number">5.</span>, <span class="number">6.</span>, <span class="number">7.</span>], [<span class="number">8.</span>, <span class="number">9.</span>, <span class="number">10.</span>]])</span><br><span class="line"></span><br><span class="line">res = torch.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"><span class="comment"># tensor([[21., 24., 27.],</span></span><br><span class="line"><span class="comment">#	      [47., 54., 61.]]) </span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>若 a 为 1D 张量，b 为 2D 张量， <code>torch.matmul</code> 函数<ul>
+<li>若 a 为 1D 张量，b 为 2D 张量， <code>torch.matmul</code> 函数
+<ul>
 <li>首先，在 1D 张量 a 的前面插入一个长度为1的新维度变成 2D 张量</li>
 <li>然后，在满足第一个 2D 张量的列数和第二个 2D 张量的行数相同的条件下，两个 2D 张量矩阵乘积，否则会报错</li>
 <li>最后，将矩阵乘积结果中长度为1的维度删除作为最后结果</li>
@@ -431,16 +436,19 @@ a\times b&= \left[ \begin{array}{c} 1 & 2 \\ 3 & 4 \end{array} \right] \times \l
 </li>
 </ul>
 <blockquote>
-<p>简单来说，先将 1D 张量 a 扩展成 2D 张量，满足矩阵乘积的条件下，将两个 2D 张量进行矩阵乘积的运算</p>
-<script type="math/tex; mode=display">
-\left[ \begin{array}{c} 1 & 2  \end{array} \right] \times \left[ \begin{array}{c} 5 & 6 & 7 \\ 8 & 9 & 10 \end{array} \right]\\ 
-=[\begin{array}{c} 1\times 5 + 2\times 8 & 1\times 6+2\times 9 & 1\times 7+2\times 10
-\end{array}]\\
-=\begin{array}{c}[21&24&27]\end{array}</script><p>此时得到的是形状为 (1,3) 的 2D 张量，最后将前面插入长度为1的新维度删除即为最终  <code>torch.matmul(a, b)</code> 函数返回的结果</p>
+<p>简单来说，先将 1D 张量 a 扩展成 2D 张量，满足矩阵乘积的条件下，将两个 2D 张量进行矩阵乘积的运算<br>
+$$<br>
+\left[ \begin{array}{c} 1 &amp; 2  \end{array} \right] \times \left[ \begin{array}{c} 5 &amp; 6 &amp; 7 \ 8 &amp; 9 &amp; 10 \end{array} \right]\<br>
+=[\begin{array}{c} 1\times 5 + 2\times 8 &amp; 1\times 6+2\times 9 &amp; 1\times 7+2\times 10<br>
+\end{array}]\<br>
+=\begin{array}{c}[21&amp;24&amp;27]\end{array}<br>
+$$<br>
+此时得到的是形状为 (1,3) 的 2D 张量，最后将前面插入长度为1的新维度删除即为最终  <code>torch.matmul(a, b)</code> 函数返回的结果</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># a,b 都是 2D 张量</span></span><br><span class="line">a = torch.tensor([<span class="number">1.</span>, <span class="number">2.</span>])</span><br><span class="line">b = torch.tensor([[<span class="number">5.</span>, <span class="number">6.</span>, <span class="number">7.</span>], [<span class="number">8.</span>, <span class="number">9.</span>, <span class="number">10.</span>]])</span><br><span class="line"></span><br><span class="line">res = torch.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(res.shape)</span><br><span class="line"><span class="comment"># tensor.Size([3])</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"><span class="comment"># tensor([21., 24., 27.]</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>若 a 为 2D 张量，b 为 1D 张量， <code>torch.matmul</code> 函数<ul>
+<li>若 a 为 2D 张量，b 为 1D 张量， <code>torch.matmul</code> 函数
+<ul>
 <li>首先，在 1D 张量 b 的后面插入一个长度为1的新维度变成 2D 张量</li>
 <li>然后，在满足第一个 2D 张量的列数和第二个 2D 张量的行数相同的条件下，两个 2D 张量矩阵乘积，否则会报错</li>
 <li>最后，将矩阵乘积结果中长度为1的维度删除作为最后结果</li>
@@ -452,7 +460,7 @@ a\times b&= \left[ \begin{array}{c} 1 & 2 \\ 3 & 4 \end{array} \right] \times \l
 <li>如果 a 和 b 至少有一个 ND 张量（N&gt;2）。针对多维张量，我们<strong>只关注每个张量的后两个维度</strong>，将每个张量的后两个维度按照矩阵乘积进行运算，其余的维度都可以认为是<strong>批量维度</strong></li>
 </ul>
 <blockquote>
-<p>比如 4D 张量 a 的形状为 $(j\times 1\times n\times m)$，而张量 b 的形状为 $(k\times m\times p)$，将两个张量的后两个维度进行矩阵乘积运算，即 $(n\times m)\times (m\times p)=(n\times p)$，张量 a 的批量维度为 $(j\times 1)$，而张量 b 的批量维度为 $(k,)$ ，张量 a 的批量维度和张量 b 的批量维度可以进行广播成 $(j\times k)$，即最后返回的张量维度为 $(j\times k\times n\times m)$ </p>
+<p>比如 4D 张量 a 的形状为 $(j\times 1\times n\times m)$，而张量 b 的形状为 $(k\times m\times p)$，将两个张量的后两个维度进行矩阵乘积运算，即 $(n\times m)\times (m\times p)=(n\times p)$，张量 a 的批量维度为 $(j\times 1)$，而张量 b 的批量维度为 $(k,)$ ，张量 a 的批量维度和张量 b 的批量维度可以进行广播成 $(j\times k)$，即最后返回的张量维度为 $(j\times k\times n\times m)$</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line"></span><br><span class="line">a = torch.randn(10, 3, 4)</span><br><span class="line">b = torch.randn(4)</span><br><span class="line"></span><br><span class="line">res = torch.matmul(a, b)</span><br><span class="line">print(res.shape)</span><br><span class="line"># tensor.Size([10, 3])</span><br></pre></td></tr></table></figure>
 <p>此时 a 的形状为 (10, 3, 4) 的 3D 张量，而 b 为形状为 (4,) 的 1D 张量，首先计算 (3, 4) 与 (4,) 的矩阵乘法，按照前面介绍的可以先插入一个长度为1的新维度，然后再进行矩阵乘积，计算完成之后将长度为1的维度删除，最终得到的是形状为 (3,) 的 1D 张量，张量 a 的批量维度为 (10,)，而张量 b 的批量维度为 (1,)，进行广播最终的返回的张量维度为 (10, 3)</p>

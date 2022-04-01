@@ -20,12 +20,12 @@
   
   
   <title>CVPR-2020 Momentum Contrast for Unsupervised Visual Representation Learning | tyang</title>
-  <meta name="description" content="论文地址：Momentum Contrast for Unsupervised Visual Representation Learning  MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习 写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大一统">
+  <meta name="description" content="论文地址：Momentum Contrast for Unsupervised Visual Representation Learning  MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习   写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CVPR-2020 Momentum Contrast for Unsupervised Visual Representation Learning">
 <meta property="og:url" content="https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Momentum Contrast for Unsupervised Visual Representation Learning  MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习 写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大一统">
+<meta property="og:description" content="论文地址：Momentum Contrast for Unsupervised Visual Representation Learning  MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习   写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-22T06:14:08.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:27:32.805Z">
@@ -396,13 +396,19 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9157636/">Momentum Contrast for Unsupervised Visual Representation Learning</a></p>
 </blockquote>
-<h2 id="MoCo-v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习"><a href="#MoCo-v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习" class="headerlink" title="MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习"></a>MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习</h2><ol>
-<li>写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大一统的框架下提出了MoCo，提高了论文整体的scope</li>
-<li><p>验证两个约束：字典要大，一致性。</p>
+<h2 id="MoCo-v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习">MoCo v1：对比学习方法归纳为字典查询问题，提出队列和动量编码器，大字典来学习</h2>
+<ol>
+<li>
+<p>写作技巧高：intro第一段先说明CV和NLP，以及为什么无监督学习在CV做得不好，然后第二段讲对比学习，但不细致讲，讲之前的方法总结为字典查询问题，在CV和NLP大一统的框架下提出了MoCo，提高了论文整体的scope</p>
+</li>
+<li>
+<p>验证两个约束：字典要大，一致性。</p>
 <p>字典大可以迫使模型去学习更有判别的特征；</p>
 <p>一致性是保证尽量在相似的encoder即语义空间中进行学习，从而避免模型学习到捷径解</p>
 </li>
-<li>encoder通过梯度回传更新，momentum encoder通过较大的动量参数更新；通过队列结构解决batch和dic size之间的连接，使得字典可以足够大</li>
+<li>
+<p>encoder通过梯度回传更新，momentum encoder通过较大的动量参数更新；通过队列结构解决batch和dic size之间的连接，使得字典可以足够大</p>
+</li>
 </ol>
 <HR align=left color=#987cb9 SIZE=1>
 

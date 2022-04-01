@@ -20,12 +20,12 @@
   
   
   <title>ICSME-2021 Ensemble Models for Neural Source Code Summarization of Subroutines | tyang</title>
-  <meta name="description" content="论文地址：Ensemble Models for Neural Source Code Summarization of Subroutines  EnsMdl：通过集成不同模型得到更佳结果Abstract 不同的模型虽然在结构上相似，但是对于预测质量可能做出不同的贡献 作者通过集成模型来研究各种代码总结方法的正交性质  Introduction 不同的信息通过endoer建模后可以对预测提供正">
+  <meta name="description" content="论文地址：Ensemble Models for Neural Source Code Summarization of Subroutines  EnsMdl：通过集成不同模型得到更佳结果 Abstract  不同的模型虽然在结构上相似，但是对于预测质量可能做出不同的贡献 作者通过集成模型来研究各种代码总结方法的正交性质  Introduction  不同的信息通过endoer建模后可以对预测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICSME-2021 Ensemble Models for Neural Source Code Summarization of Subroutines">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/21/Ensemble%20Models%20for%20Neural%20Source%20Code%20Summarization%20of%20Subroutines/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Ensemble Models for Neural Source Code Summarization of Subroutines  EnsMdl：通过集成不同模型得到更佳结果Abstract 不同的模型虽然在结构上相似，但是对于预测质量可能做出不同的贡献 作者通过集成模型来研究各种代码总结方法的正交性质  Introduction 不同的信息通过endoer建模后可以对预测提供正">
+<meta property="og:description" content="论文地址：Ensemble Models for Neural Source Code Summarization of Subroutines  EnsMdl：通过集成不同模型得到更佳结果 Abstract  不同的模型虽然在结构上相似，但是对于预测质量可能做出不同的贡献 作者通过集成模型来研究各种代码总结方法的正交性质  Introduction  不同的信息通过endoer建模后可以对预测">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img2.png">
@@ -401,32 +401,43 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2107.11423">Ensemble Models for Neural Source Code Summarization of Subroutines</a></p>
 </blockquote>
-<h2 id="EnsMdl：通过集成不同模型得到更佳结果"><a href="#EnsMdl：通过集成不同模型得到更佳结果" class="headerlink" title="EnsMdl：通过集成不同模型得到更佳结果"></a>EnsMdl：通过集成不同模型得到更佳结果</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ol>
+<h2 id="EnsMdl：通过集成不同模型得到更佳结果">EnsMdl：通过集成不同模型得到更佳结果</h2>
+<h3 id="Abstract-5">Abstract</h3>
+<ol>
 <li>不同的模型虽然在结构上相似，但是对于预测质量可能做出不同的贡献</li>
 <li>作者通过集成模型来研究各种代码总结方法的正交性质</li>
 </ol>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ol>
+<h3 id="Introduction-5">Introduction</h3>
+<ol>
 <li>不同的信息通过endoer建模后可以对预测提供正交提升</li>
 </ol>
-<h3 id="Background-amp-Realated-Work"><a href="#Background-amp-Realated-Work" class="headerlink" title="Background &amp; Realated Work"></a>Background &amp; Realated Work</h3><ol>
-<li><p>代码总结提取</p>
+<h3 id="Background-Realated-Work">Background &amp; Realated Work</h3>
+<ol>
+<li>
+<p>代码总结提取</p>
 <p>1.1 基于文本：将代码视为序列直接输入</p>
 <p>1.2 扁平结构：将 AST 拍平后输入</p>
 <p>1.3 基于上下文：API、项目上下文等</p>
 <p>1.4 基于GNN：将 AST 构建为图</p>
 </li>
-<li><p>集成模型</p>
+<li>
+<p>集成模型</p>
 <p>集成模型在机器翻译、股票市场预测等领域取得了很好结果。</p>
 <p>研究发现非 AST 和 AST 模型的简单集成就能够取得较好结果，说明<strong>在更精致的集成方法上面还有研究潜力</strong>。</p>
 </li>
 </ol>
-<h3 id="Simple-Ensembles"><a href="#Simple-Ensembles" class="headerlink" title="Simple Ensembles"></a>Simple Ensembles</h3><ol>
-<li><p>集成过程：Stacking 和 Bagging</p>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img1.png" alt="avatar" style="zoom:67%;" /></p>
+<h3 id="Simple-Ensembles">Simple Ensembles</h3>
+<ol>
+<li>
+<p>集成过程：Stacking 和 Bagging</p>
+<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img1.png" alt="avatar" style="zoom:67%;" />
 </li>
-<li>基线模型：Seq2Seq、Transformer、Seq2Seq-AST-Flat、Seq2Seq-AST-GNN、Seq2Seq-AST-FC、Seq2Seq-AST-Flat-FC</li>
+<li>
+<p>基线模型：Seq2Seq、Transformer、Seq2Seq-AST-Flat、Seq2Seq-AST-GNN、Seq2Seq-AST-FC、Seq2Seq-AST-Flat-FC</p>
+</li>
 </ol>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img2.png" alt="avatar" style="zoom:67%;" /></p>
+<h3 id="Results">Results</h3>
+<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/EnsMdl/EnsMdl-img2.png" alt="avatar" style="zoom:67%;" />
 <HR align=left color=#987cb9 SIZE=1>
 
       
