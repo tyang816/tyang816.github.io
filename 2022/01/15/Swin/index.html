@@ -20,12 +20,12 @@
   
   
   <title>ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows | tyang</title>
-  <meta name="description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口   ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Sw">
+  <meta name="description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口  ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/15/Swin/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口   ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Sw">
+<meta property="og:description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口  ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png">
@@ -52,7 +52,11 @@
   
   
   
-<meta name="generator" content="Hexo 6.0.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -387,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/01/15/Swin/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 357(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 358(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -400,28 +404,19 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2103.14030">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</a></p>
 </blockquote>
-<h2 id="Swin-Transformer：层级式的Transformer，使用了Patch-Merging和移动窗口">Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2>
-<ol>
-<li>
-<p>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</p>
-</li>
-<li>
-<p>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</p>
-</li>
-<li>
-<p>Patch Merging：类似于卷积的操作</p>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png" alt="avatar"></p>
-</li>
-<li>
-<p>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</p>
-</li>
-<li>
-<p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p>
-<p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量<br>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png" alt="avatar"></p>
+<h2 id="swin-transformer层级式的transformer使用了patch-merging和移动窗口">Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2>
+<ol type="1">
+<li>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</li>
+<li>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</li>
+<li><p>Patch Merging：类似于卷积的操作</p>
+<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png" alt="avatar" /></li>
+<li>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</li>
+<li><p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p>
+<p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量 <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png" alt="avatar" /></p>
 <p>5.2 于是分割填补，同时部署于同一区域的patch不做自注意力计算，即采用masked MSA，然后还原图片，避免图片一直位移</p>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img3.png" alt="avatar"></p>
-</li>
+<figure>
+<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img3.png" alt="avatar" /><figcaption>avatar</figcaption>
+</figure></li>
 </ol>
 <HR align=left color=#987cb9 SIZE=1>
 

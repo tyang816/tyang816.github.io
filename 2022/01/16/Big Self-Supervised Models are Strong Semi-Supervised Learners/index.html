@@ -20,12 +20,12 @@
   
   
   <title>NIPS-2020 Big Self-Supervised Models are Strong Semi-Supervised Learners | tyang</title>
-  <meta name="description" content="论文地址：Big Self-Supervised Models are Strong Semi-Supervised Learners  SimCLR v2+半监督学习   在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器   还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调">
+  <meta name="description" content="论文地址：Big Self-Supervised Models are Strong Semi-Supervised Learners  SimCLR v2+半监督学习  在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器 还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NIPS-2020 Big Self-Supervised Models are Strong Semi-Supervised Learners">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Big Self-Supervised Models are Strong Semi-Supervised Learners  SimCLR v2+半监督学习   在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器   还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调">
+<meta property="og:description" content="论文地址：Big Self-Supervised Models are Strong Semi-Supervised Learners  SimCLR v2+半监督学习  在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器 还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-16T02:57:35.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:24:01.662Z">
@@ -48,7 +48,11 @@
   
   
   
-<meta name="generator" content="Hexo 6.0.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -396,17 +400,13 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2006.10029">Big Self-Supervised Models are Strong Semi-Supervised Learners</a></p>
 </blockquote>
-<h2 id="SimCLR-v2-半监督学习">SimCLR v2+半监督学习</h2>
-<ol>
-<li>
-<p>在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器</p>
-</li>
-<li>
-<p>还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调，微调结束了就相当于有一个teacher模型，用teacher模型生成伪标签，这样可以在更多无标签的数据上做自学习，受启发于google 19年的noisy student</p>
-<p>2.1 noisy student是在imgaeNet上训练了一个teacher模型，然后生成伪标签，然后生成student模型</p>
-</li>
+<h2 id="simclr-v2半监督学习">SimCLR v2+半监督学习</h2>
+<ol type="1">
+<li>在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器</li>
+<li><p>还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调，微调结束了就相当于有一个teacher模型，用teacher模型生成伪标签，这样可以在更多无标签的数据上做自学习，受启发于google 19年的noisy student</p>
+<p>2.1 noisy student是在imgaeNet上训练了一个teacher模型，然后生成伪标签，然后生成student模型</p></li>
 </ol>
-<p>Comment: NeurIPS’2020. Code and pretrained models at <a target="_blank" rel="noopener" href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>
+<p>Comment: NeurIPS'2020. Code and pretrained models at https://github.com/google-research/simclr</p>
 <HR align=left color=#987cb9 SIZE=1>
 
       

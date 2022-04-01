@@ -695,6 +695,13 @@
 
   
   <url>
+    <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
+    <lastmod>2022-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
     <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -702,7 +709,14 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
+    <loc>https://tyang816.github.io/tags/nodejs/</loc>
+    <lastmod>2022-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/pytorch/</loc>
     <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -717,20 +731,6 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/SE/</loc>
-    <lastmod>2022-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/pytorch/</loc>
-    <lastmod>2022-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/nodejs/</loc>
     <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -788,7 +788,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -802,7 +802,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
