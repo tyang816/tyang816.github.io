@@ -20,12 +20,12 @@
   
   
   <title>CVPR-2021 Masked Autoencoders Are Scalable Vision Learners | tyang</title>
-  <meta name="description" content="论文地址：Masked Autoencoders Are Scalable Vision Learners  利用ViT来做跟BERT一样的自监督学习，生成式任务  需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征 编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单 加">
+  <meta name="description" content="论文地址：Masked Autoencoders Are Scalable Vision Learners  利用ViT来做跟BERT一样的自监督学习，生成式任务 需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征 编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单 加上ViT工作之后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CVPR-2021 Masked Autoencoders Are Scalable Vision Learners">
 <meta property="og:url" content="https://tyang816.github.io/2021/12/14/Masked%20Autoencoders%20Are%20Scalable%20Vision%20Learners/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Masked Autoencoders Are Scalable Vision Learners  利用ViT来做跟BERT一样的自监督学习，生成式任务  需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征 编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单 加">
+<meta property="og:description" content="论文地址：Masked Autoencoders Are Scalable Vision Learners  利用ViT来做跟BERT一样的自监督学习，生成式任务 需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征 编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单 加上ViT工作之后">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-14T05:04:59.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:27:26.883Z">
@@ -400,8 +400,7 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2111.06377">Masked Autoencoders Are Scalable Vision Learners</a></p>
 </blockquote>
-<h2 id="利用vit来做跟bert一样的自监督学习生成式任务">利用ViT来做跟BERT一样的自监督学习，生成式任务</h2>
-<ol type="1">
+<h2 id="利用ViT来做跟BERT一样的自监督学习，生成式任务"><a href="#利用ViT来做跟BERT一样的自监督学习，生成式任务" class="headerlink" title="利用ViT来做跟BERT一样的自监督学习，生成式任务"></a>利用ViT来做跟BERT一样的自监督学习，生成式任务</h2><ol>
 <li>需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征</li>
 <li>编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单</li>
 <li>加上ViT工作之后的各种技术使训练更加鲁棒</li>

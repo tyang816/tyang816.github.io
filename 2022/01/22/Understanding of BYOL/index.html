@@ -20,12 +20,12 @@
   
   
   <title>Blog-2020 Understanding Self-Supervised and Contrastive Learning with &#34;Bootstrap Your Own Latent&#34;(BYOL) | tyang</title>
-  <meta name="description" content="博客地址：Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot; (BYOL)  为什么BYOL模型学习没有坍塌：增加 Batch Norm 做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低">
+  <meta name="description" content="博客地址：Understanding Self-Supervised and Contrastive Learning with &amp;#34;Bootstrap Your Own Latent&amp;#34; (BYOL)  为什么BYOL模型学习没有坍塌：增加 Batch Norm做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog-2020 Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot;(BYOL)">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="博客地址：Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot; (BYOL)  为什么BYOL模型学习没有坍塌：增加 Batch Norm 做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低">
+<meta property="og:description" content="博客地址：Understanding Self-Supervised and Contrastive Learning with &amp;#34;Bootstrap Your Own Latent&amp;#34; (BYOL)  为什么BYOL模型学习没有坍塌：增加 Batch Norm做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-22T02:07:35.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:29:01.662Z">
@@ -387,7 +387,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/01/22/Understanding%20of%20BYOL/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 200(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 202(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -398,10 +398,9 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>博客地址：<a target="_blank" rel="noopener" href="https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/">Understanding Self-Supervised and Contrastive Learning with &quot;Bootstrap Your Own Latent&quot; (BYOL)</a></p>
+<p>博客地址：<a target="_blank" rel="noopener" href="https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/">Understanding Self-Supervised and Contrastive Learning with &amp;#34;Bootstrap Your Own Latent&amp;#34; (BYOL)</a></p>
 </blockquote>
-<h2 id="为什么byol模型学习没有坍塌增加-batch-norm">为什么BYOL模型学习没有坍塌：增加 Batch Norm</h2>
-<p>做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低。做了Batch Norm其实是把一个Batch的样本拿过来算了均值方差，然后用来做归一化，也就意味着在算某个正样本的loss的时候其实也看到了其他样本的特征，有信息泄露。因为有这种信息泄露的存在，所以这种学习可以理解是不是光是正样本在自己学习，相当于做了隐式的对比学习，让一个batch中的样本与平均样本进行对比学习。</p>
+<h2 id="为什么BYOL模型学习没有坍塌：增加-Batch-Norm"><a href="#为什么BYOL模型学习没有坍塌：增加-Batch-Norm" class="headerlink" title="为什么BYOL模型学习没有坍塌：增加 Batch Norm"></a>为什么BYOL模型学习没有坍塌：增加 Batch Norm</h2><p>做了很多消融实验，发现只要增加了Batch Norm，性能也就还行。但是换成Layer Norm效果还是很低。做了Batch Norm其实是把一个Batch的样本拿过来算了均值方差，然后用来做归一化，也就意味着在算某个正样本的loss的时候其实也看到了其他样本的特征，有信息泄露。因为有这种信息泄露的存在，所以这种学习可以理解是不是光是正样本在自己学习，相当于做了隐式的对比学习，让一个batch中的样本与平均样本进行对比学习。</p>
 <HR align=left color=#987cb9 SIZE=1>
 
       

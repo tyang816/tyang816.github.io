@@ -386,7 +386,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 221(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 220(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -396,14 +396,13 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>npm文档：<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.npmjs.com%2Fcli%2Finstall">https://docs.npmjs.com/cli/install</a></p>
-<h2 id="npm常用安装命令">npm常用安装命令</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure>
-<h2 id="命令详解">命令详解</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure>
-<h2 id="作用">作用</h2>
-<p><code>devDependencies</code> 是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p>
-<p><code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p>
+        <p>npm文档：<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://docs.npmjs.com/cli/install">https://docs.npmjs.com/cli/install</a></p>
+<h2 id="npm常用安装命令"><a href="#npm常用安装命令" class="headerlink" title="npm常用安装命令"></a>npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure>
+
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p>
+<p> <code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p>
 <p>一般这个配置在 <code>package.json</code>文件中。</p>
 
       
