@@ -50,11 +50,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -389,7 +385,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/23/Graph2seq/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 335(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 333(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -404,21 +400,16 @@
 </blockquote>
 <h2 id="Graph2Seq：采用了双向的结点embedding聚合策略"><a href="#Graph2Seq：采用了双向的结点embedding聚合策略" class="headerlink" title="Graph2Seq：采用了双向的结点embedding聚合策略"></a>Graph2Seq：采用了双向的结点embedding聚合策略</h2><p>在自然语言处理任务中，将序列与图建立关系的应用可以分为两大类：一种是序列生成图，另一种是图生成序列，本文旨在针对后一种问题。传统的方法是：首先将图通过某种方式变换为一个序列，然后再基于Seq2Seq框架来生成序列。这种方法存在的问题非常明显：<strong>在将图变换为序列的过程中会丢失大量的结构信息。</strong></p>
 <p>因此，本文提出直接由图得到序列的端到端模型，Graph2Seq</p>
-<img src="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg" alt="avatar" style="zoom: 80%;" />
-
+<p><img src="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg" alt="avatar" style="zoom: 80%;" /></p>
 <ol>
-<li><p>图的信息比seq更多，可以强化表达能力，减少传递中的信息损失</p>
-</li>
-<li><p>结点embedding：由前向邻居和后向邻居concat起来输入全连接层、激活函数并不断重复该过程</p>
-</li>
-<li><p>聚合结构：平均、池化、LSTM</p>
-</li>
+<li>图的信息比seq更多，可以强化表达能力，减少传递中的信息损失</li>
+<li>结点embedding：由前向邻居和后向邻居concat起来输入全连接层、激活函数并不断重复该过程</li>
+<li>聚合结构：平均、池化、LSTM</li>
 <li><p>图embedding：</p>
-<p>4.1 基于池化：将结点embedding全连接后，采用max&#x2F;min&#x2F;average，区别不大</p>
+<p>4.1 基于池化：将结点embedding全连接后，采用max/min/average，区别不大</p>
 <p>4.2 基于结点：增加super node，其他结点都指向它，再用上面的计算结点embedding算法让他获取全图信息</p>
 </li>
-<li><p>注意力机制decoder：计算加权的输入与语义空间中结点相似度</p>
-</li>
+<li>注意力机制decoder：计算加权的输入与语义空间中结点相似度</li>
 </ol>
 <HR align=left color=#987cb9 SIZE=1>
 
@@ -654,6 +645,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

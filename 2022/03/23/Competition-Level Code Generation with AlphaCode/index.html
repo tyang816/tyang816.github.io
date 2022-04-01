@@ -60,11 +60,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -439,7 +435,7 @@
 <li>分词器使用“SentencePiece tokenzier”，词库大小是8000</li>
 </ul>
 <h4 id="Fine-tuning"><a href="#Fine-tuning" class="headerlink" title="Fine-tuning"></a>Fine-tuning</h4><ul>
-<li>Tempering：用的温度是T&#x3D;0.2</li>
+<li>Tempering：用的温度是T=0.2</li>
 <li>Value conditioning &amp; prediction：假设这个问题是正确的，那在输入的问题前那就加入“Correct Solution”，这就是前置；预测就是增加一个损失函数，表示当前解是正确还是不正确的二分类损失</li>
 <li>GOLD：问题有多个解，但算法应该关心只生成一个正确的解，而不是让算法去把正确的和不正确的解全部你和出来。所以在每一个样本前放一个权重，对于某一个问题预测正确的解已经够好时就把权重调高一点，而其他的解就尽量不去看。这种调整的方法细节叫做GOLD，是一种离线的强化学习算法。</li>
 </ul>
@@ -449,7 +445,7 @@
 <ul>
 <li>生成一半的python，一半的C++</li>
 <li>随机化上图提示里面的标签，比如RATING改成100，这样再拼上题目后能得到不一样的输出</li>
-<li>用高一点的温度，T&#x3D;0.25</li>
+<li>用高一点的温度，T=0.25</li>
 </ul>
 <h4 id="Filtering"><a href="#Filtering" class="headerlink" title="Filtering"></a>Filtering</h4><p>对每个题目只把输出预测正确的才留下来，这样能过滤99%模型的输出，还是有10%的问题没有一个答案过不了样例，对其他问题过滤了99%还是有很多答案。</p>
 <h4 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h4><p>训练了一个额外的模型，预测新的测试样例，之前生成的新的测试样例主要是通过一些变异的方法，这里预测的新的测试样例是要用于泛化到没有见过的问题上。</p>
@@ -704,6 +700,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

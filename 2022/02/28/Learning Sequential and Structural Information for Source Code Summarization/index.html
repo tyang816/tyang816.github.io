@@ -60,11 +60,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -417,22 +413,16 @@
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><h4 id="Representing-Code-as-mAST"><a href="#Representing-Code-as-mAST" class="headerlink" title="Representing Code as mAST"></a>Representing Code as mAST</h4><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img1.png" alt="avatar" style="zoom:50%;" /></div>
 
 <p>对于 Java 代码是添加同层次相邻边</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png" alt="avatar" style="zoom:50%;" />
-
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png" alt="avatar" style="zoom:50%;" /></p>
 <p>对于 Python 代码作者发现函数名太重要了，就增加了“函数名”节点，然后加边</p>
-<h4 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h4><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img3.png" alt="avatar" style="zoom:50%;" />
-
+<h4 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h4><p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img3.png" alt="avatar" style="zoom:50%;" /></p>
 <p>作者指出 mAST 能够捕捉相邻块信息， GCN 能够将结构相邻节点的表示生成得在语义空间中比较相近，transformer 能够捕获长距离相同块中的依赖信息</p>
-<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img4.png" alt="avatar" style="zoom:50%;" />
-
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img5.png" alt="avatar" style="zoom:50%;" />
-
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img4.png" alt="avatar" style="zoom:50%;" /></p>
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img5.png" alt="avatar" style="zoom:50%;" /></p>
 <p>消融实验和数据如上</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img6.png" alt="avatar" style="zoom:50%;" />
-
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img6.png" alt="avatar" style="zoom:50%;" /></p>
 <p>作者还做了实验将 GCN放在 Transformer 编码器前后位置的影响，其实放哪，还是前后都放差距不大，放前面感觉还好一点</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img7.png" alt="avatar" style="zoom:50%;" />
-
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img7.png" alt="avatar" style="zoom:50%;" /></p>
 <p>以及 GCN 层数的实验</p>
 <HR align=left color=#987cb9 SIZE=1>
 
@@ -668,6 +658,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

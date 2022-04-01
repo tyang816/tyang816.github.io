@@ -59,11 +59,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -414,7 +410,7 @@
 </blockquote>
 <h2 id="Codex：基于GPT的code任务，应用创新而非算法"><a href="#Codex：基于GPT的code任务，应用创新而非算法" class="headerlink" title="Codex：基于GPT的code任务，应用创新而非算法"></a>Codex：基于GPT的code任务，应用创新而非算法</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允许重复采样的话，即假设采样100个结果，有一个解决了那就算解决了问题，那准确率可以提升到70.2%</p>
 <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>GPT-3可以生成简单代码，但复杂的不行，所以重新训练了一下。</p>
-<p>作者关注的是Python的docstring，即函数前的注释，生成的代码通过单元测试来验证正确性。作者造了一个数据集叫humaneval(<a target="_blank" rel="noopener" href="https://www.github.com/openai/human-eval)%EF%BC%8C%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E5%AD%A6%EF%BC%8C%E7%BC%96%E7%A8%8B%E9%9D%A2%E8%AF%95%E7%AD%89%E9%97%AE%E9%A2%98%E3%80%82">https://www.github.com/openai/human-eval)，一些简单的数学，编程面试等问题。</a></p>
+<p>作者关注的是Python的docstring，即函数前的注释，生成的代码通过单元测试来验证正确性。作者造了一个数据集叫humaneval(<a target="_blank" rel="noopener" href="https://www.github.com/openai/human-eval)，一些简单的数学，编程面试等问题。">https://www.github.com/openai/human-eval)，一些简单的数学，编程面试等问题。</a></p>
 <p>生成多个答案，看是不是有答案能通过单元测试。使用120亿参数的模型能达到28.8%精度，3个亿参数能达到13.2%，而GPT-J使用60亿参数只能达到11.4%精度，而其他的GPT基本是0%。</p>
 <p>为了进一步体现作者模型的性能，又收集了一个数据集。在上面微调的模型叫做codex-s，只是用一个例子也能提升到37.7%。如果允许生成100个答案，那么其中有一个正确的概率就变成77.5%。</p>
 <p>现实肯定是不能这么用的，不能给用户100个结果让用户自己去挑，所以如果提供一个排序算法，得到的最好的结果能达到44.5%的精度（通过率）。</p>
@@ -422,8 +418,9 @@
 
 <p>还是有上升趋势，如果用更大的数据更大的模型说不定更好</p>
 <h3 id="Evaluation-Framework"><a href="#Evaluation-Framework" class="headerlink" title="Evaluation Framework"></a>Evaluation Framework</h3><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>用 <code>pass@k</code> 评估，选k个，有1个通过就算成功，这个k的值如果选很大就不太能反映出这个模型的好坏。因为在真实的生产环境中，给用户生成一堆代码肯定也要给出置信度是多少，对结果进行<strong>排序</strong>，k太大了就对模型过度乐观了。</p>
-<h4 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h4><p>每次生成k个答案再判断能否通过的方法不太稳定，需要重复做多次实验。所以作者采用了生成n个样本，n&gt;k，然后再抽k个，c表示正确答案：<br>$$<br>pass@k:&#x3D;\mathbb{E}<em>{Problems}\left[ 1-\frac{ C</em>{n-c}^k}{ C_n^k}\right ]<br>$$</p>
-<h4 id="验证集"><a href="#验证集" class="headerlink" title="验证集"></a>验证集</h4><p>手写的，因为网上找容易是训练集里见过答案的（数据泄露）</p>
+<h4 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h4><p>每次生成k个答案再判断能否通过的方法不太稳定，需要重复做多次实验。所以作者采用了生成n个样本，n&gt;k，然后再抽k个，c表示正确答案：</p>
+<script type="math/tex; mode=display">
+pass@k:=\mathbb{E}_{Problems}\left[ 1-\frac{ C_{n-c}^k}{ C_n^k}\right ]</script><h4 id="验证集"><a href="#验证集" class="headerlink" title="验证集"></a>验证集</h4><p>手写的，因为网上找容易是训练集里见过答案的（数据泄露）</p>
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><h4 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h4><p>收集了179GB个python文件，但没有过滤协议，这也产生了一些冲突与批评</p>
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>微调：作者原本认为把GPT-3的权重拿过来微调会有好处，但实际没用，但训练收敛更快，这也体现出微调的模型可能有好处可能没好处，但一般收敛都会加快。</p>
 <p>词元处理：把不同长度的空格用特殊词元表示，避免模型一个个去认，这样能减少30%的词元</p>
@@ -709,6 +706,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

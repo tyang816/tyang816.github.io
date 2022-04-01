@@ -61,11 +61,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -400,7 +396,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 941(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 936(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -420,44 +416,43 @@
 </li>
 <li><p><strong>代理任务：个体判别</strong></p>
 <p>这里的数据增强（program transformation technique）后的程序叫做“<strong>语义等效程序</strong>”，比如改变变量名，交换代码顺序等，要保证他们嵌入到相近的向量空间中</p>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img1.png" alt="avatar" style="zoom:67%;" /></li>
-<li><p>这是篇<strong>挖坑</strong>型文章，因为它说它是<strong>第一个</strong>在自监督代码模型中使用数据增强方式的</p>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img1.png" alt="avatar" style="zoom:67%;" /></p>
 </li>
+<li>这是篇<strong>挖坑</strong>型文章，因为它说它是<strong>第一个</strong>在自监督代码模型中使用数据增强方式的</li>
 </ol>
 <h3 id="2-相关工作"><a href="#2-相关工作" class="headerlink" title="2. 相关工作"></a>2. 相关工作</h3><ol>
 <li>自监督学习方法不需要人为标注数据，只需要最小化正样本距离，最大化负样本距离即可，在CV和NLP都有很多应用</li>
 <li>目前的深度模型多是AST、AST to Graphs、RNN变种等等一系列方法，但目前急需减少对大量标注数据的依赖，也迫使研究者去找寻更合适的方法</li>
 </ol>
-<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3. 方法"></a>3. 方法</h3><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img2.png" alt="avatar" style="zoom:67%;" />
-
+<h3 id="3-方法"><a href="#3-方法" class="headerlink" title="3. 方法"></a>3. 方法</h3><p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img2.png" alt="avatar" style="zoom:67%;" /></p>
 <ol>
-<li><p>三个模板：① 程序转型模块；② 网络编码器；③ 对比损失函数</p>
-</li>
+<li>三个模板：① 程序转型模块；② 网络编码器；③ 对比损失函数</li>
 <li><p>对于 program transformation technique，越精致效果越好。作者尝试了变量重命名、循环交换、switch到if等来做不同改变</p>
-<p>2.1 变量易名（Variable Renaming&#x2F;VN）：</p>
+<p>2.1 变量易名（Variable Renaming/VN）：</p>
 <ul>
 <li>从变量名库中随机抽取替换，只改变文本信息，不改变AST结构信息，影响的是<strong>AST节点的特征</strong></li>
 <li>目的是增加对抗性样本使得模型更加健壮</li>
 </ul>
-<p>2.2 无用声明（Unused Statement&#x2F;US）：</p>
+<p>2.2 无用声明（Unused Statement/US）：</p>
 <ul>
 <li>随机抽取代码块添加不适用的声明，<strong>增加了AST节点数</strong></li>
 <li>目的是希望模型能在节点数量不同时也能抓取相似性</li>
 </ul>
-<p>2.3 声明移位（Permutation of Statements&#x2F;PS）</p>
+<p>2.3 声明移位（Permutation of Statements/PS）</p>
 <ul>
 <li>交换互不依赖的声明位置</li>
 <li>目的是希望模型能在子树在位置改变下也能抓取相似性</li>
 </ul>
-<p>2.4 循环改变（Loop Exchange&#x2F;LE）：</p>
+<p>2.4 循环改变（Loop Exchange/LE）：</p>
 <ul>
 <li>for 循环和 while 循环替代</li>
 </ul>
-<p>2.5 条件改变（Switch to If&#x2F;SF）：</p>
+<p>2.5 条件改变（Switch to If/SF）：</p>
 <ul>
 <li>遍历代码找出 switch，并把子树都换成 if 声明</li>
 </ul>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img3.png" alt="avatar" style="zoom:67%;" /></li>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img3.png" alt="avatar" style="zoom:67%;" /></p>
+</li>
 </ol>
 <h3 id="4-用例"><a href="#4-用例" class="headerlink" title="4. 用例"></a>4. 用例</h3><ol>
 <li><p>Code-to-Code Retrieval</p>
@@ -475,27 +470,21 @@
 <h3 id="5-实验"><a href="#5-实验" class="headerlink" title="5. 实验"></a>5. 实验</h3><ol>
 <li>实验结果</li>
 </ol>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img4.png" alt="avatar" style="zoom: 50%;" />
-
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img5.png" alt="avatar" style="zoom: 50%;" />
-
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img6.png" alt="avatar" style="zoom: 50%;" />
-
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img7.png" alt="avatar" style="zoom: 50%;" />
-
-<ol start="2">
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img4.png" alt="avatar" style="zoom: 50%;" /></p>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img5.png" alt="avatar" style="zoom: 50%;" /></p>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img6.png" alt="avatar" style="zoom: 50%;" /></p>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img7.png" alt="avatar" style="zoom: 50%;" /></p>
+<ol>
 <li><p>消融实验：</p>
 <p>因为每种转型操作不一定对所有代码生效，所以建立了两种设置，① 原始数量；② 下采样了3213个片段针对VR、PS、US，是为了和最小的的SF数据3213保持一致</p>
 <p>在<strong>原始模式</strong>下：<strong>PS和US</strong>最有效；在下采样模式下：<strong>SF</strong>和<strong>PS、US</strong>差不多有效，甚至更佳（<strong>我个人怀疑可能是因为SF在小数据下其实改动非常大，因为它对节点数、特征、结构都有影响</strong>）</p>
 </li>
 </ol>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img8.png" alt="avatar" style="zoom: 50%;" />
-
-<ol start="3">
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img8.png" alt="avatar" style="zoom: 50%;" /></p>
+<ol>
 <li>Corder 学习出来的表示确实有区分度</li>
 </ol>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img9.png" alt="avatar" style="zoom: 50%;" />
-
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/Corder/Corder-img9.png" alt="avatar" style="zoom: 50%;" /></p>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -730,6 +719,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

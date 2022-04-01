@@ -52,11 +52,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -409,8 +405,7 @@
 <li>设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST</li>
 </ol>
 <h3 id="2-模型"><a href="#2-模型" class="headerlink" title="2. 模型"></a>2. 模型</h3><p>作者提出模型ast-attendgru，使用的attention-based encoder-decoder架构。在表示代码方面，使用了代码的token sequence和代码的结构AST，并且这两个部分分别进行encode，架构图如下：</p>
-<img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" />
-
+<p><img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" /></p>
 <p>数据集：自己收集的Java method 语料，51 million Java method form 50000 projects，经过处理后得到大约2.1m methods。</p>
 <ul>
 <li>baselines：<ul>
@@ -654,6 +649,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

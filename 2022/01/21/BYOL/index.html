@@ -52,11 +52,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -406,7 +402,7 @@
 </blockquote>
 <h2 id="BYOL：不用负样本，把匹配改为预测任务"><a href="#BYOL：不用负样本，把匹配改为预测任务" class="headerlink" title="BYOL：不用负样本，把匹配改为预测任务"></a>BYOL：不用负样本，把匹配改为预测任务</h2><ol>
 <li>对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型ta）。加上负样本是不光相似的物体要有相似的特征，不相似的物体也要有不相似的特征，因为如果输出都一样，算负样本时loss就会非常大，被迫学习更健壮的特征</li>
-<li>前向过程： $f_\theta$  采用梯度更新，  $f_\xi$ 采用动量编码器， $g_\theta$ 和  $q_\theta$ 都是 MLP 层。上面相当于query编码器，下面相当于key编码器。用的目标函数也不一样，算的MSE loss</li>
+<li>前向过程： $f<em>\theta$  采用梯度更新，  $f</em>\xi$ 采用动量编码器， $g<em>\theta$ 和  $q</em>\theta$ 都是 MLP 层。上面相当于query编码器，下面相当于key编码器。用的目标函数也不一样，算的MSE loss</li>
 </ol>
 <p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BYOL/BYOL-img1.png" alt="avatar"></p>
 <HR align=left color=#987cb9 SIZE=1>
@@ -643,6 +639,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

@@ -62,11 +62,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -401,7 +397,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 551(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 547(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -429,12 +425,14 @@
 
 
 
-<p>给定一个训练对（x, y）和Transformer编码器E，E去分别处理x和y，用余弦计算相似度<br>$$<br>v_x&#x3D;E([SOS]_x\oplus x\oplus [EOS]_x)<br>$$</p>
-<p>$$<br>v_y&#x3D;E([SOS]_y\oplus y\oplus [EOS]_y)<br>$$</p>
-<p>$$<br>sim(x,y)&#x3D;\frac{v_x \cdot v_y}{|v_x|\cdot|v_y|}<br>$$</p>
-<h4 id="Training-Objective"><a href="#Training-Objective" class="headerlink" title="Training Objective"></a>Training Objective</h4><p>一个batch中只有一个是正样本，其他都是负样本。<code>logits</code> 是一个MxM的矩阵，每个logit就是 $(x_i,y_j)$。<br>$$<br>logit(x_i,y_j)&#x3D;sim(x_i,y_j)\cdot exp(\tau), \forall(i,j),i,j\in {1,2,\cdots,M}<br>$$<br> 计算损失</p>
+<p>给定一个训练对（x, y）和Transformer编码器E，E去分别处理x和y，用余弦计算相似度</p>
+<script type="math/tex; mode=display">
+v_x=E([SOS]_x\oplus x\oplus [EOS]_x)</script><script type="math/tex; mode=display">
+v_y=E([SOS]_y\oplus y\oplus [EOS]_y)</script><script type="math/tex; mode=display">
+sim(x,y)=\frac{v_x \cdot v_y}{|v_x|\cdot|v_y|}</script><h4 id="Training-Objective"><a href="#Training-Objective" class="headerlink" title="Training Objective"></a>Training Objective</h4><p>一个batch中只有一个是正样本，其他都是负样本。<code>logits</code> 是一个MxM的矩阵，每个logit就是 $(x_i,y_j)$。</p>
+<script type="math/tex; mode=display">
+logit(x_i,y_j)=sim(x_i,y_j)\cdot exp(\tau), \forall(i,j),i,j\in \{1,2,\cdots,M\}</script><p> 计算损失</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">labels = np.arange(M)</span><br><span class="line">l_r = cross_entropy(logits, labels, axis=<span class="number">0</span>)</span><br><span class="line">l_c = cross_entropy(logits, labels, axis=<span class="number">1</span>)</span><br><span class="line">loss = (l_r + l_c) / <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p><code>cpt-text</code> 使用GPT模型初始化的， <code>cpt-code</code> 是用Codex初始化的</p>
 <h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img3.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -678,6 +676,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

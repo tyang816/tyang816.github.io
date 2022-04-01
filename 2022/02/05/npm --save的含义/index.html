@@ -47,11 +47,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -396,11 +392,9 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>npm文档：<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://docs.npmjs.com/cli/install">https://docs.npmjs.com/cli/install</a></p>
+        <p>npm文档：<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.npmjs.com%2Fcli%2Finstall">https://docs.npmjs.com/cli/install</a></p>
 <h2 id="npm常用安装命令"><a href="#npm常用安装命令" class="headerlink" title="npm常用安装命令"></a>npm常用安装命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">npm i ==&gt; npm install</span></span><br><span class="line">npm i xxx -D   # 就是 npm i xxx --save-dev</span><br><span class="line">npm i xxx -S   # 就是 npm i xxx --save</span><br><span class="line">npm i xxx -g   # 就是 全局安装</span><br><span class="line">npm i xxx      # 就是 npm i xxx --save</span><br></pre></td></tr></table></figure>
-
 <h2 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i xxx --save-dev # 是把依赖写入进devDependencies对象里面</span><br><span class="line">npm i  xxx --save # 是把依赖写入进dependencies对象里面</span><br><span class="line">npm i xxx -g # 就是安装到全局下，在命令行的任何地方都可以操作，不会提示“命令不存在等错误”</span><br></pre></td></tr></table></figure>
-
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>devDependencies</code>  是开发环境下的依赖，这里是开发环境下的依赖，上线后非必需，比如：webpack，gulp等压缩打包工具。</p>
 <p> <code>dependencies</code> 是生产环境下的依赖，项目刚需的依赖在这里，比如UI框架，字体文件等线上必需的东西。</p>
 <p>一般这个配置在 <code>package.json</code>文件中。</p>
@@ -637,6 +631,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

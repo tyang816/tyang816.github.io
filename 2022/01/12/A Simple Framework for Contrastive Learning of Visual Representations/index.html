@@ -48,11 +48,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -387,7 +383,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 327(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 322(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -403,7 +399,7 @@
 <h2 id="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size"><a href="#SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size" class="headerlink" title="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size"></a>SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2><ol>
 <li>同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重</li>
 <li>simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)</li>
-<li>对比学习需要更多的数据增强技术，裁剪&#x2F;旋转&#x2F;改变色彩&#x2F;高斯噪声&#x2F;高斯模糊&#x2F;…，以及做了数据增强的消融实验，最有效的是随即裁剪和色彩变换</li>
+<li>对比学习需要更多的数据增强技术，裁剪/旋转/改变色彩/高斯噪声/高斯模糊/…，以及做了数据增强的消融实验，最有效的是随即裁剪和色彩变换</li>
 <li>batch size比较大，训练更久，网络特征会比较好，用lars优化器在大batch size下优化</li>
 </ol>
 <p>Comment: ICML’2020. Code and pretrained models at <a target="_blank" rel="noopener" href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>
@@ -641,6 +637,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

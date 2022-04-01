@@ -54,11 +54,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -393,7 +389,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/05/Commit%20Message%20Generation%20for%20Source%20Code%20Changes/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 368(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 363(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -417,14 +413,14 @@
 </ol>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoDiSum/CoDiSum-img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-<ol start="2">
-<li>对于结构信息，提出了一个有意思的结构提取方法：<strong>占位符</strong>（placeholder），识别出 class&#x2F;method&#x2F;variable 的名字并换成占位符</li>
-<li>对于语义信息，将 class&#x2F;method&#x2F;variable 的名字分割成各种sub单词</li>
+<ol>
+<li>对于结构信息，提出了一个有意思的结构提取方法：<strong>占位符</strong>（placeholder），识别出 class/method/variable 的名字并换成占位符</li>
+<li>对于语义信息，将 class/method/variable 的名字分割成各种sub单词</li>
 </ol>
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoDiSum/CoDiSum-img2.png" alt="avatar" style="zoom:60%;" /></div>
 
 <p>输入数据是改变的代码段</p>
-<h4 id="Modeling-Code-Structure"><a href="#Modeling-Code-Structure" class="headerlink" title="Modeling Code Structure"></a>Modeling Code Structure</h4><p>把增删的代码标识（+&#x2F;-）也嵌入进去了</p>
+<h4 id="Modeling-Code-Structure"><a href="#Modeling-Code-Structure" class="headerlink" title="Modeling Code Structure"></a>Modeling Code Structure</h4><p>把增删的代码标识（+/-）也嵌入进去了</p>
 <h4 id="Modeling-Code-Semantics"><a href="#Modeling-Code-Semantics" class="headerlink" title="Modeling Code Semantics"></a>Modeling Code Semantics</h4><p>通过双向GRU编码</p>
 <h4 id="Combining-Code-Structure-and-Semantics"><a href="#Combining-Code-Structure-and-Semantics" class="headerlink" title="Combining Code Structure and Semantics"></a>Combining Code Structure and Semantics</h4><p>作者指出如果直接把两种表示concat起来会丢失代码结构与代码语义的通信</p>
 <p>对于第i步的单词，如果他是一个标识符（identifier），就concat两种表示作为全局表示；如果不是就补0再concat</p>
@@ -665,6 +661,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
