@@ -19,16 +19,34 @@
 
   
   
-  <title>标签: CL | tyang</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="村雨">
-<meta property="og:url" content="https://tyang816.github.io/tags/CL/page/3/index.html">
+  <title>OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training | tyang</title>
+  <meta name="description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示 Abstract 作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction 输入经过Transformer的编码器，同时使用对文本数据，其中网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training">
+<meta property="og:url" content="https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/index.html">
 <meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示 Abstract 作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction 输入经过Transformer的编码器，同时使用对文本数据，其中网">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img9.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img10.png">
+<meta property="article:published_time" content="2022-03-30T07:01:39.000Z">
+<meta property="article:modified_time" content="2022-04-01T11:41:10.159Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.ContraLern">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/tags/CL/page/3/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -38,6 +56,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -323,338 +343,240 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: CL</h1>
-      <p class="text-muted hidden-xs">共 10 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/nodejs/">nodejs</a></li>
-          
-          <li><a href="/tags/other/">other</a></li>
-          
-          <li><a href="/tags/cs-GNN/">cs.GNN</a></li>
-          
-          <li><a href="/tags/pytorch/">pytorch</a></li>
-          
-          <li><a href="/tags/CL/">CL</a></li>
-          
-          <li><a href="/tags/SE/">SE</a></li>
-          
-          <li><a href="/tags/CV/">CV</a></li>
-          
-          <li><a href="/tags/cs-ContraLern/">cs.ContraLern</a></li>
-          
-          <li><a href="/tags/cs-Transformer/">cs.Transformer</a></li>
-          
-          <li><a href="/tags/cs-GAN/">cs.GAN</a></li>
-          
-          <li><a href="/tags/cs-Video/">cs.Video</a></li>
-          
-          <li><a href="/tags/cs-Recom/">cs.Recom</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/Text and Code Embeddings by Contrastive Pre-Training" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
         
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-23T02:17:25.000Z" itemprop="datePublished">2021-12-23</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/23/Graph2seq/">ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/cs-GNN/" class="label label-default mb">cs.GNN</a>
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-     
-   </div>
-   
-</article>
+  
+    <h1 class="article-title" itemprop="name">
+      OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/" class="article-date">
+	  <time datetime="2022-03-30T07:01:39.000Z" itemprop="datePublished">2022-03-30</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a>
+  </span>
 
 
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-17T05:12:09.000Z" itemprop="datePublished">2021-12-17</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/">ACL-2016 Summarizing Source Code using a Neural Attention Model</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
 
 
-</div>
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/" class="leancloud_visitors"  data-flag-title="OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
 
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-16T04:10:15.000Z" itemprop="datePublished">2021-12-16</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/16/Improved%20Automatic%20Summarization%20of%20Subroutines%20via%20Attention%20to%20File%20Context/">MSR-2020 Improved Automatic Summarization of Subroutines via Attention to File Context</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-15T06:08:08.000Z" itemprop="datePublished">2021-12-15</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/15/Improved%20Code%20Summarization%20via%20a%20Graph%20Neural%20Network/">ICPC-2020 Improved Code Summarization via a Graph Neural Network</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/cs-GNN/" class="label label-default mb">cs.GNN</a>
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-12T05:01:00.000Z" itemprop="datePublished">2021-12-12</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/12/code2seq/">ICLR-2019 code2seq:Generating Sequences from Structured Representations of Code</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-06T05:28:25.000Z" itemprop="datePublished">2021-12-06</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/06/Towards%20Context-Aware%20Code%20Comment%20Generation/">ACL-2020 Towards Context-Aware Code Comment Generation</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/cs-GNN/" class="label label-default mb">cs.GNN</a>
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-12-02T02:46:08.000Z" itemprop="datePublished">2021-12-02</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/12/02/Project-Level%20Encoding%20for%20Neural%20Source%20Code%20Summarization%20of%20Subroutines/">ICPC-2021 Project-Level Encoding for Neural Source Code Summarization of Subroutines</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-11-29T06:43:16.000Z" itemprop="datePublished">2021-11-29</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/11/29/Sequence%20to%20Sequence%20Learning%20with%20Neural%20Networks/">NIPS-2014 Sequence to Sequence Learning with Neural Networks</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-11-23T07:25:54.000Z" itemprop="datePublished">2021-11-23</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/11/23/BERT/">ACL-2019 BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/cs-Transformer/" class="label label-default mb">cs.Transformer</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-11-16T08:05:11.000Z" itemprop="datePublished">2021-11-16</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/11/16/A%20Convolutional%20Attention%20Network%20%20for%20Extreme%20Summarization%20of%20Source%20Code/">ICML-2016 A Convolutional Attention Network  for Extreme Summarization of Source Code</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/CL/" class="label label-default mb">CL</a>
-     
-      <a href="/tags/SE/" class="label label-default mb">SE</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 550(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
 
       </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2201.10005">Text and Code Embeddings by Contrastive Pre-Training</a></p>
+</blockquote>
+<h2 id="cpt：文本和代码的对比学习预训练出嵌入表示">cpt：文本和代码的对比学习预训练出嵌入表示</h2>
+<h3 id="Abstract-12">Abstract</h3>
+<p>作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果</p>
+<h3 id="Introduction-12">Introduction</h3>
+<p>输入经过Transformer的编码器，同时使用对文本数据，其中网络上的相邻文本片段被视为是正样本对</p>
+<p>对比学习的训练信号本身是不足以学习到有用的表示的，所以作者通过其他预训练的模型来初始化，这里引用的是Codex和GPT3</p>
+<p>以及作者发现需要一个<strong>很大的batch_size</strong>来实现优化，采用这种简单的组合大batch_size和预训练模型初始化的对比学习方法能够使文本和代码的embedding适用性更广</p>
+<ul>
+<li>
+<p>先训练了一系列无监督文本嵌入表示的模型 <code>cpt-text</code> ，参数从300M到175B，发现模型越大效果越好</p>
+</li>
+<li>
+<p>又使用（text, code）对训练了一个 <code>cpt-code</code> ，但是与文本模型不同，这次发现参数从300M扩大到1.2B时在代码搜索方面没什么提升</p>
+</li>
+</ul>
+<p>最后的最后是作者做了一系列微调和迁移学习，发现表示确实足够好，即使丢一个K-NN也能媲美神经网络的分类头</p>
+<h3 id="Approach">Approach</h3>
+<h4 id="Model-11">Model</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png" alt="avatar" style="zoom:60%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>给定一个训练对（x, y）和Transformer编码器E，E去分别处理x和y，用余弦计算相似度<br>
+$$<br>
+v_x=E([SOS]_x\oplus x\oplus [EOS]_x)<br>
+$$</p>
+<p>$$<br>
+v_y=E([SOS]_y\oplus y\oplus [EOS]_y)<br>
+$$</p>
+<p>$$<br>
+sim(x,y)=\frac{v_x \cdot v_y}{|v_x|\cdot|v_y|}<br>
+$$</p>
+<h4 id="Training-Objective">Training Objective</h4>
+<p>一个batch中只有一个是正样本，其他都是负样本。<code>logits</code> 是一个MxM的矩阵，每个logit就是 $(x_i,y_j)$。<br>
+$$<br>
+logit(x_i,y_j)=sim(x_i,y_j)\cdot exp(\tau), \forall(i,j),i,j\in {1,2,\cdots,M}<br>
+$$<br>
+计算损失</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">labels = np.arange(M)</span><br><span class="line">l_r = cross_entropy(logits, labels, axis=<span class="number">0</span>)</span><br><span class="line">l_c = cross_entropy(logits, labels, axis=<span class="number">1</span>)</span><br><span class="line">loss = (l_r + l_c) / <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><code>cpt-text</code> 使用GPT模型初始化的， <code>cpt-code</code> 是用Codex初始化的</p>
+<h3 id="Results-2">Results</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img3.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img6.png" alt="avatar" style="zoom:50%;" /></div>
+<p>从这里可以看出一个K-NN的分类头能媲美线性分类头</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img7.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img8.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img9.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img10.png" alt="avatar" style="zoom:50%;" /></div>
+<HR align=left color=#987cb9 SIZE=1>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/" title="OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training" target="_blank" rel="external">https://tyang816.github.io/2022/03/30/Text and Code Embeddings by Contrastive Pre-Training/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
     </div>
   </article>
   
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/tags/CL/page/2/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/tags/CL/page/4/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 3 of 4</div>
-        </div>
-    </nav>
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
- 
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/03/25/Contrastive%20Code%20Representation%20Learning/" title="ACL-2020 Contrastive Code Representation Learning"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -707,6 +629,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
 
 
 

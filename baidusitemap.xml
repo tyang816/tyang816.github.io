@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
+    <lastmod>2022-04-01</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/</loc>
     <lastmod>2022-03-26</lastmod>
   </url>
