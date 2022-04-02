@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-04-01T11:41:10.159Z</updated>
+  <updated>2022-04-02T05:56:31.380Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022-Stanford AI Index Report</title>
+    <link href="https://tyang816.github.io/2022/04/02/AI%20Index%20Report/"/>
+    <id>https://tyang816.github.io/2022/04/02/AI%20Index%20Report/</id>
+    <published>2022-04-02T01:21:06.000Z</published>
+    <updated>2022-04-02T05:56:31.380Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>报告地址：<a href="https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf">AI Index Report</a>，数据大多来源于paper with code</p><p>因为涉及图片太多了，这里就不一一截取了</p></blockquote><h3 id="Top-Takeways">Top Takeways</h3><ul><li><p>在2021年时，私人公司投资比2020年时翻倍了，变成了93.5亿美元。在2020年时这里有4次融资是五亿美元以上的，而2021年有15次</p></li><li><p>美国和中国科学家合作发论文是最多的，比第二名中国和英国科学家发表要多2.7倍</p></li><li><p>模型的能力越来越强，但也带有偏见了。比如GPT的参数从1.17亿提升到2.8亿时偏见多了29%</p></li><li><p>模型的伦理问题，公平性问题更加常见</p></li><li><p>AI变得更加便宜，效果越来越好</p></li><li><p>报告中10个测试数据集上有9个最好的方法用了额外的数据</p></li><li><p>全球关于AI的立法越来越多</p></li><li><p>机械臂的成本降低，2020年是42000美元，2021年是22600美元</p></li></ul><h3 id="CHAPTER-1-Research-and-Development">CHAPTER 1: Research and Development</h3><h4 id="1-1-PUBILICATIONS">1.1 PUBILICATIONS</h4><p>如图1.1.1，2021年发表了达33.4万篇AI方向的论文，说明这个方向存在大量的无意义文章，很多是类似于研究者练手的作业。实际有重大影响力的文章在50篇左右的样子</p><p>如图1.1.2，杂志的文章增加非常快，而且很多。其次是会议，然后是arixv。arixv其实同行认可较低，因为没有经过同行评审，不能算作是科研成果，而发论文压力大促使了各种杂志出现</p><p>如图1.1.3，模式识别数量很多，机器学习增长很快。模式识别讲究一个任务，机器学习是一种技术</p><p>如图1.1.4，论文60%来自教育机构，5%来自公司，3%来自政府，11%来自非盈利机构。公司的投入是有所上升的</p><p>如图1.1.5，中国论文发表比第二多1.5倍，但引用仅比第二高6个点，杂志很多，会议很多。</p><p>如图1.1.10，平均一篇中国文章比美国文章引用数少4倍，但引用较少不代表文章质量低，引用多还可能来自于研究院影响力，英文写作能力等等</p><p>如图1.1.24，中国专利投稿多，但接收少</p><h4 id="1-2-CONFERENCES">1.2 CONFERENCES</h4><p>如图1.2.2，1.2.3，ICML参会人员变得越来越多</p><h3 id="CHAPTER-2-Technical-Perfomance">CHAPTER 2: Technical Perfomance</h3><h4 id="2-1-COMPUTER-VISION-IMAGE">2.1 COMPUTER VISION-IMAGE</h4><h5 id="IMAGE-CLASSIFICATION">IMAGE CLASSIFICATION</h5><ul><li>Image-Net数据集：如图2.1.2，2.1.3，top1用额外数据集的精度到了90%，容易上升，top5达到了99%，人类的精度在95左右</li></ul><h5 id="IMAGE-GENERATION">IMAGE GENERATION</h5><p>图片生成的任务</p><p>在GAN上面调整，用FID分数来验证生成的图片质量，主要就是把两个图片丢到一个inception v3里面，将里面的中间表示拿出来作为一个高斯随机变量，做对比得到分数，如图2.1.5可以看到两张图片的距离是在不断缩小的</p><h5 id="DEEPFAKE-DETECTION">DEEPFAKE DETECTION</h5><p>替换人脸的。这个应用被大量广告，成人应用。</p><ul><li><p>FaceForensics++数据集：里面有1000个原始的视频去判断这是生成的还是真实的，如图2.1.7可以看到效果还是不错，基本可以达到99%</p></li><li><p>Celeb-DF数据集：采集了名人的数据，如图2.1.8效果一般</p></li></ul><h5 id="HUMAN-POSE-ESTIMATION">HUMAN POSE ESTIMATION</h5><p>找出人的关键点，分析运动员动作，监控，虚拟人物设计，手语识别等</p><ul><li><p>PCK数据集：在Flickr上采集了2000张运动员姿势图片，判断14个不同关节的位置，如图2.1.10，效果很好</p></li><li><p>Human3.6M数据集：3D姿势识别，有17种不同姿势去判断关节点位置和真实位置的误差，如2.1.11判断误差在2cm左右，已经较少了</p></li></ul><h5 id="SEMANTIC-SEGMENTATION">SEMANTIC SEGMENTATION</h5><p>像素分割，主要应用在无人车，图片分析（前景后景，背景模糊），医疗诊断</p><ul><li>Cityscapes数据集：50个城市里面开车录的视频做分割，用IOU评测标准，如图2.1.13效果还是不错</li></ul><h5 id="MEDICAL-IMAGE-SEGMENTATION">MEDICAL IMAGE SEGMENTATION</h5><p>医疗语义分割，判断像素署于哪个器官</p><p>如图2.1.15精度提升很快，但离实际的使用可能还有一定距离。因为如果AI将健康的人判定为有病问题不大，但是如果漏诊可能就会错过病人最佳治疗时期</p><h5 id="FACE-DETECTION-AND-RECOGNITION">FACE DETECTION AND RECOGNITION</h5><p>如图2.1.16，人脸识别非常精确了</p><h5 id="FACE-DETECTION-EFFECTS-OF-MASK-WEARING">FACE DETECTION: EFFECTS OF MASK-WEARING</h5><p>口罩人脸识别，如图2.1.17，戴了口罩误差率还是多了7倍</p><h5 id="VISUAL-REASONING">VISUAL REASONING</h5><ul><li>VQA Challenge数据集：给图片问问题，比如问下图哪个人带了口罩之类。如图2.1.22在2021年在该数据集上达到了和人差不多的精度，但实际应用还有一定距离</li></ul><h4 id="2-2-COMPUTER-VISION-VIEDO">2.2 COMPUTER VISION-VIEDO</h4><h5 id="ACTIVITY-RECOGNITION">ACTIVITY RECOGNITION</h5><p>给一段视频，判断里面的物体在干什么，比如判断人在走路等等</p><ul><li><p>Kinetics数据集：视频分到不同种类进行判断。如图2.2.2达到了不错的精度</p></li><li><p>ActivityNet数据集：700个小时的视频，200个不同的行为，需要找出什么时候到什么时候是一个行为和位置，如图2.2.3发现还有很多空间可以进步</p></li></ul><h5 id="OBJECT-DETECTION">OBJECT DETECTION</h5><ul><li>COCO数据集：做得早，数据量很大，如图2.2.5发现进展很好</li></ul><h5 id="VISUAL-COMMONSENSE-REASONING（VCR）">VISUAL COMMONSENSE REASONING（VCR）</h5><p>比如问答中从答案中选出正确的，如图2.2.8发现这个方向比较小众，进展并不迅速</p><h4 id="2-3-LANGUAGE">2.3 LANGUAGE</h4><h5 id="ENGLISH-LANGUAGE-UNDERSTANDING">ENGLISH LANGUAGE UNDERSTANDING</h5><ul><li>SuperGLUE数据集：有很多子数据集，比如BoolQ，给一段文字回答yes或no；CB，提出猜想表示文字能否支持猜想；COPA，提出前置回答问题。如图2.3.2，2.3.4表示模型很大的时候已经超过了人类的水平</li></ul><h5 id="TEXT-SUMMARIZATION">TEXT SUMMARIZATION</h5><ul><li>arXiv数据集：把论文爬下来，根据正文来预测摘要，用ROUGE评估真实和生成的重合片段。如图2.3.7发现这一块还是做得一般，还有很多空间可以去做</li></ul><h5 id="NATURAL-LANGUAGE-INFERENCE">NATURAL LANGUAGE INFERENCE</h5><p>判断上下文是冲突，还是增强，还是没关系的三分类问题，如图2.3.10发现在这个三分类任务上进度是93%还是不错的</p><ul><li>ANLI数据集：一个比较难的任务，拓展推理，根据上文能拓展出其他的结论。如图2.3.12发现模型进展也比较好，接近人类进度</li></ul><h5 id="SENTIMENT-ANALYSIS">SENTIMENT ANALYSIS</h5><p>判断商品，未来好坏等等，如图2.3.14发现精度还是不错的，在一个可接受的范围</p><h5 id="MACHINE-TRANSLATION-MT">MACHINE TRANSLATION (MT)</h5><p>这个领域有很好的商业模式，如图2.3.16现在没多少开源的，更多是商业的</p><ul><li>WMT 2014数据集：ACL引用的数据集，英语翻译德语，英语翻译法语等，用BLEU分数评估。如图2.3.15发现近几年有一定提升</li></ul><h4 id="2-4-SPEECH">2.4 SPEECH</h4><h5 id="SPEECH-RECOGNITION">SPEECH RECOGNITION</h5><ul><li>LibriSpeech数据集：提供了1000个小时有声读物，提供了两个版本，一个干净的一个有噪音的。如图2.4.1发现干净数据集下还是比较好，离真实很近的，而噪音数据集下也勉强能用</li></ul><h4 id="2-5-RECOMMENDATION">2.5 RECOMMENDATION</h4><h5 id="COMMERCIAL-RECOMMENDATION">COMMERCIAL RECOMMENDATION</h5><ul><li>MovieLens数据集：如图2.5.1发现2018年-2019年提升很迅速但过去几年提升一般，但这个数据集不是很具有代表性，推荐系统跟业务关系比较大，需要数据量很大，是大厂的游戏</li></ul><h5 id="CLICK-THROUGH-RATE-PREDICTION">CLICK-THROUGH RATE PREDICTION</h5><ul><li>Criteo数据集：如图2.5.2发现AUC增长较一般，但是一个道理，这还是大厂的游戏</li></ul><h4 id="2-6-REINFORCEMENT-LEARNING">2.6 REINFORCEMENT LEARNING</h4><h5 id="REINFORCEMENT-LEARNING-ENVIRONMENTS">REINFORCEMENT LEARNING ENVIRONMENTS</h5><p>环境就可以视作数据集了，环境根据当前行为进行奖励或者惩罚</p><ul><li>Atari数据集：包含了57个游戏，包括吃豆人等，模型控制游戏机去玩游戏，根据环境反馈不断调整算法。如图2.6.1发现在2017年时有一个很快的发展</li></ul><h5 id="HUMAN-GAMES">HUMAN GAMES</h5><p>比如下国际象棋，如图2.6.4发现80年代就开始发现，在2016年超越了最好的人类选手</p><h4 id="2-7-HARDWARE">2.7 HARDWARE</h4><h5 id="MLPerf：Training-Time">MLPerf：Training Time</h5><p>一个工业界的评测级来评测各个不同的硬件系统和软件系统在不同模型上达到特定精度所花的时间</p><p>如图2.7.1，y轴是log，实际是一个指数下降</p><p>如图2.7.3发现2020年的时候最多用了4000多张卡</p><h5 id="IMAGENET-Training-Cost">IMAGENET: Training Cost</h5><p>如图2.7.4在Image-Net上训练到93%精度成本在不断下降</p><h4 id="2-8-ROBOTICS">2.8 ROBOTICS</h4><h5 id="Price-Trends-in-Robotic-Arms">Price Trends in Robotic Arms</h5><p>如图2.8.1价格在过去五年降了一倍</p><h5 id="AI-Skills-Employed-by-Robotics-Professors">AI Skills Employed by Robotics Professors</h5><p>如图2.8.3发现做机器人的教授们在AI方面主要用的是深度学习技术，其次是强化学习</p><h3 id="CHAPTER-3-Technical-AI-Ethics">CHAPTER 3: Technical AI Ethics</h3><p>最主要关心的是一个模型可能对人类造成的伤害，比如可能有种族歧视，年龄歧视，区分经济地位等等，造成社会分裂的加速，提升公平性降低偏见</p><h4 id="3-1-META-ANALYSIS-OF-FAIRNESS-AND-BIAS-METRICS">3.1 META-ANALYSIS OF FAIRNESS AND BIAS METRICS</h4><p>公平性是指比如把一个简历适合这个岗位，把性别，年龄，种族修改后不影响结果。但因为这个领域比较新，而且认可度还有待考究所以待定</p><p>如图3.1.1表示了模型公平性的一些指标个数</p><p>如图3.1.2表示了一些用来测试公平、偏见的数据集和一些诊断的指标</p><h4 id="3-2-NATURAL-LANGUAGE-PROCESSING-BIAS-METRICS">3.2 NATURAL LANGUAGE PROCESSING BIAS METRICS</h4><p>在NLP里面的一些具体的偏见指标</p><h5 id="TOXICITY-REALTOXICITYPROMPTS-AND-THE-PERSPECTIVE-API">TOXICITY: REALTOXICITYPROMPTS AND THE PERSPECTIVE API</h5><p>毒性就是指文本不文明不礼貌</p><p>如图3.2.2表示生成有毒文本的概率是多少，可以看到用不同数据训练出来的模型是很不同的</p><p>如图3.2.3表示不同大小的模型对毒性的敏感度，给一些引导符容易出现有毒性文字的概率等，发现大模型更容易收到危害</p><p>如图3.2.4表示用了三种不同的消毒方法模型性能都有下降</p><h5 id="STEREOSET">STEREOSET</h5><p>对性别，种族和宗教有一些特定的偏见</p><p>如图3.2.5表示模型越大的时候刻板印象是增加的</p><h5 id="WINOGENDER-AND-WINOBIAS">WINOGENDER AND WINOBIAS</h5><p>把性别代名词去掉让语言模型填回来，如图3.2.8表示大模型确实还原度更高一点</p><h4 id="3-4-FACTUALITY-AND-TRUTHFULNESS">3.4 FACTUALITY AND TRUTHFULNESS</h4><h5 id="FACT-CHECKING-WITH-AI">FACT-CHECKING WITH AI</h5><p>用AI来判定虚假消息</p><p>如图3.3.2表示过去这几年增长很显著</p><h3 id="CHAPTER-4-The-Economy-and-Education">CHAPTER 4: The Economy and Education</h3><h4 id="4-1-JOBS">4.1 JOBS</h4><p>如图4.1.1表示在LinkedIn上不同地区要求有AI相关技能的百分比，但是因为大厂有自己的招聘信息等所以这个结果不是很准确</p><p>如图4.1.3表示和AI相关的工作在哪些地区，发现新加坡占的比例蛮高</p><p>如图4.1.4表示AI相关技能</p><p>如图4.1.5表示哪些行业在招AI相关人员</p><p>如图4.1.6表示AI需求人数</p><p>如图4.1.8表示哪些人把AI相关集能写在自己的介绍</p><h4 id="4-2-INVESTMENT">4.2 INVESTMENT</h4><p>如图4.2.1和4.2.2表示投资情况</p><p>如图4.2.3表示新成立的AI公司</p><p>如图4.2.10和4.2.11表示AI公司的领域，主要是云、医疗健康、金融、自动驾驶。历史上最好的是医疗和健康、云等</p><h4 id="4-3-CORPORARE-ACTIVITY">4.3 CORPORARE ACTIVITY</h4><p>如图4.3.4表示工业界对AI的风险的担心，主要是安全、法规、可解释性、隐私，反而劳动力问题在下降</p><h4 id="4-4-AI-EDUCATION">4.4 AI EDUCATION</h4><p>如图4.4.1表示毕业生增长很快</p><p>如图4.4.3表示有21%的应届博士是毕业于AI或机器学习的</p><h3 id="CHAPTER-5-AI-Policy-and-Governance">CHAPTER 5: AI Policy and Governance</h3><h4 id="5-1-AI-AND-POLICYMAKING">5.1 AI AND POLICYMAKING</h4><p>如图5.1.1表示法律法规的通过基本还是线性增长</p><p>通过的法案很多都是促进的法案</p><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;报告地址：&lt;a href=&quot;https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf&quot;&gt;AI Index Report&lt;/a&gt;，数</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="other" scheme="https://tyang816.github.io/tags/other/"/>
+    
+  </entry>
   
   <entry>
     <title>OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training</title>
@@ -504,33 +529,6 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2107.11423&quot;&gt;Ensemble Models for Neural Source Code Summarization of Subroutines&lt;/a&gt;&lt;/p&gt;
 &lt;</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
-    
-    <category term="SE" scheme="https://tyang816.github.io/tags/SE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICSE-2019 A Novel Neural Source Code Representation Based on Abstract Syntax Tree</title>
-    <link href="https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/"/>
-    <id>https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/</id>
-    <published>2022-02-17T10:55:13.000Z</published>
-    <updated>2022-03-26T11:31:17.003Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://ieeexplore.ieee.org/document/8812062/">A Novel Neural Source Code Representation Based on Abstract Syntax Tree</a></p></blockquote><h2 id="ASTNN：将大AST拆分为小AST树">ASTNN：将大AST拆分为小AST树</h2><h3 id="1-简介-2">1. 简介</h3><ol><li><p>基于AST的神经网络两大缺陷</p><p>1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027/76 和 15217/192，使用滑动窗口等方法又易导致长距离信息损失</p><p>1.2 为了简单和高效将 AST 直接视作二叉树，损失了句法结构也加深了 AST 的深度，弱化了抓取更复杂的语义信息的能力</p></li><li><p>解决限制的方法</p><p>引入控制流和数据依赖图，使用图嵌入技术来表示代码，比如变量和函数的长距离依赖定位（PDG），构建代码块的控制流图（CFG）。前者非常依赖中间代码表示，对于不能编译的，不完整的代码段很难应用</p></li><li><p>于是作者提出了一种新的表示代码段的方法，它<strong>不需要代码段可编译</strong>，叫做 ASTNN ，通过将函数或方法的 AST 树分解为以句子为单位的小型AST树再分别embedding成向量后采用双向RNN网络来处理生成代码表征。这样即解决了深度问题，也解决了结构表示问题。</p></li></ol><h3 id="2-模型-2">2. 模型</h3><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img1.png" alt="avatar" style="zoom:80%;" /><p>首先是如何对AST树进行拆分。本文按照句子的粒度进行拆分，首先先序遍历得到语句树序列S，则S中的每个s都代表这一个语句。对于嵌套语句而言，其由header和body组成，header类似try或while语句。这样以节点s为根节点的语句树就是s所有子节点的语句树的集合。</p><p>由上图可见，将示例程序分成了7个AST子树，每个子树代表一个语句，由header和body组成，得到子树先序遍历AST子树的节点，得到的节点序列作为ASTNN的原始输入，也就是作为后续RNN网络的原始输入进行表征提取。</p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img2.png" alt="avatar" style="zoom: 67%;" /><p>得到线序遍历的AST子树节点序列后，首先对每个单词进行embedding，之后如上图所示，接着不断的迭代递归的将当前节点的embedding作为新的输入进行计算，最终遍历所有节点得到AST子树对应的子树向量，整个过程可以看作是一个pooling过程。</p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img3.png" alt="avatar" style="zoom: 67%;" /><p>该图中的statement encoder相当于上图中AST子树编码结构，得到AST子树向量后，将其输入到RNN中，再经过一层pooling层得到最终的代码表征输出。</p><h3 id="3-实验">3. 实验</h3><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img4.png" alt="avatar" style="zoom: 67%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img5.png" alt="avatar" style="zoom: 67%;" /><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;https://ieeexplore.ieee.org/document/8812062/&quot;&gt;A Novel Neural Source Code Representation Based on Abstract Syn</summary>
       
     
     
