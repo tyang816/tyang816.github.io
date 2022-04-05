@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2021/12/12/code2seq/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2021/11/16/A%20Convolutional%20Attention%20Network%20%20for%20Extreme%20Summarization%20of%20Source%20Code/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/04/05/code2vec/</loc>
     <lastmod>2022-04-05</lastmod>
   </url>
@@ -221,15 +241,7 @@
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2021/12/12/code2seq/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
@@ -241,19 +253,7 @@
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/08/Advancing%20mathematics%20by%20guiding%20human%20intuition%20with%20AI/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2021/11/16/A%20Convolutional%20Attention%20Network%20%20for%20Extreme%20Summarization%20of%20Source%20Code/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>

@@ -419,10 +419,10 @@
 <h3 id="Model-8">Model</h3>
 <p>在GPT-1的时候对下游任务的输入进行了特别的构造，比如加入开始符，分隔符，结束符，这些符号在模型没看到的情况下，通过微调可以认识。</p>
 <p>但是做zero-shot时做下游任务是不能调整的，还引入一些没见过的符号模型就会看不懂，所以<strong>输入形式必须更像自然语言</strong>，加入了<strong>提示符</strong>的概念，比如“translate to french, eng text, french text”</p>
-<h3 id="Dataset-2">Dataset</h3>
+<h3 id="Dataset-3">Dataset</h3>
 <p>因为你要加入提示符的概念，所以数据集中必须有类似的信息才行，这对数据又有一定要求了，就比如训练文本里必须出现英语翻译成法语的对话</p>
 <p>用Common Crawl，这个数据集很大，但不好用，信噪比较低。所以用Reddit，每个人提交感兴趣的网页，选取了至少有3个评论（karma？）的帖子，说明Reddit用户觉得有一定加直的，这种信息就算是过滤后的</p>
-<h3 id="Experiment-4">Experiment</h3>
+<h3 id="Experiment-3">Experiment</h3>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT2-img1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT2-img2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>随着模型增大性能还在上升</p>

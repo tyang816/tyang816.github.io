@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2021/12/12/code2seq/</loc>
+    
+    <lastmod>2022-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
+    
+    <lastmod>2022-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
+    
+    <lastmod>2022-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
+    
+    <lastmod>2022-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2021/11/16/A%20Convolutional%20Attention%20Network%20%20for%20Extreme%20Summarization%20of%20Source%20Code/</loc>
+    
+    <lastmod>2022-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/04/05/code2vec/</loc>
     
     <lastmod>2022-04-05</lastmod>
@@ -515,25 +560,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2021/12/12/code2seq/</loc>
-    
-    <lastmod>2022-03-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</loc>
-    
-    <lastmod>2022-03-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
     
     <lastmod>2022-03-24</lastmod>
     
@@ -560,34 +587,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
-    
-    <lastmod>2022-03-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/01/08/Advancing%20mathematics%20by%20guiding%20human%20intuition%20with%20AI/</loc>
-    
-    <lastmod>2022-03-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
-    
-    <lastmod>2022-03-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2021/11/16/A%20Convolutional%20Attention%20Network%20%20for%20Extreme%20Summarization%20of%20Source%20Code/</loc>
     
     <lastmod>2022-03-24</lastmod>
     
@@ -747,13 +747,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/pytorch/</loc>
-    <lastmod>2022-04-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
     <lastmod>2022-04-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -762,6 +755,13 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/nodejs/</loc>
+    <lastmod>2022-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/pytorch/</loc>
     <lastmod>2022-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -833,13 +833,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-04-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-04-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -848,6 +841,13 @@
   
   <url>
     <loc>https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
