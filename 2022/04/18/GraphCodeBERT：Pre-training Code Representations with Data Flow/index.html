@@ -19,28 +19,33 @@
 
   
   
-  <title>NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos | tyang</title>
-  <meta name="description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos  双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果 Abstract   学到 appearance(空间) 信息和 m">
+  <title>ICLR-2021 GraphCodeBERT：Pre-training Code Representations with Data Flow | tyang</title>
+  <meta name="description" content="论文地址：GraphCodeBERT：Pre-training Code Representations with Data Flow 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;CodeBERT 本文参考：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;459803760  GraphCodeBERT：通过数据流做预测 Abstract 提出利用代码内在的语义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos">
-<meta property="og:url" content="https://tyang816.github.io/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/index.html">
+<meta property="og:title" content="ICLR-2021 GraphCodeBERT：Pre-training Code Representations with Data Flow">
+<meta property="og:url" content="https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Two-Stream Convolutional Networks for Action Recognition in Videos  双流卷积网络：空间+时间，视频处理开山作 神经网络开始难以学习到物体的特征，现在从传统方法的光流直接把抽取好的运动信息特征塞进去，让网络学习映射，提供先验信息或许能够大幅提高网络效果 Abstract   学到 appearance(空间) 信息和 m">
+<meta property="og:description" content="论文地址：GraphCodeBERT：Pre-training Code Representations with Data Flow 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;CodeBERT 本文参考：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;459803760  GraphCodeBERT：通过数据流做预测 Abstract 提出利用代码内在的语义">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img3.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img4.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img5.png">
-<meta property="article:published_time" content="2022-02-25T05:20:13.000Z">
-<meta property="article:modified_time" content="2022-04-04T06:22:56.541Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table5.png">
+<meta property="article:published_time" content="2022-04-18T02:57:22.000Z">
+<meta property="article:modified_time" content="2022-04-18T10:11:24.997Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CV">
-<meta property="article:tag" content="cs.Video">
+<meta property="article:tag" content="cs.GNN">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img1.png">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -340,14 +345,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/Two-Stream Convolutional Networks for Action Recognition in Videos" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/GraphCodeBERT：Pre-training Code Representations with Data Flow" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos
+      ICLR-2021 GraphCodeBERT：Pre-training Code Representations with Data Flow
     </h1>
   
 
@@ -355,8 +360,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/" class="article-date">
-	  <time datetime="2022-02-25T05:20:13.000Z" itemprop="datePublished">2022-02-25</time>
+	<a href="/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/" class="article-date">
+	  <time datetime="2022-04-18T02:57:22.000Z" itemprop="datePublished">2022-04-18</time>
 	</a>
 </span>
         
@@ -368,7 +373,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Video/" rel="tag">cs.Video</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
   </span>
 
 
@@ -383,18 +388,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/" class="leancloud_visitors"  data-flag-title="NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos">
+    	<span id="/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/" class="leancloud_visitors"  data-flag-title="ICLR-2021 GraphCodeBERT：Pre-training Code Representations with Data Flow">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 704(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.5k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
 	
 
       </div>
@@ -402,63 +407,78 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html">Two-Stream Convolutional Networks for Action Recognition in Videos</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2009.08366">GraphCodeBERT：Pre-training Code Representations with Data Flow</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/microsoft/CodeBERT">https://github.com/microsoft/CodeBERT</a></p>
+<p>本文参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/459803760">https://zhuanlan.zhihu.com/p/459803760</a></p>
 </blockquote>
-<h2 id="双流卷积网络：空间-时间，视频处理开山作">双流卷积网络：空间+时间，视频处理开山作</h2>
-<p>神经网络开始难以学习到物体的特征，现在从传统方法的<strong>光流</strong>直接把抽取好的运动信息特征塞进去，让网络学习映射，<strong>提供先验信息或许能够大幅提高网络效果</strong></p>
-<h3 id="Abstract-20">Abstract</h3>
-<ol>
-<li>
-<p>学到 appearance(空间) 信息和 motion(时间) 信息</p>
-</li>
-<li>
-<p>贡献：</p>
-<p>2.1 提出了双流网络，效果好了一大截</p>
-<p>2.2 在少量数据上也能体现出不错的效果</p>
-<p>2.3 弥补训练上的不足，提出 multitask learning 在两个数据集上训练骨干网络</p>
-</li>
-</ol>
-<h3 id="Introduction-17">Introduction</h3>
-<ol>
-<li>视频里的时序信息能够给图像分类提供重要线索，并且视频天生能提供很好的<strong>数据增强</strong></li>
-<li>简单粗暴的把数据丢进网络效果不好，甚至不如手工提取特征。于是作者发现手工方法都是按<strong>光流</strong>，能够很好的提取运动信息，于是提出双流，使用 late fusion 在 logits 上做合并</li>
-<li>从人脑受到启发</li>
-</ol>
-<h3 id="Related-Work">Related Work</h3>
-<ol>
-<li>spatio-teporal features 演变成了 3D 网络， dense point trajectories 演变成了双流法</li>
-<li>如果把视频帧一张一张的输入 2D 网络，和一系列的视频帧叠加丢进 3D 网络或 2D 网络进行时空学习效果一样，比传统方法低了20个点。说明这种方法并没有抓取到动作和时序信息，也让大家意识到这种动作和时序信息的重要性</li>
-</ol>
-<h3 id="Model-17">Model</h3>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img1.png" alt="avatar" style="zoom:67%;" />
-<h4 id="Spatial-stream-ConvNet">Spatial stream ConvNet</h4>
-<p>实际上是一帧一帧的处理，和视频关系不大，类似于图像分类，结果还是不错的。但这种静止的信息往往有很强的线索，如果用 ImgaeNet 上预训练好的模型来微调其实也很不错</p>
-<h4 id="Optical-flow-ConvNet">Optical flow ConvNet</h4>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img2.png" alt="avatar" style="zoom:67%;" />
-<ol>
-<li>
-<p>视频长度是 L 帧，那么得到的是 L-1 个光流图</p>
-</li>
-<li>
-<p>如果把前后两帧计算的光流直接丢进 2D 网络，那就相当于做一个分类任务，作者认为这样意义不大。为了学习到这个时序信息，就把<strong>多张光流图叠加</strong>在一起，先叠加水平方向位移，再叠加竖直方向</p>
-<p>2.1 简单直接叠加</p>
-<p>2.2 根据光流轨迹，在轨迹上叠加</p>
-<p>2.3 但实验发现基于轨迹效果比基于初始位置的效果差</p>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img3.png" alt="avatar" style="zoom:67%;" />
-</li>
-<li>
-<p>双向光流，这种双向方法起码不掉点</p>
-</li>
-</ol>
-<h3 id="Implementation-Details">Implementation Details</h3>
-<ol>
-<li>视频等间距取出25帧，不管视频原本有多少帧</li>
-<li>测试视角数五花八门</li>
-<li>光流抽取非常耗时，而且光流是密集表示，非常耗空间，于是作者也提出了压缩方法</li>
-</ol>
-<h3 id="Evaluation-5">Evaluation</h3>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img4.png" alt="avatar" style="zoom:67%;" />
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img5.png" alt="avatar" style="zoom:67%;" />
+<h2 id="GraphCodeBERT：通过数据流做预测">GraphCodeBERT：通过数据流做预测</h2>
+<h3 id="Abstract-10">Abstract</h3>
+<p>提出利用代码内在的语义结构的预训练模型GraphCodeBERT，不用AST，在预训练阶段用<strong>数据流</strong>（值从哪来），这种语义结构不复杂，也不会带来AST那种没必要的深层次结构，让模型更有效</p>
+<p>两个预训练任务：数据流边预测、源代码和数据流的变量对齐。这种方法在4个下游任务上取得了SOTA</p>
+<h3 id="Introduction-9">Introduction</h3>
+<p>没有语义光靠名字很难预测，比如 <code>v=max_value-min_value</code>，光靠v这个变量名，不依靠变量数据流很难猜它是什么意思</p>
+<p>因此本文提出了GraphCodeBERT，用数据流做代码的表征，摈弃了AST的不必要复杂性，以及提出了两个与训练任务：</p>
+<ul>
+<li>数据流边预测：通过预测数据流图的边，来学习代码的结构化表示</li>
+<li>源代码和数据流的变量对齐：学习数据流图的节点来自源代码中的哪个token</li>
+</ul>
+<p>本文将在4个下游任务上评估GraphCodeBert预训练模型，分别是：</p>
+<ul>
+<li>代码搜索任务 code search</li>
+<li>代码克隆检测任务 code clone detection</li>
+<li>代码翻译任务 code translation</li>
+<li>代码精炼任务 code refinement</li>
+</ul>
+<h3 id="Data-Flow">Data Flow</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>先生成AST，接下来，从生成的AST中提取出变量的序列，变量序列中的每一个元素都会成为数据流图中的一个结点。最后，基于变量序列和AST中提取出的变量之间的依赖关系，构建数据流图。所谓依赖关系指的是，对于&quot;x=expr&quot;，x依赖于右侧表达式中的所有变量，以此类推。数据流图是有向图，指向“值流向”的方向，a指向b代表b依赖于a。</p>
+<h3 id="Model-8">Model</h3>
+<h4 id="Model-Architecture-2">Model Architecture</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>模型用BERT做backbone，输入包含：源码C、注释W、数据流图G包含了变量V和边E。最终的输入序列为：X={[CLS，W，[SEP]，C，[SEP]，V}</p>
+<p>输入的向量还是由token embedding和position embedding求和构建得到的</p>
+<p>GraphCodeBert模型使用了12个transformer encoder层来组成核心网络结构，采用12个attention head的多头注意力机制，包含Feed Forward层和Layer Normalization层等等，与我们熟知的transformer不同的是，本文中增加了一个Graph-Guided Masked Attention层，这个层与传统的Attention层的区别是在softmax计算权重之前需要增加一个参数M，功能是用来过滤无效的元素（在softmax之前加上负无穷）。模型的公式如下，设transfomer第n层的输出为 $H^n$，有<br>
+$$<br>
+H^n=transformer(H^{n-1})<br>
+$$<br>
+每一层transformer网络有<br>
+$$<br>
+G^n=LN(MultiAttn(H^{n-1})+H^{n-1})<br>
+$$</p>
+<p>$$<br>
+H^n=LN(FFN(G^n)+G^n)<br>
+$$</p>
+<p>每个多头注意力机制有<br>
+$$<br>
+Q_i=H^{n-1}W^Q_i,K_i=H^{n-1}W^K_i,V_i=H^{n-1}W^V_i<br>
+$$</p>
+<p>$$<br>
+head_i=softmax(\frac{Q_iK_i^T}{\sqrt{d_k}}+M)V_i<br>
+$$</p>
+<p>$$<br>
+\hat{G}^m=[head_1,…,head_u]W_n^O<br>
+$$</p>
+<h4 id="Graph-guided-Masked-Attention">Graph-guided Masked Attention</h4>
+<p>主要作用是过滤不相关元素，就是一对结点的query和key必须要有一条边连起来才行，或者query使[CLS]、[SEP]，否则就加上一个负无穷使softmax出来的值为0</p>
+<h4 id="Pre-Training-Tasks">Pre-Training Tasks</h4>
+<h5 id="Masked-Language-Modeling">Masked Language Modeling</h5>
+<p>和BERT一样的，随机从代码和配对的注释中采样15%，其中80%换成[MASK]，10%随机token，剩下10%不变</p>
+<h5 id="Edge-Prediction">Edge Prediction</h5>
+<p>该预训练任务的目的是让模型学习“值从哪里来”的信息，对应了模型架构图中的蓝色部分。预训练时随机采样20%的结点，通过mask矩阵（如果采样结点中有2个结点之间有边相连，就设为负无穷）来实现边的mask，然后让模型预测被mask的边。</p>
+<h5 id="Node-Alignment">Node Alignment</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/img3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>该预训练任务的目的是让模型学习数据流图与源代码之间的对应关系，对应模型架构图中的橙色部分。与边预测不同的是，边预测任务学习的是变量序列V中两个结点之间的联系，而变量对齐任务学习的是源代码序列C和变量序列V之间的联系，也就是结点 $v_i$ 和单词 $c_j$ 之间的对应关系。</p>
+<h3 id="Experiment-5">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>代码搜索任务的含义是给定一种自然语言输入，要求从一组候选代码中找到语义最相关的代码，使用的数据集是CodeSearchNet的数据集，使用代码文档的第一段作为query，以MRR(Mean Reciprocal Rank)作为评价指标，由上图可见，GraphCodeBert模型在每个语言的数据集上都表现优异。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>代码克隆检测任务的含义是给定两个代码片段，要求度量其相似性，输出相似度，使用的数据集是BigCloneBench数据集，实验结果如上图所示，可见GraphCodeBert模型的准确率和召回率都很高。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>代码翻译任务的含义是将一种编程语言范围为另一种编程语言，其主要用途是将遗留软件从平台的一种编程语言迁移到另一种编程语言，以Lucene、POI等开源项目为数据集，这些项目都有Java和C#的实现，任务中模型输入Java(C#)代码，输出与之对应的C#(Java)代码。实验结果如上图所示，GraphCodeBert模型的翻译准确率和BLEU得分都高于之前的模型。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>代码精炼任务也叫代码优化任务，旨在自动化的修复代码中的bug，使用Java数据集来实现，模型输入Java代码，输出修复bug之后的代码。实验结果如上图所示，GraphCodeBert模型优化的准确率和BLEU得分都高于之前的模型。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCodeBERT/table5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>消融实验，两个预训练任务Edge Prediction和Node Alignment都有效的提升了模型效果，当然，数据流的引进对模型的提升效果是最大的</p>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -469,7 +489,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/" title="NIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos" target="_blank" rel="external">https://tyang816.github.io/2022/02/25/Two-Stream Convolutional Networks for Action Recognition in Videos/</a>
+      <a href="https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/" title="ICLR-2021 GraphCodeBERT：Pre-training Code Representations with Data Flow" target="_blank" rel="external">https://tyang816.github.io/2022/04/18/GraphCodeBERT：Pre-training Code Representations with Data Flow/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -515,13 +535,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/02/27/PyTorch%E7%AC%94%E8%AE%B0-matmul%E5%87%BD%E6%95%B0/" title="PyTorch-matmul函数"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/02/21/Ensemble%20Models%20for%20Neural%20Source%20Code%20Summarization%20of%20Subroutines/" title="ICSME-2021 Ensemble Models for Neural Source Code Summarization of Subroutines"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/" title="ECCV-2016 Temporal Segment Networks：Towards Good Practices for Deep Action Recognition"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
