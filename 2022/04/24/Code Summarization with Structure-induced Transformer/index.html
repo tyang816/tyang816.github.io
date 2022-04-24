@@ -19,16 +19,30 @@
 
   
   
-  <title>归档: 2022/3 | tyang</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="村雨">
-<meta property="og:url" content="https://tyang816.github.io/archives/2022/03/page/2/index.html">
+  <title>ACL-2021 Code Summarization with Structure-induced Transformer | tyang</title>
+  <meta name="description" content="论文地址：Code Summarization with Structure-induced Transformer  SiT：多视角结构线索 Abstract 先前的工作多是使用SBT或非顺序模型比如Tree-LSTM、GNN来学习代码的结构化语义。但让人惊讶的是将SBT融入一些先进一些的编码器如Transformer而不是LSTM，但没有得到任何提升，这使得GNN成了仅有的有效建模代码的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACL-2021 Code Summarization with Structure-induced Transformer">
+<meta property="og:url" content="https://tyang816.github.io/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/index.html">
 <meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Code Summarization with Structure-induced Transformer  SiT：多视角结构线索 Abstract 先前的工作多是使用SBT或非顺序模型比如Tree-LSTM、GNN来学习代码的结构化语义。但让人惊讶的是将SBT融入一些先进一些的编码器如Transformer而不是LSTM，但没有得到任何提升，这使得GNN成了仅有的有效建模代码的方法">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/img3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table7.png">
+<meta property="article:published_time" content="2022-04-24T07:27:08.000Z">
+<meta property="article:modified_time" content="2022-04-24T11:56:33.658Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table2.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/archives/2022/03/page/2/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -38,6 +52,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -325,104 +341,260 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2022/3</h1>
-	      <p class="text-muted">共 86 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-PaperNote/Code Summarization with Structure-induced Transformer" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ACL-2021 Code Summarization with Structure-induced Transformer
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
-        </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2022/03/21/Language%20Models%20are%20Unsupervised%20Multitask%20Learners/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-21T06:54:38.000Z" itemprop="datePublished">2022-03-21</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICML-2019 Language Models are Unsupervised Multitask Learners
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/" class="article-date">
+	  <time datetime="2022-04-24T07:27:08.000Z" itemprop="datePublished">2022-04-24</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
 
 
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/" class="leancloud_visitors"  data-flag-title="ACL-2021 Code Summarization with Structure-induced Transformer">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://aclanthology.org/2021.findings-acl.93">Code Summarization with Structure-induced Transformer</a></p>
+</blockquote>
+<h2 id="SiT：多视角结构线索">SiT：多视角结构线索</h2>
+<h3 id="Abstract-3">Abstract</h3>
+<p>先前的工作多是使用SBT或非顺序模型比如Tree-LSTM、GNN来学习代码的结构化语义。但让人惊讶的是将SBT融入一些先进一些的编码器如Transformer而不是LSTM，但没有得到任何提升，这使得GNN成了仅有的有效建模代码的方法</p>
+<p>为了缓解这种奇怪的现象，作者提出了结构感应的Transformer，根据一种新提出的自监督结构感应机制，通过多视角的结构线索编码序列代码的输入</p>
+<h3 id="Introduction-2">Introduction</h3>
+<p>早期，代码摘要是信息检索的一个衍生问题，主要是通过匹配有注释的最相似代码块，这种方法泛化性差效果不满意</p>
+<p>最近研究者将代码摘要问题视作自然语言生成的一项任务，常使用基于RNN的端到端模型，但是这种模型对长序列依赖进行建模时有瓶颈，特别是代码段一般都有几百个token</p>
+<p>所以最近也有学者提出了基于transformer的方法来获取长序列信息，比基于RNN的方法好很多</p>
+<p>另一方面，结构化线索能够大大增强代码摘要等编程语言相关的任务，比如AST可以更好的理解代码片段，这之前的相关工作可以分为两类：</p>
+<ul>
+<li>使用非序列编码器直接建模结构化输入：TBCNN、Tree-LSTM、Tree-Transformer、GNN</li>
+<li>预处理结构化输入使其应用到序列模型：SBT</li>
+</ul>
+<p>RNN、LSTM的方法对抓取长距离依赖有局限性，而GNN模型对局部信息又太敏感，SBT只在LSTM上起作用，对Transformer没用，作者将这种现象归为由于SBT和编码器形式导致的线性和非线性<strong>不一致性</strong>，也就是特征-模型匹配度</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>上表可以看出作者提出的SiT模型能避免上述缺陷</p>
+<h3 id="Stucture-based-Code-Summarization">Stucture-based Code Summarization</h3>
+<h4 id="Structure-Representation-of-Code">Structure Representation of Code</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/img2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>上图是一个标准的AST以及作者采用的三种视角</p>
+<p>在模型实现中使用邻接矩阵A来表示AST，而不是基于结构遍历或是顺序形式表示树，然后通过key-query的点乘出一个 $l\times l$ 的注意力矩阵，再position-wise乘起来</p>
+<p>作者还扩展了AST到一种多视角网络（MVN or multi-view graph），每一个视角对应一种结构关系，同时所有的视角共享同一组结点，本文构建了<strong>三视角图，基于抽象语法，控制流和数据依赖</strong>，从而获得了三个邻接矩阵，还在根节点添加了全局注意力</p>
+<h4 id="Structure-induced-Transformer">Structure-induced Transformer</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/img3.png" alt="avatar" style="zoom:60%;" /></div>
+<h5 id="Vanilla-Self-Attention">Vanilla Self-Attention</h5>
+<p>自注意力机制<br>
+$$<br>
+SAN(X)=Softmax(\frac{QK^T}{\sqrt{d_k}})V<br>
+$$<br>
+如果把每个子单词视作顶点n，key-value的内积视作边e，公式改写为<br>
+$$<br>
+SAN(X)=E\cdot N<br>
+$$</p>
+<h5 id="Structure-induced-Self-Attention">Structure-induced Self-Attention</h5>
+<p>为了展示结构信息的必要性，提出了结构感应的自主意网络<br>
+$$<br>
+SiSAN(X)=Softmax(\frac{A_{mv}\cdot QK^T}{\sqrt{d_k}})V<br>
+$$<br>
+其中 $A_{mv}$ 是代码的多视角表示，但Si-SAN并不会改变输入代码，而是通过改变其注意模式，将代码结构适当地合并到SAN中，可以更准确地计算结构信息</p>
+<h5 id="Structure-induced-Module">Structure-induced Module</h5>
+<p>为了提高鲁棒性和避免过拟合，提出了结构感应模块，是SAN和Si-SAN堆叠起来</p>
+<p>先通过SAN层获得隐向量表示<br>
+$$<br>
+H=Concat(SAN_1(X),\cdots,SAN_h(X))<br>
+$$<br>
+其中h是多头注意力的头数目</p>
+<p>然后通过Si-SAN层<br>
+$$<br>
+H’=Concat(SiSAN_1(H),\cdots,SiSAN_h(H))<br>
+$$<br>
+最终融合特征<br>
+$$<br>
+\tilde{H}=Aggr(H,H’)<br>
+$$<br>
+本文采用的聚合方法是同位求和</p>
+<h4 id="SiT-based-Code-Summarization">SiT-based Code Summarization</h4>
+<p>把输入的代码变形为邻接矩阵后加权求和<br>
+$$<br>
+A_{mv}=\alpha A_{ast}+\beta A_{fl}+\gamma A_{dp}<br>
+$$<br>
+把代码序列和对应的邻接矩阵丢入编码器，即3层Si-SAN，解码器用的就是原始的transformer解码器</p>
+<h3 id="Experiment-2">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>相较于传统的transformer有提升</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table6.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SiT/table7.png" alt="avatar" style="zoom:50%;" /></div>
+<HR align=left color=#987cb9 SIZE=1>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/" title="ACL-2021 Code Summarization with Structure-induced Transformer" target="_blank" rel="external">https://tyang816.github.io/2022/04/24/Code Summarization with Structure-induced Transformer/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2022/03/21/Language%20Models%20are%20Few-Shot%20Learners/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-21T02:48:09.000Z" itemprop="datePublished">2022-03-21</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> OpenAI-2020 Language Models are Few-Shot Learners
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/03/06/Automating%20just-in-time%20comment%20updating/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-06T10:29:22.000Z" itemprop="datePublished">2022-03-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ASE-2020 Automating just-in-time comment updating
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/03/05/Commit%20Message%20Generation%20for%20Source%20Code%20Changes/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-05T06:27:05.000Z" itemprop="datePublished">2022-03-05</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> IJCAI-2019 Commit Message Generation for Source Code Changes
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/archives/2022/03/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next disabled">
-                <a href="javascript:;">
-                    下一页
-                    <i class="icon icon-angle-right"></i>                    
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 2 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/04/22/Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server/" title="OSDI-2014 Scaling Distributed Machine Learning with the Parameter Server"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -475,6 +647,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
 
 
 
