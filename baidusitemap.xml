@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <lastmod>2022-04-28</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/04/24/Code%20Summarization%20with%20Structure-induced%20Transformer/</loc>
     <lastmod>2022-04-24</lastmod>
   </url>
