@@ -20,12 +20,12 @@
   
   
   <title>OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training | tyang</title>
-  <meta name="description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示 Abstract 作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction 输入经过Transformer的编码器，同时使用对文本数据，其中网">
+  <meta name="description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示Abstract作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction输入经过Transformer的编码器，同时使用对文本数据，其中网络上的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training">
 <meta property="og:url" content="https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示 Abstract 作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction 输入经过Transformer的编码器，同时使用对文本数据，其中网">
+<meta property="og:description" content="论文地址：Text and Code Embeddings by Contrastive Pre-Training  cpt：文本和代码的对比学习预训练出嵌入表示Abstract作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果 Introduction输入经过Transformer的编码器，同时使用对文本数据，其中网络上的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img2.png">
@@ -397,7 +397,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 550(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 547(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -410,11 +410,8 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2201.10005">Text and Code Embeddings by Contrastive Pre-Training</a></p>
 </blockquote>
-<h2 id="cpt：文本和代码的对比学习预训练出嵌入表示">cpt：文本和代码的对比学习预训练出嵌入表示</h2>
-<h3 id="Abstract-22">Abstract</h3>
-<p>作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果</p>
-<h3 id="Introduction-19">Introduction</h3>
-<p>输入经过Transformer的编码器，同时使用对文本数据，其中网络上的相邻文本片段被视为是正样本对</p>
+<h2 id="cpt：文本和代码的对比学习预训练出嵌入表示"><a href="#cpt：文本和代码的对比学习预训练出嵌入表示" class="headerlink" title="cpt：文本和代码的对比学习预训练出嵌入表示"></a>cpt：文本和代码的对比学习预训练出嵌入表示</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者展示了对比学习在大规模未标注数据上做无监督可以得到高质量的代码表示，通过线性分类头后在7个任务上可以得到SOTA的结果</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>输入经过Transformer的编码器，同时使用对文本数据，其中网络上的相邻文本片段被视为是正样本对</p>
 <p>对比学习的训练信号本身是不足以学习到有用的表示的，所以作者通过其他预训练的模型来初始化，这里引用的是Codex和GPT3</p>
 <p>以及作者发现需要一个<strong>很大的batch_size</strong>来实现优化，采用这种简单的组合大batch_size和预训练模型初始化的对比学习方法能够使文本和代码的embedding适用性更广</p>
 <ul>
@@ -422,33 +419,26 @@
 <li>又使用（text, code）对训练了一个 <code>cpt-code</code> ，但是与文本模型不同，这次发现参数从300M扩大到1.2B时在代码搜索方面没什么提升</li>
 </ul>
 <p>最后的最后是作者做了一系列微调和迁移学习，发现表示确实足够好，即使丢一个K-NN也能媲美神经网络的分类头</p>
-<h3 id="Approach-2">Approach</h3>
-<h4 id="Model-16">Model</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png" alt="avatar" style="zoom:60%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img1.png" alt="avatar" style="zoom:60%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>给定一个训练对（x, y）和Transformer编码器E，E去分别处理x和y，用余弦计算相似度</p>
-<p>$$<br>
-v_x=E([SOS]_x\oplus x\oplus [EOS]_x)<br>
-$$</p>
-<p>$$<br>
-v_y=E([SOS]_y\oplus y\oplus [EOS]_y)<br>
-$$</p>
-<p>$$<br>
-sim(x,y)=\frac{v_x \cdot v_y}{|v_x|\cdot|v_y|}<br>
-$$</p>
-<h4 id="Training-Objective">Training Objective</h4>
-<p>一个batch中只有一个是正样本，其他都是负样本。<code>logits</code> 是一个MxM的矩阵，每个logit就是 $(x_i,y_j)$。</p>
-<p>$$<br>
-logit(x_i,y_j)=sim(x_i,y_j)\cdot exp(\tau), \forall(i,j),i,j\in {1,2,\cdots,M}<br>
-$$</p>
-<p>计算损失</p>
+<script type="math/tex; mode=display">
+v_x=E([SOS]_x\oplus x\oplus [EOS]_x)</script><script type="math/tex; mode=display">
+v_y=E([SOS]_y\oplus y\oplus [EOS]_y)</script><script type="math/tex; mode=display">
+sim(x,y)=\frac{v_x \cdot v_y}{|v_x|\cdot|v_y|}</script><h4 id="Training-Objective"><a href="#Training-Objective" class="headerlink" title="Training Objective"></a>Training Objective</h4><p>一个batch中只有一个是正样本，其他都是负样本。<code>logits</code> 是一个MxM的矩阵，每个logit就是 $(x_i,y_j)$。</p>
+<script type="math/tex; mode=display">
+logit(x_i,y_j)=sim(x_i,y_j)\cdot exp(\tau), \forall(i,j),i,j\in \{1,2,\cdots,M\}</script><p> 计算损失</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">labels = np.arange(M)</span><br><span class="line">l_r = cross_entropy(logits, labels, axis=<span class="number">0</span>)</span><br><span class="line">l_c = cross_entropy(logits, labels, axis=<span class="number">1</span>)</span><br><span class="line">loss = (l_r + l_c) / <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p><code>cpt-text</code> 使用GPT模型初始化的， <code>cpt-code</code> 是用Codex初始化的</p>
-<h3 id="Results-2">Results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img3.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img6.png" alt="avatar" style="zoom:50%;" /></div>
+
 <p>从这里可以看出一个K-NN的分类头能媲美线性分类头</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img7.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img8.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img9.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CPT/CPT-img10.png" alt="avatar" style="zoom:50%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
 
       

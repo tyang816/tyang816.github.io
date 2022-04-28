@@ -20,12 +20,12 @@
   
   
   <title>CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition | tyang</title>
-  <meta name="description" content="论文地址：Convolutional Two-Stream Network Fusion for Video Action Recognition  双流如何做Fusion：用Early稍好 Abstract 研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构 Approa">
+  <meta name="description" content="论文地址：Convolutional Two-Stream Network Fusion for Video Action Recognition  双流如何做Fusion：用Early稍好Abstract研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构 Approach">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition">
 <meta property="og:url" content="https://tyang816.github.io/2022/04/17/Convolutional%20Two-Stream%20Network%20Fusion%20for%20Video%20Action%20Recognition/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Convolutional Two-Stream Network Fusion for Video Action Recognition  双流如何做Fusion：用Early稍好 Abstract 研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构 Approa">
+<meta property="og:description" content="论文地址：Convolutional Two-Stream Network Fusion for Video Action Recognition  双流如何做Fusion：用Early稍好Abstract研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构 Approach">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img2.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img3.png">
@@ -389,7 +389,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/17/Convolutional%20Two-Stream%20Network%20Fusion%20for%20Video%20Action%20Recognition/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 282(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 279(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -402,12 +402,8 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://ieeexplore.ieee.org/document/7780582/">Convolutional Two-Stream Network Fusion for Video Action Recognition</a></p>
 </blockquote>
-<h2 id="双流如何做Fusion：用Early稍好">双流如何做Fusion：用Early稍好</h2>
-<h3 id="Abstract-9">Abstract</h3>
-<p>研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构</p>
-<h3 id="Approach">Approach</h3>
-<h4 id="Spatial-fusion">Spatial fusion</h4>
-<p>有时间流和空间流后如何保证在同一像素位置通道的response能联系起来：</p>
+<h2 id="双流如何做Fusion：用Early稍好"><a href="#双流如何做Fusion：用Early稍好" class="headerlink" title="双流如何做Fusion：用Early稍好"></a>双流如何做Fusion：用Early稍好</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构</p>
+<h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><h4 id="Spatial-fusion"><a href="#Spatial-fusion" class="headerlink" title="Spatial fusion"></a>Spatial fusion</h4><p>有时间流和空间流后如何保证在同一像素位置通道的response能联系起来：</p>
 <ul>
 <li>Max fusion，两个同样位置取最大</li>
 <li>Concatenation fusion：链接起来</li>
@@ -415,26 +411,26 @@
 <li>Sum fusion：加法</li>
 <li>Bilinear fusion：做矩阵的outer product，在所有维度上做加权平均</li>
 </ul>
-<h4 id="Where-to-fuse-the-networks">Where to fuse the networks</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img2.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Where-to-fuse-the-networks"><a href="#Where-to-fuse-the-networks" class="headerlink" title="Where to fuse the networks"></a>Where to fuse the networks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <ul>
 <li>空间流和时间流分别做，在Conv4做fuse</li>
 <li>先分别做，把空间流拿过来合并，同时保持空间流完整性，最后再做合并</li>
 </ul>
-<h4 id="Temporal-fusion">Temporal fusion</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img3.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Temporal-fusion"><a href="#Temporal-fusion" class="headerlink" title="Temporal fusion"></a>Temporal fusion</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <ul>
 <li>2D pooling</li>
 <li>3D pooling</li>
-<li>3D conv + 3D pooling</li>
+<li>3D conv + 3D pooling </li>
 </ul>
-<h4 id="Proposed-architecture">Proposed architecture</h4>
-<p>时空学习+时间学习</p>
+<h4 id="Proposed-architecture"><a href="#Proposed-architecture" class="headerlink" title="Proposed architecture"></a>Proposed architecture</h4><p>时空学习+时间学习</p>
 <p>两个最终分类头加权平均一下得到最终结果</p>
-<h4 id="Evaluation-3">Evaluation</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/table5.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/table5.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>数据集特别小的情况用特别深的网络容易过拟合。改成early fusion方法在HMDB51上提升很明显</p>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>
