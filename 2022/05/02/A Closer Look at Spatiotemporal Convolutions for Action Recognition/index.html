@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition | tyang</title>
+  <meta name="description" content="论文地址：A Closer Look at Spatiotemporal Convolutions for Action Recognition  R2+1D：拆分3D网络有助于训练 Abstract 作者发现如果就用2D的网络在视频上去一帧帧抽特征，在视频动作领域结果也不错，没有比3D弱多少，作者就想2D既然效果不错，如果用一下2D或部分使用2D卷积是否也是不错的（2D比3D便宜很多） 这篇文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition">
+<meta property="og:url" content="https://tyang816.github.io/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：A Closer Look at Spatiotemporal Convolutions for Action Recognition  R2+1D：拆分3D网络有助于训练 Abstract 作者发现如果就用2D的网络在视频上去一帧帧抽特征，在视频动作领域结果也不错，没有比3D弱多少，作者就想2D既然效果不错，如果用一下2D或部分使用2D卷积是否也是不错的（2D比3D便宜很多） 这篇文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/img1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table6.png">
+<meta property="article:published_time" content="2022-05-02T08:49:39.000Z">
+<meta property="article:modified_time" content="2022-05-02T11:55:10.664Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CV">
+<meta property="article:tag" content="cs.Video">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/img1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-软件工程 本科在读</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">博文</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">78</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.89px;">CV</a> <a href="/tags/SE/" style="font-size: 13.78px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.11px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.44px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.33px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.22px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/" class="title">ICML-2021 Is Space-Time Attention All You Need for Video Understanding</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T11:58:34.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/" class="title">ICCV-2019 SlowFast Networks for Video Recognition</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T09:36:05.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" class="title">CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T08:49:39.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/Non-local%20Neural%20Networks/" class="title">CVPR-2018 Non-local Neural Networks</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T08:01:12.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/02/Learning%20Spatiotemporal%20Features%20with%203D%20Convolutional%20Networks/" class="title">ICCV-2015 Learning Spatiotemporal Features with 3D Convolutional Networks</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-02T07:08:05.000Z" itemprop="datePublished">2022-05-02</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/A Closer Look at Spatiotemporal Convolutions for Action Recognition" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" class="article-date">
+	  <time datetime="2022-05-02T08:49:39.000Z" itemprop="datePublished">2022-05-02</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Video/" rel="tag">cs.Video</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" class="leancloud_visitors"  data-flag-title="CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 542(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1711.11248v3.pdf">A Closer Look at Spatiotemporal Convolutions for Action Recognition</a></p>
+</blockquote>
+<h2 id="R2-1D：拆分3D网络有助于训练">R2+1D：拆分3D网络有助于训练</h2>
+<h3 id="Abstract">Abstract</h3>
+<p>作者发现如果就用2D的网络在视频上去一帧帧抽特征，在视频动作领域结果也不错，没有比3D弱多少，作者就想2D既然效果不错，如果用一下2D或部分使用2D卷积是否也是不错的（2D比3D便宜很多）</p>
+<p>这篇文章在测试不同结构，是一篇实验性的文章，先2D再3D还是把3D拆分成1D加2D的结构，作者发现<strong>把3D拆分成空间上的2D和时间上的1D能得到更好的效果</strong>，而且训练更简单</p>
+<p>在Sports-1M，k-400，UCF101，HMDB51上都取得了不错结果</p>
+<h3 id="Method">Method</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/img1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>组合不同消融实验看看哪种最好</p>
+<p>a）R2D</p>
+<ul>
+<li>纯2D网络，视频里面每一帧，一帧帧的过去抽特征做训练</li>
+</ul>
+<p>b）MCx</p>
+<ul>
+<li>头重脚轻</li>
+<li>先有一个视频clip进来在3D网络底层学一学时空特征，上层换2D降一下复杂度</li>
+</ul>
+<p>c）rMCx</p>
+<ul>
+<li>头轻脚重</li>
+<li>把一个视频clip拆分成每一帧，2Dconv出特征后用3D融合</li>
+</ul>
+<p>d）R3D</p>
+<ul>
+<li>全部都是3D网络</li>
+</ul>
+<p>e）R(2+1)D</p>
+<ul>
+<li>把3D卷积拆分成两个卷积</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/img2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>先做一次空间上的2D卷积，然后投射保持参数不变，再做时间上的1D卷积</p>
+<p>好处：</p>
+<ul>
+<li>
+<p>这样有两次非线性变换，加强了模型的非线性能力</p>
+<p>图3</p>
+</li>
+<li>
+<p>直接学3D是不太好学的，拆分之后更好优化</p>
+</li>
+</ul>
+<h3 id="Experiment">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>消融实验，纯用2D更便宜，用了3D就变贵，但是混和效果更好</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/R2+1D/table6.png" alt="avatar" style="zoom:50%;" /></div>
+<p>k-400上实验，发现在RGB和Flow上单独都比I3D要好，但是结合起来反而不如了</p>
+<p>在UCF101和HMDB51上一样的结果，甚至flow上也比I3D要低了，这就很难解释了，所以作者另辟蹊径解释说I3D用的是imageNet+kinetics，而本文只用了kinetics，但事实上I3D论文里也做了了单独用kinetics预训练的结果，还是更好</p>
+<p>但R(2+1)D最好的地方就在于好优化，而且输入是112x112，对GPU也很友好</p>
+<HR align=left color=#987cb9 SIZE=1>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" title="CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition" target="_blank" rel="external">https://tyang816.github.io/2022/05/02/A Closer Look at Spatiotemporal Convolutions for Action Recognition/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/" title="ICCV-2019 SlowFast Networks for Video Recognition"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/05/02/Non-local%20Neural%20Networks/" title="CVPR-2018 Non-local Neural Networks"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
