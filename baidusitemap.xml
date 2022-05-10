@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/05/10/Pathways%EF%BC%9AAsynchronous%20Distributed%20Dataflow%20for%20ML/</loc>
+    <lastmod>2022-05-10</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
+    <lastmod>2022-05-02</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/</loc>
     <lastmod>2022-05-02</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/</loc>
-    <lastmod>2022-05-02</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
     <lastmod>2022-05-02</lastmod>
   </url>
   <url>
