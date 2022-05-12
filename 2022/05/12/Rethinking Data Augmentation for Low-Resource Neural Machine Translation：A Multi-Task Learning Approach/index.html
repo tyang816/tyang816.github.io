@@ -19,16 +19,27 @@
 
   
   
-  <title>tyang</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="村雨">
-<meta property="og:url" content="https://tyang816.github.io/page/9/index.html">
+  <title>EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach | tyang</title>
+  <meta name="description" content="论文地址：Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach  MTL DA：数据增强技术降低解码器前置信息量，更关注编码器 Abstract 神经机器翻译里，数据增强（DA）技术常被用于当并行数据稀少的时候做额外的训练样本，许多的这种方法都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach">
+<meta property="og:url" content="https://tyang816.github.io/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/index.html">
 <meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach  MTL DA：数据增强技术降低解码器前置信息量，更关注编码器 Abstract 神经机器翻译里，数据增强（DA）技术常被用于当并行数据稀少的时候做额外的训练样本，许多的这种方法都">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table4.png">
+<meta property="article:published_time" content="2022-05-12T07:52:29.000Z">
+<meta property="article:modified_time" content="2022-05-12T13:37:27.233Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/page/9/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -38,6 +49,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -323,479 +336,224 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/23/Graph2seq/">ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks</a>
+    <h1 class="article-title" itemprop="name">
+      EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/23/Graph2seq/" class="article-date">
-	  <time datetime="2021-12-23T02:17:25.000Z" itemprop="datePublished">12月 23</time>
+	<a href="/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/" class="article-date">
+	  <time datetime="2022-05-12T07:52:29.000Z" itemprop="datePublished">2022-05-12</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/23/Graph2seq/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/" class="leancloud_visitors"  data-flag-title="EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/#comments" class="article-comment-link">评论</a></span>
+        
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 333(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 849(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://aclanthology.org/2021.emnlp-main.669">Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach</a></p>
+</blockquote>
+<h2 id="MTL-DA：数据增强技术降低解码器前置信息量，更关注编码器">MTL DA：数据增强技术降低解码器前置信息量，更关注编码器</h2>
+<h3 id="Abstract-26">Abstract</h3>
+<p>神经机器翻译里，数据增强（DA）技术常被用于当并行数据稀少的时候做额外的训练样本，许多的这种方法都是为了生成一些罕见词的新句子，从而使经验分布更趋近于真实的数据分布</p>
+<p>本文提出了一种多任务DA方法生成新的句子对，在训练过程中，这些增强的句子被用作多任务框架中的辅助任务，目的是在目标前置的信息不足以预测下一个单词时提供新的上下文，加强了编码器的同时使解码器更多关注编码器的表征</p>
+<h3 id="Introduction-20">Introduction</h3>
+<p>有很多方法来解决低资源数据问题，比如从高资源数据上做迁移学习，使用语言注释，多语言系统和数据增强方法来生成额外的并行句子</p>
+<p>数据增强方法被很多人视为是解决数据分布不匹配的解决方案，在增强后的数据集上进行训练既能得到更广泛的支持，同时也不会面对完全是分布外的数据情况</p>
+<p>本文提出了一种完全不同的DA框架，生成了额外的平行句子，尽管在数据分布下完全不可能，但系统地提高了 NMT 系统的质量。此外，为了避免因分布外的数据生成有害的推理，还使用了一个简单的多任务学习方法，这种框架不需要详细阐述的处理步骤，也不需要训练额外的系统或是额外的数据</p>
+<h3 id="Multi-Task-Learning-apporach-and-auxiliary-tasks">Multi-Task Learning apporach and auxiliary tasks</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table1.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="swap">swap</h4>
+<p>目标文字对被随机交换，只有 $(1-\alpha)\cdot t$ 的单词保留原来的位置，主要是迫使系统去预测时不那么依赖目标前置信息</p>
+<h4 id="token">token</h4>
+<p>$\alpha\cdot t$ 的随机单词被替换为UNK，当生成新单词的时候降低目标前置信息的信息量，使系统去更多关注于编码器，这是防止防止自分编码器后向崩溃时的有效设想</p>
+<h4 id="source">source</h4>
+<p>目标句子变成源句子的复制。这种方法生成正确输出的方法应该是检查编码器的表示来从源数据中复制，一些作者认为这种方法有害于训练，只有反向复制是有效的，但MTL框架可以允许利用这种合成的数据</p>
+<h4 id="reverse">reverse</h4>
+<p>目标句子反向，还是希望编码器可以学到更多信息</p>
+<h4 id="mono">mono</h4>
+<p>对目标词进行重新排序，使源词和目标词之间单调对齐，还是希望更专注编码器</p>
+<h4 id="replace">replace</h4>
+<p>$\alpha\cdot t$ 的随机选择源-目标对齐的词汇，并用从训练语料库中获得的双语词汇中的随机条目替换。这种转换很可能会引入那些由于仅依赖于目标语言的前缀而难以产生的单词，从而迫使系统注意到源词</p>
+<h3 id="Experiment-15">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table2.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table3.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MTL DA/table4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>在领域文本的效果提升比较大，说明对于专有词汇还是有相当不错的效果</p>
+<HR align=left color=#987cb9 SIZE=1>
 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/05/12/Rethinking%20Data%20Augmentation%20for%20Low-Resource%20Neural%20Machine%20Translation%EF%BC%9AA%20Multi-Task%20Learning%20Approach/" title="EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach" target="_blank" rel="external">https://tyang816.github.io/2022/05/12/Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/">CVPR-2020 Momentum Contrast for Unsupervised Visual Representation Learning</a>
-    </h1>
-  
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/" class="article-date">
-	  <time datetime="2021-12-22T06:14:08.000Z" itemprop="datePublished">12月 22</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a>
-  </span>
+  </section>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 239(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/">ACL-2016 Summarizing Source Code using a Neural Attention Model</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/05/12/3.6%20%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="3.6 卷积神经网络【斯坦福21秋季：实用机器学习】"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/" class="article-date">
-	  <time datetime="2021-12-17T05:12:09.000Z" itemprop="datePublished">12月 17</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 448(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/16/Improved%20Automatic%20Summarization%20of%20Subroutines%20via%20Attention%20to%20File%20Context/">MSR-2020 Improved Automatic Summarization of Subroutines via Attention to File Context</a>
-    </h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
   
-
-  </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/16/Improved%20Automatic%20Summarization%20of%20Subroutines%20via%20Attention%20to%20File%20Context/" class="article-date">
-	  <time datetime="2021-12-16T04:10:15.000Z" itemprop="datePublished">12月 16</time>
-	</a>
-</span>
+  <div class="bar-right">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/16/Improved%20Automatic%20Summarization%20of%20Subroutines%20via%20Attention%20to%20File%20Context/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 80(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/15/Improved%20Code%20Summarization%20via%20a%20Graph%20Neural%20Network/">ICPC-2020 Improved Code Summarization via a Graph Neural Network</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/15/Improved%20Code%20Summarization%20via%20a%20Graph%20Neural%20Network/" class="article-date">
-	  <time datetime="2021-12-15T06:08:08.000Z" itemprop="datePublished">12月 15</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/15/Improved%20Code%20Summarization%20via%20a%20Graph%20Neural%20Network/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 145(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/14/Masked%20Autoencoders%20Are%20Scalable%20Vision%20Learners/">CVPR-2021 Masked Autoencoders Are Scalable Vision Learners</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/14/Masked%20Autoencoders%20Are%20Scalable%20Vision%20Learners/" class="article-date">
-	  <time datetime="2021-12-14T05:04:59.000Z" itemprop="datePublished">12月 14</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/14/Masked%20Autoencoders%20Are%20Scalable%20Vision%20Learners/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 137(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/12/code2seq/">ICLR-2019 code2seq:Generating Sequences from Structured Representations of Code</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/12/code2seq/" class="article-date">
-	  <time datetime="2021-12-12T05:01:00.000Z" itemprop="datePublished">12月 12</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/12/code2seq/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 56(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/09/Intriguing%20Properties%20of%20Vision%20Transformers/">NIPS-2021 Intriguing Properties of Vision Transformers</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/09/Intriguing%20Properties%20of%20Vision%20Transformers/" class="article-date">
-	  <time datetime="2021-12-09T03:50:36.000Z" itemprop="datePublished">12月 9</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/09/Intriguing%20Properties%20of%20Vision%20Transformers/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 84(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/08/ViT/">ICLR-2021 An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/08/ViT/" class="article-date">
-	  <time datetime="2021-12-08T05:57:22.000Z" itemprop="datePublished">12月 8</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/08/ViT/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 155(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/06/Towards%20Context-Aware%20Code%20Comment%20Generation/">ACL-2020 Towards Context-Aware Code Comment Generation</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/06/Towards%20Context-Aware%20Code%20Comment%20Generation/" class="article-date">
-	  <time datetime="2021-12-06T05:28:25.000Z" itemprop="datePublished">12月 6</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/06/Towards%20Context-Aware%20Code%20Comment%20Generation/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 67(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
-
+  </div>
+</nav>
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/page/8/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/10/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 9 of 10</div>
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -854,6 +612,33 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
 
 
 
