@@ -20,12 +20,12 @@
   
   
   <title>ACL-2016 Summarizing Source Code using a Neural Attention Model | tyang</title>
-  <meta name="description" content="论文地址：Summarizing Source Code using a Neural Attention Model  CODE-NN，早期比较重要的一个Baseline 1. 简介  主要用LSTM+Attention机制 为了减轻人工写summary的负担，本文提出一个完全数据驱动的code summary生成的模型，叫做CODE-NN。该模型的基本架构是LSTM with attenti">
+  <meta name="description" content="论文地址：Summarizing Source Code using a Neural Attention Model  CODE-NN，早期比较重要的一个Baseline1. 简介 主要用LSTM+Attention机制 为了减轻人工写summary的负担，本文提出一个完全数据驱动的code summary生成的模型，叫做CODE-NN。该模型的基本架构是LSTM with attention">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACL-2016 Summarizing Source Code using a Neural Attention Model">
 <meta property="og:url" content="https://tyang816.github.io/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Summarizing Source Code using a Neural Attention Model  CODE-NN，早期比较重要的一个Baseline 1. 简介  主要用LSTM+Attention机制 为了减轻人工写summary的负担，本文提出一个完全数据驱动的code summary生成的模型，叫做CODE-NN。该模型的基本架构是LSTM with attenti">
+<meta property="og:description" content="论文地址：Summarizing Source Code using a Neural Attention Model  CODE-NN，早期比较重要的一个Baseline1. 简介 主要用LSTM+Attention机制 为了减轻人工写summary的负担，本文提出一个完全数据驱动的code summary生成的模型，叫做CODE-NN。该模型的基本架构是LSTM with attention">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210119200453484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-12-17T05:12:09.000Z">
@@ -215,7 +215,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -225,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.9px;">CV</a> <a href="/tags/SE/" style="font-size: 13.8px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.7px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.2px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.1px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.6px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.4px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.3px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.89px;">CV</a> <a href="/tags/SE/" style="font-size: 13.78px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.22px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.11px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.56px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.44px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.33px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -385,7 +385,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/17/Summarizing%20Source%20Code%20using%20a%20Neural%20Attention%20Model/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 448(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 447(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -398,21 +398,15 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://aclweb.org/anthology/P16-1195">Summarizing Source Code using a Neural Attention Model</a></p>
 </blockquote>
-<h2 id="CODE-NN，早期比较重要的一个Baseline">CODE-NN，早期比较重要的一个Baseline</h2>
-<h3 id="1-简介-5">1. 简介</h3>
-<ol>
+<h2 id="CODE-NN，早期比较重要的一个Baseline"><a href="#CODE-NN，早期比较重要的一个Baseline" class="headerlink" title="CODE-NN，早期比较重要的一个Baseline"></a>CODE-NN，早期比较重要的一个Baseline</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><ol>
 <li>主要用LSTM+Attention机制</li>
 <li>为了减轻人工写summary的负担，本文提出一个完全数据驱动的code summary生成的模型，叫做CODE-NN。该模型的基本架构是LSTM with attention。本文的贡献点在于：</li>
-<li>提出了一个数据驱动的模型CODE-NN，在code summarization和code retrieval两个任务上取得了sota的结果。<br>
-贡献了一个code summary的数据集，该数据集是从StackOverflow上收集的，并经过一系列清洗等处理，最终的数据集规模如下图。<br>
-<code>&lt;img src=&quot;https://img-blog.csdnimg.cn/2021011920042011.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center&quot; alt=&quot;avatar&quot; style=&quot;zoom:50%;&quot; /&gt;</code></li>
+<li>提出了一个数据驱动的模型CODE-NN，在code summarization和code retrieval两个任务上取得了sota的结果。<br>贡献了一个code summary的数据集，该数据集是从StackOverflow上收集的，并经过一系列清洗等处理，最终的数据集规模如下图。<br><code>&lt;img src=&quot;https://img-blog.csdnimg.cn/2021011920042011.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center&quot; alt=&quot;avatar&quot; style=&quot;zoom:50%;&quot; /&gt;</code></li>
 </ol>
-<h3 id="2-模型-4">2. 模型</h3>
-<img src="https://img-blog.csdnimg.cn/20210119200453484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" />
+<h3 id="2-模型"><a href="#2-模型" class="headerlink" title="2. 模型"></a>2. 模型</h3><p><img src="https://img-blog.csdnimg.cn/20210119200453484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" /></p>
 <p>上图是根据代码生成自然语言summary的过程，模型使用的是LSTM，最开始输入LSTM的是NULL，接着根据代码c和当前LSTM输出的隐状态向量计算attention，得到attention之后，形成新的表示向量，softmax得到该时刻应该输出的自然语言的token，再将该token作为下一时刻的输入，重复以上过程，直至输出END。</p>
 <p>模型包含两个主要的部分，一个是LSTM学习自然语言token基于上下文的表示，一个是attention。</p>
-<h3 id="3-实验-4">3. 实验</h3>
-<p>在实验部分，对于code summary的任务，比较的baseline方法是：</p>
+<h3 id="3-实验"><a href="#3-实验" class="headerlink" title="3. 实验"></a>3. 实验</h3><p>在实验部分，对于code summary的任务，比较的baseline方法是：</p>
 <ul>
 <li>IR: An information retrieval baseline that outputs the title associated with the code c_j in the training set that is closest to the input code c in terms of token Levenshtein distance.</li>
 <li>MOSES (2007): A popular phrase-based machine translation system.</li>
