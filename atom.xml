@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-05-12T13:39:32.947Z</updated>
+  <updated>2022-05-14T08:18:07.849Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>4.1 模型评估【斯坦福21秋季：实用机器学习】</title>
+    <link href="https://tyang816.github.io/2022/05/14/4.1%20%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"/>
+    <id>https://tyang816.github.io/2022/05/14/4.1%20%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</id>
+    <published>2022-05-14T06:52:30.000Z</published>
+    <updated>2022-05-14T08:18:07.849Z</updated>
+    
+    <content type="html"><![CDATA[<iframe src="//player.bilibili.com/player.html?aid=718909526&bvid=BV1tQ4y1S7Ty&cid=434850761&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe><HR align=left color=#987cb9 SIZE=1><h3 id="Model-Validation"><a href="#Model-Validation" class="headerlink" title="Model Validation"></a>Model Validation</h3><p>一个在给定数据集下训练好的模型，用合适的评估指标来衡量模型在新数据上的效果好坏，检验模型的泛化能力</p><h3 id="Model-Metrics"><a href="#Model-Metrics" class="headerlink" title="Model Metrics"></a>Model Metrics</h3><ul><li><p>在监督学习，我们训练模型来最小化损失</p><ul><li>损失值是广泛使用的指标来衡量模型的质量</li></ul></li><li><p>这里有很多其他指标</p><ul><li>模型特有：分类准确率</li><li>商业特有：收入，推理时间</li></ul></li><li>我们选择模型通过多种指标<ul><li>就像是选车要考虑安全、舒适、外观、性能等等</li></ul></li></ul><h3 id="Case-Study：Displaying-Ads"><a href="#Case-Study：Displaying-Ads" class="headerlink" title="Case Study：Displaying Ads"></a>Case Study：Displaying Ads</h3><ul><li><p>广告是很多互联网公司的主要收入源</p></li><li><p>搜索网页 -&gt; 取回相应广告 -&gt; 通过CTR评估点击率（简单二分类问题，点还是不点） -&gt; 通过CTR x price排序展示广告</p></li><li>其实对于广告而言，用户点击概率很小，顶多百分之几，所以样本中正例是很小的，更多是负例</li></ul><h3 id="Metrics-for-Classification"><a href="#Metrics-for-Classification" class="headerlink" title="Metrics for Classification"></a>Metrics for Classification</h3><ul><li><p>准确率：正确预测/总样本</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(y == y_hat) / y.size</span><br></pre></td></tr></table></figure></li><li><p>精确率：正确被预测为i类 / 预测为i类的样本</p><p>很多时候我们并不关心对负类的预测，更关心对正类的预测，因为负类预测对了对业务往往也没有多大的好处</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>((y_hat == <span class="number">1</span>) &amp; (y == <span class="number">1</span>)) / <span class="built_in">sum</span>(y_hat == <span class="number">1</span>)</span><br></pre></td></tr></table></figure></li><li><p>召回率：正确预测为i类 / 样本中i类的个数</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>((y_hat == <span class="number">1</span>) &amp; (y == <span class="number">1</span>)) / <span class="built_in">sum</span>(y == <span class="number">1</span>)</span><br></pre></td></tr></table></figure></li><li><p>F1：平衡精确率和召回率</p><ul><li>2pr/(p+r)</li></ul></li></ul><h3 id="AUC-amp-ROC"><a href="#AUC-amp-ROC" class="headerlink" title="AUC &amp; ROC"></a>AUC &amp; ROC</h3><ul><li><p>AUC，在ROC下面覆盖的区域面积，衡量模型区分类别的概率</p><ul><li><p>选择一个变量 $\theta$ 为置信率，如果 $\hat{y}&gt;\theta$ 救预测为正类，否则预测为负类</p></li><li><p>比如正负样本平衡的时候取个0.5</p></li><li><p>实际生成过程中会根据实际情况来选择</p></li><li><p>x轴是错误预测为正类的样本/负样本，y轴是正确预测为正类的样本/正样本，取不同的 $\theta$ 值可以得到不同的曲线，是精度和召回的一个权衡</p></li><li><p>AUC=0.5最糟糕，完全不能区分分布</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/4.1-img1.png" alt="avatar" style="zoom:60%;" /></div></li></ul></li></ul><h3 id="Business-Metrics-for-Displaying-Ads"><a href="#Business-Metrics-for-Displaying-Ads" class="headerlink" title="Business Metrics for Displaying Ads"></a>Business Metrics for Displaying Ads</h3><ul><li>优化收入和用户体验<ul><li>延迟：广告在同一时间给多少用户展示，模型抽取特征、预测等等一般要在300或500ms以内</li><li>ASN：平均每个页面多少广告</li><li>CTR：用户点击率</li><li>ACP：广告商给每次点击平均付多少钱</li></ul></li><li>收入 = 流量 x ASN x CTR x ACR</li></ul><h3 id="Displaying-Ads-Model-gt-Business-Metrics"><a href="#Displaying-Ads-Model-gt-Business-Metrics" class="headerlink" title="Displaying Ads: Model -&gt; Business Metrics"></a>Displaying Ads: Model -&gt; Business Metrics</h3><ul><li>模型的关键指标AUC</li><li>一个模型提升了AUC但可能有害于商业指标<ul><li>选择了不同的广告来展示，这些广告可能有<ul><li>更低的预测CTR-&gt; 更少的广告展示</li><li>更低的真实CTR，可能因为只评估了过去的数据，新数据下用户行为发生了变化</li><li>更低的价格</li></ul></li></ul></li><li>主要的解决方法还是在真实的数据上观察商业指标</li></ul><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul><li>我们用很多标准来评估模型</li><li>模型评估标准反应了模型在样本上的表现<ul><li>比如准确率，精确率，召回率，AUC等</li></ul></li><li>商业指标反应了模型对实际生产的影响</li></ul><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=718909526&amp;bvid=BV1tQ4y1S7Ty&amp;cid=434850761&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;</summary>
+      
+    
+    
+    
+    <category term="斯坦福21秋季：实用机器学习" scheme="https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3.7 循环神经网络【斯坦福21秋季：实用机器学习】</title>
+    <link href="https://tyang816.github.io/2022/05/13/3.7%20%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>https://tyang816.github.io/2022/05/13/3.7%20%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
+    <published>2022-05-13T06:46:09.000Z</published>
+    <updated>2022-05-14T06:53:38.892Z</updated>
+    
+    <content type="html"><![CDATA[<iframe src="//player.bilibili.com/player.html?aid=591410448&bvid=BV1pq4y1r7zo&cid=434441440&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe><HR align=left color=#987cb9 SIZE=1><h3 id="Dense-layer-gt-Recurrent-networks"><a href="#Dense-layer-gt-Recurrent-networks" class="headerlink" title="Dense layer -&gt; Recurrent networks"></a>Dense layer -&gt; Recurrent networks</h3><ul><li>语言模型：预测下一个词<ul><li>hello -&gt; world，hello world -&gt; !</li></ul></li><li>使用MLP并不能很好的处理时序信息，每次输入一个词用同一个MLP模型的话就根本看不到之前的序列，当然也可以想用bag of word用one-hot编码把词加起来表示序列，但是这样还是丢失了时序信息，因为 hello world 和 world hello 其实是一个表示了</li></ul><h3 id="RNN-and-Gated-RNN"><a href="#RNN-and-Gated-RNN" class="headerlink" title="RNN and Gated RNN"></a>RNN and Gated RNN</h3><ul><li>简单的RNN：$h<em>t=\phi (W</em>{hh}h<em>{t-1}+W</em>{hx}x_t+b_h)$ ，第一项是和MLP不同的主要所在，主要是增加了让模型看到上一个时间步的信息</li><li>Gated RNN (LSTM,GRU)：通过一些可以学习的参数来控制信息流动<ul><li>忘记输入：当计算 $h_t$ 的时候抑制  $x_t$，这个输入对预测没有多大关系了就可以忘记等等</li><li>忘记过去：当计算 $h<em>t$ 的时候抑制 $h</em>{t-1}$，比如新的一段开始了，很久之前的信息跟现在没多大关系了就可以忘记</li></ul></li></ul><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><ul><li>实现一个简单的RNN</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">W_xh = nn.Parameter(torch.randn(num_inputs, num_hiddens) * <span class="number">0.01</span>)</span><br><span class="line">W_hh = nn.Parameter(torch.randn(num_hiddens, num_hiddens) * <span class="number">0.01</span>)</span><br><span class="line">b_h = nn.Parameter(torch.zeros(num_hiddens))</span><br><span class="line"></span><br><span class="line">H = torch.zeros(num_hiddens)</span><br><span class="line">outputs = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> X <span class="keyword">in</span> inputs: <span class="comment"># `inputs` shape: (num_steps, batch_size, num_inputs)</span></span><br><span class="line">    H = torch.tanh(X @ W_xh + H @ W_hh + b_h)</span><br><span class="line">    outputs.append(H)</span><br></pre></td></tr></table></figure><h3 id="Bi-RNN-and-Deep-RNN"><a href="#Bi-RNN-and-Deep-RNN" class="headerlink" title="Bi-RNN and Deep RNN"></a>Bi-RNN and Deep RNN</h3><p>能拿到整个序列的时候可以看到双向的表示，一个是防止神经网络遗忘，另一个是可以获取更好的上下文语义信息</p><p>同样的，RNN也是可以一直堆叠起来变得很深</p><h3 id="Model-Selections"><a href="#Model-Selections" class="headerlink" title="Model Selections"></a>Model Selections</h3><ul><li>表格：决策树、线性/MLP</li><li>文本/语音：RNN、transformer</li><li>图片/频谱/视频：transformer、CNN</li></ul><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul><li>MLP：通过堆叠多个稠密层和非线性激活函数</li><li>CNN：堆卷积层、池化层来获取有效的空间信息</li><li>RNN：堆叠循环层获取隐藏状态来获取时序信息</li></ul><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=591410448&amp;bvid=BV1pq4y1r7zo&amp;cid=434441440&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;</summary>
+      
+    
+    
+    
+    <category term="斯坦福21秋季：实用机器学习" scheme="https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach</title>
@@ -471,60 +515,6 @@
       
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/1608.00859&quot;&gt;Temporal Segment Networks：Towards Good Practices for Deep Action Recognition&lt;</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="cs.Video" scheme="https://tyang816.github.io/tags/cs-Video/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition</title>
-    <link href="https://tyang816.github.io/2022/04/17/Convolutional%20Two-Stream%20Network%20Fusion%20for%20Video%20Action%20Recognition/"/>
-    <id>https://tyang816.github.io/2022/04/17/Convolutional%20Two-Stream%20Network%20Fusion%20for%20Video%20Action%20Recognition/</id>
-    <published>2022-04-17T08:14:39.000Z</published>
-    <updated>2022-04-17T11:37:47.649Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://ieeexplore.ieee.org/document/7780582/">Convolutional Two-Stream Network Fusion for Video Action Recognition</a></p></blockquote><h2 id="双流如何做Fusion：用Early稍好"><a href="#双流如何做Fusion：用Early稍好" class="headerlink" title="双流如何做Fusion：用Early稍好"></a>双流如何做Fusion：用Early稍好</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>研究了一系列如果融合光流和空间流的方法，使用temporal fusion还是spatial fusion，决定后在哪一层做fusion，最终得到一个比较好的fusion结构</p><h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><h4 id="Spatial-fusion"><a href="#Spatial-fusion" class="headerlink" title="Spatial fusion"></a>Spatial fusion</h4><p>有时间流和空间流后如何保证在同一像素位置通道的response能联系起来：</p><ul><li>Max fusion，两个同样位置取最大</li><li>Concatenation fusion：链接起来</li><li>Conv fusion：两个图堆叠起来再做一个卷积操作</li><li>Sum fusion：加法</li><li>Bilinear fusion：做矩阵的outer product，在所有维度上做加权平均</li></ul><h4 id="Where-to-fuse-the-networks"><a href="#Where-to-fuse-the-networks" class="headerlink" title="Where to fuse the networks"></a>Where to fuse the networks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img2.png" alt="avatar" style="zoom:60%;" /></div><ul><li>空间流和时间流分别做，在Conv4做fuse</li><li>先分别做，把空间流拿过来合并，同时保持空间流完整性，最后再做合并</li></ul><h4 id="Temporal-fusion"><a href="#Temporal-fusion" class="headerlink" title="Temporal fusion"></a>Temporal fusion</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/img3.png" alt="avatar" style="zoom:60%;" /></div><ul><li>2D pooling</li><li>3D pooling</li><li>3D conv + 3D pooling </li></ul><h4 id="Proposed-architecture"><a href="#Proposed-architecture" class="headerlink" title="Proposed architecture"></a>Proposed architecture</h4><p>时空学习+时间学习</p><p>两个最终分类头加权平均一下得到最终结果</p><h4 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Convolutional Two-Stream Network Fusion for Video Action Recognition/table5.png" alt="avatar" style="zoom:60%;" /></div><p>数据集特别小的情况用特别深的网络容易过拟合。改成early fusion方法在HMDB51上提升很明显</p><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://ieeexplore.ieee.org/document/7780582/&quot;&gt;Convolutional Two-Stream Network Fusion for Video Action Recogni</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
-    
-    <category term="cs.Video" scheme="https://tyang816.github.io/tags/cs-Video/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification</title>
-    <link href="https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/"/>
-    <id>https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/</id>
-    <published>2022-04-17T07:28:52.000Z</published>
-    <updated>2022-04-17T08:56:28.564Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://ieeexplore.ieee.org/document/7299101/">Beyond Short Snippets：Deep Networks for Video Classification</a></p><p>来自谷歌的工作</p></blockquote><h2 id="稍长的视频处理：池化和LSTM在视频理解的作用"><a href="#稍长的视频处理：池化和LSTM在视频理解的作用" class="headerlink" title="稍长的视频处理：池化和LSTM在视频理解的作用"></a>稍长的视频处理：池化和LSTM在视频理解的作用</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出</p><h3 id="Apporach"><a href="#Apporach" class="headerlink" title="Apporach"></a>Apporach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png" alt="avatar" style="zoom:60%;" /></div><p>如果按照双流网络的思想去做，原始视频就几帧就太短了，如果有特别多的帧怎么办呢？</p><p>首先对于所有的帧肯定是要去抽特征，比如原始的手工或卷积神经网络，关键在于抽取到特征之后怎么去做pooling这个操作，可以简单的做一个max或average，这篇文章对这个做了很多的探索，<strong>最终的结论表示都差不多</strong>，ConvPooling最好。以及尝试了用LSTM去做特征融合，但实际上提升有限</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img4.png" alt="avatar" style="zoom:60%;" /></div><p>每个视频帧对应一个卷积网络（权值共享）去抽取特征，用了五层LSTM，最后softmax</p><h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table5.png" alt="avatar" style="zoom:60%;" /></div><p>在Sorts-1M数据集上LSTM没有想象中那么有用，可能是因为LSTM学到的东西比较high-level，<strong>视频即使帧比较多还是比较短</strong>，在这种情况下实际上<strong>语义信息并没有太多改变</strong>，相当于传了一些差不多的内容给LSTM，说实话LSTM可能也学不到什么，最终也就带不来很大的提升。在变化比较剧烈的情况，或者长视频上，LSTM应该还是有一定意义的</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table7.png" alt="avatar" style="zoom:60%;" /></div><p>在UCF-101效果就都只是好了一点，提升非常有限</p><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://ieeexplore.ieee.org/document/7299101/&quot;&gt;Beyond Short Snippets：Deep Networks for Video Classification&lt;/a&gt;</summary>
       
     
     
