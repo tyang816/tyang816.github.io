@@ -399,8 +399,8 @@
 <p>论文地址：[A Simple Framework for Contrastive Learning of Visual Representations](<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2002.05709">http://arxiv.org/abs/2002.05709</a></p>
 <p>代码：<a target="_blank" rel="noopener" href="https://github.com/google-research/simclr">https://github.com/google-research/simclr</a></p>
 </blockquote>
-<h2 id="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size"><a href="#SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size" class="headerlink" title="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size"></a>SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Simple Framework for Contrastive Learning of Visual Representations/img1.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h2 id="SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch-size">SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size</h2>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Simple Framework for Contrastive Learning of Visual Representations/img1.png" alt="avatar" style="zoom:60%;" /></div>
 <ol>
 <li>同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重</li>
 <li>simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)</li>
@@ -408,7 +408,6 @@
 <li>batch size比较大，训练更久，网络特征会比较好，用lars优化器在大batch size下优化</li>
 </ol>
 <HR align=left color=#987cb9 SIZE=1>
-
 
       
     </div>

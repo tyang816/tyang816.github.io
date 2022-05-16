@@ -20,12 +20,12 @@
   
   
   <title>ICML-2021 Is Space-Time Attention All You Need for Video Understanding | tyang</title>
-  <meta name="description" content="论文地址：Is Space-Time Attention All You Need for Video Understanding  Timesformer：详细实验迁移vit到视频理解Abstract把vision transformer迁移到视频理解领域来 Method  作者尝试了以上五种结构  S  只在空间特征图做自注意力，就是图像里vision transformer用的自注意力">
+  <meta name="description" content="论文地址：Is Space-Time Attention All You Need for Video Understanding  Timesformer：详细实验迁移vit到视频理解 Abstract 把vision transformer迁移到视频理解领域来 Method  作者尝试了以上五种结构   S  只在空间特征图做自注意力，就是图像里vision transformer用的自注意">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2021 Is Space-Time Attention All You Need for Video Understanding">
 <meta property="og:url" content="https://tyang816.github.io/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Is Space-Time Attention All You Need for Video Understanding  Timesformer：详细实验迁移vit到视频理解Abstract把vision transformer迁移到视频理解领域来 Method  作者尝试了以上五种结构  S  只在空间特征图做自注意力，就是图像里vision transformer用的自注意力">
+<meta property="og:description" content="论文地址：Is Space-Time Attention All You Need for Video Understanding  Timesformer：详细实验迁移vit到视频理解 Abstract 把vision transformer迁移到视频理解领域来 Method  作者尝试了以上五种结构   S  只在空间特征图做自注意力，就是图像里vision transformer用的自注意">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img2.png">
@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 391(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 393(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -404,45 +404,55 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://proceedings.mlr.press/v139/bertasius21a/bertasius21a-supp.pdf">Is Space-Time Attention All You Need for Video Understanding</a></p>
 </blockquote>
-<h2 id="Timesformer：详细实验迁移vit到视频理解"><a href="#Timesformer：详细实验迁移vit到视频理解" class="headerlink" title="Timesformer：详细实验迁移vit到视频理解"></a>Timesformer：详细实验迁移vit到视频理解</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>把vision transformer迁移到视频理解领域来</p>
-<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img1.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h2 id="Timesformer：详细实验迁移vit到视频理解">Timesformer：详细实验迁移vit到视频理解</h2>
+<h3 id="Abstract-16">Abstract</h3>
+<p>把vision transformer迁移到视频理解领域来</p>
+<h3 id="Method-3">Method</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>作者尝试了以上五种结构</p>
 <ul>
-<li><p>S</p>
+<li>
+<p>S</p>
 <ul>
 <li>只在空间特征图做自注意力，就是图像里vision transformer用的自注意力</li>
 </ul>
 </li>
-<li><p>ST</p>
+<li>
+<p>ST</p>
 <ul>
 <li>比较暴力做法，视频三个维度一起做自注意力，但太大了，GPU塞不下</li>
 </ul>
 </li>
-<li>T+S<ul>
+<li>
+<p>T+S</p>
+<ul>
 <li>本文的主要方法，拆分了3D，先做时间自注意力再做空间</li>
 </ul>
 </li>
-<li>L+G<ul>
+<li>
+<p>L+G</p>
+<ul>
 <li>先局部小窗口算，再全局，降低了复杂度</li>
 </ul>
 </li>
-<li>T+W+H<ul>
+<li>
+<p>T+W+H</p>
+<ul>
 <li>只沿着特定的轴去做自注意力，把三维变成了1+1+1维，复杂度也降低了</li>
 </ul>
 </li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img2.png" alt="avatar" style="zoom:60%;" /></div>
-
 <p>这图画的非常好，蓝色的patch表示基准，然后和其他的patch做注意力，绿色表示时间注意力，黄色是局部和轴，紫色是全局和轴</p>
-<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/table1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img3.png" alt="avatar" style="zoom:50%;" /></div>
-
+<h3 id="Experiment-8">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/table1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/img3.png" alt="avatar" style="zoom:50%;" /></div>
 <p>光用2D的在k400效果比较好是因为这个数据集本身偏向静态的，换在ssv2效果就不好了，还是要考虑时间维度的</p>
 <p>joint的方法虽然好，但是随着视频帧变多开销非常大，灰色是爆显存了，没法训练了</p>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/table2-3.png" alt="avatar" style="zoom:60%;" /></p>
+<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Timesformer/table2-3.png" alt="avatar" style="zoom:60%;" />
 <p>训练时间少，推理速度快，但效果实际上不算是最好的，slowfast如果换res101在k400可以达到80以上</p>
 <p>把Timesformer变大也达到了SOTA</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>四个好处</p>
+<h3 id="Conclusion">Conclusion</h3>
+<p>四个好处</p>
 <ul>
 <li>想法简单</li>
 <li>效果在几个动作识别都达到了SOTA</li>
@@ -450,7 +460,6 @@
 <li>可以处理超过1分钟的视频</li>
 </ul>
 <HR align=left color=#987cb9 SIZE=1>
-
 
       
     </div>
