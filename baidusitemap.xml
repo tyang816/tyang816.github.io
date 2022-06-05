@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/06/04/Megatron-LM%EF%BC%9ATraining%20Multi-Billion%20Parameter%20Language%20Models%20Using%20Model%20Parallelism/</loc>
+    <lastmod>2022-06-05</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/06/03/GPipe%EF%BC%9AEfficient%20Training%20of%20Giant%20Neural%20Networks%20using%20Pipeline%20Parallelism/</loc>
     <lastmod>2022-06-03</lastmod>
   </url>
