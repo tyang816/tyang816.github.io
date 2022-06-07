@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/06/06/Impact%20of%20Evaluation%20Methodologies%20on%20Code%20Summarization/</loc>
+    <lastmod>2022-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
+    <lastmod>2022-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/06/Deep%20code%20comment%20generation/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/06/4.3%20%E6%A8%A1%E5%9E%8B%E9%AA%8C%E8%AF%81/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/06/4.2%20%E8%BF%87%E6%8B%9F%E5%90%88%E5%92%8C%E6%AC%A0%E6%8B%9F%E5%90%88/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/05/14/4.1%20%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</loc>
+    <lastmod>2022-06-06</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/06/04/Megatron-LM%EF%BC%9ATraining%20Multi-Billion%20Parameter%20Language%20Models%20Using%20Model%20Parallelism/</loc>
     <lastmod>2022-06-05</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/03/GPipe%EF%BC%9AEfficient%20Training%20of%20Giant%20Neural%20Networks%20using%20Pipeline%20Parallelism/</loc>
     <lastmod>2022-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/05/14/4.1%20%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</loc>
-    <lastmod>2022-05-14</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/05/13/3.7%20%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
@@ -91,10 +115,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/04/22/Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server/</loc>
     <lastmod>2022-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/</loc>
-    <lastmod>2022-04-18</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/</loc>
@@ -194,10 +214,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/09/SeqGAN/</loc>
-    <lastmod>2022-03-26</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
     <lastmod>2022-03-26</lastmod>
   </url>
   <url>
