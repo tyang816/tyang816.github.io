@@ -20,12 +20,12 @@
   
   
   <title>ICSE-2019 A Neural Model for Generating Natural Language Summaries of Program Subroutines | tyang</title>
-  <meta name="description" content="论文地址：A Neural Model for Generating Natural Language Summaries of Program Subroutines  ast-attentiongru 1. 简介  将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入 设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST  2. 模型 作者">
+  <meta name="description" content="论文地址：A Neural Model for Generating Natural Language Summaries of Program Subroutines  ast-attentiongru1. 简介 将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入 设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST  2. 模型作者提出模">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICSE-2019 A Neural Model for Generating Natural Language Summaries of Program Subroutines">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/16/A%20Neural%20Model%20for%20Generating%20Natural%20Language%20Summaries%20of%20Program%20Subroutines/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：A Neural Model for Generating Natural Language Summaries of Program Subroutines  ast-attentiongru 1. 简介  将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入 设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST  2. 模型 作者">
+<meta property="og:description" content="论文地址：A Neural Model for Generating Natural Language Summaries of Program Subroutines  ast-attentiongru1. 简介 将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入 设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST  2. 模型作者提出模">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2022-02-16T09:44:32.000Z">
@@ -217,7 +217,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-obj/" rel="tag">cs.obj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-transformer/" rel="tag">cs.transformer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +227,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.89px;">CV</a> <a href="/tags/SE/" style="font-size: 13.78px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.11px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.22px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.44px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.33px;">cs.Video</a> <a href="/tags/cs-obj/" style="font-size: 13px;">cs.obj</a> <a href="/tags/cs-transformer/" style="font-size: 13px;">cs.transformer</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.22px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.88px;">CV</a> <a href="/tags/SE/" style="font-size: 13.75px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.63px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.13px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.25px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.5px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.38px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.25px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -387,7 +387,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/16/A%20Neural%20Model%20for%20Generating%20Natural%20Language%20Summaries%20of%20Program%20Subroutines/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 178(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 177(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -400,19 +400,15 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1902.01954">A Neural Model for Generating Natural Language Summaries of Program Subroutines</a></p>
 </blockquote>
-<h2 id="ast-attentiongru">ast-attentiongru</h2>
-<h3 id="1-简介">1. 简介</h3>
-<ol>
+<h2 id="ast-attentiongru"><a href="#ast-attentiongru" class="headerlink" title="ast-attentiongru"></a>ast-attentiongru</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><ol>
 <li>将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入</li>
 <li>设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST</li>
 </ol>
-<h3 id="2-模型">2. 模型</h3>
-<p>作者提出模型ast-attendgru，使用的attention-based encoder-decoder架构。在表示代码方面，使用了代码的token sequence和代码的结构AST，并且这两个部分分别进行encode，架构图如下：</p>
-<img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" />
+<h3 id="2-模型"><a href="#2-模型" class="headerlink" title="2. 模型"></a>2. 模型</h3><p>作者提出模型ast-attendgru，使用的attention-based encoder-decoder架构。在表示代码方面，使用了代码的token sequence和代码的结构AST，并且这两个部分分别进行encode，架构图如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" /></p>
 <p>数据集：自己收集的Java method 语料，51 million Java method form 50000 projects，经过处理后得到大约2.1m methods。</p>
 <ul>
-<li>baselines：
-<ul>
+<li>baselines：<ul>
 <li>attendgru</li>
 <li>SBT (ICPC 18)</li>
 <li>CODE-NN (Iyer 19)</li>

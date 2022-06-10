@@ -20,12 +20,12 @@
   
   
   <title>ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows | tyang</title>
-  <meta name="description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口   ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Sw">
+  <meta name="description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口 ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICCV-2021 Swin Transformer:Hierarchical Vision Transformer using Shifted Windows">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/15/Swin/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口   ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Sw">
+<meta property="og:description" content="论文地址：Swin Transformer: Hierarchical Vision Transformer using Shifted Windows  Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口 ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png">
@@ -217,7 +217,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-obj/" rel="tag">cs.obj</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-transformer/" rel="tag">cs.transformer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +227,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.89px;">CV</a> <a href="/tags/SE/" style="font-size: 13.78px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.11px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.22px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.44px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.33px;">cs.Video</a> <a href="/tags/cs-obj/" style="font-size: 13px;">cs.obj</a> <a href="/tags/cs-transformer/" style="font-size: 13px;">cs.transformer</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.22px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.88px;">CV</a> <a href="/tags/SE/" style="font-size: 13.75px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.63px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.13px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.25px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.5px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.38px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.25px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -400,25 +400,15 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2103.14030">Swin Transformer: Hierarchical Vision Transformer using Shifted Windows</a></p>
 </blockquote>
-<h2 id="Swin-Transformer：层级式的Transformer，使用了Patch-Merging和移动窗口">Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2>
-<ol>
-<li>
-<p>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</p>
-</li>
-<li>
-<p>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</p>
-</li>
-<li>
-<p>Patch Merging：类似于卷积的操作</p>
+<h2 id="Swin-Transformer：层级式的Transformer，使用了Patch-Merging和移动窗口"><a href="#Swin-Transformer：层级式的Transformer，使用了Patch-Merging和移动窗口" class="headerlink" title="Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口"></a>Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口</h2><ol>
+<li>ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好</li>
+<li>在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口</li>
+<li><p>Patch Merging：类似于卷积的操作</p>
 <p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png" alt="avatar"></p>
 </li>
-<li>
-<p>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</p>
-</li>
-<li>
-<p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p>
-<p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量<br>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png" alt="avatar"></p>
+<li>移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力</li>
+<li><p>提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码</p>
+<p>5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量<br><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png" alt="avatar"></p>
 <p>5.2 于是分割填补，同时部署于同一区域的patch不做自注意力计算，即采用masked MSA，然后还原图片，避免图片一直位移</p>
 <p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img3.png" alt="avatar"></p>
 </li>
