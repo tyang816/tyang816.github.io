@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyang816.github.io/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/</loc>
-    <lastmod>2022-06-10</lastmod>
+    <loc>https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/</loc>
+    <lastmod>2022-06-13</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</loc>
+    <lastmod>2022-06-13</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/10/5.2%20Bagging/</loc>
+    <lastmod>2022-06-13</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/</loc>
     <lastmod>2022-06-10</lastmod>
   </url>
   <url>

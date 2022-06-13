@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-06-10T08:24:09.079Z</updated>
+  <updated>2022-06-13T07:20:39.524Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>5.3 Boosting【斯坦福21秋季：实用机器学习】</title>
+    <link href="https://tyang816.github.io/2022/06/13/5.3%20Boosting/"/>
+    <id>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</id>
+    <published>2022-06-13T06:54:36.000Z</published>
+    <updated>2022-06-13T07:20:39.524Z</updated>
+    
+    <content type="html"><![CDATA[<iframe src="https://player.bilibili.com/player.html?aid=934451319&bvid=BV1aM4y1P7z9&cid=448550198&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe><HR align=left color=#987cb9 SIZE=1><h3 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h3><ul><li>Boosting将多个弱学习器结合成强的一个<ul><li>主要是降低偏差</li></ul></li><li><p>顺序学习N个弱学习器，在第i步</p><ul><li>训练一个弱学习器 h_i，评估损失</li><li>根据当前误差重新采样数据使得下一个模型H去关注预测不正确的样本</li></ul></li><li><p>比较著名的算法有AdaBoost，gradient  Boosting</p></li></ul><h3 id="Gradient-Boosting"><a href="#Gradient-Boosting" class="headerlink" title="Gradient Boosting"></a>Gradient Boosting</h3><ul><li>假设在t时刻训练了模型$H_t(x)$，初始 $H_1(x)=0$</li><li>在t=1时刻<ul><li>训练一个新的模型 $h<em>t$ 在残差上：${(x_i,y_i)-H_t(x_i)}</em>{i=1,…,m}$</li><li>$H_{t+1}(x)=H_t(x)+\eta f_t(x)$<ul><li>学习率 $\eta$ 作为收缩的正则项，假设等于1就是完全拟合了，可能就过拟合了</li></ul></li></ul></li><li>残差等于 $-\part L/\part H$ 如果使用MSE作为损失的话<ul><li>其他的Boosting算法可以视作差不多的梯度下降的方法</li></ul></li></ul><h3 id="Gradient-Boosting-Code"><a href="#Gradient-Boosting-Code" class="headerlink" title="Gradient Boosting Code"></a>Gradient Boosting Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">GradientBoosting</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, base_learner, n_learners, learning_rate</span>):</span><br><span class="line">        self.learners = [clone(base_learner) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_learners)]</span><br><span class="line">        self.lr = learning_rate</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fit</span>(<span class="params">self, X, y</span>):</span><br><span class="line">        residual = y.copy()</span><br><span class="line">        <span class="keyword">for</span> learner <span class="keyword">in</span> self.learners:</span><br><span class="line">            learner.fit(X, residual)</span><br><span class="line">            residual -= self.lr * learner.predict(X)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, X</span>):</span><br><span class="line">        preds = [learner,predict(X) <span class="keyword">for</span> learner <span class="keyword">in</span> self.learners]</span><br><span class="line">        <span class="keyword">return</span> np.array(preds).<span class="built_in">sum</span>(axis=<span class="number">0</span>) * self.lr</span><br></pre></td></tr></table></figure><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul><li>Boosting就是把弱学习器结合成一个强学习器来降低偏差</li><li>梯度下降Boosting学习残差</li></ul><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;iframe src=&quot;https://player.bilibili.com/player.html?aid=934451319&amp;bvid=BV1aM4y1P7z9&amp;cid=448550198&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; framebo</summary>
+      
+    
+    
+    
+    <category term="斯坦福21秋季：实用机器学习" scheme="https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees</title>
+    <link href="https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/"/>
+    <id>https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/</id>
+    <published>2022-06-11T07:23:12.000Z</published>
+    <updated>2022-06-13T08:40:19.227Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2012.07023">InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees</a></p><p>论文实现：<a href="https://github.com/ICSE21/infercode">https://github.com/ICSE21/infercode</a></p></blockquote><h2 id="InferCode：预测子树-TBCNN"><a href="#InferCode：预测子树-TBCNN" class="headerlink" title="InferCode：预测子树+TBCNN"></a>InferCode：预测子树+TBCNN</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方法有一个巨大的缺陷就是主要是在有标注的特定数据集上训练，很难应用到别的任务上去，所以作者提出了InferCode将自然语言处理的自监督学习方法迁移到了抽象语法树上。主要创新点在于通过<strong>预测</strong>从AST的上下文中自动识别出的<strong>子树</strong>来训练代码表示，模型使用了基于树的卷积神经网络（<strong>TBCNN</strong>）作为编码器</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>先前的方法主要有以下限制阻碍效果和泛化性：</p><ul><li>训练只针对特定任务，且需要提供标注数据或特征</li><li>尽管一些方法是生成可迁移的代码表示，但是往往仅适配于一些固定的代码单元，比如词元，声明或函数等，不能灵活的为不同的代码单元生成嵌入。这种方法可能会缺失不同类型单元的多元性和重要信息，不能很好迁移到下游任务</li><li>一些图的方法需要额外构造开销，并且可能引入不准确信息</li></ul><p>因此，本文主要的解决目标为：</p><ul><li>不需要手工标注数据进行训练</li><li>对于任意可以用抽象语法树表示的代码单元都能灵活的生成嵌入表示</li><li>泛化性足够强能够使用到各种下游任务</li></ul><p>实现以上目标本文有两大支柱：</p><ul><li>大量的公共代码数据训练</li><li>自监督学习方法的进步</li></ul><p>可以作为编码器，也可以作为预训练模型，使用了多语言联合词库，在五个下游任务上测试</p><h3 id="Approach-Details"><a href="#Approach-Details" class="headerlink" title="Approach Details"></a>Approach Details</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png" alt="avatar" style="zoom:60%;" /></div><p>主要步骤如下：</p><ul><li>对于每个AST识别出子树集合，将所有子树累积在子树词表里面</li><li>将一个AST丢进TBCNN得到向量，用这个向量来预测上一步识别出来的子树</li><li>编码器训练好了后作为预训练模型迁移到下游任务</li></ul><h4 id="Process-to-Identify-Subtrees"><a href="#Process-to-Identify-Subtrees" class="headerlink" title="Process to Identify Subtrees"></a>Process to Identify Subtrees</h4><p>不太考虑粗粒度的子树，比如if，while，for等声明，因为这些子树通常很大，作为一个单独的子树词表的词汇可能太少见了，编码器很难学到有用信息，并且大语法树语法的差异并不一定表示语义差异，编码器很难识别语义相似性</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig3.png" alt="avatar" style="zoom:60%;" /></div><p>上图就表示了识别出来的子树，其中 <code>int n = arr.lenth</code> 包含了一个表达式 <code>arr.lenth</code> ，所以把两者都识别出来了</p><h4 id="Learning-Source-Code-Representation"><a href="#Learning-Source-Code-Representation" class="headerlink" title="Learning Source Code Representation"></a>Learning Source Code Representation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig4.png" alt="avatar" style="zoom:60%;" /></div><p>使用了 TBCNN作为编码器，主要和原来的设计有两点不同：</p><ul><li>将文本信息包含到节点初始化嵌入中，而不是只使用type信息</li><li>用一种注意机制来代替动态最大池化来组合节点嵌入</li></ul><p>通过编码器学习权重主要下面三个步骤：</p><ul><li>学习结点表示：自底向上，父节点获得子节点及其后辈结点的信息</li><li>聚合结点信息：要将AST用固定维度的向量表示需要用注意力机制</li><li>预测子树：得到向量后预测从T中提取出来的子树</li></ul><h3 id="Use-Case"><a href="#Use-Case" class="headerlink" title="Use Case"></a>Use Case</h3><h4 id="Code-Embedding-Vectors-for-Unsupervised-Tasks"><a href="#Code-Embedding-Vectors-for-Unsupervised-Tasks" class="headerlink" title="Code Embedding Vectors for Unsupervised Tasks"></a>Code Embedding Vectors for Unsupervised Tasks</h4><ul><li>Code Clustering：将使用预训练输入得到的输出向量使用欧氏距离指标和聚类算法如k-means实现</li><li>Code Clone Detection：两个向量做余弦相似度，阈值设定为0.8</li><li>Cross Language Code-to-Code Search：模型接受5种语言输入，给定一种作为查询，转化为向量空间最近查询</li></ul><h4 id="Fine-Tuning-for-Supervised-Learning-Tasks"><a href="#Fine-Tuning-for-Supervised-Learning-Tasks" class="headerlink" title="Fine-Tuning for Supervised Learning Tasks"></a>Fine-Tuning for Supervised Learning Tasks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig5.png" alt="avatar" style="zoom:60%;" /></div><p>在两项任务上微调：代码分类和方法名命名</p><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>代码聚类</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab1.png" alt="avatar" style="zoom:60%;" /></div><p>代码克隆检测</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab2.png" alt="avatar" style="zoom:60%;" /></div><p>交叉语言代码到代码搜索</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab3.png" alt="avatar" style="zoom:60%;" /></div><p>代码分类和方法名命名</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab5.png" alt="avatar" style="zoom:50%;" /></div><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2012.07023&quot;&gt;InferCode：Self-Supervised Learning of Code Representations by Predicting Subt</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
+    
+    <category term="SE" scheme="https://tyang816.github.io/tags/SE/"/>
+    
+  </entry>
   
   <entry>
     <title>ECCV-2020 End-to-End Object Detection with Transformers</title>
@@ -51,7 +100,7 @@
     <link href="https://tyang816.github.io/2022/06/10/5.2%20Bagging/"/>
     <id>https://tyang816.github.io/2022/06/10/5.2%20Bagging/</id>
     <published>2022-06-10T02:17:08.000Z</published>
-    <updated>2022-06-10T02:44:25.240Z</updated>
+    <updated>2022-06-13T06:56:36.913Z</updated>
     
     <content type="html"><![CDATA[<iframe src="//player.bilibili.com/player.html?aid=506796050&bvid=BV13g411N7xy&cid=447361098&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe><HR align=left color=#987cb9 SIZE=1><h3 id="Bagging-Booststrap-AGGrgratING"><a href="#Bagging-Booststrap-AGGrgratING" class="headerlink" title="Bagging - Booststrap AGGrgratING"></a>Bagging - Booststrap AGGrgratING</h3><ul><li>bagging时训练n个并行独立的模型</li><li>做决策时如果是回归就把输出平均，分类就投票</li><li>每个学习器通过bootstrap采样数据训练<ul><li>假设m个训练样本，随机选择其中m个样本放回，有些样本会重复，有些没拿到</li><li>大概是1-1/e约等于63%的样本每次都会被采样到，剩下的就作为验证集</li></ul></li></ul><h3 id="Bagging-Code"><a href="#Bagging-Code" class="headerlink" title="Bagging Code"></a>Bagging Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bagging</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, base_learner, n_learners</span>):</span><br><span class="line">        self.learners = [clone(base_learner) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_learners)]</span><br><span class="line">       </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fit</span>(<span class="params">self, X, y</span>):</span><br><span class="line">        <span class="keyword">for</span> learner <span class="keyword">in</span> self.learners:</span><br><span class="line">            examples = np.random.choice(</span><br><span class="line">            np.arange(<span class="built_in">len</span>(X)), <span class="built_in">int</span>(<span class="built_in">len</span>(X)), replace=<span class="literal">True</span>) <span class="comment">#replace放回</span></span><br><span class="line">            learner.fit(X.iloc[examples, :], y.iloc[examples])</span><br><span class="line">      </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, X</span>):</span><br><span class="line">        preds = [learner.predict(X) <span class="keyword">for</span> learner <span class="keyword">in</span> self.learner]</span><br><span class="line">        <span class="keyword">return</span> np.array(preds).mean(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure><h3 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h3><ul><li>假设使用决策树作为基础的学习器</li><li>经常从每个学习器中采样子集特征，比如30%列，能避免一定的过拟合，增加每棵树之间的差异性</li></ul><h3 id="Unstable-Learners"><a href="#Unstable-Learners" class="headerlink" title="Unstable Learners"></a>Unstable Learners</h3><ul><li><p>Bagging减少了方差，特别是对于不稳定的学习器</p></li><li><p>为了简单我们假设回归的情况，给定基本事实 f 和基本学习器 h，bagging:$\hat{f}(x)=E[h(x)]$</p></li><li><p>给定 $(E[x])^2\le E[x^2]$，方差=平方的期望-期望的平方，所以我们有</p><script type="math/tex; mode=display">(f(x)-\hat{f}(x))^2\le E[(f(x)-h(x))^2]\Leftrightarrow (E[h(x)])^2\le E[h(x)^2]</script><p>Bagging在当基础学习器不稳定时减少了更多的方差</p></li></ul><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul><li>Bagging训练多个学习器时通过bootstrap采样，放回采样</li><li>Bagging减少了方差，特别是对于不稳定的学习器</li></ul><HR align=left color=#987cb9 SIZE=1>]]></content>
     
@@ -453,55 +502,6 @@
     
     <category term="斯坦福21秋季：实用机器学习" scheme="https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>3.2 最简单也最常用的决策树【斯坦福21秋季：实用机器学习】</title>
-    <link href="https://tyang816.github.io/2022/05/10/3.2%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91/"/>
-    <id>https://tyang816.github.io/2022/05/10/3.2%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91/</id>
-    <published>2022-05-10T12:47:29.000Z</published>
-    <updated>2022-05-10T13:07:01.433Z</updated>
-    
-    <content type="html"><![CDATA[<iframe src="//player.bilibili.com/player.html?aid=506167784&bvid=BV17u411f7dt&cid=427397403&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe><HR align=left color=#987cb9 SIZE=1><h3 id="Decision-Trees"><a href="#Decision-Trees" class="headerlink" title="Decision Trees"></a>Decision Trees</h3><ul><li><p>好处</p><ul><li>可解释</li><li>可以处理数值和类别特征</li></ul></li><li><p>坏处</p><ul><li>因为是一次次分裂出来的，所以不稳定，容易被数据噪音影响，需要集成学习帮助</li><li>复杂的树会过拟合</li><li>计算时并行不容易，性能上容易吃亏</li></ul></li></ul><h3 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h3><ul><li>训练多个决策树来提升稳定性<ul><li>每个树独立训练</li><li>投票来决定分类，回归用平均</li></ul></li><li>随机从哪里来呢？<ul><li>Bagging：训练时随机替换了采样，拿了之后放回去再拿，eg [1, 2, 3, 4, 5] -&gt; [1, 2, 2, 3, 4]</li><li>随机选择部分的特征列，比如一个表格随机采样一些行，再从行随机采样一些列</li><li>无论样本还是特征在训练时都是不一样的</li></ul></li></ul><h3 id="Gradient-Boosting-Decision-Trees（GBDT）"><a href="#Gradient-Boosting-Decision-Trees（GBDT）" class="headerlink" title="Gradient Boosting Decision Trees（GBDT）"></a>Gradient Boosting Decision Trees（GBDT）</h3><ul><li>顺序训练多颗树</li><li><p>在时间步 t=1, …, 假设 $F_t(x)$ 是过去训练的所有的t-1树的输出求和</p><ul><li>在残差数据上训练一个新的树 $f<em>t$ ：${(x_i,y_i-F_t(x_i)) }</em>{i=1,…}$</li><li>$F_{t+1}(x)=F_t(x)+f_t(x)$</li><li>也就是每次预测真实值和上一次预测值的差</li></ul></li><li><p>如果用均方误差作为损失，那么残差等于 $-\part L /\part F$，所以它被称为梯度提升</p></li></ul><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul><li>决策树：一个用于分类/回归的可解释性模型</li><li>集成树来降低偏移和放茶<ul><li>随机森林：并行训练多棵树</li><li>梯度提升树：顺序训练残差</li></ul></li><li>树在工业界应用广泛<ul><li>简单，好调，经常给出满意的结果</li></ul></li></ul><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=506167784&amp;bvid=BV17u411f7dt&amp;cid=427397403&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;</summary>
-      
-    
-    
-    
-    <category term="斯坦福21秋季：实用机器学习" scheme="https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google-2022 Pathways：Asynchronous Distributed Dataflow for ML</title>
-    <link href="https://tyang816.github.io/2022/05/10/Pathways%EF%BC%9AAsynchronous%20Distributed%20Dataflow%20for%20ML/"/>
-    <id>https://tyang816.github.io/2022/05/10/Pathways%EF%BC%9AAsynchronous%20Distributed%20Dataflow%20for%20ML/</id>
-    <published>2022-05-10T05:48:05.000Z</published>
-    <updated>2022-05-10T08:16:54.893Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2203.12533">Pathways：Asynchronous Distributed Dataflow for ML</a></p></blockquote><h2 id="Pathways：解决在tpu训练多个pod问题"><a href="#Pathways：解决在tpu训练多个pod问题" class="headerlink" title="Pathways：解决在tpu训练多个pod问题"></a>Pathways：解决在tpu训练多个pod问题</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>在云上面有很多计算，把他们映射到下面的计算资源上，这种操作是针对加速器用的。Pathways这个系统是用来去探索新的机器学习研究的方法和新系统，同时达到很好的性能。</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>近几年机器学习的模型都是跟系统和硬件一起演进的，具体来说就是软件系统可能太依赖于当前任务进行优化，但不能很好的适用未来的需求。本文讲的是Pathways用的分布式机器学习，作者相信这个系统能被未来的机器学习所需要。</p><p>现在的机器学习任务都是用单程序多数据SPMD（来自于MPI），在一些简单的目前分布式计算上或许没什么问题，但是在未来会引入新的问题，比如现在的模型都非常大，可能在一个加速器上可能就放不下了，这时候坐纯粹的并行就不行了，需要用一个pipline的操作对并行任务进行切割。还有就是现在有些模型在探索稀疏性，也就是里面不全是全连接而是稀疏连接，导致优化又不一样了。</p><p>最近机器学习的硬件变得越来越异构，指的是里面有一些“岛”，“岛”有一些类似的加速器，通过一些高带宽连接在一起。可能在另外的地方还有一个“岛”，也是类似的连接了，但是“岛”与“岛”之间连接可能就不那么紧密了。这个“岛”可能是很多加速器耦合在一起，也可以就理解成一个塞了很多GPU的机器。但这个问题可能是Google的TPU特有的，其他的架构可能没这个问题。因为这种异构性存在大家可能去追求多程序多数据MPMD的执行，每台机器拿到的任务可能不一样，优化不一样。</p><p>这些transformer的模型比如BERT，GPT啥的都叫做foundation模型，做得都很大，而且推理和训练可能同时进行，一个模型被多个服务同时使用</p><h3 id="Design-Motivation"><a href="#Design-Motivation" class="headerlink" title="Design Motivation"></a>Design Motivation</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Pathways/img1.png" alt="avatar" style="zoom:60%;" /></div><p>a）JAX/PyTorch SPMD</p><ul><li>假设跑两台机器的分布式情况下，上下两条线是两台机器的cpu进程，两台机器用的同样代码，要跑gpu运算时，cpu就把指令通过pcie发到gpu上面做计算，如果要做通讯的时候，机器就同时停在一个地方，对这个t做一次allreduce，回去之后继续算下一个，差不多的时候把损失打印出来</li></ul><p>b）TF1 SPMD</p><ul><li>两台机器去跑分布式的情况下，并不需要登录到这两台机器去把程序启动起来，而是在一个controler的机器把程序编译一次，然后把任务派送到各个机器上去完成，在做优化的时候会方便一些</li></ul><p>c）TF1 non-SPMD</p><ul><li>tf1来跑每个机器可能执行<strong>不一样代码</strong>的情况，这种有controler的方法使得它能知道全局的信息，能够做很复杂的逻辑控制等等。但坏处也是有的，因为有controler这种调度器来帮忙优化，所以可能会做很多的图编译优化之类的操作，如果报错了就会出现很长的错误信息，很难溯源，不像（a）那种逐条执行的，能够直接定位到错误代码甚至单机调试。而且有这种controler来先构建了一个图编译，导致debug不能一条条来，得先把图建立起来，非常麻烦</li><li>但作者表示这种有中央控制器的情况还是最好的，也就是有dataflow的方法，这种设计方法是没错的，但是受限于当时的时代考虑的是比较小的图，现在结点可能上千，还有异构，所以要更新设计来服务现在的场景</li></ul><p>整个Pathways就是为了解决怎么把数据流的模式做到异构的上千个加速器，非常大的transformer上面</p><h3 id="Pathways-Programming-Model"><a href="#Pathways-Programming-Model" class="headerlink" title="Pathways Programming Model"></a>Pathways Programming Model</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Pathways/img2.png" alt="avatar" style="zoom:60%;" /></div><p>tf1出来后google开始研究自己的tpu，还开发了自己的编译器xla，就是拿到tensorflow的一个图然后做编译优化，然后在tpu上运行，后面xla又不仅支持cpu也支持gpu了，成了tensorflow的一个默认后端</p><p>jax是类似于xla的前端，干的时事情就是把类似numpy的任务映射到xla上面，同时为了好用提供了很类似python的体验，就是按行运行。做了一个叫“延后执行”的优化，只要不是要马上打印马上需要的话，其实并没有去执行它，而是不断地在后面构建这个图，当发现不能再构造图的时候就停下来做编译优化再执行。但从用户角度来说跟numpy差不多</p><p>图2的jax.pmap做得事情就是把函数映射到两个tpu上面，但其实这每个小函数都是很好算的，如果每次都编译优化发送代加就太大了，所以又加了一个 <code>@pw.program</code>，每次都编译和发送一个大函数</p><h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Pathways/img3.png" alt="avatar" style="zoom:60%;" /></div><p>tpu核间有高带宽的连接，将信息发给相邻很快</p><p>整体大的叫一个pod，有2048个核，中间tpu连接非常快。但是pod和pod之间用的是网络中心连接，因为所有的应用程序都共享这些带宽所以相对速度会低一些。可以将一个pod理解为一张卡，那么tensorflow就是只支持单机多卡的训练，Pathways就想去支持这种pod级别的多机多卡</p><p>图3的ABC都可以理解为一个“岛”</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Pathways/img4.png" alt="avatar" style="zoom:60%;" /></div><p>当知道后面的任务是什么的时候有些任务可以先完成避免任务很小导致调度协商等待很长</p><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2203.12533&quot;&gt;Pathways：Asynchronous Distributed Dataflow for ML&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 i</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="cs.System" scheme="https://tyang816.github.io/tags/cs-System/"/>
     
   </entry>
   

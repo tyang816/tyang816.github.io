@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees | tyang</title>
+  <meta name="description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNNAbstract学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees">
+<meta property="og:url" content="https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNNAbstract学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab5.png">
+<meta property="article:published_time" content="2022-06-11T07:23:12.000Z">
+<meta property="article:modified_time" content="2022-06-13T08:40:19.227Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-软件工程 本科在读</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">博文</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">88</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.88px;">CV</a> <a href="/tags/SE/" style="font-size: 13.75px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.63px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.13px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.25px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.5px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.38px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.25px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/13/5.3%20Boosting/" class="title">5.3 Boosting【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-13T06:54:36.000Z" itemprop="datePublished">2022-06-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/" class="title">ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-11T07:23:12.000Z" itemprop="datePublished">2022-06-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/" class="title">ECCV-2020 End-to-End Object Detection with Transformers</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-10T02:43:06.000Z" itemprop="datePublished">2022-06-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/10/5.2%20Bagging/" class="title">5.2 Bagging【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-10T02:17:08.000Z" itemprop="datePublished">2022-06-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/" class="title">5.1 方差和偏差【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-08T07:50:56.000Z" itemprop="datePublished">2022-06-08</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/" class="article-date">
+	  <time datetime="2022-06-11T07:23:12.000Z" itemprop="datePublished">2022-06-11</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/" class="leancloud_visitors"  data-flag-title="ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2012.07023">InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/ICSE21/infercode">https://github.com/ICSE21/infercode</a></p>
+</blockquote>
+<h2 id="InferCode：预测子树-TBCNN"><a href="#InferCode：预测子树-TBCNN" class="headerlink" title="InferCode：预测子树+TBCNN"></a>InferCode：预测子树+TBCNN</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方法有一个巨大的缺陷就是主要是在有标注的特定数据集上训练，很难应用到别的任务上去，所以作者提出了InferCode将自然语言处理的自监督学习方法迁移到了抽象语法树上。主要创新点在于通过<strong>预测</strong>从AST的上下文中自动识别出的<strong>子树</strong>来训练代码表示，模型使用了基于树的卷积神经网络（<strong>TBCNN</strong>）作为编码器</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>先前的方法主要有以下限制阻碍效果和泛化性：</p>
+<ul>
+<li>训练只针对特定任务，且需要提供标注数据或特征</li>
+<li>尽管一些方法是生成可迁移的代码表示，但是往往仅适配于一些固定的代码单元，比如词元，声明或函数等，不能灵活的为不同的代码单元生成嵌入。这种方法可能会缺失不同类型单元的多元性和重要信息，不能很好迁移到下游任务</li>
+<li>一些图的方法需要额外构造开销，并且可能引入不准确信息</li>
+</ul>
+<p>因此，本文主要的解决目标为：</p>
+<ul>
+<li>不需要手工标注数据进行训练</li>
+<li>对于任意可以用抽象语法树表示的代码单元都能灵活的生成嵌入表示</li>
+<li>泛化性足够强能够使用到各种下游任务</li>
+</ul>
+<p>实现以上目标本文有两大支柱：</p>
+<ul>
+<li>大量的公共代码数据训练</li>
+<li>自监督学习方法的进步</li>
+</ul>
+<p>可以作为编码器，也可以作为预训练模型，使用了多语言联合词库，在五个下游任务上测试</p>
+<h3 id="Approach-Details"><a href="#Approach-Details" class="headerlink" title="Approach Details"></a>Approach Details</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>主要步骤如下：</p>
+<ul>
+<li>对于每个AST识别出子树集合，将所有子树累积在子树词表里面</li>
+<li>将一个AST丢进TBCNN得到向量，用这个向量来预测上一步识别出来的子树</li>
+<li>编码器训练好了后作为预训练模型迁移到下游任务</li>
+</ul>
+<h4 id="Process-to-Identify-Subtrees"><a href="#Process-to-Identify-Subtrees" class="headerlink" title="Process to Identify Subtrees"></a>Process to Identify Subtrees</h4><p>不太考虑粗粒度的子树，比如if，while，for等声明，因为这些子树通常很大，作为一个单独的子树词表的词汇可能太少见了，编码器很难学到有用信息，并且大语法树语法的差异并不一定表示语义差异，编码器很难识别语义相似性</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>上图就表示了识别出来的子树，其中 <code>int n = arr.lenth</code> 包含了一个表达式 <code>arr.lenth</code> ，所以把两者都识别出来了</p>
+<h4 id="Learning-Source-Code-Representation"><a href="#Learning-Source-Code-Representation" class="headerlink" title="Learning Source Code Representation"></a>Learning Source Code Representation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig4.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>使用了 TBCNN作为编码器，主要和原来的设计有两点不同：</p>
+<ul>
+<li>将文本信息包含到节点初始化嵌入中，而不是只使用type信息</li>
+<li>用一种注意机制来代替动态最大池化来组合节点嵌入</li>
+</ul>
+<p>通过编码器学习权重主要下面三个步骤：</p>
+<ul>
+<li>学习结点表示：自底向上，父节点获得子节点及其后辈结点的信息</li>
+<li>聚合结点信息：要将AST用固定维度的向量表示需要用注意力机制</li>
+<li>预测子树：得到向量后预测从T中提取出来的子树</li>
+</ul>
+<h3 id="Use-Case"><a href="#Use-Case" class="headerlink" title="Use Case"></a>Use Case</h3><h4 id="Code-Embedding-Vectors-for-Unsupervised-Tasks"><a href="#Code-Embedding-Vectors-for-Unsupervised-Tasks" class="headerlink" title="Code Embedding Vectors for Unsupervised Tasks"></a>Code Embedding Vectors for Unsupervised Tasks</h4><ul>
+<li>Code Clustering：将使用预训练输入得到的输出向量使用欧氏距离指标和聚类算法如k-means实现</li>
+<li>Code Clone Detection：两个向量做余弦相似度，阈值设定为0.8</li>
+<li>Cross Language Code-to-Code Search：模型接受5种语言输入，给定一种作为查询，转化为向量空间最近查询</li>
+</ul>
+<h4 id="Fine-Tuning-for-Supervised-Learning-Tasks"><a href="#Fine-Tuning-for-Supervised-Learning-Tasks" class="headerlink" title="Fine-Tuning for Supervised Learning Tasks"></a>Fine-Tuning for Supervised Learning Tasks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig5.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>在两项任务上微调：代码分类和方法名命名</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>代码聚类</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>代码克隆检测</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>交叉语言代码到代码搜索</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>代码分类和方法名命名</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab5.png" alt="avatar" style="zoom:50%;" /></div>
+
+<HR align=left color=#987cb9 SIZE=1>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/" title="ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees" target="_blank" rel="external">https://tyang816.github.io/2022/06/11/InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/06/13/5.3%20Boosting/" title="5.3 Boosting【斯坦福21秋季：实用机器学习】"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/" title="ECCV-2020 End-to-End Object Detection with Transformers"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
