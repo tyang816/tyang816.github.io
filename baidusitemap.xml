@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
+    <lastmod>2022-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/15/Model-Agnostic%20Meta-Learning%20for%20Fast%20Adaptation%20of%20Deep%20Networks/</loc>
+    <lastmod>2022-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2021/11/09/Wide%20&%20Deep%20Learning%20for%20Recommender%20Systems/</loc>
+    <lastmod>2022-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/</loc>
+    <lastmod>2022-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
+    <lastmod>2022-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/</loc>
     <lastmod>2022-06-13</lastmod>
   </url>
@@ -14,10 +34,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/</loc>
-    <lastmod>2022-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/</loc>
     <lastmod>2022-06-10</lastmod>
   </url>
   <url>
@@ -298,10 +314,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/03/24/2.1%20%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2021/11/09/Wide%20&%20Deep%20Learning%20for%20Recommender%20Systems/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>

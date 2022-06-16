@@ -20,12 +20,12 @@
   
   
   <title>3.3 最简单也同样最常用的线性模型【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="Linear Regression 一个简单的房价预测 假设有三个特征：$x_1$ 是卧室数，$x_2$ 是卫生间个数，$x_3$ 是房子居住面积 预测价格是 $y&#x3D;w_1x_1+w_2x_2+w_3x_3+b$  权重 $w_1,w_2,w_3$ 和偏置 b 从训练数据中学习   总的来说，给数据 $x&#x3D;[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y&#x3D;w_1x">
+  <meta name="description" content="Linear Regression  一个简单的房价预测  假设有三个特征：$x_1$ 是卧室数，$x_2$ 是卫生间个数，$x_3$ 是房子居住面积 预测价格是 $y&#x3D;w_1x_1+w_2x_2+w_3x_3+b$ 权重 $w_1,w_2,w_3$ 和偏置 b 从训练数据中学习   总的来说，给数据 $x&#x3D;[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y&#x3D;w_1x_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3.3 最简单也同样最常用的线性模型【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/05/10/3.3%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E5%90%8C%E6%A0%B7%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Linear Regression 一个简单的房价预测 假设有三个特征：$x_1$ 是卧室数，$x_2$ 是卫生间个数，$x_3$ 是房子居住面积 预测价格是 $y&#x3D;w_1x_1+w_2x_2+w_3x_3+b$  权重 $w_1,w_2,w_3$ 和偏置 b 从训练数据中学习   总的来说，给数据 $x&#x3D;[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y&#x3D;w_1x">
+<meta property="og:description" content="Linear Regression  一个简单的房价预测  假设有三个特征：$x_1$ 是卧室数，$x_2$ 是卫生间个数，$x_3$ 是房子居住面积 预测价格是 $y&#x3D;w_1x_1+w_2x_2+w_3x_3+b$ 权重 $w_1,w_2,w_3$ 和偏置 b 从训练数据中学习   总的来说，给数据 $x&#x3D;[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y&#x3D;w_1x_">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-10T13:06:00.000Z">
 <meta property="article:modified_time" content="2022-05-10T14:01:51.079Z">
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">88</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">90</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.88px;">CV</a> <a href="/tags/SE/" style="font-size: 13.75px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.63px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.13px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.25px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.5px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.38px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.25px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.89px;">CV</a> <a href="/tags/IR/" style="font-size: 13.11px;">IR</a> <a href="/tags/SE/" style="font-size: 13.78px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.22px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.11px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.11px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.33px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.56px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.44px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.33px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -232,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -244,6 +244,51 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/" class="title">KDD-2019 MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-16T05:56:22.000Z" itemprop="datePublished">2022-06-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/15/Model-Agnostic%20Meta-Learning%20for%20Fast%20Adaptation%20of%20Deep%20Networks/" class="title">ICML-2017 Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-15T08:29:32.000Z" itemprop="datePublished">2022-06-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/15/5.4%20Stacking/" class="title">5.4 Stacking【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-15T03:05:22.000Z" itemprop="datePublished">2022-06-15</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -270,51 +315,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-06-11T07:23:12.000Z" itemprop="datePublished">2022-06-11</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/" class="title">ECCV-2020 End-to-End Object Detection with Transformers</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-06-10T02:43:06.000Z" itemprop="datePublished">2022-06-10</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/06/10/5.2%20Bagging/" class="title">5.2 Bagging【斯坦福21秋季：实用机器学习】</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-06-10T02:17:08.000Z" itemprop="datePublished">2022-06-10</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/" class="title">5.1 方差和偏差【斯坦福21秋季：实用机器学习】</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-06-08T07:50:56.000Z" itemprop="datePublished">2022-06-08</time>
               </p>
             </div>
           </li>
@@ -378,7 +378,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/10/3.3%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E5%90%8C%E6%A0%B7%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 496(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 509(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -389,48 +389,56 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="//player.bilibili.com/player.html?aid=208680816&bvid=BV1eh411b7ZW&cid=427902634&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
-
 <HR align=left color=#987cb9 SIZE=1>
-
-<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><ul>
-<li>一个简单的房价预测<ul>
+<h3 id="Linear-Regression">Linear Regression</h3>
+<ul>
+<li>一个简单的房价预测
+<ul>
 <li>假设有三个特征：$x_1$ 是卧室数，$x_2$ 是卫生间个数，$x_3$ 是房子居住面积</li>
-<li>预测价格是 $y=w_1x_1+w_2x_2+w_3x_3+b$ </li>
+<li>预测价格是 $y=w_1x_1+w_2x_2+w_3x_3+b$</li>
 <li>权重 $w_1,w_2,w_3$ 和偏置 b 从训练数据中学习</li>
 </ul>
 </li>
-<li>总的来说，给数据 $x=[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y=w_1x_1+w_2x_2+…+w_px_p+b=<w,x>+b$<ul>
+<li>总的来说，给数据 $x=[x_1,x_2,…,x_p]$，线性回归预测就是向量内积加上偏移 $y=w_1x_1+w_2x_2+…+w_px_p+b=&lt;w,x&gt;+b$
+<ul>
 <li>可训练的权重 $w=[w_1,w_2,…,w_p]$ 和偏置 b</li>
 </ul>
 </li>
 </ul>
-<h3 id="Objective-Function"><a href="#Objective-Function" class="headerlink" title="Objective Function"></a>Objective Function</h3><ul>
+<h3 id="Objective-Function">Objective Function</h3>
+<ul>
 <li>收集了n个训练样本 $X=[x_1,x2,…,x_n]^T\in \mathbb{R}^{n\times p}$ 和标签 $y=[y_1,…,y_n]^T\in \mathbb{R}^n$</li>
-<li>目标：最小化均方误差（MSE）<ul>
-<li>$w^<em>,b^</em>=\mathop{\arg\min}\limits<em>{w,b} \mathcal{l}(X,y,w,b)=\mathop{\arg\min}\limits</em>{w,b}\frac1n\sum_\limits{i=1}^n||y_i-<x_i,w>-b||^2$</li>
+<li>目标：最小化均方误差（MSE）
+<ul>
+<li>$w^<em>,b^</em>=\mathop{\arg\min}\limits_{w,b} \mathcal{l}(X,y,w,b)=\mathop{\arg\min}\limits_{w,b}\frac1n\sum_\limits{i=1}^n||y_i-&lt;x_i,w&gt;-b||^2$</li>
 </ul>
 </li>
 </ul>
-<h3 id="Use-linear-regression-for-classification"><a href="#Use-linear-regression-for-classification" class="headerlink" title="Use linear regression for classification"></a>Use linear regression for classification</h3><ul>
+<h3 id="Use-linear-regression-for-classification">Use linear regression for classification</h3>
+<ul>
 <li>回归：实数集的连续输出</li>
-<li>多类别分类：<ul>
+<li>多类别分类：
+<ul>
 <li>向量输出，第i个输出反应了对于i类别的置信度分数</li>
-<li>对每个类别学习一个线性模型 $o_i=<x,w_i>+b$</li>
+<li>对每个类别学习一个线性模型 $o_i=&lt;x,w_i&gt;+b$</li>
 <li>标签  $y=[y_1,…,y_m]$ 中如果 $i=y$ ，那么 $y_i=1$</li>
 <li>最小化MSE损失</li>
-<li>预测标签 $argmax<em>i{o_i}</em>{i=1}^m$</li>
+<li>预测标签 $argmax_i{o_i}_{i=1}^m$</li>
 <li>这种方法带来的问题是要学习的东西太多了，即使该类别与这个数据没有关系，也要去学习使得这个类别的置信度为0，关注了很多不需要关注的事情，样本类别太多的时候就会去关注那些没必要的类别</li>
 </ul>
 </li>
 </ul>
-<h3 id="Softmax-Regression"><a href="#Softmax-Regression" class="headerlink" title="Softmax Regression"></a>Softmax Regression</h3><ul>
+<h3 id="Softmax-Regression">Softmax Regression</h3>
+<ul>
 <li>标签  $y=[y_1,…,y_m]$ 中如果 $i=y$ ，那么 $y_i=1$</li>
-<li>让模型更关注把正确类的置信度弄对，别的就不太关心，于是把分数变成可能性，加起来等于1<ul>
-<li>$\hat{y}=softmax(o)$ 其中 $\hat{y}<em>i=\frac{\exp(o_i)}{\sum</em>{k=1}^m\exp(o_k)}$ </li>
+<li>让模型更关注把正确类的置信度弄对，别的就不太关心，于是把分数变成可能性，加起来等于1
+<ul>
+<li>$\hat{y}=softmax(o)$ 其中 $\hat{y}<em>i=\frac{\exp(o_i)}{\sum</em>{k=1}^m\exp(o_k)}$</li>
 <li>是一个线性+softmax操作子，只是从最大化标签变成了最大化概率</li>
 </ul>
 </li>
-<li>交叉熵损失来比较两种分布 $\hat{y}$ 和 $y$ <ul>
+<li>交叉熵损失来比较两种分布 $\hat{y}$ 和 $y$
+<ul>
 <li>最小化 $H(y,\hat{y})=\sum_\limits{i}-y_i\log(\hat{y}_i)=-\log\hat{y}_y$，使得正确概率最大</li>
 </ul>
 </li>
