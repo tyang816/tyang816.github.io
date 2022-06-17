@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/</loc>
+    <lastmod>2022-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
+    <lastmod>2022-06-17</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
+    <lastmod>2022-06-17</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
     <lastmod>2022-06-16</lastmod>
   </url>
@@ -14,10 +26,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/</loc>
-    <lastmod>2022-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
     <lastmod>2022-06-15</lastmod>
   </url>
   <url>
