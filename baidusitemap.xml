@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/</loc>
     <lastmod>2022-06-17</lastmod>
   </url>
@@ -11,10 +19,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
     <lastmod>2022-06-17</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
-    <lastmod>2022-06-16</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/15/Model-Agnostic%20Meta-Learning%20for%20Fast%20Adaptation%20of%20Deep%20Networks/</loc>
