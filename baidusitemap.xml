@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
-    <lastmod>2022-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
-    <lastmod>2022-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/</loc>
-    <lastmod>2022-06-17</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
-    <lastmod>2022-06-17</lastmod>
+    <loc>https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/</loc>
+    <lastmod>2022-06-23</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
+    <lastmod>2022-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2022-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
+    <lastmod>2022-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
+    <lastmod>2022-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
+    <lastmod>2022-06-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/</loc>
     <lastmod>2022-06-17</lastmod>
   </url>
   <url>
