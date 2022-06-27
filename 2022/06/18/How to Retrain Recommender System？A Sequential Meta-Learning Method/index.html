@@ -20,12 +20,12 @@
   
   
   <title>SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method | tyang</title>
-  <meta name="description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNN Abstract 实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系">
+  <meta name="description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNNAbstract实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNN Abstract 实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系">
+<meta property="og:description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNNAbstract实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm2.png">
@@ -217,7 +217,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">94</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">95</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +227,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">35</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">32</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -246,7 +246,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -258,6 +258,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/26/9.3%20%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2/" class="title">9.3 网络架构搜索【斯坦福21秋季：实用机器学习】</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-26T08:30:59.000Z" itemprop="datePublished">2022-06-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/26/Deep%20code%20search/" class="title">ICSE-2018 Deep code search</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-26T08:24:32.000Z" itemprop="datePublished">2022-06-26</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -299,36 +329,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-06-19T03:08:58.000Z" itemprop="datePublished">2022-06-19</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/" class="title">SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-06-18T03:01:29.000Z" itemprop="datePublished">2022-06-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/" class="title">SC-2020 ZeRO：Memory Optimizations Toward Training Trillion Parameter Models</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-06-17T03:19:10.000Z" itemprop="datePublished">2022-06-17</time>
               </p>
             </div>
           </li>
@@ -411,22 +411,15 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2005.13258">How to Retrain Recommender System？A Sequential Meta-Learning Method</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/zyang1580/SML">https://github.com/zyang1580/SML</a></p>
 </blockquote>
-<h2 id="SML：时序训练-知识转移CNN">SML：时序训练+知识转移CNN</h2>
-<h3 id="Abstract-19">Abstract</h3>
-<p>实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的模型重新训练机制。作者第一个初衷是在历史数据上重新训练没有必要，因为已经训练过了，同时只在新数据上训练容易过拟合，里面信息太少而且对用户长期偏好影响不剧烈，所以提出了新的训练方法，<strong>学习转移过去的训练经验而不是数据</strong>，通过一个神经网络组件，为了优化这种“未来性能”，在下一个时期评估推荐准确性</p>
+<h2 id="SML：时序训练-知识转移CNN"><a href="#SML：时序训练-知识转移CNN" class="headerlink" title="SML：时序训练+知识转移CNN"></a>SML：时序训练+知识转移CNN</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的模型重新训练机制。作者第一个初衷是在历史数据上重新训练没有必要，因为已经训练过了，同时只在新数据上训练容易过拟合，里面信息太少而且对用户长期偏好影响不剧烈，所以提出了新的训练方法，<strong>学习转移过去的训练经验而不是数据</strong>，通过一个神经网络组件，为了优化这种“未来性能”，在下一个时期评估推荐准确性</p>
 <p>实验表示在两个真实数据集上有巨大的加速，同时比重新训练的效果更好</p>
-<h3 id="Introduction-17">Introduction</h3>
-<p>三种重新训练的方法：</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>三种重新训练的方法：</p>
 <ul>
-<li>
-<p>微调：只在新数据上做更新，非常消耗时间和内存，忽视了长期兴趣偏好信号，容易过拟合</p>
+<li><p>微调：只在新数据上做更新，非常消耗时间和内存，忽视了长期兴趣偏好信号，容易过拟合</p>
 </li>
-<li>
-<p>基于采样的再训练：从历史和新数据中采样来训练，要保留长期偏好又要仔细选择新的信息，由于抽样导致信息丢失所以通常比用所有历史数据效果更差</p>
+<li><p>基于采样的再训练：从历史和新数据中采样来训练，要保留长期偏好又要仔细选择新的信息，由于抽样导致信息丢失所以通常比用所有历史数据效果更差</p>
 </li>
-<li>
-<p>全部再训练：效果好，但最耗资源</p>
-</li>
+<li>全部再训练：效果好，但最耗资源</li>
 </ul>
 <p>上述方法各有优劣，但是都缺少了明确的再训练的目标，所以一个有效的再训练方法需要考虑这个</p>
 <p>全部数据再训练虽然一般是最好的，但是没必要，因为在先前的训练中模型已经从历史数据中蒸馏出了“知识”，所以一种知识迁移的模型应该不使用历史数据也能达到和全部数据再训练一样的效果</p>
@@ -441,55 +434,59 @@
 <li>提出了一种新的再训练方法仅需要新数据训练，且通过优化未来推荐表现而有效</li>
 <li>在两个真实数据集上实验</li>
 </ul>
-<h3 id="Problem-Formulation">Problem Formulation</h3>
-<p>假设每次重新训练视作一个任务，通过过去的数据和模型参数得到新模型，用下一个时间段数据测试，可以定义为</p>
+<h3 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h3><p>假设每次重新训练视作一个任务，通过过去的数据和模型参数得到新模型，用下一个时间段数据测试，可以定义为</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm1.png" alt="avatar" style="zoom:60%;" /></div>
-<p>这种就是将所有数据用于重新训练，用 $W_{t-1}$ 作为初始化，耗时长，时间增长计算能力增加。另一个问题就是这种完全再训练缺乏对下个时间段数据 $D_{t+1}$ 的显式优化</p>
-<p>所以本文主要只利用新的数据 $D_t$ 通过 $W_{t-1}$ 参数来训练，这样来获得一个在 $D_{t+1}$ 表现不错的模型</p>
+
+<p>这种就是将所有数据用于重新训练，用 $W<em>{t-1}$ 作为初始化，耗时长，时间增长计算能力增加。另一个问题就是这种完全再训练缺乏对下个时间段数据 $D</em>{t+1}$ 的显式优化</p>
+<p>所以本文主要只利用新的数据 $D<em>t$ 通过 $W</em>{t-1}$ 参数来训练，这样来获得一个在 $D_{t+1}$ 表现不错的模型</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>与标准的元学习不同的是任务是一个序列，在先前时间完成后才能转移掉下个时间</p>
-<h3 id="Method-3">Method</h3>
-<h4 id="Model-Overview">Model Overview</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><h4 id="Model-Overview"><a href="#Model-Overview" class="headerlink" title="Model Overview"></a>Model Overview</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>主要由三部分组成：</p>
 <ol>
-<li>上个时间段的模型 $W_{t-1}$</li>
-<li>需要从当前时间段数据 $D_t$ 学习出的模型 $\hat{W_{t}}$</li>
-<li>转移组件将包含有知识的模型 $W_{t-1}$ 和 $\hat{W_{t}}$ 组合形成新的推荐模型 $W_t$</li>
+<li>上个时间段的模型 $W_{t-1}$ </li>
+<li>需要从当前时间段数据 $D<em>t$ 学习出的模型 $\hat{W</em>{t}}$ </li>
+<li>转移组件将包含有知识的模型 $W<em>{t-1}$ 和 $\hat{W</em>{t}}$ 组合形成新的推荐模型 $W_t$ </li>
 </ol>
 <p>再训练的过程主要包含以下两步：</p>
 <ol>
-<li>
-<p>获得 $\hat{W_{t}}$ ，可以通过一个标准的推荐损失获取 $L_r(\hat{W_{t}}|D_t)$</p>
+<li><p>获得 $\hat{W<em>{t}}$ ，可以通过一个标准的推荐损失获取 $L_r(\hat{W</em>{t}}|D_t)$ </p>
 </li>
-<li>
-<p>获得 $W_t$ ，作为转移组件的输出</p>
+<li><p>获得 $W_t$ ，作为转移组件的输出</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm3.png" alt="avatar" style="zoom:60%;" /></div>
+
 </li>
 </ol>
-<h4 id="Transfer-Design">Transfer Design</h4>
-<p>如果 $W_t$ 和 $W_{t-1}$ ， $\hat{W_{t}}$ 是同一形状，所以可以用加权求和来表示，但这种方法表达能力有限，而且不能适应不同维度的关系</p>
-<p>另一种方法是用MLP，理论上MLP是可以达到普遍近似，但是它没有强调同一维的参数之间的相互作用，比如假设模型为矩阵分解，参数为用户嵌入表示， $W_t-W_{t-1}$ 表示用户兴趣变化， $W_{t-1}\odot \hat{W_{t}}$ 的维度反应了用户短期和长期兴趣的重要性，MLP缺乏这种机制</p>
-<p>所以作者想设计出能够强调 $W_{t-1}$ 和 $\hat{W_{t}}$ 维度关系，以及抓取不同维度关系的转移组件，所以作者想到了CNN</p>
+<h4 id="Transfer-Design"><a href="#Transfer-Design" class="headerlink" title="Transfer Design"></a>Transfer Design</h4><p>如果 $W<em>t$ 和 $W</em>{t-1}$ ， $\hat{W_{t}}$ 是同一形状，所以可以用加权求和来表示，但这种方法表达能力有限，而且不能适应不同维度的关系</p>
+<p>另一种方法是用MLP，理论上MLP是可以达到普遍近似，但是它没有强调同一维的参数之间的相互作用，比如假设模型为矩阵分解，参数为用户嵌入表示， $W<em>t-W</em>{t-1}$ 表示用户兴趣变化， $W<em>{t-1}\odot \hat{W</em>{t}}$ 的维度反应了用户短期和长期兴趣的重要性，MLP缺乏这种机制</p>
+<p>所以作者想设计出能够强调 $W<em>{t-1}$ 和 $\hat{W</em>{t}}$ 维度关系，以及抓取不同维度关系的转移组件，所以作者想到了CNN</p>
 <p><strong>Stack layer</strong></p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>把三个参数堆叠起来看起来像图片，点乘经过了规范化</p>
 <p><strong>Convolution layers</strong></p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm5.png" alt="avatar" style="zoom:60%;" /></div>
-<p>$F_j$ 是1x3的一维过滤器，$H^0_{:,m}$ 是向量 $H^0$ 的第m列，&lt;&gt;是向量内积，GELU是高斯错误线性修正单元激活函数，类似于RELU</p>
-<p>比如假设过滤器为[-1, 1, 0]就可以表示 $W_{t-1}$ 和 $\hat{W_{t}}$ 之间的差值，为[1, 1, 1]可以获得在 $W_{t-1}$ 和 $\hat{W_{t}}$ 上比较显著的特征。另一个用一维过滤器的原因是维度的顺序是没有意义的</p>
+
+<p>$F<em>j$ 是1x3的一维过滤器，$H^0</em>{:,m}$ 是向量 $H^0$ 的第m列，&lt;&gt;是向量内积，GELU是高斯错误线性修正单元激活函数，类似于RELU</p>
+<p>比如假设过滤器为[-1, 1, 0]就可以表示 $W<em>{t-1}$ 和 $\hat{W</em>{t}}$ 之间的差值，为[1, 1, 1]可以获得在 $W<em>{t-1}$ 和 $\hat{W</em>{t}}$ 上比较显著的特征。另一个用一维过滤器的原因是维度的顺序是没有意义的</p>
 <p><strong>Full-connected and output layers</strong></p>
 <p>最后是全连接和输出层</p>
-<h3 id="Sequential-Training">Sequential Training</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg2.png" alt="avatar" style="zoom:50%;" /></div>
-<h3 id="Experiment-9">Experiment</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Sequential-Training"><a href="#Sequential-Training" class="headerlink" title="Sequential Training"></a>Sequential Training</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg2.png" alt="avatar" style="zoom:50%;" /></div>
+
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>表现略高，但其实这个不是文章主要卖点</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>可以看到相比较于微调训练时间少了很多</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig6.png" alt="avatar" style="zoom:50%;" /></div>
+
 <p>不同CNN过滤器和层数下的消融实验和推荐效果召回率</p>
 <HR align=left color=#987cb9 SIZE=1>
+
+
 
       
     </div>
