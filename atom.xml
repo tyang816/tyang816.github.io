@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-06-27T09:34:35.269Z</updated>
+  <updated>2022-06-28T12:46:25.640Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning</title>
+    <link href="https://tyang816.github.io/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/"/>
+    <id>https://tyang816.github.io/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/</id>
+    <published>2022-06-28T09:37:49.000Z</published>
+    <updated>2022-06-28T12:46:25.640Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2201.00150">Cross-Domain Deep Code Search with Few-Shot Meta Learning</a></p><p>论文实现：<a href="https://github.com/fewshotcdcs/CDCS">https://github.com/fewshotcdcs/CDCS</a></p></blockquote><h2 id="CDCS：元学习随机划分数据集做代码搜索任务-大量实验"><a href="#CDCS：元学习随机划分数据集做代码搜索任务-大量实验" class="headerlink" title="CDCS：元学习随机划分数据集做代码搜索任务+大量实验"></a>CDCS：元学习随机划分数据集做代码搜索任务+大量实验</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>近些年像CodeBERT一样的预训练模型在代码搜索方面有很大进展，但需要大量的语料来微调语义分布，这使得限制了其在特定领域的实用性，所以作者提出了CDCS，先在python或Java这种常用语料库预训练，然后迁移到SQL之类的其他语言，用基于MAML的few-shot元学习算法来初始化参数</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>特定领域语言的数据很少，因此只能先训练一个大型的多语言的模型，然后在任务特定数据集上微调。问题在于怎么样迁移先验知识，不同语言特征不同表示不同，容易导致一个冲突的共享表示，特别是在领域特定的代码搜索，目标语言样本在训练数据中很少</p><p>CDCS就是CodeBERT+元学习算法，来找一个好的初始化参数适应小训练数据集的新任务</p><h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig3.png" alt="avatar" style="zoom:60%;" /></div><h4 id="Pre-training"><a href="#Pre-training" class="headerlink" title="Pre-training"></a>Pre-training</h4><p>类似CodeBERT使用了MLM预训练任务，但没用RTD，因为没啥用</p><p>输入为<NL, PL>对，[CLS], w…, [SEP], c…, [EOS]，前面是自然语言后面是程序语言</p><h4 id="Meta-Learning"><a href="#Meta-Learning" class="headerlink" title="Meta Learning"></a>Meta Learning</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/alg1.png" alt="avatar" style="zoom:60%;" /></div><p>把训练数据拆分为k个batch ${D_1,…,D_k}$，每个 $D_i$ 视作一个局部任务 $T_i$ ，再进一步划分出训练集和验证集进行局部更新，然后每M步进行一次全局更新</p><h4 id="Fine-Tuning"><a href="#Fine-Tuning" class="headerlink" title="Fine-Tuning"></a>Fine-Tuning</h4><p>在代码搜索任务上微调时把代码检索任务变成二分类，1相关，0不相关，[CLS]视为输入序列的聚合表示，输入一个全连接分类头来预测给定的<NL, PL>对是否相关</p><h4 id="Domain-Specific-Code-Search"><a href="#Domain-Specific-Code-Search" class="headerlink" title="Domain-Specific Code Search"></a>Domain-Specific Code Search</h4><p>输入查询Q与代码数据库里的代码段形成一个个<NL, PL>对，输入训练好的模型得到分数排序</p><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>RQ1：CDCS在跨域代码搜索中的效果如何？</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab4.png" alt="avatar" style="zoom:50%;" /></div><p>RQ2：不同训练数据集大小的表现</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab2.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig5-6.png" alt="avatar" style="zoom:60%;" /></div><p>RQ3：其他预训练模型的表现</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab5.png" alt="avatar" style="zoom:60%;" /></div><p>RQ4：不同超参影响</p><p>这里很奇怪的是图7a里面把batch_size变大了反而精度下降了，作者也没有解释</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig7.png" alt="avatar" style="zoom:60%;" /></div><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2201.00150&quot;&gt;Cross-Domain Deep Code Search with Few-Shot Meta Learning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文实现：&lt;a </summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
+    
+    <category term="SE" scheme="https://tyang816.github.io/tags/SE/"/>
+    
+    <category term="cs.Meta" scheme="https://tyang816.github.io/tags/cs-Meta/"/>
+    
+  </entry>
   
   <entry>
     <title>10.1 深度神经网络架构【斯坦福21秋季：实用机器学习】</title>
@@ -65,9 +95,9 @@
     <link href="https://tyang816.github.io/2022/06/26/Deep%20code%20search/"/>
     <id>https://tyang816.github.io/2022/06/26/Deep%20code%20search/</id>
     <published>2022-06-26T08:24:32.000Z</published>
-    <updated>2022-06-27T08:53:04.386Z</updated>
+    <updated>2022-06-28T12:44:02.651Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://dl.acm.org/doi/10.1145/3180155.3180167">Deep code search</a></p></blockquote><h2 id="CODEnn：代码段和自然语言嵌入表示学习"><a href="#CODEnn：代码段和自然语言嵌入表示学习" class="headerlink" title="CODEnn：代码段和自然语言嵌入表示学习"></a>CODEnn：代码段和自然语言嵌入表示学习</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>为了实现函数功能，开发者往往会从网上查找相似片段进行重写，现有的方法是把代码视作文本文档，使用信息检索方法查找最相关代码，基本都是基于代码和查询的自然语言之间的文本相似度的，缺乏对查询语句和源代码的深度理解，因此作者提出了CODEnn模型，将代码段和自然语言联合嵌入到向量表示，实现的深度搜索工具名为DeepCS</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>其他方法依赖于信息检索技术，但查询语言的高层次意图与代码低层次实现细节往往不匹配</p><p>所以作者提出：</p><ul><li>CODEnn模型，将代码段和自然语言联合嵌入到向量表示</li><li>DeepCS作为实现包含了1820万个java代码段</li><li>使用了50个Stack Overflow真实查询评估</li></ul><h3 id="A-DEEP-NEURAL-NETWORK-FOR-CODE-SEARCH"><a href="#A-DEEP-NEURAL-NETWORK-FOR-CODE-SEARCH" class="headerlink" title="A DEEP NEURAL NETWORK FOR CODE SEARCH"></a>A DEEP NEURAL NETWORK FOR CODE SEARCH</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig4.png" alt="avatar" style="zoom:60%;" /></div><h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><ul><li>Code Embedding Network：将原代码嵌入为向量，分为方法名，API序列和原代码中包含的词元</li><li>Description Embedding Network：将自然语言注释嵌入为向量</li><li>Similarity Module：余弦相似度</li></ul><h4 id="Model-Training"><a href="#Model-Training" class="headerlink" title="Model Training"></a>Model Training</h4><ul><li><p>training instance：三元组<C,D+,D->，代码，自然语言注释，随机选择的自然语言注释负样本</p></li><li><p>Loss：</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/frm12.png" alt="avatar" style="zoom:60%;" /></div></li></ul><h3 id="DEEPCS-DEEP-LEARNING-BASED-CODE-SEARCH"><a href="#DEEPCS-DEEP-LEARNING-BASED-CODE-SEARCH" class="headerlink" title="DEEPCS: DEEP LEARNING BASED CODE SEARCH"></a>DEEPCS: DEEP LEARNING BASED CODE SEARCH</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig5.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig8.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/tab2.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Discusstion"><a href="#Discusstion" class="headerlink" title="Discusstion"></a>Discusstion</h3><p>优点：</p><ul><li>能够理解查询语义</li><li>收到不相关的噪音关键词影响更小</li><li>不仅根据管检测匹配，也根据语义关联度匹配</li></ul><p>局限：</p><p>有时候部分相关结果排名高于精准匹配结果，也是因为考虑了语义的问题</p><HR align=left color=#987cb9 SIZE=1>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://dl.acm.org/doi/10.1145/3180155.3180167">Deep code search</a></p></blockquote><h2 id="CODEnn：代码段和自然语言嵌入表示学习"><a href="#CODEnn：代码段和自然语言嵌入表示学习" class="headerlink" title="CODEnn：代码段和自然语言嵌入表示学习"></a>CODEnn：代码段和自然语言嵌入表示学习</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>为了实现函数功能，开发者往往会从网上查找相似片段进行重写，现有的方法是把代码视作文本文档，使用信息检索方法查找最相关代码，基本都是基于代码和查询的自然语言之间的文本相似度的，缺乏对查询语句和源代码的深度理解，因此作者提出了CODEnn模型，将代码段和自然语言联合嵌入到向量表示，实现的深度搜索工具名为DeepCS</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>其他方法依赖于信息检索技术，但查询语言的高层次意图与代码低层次实现细节往往不匹配</p><p>所以作者提出：</p><ul><li>CODEnn模型，将代码段和自然语言联合嵌入到向量表示</li><li>DeepCS作为实现包含了1820万个java代码段</li><li>使用了50个Stack Overflow真实查询评估</li></ul><h3 id="A-DEEP-NEURAL-NETWORK-FOR-CODE-SEARCH"><a href="#A-DEEP-NEURAL-NETWORK-FOR-CODE-SEARCH" class="headerlink" title="A DEEP NEURAL NETWORK FOR CODE SEARCH"></a>A DEEP NEURAL NETWORK FOR CODE SEARCH</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig4.png" alt="avatar" style="zoom:60%;" /></div><h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><ul><li>Code Embedding Network：将原代码嵌入为向量，分为方法名，API序列和原代码中包含的词元</li><li>Description Embedding Network：将自然语言注释嵌入为向量</li><li>Similarity Module：余弦相似度</li></ul><h4 id="Model-Training"><a href="#Model-Training" class="headerlink" title="Model Training"></a>Model Training</h4><ul><li>training instance：三元组<C,D+,D->，代码，自然语言注释，随机选择的自然语言注释负样本</li><li><p>Loss：</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/frm12.png" alt="avatar" style="zoom:60%;" /></div></li></ul><h3 id="DEEPCS-DEEP-LEARNING-BASED-CODE-SEARCH"><a href="#DEEPCS-DEEP-LEARNING-BASED-CODE-SEARCH" class="headerlink" title="DEEPCS: DEEP LEARNING BASED CODE SEARCH"></a>DEEPCS: DEEP LEARNING BASED CODE SEARCH</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig5.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/fig8.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODEnn/tab2.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Discusstion"><a href="#Discusstion" class="headerlink" title="Discusstion"></a>Discusstion</h3><p>优点：</p><ul><li>能够理解查询语义</li><li>收到不相关的噪音关键词影响更小</li><li>不仅根据管检测匹配，也根据语义关联度匹配</li></ul><p>局限：</p><p>有时候部分相关结果排名高于精准匹配结果，也是因为考虑了语义的问题</p><HR align=left color=#987cb9 SIZE=1>]]></content>
     
     
       
@@ -162,9 +192,9 @@
     <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
-    
     <category term="cs.Meta" scheme="https://tyang816.github.io/tags/cs-Meta/"/>
+    
+    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
     
     <category term="cs.Recom" scheme="https://tyang816.github.io/tags/cs-Recom/"/>
     
@@ -192,9 +222,9 @@
     <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
-    
     <category term="cs.Meta" scheme="https://tyang816.github.io/tags/cs-Meta/"/>
+    
+    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
     
     <category term="cs.Recom" scheme="https://tyang816.github.io/tags/cs-Recom/"/>
     
@@ -269,9 +299,9 @@
     <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
-    
     <category term="cs.Meta" scheme="https://tyang816.github.io/tags/cs-Meta/"/>
+    
+    <category term="IR" scheme="https://tyang816.github.io/tags/IR/"/>
     
     <category term="cs.Recom" scheme="https://tyang816.github.io/tags/cs-Recom/"/>
     
@@ -494,35 +524,6 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a href=&quot;https://aclanthology.org/2022.acl-long.339&quot;&gt;Impact of Evaluation Methodologies on Code Summarization&lt;/a&gt;&lt;/p&gt;
 &lt;</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
-    
-    <category term="SE" scheme="https://tyang816.github.io/tags/SE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICPC-2018 Deep code comment generation</title>
-    <link href="https://tyang816.github.io/2022/06/06/Deep%20code%20comment%20generation/"/>
-    <id>https://tyang816.github.io/2022/06/06/Deep%20code%20comment%20generation/</id>
-    <published>2022-06-06T06:37:54.000Z</published>
-    <updated>2022-06-07T09:28:06.219Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://ieeexplore.ieee.org/abstract/document/8973050">Deep code comment generation</a></p></blockquote><h2 id="DeepCom：NMT的方法-SBT-type替换"><a href="#DeepCom：NMT的方法-SBT-type替换" class="headerlink" title="DeepCom：NMT的方法+SBT+type替换"></a>DeepCom：NMT的方法+SBT+type替换</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>DeepCom使用了NLP的技术学习大规模语料并从中生成注释，使用神经网络分析Java方法的结构信息，使用机器翻译的评价指标</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>软件开发与维护领域，花了59%时间在理解代码上，所以代码注释有必要</p><p>过去的模板式和启发式方法缺陷在于：</p><ul><li>标识符和方法命名不当时难以提取出准确的关键词</li><li>依赖于检索相似度代码段和这种相似程度</li></ul><p>作者把代码生成问题看作NMT问题的变种，从程序语言翻译到自然语言，与Code-NN只对注释建模不同，作者对代码和注释都建模了，与传统的机器翻译问题相比，本文任务挑战如下：</p><ul><li>代码有结构：如何用上这种丰富的结构信息来推进现有的NMT方法</li><li>词表：自然语言就30000个常用，但代码上二十来万很正常，因为有一堆标识符啥的</li></ul><p>针对结构问题使用了SBT方法来遍历AST</p><p>针对词表问题用它们的类型来替代具体的词或<UNK></p><h3 id="Proposed-Approach"><a href="#Proposed-Approach" class="headerlink" title="Proposed Approach"></a>Proposed Approach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepCom/img2.png" alt="avatar" style="zoom:60%;" /></div><h4 id="Sequence-to-Sequence-Model"><a href="#Sequence-to-Sequence-Model" class="headerlink" title="Sequence-to-Sequence Model"></a>Sequence-to-Sequence Model</h4><p>编码器都是带注意力的LSTM</p><h4 id="Abstract-Syntax-Tree-with-SBT-travesal"><a href="#Abstract-Syntax-Tree-with-SBT-travesal" class="headerlink" title="Abstract Syntax Tree with SBT travesal"></a>Abstract Syntax Tree with SBT travesal</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepCom/img4.png" alt="avatar" style="zoom:60%;" /></div><ul><li><p>从根节点开始，首先使用一对括号来表示树结构，然后将根节点本身放在右方括号的后面，即（1）1</p></li><li><p>接下来，遍历根节点的子树，并将子树的所有根节点放入括号中，例(1(2)2(3)3)1</p></li></ul><ul><li>遍历每个子树，直到遍历所有节点并获得最终序列（1（2（4）4（5）5（6）6）2（3）3）1</li></ul><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepCom/table3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepCom/table4.png" alt="avatar" style="zoom:50%;" /></div><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/8973050&quot;&gt;Deep code comment generation&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 </summary>
       
     
     

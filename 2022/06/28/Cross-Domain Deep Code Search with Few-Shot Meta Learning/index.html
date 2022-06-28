@@ -19,27 +19,32 @@
 
   
   
-  <title>CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification | tyang</title>
-  <meta name="description" content="论文地址：Beyond Short Snippets：Deep Networks for Video Classification 来自谷歌的工作  稍长的视频处理：池化和LSTM在视频理解的作用Abstract提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出 Apporach  如果按照双流网络的思想去做，原始视频就几帧就太短了，如果有特别多的帧怎么办呢？">
+  <title>ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning | tyang</title>
+  <meta name="description" content="论文地址：Cross-Domain Deep Code Search with Few-Shot Meta Learning 论文实现：https:&#x2F;&#x2F;github.com&#x2F;fewshotcdcs&#x2F;CDCS  CDCS：元学习随机划分数据集做代码搜索任务+大量实验Abstract近些年像CodeBERT一样的预训练模型在代码搜索方面有很大进展，但需要大量的语料来微调语义分布，这使得限制了其在特定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification">
-<meta property="og:url" content="https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/index.html">
+<meta property="og:title" content="ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning">
+<meta property="og:url" content="https://tyang816.github.io/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Beyond Short Snippets：Deep Networks for Video Classification 来自谷歌的工作  稍长的视频处理：池化和LSTM在视频理解的作用Abstract提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出 Apporach  如果按照双流网络的思想去做，原始视频就几帧就太短了，如果有特别多的帧怎么办呢？">
+<meta property="og:description" content="论文地址：Cross-Domain Deep Code Search with Few-Shot Meta Learning 论文实现：https:&#x2F;&#x2F;github.com&#x2F;fewshotcdcs&#x2F;CDCS  CDCS：元学习随机划分数据集做代码搜索任务+大量实验Abstract近些年像CodeBERT一样的预训练模型在代码搜索方面有很大进展，但需要大量的语料来微调语义分布，这使得限制了其在特定">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img4.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table5.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table7.png">
-<meta property="article:published_time" content="2022-04-17T07:28:52.000Z">
-<meta property="article:modified_time" content="2022-04-17T08:56:28.564Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/alg1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig5-6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig7.png">
+<meta property="article:published_time" content="2022-06-28T09:37:49.000Z">
+<meta property="article:modified_time" content="2022-06-28T12:46:25.640Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CV">
-<meta property="article:tag" content="cs.Video">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Meta">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig3.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -339,14 +344,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/Beyond Short Snippets：Deep Networks for Video Classification" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/Cross-Domain Deep Code Search with Few-Shot Meta Learning" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification
+      ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning
     </h1>
   
 
@@ -354,8 +359,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/" class="article-date">
-	  <time datetime="2022-04-17T07:28:52.000Z" itemprop="datePublished">2022-04-17</time>
+	<a href="/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/" class="article-date">
+	  <time datetime="2022-06-28T09:37:49.000Z" itemprop="datePublished">2022-06-28</time>
 	</a>
 </span>
         
@@ -367,7 +372,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CV/" rel="tag">CV</a>, <a class="article-tag-link-link" href="/tags/cs-Video/" rel="tag">cs.Video</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a>
   </span>
 
 
@@ -382,18 +387,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/" class="leancloud_visitors"  data-flag-title="CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification">
+    	<span id="/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/" class="leancloud_visitors"  data-flag-title="ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 397(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 575(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
@@ -401,25 +406,37 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://ieeexplore.ieee.org/document/7299101/">Beyond Short Snippets：Deep Networks for Video Classification</a></p>
-<p>来自谷歌的工作</p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2201.00150">Cross-Domain Deep Code Search with Few-Shot Meta Learning</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/fewshotcdcs/CDCS">https://github.com/fewshotcdcs/CDCS</a></p>
 </blockquote>
-<h2 id="稍长的视频处理：池化和LSTM在视频理解的作用"><a href="#稍长的视频处理：池化和LSTM在视频理解的作用" class="headerlink" title="稍长的视频处理：池化和LSTM在视频理解的作用"></a>稍长的视频处理：池化和LSTM在视频理解的作用</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出</p>
-<h3 id="Apporach"><a href="#Apporach" class="headerlink" title="Apporach"></a>Apporach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png" alt="avatar" style="zoom:60%;" /></div>
+<h2 id="CDCS：元学习随机划分数据集做代码搜索任务-大量实验"><a href="#CDCS：元学习随机划分数据集做代码搜索任务-大量实验" class="headerlink" title="CDCS：元学习随机划分数据集做代码搜索任务+大量实验"></a>CDCS：元学习随机划分数据集做代码搜索任务+大量实验</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>近些年像CodeBERT一样的预训练模型在代码搜索方面有很大进展，但需要大量的语料来微调语义分布，这使得限制了其在特定领域的实用性，所以作者提出了CDCS，先在python或Java这种常用语料库预训练，然后迁移到SQL之类的其他语言，用基于MAML的few-shot元学习算法来初始化参数</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>特定领域语言的数据很少，因此只能先训练一个大型的多语言的模型，然后在任务特定数据集上微调。问题在于怎么样迁移先验知识，不同语言特征不同表示不同，容易导致一个冲突的共享表示，特别是在领域特定的代码搜索，目标语言样本在训练数据中很少</p>
+<p>CDCS就是CodeBERT+元学习算法，来找一个好的初始化参数适应小训练数据集的新任务</p>
+<h3 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-<p>如果按照双流网络的思想去做，原始视频就几帧就太短了，如果有特别多的帧怎么办呢？</p>
-<p>首先对于所有的帧肯定是要去抽特征，比如原始的手工或卷积神经网络，关键在于抽取到特征之后怎么去做pooling这个操作，可以简单的做一个max或average，这篇文章对这个做了很多的探索，<strong>最终的结论表示都差不多</strong>，ConvPooling最好。以及尝试了用LSTM去做特征融合，但实际上提升有限</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img4.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Pre-training"><a href="#Pre-training" class="headerlink" title="Pre-training"></a>Pre-training</h4><p>类似CodeBERT使用了MLM预训练任务，但没用RTD，因为没啥用</p>
+<p>输入为<NL, PL>对，[CLS], w…, [SEP], c…, [EOS]，前面是自然语言后面是程序语言</p>
+<h4 id="Meta-Learning"><a href="#Meta-Learning" class="headerlink" title="Meta Learning"></a>Meta Learning</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/alg1.png" alt="avatar" style="zoom:60%;" /></div>
 
-<p>每个视频帧对应一个卷积网络（权值共享）去抽取特征，用了五层LSTM，最后softmax</p>
-<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>把训练数据拆分为k个batch ${D_1,…,D_k}$，每个 $D_i$ 视作一个局部任务 $T_i$ ，再进一步划分出训练集和验证集进行局部更新，然后每M步进行一次全局更新</p>
+<h4 id="Fine-Tuning"><a href="#Fine-Tuning" class="headerlink" title="Fine-Tuning"></a>Fine-Tuning</h4><p>在代码搜索任务上微调时把代码检索任务变成二分类，1相关，0不相关，[CLS]视为输入序列的聚合表示，输入一个全连接分类头来预测给定的<NL, PL>对是否相关</p>
+<h4 id="Domain-Specific-Code-Search"><a href="#Domain-Specific-Code-Search" class="headerlink" title="Domain-Specific Code Search"></a>Domain-Specific Code Search</h4><p>输入查询Q与代码数据库里的代码段形成一个个<NL, PL>对，输入训练好的模型得到分数排序</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>RQ1：CDCS在跨域代码搜索中的效果如何？</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab4.png" alt="avatar" style="zoom:50%;" /></div>
 
-<p>在Sorts-1M数据集上LSTM没有想象中那么有用，可能是因为LSTM学到的东西比较high-level，<strong>视频即使帧比较多还是比较短</strong>，在这种情况下实际上<strong>语义信息并没有太多改变</strong>，相当于传了一些差不多的内容给LSTM，说实话LSTM可能也学不到什么，最终也就带不来很大的提升。在变化比较剧烈的情况，或者长视频上，LSTM应该还是有一定意义的</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table7.png" alt="avatar" style="zoom:60%;" /></div>
+<p>RQ2：不同训练数据集大小的表现</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 
-<p>在UCF-101效果就都只是好了一点，提升非常有限</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig5-6.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>RQ3：其他预训练模型的表现</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/tab5.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>RQ4：不同超参影响</p>
+<p>这里很奇怪的是图7a里面把batch_size变大了反而精度下降了，作者也没有解释</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CDCS/fig7.png" alt="avatar" style="zoom:60%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
-
 
       
     </div>
@@ -429,7 +446,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/" title="CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification" target="_blank" rel="external">https://tyang816.github.io/2022/04/17/Beyond Short Snippets：Deep Networks for Video Classification/</a>
+      <a href="https://tyang816.github.io/2022/06/28/Cross-Domain%20Deep%20Code%20Search%20with%20Few-Shot%20Meta%20Learning/" title="ICSE-2022 Cross-Domain Deep Code Search with Few-Shot Meta Learning" target="_blank" rel="external">https://tyang816.github.io/2022/06/28/Cross-Domain Deep Code Search with Few-Shot Meta Learning/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -475,13 +492,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/04/17/Convolutional%20Two-Stream%20Network%20Fusion%20for%20Video%20Action%20Recognition/" title="CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/04/17/Large-scale%20Video%20Classification%20with%20Convolutional%20Neural%20Networks/" title="CVPR-2014 Large-scale Video Classification with Convolutional Neural Networks"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/06/27/10.1%20%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84/" title="10.1 深度神经网络架构【斯坦福21秋季：实用机器学习】"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
