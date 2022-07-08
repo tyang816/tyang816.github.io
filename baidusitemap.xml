@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/04/Unified%20Pre-training%20for%20Program%20Understanding%20and%20Generation/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2021/11/19/Generative%20Adversarial%20Nets/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
+    <lastmod>2022-07-08</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/</loc>
+    <lastmod>2022-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/24/Learning%20code%20summarization%20from%20a%20small%20and%20local%20dataset/</loc>
     <lastmod>2022-07-03</lastmod>
   </url>
   <url>
@@ -23,14 +47,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2022-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/24/Learning%20code%20summarization%20from%20a%20small%20and%20local%20dataset/</loc>
-    <lastmod>2022-06-25</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/16/MeLU%EF%BC%9AMeta-Learned%20User%20Preference%20Estimator%20for%20Cold-Start%20Recommendation/</loc>
-    <lastmod>2022-06-25</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/04/18/GraphCodeBERT%EF%BC%9APre-training%20Code%20Representations%20with%20Data%20Flow/</loc>
@@ -446,10 +462,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/07/Generative%20Adversarial%20Network%20for%20Abstractive%20Text%20Summarization/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2021/11/19/Generative%20Adversarial%20Nets/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
