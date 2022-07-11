@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
-    <lastmod>2022-07-08</lastmod>
+    <loc>https://tyang816.github.io/2022/07/10/Graph%20Contrastive%20Learning%20with%20Augmentations/</loc>
+    <lastmod>2022-07-11</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/04/Unified%20Pre-training%20for%20Program%20Understanding%20and%20Generation/</loc>
+    <lastmod>2022-07-11</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
     <lastmod>2022-07-08</lastmod>
   </url>
   <url>
