@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/07/15/A%20parallel%20corpus%20of%20Python%20functions%20and%20documentation%20strings%20for%20automated%20code%20documentation%20and%20code%20generation/</loc>
+    <lastmod>2022-07-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/</loc>
-    <lastmod>2022-07-12</lastmod>
+    <lastmod>2022-07-15</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/10/Graph%20Contrastive%20Learning%20with%20Augmentations/</loc>
-    <lastmod>2022-07-12</lastmod>
+    <lastmod>2022-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
+    <lastmod>2022-07-13</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/04/Unified%20Pre-training%20for%20Program%20Understanding%20and%20Generation/</loc>
@@ -71,10 +79,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
     <lastmod>2022-06-22</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
-    <lastmod>2022-06-21</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/</loc>
