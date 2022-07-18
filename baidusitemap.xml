@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyang816.github.io/2022/07/15/A%20parallel%20corpus%20of%20Python%20functions%20and%20documentation%20strings%20for%20automated%20code%20documentation%20and%20code%20generation/</loc>
-    <lastmod>2022-07-15</lastmod>
+    <loc>https://tyang816.github.io/2022/07/18/Unsupervised%20Translation%20of%20Programming%20Languages/</loc>
+    <lastmod>2022-07-18</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/15/A%20parallel%20corpus%20of%20Python%20functions%20and%20documentation%20strings%20for%20automated%20code%20documentation%20and%20code%20generation/</loc>
     <lastmod>2022-07-15</lastmod>
   </url>
   <url>
@@ -170,10 +178,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/05/11/Improving%20Robustness%20of%20Neural%20Machine%20Translation%20with%20Multi-task%20Learning/</loc>
-    <lastmod>2022-05-11</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
     <lastmod>2022-05-11</lastmod>
   </url>
   <url>
