@@ -19,36 +19,28 @@
 
   
   
-  <title>SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method | tyang</title>
-  <meta name="description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNN Abstract 实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系">
+  <title>ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts | tyang</title>
+  <meta name="description" content="论文地址：A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract 论文数据：https:&#x2F;&#x2F;zenodo.org&#x2F;record&#x2F;4587089#.YEog9-gzYuV 论文实现：https:&#x2F;&#x2F;github.com&#x2F;yz1019117968&#x2F;ICPC-21-MMTrans  MMTrans：S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method">
-<meta property="og:url" content="https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/index.html">
+<meta property="og:title" content="ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts">
+<meta property="og:url" content="https://tyang816.github.io/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：How to Retrain Recommender System？A Sequential Meta-Learning Method 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zyang1580&#x2F;SML  SML：时序训练+知识转移CNN Abstract 实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系">
+<meta property="og:description" content="论文地址：A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract 论文数据：https:&#x2F;&#x2F;zenodo.org&#x2F;record&#x2F;4587089#.YEog9-gzYuV 论文实现：https:&#x2F;&#x2F;github.com&#x2F;yz1019117968&#x2F;ICPC-21-MMTrans  MMTrans：S">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm3.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm4.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm5.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig5.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig6.png">
-<meta property="article:published_time" content="2022-06-18T03:01:29.000Z">
-<meta property="article:modified_time" content="2022-07-13T14:52:27.915Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/fig1-fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/tab2.png">
+<meta property="article:published_time" content="2022-07-24T06:53:52.000Z">
+<meta property="article:modified_time" content="2022-07-24T07:35:44.685Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.Meta">
-<meta property="article:tag" content="IR">
-<meta property="article:tag" content="cs.Recom">
+<meta property="article:tag" content="cs.GNN">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm1.png">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/fig1-fig2.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -58,6 +50,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -346,14 +340,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/How to Retrain Recommender System？A Sequential Meta-Learning Method" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method
+      ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts
     </h1>
   
 
@@ -361,8 +355,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/" class="article-date">
-	  <time datetime="2022-06-18T03:01:29.000Z" itemprop="datePublished">2022-06-18</time>
+	<a href="/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/" class="article-date">
+	  <time datetime="2022-07-24T06:53:52.000Z" itemprop="datePublished">2022-07-24</time>
 	</a>
 </span>
         
@@ -374,7 +368,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/IR/" rel="tag">IR</a>, <a class="article-tag-link-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a>, <a class="article-tag-link-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
   </span>
 
 
@@ -389,18 +383,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/" class="leancloud_visitors"  data-flag-title="SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method">
+    	<span id="/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/" class="leancloud_visitors"  data-flag-title="ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.5k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 340(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
       </div>
@@ -408,87 +402,25 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2005.13258">How to Retrain Recommender System？A Sequential Meta-Learning Method</a></p>
-<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/zyang1580/SML">https://github.com/zyang1580/SML</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2103.07164">A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract</a></p>
+<p>论文数据：<a target="_blank" rel="noopener" href="https://zenodo.org/record/4587089#.YEog9-gzYuV">https://zenodo.org/record/4587089#.YEog9-gzYuV</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/yz1019117968/ICPC-21-MMTrans">https://github.com/yz1019117968/ICPC-21-MMTrans</a></p>
 </blockquote>
-<h2 id="SML：时序训练-知识转移CNN">SML：时序训练+知识转移CNN</h2>
-<h3 id="Abstract-27">Abstract</h3>
-<p>实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的模型重新训练机制。作者第一个初衷是在历史数据上重新训练没有必要，因为已经训练过了，同时只在新数据上训练容易过拟合，里面信息太少而且对用户长期偏好影响不剧烈，所以提出了新的训练方法，<strong>学习转移过去的训练经验而不是数据</strong>，通过一个神经网络组件，为了优化这种“未来性能”，在下一个时期评估推荐准确性</p>
-<p>实验表示在两个真实数据集上有巨大的加速，同时比重新训练的效果更好</p>
-<h3 id="Introduction-25">Introduction</h3>
-<p>三种重新训练的方法：</p>
+<h2 id="MMTrans：SBT-图-联合解码器生成智能合约注释">MMTrans：SBT+图+联合解码器生成智能合约注释</h2>
+<h3 id="Abstract-2">Abstract</h3>
+<p>将代码摘要生成应用到区块链运行的程序的智能合约（Smart Contracts）上，SBT序列提供AST全局信息，图卷积提供局部信息，然后使用一个联合解码器生成注释，编码器和解码器都采用了transformer的多头注意力机制来获取长距离依赖</p>
+<h3 id="Introduction">Introduction</h3>
+<p>目前自动代码摘要生成在智能合约上面还没有很多的关注，主要因为1. 大多代码注释不能用，导致开发者的理解和学习困难；2. 代码克隆和重复现象比其他软件更常见。因此要生成高质量代码注释有以下困难</p>
 <ul>
-<li>
-<p>微调：只在新数据上做更新，非常消耗时间和内存，忽视了长期兴趣偏好信号，容易过拟合</p>
-</li>
-<li>
-<p>基于采样的再训练：从历史和新数据中采样来训练，要保留长期偏好又要仔细选择新的信息，由于抽样导致信息丢失所以通常比用所有历史数据效果更差</p>
-</li>
-<li>
-<p>全部再训练：效果好，但最耗资源</p>
-</li>
+<li>怎么抓取源码的语义信息：AST可以表示为多种模态，如SBT序列和图，每个模式都关注于语义信息的一个不同方面</li>
+<li>怎么获取代码词元的长距离依赖：SBT序列提供AST全局信息，图卷积提供局部信息，使用transformer多头注意力</li>
 </ul>
-<p>上述方法各有优劣，但是都缺少了明确的再训练的目标，所以一个有效的再训练方法需要考虑这个</p>
-<p>全部数据再训练虽然一般是最好的，但是没必要，因为在先前的训练中模型已经从历史数据中蒸馏出了“知识”，所以一种知识迁移的模型应该不使用历史数据也能达到和全部数据再训练一样的效果</p>
-<p>作者提出的新的再训练方法主要以下考虑：</p>
-<ul>
-<li>构建一个知识迁移的组件，将历史数据训练的知识迁移到新的数据上，设计了一个CNN的传输组件，将之前的模型参数作为常数输入，现在的模型视为可训练参数</li>
-<li>优化转移组件在未来的推荐表现，除了对新收集的数据进行正常训练外，还进一步对转移CNN进行了下一个时间段未来的数据训练。可以视作一个元学习的实例，每个时间段的重新训练视为一个任务，当前时间段的新数据视作训练集，下个时间段的未来新数据视作测试集</li>
-</ul>
-<p>本文主要贡献：</p>
-<ul>
-<li>强调了推荐系统中再训练方法的必要性并提出了时序再训练方法作为优化目标</li>
-<li>提出了一种新的再训练方法仅需要新数据训练，且通过优化未来推荐表现而有效</li>
-<li>在两个真实数据集上实验</li>
-</ul>
-<h3 id="Problem-Formulation">Problem Formulation</h3>
-<p>假设每次重新训练视作一个任务，通过过去的数据和模型参数得到新模型，用下一个时间段数据测试，可以定义为</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm1.png" alt="avatar" style="zoom:60%;" /></div>
-<p>这种就是将所有数据用于重新训练，用 $W_{t-1}$ 作为初始化，耗时长，时间增长计算能力增加。另一个问题就是这种完全再训练缺乏对下个时间段数据 $D_{t+1}$ 的显式优化</p>
-<p>所以本文主要只利用新的数据 $D_t$ 通过 $W_{t-1}$ 参数来训练，这样来获得一个在 $D_{t+1}$ 表现不错的模型</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm2.png" alt="avatar" style="zoom:60%;" /></div>
-<p>与标准的元学习不同的是任务是一个序列，在先前时间完成后才能转移掉下个时间</p>
-<h3 id="Method-4">Method</h3>
-<h4 id="Model-Overview">Model Overview</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig2.png" alt="avatar" style="zoom:60%;" /></div>
-<p>主要由三部分组成：</p>
-<ol>
-<li>上个时间段的模型 $W_{t-1}$</li>
-<li>需要从当前时间段数据 $D_t$ 学习出的模型 $\hat{W_{t}}$</li>
-<li>转移组件将包含有知识的模型 $W_{t-1}$ 和 $\hat{W_{t}}$ 组合形成新的推荐模型 $W_t$</li>
-</ol>
-<p>再训练的过程主要包含以下两步：</p>
-<ol>
-<li>
-<p>获得 $\hat{W_{t}}$ ，可以通过一个标准的推荐损失获取 $L_r(\hat{W_{t}}|D_t)$</p>
-</li>
-<li>
-<p>获得 $W_t$ ，作为转移组件的输出</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm3.png" alt="avatar" style="zoom:60%;" /></div>
-</li>
-</ol>
-<h4 id="Transfer-Design">Transfer Design</h4>
-<p>如果 $W_t$ 和 $W_{t-1}$ ， $\hat{W_{t}}$ 是同一形状，所以可以用加权求和来表示，但这种方法表达能力有限，而且不能适应不同维度的关系</p>
-<p>另一种方法是用MLP，理论上MLP是可以达到普遍近似，但是它没有强调同一维的参数之间的相互作用，比如假设模型为矩阵分解，参数为用户嵌入表示， $W_t-W_{t-1}$ 表示用户兴趣变化， $W_{t-1}\odot \hat{W_{t}}$ 的维度反应了用户短期和长期兴趣的重要性，MLP缺乏这种机制</p>
-<p>所以作者想设计出能够强调 $W_{t-1}$ 和 $\hat{W_{t}}$ 维度关系，以及抓取不同维度关系的转移组件，所以作者想到了CNN</p>
-<p><strong>Stack layer</strong></p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm4.png" alt="avatar" style="zoom:60%;" /></div>
-<p>把三个参数堆叠起来看起来像图片，点乘经过了规范化</p>
-<p><strong>Convolution layers</strong></p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm5.png" alt="avatar" style="zoom:60%;" /></div>
-<p>$F_j$ 是1x3的一维过滤器，$H^0_{:,m}$ 是向量 $H^0$ 的第m列，&lt;&gt;是向量内积，GELU是高斯错误线性修正单元激活函数，类似于RELU</p>
-<p>比如假设过滤器为[-1, 1, 0]就可以表示 $W_{t-1}$ 和 $\hat{W_{t}}$ 之间的差值，为[1, 1, 1]可以获得在 $W_{t-1}$ 和 $\hat{W_{t}}$ 上比较显著的特征。另一个用一维过滤器的原因是维度的顺序是没有意义的</p>
-<p><strong>Full-connected and output layers</strong></p>
-<p>最后是全连接和输出层</p>
-<h3 id="Sequential-Training">Sequential Training</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg2.png" alt="avatar" style="zoom:50%;" /></div>
-<h3 id="Experiment-14">Experiment</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab1.png" alt="avatar" style="zoom:60%;" /></div>
-<p>表现略低，但其实这个不是文章主要卖点</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab2.png" alt="avatar" style="zoom:60%;" /></div>
-<p>可以看到相比较于微调训练时间少了很多</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig6.png" alt="avatar" style="zoom:50%;" /></div>
-<p>不同CNN过滤器和层数下的消融实验和推荐效果召回率</p>
+<p>收集了来自Etherscan.io上的40,932份智能合约，347,410个*&lt;<em>method, comment</em>&gt;* 对</p>
+<h3 id="Approach">Approach</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/fig1-fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Experiment-2">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MMTrans/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -499,7 +431,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/" title="SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method" target="_blank" rel="external">https://tyang816.github.io/2022/06/18/How to Retrain Recommender System？A Sequential Meta-Learning Method/</a>
+      <a href="https://tyang816.github.io/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/" title="ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts" target="_blank" rel="external">https://tyang816.github.io/2022/07/24/A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -545,13 +477,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/" title="ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/06/17/ZeRO%EF%BC%9AMemory%20Optimizations%20Toward%20Training%20Trillion%20Parameter%20Models/" title="SC-2020 ZeRO：Memory Optimizations Toward Training Trillion Parameter Models"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/07/18/Unsupervised%20Translation%20of%20Programming%20Languages/" title="NIPS-2020 Unsupervised Translation of Programming Languages"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

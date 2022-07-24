@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/</loc>
+    <lastmod>2022-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/04/Unified%20Pre-training%20for%20Program%20Understanding%20and%20Generation/</loc>
+    <lastmod>2022-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/</loc>
+    <lastmod>2022-07-24</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/07/18/Unsupervised%20Translation%20of%20Programming%20Languages/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
@@ -23,10 +35,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
     <lastmod>2022-07-13</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/04/Unified%20Pre-training%20for%20Program%20Understanding%20and%20Generation/</loc>
-    <lastmod>2022-07-11</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
@@ -115,10 +123,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/06/10/5.2%20Bagging/</loc>
     <lastmod>2022-06-13</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/06/10/End-to-End%20Object%20Detection%20with%20Transformers/</loc>
-    <lastmod>2022-06-10</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/08/HELoC%EF%BC%9AHierarchical%20Contrastive%20Learning%20of%20Source%20Code%20Representation/</loc>
