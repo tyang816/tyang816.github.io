@@ -19,25 +19,22 @@
 
   
   
-  <title>ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks | tyang</title>
-  <meta name="description" content="论文地址：HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks  HAConvGNN：多层次的注意力卷积图神经网络 1. 总结  发现github上约25%的note都没有注释，同时这类数据较少">
+  <title>ICLR-2019 code2seq：Generating Sequences from Structured Representations of Code | tyang</title>
+  <meta name="description" content="论文地址：code2seq:Generating Sequences from Structured Representations of Code  随机抽取AST的path作为输入，通过提取结构化信息提高性能第一个直接使用AST路径的端到端的序列生成模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks">
-<meta property="og:url" content="https://tyang816.github.io/2022/02/07/HAConvGNN/index.html">
+<meta property="og:title" content="ICLR-2019 code2seq：Generating Sequences from Structured Representations of Code">
+<meta property="og:url" content="https://tyang816.github.io/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks  HAConvGNN：多层次的注意力卷积图神经网络 1. 总结  发现github上约25%的note都没有注释，同时这类数据较少">
+<meta property="og:description" content="论文地址：code2seq:Generating Sequences from Structured Representations of Code  随机抽取AST的path作为输入，通过提取结构化信息提高性能第一个直接使用AST路径的端到端的序列生成模型">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HAConvNN/HAConvNN-img1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HAConvNN/HAConvNN-img2.png">
-<meta property="article:published_time" content="2022-02-07T15:53:42.000Z">
-<meta property="article:modified_time" content="2022-04-08T02:39:22.884Z">
+<meta property="article:published_time" content="2021-12-12T05:01:00.000Z">
+<meta property="article:modified_time" content="2022-07-29T01:57:13.229Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.GNN">
+<meta property="article:tag" content="CL">
 <meta property="article:tag" content="SE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HAConvNN/HAConvNN-img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/02/07/HAConvGNN/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -47,8 +44,6 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -208,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">106</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">107</span></li></ul>
     </div>
   </div>
 
@@ -218,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -237,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -249,6 +244,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/" class="title">ICML-2021 ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-29T01:52:41.000Z" itemprop="datePublished">2022-07-29</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -309,21 +319,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/" class="title">ICML-2020 Graph-based, Self-Supervised Program Repair from Diagnostic Feedback</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-07-12T06:59:59.000Z" itemprop="datePublished">2022-07-12</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -337,14 +332,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/HAConvGNN" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/code2seq：Generating Sequences from Structured Representations of Code" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks
+      ICLR-2019 code2seq：Generating Sequences from Structured Representations of Code
     </h1>
   
 
@@ -352,8 +347,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/02/07/HAConvGNN/" class="article-date">
-	  <time datetime="2022-02-07T15:53:42.000Z" itemprop="datePublished">2022-02-07</time>
+	<a href="/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/" class="article-date">
+	  <time datetime="2021-12-12T05:01:00.000Z" itemprop="datePublished">2021-12-12</time>
 	</a>
 </span>
         
@@ -365,7 +360,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
   </span>
 
 
@@ -380,15 +375,15 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/02/07/HAConvGNN/" class="leancloud_visitors"  data-flag-title="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks">
+    	<span id="/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/" class="leancloud_visitors"  data-flag-title="ICLR-2019 code2seq：Generating Sequences from Structured Representations of Code">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/07/HAConvGNN/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 356(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 56(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -399,36 +394,9 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2104.01002">HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1808.01400">code2seq:Generating Sequences from Structured Representations of Code</a></p>
 </blockquote>
-<h2 id="HAConvGNN：多层次的注意力卷积图神经网络">HAConvGNN：多层次的注意力卷积图神经网络</h2>
-<h3 id="1-总结-2">1. 总结</h3>
-<ol>
-<li>发现github上约25%的note都没有注释，同时这类数据较少，于是创建了<a target="_blank" rel="noopener" href="https://ibm.biz/Bdfpk6">新的 jupyter note 的数据集</a>，特点是一个注释可能对应至多4个代码块（实际上代码与markdown注释比为2.2195）。代码注释有三类①处理（Process and Headline）；②结果（result）；③推断和教育（Reson and Education）</li>
-<li>提供了注释其实可以为人类和AI共同完成的想法</li>
-<li>新的基于图的高层次注意力架构和人工评估有效性</li>
-</ol>
-<h3 id="2-模型架构-2">2. 模型架构</h3>
-<h4 id="2-1-输入">2.1 输入</h4>
-<ol>
-<li>tokenized code sequence</li>
-<li>tokennized documentation sequence</li>
-<li>从 code sequence 生成的 AST 图的节点</li>
-<li>从 code sequence 生成的 AST 图的边（拓扑）</li>
-</ol>
-<h4 id="2-2-Embeddings">2.2 Embeddings</h4>
-<p>三个嵌入层，code embedding，document embedding，Code AST embedding</p>
-<h4 id="2-3-Encoder">2.3 Encoder</h4>
-<p>一个编码器编码原代码序列，附加四个编码器去编码至多4个 code cells 的 AST 图，以及使用一个高层次的 GRU 编码器层来对上述4个 AST 图生成一个更高层次的输出</p>
-<h4 id="2-4-HAConvGNN">2.4 HAConvGNN</h4>
-<p>低层次注意力+高层次注意力</p>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HAConvNN/HAConvNN-img1.png" alt="avatar"></p>
-<h3 id="3-人工评估">3. 人工评估</h3>
-<ol>
-<li>评估指标信息性、可读性、正确性</li>
-<li>每次选三十对代码和文档，每对给5个参与人员，从4种候选结果中选择，其中一种是 groundtruth。</li>
-</ol>
-<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HAConvNN/HAConvNN-img2.png" alt="avatar"></p>
+<h2 id="随机抽取AST的path作为输入，通过提取结构化信息提高性能"><a href="#随机抽取AST的path作为输入，通过提取结构化信息提高性能" class="headerlink" title="随机抽取AST的path作为输入，通过提取结构化信息提高性能"></a>随机抽取AST的path作为输入，通过提取结构化信息提高性能</h2><p>第一个直接使用AST路径的端到端的序列生成模型</p>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -439,7 +407,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/02/07/HAConvGNN/" title="ACL-2021 HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks" target="_blank" rel="external">https://tyang816.github.io/2022/02/07/HAConvGNN/</a>
+      <a href="https://tyang816.github.io/2021/12/12/code2seq%EF%BC%9AGenerating%20Sequences%20from%20Structured%20Representations%20of%20Code/" title="ICLR-2019 code2seq：Generating Sequences from Structured Representations of Code" target="_blank" rel="external">https://tyang816.github.io/2021/12/12/code2seq：Generating Sequences from Structured Representations of Code/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -486,12 +454,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/02/09/SeqGAN/" title="AAAI-2017 SeqGAN:Sequence Generative Adversarial Nets with Policy Gradient"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2021/12/14/Masked%20Autoencoders%20Are%20Scalable%20Vision%20Learners/" title="CVPR-2021 Masked Autoencoders Are Scalable Vision Learners"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/02/07/Novelty%20in%20Science/" title="Blog-2022 Novelty in Science"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/12/09/Intriguing%20Properties%20of%20Vision%20Transformers/" title="NIPS-2021 Intriguing Properties of Vision Transformers"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

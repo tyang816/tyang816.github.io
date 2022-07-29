@@ -19,24 +19,31 @@
 
   
   
-  <title>ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks | tyang</title>
-  <meta name="description" content="论文地址：Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks  Graph2Seq：采用了双向的结点embedding聚合策略 在自然语言处理任务中，将序列与图建立关系的应用可以分为两大类：一种是序列生成图，另一种是图生成序列，本文旨在针对后一种问题。传统的方法是：首先将图通过某种方式变换为一个序列，">
+  <title>POPL-2019 code2vec：Learning Distributed Representations of Code | tyang</title>
+  <meta name="description" content="论文地址：code2vec: Learning Distributed Representations of Code 网址：http:&#x2F;&#x2F;code2vec.org 论文实现：https:&#x2F;&#x2F;github.com&#x2F;tech-srl&#x2F;code2vec  code2vec：pathAttention的代码嵌入表示Abstract作者的主要想法是把代码片段用一个固定长度的代码向量来表示。主要是通过主要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks">
-<meta property="og:url" content="https://tyang816.github.io/2021/12/23/Graph2seq/index.html">
+<meta property="og:title" content="POPL-2019 code2vec：Learning Distributed Representations of Code">
+<meta property="og:url" content="https://tyang816.github.io/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks  Graph2Seq：采用了双向的结点embedding聚合策略 在自然语言处理任务中，将序列与图建立关系的应用可以分为两大类：一种是序列生成图，另一种是图生成序列，本文旨在针对后一种问题。传统的方法是：首先将图通过某种方式变换为一个序列，">
+<meta property="og:description" content="论文地址：code2vec: Learning Distributed Representations of Code 网址：http:&#x2F;&#x2F;code2vec.org 论文实现：https:&#x2F;&#x2F;github.com&#x2F;tech-srl&#x2F;code2vec  code2vec：pathAttention的代码嵌入表示Abstract作者的主要想法是把代码片段用一个固定长度的代码向量来表示。主要是通过主要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg">
-<meta property="article:published_time" content="2021-12-23T02:17:25.000Z">
-<meta property="article:modified_time" content="2022-03-24T06:25:37.424Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img8.png">
+<meta property="article:published_time" content="2022-04-05T06:24:59.000Z">
+<meta property="article:modified_time" content="2022-07-29T01:57:10.938Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.GNN">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2021/12/23/Graph2seq/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -46,6 +53,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -205,7 +214,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">106</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">107</span></li></ul>
     </div>
   </div>
 
@@ -215,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -234,7 +243,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -246,6 +255,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/" class="title">ICML-2021 ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-29T01:52:41.000Z" itemprop="datePublished">2022-07-29</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -306,21 +330,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/" class="title">ICML-2020 Graph-based, Self-Supervised Program Repair from Diagnostic Feedback</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-07-12T06:59:59.000Z" itemprop="datePublished">2022-07-12</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -334,14 +343,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/Graph2seq" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/code2vec：Learning Distributed Representations of Code" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks
+      POPL-2019 code2vec：Learning Distributed Representations of Code
     </h1>
   
 
@@ -349,8 +358,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/12/23/Graph2seq/" class="article-date">
-	  <time datetime="2021-12-23T02:17:25.000Z" itemprop="datePublished">2021-12-23</time>
+	<a href="/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/" class="article-date">
+	  <time datetime="2022-04-05T06:24:59.000Z" itemprop="datePublished">2022-04-05</time>
 	</a>
 </span>
         
@@ -362,7 +371,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>
   </span>
 
 
@@ -377,18 +386,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2021/12/23/Graph2seq/" class="leancloud_visitors"  data-flag-title="ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks">
+    	<span id="/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/" class="leancloud_visitors"  data-flag-title="POPL-2019 code2vec：Learning Distributed Representations of Code">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/23/Graph2seq/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 333(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
@@ -396,31 +405,59 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1804.00823">Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1803.09473">code2vec: Learning Distributed Representations of Code</a></p>
+<p>网址：<a target="_blank" rel="noopener" href="http://code2vec.org">http://code2vec.org</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/tech-srl/code2vec">https://github.com/tech-srl/code2vec</a></p>
 </blockquote>
-<h2 id="Graph2Seq：采用了双向的结点embedding聚合策略">Graph2Seq：采用了双向的结点embedding聚合策略</h2>
-<p>在自然语言处理任务中，将序列与图建立关系的应用可以分为两大类：一种是序列生成图，另一种是图生成序列，本文旨在针对后一种问题。传统的方法是：首先将图通过某种方式变换为一个序列，然后再基于Seq2Seq框架来生成序列。这种方法存在的问题非常明显：<strong>在将图变换为序列的过程中会丢失大量的结构信息。</strong></p>
-<p>因此，本文提出直接由图得到序列的端到端模型，Graph2Seq</p>
-<img src="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg" alt="avatar" style="zoom: 80%;" />
-<ol>
-<li>
-<p>图的信息比seq更多，可以强化表达能力，减少传递中的信息损失</p>
-</li>
-<li>
-<p>结点embedding：由前向邻居和后向邻居concat起来输入全连接层、激活函数并不断重复该过程</p>
-</li>
-<li>
-<p>聚合结构：平均、池化、LSTM</p>
-</li>
-<li>
-<p>图embedding：</p>
-<p>4.1 基于池化：将结点embedding全连接后，采用max/min/average，区别不大</p>
-<p>4.2 基于结点：增加super node，其他结点都指向它，再用上面的计算结点embedding算法让他获取全图信息</p>
-</li>
-<li>
-<p>注意力机制decoder：计算加权的输入与语义空间中结点相似度</p>
-</li>
-</ol>
+<h2 id="code2vec：pathAttention的代码嵌入表示"><a href="#code2vec：pathAttention的代码嵌入表示" class="headerlink" title="code2vec：pathAttention的代码嵌入表示"></a>code2vec：pathAttention的代码嵌入表示</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者的主要想法是把代码片段用一个固定长度的代码向量来表示。主要是通过主要是把代码通过它的AST解构成一个路径的集合，再同时学习每个路径的表，最后学习怎么样聚合这些信息。</p>
+<p>预测函数名方面获得了相对75%的提升</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>目前有很多的向量表示的方法，比如word2vec等等，本文重点放在了code2vec</p>
+<p>目标：学习代码的嵌入表示</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img1.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>激励任务：代码片段生成对应的语义标签，具体情况如上图所示，可以看到模型的预测是符合真实的语义信息的，生成的是最有可能的语义标签。</p>
+<p>这个方法的难点在于需要学习一个语义标签和整体方法内容的一种对应方式，就需要去聚合上百的表达式、声明等内容把它们融合到一个独立的标签里。</p>
+<h3 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h3><p>文章主要贡献点在于提出了新的网络模型能够进行代码的嵌入表示，可以学习到一个连续的良好的向量</p>
+<p>模型的输入是一个代码片段和对应的语义特征，如标签，名字或其他同一类型的文本。假设代码片段为C，对应的标签为L，标签分布可由C的AST路径得到，分布即为 $P(L|C)$</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img2.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>作者还表示模型学习到了像NLP里面的那种语义信息，如上图所示，比如：vector (equals)+vector (toLowerCase)=vector (equalsIgnoreCase)</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>模型同样能识别在结构上很相似但实际语义不同的代码片段，图中4个path是attention权重最高的选出来的</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img4.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>对于代码片段的AST，将每条路径提取出来，路径和结点上的值组成元组称为path-context。结点通过embedding后concat成一个向量来表示path-context，最后通过attention加权融合得到对应方法名的向量</p>
+<p>可以发现的是路径长度与attention权重也是成正比的，选择不同的attention方式可能得到不同的路径和结果，同时路径的attention不是常量，在上下文不同的情况下，即使是一模一样的路径得到的attention值也会有不同</p>
+<p>关键点：</p>
+<ul>
+<li>代码片段可以用path-context来高效表示</li>
+<li>只是一条path-context是不足以做出准确的预测，通过基于注意力的神经网络就能识别出多条路径中更重要的部分，并且聚合它们做出准确的预测</li>
+<li>微小的不同也能被模型识别出来，即使两个代码片段有着相似的语法结构和大量的相同词汇</li>
+<li>模型可以用在大语料库，跨项目的方法名预测中</li>
+<li>尽管该模型是基于神经网络，但是依旧有着较好的可解释性和能发现一些有趣的特性</li>
+</ul>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img5.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>首先对代码片段的每个token和路径做编码</p>
+<script type="math/tex; mode=display">
+value\_vocab\in \mathbb{R}^{|X|\times d}\\
+path\_vocab\in \mathbb{R}^{|P|\times d}</script><p>path-context就是将起始token，结尾token和path结合起来</p>
+<script type="math/tex; mode=display">
+c_i=embedding(<x_s,p_j,x_t>)=[value\_vocab_s;path\_vocab_j;value\_vocab_t]\in \mathbb{R}^{3d}</script><p>经过全连接层和激活函数进行特征融合</p>
+<script type="math/tex; mode=display">
+\tilde{c}_i=tanh(W\cdot c_i)</script><p>计算注意力权重，a是全局注意力机制随机初始化的，跟随网络同时进行学习</p>
+<script type="math/tex; mode=display">
+attention\space weight\space \alpha_i=\frac{\exp(\tilde{c}_i^T\cdot a)}{\sum_{j=1}^n\exp(\tilde{c}_j^T\cdot a)}</script><p>经过加权得到最终表示</p>
+<script type="math/tex; mode=display">
+code \space vector \space v=\sum_{i=1}^n\alpha_i\cdot\tilde{c_i}</script><p>给定一些单词作为候选标签，构成标签矩阵</p>
+<script type="math/tex; mode=display">
+tags\_vocab\in\mathbb{R}^{|Y|\times d}</script><p>最终经过softmax计算得到结果</p>
+<script type="math/tex; mode=display">
+f\space or \space y_i\in Y:q(y_i)=\frac{\exp(v^T\cdot tags\_vocab_i)}{\sum_{y_j\in Y}\exp(v^T\cdot tags\_vocab_j)}</script><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img6.png" alt="avatar" style="zoom:60%;" /></div>
+
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img7.png" alt="avatar" style="zoom:60%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code2vec/code2vec-img8.png" alt="avatar" style="zoom:60%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -431,7 +468,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2021/12/23/Graph2seq/" title="ICLR-2019 Graph2Seq:Graph to Sequence Learning with Attention-based Neural Networks" target="_blank" rel="external">https://tyang816.github.io/2021/12/23/Graph2seq/</a>
+      <a href="https://tyang816.github.io/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/" title="POPL-2019 code2vec：Learning Distributed Representations of Code" target="_blank" rel="external">https://tyang816.github.io/2022/04/05/code2vec：Learning Distributed Representations of Code/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -478,12 +515,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/12/29/A%20Comprehensive%20Survey%20on%20Graph%20Neural%20Networks/" title="TNNLS-2019 A Comprehensive Survey on Graph Neural Networks"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2022/04/06/CodeBERT%EF%BC%9AA%20Pre-Trained%20Model%20for%20Programming%20and%20Natural%20Languages/" title="EMNLP-2020 CodeBERT：A Pre-Trained Model for Programming and Natural Languages"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/" title="CVPR-2020 Momentum Contrast for Unsupervised Visual Representation Learning"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/" title="2.3 数据变换【斯坦福21秋季：实用机器学习】"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
