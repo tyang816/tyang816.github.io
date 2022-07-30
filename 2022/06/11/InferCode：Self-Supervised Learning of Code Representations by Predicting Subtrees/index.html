@@ -20,12 +20,12 @@
   
   
   <title>ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees | tyang</title>
-  <meta name="description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNN Abstract 学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学">
+  <meta name="description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNNAbstract学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICSE-2021 InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNN Abstract 学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学">
+<meta property="og:description" content="论文地址：InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees 论文实现：https:&#x2F;&#x2F;github.com&#x2F;ICSE21&#x2F;infercode  InferCode：预测子树+TBCNNAbstract学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig3.png">
@@ -263,7 +263,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -409,11 +409,8 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2012.07023">InferCode：Self-Supervised Learning of Code Representations by Predicting Subtrees</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/ICSE21/infercode">https://github.com/ICSE21/infercode</a></p>
 </blockquote>
-<h2 id="InferCode：预测子树-TBCNN">InferCode：预测子树+TBCNN</h2>
-<h3 id="Abstract-31">Abstract</h3>
-<p>学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方法有一个巨大的缺陷就是主要是在有标注的特定数据集上训练，很难应用到别的任务上去，所以作者提出了InferCode将自然语言处理的自监督学习方法迁移到了抽象语法树上。主要创新点在于通过<strong>预测</strong>从AST的上下文中自动识别出的<strong>子树</strong>来训练代码表示，模型使用了基于树的卷积神经网络（<strong>TBCNN</strong>）作为编码器</p>
-<h3 id="Introduction-29">Introduction</h3>
-<p>先前的方法主要有以下限制阻碍效果和泛化性：</p>
+<h2 id="InferCode：预测子树-TBCNN"><a href="#InferCode：预测子树-TBCNN" class="headerlink" title="InferCode：预测子树+TBCNN"></a>InferCode：预测子树+TBCNN</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>学习代码表示在代码分类，代码搜索，注释生成，bug预测等很多任务都有用，目前的学习方法有一个巨大的缺陷就是主要是在有标注的特定数据集上训练，很难应用到别的任务上去，所以作者提出了InferCode将自然语言处理的自监督学习方法迁移到了抽象语法树上。主要创新点在于通过<strong>预测</strong>从AST的上下文中自动识别出的<strong>子树</strong>来训练代码表示，模型使用了基于树的卷积神经网络（<strong>TBCNN</strong>）作为编码器</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>先前的方法主要有以下限制阻碍效果和泛化性：</p>
 <ul>
 <li>训练只针对特定任务，且需要提供标注数据或特征</li>
 <li>尽管一些方法是生成可迁移的代码表示，但是往往仅适配于一些固定的代码单元，比如词元，声明或函数等，不能灵活的为不同的代码单元生成嵌入。这种方法可能会缺失不同类型单元的多元性和重要信息，不能很好迁移到下游任务</li>
@@ -431,20 +428,20 @@
 <li>自监督学习方法的进步</li>
 </ul>
 <p>可以作为编码器，也可以作为预训练模型，使用了多语言联合词库，在五个下游任务上测试</p>
-<h3 id="Approach-Details">Approach Details</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Approach-Details"><a href="#Approach-Details" class="headerlink" title="Approach Details"></a>Approach Details</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>主要步骤如下：</p>
 <ul>
 <li>对于每个AST识别出子树集合，将所有子树累积在子树词表里面</li>
 <li>将一个AST丢进TBCNN得到向量，用这个向量来预测上一步识别出来的子树</li>
 <li>编码器训练好了后作为预训练模型迁移到下游任务</li>
 </ul>
-<h4 id="Process-to-Identify-Subtrees">Process to Identify Subtrees</h4>
-<p>不太考虑粗粒度的子树，比如if，while，for等声明，因为这些子树通常很大，作为一个单独的子树词表的词汇可能太少见了，编码器很难学到有用信息，并且大语法树语法的差异并不一定表示语义差异，编码器很难识别语义相似性</p>
+<h4 id="Process-to-Identify-Subtrees"><a href="#Process-to-Identify-Subtrees" class="headerlink" title="Process to Identify Subtrees"></a>Process to Identify Subtrees</h4><p>不太考虑粗粒度的子树，比如if，while，for等声明，因为这些子树通常很大，作为一个单独的子树词表的词汇可能太少见了，编码器很难学到有用信息，并且大语法树语法的差异并不一定表示语义差异，编码器很难识别语义相似性</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>上图就表示了识别出来的子树，其中 <code>int n = arr.lenth</code> 包含了一个表达式 <code>arr.lenth</code> ，所以把两者都识别出来了</p>
-<h4 id="Learning-Source-Code-Representation">Learning Source Code Representation</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig4.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Learning-Source-Code-Representation"><a href="#Learning-Source-Code-Representation" class="headerlink" title="Learning Source Code Representation"></a>Learning Source Code Representation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>使用了 TBCNN作为编码器，主要和原来的设计有两点不同：</p>
 <ul>
 <li>将文本信息包含到节点初始化嵌入中，而不是只使用type信息</li>
@@ -456,25 +453,26 @@
 <li>聚合结点信息：要将AST用固定维度的向量表示需要用注意力机制</li>
 <li>预测子树：得到向量后预测从T中提取出来的子树</li>
 </ul>
-<h3 id="Use-Case">Use Case</h3>
-<h4 id="Code-Embedding-Vectors-for-Unsupervised-Tasks">Code Embedding Vectors for Unsupervised Tasks</h4>
-<ul>
+<h3 id="Use-Case"><a href="#Use-Case" class="headerlink" title="Use Case"></a>Use Case</h3><h4 id="Code-Embedding-Vectors-for-Unsupervised-Tasks"><a href="#Code-Embedding-Vectors-for-Unsupervised-Tasks" class="headerlink" title="Code Embedding Vectors for Unsupervised Tasks"></a>Code Embedding Vectors for Unsupervised Tasks</h4><ul>
 <li>Code Clustering：将使用预训练输入得到的输出向量使用欧氏距离指标和聚类算法如k-means实现</li>
 <li>Code Clone Detection：两个向量做余弦相似度，阈值设定为0.8</li>
 <li>Cross Language Code-to-Code Search：模型接受5种语言输入，给定一种作为查询，转化为向量空间最近查询</li>
 </ul>
-<h4 id="Fine-Tuning-for-Supervised-Learning-Tasks">Fine-Tuning for Supervised Learning Tasks</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig5.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Fine-Tuning-for-Supervised-Learning-Tasks"><a href="#Fine-Tuning-for-Supervised-Learning-Tasks" class="headerlink" title="Fine-Tuning for Supervised Learning Tasks"></a>Fine-Tuning for Supervised Learning Tasks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/fig5.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>在两项任务上微调：代码分类和方法名命名</p>
-<h3 id="Experiment-16">Experiment</h3>
-<p>代码聚类</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>代码聚类</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>代码克隆检测</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>交叉语言代码到代码搜索</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>代码分类和方法名命名</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InferCode/tab5.png" alt="avatar" style="zoom:50%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
 
       

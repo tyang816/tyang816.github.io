@@ -20,12 +20,12 @@
   
   
   <title>ECCV-2016 Temporal Segment Networks：Towards Good Practices for Deep Action Recognition | tyang</title>
-  <meta name="description" content="论文地址：Temporal Segment Networks：Towards Good Practices for Deep Action Recognition  TSN+Practices：时空分割网络和视频学习的技巧 Abstract 提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等 Model">
+  <meta name="description" content="论文地址：Temporal Segment Networks：Towards Good Practices for Deep Action Recognition  TSN+Practices：时空分割网络和视频学习的技巧Abstract提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等 ModelTe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECCV-2016 Temporal Segment Networks：Towards Good Practices for Deep Action Recognition">
 <meta property="og:url" content="https://tyang816.github.io/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Temporal Segment Networks：Towards Good Practices for Deep Action Recognition  TSN+Practices：时空分割网络和视频学习的技巧 Abstract 提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等 Model">
+<meta property="og:description" content="论文地址：Temporal Segment Networks：Towards Good Practices for Deep Action Recognition  TSN+Practices：时空分割网络和视频学习的技巧Abstract提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等 ModelTe">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/table6.png">
@@ -256,7 +256,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -388,7 +388,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 790(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 786(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -401,51 +401,40 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1608.00859">Temporal Segment Networks：Towards Good Practices for Deep Action Recognition</a></p>
 </blockquote>
-<h2 id="TSN-Practices：时空分割网络和视频学习的技巧">TSN+Practices：时空分割网络和视频学习的技巧</h2>
-<h3 id="Abstract-52">Abstract</h3>
-<p>提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等</p>
-<h3 id="Model-17">Model</h3>
-<h4 id="Temporal-Segment-Networks">Temporal Segment Networks</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/img1.png" alt="avatar" style="zoom:60%;" /></div>
+<h2 id="TSN-Practices：时空分割网络和视频学习的技巧"><a href="#TSN-Practices：时空分割网络和视频学习的技巧" class="headerlink" title="TSN+Practices：时空分割网络和视频学习的技巧"></a>TSN+Practices：时空分割网络和视频学习的技巧</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><h4 id="Temporal-Segment-Networks"><a href="#Temporal-Segment-Networks" class="headerlink" title="Temporal Segment Networks"></a>Temporal Segment Networks</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/img1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>模型其实还是比较简单，主要就是<strong>视频分段+Segmental Consensus</strong>，但是效果非常好，也是非常有新意的一种体现。其实做很长的视频也是一样的道理，即使语义不同，就大不了不加Segmental Consensus（不做语义融合），加一个LSTM去学习也是一个想法</p>
 <ul>
-<li>
-<p>如果有一个原始的双流网络，每次能覆盖的图像最多也就是10帧，不到半秒</p>
+<li><p>如果有一个原始的双流网络，每次能覆盖的图像最多也就是10帧，不到半秒</p>
 </li>
-<li>
-<p>TSN想覆盖更长的时间就把视频分割成几段，比如上图的三段，每一段随机抽取一帧当作RGB图像，然后以这一帧为起点选几帧算光流图像，通过双流网络，最后生成两个logits，其他段同理</p>
+<li><p>TSN想覆盖更长的时间就把视频分割成几段，比如上图的三段，每一段随机抽取一帧当作RGB图像，然后以这一帧为起点选几帧算光流图像，通过双流网络，最后生成两个logits，其他段同理</p>
 </li>
-<li>
-<p>TSN的意思指即使抽出来的帧表面上看起来不一样，但高层的语义信息应该表示的是一个意思，然后把空间和时间上的语义做Segmental Consensus融合特征，最后做一个late fusion</p>
+<li><p>TSN的意思指即使抽出来的帧表面上看起来不一样，但高层的语义信息应该表示的是一个意思，然后把空间和时间上的语义做Segmental Consensus融合特征，最后做一个late fusion</p>
 </li>
 </ul>
-<h4 id="Learning-Temporal-Segment-Networks">Learning Temporal Segment Networks</h4>
-<h5 id="Cross-Modality-Pre-training">Cross Modality Pre-training</h5>
-<p>这里的多模态就是<strong>图像和光流</strong></p>
+<h4 id="Learning-Temporal-Segment-Networks"><a href="#Learning-Temporal-Segment-Networks" class="headerlink" title="Learning Temporal Segment Networks"></a>Learning Temporal Segment Networks</h4><h5 id="Cross-Modality-Pre-training"><a href="#Cross-Modality-Pre-training" class="headerlink" title="Cross Modality Pre-training"></a>Cross Modality Pre-training</h5><p>这里的多模态就是<strong>图像和光流</strong></p>
 <p>图像这边可以用imageNet的预训练来微调，但是光流这边如果用小数据从头训练的话可能效果不太好，所以作者表示把imageNet预训练好的直接给光流用效果也非常好</p>
 <p>但这里主要的问题是imageNet输入是RGB通道的图像，光流的输入是10张光流图，和x，y两个位移的channel，作者就把<strong>RGB模型的第一层卷积的权重拿出来平均</strong>，这下三个通道变一个通道了，然后把这个通道<strong>复制20遍</strong>，这种初始化方式是非常有用的</p>
-<h5 id="Regularization-Techniques">Regularization Techniques</h5>
-<p>Batch Normalization虽然能让训练加速，但是也带来了过拟合问题，于是就提出了partial BN</p>
+<h5 id="Regularization-Techniques"><a href="#Regularization-Techniques" class="headerlink" title="Regularization Techniques"></a>Regularization Techniques</h5><p>Batch Normalization虽然能让训练加速，但是也带来了过拟合问题，于是就提出了partial BN</p>
 <ul>
 <li>本来的动机是说如果BN层可以微调的话，因为数据集比较小，<strong>一调就过拟合了</strong>，所以其实是不想调，最好是<strong>冻</strong>起来。但是如果<strong>全冻起来迁移学习的效果就不太好</strong>，毕竟之前的数据集是图像的不是视频动作识别了</li>
 <li>partial BN就是把<strong>第一层BN打开，其他冻住</strong>，因为输入变了，所以第一层必须学一学才适应新的数据集，但是后面就不用开了，不然容易过拟合</li>
 </ul>
-<h5 id="Data-Augmentation">Data Augmentation</h5>
-<ul>
-<li>corner cropping：
-<ul>
+<h5 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h5><ul>
+<li>corner cropping：<ul>
 <li>作者发现如果做random cropping经常是图像正中间或中间附近，很难裁剪到边边角角，作者就强制让能裁剪到边角</li>
 </ul>
 </li>
-<li>scale-jittering：
-<ul>
+<li>scale-jittering：<ul>
 <li>改变图片长宽比，先把图片缩放到256x340，然后从{256，224，192，168}中选长宽组合做裁剪</li>
 </ul>
 </li>
 </ul>
-<h4 id="Experiment-30">Experiment</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/table6.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/table6.png" alt="avatar" style="zoom:60%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

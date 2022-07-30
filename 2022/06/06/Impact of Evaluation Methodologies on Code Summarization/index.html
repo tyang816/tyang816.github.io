@@ -20,12 +20,12 @@
   
   
   <title>ACL-2022 Impact of Evaluation Methodologies on Code Summarization | tyang</title>
-  <meta name="description" content="论文地址：Impact of Evaluation Methodologies on Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;EngineeringSoftware&#x2F;time-segmented-evaluation 这篇文章对评价方法数据集分割进行了思考，我认为很有启发性  time segmented：按时间戳划分数据集 Abstract 目前人">
+  <meta name="description" content="论文地址：Impact of Evaluation Methodologies on Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;EngineeringSoftware&#x2F;time-segmented-evaluation 这篇文章对评价方法数据集分割进行了思考，我认为很有启发性  time segmented：按时间戳划分数据集Abstract目前人们将">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACL-2022 Impact of Evaluation Methodologies on Code Summarization">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/06/Impact%20of%20Evaluation%20Methodologies%20on%20Code%20Summarization/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Impact of Evaluation Methodologies on Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;EngineeringSoftware&#x2F;time-segmented-evaluation 这篇文章对评价方法数据集分割进行了思考，我认为很有启发性  time segmented：按时间戳划分数据集 Abstract 目前人">
+<meta property="og:description" content="论文地址：Impact of Evaluation Methodologies on Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;EngineeringSoftware&#x2F;time-segmented-evaluation 这篇文章对评价方法数据集分割进行了思考，我认为很有启发性  time segmented：按时间戳划分数据集Abstract目前人们将">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img2.png">
@@ -261,7 +261,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -393,7 +393,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/06/Impact%20of%20Evaluation%20Methodologies%20on%20Code%20Summarization/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 717(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 715(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -408,36 +408,35 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/EngineeringSoftware/time-segmented-evaluation">https://github.com/EngineeringSoftware/time-segmented-evaluation</a></p>
 <p>这篇文章对评价方法数据集分割进行了思考，我认为很有启发性</p>
 </blockquote>
-<h2 id="time-segmented：按时间戳划分数据集">time segmented：按时间戳划分数据集</h2>
-<h3 id="Abstract-28">Abstract</h3>
-<p>目前人们将数据集分割成训练集，测试集，验证集的方法还没有得到有效研究，所以作者提出一种基于<strong>时间戳的数据集分割</strong>方法，并将这种方法与常见的混项目和跨项目分割进行了比较，以及介绍了这种方法实际落地场景</p>
-<h3 id="Introduction-26">Introduction</h3>
-<p>尽管深度学习的数据驱动方法产生了很多新技术，但是对于评价方法还是没有过多研究</p>
+<h2 id="time-segmented：按时间戳划分数据集"><a href="#time-segmented：按时间戳划分数据集" class="headerlink" title="time segmented：按时间戳划分数据集"></a>time segmented：按时间戳划分数据集</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>目前人们将数据集分割成训练集，测试集，验证集的方法还没有得到有效研究，所以作者提出一种基于<strong>时间戳的数据集分割</strong>方法，并将这种方法与常见的混项目和跨项目分割进行了比较，以及介绍了这种方法实际落地场景</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>尽管深度学习的数据驱动方法产生了很多新技术，但是对于评价方法还是没有过多研究</p>
 <p>基于时间的数据集在软工里面是有意义的，比如新的代码摘要往往会收到老的摘要影响，但先前的工作往往<strong>假设数据是独立同分布</strong>的，这就可能导致模型数值膨胀或者实际应用时产生误解</p>
 <p>比起不管代码是什么时候写得就直接评估生成注释（批处理方法），一个更现实的场景是连续使用模式的用例，在一个时间戳训练的模型在后面的时间戳进行评估测试（连续处理方法）</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>按时间段分割数据集</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>混项目分割数据集</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>跨项目分割数据集</p>
 <p>作者指出，我们需要更准确的选择评价方法来报告ML模型的结果，要符合目标任务和使用方法</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/table1.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Use-Cases">Use Cases</h3>
-<p>先前的ML模型只是为了实验，没有描述和注重用例场景，我们需要关注开发者最终是用怎么使用这些模型的，所以作者介绍了一些用例，全是假设的，俗称编得</p>
+
+<h3 id="Use-Cases"><a href="#Use-Cases" class="headerlink" title="Use Cases"></a>Use Cases</h3><p>先前的ML模型只是为了实验，没有描述和注重用例场景，我们需要关注开发者最终是用怎么使用这些模型的，所以作者介绍了一些用例，全是假设的，俗称编得</p>
 <p>对于写了一点注释的就用混项目，什么注释也没写就跨项目，同一时间写了注释的就用时间分割</p>
-<h3 id="Application-of-Methodologies">Application of Methodologies</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img4.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiment-15">Experiment</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/table3.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Application-of-Methodologies"><a href="#Application-of-Methodologies" class="headerlink" title="Application of Methodologies"></a>Application of Methodologies</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/img4.png" alt="avatar" style="zoom:60%;" /></div>
+
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/table3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/time segmented/table4.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Future-Work">Future Work</h3>
-<h4 id="Methodologies-for-Other-SE-Areas-Using-ML-Models">Methodologies for Other SE Areas Using ML Models</h4>
-<p>将本方法从代码摘要任务迁移时只需要针对输入和输出进行修改就行，比如对于commit message 任务，把“(code, commnet)对”换成“(code change, commit message)对”就可以</p>
-<h4 id="Other-Use-Cases-and-Methodologies">Other Use Cases and Methodologies</h4>
-<p>跨项目连续模型用例：在 $\tau$ 时刻训练时不使用之前同项目的数据，而是使用别的项目样本，从实用性角度来说可能要差一点，但是从评估角度可能更能验证模型的泛化能力</p>
+
+<h3 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h3><h4 id="Methodologies-for-Other-SE-Areas-Using-ML-Models"><a href="#Methodologies-for-Other-SE-Areas-Using-ML-Models" class="headerlink" title="Methodologies for Other SE Areas Using ML Models"></a>Methodologies for Other SE Areas Using ML Models</h4><p>将本方法从代码摘要任务迁移时只需要针对输入和输出进行修改就行，比如对于commit message 任务，把“(code, commnet)对”换成“(code change, commit message)对”就可以</p>
+<h4 id="Other-Use-Cases-and-Methodologies"><a href="#Other-Use-Cases-and-Methodologies" class="headerlink" title="Other Use Cases and Methodologies"></a>Other Use Cases and Methodologies</h4><p>跨项目连续模型用例：在 $\tau$ 时刻训练时不使用之前同项目的数据，而是使用别的项目样本，从实用性角度来说可能要差一点，但是从评估角度可能更能验证模型的泛化能力</p>
 <p>在线连续模型用例：在 $\tau$ 时刻训练时不摒弃在t时刻之前的模型，也不是从0开始重新训练，而是使用<strong>在线训练</strong>方法，使用 $\tau^{-1}$ 和 $\tau$ 之间的数据</p>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

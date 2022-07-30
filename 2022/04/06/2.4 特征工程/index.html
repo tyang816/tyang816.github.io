@@ -20,12 +20,12 @@
   
   
   <title>2.4 特征工程【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="### Feature Engineering  机器学习算法偏好定义比较好的，固定长度的输入和输出 特征工程在深度学习之前的ML模型最重要的关键  在计算机视觉任务，人们尝试各种特征工程方法然后训练一个SVM分类   DL训练神经网络来抓取特征  特征通常和任务是相关的    Tabular Data Features  整数&#x2F;浮点：直接使用 类别的数据：One-hot编码  cat -&amp;">
+  <meta name="description" content="Feature Engineering 机器学习算法偏好定义比较好的，固定长度的输入和输出 特征工程在深度学习之前的ML模型最重要的关键 在计算机视觉任务，人们尝试各种特征工程方法然后训练一个SVM分类   DL训练神经网络来抓取特征 特征通常和任务是相关的    Tabular Data Features 整数&#x2F;浮点：直接使用 类别的数据：One-hot编码 cat -&gt; [0,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2.4 特征工程【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/04/06/2.4%20%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="### Feature Engineering  机器学习算法偏好定义比较好的，固定长度的输入和输出 特征工程在深度学习之前的ML模型最重要的关键  在计算机视觉任务，人们尝试各种特征工程方法然后训练一个SVM分类   DL训练神经网络来抓取特征  特征通常和任务是相关的    Tabular Data Features  整数&#x2F;浮点：直接使用 类别的数据：One-hot编码  cat -&amp;">
+<meta property="og:description" content="Feature Engineering 机器学习算法偏好定义比较好的，固定长度的输入和输出 特征工程在深度学习之前的ML模型最重要的关键 在计算机视觉任务，人们尝试各种特征工程方法然后训练一个SVM分类   DL训练神经网络来抓取特征 特征通常和任务是相关的    Tabular Data Features 整数&#x2F;浮点：直接使用 类别的数据：One-hot编码 cat -&gt; [0,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-06T07:48:24.000Z">
 <meta property="article:modified_time" content="2022-04-06T08:06:02.282Z">
@@ -251,7 +251,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -389,60 +389,49 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=976027811&bvid=BV1t44y1x7Hw&cid=423753460&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
-<HR align=left color=#987cb9 SIZE=1>
-### Feature Engineering
-<ul>
+
+<p><HR align=left color=#987cb9 SIZE=1></p>
+<h3 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h3><ul>
 <li>机器学习算法偏好定义比较好的，固定长度的输入和输出</li>
-<li>特征工程在深度学习之前的ML模型最重要的关键
-<ul>
+<li>特征工程在深度学习之前的ML模型最重要的关键<ul>
 <li>在计算机视觉任务，人们尝试各种特征工程方法然后训练一个SVM分类</li>
 </ul>
 </li>
-<li>DL训练神经网络来抓取特征
-<ul>
+<li>DL训练神经网络来抓取特征<ul>
 <li>特征通常和任务是相关的</li>
 </ul>
 </li>
 </ul>
-<h3 id="Tabular-Data-Features">Tabular Data Features</h3>
-<ul>
+<h3 id="Tabular-Data-Features"><a href="#Tabular-Data-Features" class="headerlink" title="Tabular Data Features"></a>Tabular Data Features</h3><ul>
 <li>整数/浮点：直接使用</li>
-<li>类别的数据：One-hot编码
-<ul>
+<li>类别的数据：One-hot编码<ul>
 <li>cat -&gt; [0, 1, 0, 0, 0] # fish, cat, and, dog, unkown</li>
 <li>映射稀少的数据为“Unkown”</li>
 </ul>
 </li>
-<li>日期时间：一个特征列
-<ul>
+<li>日期时间：一个特征列<ul>
 <li>[year, month, day, day_of_year, week_of_year, day_of_week]</li>
 </ul>
 </li>
-<li>特征组合：
-<ul>
+<li>特征组合：<ul>
 <li>[cat, dog] x [male, female] -&gt; [(cat, male), (cat, female), (dog, male), (dog, female)]</li>
 </ul>
 </li>
 </ul>
-<h3 id="Text-Features">Text Features</h3>
-<ul>
-<li>用token特征表示文本
-<ul>
-<li>Bag of words模型（BoW）
-<ul>
+<h3 id="Text-Features"><a href="#Text-Features" class="headerlink" title="Text Features"></a>Text Features</h3><ul>
+<li>用token特征表示文本<ul>
+<li>Bag of words模型（BoW）<ul>
 <li>把每个词元用One-hot表示，句子就是把全部加起来</li>
 <li>dog and cat and dinosaur -&gt; [0, 1, 2, 1, 1]</li>
 <li>限制：需要自习设计词库，容易缺失上下文信息</li>
 </ul>
 </li>
-<li>Word Embeddings模型（Word2vec）
-<ul>
+<li>Word Embeddings模型（Word2vec）<ul>
 <li>向量化词让相似的单词放的更近</li>
 <li>训练的时候是通过从上下文中预测目标词</li>
 </ul>
 </li>
-<li>Pre-trained language模型（BERT, GPT）
-<ul>
+<li>Pre-trained language模型（BERT, GPT）<ul>
 <li>大的transformer模型</li>
 <li>需要大量没标注的数据训练</li>
 <li>在下游任务上微调</li>
@@ -451,25 +440,22 @@
 </ul>
 </li>
 </ul>
-<h3 id="Imgae-Video-Features">Imgae/Video Features</h3>
-<ul>
+<h3 id="Imgae-Video-Features"><a href="#Imgae-Video-Features" class="headerlink" title="Imgae/Video Features"></a>Imgae/Video Features</h3><ul>
 <li>传统的手工抽取特征比如SIFT</li>
-<li>现在常见的是使用预训练好的深度神经网络
-<ul>
+<li>现在常见的是使用预训练好的深度神经网络<ul>
 <li>RestNet、I3D</li>
 </ul>
 </li>
 </ul>
-<h3 id="Summary-9">Summary</h3>
-<ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
 <li>特征非常重要</li>
-<li>特征是手工提取或者深度神经网络提取
-<ul>
+<li>特征是手工提取或者深度神经网络提取<ul>
 <li>后者现在已经是主流了</li>
 </ul>
 </li>
 </ul>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

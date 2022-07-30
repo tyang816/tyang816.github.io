@@ -20,12 +20,12 @@
   
   
   <title>Nature-2021 Highly accurate protein structure prediction with AlphaFold | tyang</title>
-  <meta name="description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨">
+  <meta name="description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构 达到了原子级别的预测，2021年nature的最佳论文 特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nature-2021 Highly accurate protein structure prediction with AlphaFold">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/21/Highly%20accurate%20protein%20structure%20prediction%20with%20AlphaFold/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构   达到了原子级别的预测，2021年nature的最佳论文   特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨">
+<meta property="og:description" content="论文地址：Highly accurate protein structure prediction with AlphaFold  AlphaFold2：根据氨基酸预测蛋白质结构 达到了原子级别的预测，2021年nature的最佳论文 特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-21T05:03:58.000Z">
 <meta property="article:modified_time" content="2022-03-24T06:26:05.134Z">
@@ -250,7 +250,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -395,29 +395,19 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41586-021-03819-2">Highly accurate protein structure prediction with AlphaFold</a></p>
 </blockquote>
-<h2 id="AlphaFold2：根据氨基酸预测蛋白质结构">AlphaFold2：根据氨基酸预测蛋白质结构</h2>
-<ol>
-<li>
-<p>达到了原子级别的预测，2021年nature的最佳论文</p>
-</li>
-<li>
-<p>特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间的关系，得到氨基酸之间的特征</p>
+<h2 id="AlphaFold2：根据氨基酸预测蛋白质结构"><a href="#AlphaFold2：根据氨基酸预测蛋白质结构" class="headerlink" title="AlphaFold2：根据氨基酸预测蛋白质结构"></a>AlphaFold2：根据氨基酸预测蛋白质结构</h2><ol>
+<li>达到了原子级别的预测，2021年nature的最佳论文</li>
+<li><p>特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间的关系，得到氨基酸之间的特征</p>
 <p>2.1 同时也在结构蛋白质数据库搜索，解析出氨基酸空间距离的模板。</p>
 </li>
-<li>
-<p>Evoformer在原始的多头注意力上做了三个改进</p>
+<li><p>Evoformer在原始的多头注意力上做了三个改进</p>
 <p>3.1 row-wise：在MSA中每次拿出一行做为序列，投影后得到q，k，v</p>
 <p>3.2 gated：通过线性、激活函数后与注意力权重相乘</p>
 <p>3.3 pair bias：计算 $q_i$ 和 $k_j$ 做点乘时，拿出第  个对表示加在这后面</p>
 </li>
-<li>
-<p>3D结构表示采用相对位置</p>
-</li>
-<li>
-<p>解码器把原点的氨基酸变形为目标形状，输入是编码器输出、对表示模板和3D结构的骨干框架，每次做一部分结构调整</p>
-</li>
-<li>
-<p>训练：</p>
+<li>3D结构表示采用相对位置</li>
+<li>解码器把原点的氨基酸变形为目标形状，输入是编码器输出、对表示模板和3D结构的骨干框架，每次做一部分结构调整</li>
+<li><p>训练：</p>
 <p>6.1 使用没有标号的数据，使用噪音学生自蒸馏方法，先用有标号数据训练模型，然后用模型去预测没有标号的大数据集，然后把那些比较置信的标号拿出来，跟之前有标号的数据拼起来形成更大数据重新训练。核心是加噪音进去，不然一个错误的标号可能导致训练错上加错。</p>
 <p>6.2 来自bert，把蛋白质序列随机遮住一些氨基酸去预测</p>
 </li>

@@ -20,12 +20,12 @@
   
   
   <title>5.4 Stacking【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="Stacking  结合多种基本学习器来减少方差  基本学习器可以是多种不同的模型类别 通过可学习的参数来线性的结合基本学习器的输出   在竞赛中常用的技术 与Bagging比较  使用相同的类型模型 使用bootstrap来获取多样性    Multi-layer Stacking    多个层次stacking基本学习器来降低偏差  可以在每个层次使用不同的基本学习器集合    但是容易">
+  <meta name="description" content="Stacking 结合多种基本学习器来减少方差 基本学习器可以是多种不同的模型类别 通过可学习的参数来线性的结合基本学习器的输出   在竞赛中常用的技术 与Bagging比较 使用相同的类型模型 使用bootstrap来获取多样性    Multi-layer Stacking   多个层次stacking基本学习器来降低偏差  可以在每个层次使用不同的基本学习器集合   但是容易过拟合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.4 Stacking【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/15/5.4%20Stacking/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Stacking  结合多种基本学习器来减少方差  基本学习器可以是多种不同的模型类别 通过可学习的参数来线性的结合基本学习器的输出   在竞赛中常用的技术 与Bagging比较  使用相同的类型模型 使用bootstrap来获取多样性    Multi-layer Stacking    多个层次stacking基本学习器来降低偏差  可以在每个层次使用不同的基本学习器集合    但是容易">
+<meta property="og:description" content="Stacking 结合多种基本学习器来减少方差 基本学习器可以是多种不同的模型类别 通过可学习的参数来线性的结合基本学习器的输出   在竞赛中常用的技术 与Bagging比较 使用相同的类型模型 使用bootstrap来获取多样性    Multi-layer Stacking   多个层次stacking基本学习器来降低偏差  可以在每个层次使用不同的基本学习器集合   但是容易过拟合">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.4-img1.png">
 <meta property="article:published_time" content="2022-06-15T03:05:22.000Z">
@@ -253,7 +253,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -391,62 +391,55 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=379617692&bvid=BV1PZ4y197CX&cid=453658339&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
+
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Stacking">Stacking</h3>
-<ul>
-<li>结合多种基本学习器来减少方差
-<ul>
+
+<h3 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h3><ul>
+<li>结合多种基本学习器来减少方差<ul>
 <li>基本学习器可以是多种不同的模型类别</li>
 <li>通过可学习的参数来线性的结合基本学习器的输出</li>
 </ul>
 </li>
 <li>在竞赛中常用的技术</li>
-<li>与Bagging比较
-<ul>
+<li>与Bagging比较<ul>
 <li>使用相同的类型模型</li>
 <li>使用bootstrap来获取多样性</li>
 </ul>
 </li>
 </ul>
-<h3 id="Multi-layer-Stacking">Multi-layer Stacking</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.4-img1.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Multi-layer-Stacking"><a href="#Multi-layer-Stacking" class="headerlink" title="Multi-layer Stacking"></a>Multi-layer Stacking</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.4-img1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <ul>
-<li>
-<p>多个层次stacking基本学习器来降低偏差</p>
+<li><p>多个层次stacking基本学习器来降低偏差</p>
 <ul>
 <li>可以在每个层次使用不同的基本学习器集合</li>
 </ul>
 </li>
-<li>
-<p>但是容易过拟合，因为相当于把一条已经训练过的数据再训练一次</p>
+<li><p>但是容易过拟合，因为相当于把一条已经训练过的数据再训练一次</p>
 </li>
 </ul>
-<h3 id="Overfitting-in-Multi-layer-Stacking">Overfitting in Multi-layer Stacking</h3>
-<ul>
-<li>训练学习器从不同数据不同层次来减轻过拟合
-<ul>
+<h3 id="Overfitting-in-Multi-layer-Stacking"><a href="#Overfitting-in-Multi-layer-Stacking" class="headerlink" title="Overfitting in Multi-layer Stacking"></a>Overfitting in Multi-layer Stacking</h3><ul>
+<li>训练学习器从不同数据不同层次来减轻过拟合<ul>
 <li>将数据集分为A和B，训练L1层用A，用B做预测输入L2</li>
 <li>但是相对而言还是有点亏，因为等于每一层都只用了一半的数据</li>
 </ul>
 </li>
-<li>重复k折bagging
-<ul>
+<li>重复k折bagging<ul>
 <li>通过k折交叉验证训练k个模型</li>
 <li>将每个模型输出并起来就能得到跟以前数据样本数一样多的，但预测模型都没有参与当前模型训练的结果</li>
 <li>重复上面2步n次，把输出平均</li>
 </ul>
 </li>
 </ul>
-<h3 id="Summary-20">Summary</h3>
-<ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
 <li>Stacking组合多个学习器来降低方差</li>
-<li>在不同层次Stacking学习器来减少偏差
-<ul>
+<li>在不同层次Stacking学习器来减少偏差<ul>
 <li>重复k折bagging来有效利用数据和减轻过拟合</li>
 </ul>
 </li>
 </ul>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

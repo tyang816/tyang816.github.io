@@ -20,12 +20,12 @@
   
   
   <title>NIPS-2020 Bootstrap your own latent：A new approach to self-supervised Learning | tyang</title>
-  <meta name="description" content="论文地址：Bootstrap your own latent: A new approach to self-supervised Learning  BYOL：不用负样本，把匹配改为预测任务  对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型">
+  <meta name="description" content="论文地址：Bootstrap your own latent: A new approach to self-supervised Learning  BYOL：不用负样本，把匹配改为预测任务 对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NIPS-2020 Bootstrap your own latent：A new approach to self-supervised Learning">
 <meta property="og:url" content="https://tyang816.github.io/2022/01/21/Bootstrap%20your%20own%20latent%EF%BC%9AA%20new%20approach%20to%20self-supervised%20Learning/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Bootstrap your own latent: A new approach to self-supervised Learning  BYOL：不用负样本，把匹配改为预测任务  对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型">
+<meta property="og:description" content="论文地址：Bootstrap your own latent: A new approach to self-supervised Learning  BYOL：不用负样本，把匹配改为预测任务 对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型t">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BYOL/BYOL-img1.png">
 <meta property="article:published_time" content="2022-01-21T05:14:01.000Z">
@@ -255,7 +255,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -400,10 +400,9 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2006.07733">Bootstrap your own latent: A new approach to self-supervised Learning</a></p>
 </blockquote>
-<h2 id="BYOL：不用负样本，把匹配改为预测任务">BYOL：不用负样本，把匹配改为预测任务</h2>
-<ol>
+<h2 id="BYOL：不用负样本，把匹配改为预测任务"><a href="#BYOL：不用负样本，把匹配改为预测任务" class="headerlink" title="BYOL：不用负样本，把匹配改为预测任务"></a>BYOL：不用负样本，把匹配改为预测任务</h2><ol>
 <li>对比学习中负样本是一个约束，算目标函数如果只用正样本容易使模型学习到捷径解，即让所有相似的物体特征尽可能相似时，我无论什么输入都返回同一个输出，出来的特征都是一样的，算loss都是0，模型根本不学（模型ta）。加上负样本是不光相似的物体要有相似的特征，不相似的物体也要有不相似的特征，因为如果输出都一样，算负样本时loss就会非常大，被迫学习更健壮的特征</li>
-<li>前向过程： $f_\theta$  采用梯度更新，  $f_\xi$ 采用动量编码器， $g_\theta$ 和  $q_\theta$ 都是 MLP 层。上面相当于query编码器，下面相当于key编码器。用的目标函数也不一样，算的MSE loss</li>
+<li>前向过程： $f<em>\theta$  采用梯度更新，  $f</em>\xi$ 采用动量编码器， $g<em>\theta$ 和  $q</em>\theta$ 都是 MLP 层。上面相当于query编码器，下面相当于key编码器。用的目标函数也不一样，算的MSE loss</li>
 </ol>
 <p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BYOL/BYOL-img1.png" alt="avatar"></p>
 <HR align=left color=#987cb9 SIZE=1>

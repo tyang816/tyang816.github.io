@@ -20,12 +20,12 @@
   
   
   <title>9.1 模型调参【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="Manual Hyperparameter Tuning   从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告   调整一个参数，重新训练模型来观察变化   重复多次来获得一些见解  哪种超参重要 模型对于超参的敏感性，比如Adam比SGD好调参，对参数的敏感没那么强，但可能效果差一点 比较好的范围是什么    需要细心管理实验   保存训练日志和参数去比较，分享或是">
+  <meta name="description" content="Manual Hyperparameter Tuning 从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告 调整一个参数，重新训练模型来观察变化 重复多次来获得一些见解  哪种超参重要 模型对于超参的敏感性，比如Adam比SGD好调参，对参数的敏感没那么强，但可能效果差一点 比较好的范围是什么   需要细心管理实验  保存训练日志和参数去比较，分享或是重复 最简单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="9.1 模型调参【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Manual Hyperparameter Tuning   从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告   调整一个参数，重新训练模型来观察变化   重复多次来获得一些见解  哪种超参重要 模型对于超参的敏感性，比如Adam比SGD好调参，对参数的敏感没那么强，但可能效果差一点 比较好的范围是什么    需要细心管理实验   保存训练日志和参数去比较，分享或是">
+<meta property="og:description" content="Manual Hyperparameter Tuning 从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告 调整一个参数，重新训练模型来观察变化 重复多次来获得一些见解  哪种超参重要 模型对于超参的敏感性，比如Adam比SGD好调参，对参数的敏感没那么强，但可能效果差一点 比较好的范围是什么   需要细心管理实验  保存训练日志和参数去比较，分享或是重复 最简单">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-17T02:41:06.000Z">
 <meta property="article:modified_time" content="2022-06-22T01:14:23.227Z">
@@ -251,7 +251,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -389,65 +389,53 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="//player.bilibili.com/player.html?aid=719715597&bvid=BV1vQ4y1e7LF&cid=456716618&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
+
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Manual-Hyperparameter-Tuning">Manual Hyperparameter Tuning</h3>
-<ul>
-<li>
-<p>从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告</p>
-</li>
-<li>
-<p>调整一个参数，重新训练模型来观察变化</p>
-</li>
-<li>
-<p>重复多次来获得一些见解</p>
+
+<h3 id="Manual-Hyperparameter-Tuning"><a href="#Manual-Hyperparameter-Tuning" class="headerlink" title="Manual Hyperparameter Tuning"></a>Manual Hyperparameter Tuning</h3><ul>
+<li>从一个不错的baseline开始，比如质量比较高的工具包或论文里面的报告</li>
+<li>调整一个参数，重新训练模型来观察变化</li>
+<li><p>重复多次来获得一些见解</p>
 <ul>
 <li>哪种超参重要</li>
 <li>模型对于超参的敏感性，比如Adam比SGD好调参，对参数的敏感没那么强，但可能效果差一点</li>
 <li>比较好的范围是什么</li>
 </ul>
 </li>
-<li>
-<p>需要细心管理实验</p>
+<li><p>需要细心管理实验</p>
 </li>
-<li>
-<p>保存训练日志和参数去比较，分享或是重复</p>
-<ul>
+<li>保存训练日志和参数去比较，分享或是重复<ul>
 <li>最简单的方法就是把日志保存在txt，关键指标放在excel里面</li>
 <li>现在有更好的选择，比如tensorboard和weight &amp; bias</li>
 </ul>
 </li>
-<li>
-<p>重复实验是很难的，主要和以下相关</p>
-<ul>
+<li>重复实验是很难的，主要和以下相关<ul>
 <li>环境（硬件和库），python本身兼容性有一定问题</li>
 <li>代码，怎么调用库等等</li>
 <li>随机种子，一般是数据的随机性在里面，尽量用更稳定的方法，实在做不到可以ensemble</li>
 </ul>
 </li>
 </ul>
-<h3 id="Automated-Hyperparameter-Tuning">Automated Hyperparameter Tuning</h3>
-<ul>
+<h3 id="Automated-Hyperparameter-Tuning"><a href="#Automated-Hyperparameter-Tuning" class="headerlink" title="Automated Hyperparameter Tuning"></a>Automated Hyperparameter Tuning</h3><ul>
 <li>计算成本指数下降，人力成本上升</li>
-<li>一个标准的ML任务每次训练开销（其实很多任务没这么大）
-<ul>
+<li>一个标准的ML任务每次训练开销（其实很多任务没这么大）<ul>
 <li>树：cpu 10分钟；神经网络：gpu 1小时</li>
 <li>1M的用户日志，10k图像</li>
 </ul>
 </li>
 <li>数据科学家开销的每天&gt;$500</li>
-<li>假设给1000次机会试算法
-<ul>
+<li>假设给1000次机会试算法<ul>
 <li>通常能打败90%的数据科学家</li>
 </ul>
 </li>
 </ul>
-<h3 id="Automated-Machine-Learning（AutoML）">Automated Machine Learning（AutoML）</h3>
-<ul>
+<h3 id="Automated-Machine-Learning（AutoML）"><a href="#Automated-Machine-Learning（AutoML）" class="headerlink" title="Automated Machine Learning（AutoML）"></a>Automated Machine Learning（AutoML）</h3><ul>
 <li>对机器学习每个步骤自动调整来解决真实世界问题：数据清洗，特征提取，模型选择…</li>
 <li>参数优化（HPO）：通过搜索算法找到一组好的超参数</li>
 <li>神经架构搜索（NAS）：构建一个好的神经网络模型</li>
 </ul>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

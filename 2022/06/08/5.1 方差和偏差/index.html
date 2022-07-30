@@ -20,12 +20,12 @@
   
   
   <title>5.1 方差和偏差【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="Bias &amp; Variance  在统计学习里面，我们用偏差和方差来衡量模型   Bias-Variance Decomposition  从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$ 从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望   Reduce Bias">
+  <meta name="description" content="Bias &amp; Variance 在统计学习里面，我们用偏差和方差来衡量模型    Bias-Variance Decomposition 从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$  从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望    Reduce B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.1 方差和偏差【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Bias &amp; Variance  在统计学习里面，我们用偏差和方差来衡量模型   Bias-Variance Decomposition  从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$ 从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望   Reduce Bias">
+<meta property="og:description" content="Bias &amp; Variance 在统计学习里面，我们用偏差和方差来衡量模型    Bias-Variance Decomposition 从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$  从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望    Reduce B">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img2.png">
@@ -255,7 +255,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -393,43 +393,41 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=976718082&bvid=BV1H44y1v7Kf&cid=443690200&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"></iframe>
+
+
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Bias-Variance">Bias &amp; Variance</h3>
-<ul>
+
+<h3 id="Bias-amp-Variance"><a href="#Bias-amp-Variance" class="headerlink" title="Bias &amp; Variance"></a>Bias &amp; Variance</h3><ul>
 <li>在统计学习里面，我们用偏差和方差来衡量模型</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img2.png" alt="avatar" style="zoom:50%;" /></div>
-<h3 id="Bias-Variance-Decomposition">Bias-Variance Decomposition</h3>
-<ul>
-<li>从 $y=f(x)+\phi$ 采样数据 $D={(x_1,y_1),…,(x_n,y_n))}$</li>
+
+<h3 id="Bias-Variance-Decomposition"><a href="#Bias-Variance-Decomposition" class="headerlink" title="Bias-Variance Decomposition"></a>Bias-Variance Decomposition</h3><ul>
+<li>从 $y=f(x)+\phi$ 采样数据 $D={(x_1,y_1),…,(x_n,y_n))}$ </li>
 <li>从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img3.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Reduce-Bias-Variance">Reduce Bias &amp; Variance</h3>
-<ul>
-<li>减少偏差
-<ul>
+
+<h3 id="Reduce-Bias-amp-Variance"><a href="#Reduce-Bias-amp-Variance" class="headerlink" title="Reduce Bias &amp; Variance"></a>Reduce Bias &amp; Variance</h3><ul>
+<li>减少偏差<ul>
 <li>一个更复杂的模型：增加层数，隐藏单元个数</li>
 <li>Boosting</li>
 <li>Stacking</li>
 </ul>
 </li>
-<li>减少方差
-<ul>
+<li>减少方差<ul>
 <li>一个更简单的模型</li>
 <li>正则</li>
 <li>Bagging</li>
 <li>Stacking</li>
 </ul>
 </li>
-<li>减少 $\sigma^2$（噪音）
-<ul>
+<li>减少 $\sigma^2$（噪音）<ul>
 <li>增加数据</li>
 </ul>
 </li>
 </ul>
-<h3 id="Summary-15">Summary</h3>
-<ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
 <li>降解模型泛化误差到偏差，方差和内在误差</li>
 <li>集成学习能组合多个模型来降低偏差和方差</li>
 </ul>

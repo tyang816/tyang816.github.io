@@ -20,12 +20,12 @@
   
   
   <title>AAAI-2021 SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation | tyang</title>
-  <meta name="description" content="论文地址：SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation 对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显  SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习 Abstract 目前预训练模型已经表现出">
+  <meta name="description" content="论文地址：SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation 对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显  SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习Abstract目前预训练模型已经表现出了很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AAAI-2021 SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation">
 <meta property="og:url" content="https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation 对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显  SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习 Abstract 目前预训练模型已经表现出">
+<meta property="og:description" content="论文地址：SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation 对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显  SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习Abstract目前预训练模型已经表现出了很">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/fig3.png">
@@ -262,7 +262,7 @@
                 <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">IC[C-2022 Self-Supervised Learning of Smart Contract Representations</a>
+                <a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="title">ICPC-2022 Self-Supervised Learning of Smart Contract Representations</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
@@ -394,7 +394,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 687(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 682(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -408,18 +408,13 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2108.04556">SynCoBERT：Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation</a></p>
 <p>对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显</p>
 </blockquote>
-<h2 id="SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习">SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习</h2>
-<h3 id="Abstract-50">Abstract</h3>
-<p>目前预训练模型已经表现出了很好的下游任务效果，目前的方法也更加重视结构信息（AST，数据流）。作者提出了两个新的预训练目标，标识符预测（IP）和AST边预测（TEP），以及一种多模态的对比学习策略来最大化不同模态之间的互信息</p>
-<h3 id="Introduction-43">Introduction</h3>
-<p>为了更好的表示代码的语法结构，我们考虑两个关键但容易忽视的代码特征：</p>
+<h2 id="SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习"><a href="#SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习" class="headerlink" title="SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习"></a>SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>目前预训练模型已经表现出了很好的下游任务效果，目前的方法也更加重视结构信息（AST，数据流）。作者提出了两个新的预训练目标，标识符预测（IP）和AST边预测（TEP），以及一种多模态的对比学习策略来最大化不同模态之间的互信息</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>为了更好的表示代码的语法结构，我们考虑两个关键但容易忽视的代码特征：</p>
 <ul>
-<li>
-<p>代码标识符包含了符号和语法信息，比如 <code>x = len(&quot;x&quot;)</code>，前一个x和后一个字符串x肯定不一样</p>
-</li>
-<li>
-<p>AST边的语法信息被忽略了，比如图1里面 <code>x+y</code> 语句可以用一个binary_operator指向三个叶子节点来表示</p>
+<li>代码标识符包含了符号和语法信息，比如 <code>x = len(&quot;x&quot;)</code>，前一个x和后一个字符串x肯定不一样</li>
+<li><p>AST边的语法信息被忽略了，比如图1里面 <code>x+y</code> 语句可以用一个binary_operator指向三个叶子节点来表示</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
 </li>
 </ul>
 <p>此外，一个程序可以被分解为代码块和注释，代码块还可以被分解为不同的语法结构，比如ast或者数据控制流图，本文将这些从不同视角得到的特征视为语义等价的多模态</p>
@@ -428,31 +423,27 @@
 <li>两种预训练目标：IP预测一个词元是不是标识符和TEP预测两个结点之间的边</li>
 <li>多模态对比学习代码，注释和ast</li>
 </ul>
-<h3 id="SynCoBERT">SynCoBERT</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/fig3.png" alt="avatar" style="zoom:60%;" /></div>
-<h4 id="Preliminary">Preliminary</h4>
-<p>使用tree-sitter把代码转为ast，输入为（NL, PL, AST），$x={[CLS],w,[SEP],c,[SEP],a,[SEP]}$</p>
+<h3 id="SynCoBERT"><a href="#SynCoBERT" class="headerlink" title="SynCoBERT"></a>SynCoBERT</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<h4 id="Preliminary"><a href="#Preliminary" class="headerlink" title="Preliminary"></a>Preliminary</h4><p>使用tree-sitter把代码转为ast，输入为（NL, PL, AST），$x={[CLS],w,[SEP],c,[SEP],a,[SEP]}$</p>
 <p>12层Transformer，768hidden size，12个注意力头</p>
-<h4 id="Multi-Modal-Masked-Language-Modeling-MMLM">Multi-Modal Masked Language Modeling (MMLM)</h4>
-<p>将掩码语言模型（MLM）扩展到多模态，三元组中随机选15%，其中80%变成[MASK]，10%变成随机词元，剩下10%不变</p>
-<h4 id="Identififier-Prediction-IP">Identififier Prediction (IP)</h4>
-<p>详细预测具体的标识符太难了不可能，所以把词元分为了标识符和非标识符，与MMLM不同，对所有代码都提出了标识符预测目标，1表示是标识符，0表示不是</p>
-<h4 id="AST-Edge-Prediction-TEP">AST Edge Prediction (TEP)</h4>
-<p>把AST边mask掉，让模型去预测，比如图3 (“assignment”, “result”) 是有边的，但是 (“result”, “=”) 是没边的</p>
-<h4 id="Multi-Modal-Contrastive-Learning-MCL">Multi-Modal Contrastive Learning (MCL)</h4>
-<p>词元不平衡问题在代码里面也很严重，比如python函数里面def哪里都有</p>
-<h5 id="Positive-Samples">Positive Samples</h5>
-<p>图3b左，NL和PL-AST</p>
+<h4 id="Multi-Modal-Masked-Language-Modeling-MMLM"><a href="#Multi-Modal-Masked-Language-Modeling-MMLM" class="headerlink" title="Multi-Modal Masked Language Modeling (MMLM)"></a>Multi-Modal Masked Language Modeling (MMLM)</h4><p>将掩码语言模型（MLM）扩展到多模态，三元组中随机选15%，其中80%变成[MASK]，10%变成随机词元，剩下10%不变</p>
+<h4 id="Identififier-Prediction-IP"><a href="#Identififier-Prediction-IP" class="headerlink" title="Identififier Prediction (IP)"></a>Identififier Prediction (IP)</h4><p>详细预测具体的标识符太难了不可能，所以把词元分为了标识符和非标识符，与MMLM不同，对所有代码都提出了标识符预测目标，1表示是标识符，0表示不是</p>
+<h4 id="AST-Edge-Prediction-TEP"><a href="#AST-Edge-Prediction-TEP" class="headerlink" title="AST Edge Prediction (TEP)"></a>AST Edge Prediction (TEP)</h4><p>把AST边mask掉，让模型去预测，比如图3 (“assignment”, “result”) 是有边的，但是 (“result”, “=”) 是没边的</p>
+<h4 id="Multi-Modal-Contrastive-Learning-MCL"><a href="#Multi-Modal-Contrastive-Learning-MCL" class="headerlink" title="Multi-Modal Contrastive Learning (MCL)"></a>Multi-Modal Contrastive Learning (MCL)</h4><p>词元不平衡问题在代码里面也很严重，比如python函数里面def哪里都有</p>
+<h5 id="Positive-Samples"><a href="#Positive-Samples" class="headerlink" title="Positive Samples"></a>Positive Samples</h5><p>图3b左，NL和PL-AST</p>
 <p>图3b右NL-PL-AST和NL-AST-PL，就是换了个位置</p>
-<h5 id="Negative-Samples">Negative Samples</h5>
-<p>图3c，先拿一个batch为b1，然后取它的正样本对batch为b2，同一位置为正样本，不同位置为负样本，同一batch不同位置也为负样本</p>
-<h3 id="Experiment-29">Experiment</h3>
-<p>8张32GB的V100</p>
+<h5 id="Negative-Samples"><a href="#Negative-Samples" class="headerlink" title="Negative Samples"></a>Negative Samples</h5><p>图3c，先拿一个batch为b1，然后取它的正样本对batch为b2，同一位置为正样本，不同位置为负样本，同一batch不同位置也为负样本</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>8张32GB的V100</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>在两个数据集上所有语言都表现最好</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/tab2-3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/tab4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/tab5.png" alt="avatar" style="zoom:60%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
 
       
