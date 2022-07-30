@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/</loc>
+    <lastmod>2022-07-30</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
     <lastmod>2022-07-29</lastmod>
   </url>
