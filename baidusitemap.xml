@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tyang816.github.io/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/08/02/AST-trans%EF%BC%9Acode%20summarization%20with%20efficient%20tree-structured%20attention/</loc>
+    <lastmod>2022-08-02</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
