@@ -20,12 +20,12 @@
   
   
   <title>ICPC-2022 HELoC：Hierarchical Contrastive Learning of Source Code Representation | tyang</title>
-  <meta name="description" content="论文地址：HELoC：Hierarchical Contrastive Learning of Source Code Representation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Code-Rep&#x2F;HELoC  HELoC：层级比对学习+GCN编码Abstract作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种新的">
+  <meta name="description" content="论文地址：HELoC：Hierarchical Contrastive Learning of Source Code Representation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Code-Rep&#x2F;HELoC  HELoC：层级比对学习+GCN编码 Abstract 作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICPC-2022 HELoC：Hierarchical Contrastive Learning of Source Code Representation">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/08/HELoC%EF%BC%9AHierarchical%20Contrastive%20Learning%20of%20Source%20Code%20Representation/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：HELoC：Hierarchical Contrastive Learning of Source Code Representation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Code-Rep&#x2F;HELoC  HELoC：层级比对学习+GCN编码Abstract作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种新的">
+<meta property="og:description" content="论文地址：HELoC：Hierarchical Contrastive Learning of Source Code Representation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Code-Rep&#x2F;HELoC  HELoC：层级比对学习+GCN编码 Abstract 作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig2.png">
@@ -218,7 +218,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">109</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">110</span></li></ul>
     </div>
   </div>
 
@@ -228,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/05/Hierarchical%20Heterogeneous%20Graph%20Attention%20Network%20for%20Syntax-Aware%20Summarization/" class="title">AAAI-2022 Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-05T00:14:20.000Z" itemprop="datePublished">2022-08-05</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -315,21 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-07-26T07:35:41.000Z" itemprop="datePublished">2022-07-26</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/" class="title">ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-07-24T06:53:52.000Z" itemprop="datePublished">2022-07-24</time>
               </p>
             </div>
           </li>
@@ -398,7 +398,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/08/HELoC%EF%BC%9AHierarchical%20Contrastive%20Learning%20of%20Source%20Code%20Representation/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 914(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 942(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -412,14 +412,19 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2203.14285">HELoC：Hierarchical Contrastive Learning of Source Code Representation</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/Code-Rep/HELoC">https://github.com/Code-Rep/HELoC</a></p>
 </blockquote>
-<h2 id="HELoC：层级比对学习-GCN编码"><a href="#HELoC：层级比对学习-GCN编码" class="headerlink" title="HELoC：层级比对学习+GCN编码"></a>HELoC：层级比对学习+GCN编码</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种新的GNN，残差自注意力图神经网络（RSGNN），使得HELoC能够抓取全局结构信息的同时关注AST的局部嵌入信息。可以使用在很多相关的下游任务上，比如代码分类，克隆检测，代码聚类等。</p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>先有的方法很难学习这种多层次的AST结构，特别是结点增加，链接变多，层数变深的情况下</p>
+<h2 id="HELoC：层级比对学习-GCN编码">HELoC：层级比对学习+GCN编码</h2>
+<h3 id="Abstract-26">Abstract</h3>
+<p>作者提出一种多层次对比学习模型来学习代码表示，允许网络去预测AST结点层次和学习结点间的层级关系，同时设计了一种新的GNN，残差自注意力图神经网络（RSGNN），使得HELoC能够抓取全局结构信息的同时关注AST的局部嵌入信息。可以使用在很多相关的下游任务上，比如代码分类，克隆检测，代码聚类等。</p>
+<h3 id="Introduction-24">Introduction</h3>
+<p>先有的方法很难学习这种多层次的AST结构，特别是结点增加，链接变多，层数变深的情况下</p>
 <p>作者提出的HELoC创新如下：</p>
 <ul>
 <li>对于AST结构的对比学习：采用两个学习目标训练HELoC预测AST节点水平，学习节点之间的三种层次关系，使嵌入空间中AST水平差异较大的节点的表示向量距离更远</li>
 <li>一个针对AST多层次结构的特定GNN：尽管GNN能够更好的建模AST的局部信息，但是很难有效对很深的树建模长距离依赖，所以用GCN捕捉局部信息，用self-attention捕捉全局信息</li>
 </ul>
-<h3 id="Background-and-Motivation"><a href="#Background-and-Motivation" class="headerlink" title="Background and Motivation"></a>Background and Motivation</h3><h4 id="AST-Hierarchy"><a href="#AST-Hierarchy" class="headerlink" title="AST Hierarchy"></a>AST Hierarchy</h4><p>三种多层次结构：</p>
+<h3 id="Background-and-Motivation">Background and Motivation</h3>
+<h4 id="AST-Hierarchy">AST Hierarchy</h4>
+<p>三种多层次结构：</p>
 <ol>
 <li>邻居：同一级结点间的拓扑关系</li>
 <li>相邻层次结构：层次差异为1和3的节点之间的拓扑关系</li>
@@ -427,43 +432,40 @@
 </ol>
 <p>比如下图里面，ABC是邻居，AD是相邻，AE是不相邻</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig1.png" alt="avatar" style="zoom:60%;" /></div>
-
-<h4 id="The-Limitations-of-the-Existing-Work"><a href="#The-Limitations-of-the-Existing-Work" class="headerlink" title="The Limitations of the Existing Work"></a>The Limitations of the Existing Work</h4><ol>
+<h4 id="The-Limitations-of-the-Existing-Work">The Limitations of the Existing Work</h4>
+<ol>
 <li>高度依赖标注数据</li>
 <li>对AST层次结构的学习不足：只关注邻居或相邻结点，对不相邻的拓扑结构没法学</li>
 <li>语义破碎：比如code2vec和code2seq都把AST降解了，这就导致丢失长距离依赖和破坏了全局语义信息</li>
 <li>额外的数据工作：像Corder和Contracode虽然语义不破碎，但是对比学习的负代码级样本的方法使得需要大量的程序变换操作，获得这种语义相似的样本并不容易</li>
 </ol>
-<h3 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig2.png" alt="avatar" style="zoom:60%;" /></div>
-
-<h4 id="Input-Representation"><a href="#Input-Representation" class="headerlink" title="Input Representation"></a>Input Representation</h4><p>把一条路径的嵌入添加到相应的节点嵌入中得到增强结点表征</p>
-<h4 id="RSGNN-Residual-Self-Attention-GNN"><a href="#RSGNN-Residual-Self-Attention-GNN" class="headerlink" title="RSGNN (Residual Self-Attention GNN)"></a>RSGNN (Residual Self-Attention GNN)</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig3.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h3 id="Proposed-Model">Proposed Model</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Input-Representation">Input Representation</h4>
+<p>把一条路径的嵌入添加到相应的节点嵌入中得到增强结点表征</p>
+<h4 id="RSGNN-Residual-Self-Attention-GNN">RSGNN (Residual Self-Attention GNN)</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 <p>每个RSGNN由两块组成，RSM和GCN</p>
-<h3 id="Hierarchical-Contrastive-Learning"><a href="#Hierarchical-Contrastive-Learning" class="headerlink" title="Hierarchical Contrastive Learning"></a>Hierarchical Contrastive Learning</h3><p>假设图1中的A是锚点，假设三元组样本格式为{anc,pos,neg}，可以得到三元组样本{A,B,D}和{A,C,E}，那正样本对是<A,B>，<A,C>，负样本对是<A,D>，<A,E>。但其实<A,E>的距离应该比<A,D>的距离更大，由于最初的对比学习目标不足以学习到AST的层次结构，所以提出了两个目标函数，节点层次预测（<strong>NEP</strong>）：预测结点所在的AST级别；结点关系优化（<strong>NRO</strong>）：学习结点间的三元拓扑关系</p>
+<h3 id="Hierarchical-Contrastive-Learning">Hierarchical Contrastive Learning</h3>
+<p>假设图1中的A是锚点，假设三元组样本格式为{anc,pos,neg}，可以得到三元组样本{A,B,D}和{A,C,E}，那正样本对是&lt;A,B&gt;，&lt;A,C&gt;，负样本对是&lt;A,D&gt;，&lt;A,E&gt;。但其实&lt;A,E&gt;的距离应该比&lt;A,D&gt;的距离更大，由于最初的对比学习目标不足以学习到AST的层次结构，所以提出了两个目标函数，节点层次预测（<strong>NEP</strong>）：预测结点所在的AST级别；结点关系优化（<strong>NRO</strong>）：学习结点间的三元拓扑关系</p>
 <p><strong>AST pseudo-label construction</strong>：使用DFS算法，根节点标为0，L层结点标记为L</p>
 <p><strong>Hierarchy representation learning</strong>：对比学习预训练就用了NEP和NRO两个目标函数，前者采用交叉熵损失函数，后者使用三元损失函数，使用联合损失函数来平衡两种损失得到最终的损失函数</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/frm6-8.png" alt="avatar" style="zoom:60%;" /></div>
-
 <p><strong>具体的损失函数和公式看原文</strong></p>
-<h3 id="Applications-of-The-Proposed-Model"><a href="#Applications-of-The-Proposed-Model" class="headerlink" title="Applications of The Proposed Model"></a>Applications of The Proposed Model</h3><ul>
+<h3 id="Applications-of-The-Proposed-Model">Applications of The Proposed Model</h3>
+<ul>
 <li>微调，在有监督任务上微调</li>
 <li>生成代码向量，作为一种特征提取器直接用作模型输入和特定的下游任务中</li>
 </ul>
-<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p>数据集</p>
+<h3 id="Experiments-3">Experiments</h3>
+<p>数据集</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab2.png" alt="avatar" style="zoom:50%;" /></div>
-
 <p>代码分类</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab3.png" alt="avatar" style="zoom:60%;" /></div>
-
 <p>代码克隆检测和代码聚类</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab6.png" alt="avatar" style="zoom:50%;" /></div>
-
 <p>消融实验</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELoC/tab7.png" alt="avatar" style="zoom:60%;" /></div>
-
-
-
 <HR align=left color=#987cb9 SIZE=1>
 
       
