@@ -20,12 +20,12 @@
   
   
   <title>ICLR-2021 Retrieval-Augmented Generation for Code Summarization via Hybrid GNN | tyang</title>
-  <meta name="description" content="论文地址：Retrieval-Augmented Generation for Code Summarization via Hybrid GNN  HybridGNN：CPG检索增强+静态图与动态图融合 Abstract 摘要写得很诱人 作者指出大多数方法都是基于检索或基于生成，各有利弊   基于检索： 可以利用数据库中相似的例子，但泛化性较弱   基于生成： 泛化性较好，但不能利用相似例子">
+  <meta name="description" content="论文地址：Retrieval-Augmented Generation for Code Summarization via Hybrid GNN  HybridGNN：CPG检索增强+静态图与动态图融合Abstract摘要写得很诱人 作者指出大多数方法都是基于检索或基于生成，各有利弊  基于检索： 可以利用数据库中相似的例子，但泛化性较弱  基于生成： 泛化性较好，但不能利用相似例子   于是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICLR-2021 Retrieval-Augmented Generation for Code Summarization via Hybrid GNN">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Retrieval-Augmented Generation for Code Summarization via Hybrid GNN  HybridGNN：CPG检索增强+静态图与动态图融合 Abstract 摘要写得很诱人 作者指出大多数方法都是基于检索或基于生成，各有利弊   基于检索： 可以利用数据库中相似的例子，但泛化性较弱   基于生成： 泛化性较好，但不能利用相似例子">
+<meta property="og:description" content="论文地址：Retrieval-Augmented Generation for Code Summarization via Hybrid GNN  HybridGNN：CPG检索增强+静态图与动态图融合Abstract摘要写得很诱人 作者指出大多数方法都是基于检索或基于生成，各有利弊  基于检索： 可以利用数据库中相似的例子，但泛化性较弱  基于生成： 泛化性较好，但不能利用相似例子   于是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img2.png">
@@ -210,7 +210,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">110</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">111</span></li></ul>
     </div>
   </div>
 
@@ -220,7 +220,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">56</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -239,7 +239,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -251,6 +251,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/08/Modeling%20Hierarchical%20Syntax%20Structure%20with%20Triplet%20Position%20for%20Source%20Code%20Summarization/" class="title">ACL-2022 Modeling Hierarchical Syntax Structure with Triplet Position for Source Code Summarization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-08T00:20:57.000Z" itemprop="datePublished">2022-08-08</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -307,21 +322,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-07-29T01:52:41.000Z" itemprop="datePublished">2022-07-29</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/07/26/Zero-Shot%20Program%20Representation%20Learning/" class="title">ICPC-2022 Zero-Shot Program Representation Learning</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-07-26T07:35:41.000Z" itemprop="datePublished">2022-07-26</time>
               </p>
             </div>
           </li>
@@ -390,7 +390,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 756(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 759(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -403,96 +403,71 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2006.05405">Retrieval-Augmented Generation for Code Summarization via Hybrid GNN</a></p>
 </blockquote>
-<h2 id="HybridGNN：CPG检索增强-静态图与动态图融合">HybridGNN：CPG检索增强+静态图与动态图融合</h2>
-<h3 id="Abstract-48">Abstract</h3>
-<p>摘要写得很诱人</p>
+<h2 id="HybridGNN：CPG检索增强-静态图与动态图融合"><a href="#HybridGNN：CPG检索增强-静态图与动态图融合" class="headerlink" title="HybridGNN：CPG检索增强+静态图与动态图融合"></a>HybridGNN：CPG检索增强+静态图与动态图融合</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>摘要写得很诱人</p>
 <p>作者指出大多数方法都是基于检索或基于生成，各有利弊</p>
 <ul>
-<li>
-<p>基于检索：</p>
+<li><p>基于检索：</p>
 <p>可以利用数据库中相似的例子，但泛化性较弱</p>
 </li>
-<li>
-<p>基于生成：</p>
+<li><p>基于生成：</p>
 <p>泛化性较好，但不能利用相似例子</p>
 </li>
 </ul>
 <p>于是作者提出了将两者结合方法，一种新的 GNN 来捕获局部和全局结构信息</p>
-<h3 id="Introduction-42">Introduction</h3>
-<p>自动代码注释生成是一个离解决还很远的问题，主要挑战有：</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>自动代码注释生成是一个离解决还很远的问题，主要挑战有：</p>
 <ol>
 <li>源码和自然语言语义、结构等差距很大，且各种各样</li>
 <li>源码逻辑复杂，变量多样，使得学习到语义信息很难</li>
 </ol>
-<h3 id="Model-15">Model</h3>
-<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img1.png" alt="avatar" style="zoom:50%;" /></div>
-<h4 id="Retrieval-Augmented-Static-Graph">Retrieval-Augmented Static Graph</h4>
-<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img2.png" alt="avatar" style="zoom:50%;" /></div>
-<h5 id="Graph-Initialization">Graph Initialization</h5>
-<p>Code Property Graph（CPG）：通过不同的边种类（Flow to，control，define/us，reach等）表示为 AST</p>
-<h5 id="Retrieval-Based-Augmentation">Retrieval-Based Augmentation</h5>
-<p>因为对于代码 $c$，目的是学习一种映射把它转换到自然语言总结 $s=f©$ 。于是对于任意的代码 $c’$，其实都有 $s’=f(c’)$ 。</p>
-<p>基于此可以推出  $s=f©-f(c’)+s’$，表示<strong>可以计算出 $c$ 和 $c’$ 语义上的不同</strong>，从而进一步通过这种语义上的不同和 $s’$ 得到 $s$。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img1.png" alt="avatar" style="zoom:50%;" /></div>
+
+<h4 id="Retrieval-Augmented-Static-Graph"><a href="#Retrieval-Augmented-Static-Graph" class="headerlink" title="Retrieval-Augmented Static Graph"></a>Retrieval-Augmented Static Graph</h4><div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img2.png" alt="avatar" style="zoom:50%;" /></div>
+
+<h5 id="Graph-Initialization"><a href="#Graph-Initialization" class="headerlink" title="Graph Initialization"></a>Graph Initialization</h5><p>Code Property Graph（CPG）：通过不同的边种类（Flow to，control，define/us，reach等）表示为 AST</p>
+<h5 id="Retrieval-Based-Augmentation"><a href="#Retrieval-Based-Augmentation" class="headerlink" title="Retrieval-Based Augmentation"></a>Retrieval-Based Augmentation</h5><p>因为对于代码 $c$，目的是学习一种映射把它转换到自然语言总结 $s=f(c)$ 。于是对于任意的代码 $c’$，其实都有 $s’=f(c’)$ 。</p>
+<p>基于此可以推出  $s=f(c)-f(c’)+s’$，表示<strong>可以计算出 $c$ 和 $c’$ 语义上的不同</strong>，从而进一步通过这种语义上的不同和 $s’$ 得到 $s$。</p>
 <p>这时任务就变成了学习函数 $s=g(c,c’,s’)$</p>
 <p>步骤如下：</p>
 <ol>
-<li>
-<p>检索：</p>
+<li><p>检索：</p>
 <p>对每个样本 $(c,s)\in D$，获得最相似样本 $(c’,s’)=argmx_{(c’,s’)\in D’}sim(c,c’)$ 其中 $c\ne c’$ ， $D’$ 是检索数据库</p>
 <p>相似度 $z=1-\frac{dis(c,c’)}{max(|c|,|c’|)}\$，其中 $dis(c,c’)$ 是文本编辑距离</p>
 </li>
-<li>
-<p>基于代码的检索增强：</p>
-<p>融合策略基于带有 attention 机制的初始的图表示（$H_c$ 和 $H_{c’}$）</p>
+<li><p>基于代码的检索增强：</p>
+<p>融合策略基于带有 attention 机制的初始的图表示（$H<em>c$ 和 $H</em>{c’}$）</p>
 <ul>
-<li>注意力权重矩阵 $A^{aug}$，$A^{aug}\propto \exp(ReLU(H_cW^C)ReLU(H_{c’}W^Q)^T)$</li>
+<li>注意力权重矩阵 $A^{aug}$，$A^{aug}\propto \exp(ReLU(H<em>cW^C)ReLU(H</em>{c’}W^Q)^T)$</li>
 <li>检索表示，$H’<em>c=zA^{aug}H</em>{c’}$</li>
 <li>合并表示，$comp=H_c+H’_c$</li>
 </ul>
 </li>
-<li>
-<p>基于总结的检索增强：</p>
+<li><p>基于总结的检索增强：</p>
 <p>用 BiLSTM</p>
 </li>
 </ol>
-<h4 id="Attention-Based-Dynamic-Graph">Attention-Based Dynamic Graph</h4>
-<p>对于给定的 static graph，使用结构注意力机制，计算对应的邻接矩阵 $A^{dyn}$</p>
-<p>$$<br>
-A^{dyn}<em>{(v,u)}=\frac{ReLU(h_v^TW^Q)ReLU(h_u^TW^K)+ReLU(e</em>{v,u}^TW^R)}{\sqrt{d}}<br>
-$$</p>
-<p>其中 $h_v,h_u\in comp$ 是节点对 $(v,u)$ 通过 CPG 增强，这种全局注意力机制考虑了 CPG 中每对节点，不管是否有边连接</p>
+<h4 id="Attention-Based-Dynamic-Graph"><a href="#Attention-Based-Dynamic-Graph" class="headerlink" title="Attention-Based Dynamic Graph"></a>Attention-Based Dynamic Graph</h4><p>对于给定的 static graph，使用结构注意力机制，计算对应的邻接矩阵 $A^{dyn}$</p>
+<script type="math/tex; mode=display">
+A^{dyn}_{(v,u)}=\frac{ReLU(h_v^TW^Q)ReLU(h_u^TW^K)+ReLU(e_{v,u}^TW^R)}{\sqrt{d}}</script><p>其中 $h_v,h_u\in comp$ 是节点对 $(v,u)$ 通过 CPG 增强，这种全局注意力机制考虑了 CPG 中每对节点，不管是否有边连接</p>
 <p>最后经过行归一化用来计算动态信息传递</p>
-<p>$$<br>
-\tilde{A}^{dyn}=softmax(A^{dyn})<br>
-$$</p>
-<h4 id="Hybrid-GNN">Hybrid GNN</h4>
-<p>为了更好的融合静态图和动态图的信息，提出了 Hybrid Message Passing</p>
+<script type="math/tex; mode=display">
+\tilde{A}^{dyn}=softmax(A^{dyn})</script><h4 id="Hybrid-GNN"><a href="#Hybrid-GNN" class="headerlink" title="Hybrid GNN"></a>Hybrid GNN</h4><p>为了更好的融合静态图和动态图的信息，提出了 Hybrid Message Passing</p>
 <ol>
-<li>
-<p>静态信息传递</p>
-<p>$$<br>
-h_v^k=SUM({h_u^{k-1}|\forall u\in \mathcal{N}(v) })<br>
-$$</p>
-<p>其中 $\mathcal{N}(v)$ 是 $v$ 的直接邻居节点，对于每个节点 $v$，$h_v^0$ 是初始增强的节点嵌入表示，$h_v\in comp$</p>
+<li><p>静态信息传递</p>
+<script type="math/tex; mode=display">
+h_v^k=SUM(\{h_u^{k-1}|\forall u\in \mathcal{N}(v) \})</script><p>其中 $\mathcal{N}(v)$ 是 $v$ 的直接邻居节点，对于每个节点 $v$，$h_v^0$ 是初始增强的节点嵌入表示，$h_v\in comp$</p>
 </li>
-<li>
-<p>动态信息传递</p>
-<p>$$<br>
-h_v^{'k}=\sum_u\tilde{A}^{dyn}<em>{(v,u)}(W^Vh_u^{'k-1}+W^Fe</em>{e,u})<br>
-$$</p>
-</li>
+<li><p>动态信息传递</p>
+<script type="math/tex; mode=display">
+h_v^{'k}=\sum_u\tilde{A}^{dyn}_{(v,u)}(W^Vh_u^{'k-1}+W^Fe_{e,u})</script></li>
 <li></li>
-<li>
-<p>混和信息传递</p>
-<p>$$<br>
-f^k_v=GRU(f^{k-1}_v,Fuse(h_v^k,h_v^{'k}))\<br>
-Fuse(a,b)=z\odot a+(1-z)\odot b\<br>
-z=\sigma(W_z[a;b;a\odot b;a=b]+b_z)<br>
-$$</p>
-</li>
+<li><p>混和信息传递</p>
+<script type="math/tex; mode=display">
+f^k_v=GRU(f^{k-1}_v,Fuse(h_v^k,h_v^{'k}))\\
+Fuse(a,b)=z\odot a+(1-z)\odot b\\
+z=\sigma(W_z[a;b;a\odot b;a=b]+b_z)</script></li>
 </ol>
-<h3 id="Experiments-6">Experiments</h3>
-<div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img3.png" alt="avatar" style="zoom:50%;" /></div>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HGNN/HGNN-img3.png" alt="avatar" style="zoom:50%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
 
       

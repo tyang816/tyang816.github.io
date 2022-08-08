@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tyang816.github.io/2022/08/05/Hierarchical%20Heterogeneous%20Graph%20Attention%20Network%20for%20Syntax-Aware%20Summarization/</loc>
-    <lastmod>2022-08-05</lastmod>
+    <loc>https://tyang816.github.io/2022/08/08/Modeling%20Hierarchical%20Syntax%20Structure%20with%20Triplet%20Position%20for%20Source%20Code%20Summarization/</loc>
+    <lastmod>2022-08-08</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/08/02/AST-trans%EF%BC%9Acode%20summarization%20with%20efficient%20tree-structured%20attention/</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/08/05/Hierarchical%20Heterogeneous%20Graph%20Attention%20Network%20for%20Syntax-Aware%20Summarization/</loc>
     <lastmod>2022-08-05</lastmod>
   </url>
   <url>
