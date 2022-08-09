@@ -19,16 +19,31 @@
 
   
   
-  <title>归档: 2022/7 | tyang</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="村雨">
-<meta property="og:url" content="https://tyang816.github.io/archives/2022/07/index.html">
+  <title>ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context | tyang</title>
+  <meta name="description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练 Abstract 原代码（context）和语法结构树（AST）是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context">
+<meta property="og:url" content="https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/index.html">
 <meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练 Abstract 原代码（context）和语法结构树（AST）是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab4.png">
+<meta property="article:published_time" content="2022-08-09T01:04:40.000Z">
+<meta property="article:modified_time" content="2022-08-09T07:40:03.149Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/archives/2022/07/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -38,6 +53,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -325,164 +342,214 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2022/7</h1>
-	      <p class="text-muted">共 143 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-PaperNote/Language-Agnostic Representation Learning of Source Code from Structure and Context" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
-        </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-30T07:30:09.000Z" itemprop="datePublished">2022-07-30</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICPC-2022 Self-Supervised Learning of Smart Contract Representations
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/" class="article-date">
+	  <time datetime="2022-08-09T01:04:40.000Z" itemprop="datePublished">2022-08-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
 
 
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/" class="leancloud_visitors"  data-flag-title="ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 420(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://cs.stanford.edu/people/jure/pubs/sourcecode-iclr21.pdf">Language-Agnostic Representation Learning of Source Code from Structure and Context</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="http://www.daml.in.tum.de/code-transformer">www.daml.in.tum.de/code-transformer</a></p>
+</blockquote>
+<h2 id="CodeTransformer：只使用AST语言无关特征做多语言训练">CodeTransformer：只使用AST语言无关特征做多语言训练</h2>
+<h3 id="Abstract-36">Abstract</h3>
+<p>原代码（context）和语法结构树（AST）是程序的两种互补表示，本文模型只使用了语言无关的特征，即原代码和特征可以直接从AST中计算得到。除了在五种编程语言单语言代码摘要SOTA外，也是第一个提出了多语言代码摘要模型，对来自多种编程语言的非并行数据进行联合训练可以提高所有单个语言的结果，特别是在低资源的语言上。只在context多语言训练不能得到同样的提升，所以结果肯定是结构和上下文组合得到的</p>
+<h3 id="Introduction-33">Introduction</h3>
+<p>研究人员和从业者在机器学习模型中主要利用结构或上下文，作者证明了上下文和结构的联合学习改进了源代码的表示学习</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>作者提出了CodeTransformer结合了在<strong>自注意操作在结构和上下文上计算的距离</strong>，与通过边进行的局部处理相比，计算AST上的成对距离，如最短路径长度，使每一层的模型都可以访问完整的结构。此外在注意力计算时使用了相对距离替代绝对位置，这些都是语言无关的特征可以直接使用</p>
+<h3 id="Integrating-Structure-and-Context-in-the-Code-Transformer">Integrating Structure and Context in the Code Transformer</h3>
+<h4 id="Integrating-Source-Code-and-AST-Representations-of-Programs">Integrating Source Code and AST Representations of Programs</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>PPR是Personalized PageRank</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Efficient-Relative-Attention-Computation">Efficient Relative Attention Computation</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/frm5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>这里用的解耦注意力和相对位置距离</p>
+<h3 id="Experiment-20">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab4.png" alt="avatar" style="zoom:50%;" /></div>
+<HR align=left color=#987cb9 SIZE=1>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/" title="ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context" target="_blank" rel="external">https://tyang816.github.io/2022/08/09/Language-Agnostic Representation Learning of Source Code from Structure and Context/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-29T01:52:41.000Z" itemprop="datePublished">2022-07-29</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICML-2021 ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/26/Zero-Shot%20Program%20Representation%20Learning/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-26T07:35:41.000Z" itemprop="datePublished">2022-07-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICPC-2022 Zero-Shot Program Representation Learning
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-24T06:53:52.000Z" itemprop="datePublished">2022-07-24</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/18/Unsupervised%20Translation%20of%20Programming%20Languages/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-18T12:08:28.000Z" itemprop="datePublished">2022-07-18</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> NIPS-2020 Unsupervised Translation of Programming Languages
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/15/A%20parallel%20corpus%20of%20Python%20functions%20and%20documentation%20strings%20for%20automated%20code%20documentation%20and%20code%20generation/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-15T08:12:03.000Z" itemprop="datePublished">2022-07-15</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> IJCNLP-2017 A parallel corpus of Python functions and documentation strings for automated code documentation and code generation
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-12T06:59:59.000Z" itemprop="datePublished">2022-07-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ICML-2020 Graph-based, Self-Supervised Program Repair from Diagnostic Feedback
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/10/Graph%20Contrastive%20Learning%20with%20Augmentations/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-10T07:54:29.000Z" itemprop="datePublished">2022-07-10</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> NIPS-2020 Graph Contrastive Learning with Augmentations
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-08T05:49:22.000Z" itemprop="datePublished">2022-07-08</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> OpenAI-2022 Hierarchical Text-Conditional Image Generation with CLIP Latents
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-05T08:48:11.000Z" itemprop="datePublished">2022-07-05</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> KDD-2020 GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/archives/2022/07/page/2/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 1 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/08/08/Modeling%20Hierarchical%20Syntax%20Structure%20with%20Triplet%20Position%20for%20Source%20Code%20Summarization/" title="ACL-2022 Modeling Hierarchical Syntax Structure with Triplet Position for Source Code Summarization"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -535,6 +602,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
 
 
 
