@@ -19,32 +19,35 @@
 
   
   
-  <title>ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey | tyang</title>
-  <meta name="description" content="论文地址：Deep Meta-learning in Recommendation Systems: A Survey  Survey：推荐系统元学习综述Abstract目前的深度学习推荐系统方法都存在着数据和计算的瓶颈，而元学习方法能够很好的解决这种数据稀少的问题，能够带来更好的提升，特别是在可用数据非常有限的场景，比如用户冷启动或物品冷启动。因此本文主要讨论了现有的推荐系统场景，元学习技术，">
+  <title>NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training | tyang</title>
+  <meta name="description" content="论文地址：CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training  CODE-MVP：多视图对比学习Abstract现有学习代码表征的方法有很多，比如纯文本，AST，代码图，但大多数都只关注了一种代码视图，忽略了不同视图下的联系，所以本文提出将不同的视图与源代码的自然">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey">
-<meta property="og:url" content="https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/index.html">
+<meta property="og:title" content="NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training">
+<meta property="og:url" content="https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Deep Meta-learning in Recommendation Systems: A Survey  Survey：推荐系统元学习综述Abstract目前的深度学习推荐系统方法都存在着数据和计算的瓶颈，而元学习方法能够很好的解决这种数据稀少的问题，能够带来更好的提升，特别是在可用数据非常有限的场景，比如用户冷启动或物品冷启动。因此本文主要讨论了现有的推荐系统场景，元学习技术，">
+<meta property="og:description" content="论文地址：CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training  CODE-MVP：多视图对比学习Abstract现有学习代码表征的方法有很多，比如纯文本，AST，代码图，但大多数都只关注了一种代码视图，忽略了不同视图下的联系，所以本文提出将不同的视图与源代码的自然">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab3.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab4.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig3.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab5.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab8.png">
-<meta property="article:published_time" content="2022-06-19T03:08:58.000Z">
-<meta property="article:modified_time" content="2022-06-23T06:30:33.583Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab3-tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab6.png">
+<meta property="article:published_time" content="2022-08-11T00:58:27.000Z">
+<meta property="article:modified_time" content="2022-08-11T08:12:47.489Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="IR">
-<meta property="article:tag" content="cs.Meta">
-<meta property="article:tag" content="cs.Recom">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
+<meta property="article:tag" content="cs.Contralern">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig1.png">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -54,6 +57,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -342,14 +347,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/Deep Meta-learning in Recommendation Systems：A Survey" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey
+      NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training
     </h1>
   
 
@@ -357,8 +362,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/" class="article-date">
-	  <time datetime="2022-06-19T03:08:58.000Z" itemprop="datePublished">2022-06-19</time>
+	<a href="/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/" class="article-date">
+	  <time datetime="2022-08-11T00:58:27.000Z" itemprop="datePublished">2022-08-11</time>
 	</a>
 </span>
         
@@ -370,7 +375,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/IR/" rel="tag">IR</a>, <a class="article-tag-link-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a>, <a class="article-tag-link-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-Contralern/" rel="tag">cs.Contralern</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
   </span>
 
 
@@ -385,18 +390,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/" class="leancloud_visitors"  data-flag-title="ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey">
+    	<span id="/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/" class="leancloud_visitors"  data-flag-title="NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.6k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 739(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
@@ -404,42 +409,49 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2206.04415">Deep Meta-learning in Recommendation Systems: A Survey</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2205.02029">CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training</a></p>
 </blockquote>
-<h2 id="Survey：推荐系统元学习综述"><a href="#Survey：推荐系统元学习综述" class="headerlink" title="Survey：推荐系统元学习综述"></a>Survey：推荐系统元学习综述</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>目前的深度学习推荐系统方法都存在着数据和计算的瓶颈，而元学习方法能够很好的解决这种数据稀少的问题，能够带来更好的提升，特别是在可用数据非常有限的场景，比如用户冷启动或物品冷启动。因此本文主要讨论了现有的推荐系统场景，元学习技术，元知识表示，对于每种推荐场景还对使用元学习来提高模型泛化性的技术细节进行了讨论。最后指出了目前研究的限制以及高亮了未来的领域研究方向</p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>现有的推荐系统方法使用多种数据结构的（交互对，序列，图），在预定好的学习算法下通过大量数据从头训练。这些方法都是非常需要计算和数据的，但这里存在着数据量稀少的场景，这也就限制了推荐模型的瓶颈</p>
-<p>元学习方法的主要思想就是获取先验知识（元知识），通过原有的多任务训练好后迅速迁移到新任务上，能够在没有见过的任务下表现出不错的泛化性，类似于学习去学习（learn to learn），因其这种快速适应性使得其在图像识别，图像分割，自然语言处理，强化学习等领域都表现优异</p>
-<p>早期的元学习推荐系统主要在个性化推荐算法选择，提取元数据集特征并对不同的数据集（任务）选择合适的算法，这种对于元学习的定义类似于自动机器学习里面的研究。后来深度元学习成为了主流，先是主要应用于减轻数据不足（冷启动），以及点击率预测，在线推荐，时序推荐也在元学习策略下</p>
-<p>作者调查发现尽管元学习在很多方向都有综述调查，但在近期推荐系统的发展方面还没有，这是第一篇推荐方向的元学习综述</p>
-<p>主要以三个方向分别讲解：1.推荐场景；2.元学习算法；3.元知识表示。此外作者还主要讨论了根据推荐场景不同的工作是怎么样利用元学习技术，在不同形式比如参数初始化，参数模型，超参数优化等下提取特定的元知识。还总结了元学习起步时一些常用的任务构建方法</p>
-<h3 id="Foundations"><a href="#Foundations" class="headerlink" title="Foundations"></a>Foundations</h3><p>本节先总结了不同类别的元学习技术的代表性工作和核心思想，然后介绍了元学习技术里经典的推荐场景</p>
-<h4 id="Meta-learning"><a href="#Meta-learning" class="headerlink" title="Meta-learning"></a>Meta-learning</h4><p>主要是三种：基于度量，基于模型，基于优化</p>
-<p>以下都是元学习方法的介绍，就不赘述了</p>
-<h4 id="Recommendation-Scenarios"><a href="#Recommendation-Scenarios" class="headerlink" title="Recommendation Scenarios"></a>Recommendation Scenarios</h4><h5 id="Cold-start-recommendation"><a href="#Cold-start-recommendation" class="headerlink" title="Cold-start recommendation"></a>Cold-start recommendation</h5><p>传统的协同过滤方法和深度学习方法都需要大量数据，不局限于交互数据的话，基于内容的方法基于不同的内容信息描述了用户和物品，比如文本信息，知识图谱，社会关系网络等，这样在一定程度上减少了对交互数据的依赖，用这种额外的信息可以增强用户和物品的表示。此外，冷启动也可以视作few-shot的应用，在每个任务上只有少量的样本能够被观察，类似的，这种稀疏的用户物品交互也可以视作元学习任务</p>
-<h5 id="Click-through-rate-prediction"><a href="#Click-through-rate-prediction" class="headerlink" title="Click-through-rate prediction"></a>Click-through-rate prediction</h5><p>最近的CTR模型主要包含两部分：embedding层和prediction层，嵌入层学习隐藏表示，预测层通过设计好的模型，但是因为在冷启动下数据量少导致缺乏很好的嵌入学习表示，所以元学习方法依旧能适用于这个场景</p>
-<h5 id="Online-recommendation"><a href="#Online-recommendation" class="headerlink" title="Online recommendation"></a>Online recommendation</h5><p>在实际的大规模推荐系统中，实时用户交互数据在时刻被收集，所以有必要周期性的刷新模型获取最新的用户情况。但是全部重新训练开销太大，所以引入元学习方法快速抓取实时的用户交互信息是必要的</p>
-<h5 id="Point-of-interest-recommendation"><a href="#Point-of-interest-recommendation" class="headerlink" title="Point-of-interest recommendation"></a>Point-of-interest recommendation</h5><p>由于基于地理位置的社交网络的兴起，用户是愿意通过签到记录来分享兴趣点的。相比于一般的产品，音乐等的推荐，POI推荐更依赖于从历史数据中发现时空依赖，因为用户活动很大程度上受到地理空间和时间的限制。但这个场景的数据稀疏性很明显，因为用户必须到达POI共享位置，也就是只有少部分POI被用户访问</p>
-<h5 id="Sequential-recommendation"><a href="#Sequential-recommendation" class="headerlink" title="Sequential recommendation"></a>Sequential recommendation</h5><p>时序推荐方法主要利用用户先前交互过的项目序列作为输入，并发现用户兴趣演化的顺序模式。当然，当历史用户信息降低时效果都会急剧下降</p>
-<h3 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<h2 id="CODE-MVP：多视图对比学习"><a href="#CODE-MVP：多视图对比学习" class="headerlink" title="CODE-MVP：多视图对比学习"></a>CODE-MVP：多视图对比学习</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>现有学习代码表征的方法有很多，比如纯文本，AST，代码图，但大多数都只关注了一种代码视图，忽略了不同视图下的联系，所以本文提出将不同的视图与源代码的自然语言注释集成到一个统一的框架与多视图对比预训练，叫做Code-MVP，用编译工具提取不同的代码视图，然后用对比学习学习互补的信息。在三个下游任务五个数据集上取得SOTA</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-<h3 id="Meta-learning-task-construction-for-recommendation"><a href="#Meta-learning-task-construction-for-recommendation" class="headerlink" title="Meta-learning task construction for recommendation"></a>Meta-learning task construction for recommendation</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>现有的方法主要代表来自不同代码视图的源代码，包括纯文本中的代码标记、抽象语法树(AST)和代码的控制/数据流图(CFGs/DFGs)，此外还有一些训练掩码语言模型的工作</p>
+<p>不同视图往往有互补的语义信息，比如源代码词元（例如，方法名称标识符）和注释总是显示代码的<strong>词汇</strong>语义。而代码中间结构，比如AST和CFG揭示<strong>句法</strong>和<strong>执行</strong>信息。一个程序还可以改写成同样功能的不同变体，这反应程序的<strong>功能</strong>信息表达同一语义</p>
+<p>主要贡献：</p>
+<ul>
+<li>第一个对比学习用不同视图来表示代码，包括词元，AST，CFG和不同程序变体</li>
+<li>做了很多实验在代码检索，相似度和缺陷预测任务上</li>
+</ul>
+<h3 id="Multiple-Views-of-Code"><a href="#Multiple-Views-of-Code" class="headerlink" title="Multiple Views of Code"></a>Multiple Views of Code</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>上图表示了一个程序转化为机器码的过程</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>作者使用的不同视图如图2所示</p>
+<h3 id="Code-MVP"><a href="#Code-MVP" class="headerlink" title="Code-MVP"></a>Code-MVP</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-<h4 id="User-specific-Task"><a href="#User-specific-Task" class="headerlink" title="User-specific Task"></a>User-specific Task</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Multi-View-Contrastive-Learning"><a href="#Multi-View-Contrastive-Learning" class="headerlink" title="Multi-View Contrastive Learning"></a>Multi-View Contrastive Learning</h4><p>用成对数据和非成对数据来训练，成对数据是有自然语言的，非成对数据是没有自然语言的，对这两种情况分别构建正负样本</p>
+<h5 id="Multi-View-Positive-Sampling"><a href="#Multi-View-Positive-Sampling" class="headerlink" title="Multi-View Positive Sampling"></a>Multi-View Positive Sampling</h5><p>设计了Single-View（针对成对和非成对数据）和Dual-View（只针对成对数据，需要NL）</p>
+<ul>
+<li>Single-View：来自一个程序的两个不同视图形成视图间的正对，输入是 $x_i^a={<CLS>,s_i^a}$ 和 $x_i^b={<CLS>,s_i^b}$ </li>
+<li>Dual-View：提出了NL条件双视图对比预训练策略，冻结了NL的位置，输入是 $x_i^a={<CLS>,S_i^{NL},<SEP>,s_i^a}$ 和 $x_i^b={<CLS>,S_i^{NL},<SEP>,s_i^b}$ </li>
+</ul>
+<p>可以注意的是这里可以输入很多不同种的组合构建正样本对，本文只考虑了以下：</p>
+<ul>
+<li>Single-View：NL vs PL，NL vs PT，PL vs AST，PL vs CFG，PL vs PT</li>
+<li>Dual-View：NL-PL vs NL-AST，NL-PL vs NL-CFG，NL-PL vs NL-PT</li>
+</ul>
+<h5 id="Multi-View-Negative-Sampling"><a href="#Multi-View-Negative-Sampling" class="headerlink" title="Multi-View Negative Sampling"></a>Multi-View Negative Sampling</h5><p>使用小批量和交叉小批量策略构建视图内和视图间负样本，对于每个样本的每个视图会有2N-2个负样本</p>
+<h4 id="Pre-Training-with-Type-Inference"><a href="#Pre-Training-with-Type-Inference" class="headerlink" title="Pre-Training with Type Inference"></a>Pre-Training with Type Inference</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/fig4.png" alt="avatar" style="zoom:60%;" /></div>
 
-<p>对于用户特定的任务，一个任务的支持集和查询集都来源于同一用户，不同用户就是不同任务。从元学习角度来说，就是希望在大量用户特定数据集上训练，然后元知识可以作为先验知识，从而在没见过的用户上表现良好</p>
-<h4 id="Item-specific-Task"><a href="#Item-specific-Task" class="headerlink" title="Item-specific Task"></a>Item-specific Task</h4><p>与用户特定任务差不多，看图2b就行</p>
-<h4 id="Time-specific-Task"><a href="#Time-specific-Task" class="headerlink" title="Time-specific Task"></a>Time-specific Task</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>两阶段的预训练任务，类型推理和多视图掩码语言模型</p>
+<h4 id="Overall-Training-Objective"><a href="#Overall-Training-Objective" class="headerlink" title="Overall Training Objective"></a>Overall Training Objective</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/frm5.png" alt="avatar" style="zoom:60%;" /></div>
 
-<p>根据不同的时间槽划分任务，主要用当前时刻作为支持集，下一时刻作为查询集</p>
-<h4 id="Sequence-specific-Task"><a href="#Sequence-specific-Task" class="headerlink" title="Sequence-specific Task"></a>Sequence-specific Task</h4><p>时序特定任务也是按时间信息构建的，但是划分了不同用户或会话作为不同的任务，前K个交互数据视作训练集，后续t-K个交互视作查询集，图3b</p>
-<h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><p>还有按场景视作任务的，在POI推荐系统中以城市视作任务的，在跨领域推荐系统中通过聚类两组有交集的用户，一组视作支持集，一组视作测试集，每组的任务是在源领域上学习嵌入分布使其在目标领域上有不错表现</p>
-<h3 id="Meta-learning-Methods-for-Recommendation-Systems"><a href="#Meta-learning-Methods-for-Recommendation-Systems" class="headerlink" title="Meta-learning Methods for Recommendation Systems"></a>Meta-learning Methods for Recommendation Systems</h3><h4 id="Meta-learning-in-Cold-start-Recommendation"><a href="#Meta-learning-in-Cold-start-Recommendation" class="headerlink" title="Meta-learning in Cold-start Recommendation"></a>Meta-learning in Cold-start Recommendation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab5.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 
-<h4 id="Meta-learning-in-Online-Recommendation"><a href="#Meta-learning-in-Online-Recommendation" class="headerlink" title="Meta-learning in Online Recommendation"></a>Meta-learning in Online Recommendation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab8.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab3-tab4.png" alt="avatar" style="zoom:60%;" /></div>
+
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CODE-MVP/tab6.png" alt="avatar" style="zoom:50%;" /></div>
+
 
 <HR align=left color=#987cb9 SIZE=1>
 
@@ -452,7 +464,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/" title="ACM Computing Surveys-2022 Deep Meta-learning in Recommendation Systems：A Survey" target="_blank" rel="external">https://tyang816.github.io/2022/06/19/Deep Meta-learning in Recommendation Systems：A Survey/</a>
+      <a href="https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/" title="NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training" target="_blank" rel="external">https://tyang816.github.io/2022/08/11/CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -498,13 +510,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/" title="9.2 超参数优化【斯坦福21秋季：实用机器学习】"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/" title="SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/" title="ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
