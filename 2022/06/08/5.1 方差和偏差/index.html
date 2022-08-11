@@ -20,12 +20,12 @@
   
   
   <title>5.1 方差和偏差【斯坦福21秋季：实用机器学习】 | tyang</title>
-  <meta name="description" content="Bias &amp; Variance 在统计学习里面，我们用偏差和方差来衡量模型    Bias-Variance Decomposition 从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$  从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望    Reduce B">
+  <meta name="description" content="Bias &amp; Variance  在统计学习里面，我们用偏差和方差来衡量模型   Bias-Variance Decomposition  从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$ 从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望   Reduce Bias">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.1 方差和偏差【斯坦福21秋季：实用机器学习】">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/08/5.1%20%E6%96%B9%E5%B7%AE%E5%92%8C%E5%81%8F%E5%B7%AE/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Bias &amp; Variance 在统计学习里面，我们用偏差和方差来衡量模型    Bias-Variance Decomposition 从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$  从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望    Reduce B">
+<meta property="og:description" content="Bias &amp; Variance  在统计学习里面，我们用偏差和方差来衡量模型   Bias-Variance Decomposition  从 $y&#x3D;f(x)+\phi$ 采样数据 $D&#x3D;{(x_1,y_1),…,(x_n,y_n))}$ 从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望   Reduce Bias">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img2.png">
@@ -217,7 +217,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Contralern/" rel="tag">cs.Contralern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +227,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.8px;">CV</a> <a href="/tags/IR/" style="font-size: 13.2px;">IR</a> <a href="/tags/SE/" style="font-size: 13.9px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.6px;">cs.ContraLern</a> <a href="/tags/cs-Contralern/" style="font-size: 13px;">cs.Contralern</a> <a href="/tags/cs-GAN/" style="font-size: 13.1px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.3px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.2px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.3px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.7px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.4px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.2px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.78px;">CV</a> <a href="/tags/IR/" style="font-size: 13.22px;">IR</a> <a href="/tags/SE/" style="font-size: 13.89px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.11px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.33px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.22px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.33px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.67px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.44px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.22px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -393,41 +393,43 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=976718082&bvid=BV1H44y1v7Kf&cid=443690200&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"></iframe>
-
-
 <HR align=left color=#987cb9 SIZE=1>
-
-<h3 id="Bias-amp-Variance"><a href="#Bias-amp-Variance" class="headerlink" title="Bias &amp; Variance"></a>Bias &amp; Variance</h3><ul>
+<h3 id="Bias-Variance">Bias &amp; Variance</h3>
+<ul>
 <li>在统计学习里面，我们用偏差和方差来衡量模型</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img2.png" alt="avatar" style="zoom:50%;" /></div>
-
-<h3 id="Bias-Variance-Decomposition"><a href="#Bias-Variance-Decomposition" class="headerlink" title="Bias-Variance Decomposition"></a>Bias-Variance Decomposition</h3><ul>
-<li>从 $y=f(x)+\phi$ 采样数据 $D={(x_1,y_1),…,(x_n,y_n))}$ </li>
+<h3 id="Bias-Variance-Decomposition">Bias-Variance Decomposition</h3>
+<ul>
+<li>从 $y=f(x)+\phi$ 采样数据 $D={(x_1,y_1),…,(x_n,y_n))}$</li>
 <li>从 $D$ 中通过MSE学习一个 $\hat{f}$，我们希望保证不管怎么从D里面采样，损失都不会很大，所以求一个期望</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/5.1-img3.png" alt="avatar" style="zoom:60%;" /></div>
-
-<h3 id="Reduce-Bias-amp-Variance"><a href="#Reduce-Bias-amp-Variance" class="headerlink" title="Reduce Bias &amp; Variance"></a>Reduce Bias &amp; Variance</h3><ul>
-<li>减少偏差<ul>
+<h3 id="Reduce-Bias-Variance">Reduce Bias &amp; Variance</h3>
+<ul>
+<li>减少偏差
+<ul>
 <li>一个更复杂的模型：增加层数，隐藏单元个数</li>
 <li>Boosting</li>
 <li>Stacking</li>
 </ul>
 </li>
-<li>减少方差<ul>
+<li>减少方差
+<ul>
 <li>一个更简单的模型</li>
 <li>正则</li>
 <li>Bagging</li>
 <li>Stacking</li>
 </ul>
 </li>
-<li>减少 $\sigma^2$（噪音）<ul>
+<li>减少 $\sigma^2$（噪音）
+<ul>
 <li>增加数据</li>
 </ul>
 </li>
 </ul>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
+<h3 id="Summary-15">Summary</h3>
+<ul>
 <li>降解模型泛化误差到偏差，方差和内在误差</li>
 <li>集成学习能组合多个模型来降低偏差和方差</li>
 </ul>

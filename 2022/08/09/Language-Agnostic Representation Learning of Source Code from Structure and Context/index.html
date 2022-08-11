@@ -20,12 +20,12 @@
   
   
   <title>ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context | tyang</title>
-  <meta name="description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练Abstract原代码（context）和语法结构树（AST）是程序">
+  <meta name="description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练 Abstract 原代码（context）和语法结构树（AST）是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICLR-2021 Language-Agnostic Representation Learning of Source Code from Structure and Context">
 <meta property="og:url" content="https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练Abstract原代码（context）和语法结构树（AST）是程序">
+<meta property="og:description" content="论文地址：Language-Agnostic Representation Learning of Source Code from Structure and Context 论文实现：www.daml.in.tum.de&#x2F;code-transformer  CodeTransformer：只使用AST语言无关特征做多语言训练 Abstract 原代码（context）和语法结构树（AST）是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig2.png">
@@ -224,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Contralern/" rel="tag">cs.Contralern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -234,7 +234,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.8px;">CV</a> <a href="/tags/IR/" style="font-size: 13.2px;">IR</a> <a href="/tags/SE/" style="font-size: 13.9px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.6px;">cs.ContraLern</a> <a href="/tags/cs-Contralern/" style="font-size: 13px;">cs.Contralern</a> <a href="/tags/cs-GAN/" style="font-size: 13.1px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.3px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.2px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.3px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.7px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.4px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.2px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.78px;">CV</a> <a href="/tags/IR/" style="font-size: 13.22px;">IR</a> <a href="/tags/SE/" style="font-size: 13.89px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.67px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.11px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.56px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.33px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.22px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.33px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.67px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.44px;">cs.Video</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.22px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
   </div>
 
@@ -394,7 +394,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 418(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 420(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -406,25 +406,26 @@
       
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://cs.stanford.edu/people/jure/pubs/sourcecode-iclr21.pdf">Language-Agnostic Representation Learning of Source Code from Structure and Context</a></p>
-<p>论文实现：www.daml.in.tum.de/code-transformer</p>
+<p>论文实现：<a target="_blank" rel="noopener" href="http://www.daml.in.tum.de/code-transformer">www.daml.in.tum.de/code-transformer</a></p>
 </blockquote>
-<h2 id="CodeTransformer：只使用AST语言无关特征做多语言训练"><a href="#CodeTransformer：只使用AST语言无关特征做多语言训练" class="headerlink" title="CodeTransformer：只使用AST语言无关特征做多语言训练"></a>CodeTransformer：只使用AST语言无关特征做多语言训练</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>原代码（context）和语法结构树（AST）是程序的两种互补表示，本文模型只使用了语言无关的特征，即原代码和特征可以直接从AST中计算得到。除了在五种编程语言单语言代码摘要SOTA外，也是第一个提出了多语言代码摘要模型，对来自多种编程语言的非并行数据进行联合训练可以提高所有单个语言的结果，特别是在低资源的语言上。只在context多语言训练不能得到同样的提升，所以结果肯定是结构和上下文组合得到的</p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>研究人员和从业者在机器学习模型中主要利用结构或上下文，作者证明了上下文和结构的联合学习改进了源代码的表示学习</p>
+<h2 id="CodeTransformer：只使用AST语言无关特征做多语言训练">CodeTransformer：只使用AST语言无关特征做多语言训练</h2>
+<h3 id="Abstract-40">Abstract</h3>
+<p>原代码（context）和语法结构树（AST）是程序的两种互补表示，本文模型只使用了语言无关的特征，即原代码和特征可以直接从AST中计算得到。除了在五种编程语言单语言代码摘要SOTA外，也是第一个提出了多语言代码摘要模型，对来自多种编程语言的非并行数据进行联合训练可以提高所有单个语言的结果，特别是在低资源的语言上。只在context多语言训练不能得到同样的提升，所以结果肯定是结构和上下文组合得到的</p>
+<h3 id="Introduction-36">Introduction</h3>
+<p>研究人员和从业者在机器学习模型中主要利用结构或上下文，作者证明了上下文和结构的联合学习改进了源代码的表示学习</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png" alt="avatar" style="zoom:60%;" /></div>
-
 <p>作者提出了CodeTransformer结合了在<strong>自注意操作在结构和上下文上计算的距离</strong>，与通过边进行的局部处理相比，计算AST上的成对距离，如最短路径长度，使每一层的模型都可以访问完整的结构。此外在注意力计算时使用了相对距离替代绝对位置，这些都是语言无关的特征可以直接使用</p>
-<h3 id="Integrating-Structure-and-Context-in-the-Code-Transformer"><a href="#Integrating-Structure-and-Context-in-the-Code-Transformer" class="headerlink" title="Integrating Structure and Context in the Code Transformer"></a>Integrating Structure and Context in the Code Transformer</h3><h4 id="Integrating-Source-Code-and-AST-Representations-of-Programs"><a href="#Integrating-Source-Code-and-AST-Representations-of-Programs" class="headerlink" title="Integrating Source Code and AST Representations of Programs"></a>Integrating Source Code and AST Representations of Programs</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h3 id="Integrating-Structure-and-Context-in-the-Code-Transformer">Integrating Structure and Context in the Code Transformer</h3>
+<h4 id="Integrating-Source-Code-and-AST-Representations-of-Programs">Integrating Source Code and AST Representations of Programs</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>PPR是Personalized PageRank</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig3.png" alt="avatar" style="zoom:60%;" /></div>
-
-<h4 id="Efficient-Relative-Attention-Computation"><a href="#Efficient-Relative-Attention-Computation" class="headerlink" title="Efficient Relative Attention Computation"></a>Efficient Relative Attention Computation</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/frm5.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h4 id="Efficient-Relative-Attention-Computation">Efficient Relative Attention Computation</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/frm5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>这里用的解耦注意力和相对位置距离</p>
-<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab2.png" alt="avatar" style="zoom:60%;" /></div>
-
+<h3 id="Experiment-24">Experiment</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab4.png" alt="avatar" style="zoom:50%;" /></div>
-
 <HR align=left color=#987cb9 SIZE=1>
 
       
