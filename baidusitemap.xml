@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/</loc>
+    <lastmod>2022-08-26</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/08/20/RoBERTa%EF%BC%9AA%20Robustly%20Optimized%20BERT%20Pretraining%20Approach/</loc>
     <lastmod>2022-08-21</lastmod>
   </url>

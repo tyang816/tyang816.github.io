@@ -20,12 +20,12 @@
   
   
   <title>ICSE-2019 A Novel Neural Source Code Representation Based on Abstract Syntax Tree | tyang</title>
-  <meta name="description" content="论文地址：A Novel Neural Source Code Representation Based on Abstract Syntax Tree  ASTNN：将大AST拆分为小AST树 1. 简介   基于AST的神经网络两大缺陷 1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027&#x2F;76 和 15217&#x2F;192，使用滑动窗口等">
+  <meta name="description" content="论文地址：A Novel Neural Source Code Representation Based on Abstract Syntax Tree  ASTNN：将大AST拆分为小AST树1. 简介 基于AST的神经网络两大缺陷 1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027&#x2F;76 和 15217&#x2F;192，使用滑动窗口等方法又">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICSE-2019 A Novel Neural Source Code Representation Based on Abstract Syntax Tree">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：A Novel Neural Source Code Representation Based on Abstract Syntax Tree  ASTNN：将大AST拆分为小AST树 1. 简介   基于AST的神经网络两大缺陷 1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027&#x2F;76 和 15217&#x2F;192，使用滑动窗口等">
+<meta property="og:description" content="论文地址：A Novel Neural Source Code Representation Based on Abstract Syntax Tree  ASTNN：将大AST拆分为小AST树1. 简介 基于AST的神经网络两大缺陷 1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027&#x2F;76 和 15217&#x2F;192，使用滑动窗口等方法又">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img2.png">
@@ -211,7 +211,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">114</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">115</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -221,7 +221,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">46</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">47</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -240,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -252,6 +252,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/" class="title">EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-25T02:57:08.000Z" itemprop="datePublished">2022-08-25</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -308,21 +323,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-08-09T01:04:40.000Z" itemprop="datePublished">2022-08-09</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/08/08/Modeling%20Hierarchical%20Syntax%20Structure%20with%20Triplet%20Position%20for%20Source%20Code%20Summarization/" class="title">ACL-2022 Modeling Hierarchical Syntax Structure with Triplet Position for Source Code Summarization</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-08-08T00:20:57.000Z" itemprop="datePublished">2022-08-08</time>
               </p>
             </div>
           </li>
@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 668(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 667(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -404,33 +404,25 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8812062/">A Novel Neural Source Code Representation Based on Abstract Syntax Tree</a></p>
 </blockquote>
-<h2 id="ASTNN：将大AST拆分为小AST树">ASTNN：将大AST拆分为小AST树</h2>
-<h3 id="1-简介-2">1. 简介</h3>
-<ol>
-<li>
-<p>基于AST的神经网络两大缺陷</p>
+<h2 id="ASTNN：将大AST拆分为小AST树"><a href="#ASTNN：将大AST拆分为小AST树" class="headerlink" title="ASTNN：将大AST拆分为小AST树"></a>ASTNN：将大AST拆分为小AST树</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><ol>
+<li><p>基于AST的神经网络两大缺陷</p>
 <p>1.1 当树比较大和深的时候容易梯度消失，在 C 和 Java 中 AST 的最大节点数和深度分别为 7027/76 和 15217/192，使用滑动窗口等方法又易导致长距离信息损失</p>
 <p>1.2 为了简单和高效将 AST 直接视作二叉树，损失了句法结构也加深了 AST 的深度，弱化了抓取更复杂的语义信息的能力</p>
 </li>
-<li>
-<p>解决限制的方法</p>
+<li><p>解决限制的方法</p>
 <p>引入控制流和数据依赖图，使用图嵌入技术来表示代码，比如变量和函数的长距离依赖定位（PDG），构建代码块的控制流图（CFG）。前者非常依赖中间代码表示，对于不能编译的，不完整的代码段很难应用</p>
 </li>
-<li>
-<p>于是作者提出了一种新的表示代码段的方法，它<strong>不需要代码段可编译</strong>，叫做 ASTNN ，通过将函数或方法的 AST 树分解为以句子为单位的小型AST树再分别embedding成向量后采用双向RNN网络来处理生成代码表征。这样即解决了深度问题，也解决了结构表示问题。</p>
-</li>
+<li>于是作者提出了一种新的表示代码段的方法，它<strong>不需要代码段可编译</strong>，叫做 ASTNN ，通过将函数或方法的 AST 树分解为以句子为单位的小型AST树再分别embedding成向量后采用双向RNN网络来处理生成代码表征。这样即解决了深度问题，也解决了结构表示问题。</li>
 </ol>
-<h3 id="2-模型-2">2. 模型</h3>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img1.png" alt="avatar" style="zoom:80%;" />
+<h3 id="2-模型"><a href="#2-模型" class="headerlink" title="2. 模型"></a>2. 模型</h3><p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img1.png" alt="avatar" style="zoom:80%;" /></p>
 <p>首先是如何对AST树进行拆分。本文按照句子的粒度进行拆分，首先先序遍历得到语句树序列S，则S中的每个s都代表这一个语句。对于嵌套语句而言，其由header和body组成，header类似try或while语句。这样以节点s为根节点的语句树就是s所有子节点的语句树的集合。</p>
 <p>由上图可见，将示例程序分成了7个AST子树，每个子树代表一个语句，由header和body组成，得到子树先序遍历AST子树的节点，得到的节点序列作为ASTNN的原始输入，也就是作为后续RNN网络的原始输入进行表征提取。</p>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img2.png" alt="avatar" style="zoom: 67%;" />
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img2.png" alt="avatar" style="zoom: 67%;" /></p>
 <p>得到线序遍历的AST子树节点序列后，首先对每个单词进行embedding，之后如上图所示，接着不断的迭代递归的将当前节点的embedding作为新的输入进行计算，最终遍历所有节点得到AST子树对应的子树向量，整个过程可以看作是一个pooling过程。</p>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img3.png" alt="avatar" style="zoom: 67%;" />
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img3.png" alt="avatar" style="zoom: 67%;" /></p>
 <p>该图中的statement encoder相当于上图中AST子树编码结构，得到AST子树向量后，将其输入到RNN中，再经过一层pooling层得到最终的代码表征输出。</p>
-<h3 id="3-实验">3. 实验</h3>
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img4.png" alt="avatar" style="zoom: 67%;" />
-<img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img5.png" alt="avatar" style="zoom: 67%;" />
+<h3 id="3-实验"><a href="#3-实验" class="headerlink" title="3. 实验"></a>3. 实验</h3><p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img4.png" alt="avatar" style="zoom: 67%;" /></p>
+<p><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ASTNN/ASTNN-img5.png" alt="avatar" style="zoom: 67%;" /></p>
 <HR align=left color=#987cb9 SIZE=1>
 
       
@@ -651,5 +643,20 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

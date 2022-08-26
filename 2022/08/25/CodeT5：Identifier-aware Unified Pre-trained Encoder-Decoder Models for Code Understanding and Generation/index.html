@@ -19,16 +19,32 @@
 
   
   
-  <title>归档: 2022 | tyang</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="村雨">
-<meta property="og:url" content="https://tyang816.github.io/archives/2022/page/8/index.html">
+  <title>EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation | tyang</title>
+  <meta name="description" content="论文地址：CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;CodeT5  CodeT5：完整transformer+标识符+双模态Abstract目前的预训练方法大多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation">
+<meta property="og:url" content="https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/index.html">
 <meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;CodeT5  CodeT5：完整transformer+标识符+双模态Abstract目前的预训练方法大多">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab2-tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab4-tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab7.png">
+<meta property="article:published_time" content="2022-08-25T02:57:08.000Z">
+<meta property="article:modified_time" content="2022-08-26T02:56:02.050Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta property="article:tag" content="SE">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/archives/2022/page/8/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -38,6 +54,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -325,164 +343,220 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2022</h1>
-	      <p class="text-muted">共 147 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-PaperNote/CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
-        </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2022/04/06/2.5%20%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-06T08:06:16.000Z" itemprop="datePublished">2022-04-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 2.5 数据科学家的日常【斯坦福21秋季：实用机器学习】
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/" class="article-date">
+	  <time datetime="2022-08-25T02:57:08.000Z" itemprop="datePublished">2022-08-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/SE/" rel="tag">SE</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
 
 
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/" class="leancloud_visitors"  data-flag-title="EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 483(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://aclanthology.org/2021.emnlp-main.685">CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/salesforce/CodeT5">https://github.com/salesforce/CodeT5</a></p>
+</blockquote>
+<h2 id="CodeT5：完整transformer-标识符-双模态"><a href="#CodeT5：完整transformer-标识符-双模态" class="headerlink" title="CodeT5：完整transformer+标识符+双模态"></a>CodeT5：完整transformer+标识符+双模态</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>目前的预训练方法大多是只有编码器或解码器，本文提出统一的编码器-解码器的transformer模型CodeT5，可以支持代码理解和生成任务，此外还提出了一个标识符感知的预训练任务</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>预训练模型在语言任务上取得了很大的成功，但是大多数要么依赖于只有编码器像BERT，要么只有解码器像GPT，这对于生成理解任务而言不是最优的，比如CodeBERT在代码摘要生成上需要额外得到解码器，这个解码器还不能从预训练当中获益</p>
+<p>此外目前传统的NLP方法把原代码视作像自然语言一样的token序列。很大程度上忽视了代码的丰富的结构化语义信息</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>CodeT5使用降噪seq2seq预训练方法，同时利用了开发者赋值的标识符，利用代码和注释来学习更好的NL-PL对齐，使用CodeSearchNet数据集</p>
+<h3 id="CodeT5"><a href="#CodeT5" class="headerlink" title="CodeT5"></a>CodeT5</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
+<h4 id="Pre-training-Tasks"><a href="#Pre-training-Tasks" class="headerlink" title="Pre-training Tasks"></a>Pre-training Tasks</h4><h5 id="Identififier-aware-Denoising-Pre-training"><a href="#Identififier-aware-Denoising-Pre-training" class="headerlink" title="Identififier-aware Denoising Pre-training"></a>Identififier-aware Denoising Pre-training</h5><p>首先用一些噪声函数破坏源序列，然后需要解码器恢复原始文本，就是MSP</p>
+<p>为了将更多特定于代码的结构信息(AST中的标识符节点类型)融合到模型中，提出了两个额外的任务：标识符标记(IT)和屏蔽标识符预测(MIP)来补充去噪预训练</p>
+<ul>
+<li><strong>Identififier Tagging (IT)</strong> ：告知模型这个词元是否是标识符</li>
+<li><strong>Masked Identififier Prediction (MIP)</strong> ：与遮蔽一段不同，MIP遮蔽代码片段中所有标识符</li>
+</ul>
+<h5 id="Bimodal-Dual-Generation"><a href="#Bimodal-Dual-Generation" class="headerlink" title="Bimodal Dual Generation"></a>Bimodal Dual Generation</h5><p>将NL→PL生成和PL→NL生成视为两项任务，对每对NL-PL双模态数据，构造两个方向相反的训练实例</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab2-tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab4-tab5.png" alt="avatar" style="zoom:60%;" /></div>
+
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig4.png" alt="avatar" style="zoom:50%;" /></div>
+
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab6.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/tab7.png" alt="avatar" style="zoom:50%;" /></div>
+
+<HR align=left color=#987cb9 SIZE=1>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/" title="EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation" target="_blank" rel="external">https://tyang816.github.io/2022/08/25/CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-软件工程 本科在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2022/04/06/2.4%20%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-06T07:48:24.000Z" itemprop="datePublished">2022-04-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 2.4 特征工程【斯坦福21秋季：实用机器学习】
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/06/CodeBERT%EF%BC%9AA%20Pre-Trained%20Model%20for%20Programming%20and%20Natural%20Languages/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-06T03:02:02.000Z" itemprop="datePublished">2022-04-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> EMNLP-2020 CodeBERT：A Pre-Trained Model for Programming and Natural Languages
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-05T06:24:59.000Z" itemprop="datePublished">2022-04-05</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> POPL-2019 code2vec：Learning Distributed Representations of Code
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-04T07:25:58.000Z" itemprop="datePublished">2022-04-04</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 2.3 数据变换【斯坦福21秋季：实用机器学习】
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/04/2.2%20%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-04T07:10:35.000Z" itemprop="datePublished">2022-04-04</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 2.2 数据清理【斯坦福21秋季：实用机器学习】
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/04/Quo%20Vadis,%20Action%20Recognition%20A%20New%20Model%20and%20the%20Kinetics%20Dataset/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-04T03:08:02.000Z" itemprop="datePublished">2022-04-04</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> CVPR-2017 Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/04/02/AI%20Index%20Report/" class="collection-item"   itemprop="url">
-  <time datetime="2022-04-02T01:21:06.000Z" itemprop="datePublished">2022-04-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Stanford-2022 AI Index Report
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-30T07:01:39.000Z" itemprop="datePublished">2022-03-30</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> OpenAI-2022 Text and Code Embeddings by Contrastive Pre-Training
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/03/25/Contrastive%20Code%20Representation%20Learning/" class="collection-item"   itemprop="url">
-  <time datetime="2022-03-25T05:58:32.000Z" itemprop="datePublished">2022-03-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ACL-2020 Contrastive Code Representation Learning
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/archives/2022/page/7/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/archives/2022/page/9/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 8 of 13</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/08/20/RoBERTa%EF%BC%9AA%20Robustly%20Optimized%20BERT%20Pretraining%20Approach/" title="arXiv-2019 RoBERTa：A Robustly Optimized BERT Pretraining Approach"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -535,6 +609,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
 
 
 
