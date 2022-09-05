@@ -2,9 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
+    
+    <lastmod>2022-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/04/GroupViT%EF%BC%9ASemantic%20Segmentation%20Emerges%20from%20Text%20Supervision/</loc>
+    
+    <lastmod>2022-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
+    
+    <lastmod>2022-09-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
+    
+    <lastmod>2022-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/</loc>
     
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
+    
+    <lastmod>2022-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/08/14/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc>
+    
+    <lastmod>2022-09-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -23,15 +77,6 @@
     <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
     
     <lastmod>2022-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/08/14/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc>
-    
-    <lastmod>2022-08-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -77,15 +122,6 @@
     <loc>https://tyang816.github.io/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/</loc>
     
     <lastmod>2022-08-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
-    
-    <lastmod>2022-07-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -911,15 +947,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
-    
-    <lastmod>2022-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/03/21/Language%20Models%20are%20Unsupervised%20Multitask%20Learners/</loc>
     
     <lastmod>2022-03-26</lastmod>
@@ -1390,7 +1417,7 @@
 
   <url>
     <loc>https://tyang816.github.io/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1398,119 +1425,119 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
-    <lastmod>2022-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/pytorch/</loc>
-    <lastmod>2022-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/nodejs/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/logic/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/nodejs/</loc>
+    <lastmod>2022-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/pytorch/</loc>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/CV/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Video/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/CL/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/SE/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Transformer/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-ContraLern/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Meta/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/IR/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Recom/</loc>
-    <lastmod>2022-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-System/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Object/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-System/</loc>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1519,42 +1546,42 @@
   
   <url>
     <loc>https://tyang816.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
+    <lastmod>2022-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/04/GroupViT%EF%BC%9ASemantic%20Segmentation%20Emerges%20from%20Text%20Supervision/</loc>
+    <lastmod>2022-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
+    <lastmod>2022-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
+    <lastmod>2022-09-04</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/08/25/CodeT5%EF%BC%9AIdentifier-aware%20Unified%20Pre-trained%20Encoder-Decoder%20Models%20for%20Code%20Understanding%20and%20Generation/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
+    <lastmod>2022-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/08/14/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc>
+    <lastmod>2022-09-03</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/08/20/RoBERTa%EF%BC%9AA%20Robustly%20Optimized%20BERT%20Pretraining%20Approach/</loc>
@@ -11,10 +35,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
     <lastmod>2022-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/08/14/%E6%B4%9E%E7%A9%B4%E5%A5%87%E6%A1%88/</loc>
-    <lastmod>2022-08-14</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/</loc>
@@ -35,10 +55,6 @@
   <url>
     <loc>https://tyang816.github.io/2022/07/30/Self-Supervised%20Learning%20of%20Smart%20Contract%20Representations/</loc>
     <lastmod>2022-08-02</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
-    <lastmod>2022-07-29</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/07/26/Zero-Shot%20Program%20Representation%20Learning/</loc>
@@ -398,10 +414,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/</loc>
-    <lastmod>2022-03-26</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
     <lastmod>2022-03-26</lastmod>
   </url>
   <url>
