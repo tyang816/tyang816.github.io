@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-09-05T02:11:54.932Z</updated>
+  <updated>2022-09-05T07:18:03.336Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -21,15 +21,47 @@
     <link href="https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/"/>
     <id>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</id>
     <published>2022-09-05T07:01:46.000Z</published>
-    <updated>2022-09-05T02:11:54.932Z</updated>
+    <updated>2022-09-05T07:18:03.336Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2104.13921">Open-vocabulary Object Detection via Vision and Language Knowledge Distillation</a></p><p>论文实现：<a href="https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild">https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild</a></p></blockquote><h2 id="ViLD：CLIP知识蒸馏做开放词库的目标检测"><a href="#ViLD：CLIP知识蒸馏做开放词库的目标检测" class="headerlink" title="ViLD：CLIP知识蒸馏做开放词库的目标检测"></a>ViLD：CLIP知识蒸馏做开放词库的目标检测</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>将从一个预先训练好的open-vocabulary图像分类模型（teacher）中提取的知识提取为一个两阶段的detector（student），用teacher模型编码文本和目标图像区域，训练一个student detector，其被检测到的box的区域嵌入与teacher推理的文本和图像嵌入对齐</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig1.png" alt="avatar" style="zoom:60%;" /></div><p>本文主要想做一个open-vocabulary的目标检测，在不增加类别的基础上（base categories）不去额外标注一些黄鸭子，但是能检测出来黄鸭子，也就是模型有检测novel category的能力</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig2.png" alt="avatar" style="zoom:60%;" /></div><ul><li>训练：<ul><li>ViLD-text：给定图片和基础类，通过RPN得到region proposal，再通过conv得到region embedding，绿色的基础类通过prompt再通过文本编码器，得到绿色的文本编码，再算cross entropy loss</li><li>ViLD-imgae：把抽取好的region proposal（骰子，stop sign）通过CLIP得到CLIP的embedding，希望I和R尽可能接近，就做到了知识蒸馏</li></ul></li><li>推理：<ul><li>给定图片和基础类+蓝色新类别，图像得到region embedding，文本通过编码做点乘，得到zero-shot的目标检测</li></ul></li></ul><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig3.png" alt="avatar" style="zoom:60%;" /></div><p>这些baseline都是mask RCNN，第一阶段出region proposal，也就是图里面的N proposals；第二阶段就是根据proposals过一个detection head得到region embedding，再通过分类头得到bonding box的类别</p><p>主要就是画box和分类</p><ul><li><p>a方法是有监督的baseline</p></li><li><p>b方法就是像CLIP一样直接把text加进去通过prompt，embedding之后与图像点乘算相似度，还是有监督学习，类别还是base category，不在基础类的都塞到背景类，这个方法只是把图像和文本连接到一起</p><ul><li><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/frm2.png" alt="avatar" style="zoom:60%;" /></div></li><li><p>因为只在CB上做训练，所以zero-shot的效果仍然不是很好</p></li></ul></li><li><p>c方法把图像做知识蒸馏，用CLIP预训练好的模型来训练student网络，这时候监督信号不再是人工标注了，而是CLIP带来的编码，就不受基础类的限制了，这就增强了CLIP的open-vocabulary的能力</p><ul><li>如果每次都在训练的时候抽N proposals非常慢而且贵，所以作者先用region proposal network抽好了放磁盘里，也通过了CLIP得到了embedding放好了，这样训练就非常快</li></ul></li><li><p>d方法是b和c的合体，N个推理得到的算cross entorpy loss，M个抽好的算L1 loss</p></li></ul><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab3.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab4.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab5,fig4.png" alt="avatar" style="zoom:60%;" /></div><p>直接拓展到其他数据集上的效果</p><HR align=left color=#987cb9 SIZE=1>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2104.13921">Open-vocabulary Object Detection via Vision and Language Knowledge Distillation</a></p><p>论文实现：<a href="https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild">https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild</a></p></blockquote><h2 id="ViLD：CLIP知识蒸馏做开放词库的目标检测"><a href="#ViLD：CLIP知识蒸馏做开放词库的目标检测" class="headerlink" title="ViLD：CLIP知识蒸馏做开放词库的目标检测"></a>ViLD：CLIP知识蒸馏做开放词库的目标检测</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>将从一个预先训练好的open-vocabulary图像分类模型（teacher）中提取的知识提取为一个两阶段的detector（student），用teacher模型编码文本和目标图像区域，训练一个student detector，其被检测到的box的区域嵌入与teacher推理的文本和图像嵌入对齐</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig1.png" alt="avatar" style="zoom:60%;" /></div><p>本文主要想做一个open-vocabulary的目标检测，在不增加类别的基础上（base categories）不去额外标注一些黄鸭子，但是能检测出来黄鸭子，也就是模型有检测novel category的能力</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig2.png" alt="avatar" style="zoom:60%;" /></div><ul><li>训练：<ul><li>ViLD-text：给定图片和基础类，通过RPN得到region proposal，再通过conv得到region embedding，绿色的基础类通过prompt再通过文本编码器，得到绿色的文本编码，再算cross entropy loss</li><li>ViLD-imgae：把抽取好的region proposal（骰子，stop sign）通过CLIP得到CLIP的embedding，希望I和R尽可能接近，就做到了知识蒸馏</li></ul></li><li>推理：<ul><li>给定图片和基础类+蓝色新类别，图像得到region embedding，文本通过编码做点乘，得到zero-shot的目标检测</li></ul></li></ul><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig3.png" alt="avatar" style="zoom:60%;" /></div><p>这些baseline都是mask RCNN，第一阶段出region proposal，也就是图里面的N proposals；第二阶段就是根据proposals过一个detection head得到region embedding，再通过分类头得到bonding box的类别</p><p>主要就是画box和分类</p><ul><li>a方法是有监督的baseline</li><li><p>b方法就是像CLIP一样直接把text加进去通过prompt，embedding之后与图像点乘算相似度，还是有监督学习，类别还是base category，不在基础类的都塞到背景类，这个方法只是把图像和文本连接到一起</p><ul><li><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/frm2.png" alt="avatar" style="zoom:60%;" /></div></li><li>因为只在CB上做训练，所以zero-shot的效果仍然不是很好</li></ul></li><li><p>c方法把图像做知识蒸馏，用CLIP预训练好的模型来训练student网络，这时候监督信号不再是人工标注了，而是CLIP带来的编码，就不受基础类的限制了，这就增强了CLIP的open-vocabulary的能力</p><ul><li>如果每次都在训练的时候抽N proposals非常慢而且贵，所以作者先用region proposal network抽好了放磁盘里，也通过了CLIP得到了embedding放好了，这样训练就非常快</li></ul></li><li>d方法是b和c的合体，N个推理得到的算cross entorpy loss，M个抽好的算L1 loss</li></ul><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab3.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab4.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab5,fig4.png" alt="avatar" style="zoom:60%;" /></div><p>直接拓展到其他数据集上的效果</p><HR align=left color=#987cb9 SIZE=1>]]></content>
     
     
       
       
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2104.13921&quot;&gt;Open-vocabulary Object Detection via Vision and Language Knowledge Distillati</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
+    
+    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
+    
+    <category term="cs.ContraLern" scheme="https://tyang816.github.io/tags/cs-ContraLern/"/>
+    
+    <category term="cs.Object" scheme="https://tyang816.github.io/tags/cs-Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVPR-2022 Grounded Language-Image Pre-trainin</title>
+    <link href="https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/"/>
+    <id>https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/</id>
+    <published>2022-09-05T02:12:38.000Z</published>
+    <updated>2022-09-05T07:20:13.622Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2112.03857">Grounded Language-Image Pre-trainin</a></p><p>论文实现：<a href="https://github.com/microsoft/GLIP">https://github.com/microsoft/GLIP</a></p></blockquote><h2 id="GLIP：detection-grounding"><a href="#GLIP：detection-grounding" class="headerlink" title="GLIP：detection+grounding"></a>GLIP：detection+grounding</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>把目标检测和phrase grounding结合起来做预训练，这样的好处是 1)从detection和grounding数据中学习，以改进任务；2)可以通过以自我训练的方式生成grouding boxes来利用大量的图像-文本对，使学习到的表示语义丰富。在COCO和LVIS里面不看图片直接zero-shot也能达到很高的精度</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/fig1.png" alt="avatar" style="zoom:60%;" /></div><p>做推理时给标签，然后变成一句话，这句话通过GLIP模型就能检测出来，或者和grounding一样给一句话</p><h3 id="Grounded-Language-Image-Pre-training"><a href="#Grounded-Language-Image-Pre-training" class="headerlink" title="Grounded Language Image Pre-training"></a>Grounded Language Image Pre-training</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/fig2-fig3.png" alt="avatar" style="zoom:60%;" /></div><p>和CLIP两个分支算相似度，中间做了fusion</p><h4 id="Unifified-Formulation"><a href="#Unifified-Formulation" class="headerlink" title="Unifified Formulation"></a>Unifified Formulation</h4><h5 id="object-detection"><a href="#object-detection" class="headerlink" title="object detection"></a>object detection</h5><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/frm2.png" alt="avatar" style="zoom:60%;" /></div><p>用图像的backbone得到region embedding，然后接一个分类头W，经过NMS把bounding box筛选再算loss</p><h5 id="detection-as-phrase-grounding"><a href="#detection-as-phrase-grounding" class="headerlink" title="detection as phrase grounding"></a>detection as phrase grounding</h5><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/frm3.png" alt="avatar" style="zoom:60%;" /></div><p>算匹配的分数，图像区域和句子里的单词怎么匹配上</p><p>文本embedding和图片embedding算相似度，就能得到最终的region-word aligment scores即 $S_{ground}$</p><h5 id="Equivalence-between-detection-and-grounding"><a href="#Equivalence-between-detection-and-grounding" class="headerlink" title="Equivalence between detection and grounding"></a>Equivalence between detection and grounding</h5><p>做一点小改动把两种方法结合起来，公式2里的 $T\in {0,1}^{N\times c}$ 第二维扩展到和公式3里的 $S_{ground}\in R^{N\times M}$ 第二维一样大小，因为M作为词元数总是大于类别数c的，然后算postive match和negative match</p><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/tab1.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIP/tab2.png" alt="avatar" style="zoom:60%;" /></div><p>虽然预训练数据集不一样，比较不算公平，但是能看出来GLIP工作效果很不错</p><HR align=left color=#987cb9 SIZE=1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2112.03857&quot;&gt;Grounded Language-Image Pre-trainin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文实现：&lt;a href=&quot;https://github.c</summary>
       
     
     
@@ -568,33 +600,6 @@
     
     
     <category term="cs.GNN" scheme="https://tyang816.github.io/tags/cs-GNN/"/>
-    
-    <category term="cs.ContraLern" scheme="https://tyang816.github.io/tags/cs-ContraLern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenAI-2022 Hierarchical Text-Conditional Image Generation with CLIP Latents</title>
-    <link href="https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/"/>
-    <id>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</id>
-    <published>2022-07-08T05:49:22.000Z</published>
-    <updated>2022-07-08T12:17:40.438Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="https://arxiv.org/pdf/2204.06125.pdf">Hierarchical Text-Conditional Image Generation with CLIP Latents</a></p><p>论文介绍：<a href="https://openai.com/dall-e-2/">DALL·E 2</a></p><p>来自OpenAI的工作，能够通过文本对图片进行生成，修改</p></blockquote><h2 id="DALL·E-2：CLIP-扩散模型文本图片生成"><a href="#DALL·E-2：CLIP-扩散模型文本图片生成" class="headerlink" title="DALL·E 2：CLIP+扩散模型文本图片生成"></a>DALL·E 2：CLIP+扩散模型文本图片生成</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>对比学习比如CLIP已经能够学习到很好的语义和风格信息，为了使用这些表示做图像生成，作者提出了一种两阶段模型：先是给定文本特征生成CLIP图像嵌入表示（prior），然后解码器根据表示生成图像（decoder），这种显式生成图像表示对多样性很好。解码器用了扩散模型</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>CV领域主要的进展就是用了更大的数据集和模型，CLIP通过简单的对比学习方式就能学到很好的特征，对于分布偏移等问题也比较健壮。扩散模型在最近也推进了视频和图片任务的SOTA，多样性比GAN更好，但保真度，细节不如GAN系列工作，但最近的一些技术又推进了扩散模型</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig1.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>数据集和CLIP一样都是图像文本对，两个组件：prior和decoder</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig2.png" alt="avatar" style="zoom:60%;" /></div><p>图2上半部分是CLIP，训练好了一直都是锁住的不会再训练了</p><p>下半部分是DALLE，CLIP文本编码器是固定的，文本和文本特征一一对应，然后用文本特征预测上面CLIP的Ground truth的图像特征</p><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4><p>用了classifier-free guidance，10%的CLIP嵌入随机设置为0（或学习嵌入），并在训练期间50%随机删除文本</p><p>在模型中只用了空间卷积，没有用attention，所以在推理的时候可以用在任意尺寸上，不用序列长度保持一致，生成高清图</p><h4 id="Prior"><a href="#Prior" class="headerlink" title="Prior"></a>Prior</h4><p>作者尝试了两种方案：自回归做prior或者扩散模型做prior</p><p>用扩散模型时仅训练了transformer的解码器，模型输入：文本，CLIP文本的嵌入，扩散步数的嵌入，加入噪声的CLIP图像嵌入，最后还有transformer本身的嵌入背用于预测没有噪声的CLIP图像嵌入</p><p>这里作者发现直接预测图片比预测噪声效果更好</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/frm2.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p>图像内差，图像与文本内差示例</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig4.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig5.png" alt="avatar" style="zoom:60%;" /></div><p>扩散比自回归好一点点</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/tab2.png" alt="avatar" style="zoom:60%;" /></div><p>具体效果</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig12.png" alt="avatar" style="zoom:60%;" /></div><h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><p>不能很好的把物体跟属性结合起来，可能是用了CLIP的原因，主要找物体上的相似性</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig14.png" alt="avatar" style="zoom:60%;" /></div><p>提示词生成的顺序不对，可能由于文本编码器关注于词根词缀或其他原因导致的</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig16.png" alt="avatar" style="zoom:60%;" /></div><p>不能生成复杂的场景，缺失很多细节</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig17.png" alt="avatar" style="zoom:60%;" /></div><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;https://arxiv.org/pdf/2204.06125.pdf&quot;&gt;Hierarchical Text-Conditional Image Generation with CLIP Latents&lt;/a&gt;&lt;/p&gt;</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="CV" scheme="https://tyang816.github.io/tags/CV/"/>
     
     <category term="cs.ContraLern" scheme="https://tyang816.github.io/tags/cs-ContraLern/"/>
     
