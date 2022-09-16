@@ -411,9 +411,9 @@
 <p>没有使用目标检测的region featrue，简化流程，训练昂贵效果略有下降，但是极大的减少了推理时间</p>
 </blockquote>
 <h2 id="ViLT：拓展VIT到多模态学习">ViLT：拓展VIT到多模态学习</h2>
-<h3 id="Abstract-67">Abstract</h3>
+<h3 id="Abstract-68">Abstract</h3>
 <p>视觉和语言预训练（VLP）在视觉和语言下游任务上有极大的提升，而往往视觉方面花的时间越多最终效果会更好，所以大部分VLP方法都非常依赖特征抽取过程，或者看作一个目标检测问题加上ResNet卷积架构。有两个主要问题：1. 抽特征比多模态融合花太多时间；2. 表达能力受限于嵌入和预定义好的视觉词表。所以提出了ViLT，极简化的设计</p>
-<h3 id="Introduction-58">Introduction</h3>
+<h3 id="Introduction-59">Introduction</h3>
 <p>多模态的VLP用上预训练再微调策略后发展很快，一般模型都是用图像文本对预训练，用图像文本匹配和MLM做目标函数（基本所有模型都用到了），再在下游任务双模态中微调</p>
 <p>输入VLP的时候不能把像素扔进去，要把像素和词元一起嵌入成离散的高层语义特征才能做transformer，所以大部分工作都依赖于<strong>目标检测器</strong>（<strong>因为1. 目标检测出来的region就是天然的带有语义的离散表示；2. 下游任务比如VQA，如果物体和任务是高度相关依赖的</strong>），所以覆盖的类别数越多好越好，图像文本才能匹配更好</p>
 <p>但用目标检测抽特征太贵，所以一部分工作在下降这个成本，比如Pixel-BERT用在ImageNet训练好的ResNet网络抽特征图当作离散序列，这样计算量就只有backbone，没有目标检测的任务</p>
@@ -447,7 +447,7 @@
 <h4 id="Image-Augmentation">Image Augmentation</h4>
 <p>之前多模态的那些方法没法用数据增强，因为都是提前抽好特征存硬盘的，做了增强还要重新抽特征</p>
 <p>作者用了randAugment，但是颜色变换和裁剪没用，因为这个变了文字肯定也变了</p>
-<h3 id="Experiment-44">Experiment</h3>
+<h3 id="Experiment-45">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab2.png" alt="avatar" style="zoom:50%;" /></div>
 <p>用了区域的结果还是比较好的，但是ViLT做了速度和精度的tradeoff</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab3-tab4.png" alt="avatar" style="zoom:60%;" /></div>
