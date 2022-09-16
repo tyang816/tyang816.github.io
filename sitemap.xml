@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tyang816.github.io/2022/09/16/A%20Survey%20of%20Deep%20Learning%20Models%20for%20Structural%20Code%20Understanding/</loc>
+    <loc>https://tyang816.github.io/2022/09/16/Improved%20Semantic%20Representations%20From%20Tree-Structured%20Long%20Short-Term%20Memory%20Networks/</loc>
+    
+    <lastmod>2022-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/14/A%20Survey%20of%20Deep%20Learning%20Models%20for%20Structural%20Code%20Understanding/</loc>
     
     <lastmod>2022-09-16</lastmod>
     
