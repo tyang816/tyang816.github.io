@@ -27,12 +27,24 @@
 <meta property="og:site_name" content="村雨">
 <meta property="og:description" content="论文地址：A Survey of Deep Learning Models for Structural Code Understanding  综述：深度学习结构化代码理解 Abstract 代码理解的方法和应用数量在不断增加，本文把近几年代码理解的文章分为两组：基于序列和基于图的模型。同时也介绍了一些指标，数据集和下游任务，并对未来的结构化代码理解领域做出建议 Introduction 代码">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab9.png">
 <meta property="article:published_time" content="2022-09-16T01:36:50.000Z">
-<meta property="article:modified_time" content="2022-09-16T01:54:46.340Z">
+<meta property="article:modified_time" content="2022-09-16T03:38:35.360Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CL">
 <meta property="article:tag" content="SE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://tyang816.github.io/2022/09/16/A%20Survey%20of%20Deep%20Learning%20Models%20for%20Structural%20Code%20Understanding/index.html">
   
@@ -385,7 +397,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/16/A%20Survey%20of%20Deep%20Learning%20Models%20for%20Structural%20Code%20Understanding/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 297(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 324(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -407,8 +419,8 @@
 <p>代码特定任务适应：对下游任务怎么选择特有架构，怎么处理特定任务数据，怎么在few-shot做，迁移学习，跨语言场景中适应模型</p>
 <h3 id="Preliminary">Preliminary</h3>
 <h4 id="Structures-in-code">Structures in code</h4>
-<p>tab1</p>
-<p>fig1</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>词法分析得到NCS，语法分析得到AST，再语义分析和中间代码生成得到CFG和DFG</p>
 <h4 id="Other-structures">Other structures</h4>
 <h5 id="Intermediate-Representation">Intermediate Representation</h5>
@@ -416,6 +428,20 @@
 <h5 id="The-Unified-Modeling-Language">The Unified Modeling Language</h5>
 <p>软件系统的UML图</p>
 <h5 id="Sequence-based-models">Sequence-based models</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>type-1：深度优先遍历</p>
+<p>type-2：AST路径</p>
+<p>type-3：结构信息添加</p>
+<p>type-4：AST部分保留</p>
+<h3 id="Tasks">Tasks</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab4.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab5.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab6.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab7.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab8.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/tab9.png" alt="avatar" style="zoom:60%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>
