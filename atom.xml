@@ -6,7 +6,7 @@
   <link href="https://tyang816.github.io/atom.xml" rel="self"/>
   
   <link href="https://tyang816.github.io/"/>
-  <updated>2022-09-05T08:52:24.716Z</updated>
+  <updated>2022-09-16T01:36:50.110Z</updated>
   <id>https://tyang816.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1</title>
+    <link href="https://tyang816.github.io/2022/09/16/1/"/>
+    <id>https://tyang816.github.io/2022/09/16/1/</id>
+    <published>2022-09-16T01:36:50.000Z</published>
+    <updated>2022-09-16T01:36:50.110Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>arXiv-2022 GLIPv2：Unifying Localization and Vision-Language Understanding</title>
@@ -575,36 +588,6 @@
     
     <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
     
-    
-    <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
-    
-    <category term="SE" scheme="https://tyang816.github.io/tags/SE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICML-2020 Graph-based, Self-Supervised Program Repair from Diagnostic Feedback</title>
-    <link href="https://tyang816.github.io/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/"/>
-    <id>https://tyang816.github.io/2022/07/12/Graph-based,%20Self-Supervised%20Program%20Repair%20from%20Diagnostic%20Feedback/</id>
-    <published>2022-07-12T06:59:59.000Z</published>
-    <updated>2022-07-18T13:05:38.837Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>论文地址：<a href="http://arxiv.org/abs/2005.10636">Graph-based, Self-Supervised Program Repair from Diagnostic Feedback</a></p><p>论文实现：<a href="https://github.com/michiyasunaga/DrRepair">https://github.com/michiyasunaga/DrRepair</a></p></blockquote><h2 id="DrRepair：程序反馈图-自监督训练">DrRepair：程序反馈图+自监督训练</h2><h3 id="Abstract-26">Abstract</h3><p>程序修复具有挑战性的原因如下：一是它需要跨源代码和诊断反馈进行推理和跟踪符号，二是可用于程序修复的有标记数据集相对较小。本文提出了创新方法解决上述两个问题：一是引入了程序反馈图，将源代码中与程序修复相关的符号与诊断反馈连接起来，然后在上面应用一个图神经网络来建模推理过程；二是采用了一种自监督学习模式来预训练模型</p><h3 id="Introduction-25">Introduction</h3><p>本文考虑了基于诊断反馈（编译器错误信息）来学习修复程序的问题，如图1所示</p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/fig1.png" alt="avatar" style="zoom:60%;" /></div><p><em>Program-feedback graph</em></p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/fig2.png" alt="avatar" style="zoom:60%;" /></div><p>虽然先前的工作都是仅依赖端到端的模型或AST，但本文才用的是程序反馈图直接连接了程序修复推理过程中涉及的符号</p><p><em>Self-supervised learning</em></p><p>从网络上收集领域相关（本文是编程竞赛）的正常工作的程序，设计一个处理过程来把程序变破碎，最后生成新样本&lt;破碎程序，固定程序&gt;，收集了比原数据集大十倍的量</p><h3 id="Approach-4">Approach</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/fig3.png" alt="avatar" style="zoom:60%;" /></div><p>用图和图注意力来捕获长距离依赖，同时比AST而言程序反馈图对源代码中的错误更鲁棒</p><p><strong>Program corruption procedure</strong></p><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/tab1.png" alt="avatar" style="zoom:60%;" /></div><ul><li><strong>Syntax</strong>：随机删除、插入或替换操作符/标点符号，如，.；(){}[]“++，报错 “expected @@@”</li><li><strong>ID-type</strong>：随机删除、插入或替换标识符(ID)类型，如int、float、char，类型冲突和重新声明等错误</li><li><strong>ID-typo</strong>：随机删除、插入或替换一个标识符，如缺少主表达式和未声明的标识符</li><li><strong>Keyword</strong>：随机删除、插入或替换程序语言关键字或库函数的使用，如if和size()，其他杂项错误</li></ul><h3 id="Experiment-15">Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/tab3-tab5.png" alt="avatar" style="zoom:60%;" /></div><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/tab6.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DrRepair/tab7.png" alt="avatar" style="zoom:50%;" /></div><HR align=left color=#987cb9 SIZE=1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a href=&quot;http://arxiv.org/abs/2005.10636&quot;&gt;Graph-based, Self-Supervised Program Repair from Diagnostic Feedback&lt;/a&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://tyang816.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="cs.GNN" scheme="https://tyang816.github.io/tags/cs-GNN/"/>
     
     <category term="CL" scheme="https://tyang816.github.io/tags/CL/"/>
     
