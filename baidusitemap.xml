@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/09/24/UniXcoder%EF%BC%9AUnified%20Cross-Modal%20Pre-training%20for%20Code%20Representation/</loc>
+    <lastmod>2022-09-24</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/09/22/Improving%20Code%20Summarization%20with%20Block-wise%20Abstract%20Syntax%20Tree%20Splitting/</loc>
     <lastmod>2022-09-24</lastmod>
   </url>
