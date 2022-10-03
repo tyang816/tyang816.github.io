@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICML-2021 MSA Transformer | tyang</title>
+  <meta name="description" content="论文地址：MSA Transformer 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm facebook蛋白质esm系列工作  ESM-MSA-1b：轴注意力蛋白质预训练 Abstract 迄今为止的蛋白质语言模型都是从独立的序列进行推理，而计算生物学长期存在的方法是分别拟合各个家族，从进化相关序列家族中进行推理，本文工作结合了这两种范式，将序列集合以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICML-2021 MSA Transformer">
+<meta property="og:url" content="https://tyang816.github.io/2022/10/03/MSA%20Transformer/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：MSA Transformer 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm facebook蛋白质esm系列工作  ESM-MSA-1b：轴注意力蛋白质预训练 Abstract 迄今为止的蛋白质语言模型都是从独立的序列进行推理，而计算生物学长期存在的方法是分别拟合各个家族，从进化相关序列家族中进行推理，本文工作结合了这两种范式，将序列集合以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig6.png">
+<meta property="article:published_time" content="2022-10-03T06:23:50.000Z">
+<meta property="article:modified_time" content="2022-10-03T08:30:50.640Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cs.Transformer">
+<meta property="article:tag" content="cs.Protein">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2022/10/03/MSA%20Transformer/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-计算机科学与技术 硕士在读</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">博文</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">133</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">70</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">49</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">50</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Protein/" rel="tag">cs.Protein</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-System/" rel="tag">cs.System</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.8px;">CV</a> <a href="/tags/IR/" style="font-size: 13.2px;">IR</a> <a href="/tags/SE/" style="font-size: 13.9px;">SE</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.7px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.1px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.5px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.3px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13.3px;">cs.Object</a> <a href="/tags/cs-Protein/" style="font-size: 13.1px;">cs.Protein</a> <a href="/tags/cs-Recom/" style="font-size: 13.2px;">cs.Recom</a> <a href="/tags/cs-System/" style="font-size: 13.3px;">cs.System</a> <a href="/tags/cs-Transformer/" style="font-size: 13.6px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.4px;">cs.Video</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/nodejs/" style="font-size: 13px;">nodejs</a> <a href="/tags/other/" style="font-size: 13.1px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/03/MSA%20Transformer/" class="title">ICML-2021 MSA Transformer</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-03T06:23:50.000Z" itemprop="datePublished">2022-10-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/29/Evaluating%20Protein%20Transfer%20Learning%20with%20TAPE/" class="title">NIPS-2019 Evaluating Protein Transfer Learning with TAPE</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-29T05:55:11.000Z" itemprop="datePublished">2022-09-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/24/UniXcoder%EF%BC%9AUnified%20Cross-Modal%20Pre-training%20for%20Code%20Representation/" class="title">ACL-2022 UniXcoder：Unified Cross-Modal Pre-training for Code Representation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-24T07:35:14.000Z" itemprop="datePublished">2022-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/22/Improving%20Code%20Summarization%20with%20Block-wise%20Abstract%20Syntax%20Tree%20Splitting/" class="title">ICPC-2021 Improving Code Summarization with Block-wise Abstract Syntax Tree Splitting</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-22T06:34:52.000Z" itemprop="datePublished">2022-09-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/" class="title">DeepAI-2022 Can Language Understand Depth？</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-17T09:20:11.000Z" itemprop="datePublished">2022-09-17</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/MSA Transformer" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICML-2021 MSA Transformer
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/10/03/MSA%20Transformer/" class="article-date">
+	  <time datetime="2022-10-03T06:23:50.000Z" itemprop="datePublished">2022-10-03</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/cs-Protein/" rel="tag">cs.Protein</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/10/03/MSA%20Transformer/" class="leancloud_visitors"  data-flag-title="ICML-2021 MSA Transformer">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/03/MSA%20Transformer/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v139/rao21a.html">MSA Transformer</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/facebookresearch/esm">https://github.com/facebookresearch/esm</a></p>
+<p>facebook蛋白质esm系列工作</p>
+</blockquote>
+<h2 id="ESM-MSA-1b：轴注意力蛋白质预训练">ESM-MSA-1b：轴注意力蛋白质预训练</h2>
+<h3 id="Abstract-57">Abstract</h3>
+<p>迄今为止的蛋白质语言模型都是从独立的序列进行推理，而计算生物学长期存在的方法是分别拟合各个家族，从进化相关序列家族中进行推理，本文工作结合了这两种范式，将序列集合以多序列对齐的形式输入，使用行列注意力，跨蛋白质家族的掩码语言模型目标</p>
+<h3 id="Introduction-49">Introduction</h3>
+<p>由于进化不能自由地在折叠的三维结构中接触的位点上独立选择氨基酸的身份，因此模式被印在进化选择的序列上，对蛋白质结构的限制可以从相关序列的模式中推断出来</p>
+<p>目前蛋白质语言的新工作都是大规模的网络而不是分别拟合每个家族序列，在推理阶段用单条序列端到端的方法替换多阶段的计算生物学中传统的方法</p>
+<p>模型结构使用了轴注意力，掩码语言模型目标函数</p>
+<h3 id="Methods">Methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>MSA Transformer的输入为一系列二维MSA矩阵，每个MSA是一组蛋白序列的多序列比对文件</p>
+<p>MSA矩阵存储来自不同物种的同类蛋白序列。矩阵的每一行是一条来自特定物种的蛋白序列；每一列在该类蛋白中处于同一位置，记录不同物种在该位置的氨基酸取值</p>
+<h4 id="Token-Embedding">Token Embedding</h4>
+<p>将不同氨基酸用整数表示，形成一个整型向量。词库包括20中标准氨基酸、5种非标准氨基酸和4种特殊字符，共29个数字</p>
+<h4 id="Position-Embedding">Position Embedding</h4>
+<ul>
+<li>
+<p>sequence embedding</p>
+<ul>
+<li>为序列的每个位置，也就是每一列赋一个序号</li>
+</ul>
+</li>
+<li>
+<p>position embedding</p>
+<ul>
+<li>为每条序列，也就是每一行赋一个序号</li>
+<li>位置嵌入使得MSA中的行和列有独一无二的序号，每一行或每一列将被识别为不同的。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Pre-training-2">Pre-training</h4>
+<p>模型使用masked training方法进行训练，直接输出的是每一个masked token处为各种氨基酸的概率。然而本文的主要目标并不是得到这些概率，而是要通过训练后的attention map预测蛋白质二、三级结构</p>
+<ul>
+<li>
+<p>二级结构预测（second structure prediction）</p>
+<ul>
+<li>训练一个Netsurf模型，基于MSA Transformer的特征表示向量(representation)预测蛋白质的8种蛋白结构，准确率为72.9%</li>
+</ul>
+</li>
+<li>
+<p>三级结构预测（contact prediction）</p>
+<ul>
+<li>基于MSA Transformer各层、各注意力头的attention map，训练logistic回归模型，对蛋白质三级结构进行预测</li>
+</ul>
+</li>
+</ul>
+<h4 id="Axial-Attention">Axial Attention</h4>
+<p>针对二维输入数据的特征，提出两种轴向注意力机制：行注意力(row attention)和列注意力(column attention)</p>
+<p>为了降低算法的时间复杂度，轴向注意力将来自二维平面的注意力分解为纵、横两个方向。轴向注意力认为MSA中某位点受到其他位点的影响主要来自于其所在的行和列，而矩阵中其他位置的影响可以忽略不计，对位点只需计算第行和第列对它的attention权重</p>
+<p>行注意力计算位点所在行的注意力权重，本质是提取该点所在蛋白序列的信息，计算同一蛋白序列中不同氨基酸之间的相互影响权值，能够反应这些氨基酸在蛋白二、三级结构中的相互作用，进而推测蛋白结构</p>
+<p>列注意力计算位点所在列的注意力权重，本质是提取该位置上氨基酸的共变信息</p>
+<h3 id="Result-7">Result</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab2.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab3.png" alt="avatar" style="zoom:50%;" /></div>
+<ul>
+<li>与其他模型对比的表现
+<ul>
+<li>氨基酸的接触模式(contact pattern)能够直接被行注意力头学习，蕴含在行注意力的attention map中</li>
+<li>基于训练发现的接触模式，MSA Transformer能够对蛋白质的接触情况进行预测(contact prediction)，预测准确率显著优于Potts等其他模型（不论输入MSA的深度如何），尤其是在MSA深度较小时，优势更加明显</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig6.png" alt="avatar" style="zoom:60%;" /></div>
+<ul>
+<li>探究MSA Transformer预测蛋白结构的机制
+<ul>
+<li>学习协方差（与Potts模型一致）
+<ul>
+<li>随机打乱MSA每一列氨基酸的排列，破坏该列的协方差特性，发现Potts模型预测准确率降到随机预测(random guess)级别，ESM-1b预测结果不受影响，MSA Tansformer预测准确率下降，但仍有有效预测能力。说明MSA Transformer能够学习协方差特性，但不唯一依赖于协方差特性</li>
+</ul>
+</li>
+<li>学习序列规律（与ESM-1b一致）
+<ul>
+<li>随机打乱MSA中列的排列顺序而保持每一列内部不变，破坏每条序列的规律，发现ESM-1b模型预测准确率降到随机预测(random guess)级别，Potts模型预测结果不受影响，MSA Tansformer预测准确率下降，但仍有有效预测能力。说明MSA Transformer能够学习序列规律，但不唯一依赖于序列规律</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<HR align=left color=#987cb9 SIZE=1>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2022/10/03/MSA%20Transformer/" title="ICML-2021 MSA Transformer" target="_blank" rel="external">https://tyang816.github.io/2022/10/03/MSA Transformer/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-计算机科学与技术 硕士在读</small></a></h3>
+        <div>严于律己，宽以待人</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/09/29/Evaluating%20Protein%20Transfer%20Learning%20with%20TAPE/" title="NIPS-2019 Evaluating Protein Transfer Learning with TAPE"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
