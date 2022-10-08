@@ -19,22 +19,27 @@
 
   
   
-  <title>NIPS-2017 Attention Is All You Need | tyang</title>
-  <meta name="description" content="论文地址：Attention Is All You Need  Attention和Transformer的开山作">
+  <title>bioXiv-2022 Language models of protein sequences at the scale of evolution enable accurate structure prediction | tyang</title>
+  <meta name="description" content="论文地址：Language models of protein sequences at the scale of evolution enable accurate structure prediction 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm facebook蛋白质esm系列工作，主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NIPS-2017 Attention Is All You Need">
-<meta property="og:url" content="https://tyang816.github.io/2021/11/02/Attention%20Is%20All%20You%20Need/index.html">
+<meta property="og:title" content="bioXiv-2022 Language models of protein sequences at the scale of evolution enable accurate structure prediction">
+<meta property="og:url" content="https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Attention Is All You Need  Attention和Transformer的开山作">
+<meta property="og:description" content="论文地址：Language models of protein sequences at the scale of evolution enable accurate structure prediction 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm facebook蛋白质esm系列工作，主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-02T05:43:26.000Z">
-<meta property="article:modified_time" content="2022-03-24T06:23:38.812Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig3.png">
+<meta property="article:published_time" content="2022-10-08T05:35:36.000Z">
+<meta property="article:modified_time" content="2022-10-08T08:11:47.556Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CL">
 <meta property="article:tag" content="cs.Transformer">
+<meta property="article:tag" content="cs.Protein">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/tab1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2021/11/02/Attention%20Is%20All%20You%20Need/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -44,6 +49,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -332,14 +339,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PaperNote/Attention Is All You Need" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/Language models of protein sequences at the scale of evolution enable accurate structure prediction" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      NIPS-2017 Attention Is All You Need
+      bioXiv-2022 Language models of protein sequences at the scale of evolution enable accurate structure prediction
     </h1>
   
 
@@ -347,8 +354,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/11/02/Attention%20Is%20All%20You%20Need/" class="article-date">
-	  <time datetime="2021-11-02T05:43:26.000Z" itemprop="datePublished">2021-11-02</time>
+	<a href="/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/" class="article-date">
+	  <time datetime="2022-10-08T05:35:36.000Z" itemprop="datePublished">2022-10-08</time>
 	</a>
 </span>
         
@@ -360,7 +367,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+	<a class="article-tag-link-link" href="/tags/cs-Protein/" rel="tag">cs.Protein</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
   </span>
 
 
@@ -375,18 +382,18 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2021/11/02/Attention%20Is%20All%20You%20Need/" class="leancloud_visitors"  data-flag-title="NIPS-2017 Attention Is All You Need">
+    	<span id="/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/" class="leancloud_visitors"  data-flag-title="bioXiv-2022 Language models of protein sequences at the scale of evolution enable accurate structure prediction">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/02/Attention%20Is%20All%20You%20Need/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 15(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 987(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
@@ -394,11 +401,39 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1706.03762">Attention Is All You Need</a></p>
+<p>论文地址：Language models of protein sequences at the scale of evolution enable accurate structure prediction</p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/facebookresearch/esm">https://github.com/facebookresearch/esm</a></p>
+<p>facebook蛋白质esm系列工作，主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，ESM-2大大提高了参数，虽然精度上提升不明显，但是推理速度比AlphaFold2快了一个数量级</p>
 </blockquote>
-<h2 id="Attention和Transformer的开山作">Attention和Transformer的开山作</h2>
+<h2 id="ESM-2：提高参数量以单序列作为输入提高推理速度">ESM-2：提高参数量以单序列作为输入提高推理速度</h2>
+<h3 id="Abstract-52">Abstract</h3>
+<p>将模型提高到了15B参数，是目前最大的蛋白质语言模型，随着模型的扩大，它们学习的信息能够在单个原子的分辨率下预测蛋白质的三维结构。ESMFold与AlphaFold2和RoseTTAFold对序列的准确度差不多，但是困惑度更低，推理时间比AlphaFold2快一个数量级</p>
+<h3 id="Introduction-46">Introduction</h3>
+<p>AlphaFold2和RoseTTAFold在原子分辨率结构预测问题上取得了突破性的成功，但它们也依赖于使用多序列比对（MSA）和类似的蛋白质结构模板来实现最佳性能</p>
+<p>相比之下，通过利用语言模型的内部表征，ESMFold只用一个序列作为输入就能生成相应的结构预测，从而大大加快了结构预测的速度</p>
+<p>ESMFold可以帮助解决蛋白质序列数据库的快速增长和蛋白质结构和功能数据库的缓慢增长之间的差距</p>
+<h3 id="Training-and-evaluating-15B-parameter-protein-language-models">Training and evaluating 15B parameter protein language models</h3>
+<p>ESM-2是一个基于Transformer的语言模型，并使用注意力机制来学习输入序列中成对氨基酸之间的相互作用模式</p>
+<p>相对于上一代模型ESM-1b，Meta对模型结构、训练参数进行了改进，并增加了计算资源和数据。同时，相对位置嵌入的加入，使模型能够推广到任意长度的序列</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>从结果来看，具有1.5亿个参数的ESM-2模型比具有6.5亿个参数的ESM-1b模型表现得更好</p>
+<p>此外，在结构预测的基准上，ESM-2也超过了其他的蛋白质语言模型。这种性能的提高与大型语言建模领域建立的规律是一致的</p>
+<h3 id="Language-models-enable-more-efficient-predictions-of-protein-structure">Language models enable more efficient predictions of protein structure</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>随着ESM-2规模的增加，可以观察到语言建模的精度有很大的提高</p>
+<h3 id="End-to-end-single-sequence-structure-prediction-with-ESMFold">End-to-end single-sequence structure prediction with ESMFold</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>SMFold和AlphaFold2的一个关键区别是，ESMFold使用语言模型表示，消除了对明确的同源序列（以MSA的形式）作为输入的需要</p>
+<p>ESMFold通过用一个处理序列的Transformer模块取代处理MSA的计算昂贵的网络模块，简化了AlphaFold2中的Evoformer。这种简化意味着ESMFold的速度大大提高，远高于基于MSA的模型</p>
+<p>折叠主干的输出接下来又被一个结构模块处理，它负责输出最终的原子级结构和预测的置信度</p>
+<p>研究人员将ESMFold与AlphaFold2和RoseTTAFold在CAMEO（2022年4月至2022年6月）和CASP14（2020年5月）测试集上进行比较，当只给单一序列输入时，ESMFold的表现要比Alphafold 2好得多</p>
+<p>而当使用完整的管道时，AlphaFold2在CAMEO和CASP14上分别达到了88.3和84.7。ESMFold在CAMEO上取得了与RoseTTAfold相当的准确率，其平均TM分数为82.0</p>
+<h3 id="Exploring-metagenomic-structural-space">Exploring metagenomic structural space</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Conclusions">Conclusions</h3>
+<p>蛋白质结构预测的非线性曲线是模型规模的函数，并且观察到了语言模型对序列的理解程度与结构预测之间的强烈联系</p>
+<p>ESMFold获得了准确的原子分辨率结构预测，推理时间还比AlphaFold2快了一个数量级。在实践中，速度的优势甚至还要更大。因为ESMFold不需要搜索和进化相关的序列来构建MSA，速度的提高将使绘制大型元基因组学序列数据库的结构空间成为可能</p>
 <HR align=left color=#987cb9 SIZE=1>
-
       
     </div>
     <div class="article-footer">
@@ -407,7 +442,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2021/11/02/Attention%20Is%20All%20You%20Need/" title="NIPS-2017 Attention Is All You Need" target="_blank" rel="external">https://tyang816.github.io/2021/11/02/Attention Is All You Need/</a>
+      <a href="https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/" title="bioXiv-2022 Language models of protein sequences at the scale of evolution enable accurate structure prediction" target="_blank" rel="external">https://tyang816.github.io/2022/10/08/Language models of protein sequences at the scale of evolution enable accurate structure prediction/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -453,10 +488,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/11/06/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/" title="NIPS-2012 ImageNet classification with deep convolutional neural networks"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2022/10/07/Biological%20structure%20and%20function%20emerge%20from%20scaling%20unsupervised%20learning%20to%20250%20million%20protein%20sequences/" title="PNAS-2021 Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>

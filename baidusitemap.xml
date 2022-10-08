@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/</loc>
+    <lastmod>2022-10-08</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/10/07/Biological%20structure%20and%20function%20emerge%20from%20scaling%20unsupervised%20learning%20to%20250%20million%20protein%20sequences/</loc>
     <lastmod>2022-10-07</lastmod>
   </url>
