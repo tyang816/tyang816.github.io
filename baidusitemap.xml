@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/10/29/Chain%20of%20Thought%20Prompting%20Elicits%20Reasoning%20in%20Large%20Language%20Models/</loc>
+    <lastmod>2022-10-29</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/10/26/On%20the%20Evaluation%20of%20Neural%20Code%20Summarization/</loc>
     <lastmod>2022-10-26</lastmod>
   </url>
