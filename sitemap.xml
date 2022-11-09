@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/</loc>
+    
+    <lastmod>2022-11-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/11/09/Single-sequence%20protein%20structure%20prediction%20using%20a%20language%20model%20and%20deep%20learning/</loc>
     
     <lastmod>2022-11-09</lastmod>
@@ -1613,15 +1622,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
-    
-    <lastmod>2022-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/categories/index.html</loc>
     
     <lastmod>2022-02-05</lastmod>
@@ -1676,6 +1676,13 @@
 
   
   <url>
+    <loc>https://tyang816.github.io/tags/logic/</loc>
+    <lastmod>2022-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1690,13 +1697,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/logic/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/tags/pytorch/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1704,28 +1704,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/nodejs/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/tags/cs-ContraLern/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/CV/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1753,14 +1732,14 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/CL/</loc>
+    <loc>https://tyang816.github.io/tags/CV/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/cs-CoT/</loc>
+    <loc>https://tyang816.github.io/tags/cs-Video/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1774,14 +1753,28 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/SE/</loc>
+    <loc>https://tyang816.github.io/tags/CL/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/cs-Video/</loc>
+    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
+    <lastmod>2022-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-CoT/</loc>
+    <lastmod>2022-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/SE/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1818,13 +1811,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1832,14 +1818,14 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://tyang816.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://tyang816.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

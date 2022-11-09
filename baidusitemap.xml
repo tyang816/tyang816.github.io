@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/</loc>
+    <lastmod>2022-11-09</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/11/09/Single-sequence%20protein%20structure%20prediction%20using%20a%20language%20model%20and%20deep%20learning/</loc>
     <lastmod>2022-11-09</lastmod>
   </url>
@@ -707,9 +711,5 @@
   <url>
     <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
     <lastmod>2022-02-17</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/02/05/npm%20--save%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
-    <lastmod>2022-02-06</lastmod>
   </url>
 </urlset> 
