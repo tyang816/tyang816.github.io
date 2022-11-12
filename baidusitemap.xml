@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/11/12/Unified%20Language%20Model%20Pre-training%20for%20Natural%20Language%20Understanding%20and%20Generation/</loc>
+    <lastmod>2022-11-12</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/</loc>
     <lastmod>2022-11-09</lastmod>
   </url>
