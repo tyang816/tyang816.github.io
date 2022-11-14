@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
   <meta charset="utf-8">
   
@@ -26,12 +26,12 @@
 <meta property="og:url" content="https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/index.html">
 <meta property="og:site_name" content="村雨">
 <meta property="og:description" content="论文地址：SlowFast Networks for Video Recognition  SlowFast：快慢分支视频理解 Abstract 研究动机来源于人的视觉系统有两种细胞，一个叫p细胞占了80%处理静态图像，一个叫m细胞处理运动信息，发现跟双流有点像，于是也提出了这种一支slow，一支fast这样的网络 Method  慢分支：先用很低的帧率，比如每隔16帧取一帧，这种叫慢分支，学习">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/table1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/table2.png">
 <meta property="article:published_time" content="2022-05-02T09:36:05.000Z">
-<meta property="article:modified_time" content="2022-07-18T12:11:56.994Z">
+<meta property="article:modified_time" content="2022-11-14T13:12:26.755Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CV">
 <meta property="article:tag" content="cs.Video">
@@ -66,16 +66,16 @@
         <a id="avatar" href="https://github.com/tyang816" target="_blank">
           <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
         </a>
-        <h2 id="name" class="hidden-xs hidden-sm">谭扬</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">华东理工大学-计算机科学与技术 硕士在读</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 上海, 中国</small>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
       </div>
       
       <div class="search" id="search-form-wrap">
 
     <form class="search-form sidebar-form">
         <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
             <span class="input-group-btn">
                 <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
             </span>
@@ -85,7 +85,7 @@
   <div class="ins-search-mask"></div>
   <div class="ins-search-container">
     <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
       <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
     <div class="ins-section-wrapper">
@@ -112,7 +112,7 @@
             
             <i class="icon icon-home-fill"></i>
             
-            <span class="menu-title">首页</span>
+            <span class="menu-title">Home</span>
           </a>
         </li>
         
@@ -122,7 +122,7 @@
             
             <i class="icon icon-cup-fill"></i>
             
-            <span class="menu-title">博文</span>
+            <span class="menu-title">About</span>
           </a>
         </li>
         
@@ -132,7 +132,7 @@
             
             <i class="icon icon-archives-fill"></i>
             
-            <span class="menu-title">归档</span>
+            <span class="menu-title">Archives</span>
           </a>
         </li>
         
@@ -142,7 +142,7 @@
             
             <i class="icon icon-folder"></i>
             
-            <span class="menu-title">分类</span>
+            <span class="menu-title">Categories</span>
           </a>
         </li>
         
@@ -152,7 +152,7 @@
             
             <i class="icon icon-tags"></i>
             
-            <span class="menu-title">标签</span>
+            <span class="menu-title">Tags</span>
           </a>
         </li>
         
@@ -162,7 +162,7 @@
             
             <i class="icon icon-project"></i>
             
-            <span class="menu-title">项目</span>
+            <span class="menu-title">Repository</span>
           </a>
         </li>
         
@@ -172,7 +172,7 @@
             
             <i class="icon icon-friendship"></i>
             
-            <span class="menu-title">友链</span>
+            <span class="menu-title">Links</span>
           </a>
         </li>
         
@@ -194,7 +194,7 @@
   <div class="slimContent">
     
       <div class="widget">
-    <h3 class="widget-title">公告</h3>
+    <h3 class="widget-title">Board</h3>
     <div class="widget-body">
         <div id="board">
             <div class="content">
@@ -207,9 +207,9 @@
     
       
   <div class="widget">
-    <h3 class="widget-title">分类</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%9A%E8%AE%AE%E7%AC%94%E8%AE%B0/">会议笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">博客笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%AF%E5%9D%A6%E7%A6%8F21%E7%A7%8B%E5%AD%A3%EF%BC%9A%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">斯坦福21秋季：实用机器学习</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80/">深度学习代码基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%85%A5%E9%97%A8/">生物信息学入门</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">148</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearn/">DeepLearn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">148</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/bio-mooc/">bio-mooc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
     </div>
   </div>
 
@@ -217,7 +217,7 @@
     
       
   <div class="widget">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
       <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">80</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">49</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
@@ -227,7 +227,7 @@
     
       
   <div class="widget">
-    <h3 class="widget-title">标签云</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
       <a href="/tags/BI/" style="font-size: 13.36px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.82px;">CV</a> <a href="/tags/IR/" style="font-size: 13.18px;">IR</a> <a href="/tags/OS/" style="font-size: 13.27px;">OS</a> <a href="/tags/SE/" style="font-size: 13.91px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.64px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.09px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.55px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.27px;">cs.Meta</a> <a href="/tags/cs-Object/" style="font-size: 13.27px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.18px;">cs.Recom</a> <a href="/tags/cs-Transformer/" style="font-size: 13.73px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.45px;">cs.Video</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.09px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
     </div>
@@ -236,9 +236,9 @@
     
       
   <div class="widget">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -246,7 +246,7 @@
     
       
   <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
@@ -254,7 +254,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
                 <a href="/2022/11/13/Supervised%20Contrastive%20Learning%20for%20Pre-trained%20Language%20Model%20Fine-tuning/" class="title">ICLR-2021 Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning</a>
@@ -269,7 +269,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
                 <a href="/2022/11/12/Switch%20Transformers%EF%BC%9AScaling%20to%20Trillion%20Parameter%20Models%20with%20Simple%20and%20Efficient%20Sparsity/" class="title">JMLR-2022 Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity</a>
@@ -284,7 +284,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
                 <a href="/2022/11/12/Unified%20Language%20Model%20Pre-training%20for%20Natural%20Language%20Understanding%20and%20Generation/" class="title">NIPS-2019 Unified Language Model Pre-training for Natural Language Understanding and Generation</a>
@@ -299,7 +299,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
                 <a href="/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/" class="title">ICLR-2022 OntoProtein：Protein Pretraining With Gene Ontology Embedding</a>
@@ -314,7 +314,7 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
                 <a href="/2022/11/09/Single-sequence%20protein%20structure%20prediction%20using%20a%20language%20model%20and%20deep%20learning/" class="title">Nature Biotechnology-2022 Single-sequence protein structure prediction using a language model and deep learning</a>
@@ -360,7 +360,7 @@
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
   </span>
 
         
@@ -386,13 +386,13 @@
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 285(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 285(words)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
 	
 
       </div>
@@ -444,8 +444,8 @@
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">谭扬</span><small class="ml-1x">华东理工大学-计算机科学与技术 硕士在读</small></a></h3>
-        <div>严于律己，宽以待人</div>
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ ECUST</small></a></h3>
+        <div></div>
       </div>
     </figure>
   </div>
@@ -472,12 +472,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/" title="ICML-2021 Is Space-Time Attention All You Need for Video Understanding"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2022/05/02/Is%20Space-Time%20Attention%20All%20You%20Need%20for%20Video%20Understanding/" title="ICML-2021 Is Space-Time Attention All You Need for Video Understanding"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" title="CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/02/A%20Closer%20Look%20at%20Spatiotemporal%20Convolutions%20for%20Action%20Recognition/" title="CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -485,7 +485,7 @@
   
   
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
   <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
     <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
   </div> -->
@@ -507,31 +507,31 @@
       <div class="modal-body">
         <div class="donate-box">
           <div class="donate-head">
-            <p>感谢您的支持，我会继续努力的!</p>
+            <p>Maybe you could buy me a cup of coffee.</p>
           </div>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="扫码支持" title="扫一扫" />
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
               </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
               </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
             </div>
           </div>
           <div class="donate-footer">
             <ul class="nav nav-tabs nav-justified" role="tablist">
               <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
               </li>
               <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
               </li>
             </ul>
           </div>
@@ -576,11 +576,11 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
