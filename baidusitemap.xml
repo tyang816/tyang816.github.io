@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/11/17/ProtTrans%EF%BC%9ATowards%20Cracking%20the%20Language%20of%20Life%E2%80%99s%20Code%20Through%20Self-Supervised%20Learning/</loc>
+    <lastmod>2022-11-18</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/11/16/Learning%20functional%20properties%20of%20proteins%20with%20language%20models/</loc>
     <lastmod>2022-11-16</lastmod>
   </url>
