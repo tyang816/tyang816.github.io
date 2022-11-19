@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/11/19/Robust%20Speech%20Recognition%20via%20Large-Scale%20Weak%20Supervision/</loc>
+    <lastmod>2022-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
+    <lastmod>2022-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/11/17/ProtTrans%EF%BC%9ATowards%20Cracking%20the%20Language%20of%20Life%E2%80%99s%20Code%20Through%20Self-Supervised%20Learning/</loc>
     <lastmod>2022-11-18</lastmod>
   </url>
@@ -198,10 +206,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/04/Emerging%20Properties%20in%20Self-Supervised%20Vision%20Transformers/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
