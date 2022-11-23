@@ -192,7 +192,7 @@
     <div class="widget-body">
         <div id="board">
             <div class="content">
-                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
             </div>
         </div>
     </div>
@@ -430,7 +430,7 @@
 </ul>
 <h3 id="Gradient-Boosting-Code">Gradient Boosting Code</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">GradientBoosting</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, base_learner, n_learners, learning_rate</span>):</span><br><span class="line">        self.learners = [clone(base_learner) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_learners)]</span><br><span class="line">        self.lr = learning_rate</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fit</span>(<span class="params">self, X, y</span>):</span><br><span class="line">        residual = y.copy()</span><br><span class="line">        <span class="keyword">for</span> learner <span class="keyword">in</span> self.learners:</span><br><span class="line">            learner.fit(X, residual)</span><br><span class="line">            residual -= self.lr * learner.predict(X)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, X</span>):</span><br><span class="line">        preds = [learner,predict(X) <span class="keyword">for</span> learner <span class="keyword">in</span> self.learners]</span><br><span class="line">        <span class="keyword">return</span> np.array(preds).<span class="built_in">sum</span>(axis=<span class="number">0</span>) * self.lr</span><br></pre></td></tr></table></figure>
-<h3 id="Summary-17">Summary</h3>
+<h3 id="Summary-16">Summary</h3>
 <ul>
 <li>Boosting就是把弱学习器结合成一个强学习器来降低偏差</li>
 <li>梯度下降Boosting学习残差</li>

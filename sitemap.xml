@@ -1739,13 +1739,6 @@
 
   
   <url>
-    <loc>https://tyang816.github.io/tags/logic/</loc>
-    <lastmod>2022-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -1754,6 +1747,13 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/logic/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1802,35 +1802,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/CV/</loc>
-    <lastmod>2022-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-Video/</loc>
-    <lastmod>2022-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-Object/</loc>
-    <lastmod>2022-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/tags/CL/</loc>
-    <lastmod>2022-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1844,7 +1816,35 @@
   </url>
   
   <url>
+    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/CV/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-Object/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/tags/SE/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-Video/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1881,14 +1881,14 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/BookNote/</loc>
+    <loc>https://tyang816.github.io/categories/BlogNote/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/BlogNote/</loc>
+    <loc>https://tyang816.github.io/categories/BookNote/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1902,14 +1902,14 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/MeetingNote/</loc>
+    <loc>https://tyang816.github.io/categories/PaperNote/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/categories/PaperNote/</loc>
+    <loc>https://tyang816.github.io/categories/MeetingNote/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

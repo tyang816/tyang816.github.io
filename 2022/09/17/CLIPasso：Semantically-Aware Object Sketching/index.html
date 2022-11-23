@@ -207,7 +207,7 @@
     <div class="widget-body">
         <div id="board">
             <div class="content">
-                <p>Computer Vision (CV)<br>Computation and Language (CL)<br>Software Engineering (SE)</p>
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
             </div>
         </div>
     </div>
@@ -413,9 +413,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://clipasso.github.io/clipasso/">https://clipasso.github.io/clipasso/</a></p>
 </blockquote>
 <h2 id="CLIPasso：几何和语义损失函数生成简笔画">CLIPasso：几何和语义损失函数生成简笔画</h2>
-<h3 id="Abstract-20">Abstract</h3>
+<h3 id="Abstract-35">Abstract</h3>
 <p>提出了CLIPasso，一种可以通过几何和语义简化，实现不同抽象层次的对象绘制方法。因为简笔画的生成很依赖简笔画数据集来训练，所以使用了CLLIP来从简笔画和图像中提取语义信息</p>
-<h3 id="Introduction-17">Introduction</h3>
+<h3 id="Introduction-30">Introduction</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIPasso/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIPasso/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>将图片变成简笔画，对计算机是非常难的一项任务，需要理解重点特征在哪里，抽象是非常难以做到的</p>
@@ -438,7 +438,7 @@
 <h4 id="Stroke-Initialization">Stroke Initialization</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIPasso/fig8.png" alt="avatar" style="zoom:60%;" /></div>
 <p>此外贝兹曲线的初始化，最开始的点放在哪也是很重要的，需要一个比较稳定的初始化方式，这里是saliency guided，一个预训练好的vision transformer，把最后一层的多头自注意力取个加权平均，去在更显著的区域采点</p>
-<h3 id="Result-6">Result</h3>
+<h3 id="Result-7">Result</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIPasso/fig9.png" alt="avatar" style="zoom:60%;" /></div>
 <p>可以对不常见的物体也生成简笔画</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIPasso/fig10.png" alt="avatar" style="zoom:60%;" /></div>
