@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/How%20Much%20Can%20CLIP%20Benefit%20Vision-and-Language%20Tasks%EF%BC%9F/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/GLIPv2%EF%BC%9AUnifying%20Localization%20and%20Vision-Language%20Understanding/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/12/14/VLMo%EF%BC%9AUnified%20Vision-Language%20Pre-Training%20with%20Mixture-of-Modality-Experts/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/12/09/DNABERT%EF%BC%9Apre-trained%20Bidirectional%20Encoder%20Representations%20from%20Transformers%20model%20for%20DNA-language%20in%20genome/</loc>
     <lastmod>2022-12-10</lastmod>
   </url>
@@ -41,11 +89,11 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
+    <loc>https://tyang816.github.io/2021/11/07/A%20Gentle%20Introduction%20to%20Graph%20Neural%20Networks/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2021/11/07/A%20Gentle%20Introduction%20to%20Graph%20Neural%20Networks/</loc>
+    <loc>https://tyang816.github.io/2022/02/07/Novelty%20in%20Science/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -229,10 +277,6 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
@@ -242,10 +286,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2021/11/06/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/09/05/GLIPv2%EF%BC%9AUnifying%20Localization%20and%20Vision-Language%20Understanding/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -341,10 +381,6 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
@@ -353,15 +389,7 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/How%20Much%20Can%20CLIP%20Benefit%20Vision-and-Language%20Tasks%EF%BC%9F/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -393,10 +421,6 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/06/24/Learning%20code%20summarization%20from%20a%20small%20and%20local%20dataset/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
@@ -422,10 +446,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/08/20/RoBERTa%EF%BC%9AA%20Robustly%20Optimized%20BERT%20Pretraining%20Approach/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -494,10 +514,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/11/InferCode%EF%BC%9ASelf-Supervised%20Learning%20of%20Code%20Representations%20by%20Predicting%20Subtrees/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -573,10 +589,6 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
@@ -634,10 +646,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/08/09/Language-Agnostic%20Representation%20Learning%20of%20Source%20Code%20from%20Structure%20and%20Context/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
