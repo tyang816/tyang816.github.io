@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/12/14/VLMo%EF%BC%9AUnified%20Vision-Language%20Pre-Training%20with%20Mixture-of-Modality-Experts/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
+    <lastmod>2022-12-14</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
     <lastmod>2022-12-14</lastmod>
   </url>
@@ -38,14 +50,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
-    <lastmod>2022-12-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/12/14/VLMo%EF%BC%9AUnified%20Vision-Language%20Pre-Training%20with%20Mixture-of-Modality-Experts/</loc>
-    <lastmod>2022-12-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
     <lastmod>2022-12-14</lastmod>
   </url>
   <url>
@@ -294,10 +298,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
