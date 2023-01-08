@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/01/07/Training%20language%20models%20to%20follow%20instructions%20with%20human%20feedback/</loc>
+    <lastmod>2023-01-08</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/12/19/A%20Neural%20Corpus%20Indexer%20for%20Document%20Retrieval/</loc>
     <lastmod>2022-12-19</lastmod>
   </url>
