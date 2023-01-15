@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2023/01/15/Image%20as%20a%20Foreign%20Language%EF%BC%9ABEiT%20Pretraining%20for%20All%20Vision%20and%20Vision-Language%20Tasks/</loc>
+    
+    <lastmod>2023-01-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2023/01/14/BLIP%EF%BC%9ABootstrapping%20Language-Image%20Pre-training%20for%20Unified%20Vision-Language%20Understanding%20and%20Generation/</loc>
+    
+    <lastmod>2023-01-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
+    
+    <lastmod>2023-01-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/</loc>
+    
+    <lastmod>2023-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2023/01/09/When%20Geometric%20Deep%20Learning%20Meets%20Pretrained%20Protein%20Language%20Models/</loc>
     
     <lastmod>2023-01-12</lastmod>
@@ -894,15 +930,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1804,7 +1831,7 @@
 
   <url>
     <loc>https://tyang816.github.io/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1812,147 +1839,154 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-GNN/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/other/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/logic/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/pytorch/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-ContraLern/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Meta/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Transformer/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Speech/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/BI/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/CL/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-CoT/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/CV/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-Multimodal/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-Object/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/SE/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-MoE/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Video/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/CL/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-Multimodal/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-Contralern/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-Object/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-GAN/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-CoT/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/SE/</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/tags/cs-MoE/</loc>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/IR/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Recom/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/tags/OS/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1961,49 +1995,49 @@
   
   <url>
     <loc>https://tyang816.github.io/categories/BlogNote/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/BookNote/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/DeepLearn/</loc>
-    <lastmod>2023-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/categories/MeetingNote/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/MIT-molecular-biology/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/categories/MeetingNote/</loc>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/PaperNote/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tyang816.github.io/categories/stanford-cs329p/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
