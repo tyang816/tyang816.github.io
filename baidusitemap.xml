@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/10/07/Biological%20structure%20and%20function%20emerge%20from%20scaling%20unsupervised%20learning%20to%20250%20million%20protein%20sequences/</loc>
+    <lastmod>2023-01-17</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2023/01/17/Toward%20More%20General%20Embeddings%20for%20Protein%20Design%EF%BC%9AHarnessing%20Joint%20Representations%20of%20Sequence%20and%20Structure/</loc>
+    <lastmod>2023-01-17</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/</loc>
+    <lastmod>2023-01-17</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/01/15/Image%20as%20a%20Foreign%20Language%EF%BC%9ABEiT%20Pretraining%20for%20All%20Vision%20and%20Vision-Language%20Tasks/</loc>
     <lastmod>2023-01-15</lastmod>
   </url>
@@ -741,15 +753,7 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/10/07/Biological%20structure%20and%20function%20emerge%20from%20scaling%20unsupervised%20learning%20to%20250%20million%20protein%20sequences/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/09/29/Evaluating%20Protein%20Transfer%20Learning%20with%20TAPE/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/10/08/Language%20models%20of%20protein%20sequences%20at%20the%20scale%20of%20evolution%20enable%20accurate%20structure%20prediction/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
