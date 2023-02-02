@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICML-2021 Learning inverse folding from millions of predicted structures | tyang</title>
+  <meta name="description" content="论文地址：Learning inverse folding from millions of predicted structures 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm  ESM-IF：额外使用UniRef50的12M数据做inverse fold Abstract 考虑从骨架原子坐标中预测蛋白质序列的任务，使用AlphaFold2预测了1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICML-2021 Learning inverse folding from millions of predicted structures">
+<meta property="og:url" content="https://tyang816.github.io/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Learning inverse folding from millions of predicted structures 论文实现：https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;esm  ESM-IF：额外使用UniRef50的12M数据做inverse fold Abstract 考虑从骨架原子坐标中预测蛋白质序列的任务，使用AlphaFold2预测了1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tabA.1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/figC.1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab3.png">
+<meta property="article:published_time" content="2023-02-02T06:02:08.000Z">
+<meta property="article:modified_time" content="2023-02-02T10:19:29.566Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cs.GNN">
+<meta property="article:tag" content="cs.Transformer">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearn/">DeepLearn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">167</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">89</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Contralern/" rel="tag">cs.Contralern</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.58px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.92px;">CV</a> <a href="/tags/IR/" style="font-size: 13.42px;">IR</a> <a href="/tags/OS/" style="font-size: 13.33px;">OS</a> <a href="/tags/SE/" style="font-size: 13.92px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.83px;">cs.ContraLern</a> <a href="/tags/cs-Contralern/" style="font-size: 13.08px;">cs.Contralern</a> <a href="/tags/cs-GAN/" style="font-size: 13.17px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.75px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.33px;">cs.Meta</a> <a href="/tags/cs-MoE/" style="font-size: 13px;">cs.MoE</a> <a href="/tags/cs-Multimodal/" style="font-size: 13.67px;">cs.Multimodal</a> <a href="/tags/cs-Object/" style="font-size: 13.33px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.25px;">cs.Recom</a> <a href="/tags/cs-Speech/" style="font-size: 13px;">cs.Speech</a> <a href="/tags/cs-Transformer/" style="font-size: 13.92px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.5px;">cs.Video</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.17px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/" class="title">ICML-2021 Learning inverse folding from millions of predicted structures</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-02-02T06:02:08.000Z" itemprop="datePublished">2023-02-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/24/Learning%20from%20Protein%20Structure%20with%20Geometric%20Vector%20Perceptrons/" class="title">ICLR-2021 Learning from Protein Structure with Geometric Vector Perceptrons</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-24T04:17:04.000Z" itemprop="datePublished">2023-01-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/18/Masked%20inverse%20folding%20with%20sequence%20transfer%20for%20protein%20representation%20learning/" class="title">bioRxiv-2022 Masked inverse folding with sequence transfer for protein representation learning</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-18T06:54:23.000Z" itemprop="datePublished">2023-01-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/17/Toward%20More%20General%20Embeddings%20for%20Protein%20Design%EF%BC%9AHarnessing%20Joint%20Representations%20of%20Sequence%20and%20Structure/" class="title">bioRxiv-2021 Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-17T06:40:41.000Z" itemprop="datePublished">2023-01-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/15/Image%20as%20a%20Foreign%20Language%EF%BC%9ABEiT%20Pretraining%20for%20All%20Vision%20and%20Vision-Language%20Tasks/" class="title">NIPS-2022 Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-15T02:39:04.000Z" itemprop="datePublished">2023-01-15</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Learning inverse folding from millions of predicted structures" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICML-2021 Learning inverse folding from millions of predicted structures
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/" class="article-date">
+	  <time datetime="2023-02-02T06:02:08.000Z" itemprop="datePublished">2023-02-02</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/" class="leancloud_visitors"  data-flag-title="ICML-2021 Learning inverse folding from millions of predicted structures">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 833(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2022.04.10.487779">Learning inverse folding from millions of predicted structures</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/facebookresearch/esm">https://github.com/facebookresearch/esm</a></p>
+</blockquote>
+<h2 id="ESM-IF：额外使用UniRef50的12M数据做inverse-fold">ESM-IF：额外使用UniRef50的12M数据做inverse fold</h2>
+<h3 id="Abstract-12">Abstract</h3>
+<p>考虑从骨架原子坐标中预测蛋白质序列的任务，使用AlphaFold2预测了12M蛋白质序列得到的结构数据来作为数据增强，在带有invariant geometric输入层的transformer得到了51% native sequence恢复率，对buried residues恢复为72%</p>
+<h3 id="Introduction-12">Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>设计编码具有所需特性的蛋白质的新型氨基酸序列，称为 de novo protein design</p>
+<p>这里主要探索预测出来的结构能否克服实验数据量的局限性，所以使用AlphaFold2预测UniRef50里12m的序列，即使预测的输入（即结构）质量较低，反翻译也能有效地从额外的目标数据（即序列）中学习</p>
+<h3 id="Learning-inverse-folding-from-predicted-structures">Learning inverse folding from predicted structures</h3>
+<p>给定骨架原子N，Cα，C原子坐标 $(x_1,…,x_i,…,x_{3n})$，目的预测蛋白质序列序列 $(y_1,…,y_i,…,y_n)$，使用自回归编码架构进行建模</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/frm1.png" alt="avatar" style="zoom:80%;" /></div>
+<h4 id="Data">Data</h4>
+<h5 id="Predicted-structures">Predicted structures</h5>
+<p>为了选择用来结构预测的序列，先用MSA Transformer对所有UniRef50序列的MSAs预测distograms，然后用distogram LDDT分数来代表预测质量进行排序，选取top 12m不超过500个氨基酸的输入AlphaFold2</p>
+<h5 id="Traning-and-evaluation-data">Traning and evaluation data</h5>
+<p>在CATH的一个结构保留子集上测试模型，在topology层划分80/10/10，16153训练，1457验证，1797测试。使用Gene3D topology classification过滤了使用在训练集作为有监督的序列，以及用于AlphaFlod2预测的MSA的输入</p>
+<h4 id="Model-architectures">Model architectures</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tabA.1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>使用GVP学习向量特征的旋转等变变换和标量特征的旋转不变变换，展示了三种模型的效果：GVP-GNN，GVP-GNN-large以及GVP-Transformer</p>
+<p>在反向折叠中，预测序列应该独立于结构坐标的参考框架。 对于输入坐标的任何旋转和平移 T，希望模型的输出在这些变换下不变，即 p(Y |X) = p(Y |T X)</p>
+<h5 id="GVP-GNN">GVP-GNN</h5>
+<p>3层encoder和3层decoder</p>
+<p>GVP-GNN的蛋白质结构表示为图，节点特征是从二面角导出的标量节点特征和从骨架原子的相对位置导出的矢量节点特征的组合，而边缘特征捕获附近氨基酸的相对位置</p>
+<p>训练的时候发现更深更宽的8层GVP-GNN效果更好</p>
+<h5 id="GVP-Transformer">GVP-Transformer</h5>
+<p>使用GVP-GNN encoder提取几何特征，然后跟上一个一般的自回归transformer模型</p>
+<h4 id="Training-2">Training</h4>
+<h5 id="Combining-experimental-and-predicted-data">Combining experimental and predicted data</h5>
+<p>训练每个epoch的时候混合了实验得到的结构（16K），以及10%随机采样12M数据，大概是1：80 实验：预测。对于更大的模型更高的预测数据比例有利于防止过拟合如图6b，但只在预测的数据上训练效果会变差</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/figC.1.png" alt="avatar" style="zoom:50%;" /></div>
+<p>掩盖了使用AlphaFold2置信度评分（pLDDT）低于90的预测输入坐标，约为预测坐标的25%，如图3是可视化；以及在每个序列前定义了一个Token指示这个结构是实验还是预测；对于每个残差，提供了来自AlphaFold2的pLDDT置信度值，作为一个由高斯径向基函数编码的特征，效果略好如图C.1</p>
+<h5 id="Span-masking">Span masking</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig4.png" alt="avatar" style="zoom:70%;" /></div>
+<p>随机选择30个氨基酸知道是整个输入骨架的15%做mask</p>
+<h3 id="Results-3">Results</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig5.png" alt="avatar" style="zoom:70%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab2.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig7.png" alt="avatar" style="zoom:50%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab3.png" alt="avatar" style="zoom:100%;" /></div>
+<HR align=left color=#987cb9 SIZE=1>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/" title="ICML-2021 Learning inverse folding from millions of predicted structures" target="_blank" rel="external">https://tyang816.github.io/2023/02/02/Learning inverse folding from millions of predicted structures/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/01/24/Learning%20from%20Protein%20Structure%20with%20Geometric%20Vector%20Perceptrons/" title="ICLR-2021 Learning from Protein Structure with Geometric Vector Perceptrons"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

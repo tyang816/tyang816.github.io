@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/</loc>
+    <lastmod>2023-02-02</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2023/01/17/Toward%20More%20General%20Embeddings%20for%20Protein%20Design%EF%BC%9AHarnessing%20Joint%20Representations%20of%20Sequence%20and%20Structure/</loc>
+    <lastmod>2023-02-02</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/01/24/Learning%20from%20Protein%20Structure%20with%20Geometric%20Vector%20Perceptrons/</loc>
     <lastmod>2023-01-29</lastmod>
   </url>
@@ -11,10 +19,6 @@
   <url>
     <loc>https://tyang816.github.io/2023/01/18/Masked%20inverse%20folding%20with%20sequence%20transfer%20for%20protein%20representation%20learning/</loc>
     <lastmod>2023-01-19</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2023/01/17/Toward%20More%20General%20Embeddings%20for%20Protein%20Design%EF%BC%9AHarnessing%20Joint%20Representations%20of%20Sequence%20and%20Structure/</loc>
-    <lastmod>2023-01-18</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/10/07/Biological%20structure%20and%20function%20emerge%20from%20scaling%20unsupervised%20learning%20to%20250%20million%20protein%20sequences/</loc>
