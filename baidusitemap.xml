@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/02/12/Holistic%20Evaluation%20of%20Language%20Models/</loc>
+    <lastmod>2023-02-13</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/02/02/Learning%20inverse%20folding%20from%20millions%20of%20predicted%20structures/</loc>
     <lastmod>2023-02-02</lastmod>
   </url>
