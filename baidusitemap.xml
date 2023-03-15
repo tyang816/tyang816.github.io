@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tyang816.github.io/2023/03/14/Tranception%EF%BC%9Aprotein%20fitness%20prediction%20with%20autoregressive%20transformers%20and%20inference-time%20retrieval/</loc>
-    <lastmod>2023-03-14</lastmod>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2023/03/14/Language%20models%20enable%20zero-shot%20prediction%20of%20the%20effects%20of%20mutations%20on%20protein%20function/</loc>
+    <lastmod>2023-03-15</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2023/02/27/T2I-Adapter%EF%BC%9ALearning%20Adapters%20to%20Dig%20out%20More%20Controllable%20Ability%20for%20Text-to-Image%20Diffusion%20Models/</loc>
