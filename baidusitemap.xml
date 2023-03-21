@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/03/19/Accurate%20and%20ef%EF%AC%81cient%20protein%20sequence%20design%20through%20learning%20concise%20local%20environment%20of%20residues/</loc>
+    <lastmod>2023-03-21</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/03/14/Tranception%EF%BC%9Aprotein%20fitness%20prediction%20with%20autoregressive%20transformers%20and%20inference-time%20retrieval/</loc>
     <lastmod>2023-03-15</lastmod>
   </url>
