@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback | tyang</title>
+  <meta name="description" content="论文地址：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2204.05862.pdf 论文实现：https:&#x2F;&#x2F;github.com&#x2F;anthropics&#x2F;hh-rlhf  hh-rlhf：偏好模型+人类反馈微调 Abstract 用RLHF来对语言模型做微调很有帮助，并且发现和人类行为的对齐训练（alignment training）可以提升几乎所有自然语言的评估性能，特别是像python co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback">
+<meta property="og:url" content="https://tyang816.github.io/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2204.05862.pdf 论文实现：https:&#x2F;&#x2F;github.com&#x2F;anthropics&#x2F;hh-rlhf  hh-rlhf：偏好模型+人类反馈微调 Abstract 用RLHF来对语言模型做微调很有帮助，并且发现和人类行为的对齐训练（alignment training）可以提升几乎所有自然语言的评估性能，特别是像python co">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm2.1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig9.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig13.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig14.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig15.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig16.png">
+<meta property="article:published_time" content="2023-03-15T12:48:24.000Z">
+<meta property="article:modified_time" content="2023-03-26T13:10:28.407Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cs.Transformer">
+<meta property="article:tag" content="CL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearn/">DeepLearn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">176</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">92</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Contralern/" rel="tag">cs.Contralern</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">30</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.57px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/IR/" style="font-size: 13.36px;">IR</a> <a href="/tags/OS/" style="font-size: 13.29px;">OS</a> <a href="/tags/SE/" style="font-size: 13.79px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.71px;">cs.ContraLern</a> <a href="/tags/cs-Contralern/" style="font-size: 13.07px;">cs.Contralern</a> <a href="/tags/cs-GAN/" style="font-size: 13.14px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.64px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.29px;">cs.Meta</a> <a href="/tags/cs-MoE/" style="font-size: 13px;">cs.MoE</a> <a href="/tags/cs-Multimodal/" style="font-size: 13.5px;">cs.Multimodal</a> <a href="/tags/cs-Object/" style="font-size: 13.29px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.21px;">cs.Recom</a> <a href="/tags/cs-Speech/" style="font-size: 13px;">cs.Speech</a> <a href="/tags/cs-Transformer/" style="font-size: 13.93px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.43px;">cs.Video</a> <a href="/tags/cs-diffusion/" style="font-size: 13px;">cs.diffusion</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/27/DeepTP%EF%BC%9AA%20Deep%20Learning%20Model%20for%20Thermophilic%20Protein%20Prediction/" class="title">International Journal of Molecular Sciences-2023 DeepTP：A Deep Learning Model for Thermophilic Protein Prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-27T13:46:21.000Z" itemprop="datePublished">2023-03-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/26/AIM%EF%BC%9AAdapting%20Image%20Models%20for%20Efficient%20Video%20Action%20Recognition/" class="title">ICLR-2023 AIM：Adapting Image Models for Efficient Video Action Recognition</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-26T13:17:46.000Z" itemprop="datePublished">2023-03-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/26/Parameter-Efficient%20Transfer%20Learning%20for%20NLP/" class="title">ICML-2019 Parameter-Efficient Transfer Learning for NLP</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-26T12:41:36.000Z" itemprop="datePublished">2023-03-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/19/Accurate%20and%20ef%EF%AC%81cient%20protein%20sequence%20design%20through%20learning%20concise%20local%20environment%20of%20residues/" class="title">Bioinformatics-2023 Accurate and efﬁcient protein sequence design through learning concise local environment of residues</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-19T13:23:11.000Z" itemprop="datePublished">2023-03-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/" class="title">arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-15T12:48:24.000Z" itemprop="datePublished">2023-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/CL/Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/" class="article-date">
+	  <time datetime="2023-03-15T12:48:24.000Z" itemprop="datePublished">2023-03-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>, <a class="article-tag-link-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/" class="leancloud_visitors"  data-flag-title="arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2.1k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 7(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2204.05862.pdf">https://arxiv.org/pdf/2204.05862.pdf</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/anthropics/hh-rlhf">https://github.com/anthropics/hh-rlhf</a></p>
+</blockquote>
+<h2 id="hh-rlhf：偏好模型-人类反馈微调">hh-rlhf：偏好模型+人类反馈微调</h2>
+<h3 id="Abstract-42">Abstract</h3>
+<p>用RLHF来对语言模型做微调很有帮助，并且发现和人类行为的对齐训练（alignment training）可以提升几乎所有自然语言的评估性能，特别是像python coding或做summarization。还做了迭代的在线训练，每个星期会用新的人类反馈来更新模型和RL策略，这能提升数据和模型质量。RL reward调过的模型和KL散度的平方根大致有一个线性关系</p>
+<h3 id="Introduction-38">Introduction</h3>
+<p>训练的模型需要有帮助，输出真实，输出无害等</p>
+<p>分别做了有效性和无害性的任务，都标注数据。对有效性对标注工去问模型一些纯文本的任务，比如问答，写作或改文档，讨论方案等。对无害性让标注工引诱模型讲违背规则的话，比如抢银行，骂人等。当然因为任务可能带有刺激人的心理或压力，所以两个任务交替来平复标注工的心情，主要让标注工给两种回答：better or worse</p>
+<p>有效性和无害性往往有冲突，比如馊主意有效但有害，平庸的方案无害但无用。但实际上发现两个数据集放一起训练问题也不大</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>图1可以看出在线模型提升性能很大，需要显式的建模模型不作恶</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>在小模型上做对齐后再其他的任务上performance会下降，但参数量更大后反而更好一些</p>
+<h4 id="Contribution">Contribution</h4>
+<ul>
+<li>收集了一个多轮对话数据集</li>
+<li>小模型有严重的对齐税，对齐后别的性能下降了；有用性和无害性有一定的冲突</li>
+</ul>
+<h4 id="Related-Work-2">Related Work</h4>
+<p>LaMDA标了一些数据微调了一下</p>
+<p>InstructGPT有一个有监督学习的步骤，用人标注的数据来微调一下。但是本文直接使用了RL技术（用了一个context distillation，更多像一个prompt技术），增加了一个无害性的指标，奖励模型是6B，比较关键的就是做了在线</p>
+<h3 id="Data-Collection">Data Collection</h3>
+<p>人类有很复杂的容易表达的直觉，但是很难用公式化呈现（有效性和有害性很难用公式呈现出来），所以要用人类反馈的自然语言对话来表达人类的逻辑</p>
+<h4 id="Task-Specification-and-Crowdworkers">Task Specification and Crowdworkers</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+<p>随机查标注工的问题写的好不好，更好的问题能和AI有更好的互动，而不是看标签质量高不高，这样更加简单也更加直观（请了给标注人员标注的标注人员）</p>
+<p>要求标注人员有有效性和无害性，但没做更多的限制，这样可以保证数据的多样性</p>
+<p>具体做法：</p>
+<ul>
+<li>至少是美国硕士文凭的标注人员</li>
+<li>表现最好的20个标了80%的数据，按数据量计费</li>
+<li>把最好的worker之间建立交流频道，不断的反馈沟通</li>
+<li>还在Upwork上找标注工，按小时计费，可以对话做的比较长</li>
+</ul>
+<p>标注工也不是持续的，为了节省成本也没有让标注工检查模型输出是不是对的，在模型的真实性上有一定降低</p>
+<h4 id="Helpfulness-and-Harmlessness-Red-Teaming-Datasets">Helpfulness and Harmlessness (Red Teaming) Datasets</h4>
+<p>两边同时训练容易导致分裂，未来可能解决</p>
+<h4 id="Models-Deployed-to-the-Feedback-Interface-and-Associated-Data-Distributions">Models Deployed to the Feedback Interface and Associated Data Distributions</h4>
+<ul>
+<li>HHH Context-Distilled 52B Language Model：上下文蒸馏出来的一个模型，最开始的模型</li>
+<li>Rejection Smapling (RS)：在上面模型基础输出的样本上训练一个一个52B的偏好模型（奖励函数）判断生成答案的质量，取k个答案出来比如k=16，再用判断好坏</li>
+<li>RLHF-Finetuned Models：继续标注继续微调</li>
+</ul>
+<p>最后阶段主要就是用之前微调好的模型不断微调，也可能多个模型同时部署，因为微调后不见得比没微调更好</p>
+<p>根据三种模型把数据也分成下面三块：</p>
+<ul>
+<li>最原始的数据，42k有效性对话，42k有害性对话</li>
+<li>通过Reject sampling做出52k个有效对话和2k有害对话</li>
+<li>在线数据有效性22k，没有有害性的</li>
+</ul>
+<h4 id="Comparing-Models-with-Elo-Scores">Comparing Models with Elo Scores</h4>
+<p>比较两个模型好坏的Elo分数，A模型打败B模型的赢率是多少，A模型的输出有多少比B模型好，越高越好</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm2.1.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Preference-Modeling-for-Helpfulness-and-Harmlessness">Preference Modeling for Helpfulness and Harmlessness</h4>
+<h4 id="Models-and-Training-Setup">Models and Training Setup</h4>
+<p>从13M到52B都训练了喜好模型（PM），主要是三个阶段：</p>
+<ul>
+<li>所有文本预训练</li>
+<li>喜好模型预训练（PMP）
+<ul>
+<li>学习率1e-3，在StackExchange，Reddit和wikipedia上构造对比数据，上下文窗口1024</li>
+</ul>
+</li>
+<li>人类反馈上做微调
+<ul>
+<li>学习率1e-5，窗口2048</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig7.png" alt="avatar" style="zoom:100%;" /></div>
+<p>数据指数提升性能线性提升，同样的数据参数越大越好；有用性更加多样一点</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig8.png" alt="avatar" style="zoom:100%;" /></div>
+<p>对话轮数的数据集，轮数变多了性能变低</p>
+<h4 id="Calibration-of-Preference-Models-and-Implications-for-RL">Calibration of Preference Models and Implications for RL</h4>
+<p>模型是否被校验过，预测分数和真实的赢率是不是一致性的关系</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig9.png" alt="avatar" style="zoom:100%;" /></div>
+<p>给一堆数据算喜好模型的分数差，代入Δ算出概率，模型线和黑色的线吻合就说明预测值和真实分数赢率（标注决定的）有映射关系的；有效性估计是比较准的</p>
+<p>这个PM分数很重要因为这个会作为强化学习的信号，越准训练肯定更好</p>
+<p>当样本都很好的时候人类打分，模型打分都变得困难，所以还是要做这种在线学习，重新训练使得分数区分更加准确</p>
+<h3 id="Reinforcement-Learning-from-Human-Feedback">Reinforcement Learning from Human Feedback</h3>
+<h4 id="Training-Setup">Training Setup</h4>
+<ul>
+<li>先用对比的数据把喜好模型训练出来</li>
+<li>训练RL policy生成喜好模型觉得分数比较高的结果</li>
+</ul>
+<p>使用PPO算法，优化模型使得PM给的分数是最高的，同时也不能和原本的模型离太远</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>这里使用 $\lambda_{KL}=0.001$ 用大了就训练不出来了，D_KL也是&lt;100的，后面这块可能就很小，可能就没有太大的必要</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>两个答案A和B算出A比B好的概率，用这个分数做奖励因为之前大家都这么用的</p>
+<p>训练用的对话可以用之前的数据也可以生成，使用few-shot learning，已知10个比较高质量的queries让最大的模型去生成更多的东西。137k个标注的，369k个生成的</p>
+<h4 id="Robustness-Experiments">Robustness Experiments</h4>
+<p>主要是喜好模型的稳健性，应该和人对齐，但随着数据不一样也可能会评估不准，特别是两个答案都比较好的情况下</p>
+<p>把标注的数据分为两块，每一块训练一个模型，一个叫train PM一个test PM，用train PM来指导模型再回过头看在test PM上也会更高，如果这样说明是比较稳健的，反之过度优化模型而没有提升</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<p>PM分数过了一个点后在测试上增加也不高，有点过拟合了</p>
+<h4 id="An-Approximately-Linear-Relation-Between-sqrt-D-KL-and-Reward">An Approximately Linear Relation Between $\sqrt{D_{KL}}$ and Reward</h4>
+<p>更新不远的时候模型效果和KL三度开根号有线性效果，有这个关系可以估计出多少的数据可以在多大的模型上更新出多好的效果</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig13.png" alt="avatar" style="zoom:100%;" /></div>
+<p>数据变多测试PM上的分数也是在提升的</p>
+<h4 id="Tension-Between-Helpfulness-and-Harmlessness-in-RLHF-Training">Tension Between Helpfulness and Harmlessness in RLHF Training</h4>
+<p>比如生病了问模型，模型会尽量给出“不知道”，有点过度优化了无害性而弱化了有用性</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig14.png" alt="avatar" style="zoom:100%;" /></div>
+<p>两个数据集的分布相差比较大，没有更好的办法就多采样有效性数据</p>
+<h4 id="Iterated-Online-RLHF">Iterated Online RLHF</h4>
+<p>PM在高分数的地方校验性鲁棒性会变差，要重新更新喜好模型，迭代式的online RLHF：</p>
+<ul>
+<li>找到最好的RLHF策略，从标注工收集数据，然后重新训练，在高分数答案上分布更准确</li>
+<li>新数据和老数据混合一起重新训练一个PM</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig15.png" alt="avatar" style="zoom:100%;" /></div>
+<p>整个模型在分数上确实有提升</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig16.png" alt="avatar" style="zoom:100%;" /></div>
+<p>用在线和老数据混合情况下模型得到的答案会更准一些</p>
+<HR align=left color=#987cb9 SIZE=1>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2023/03/15/Training%20a%20Helpful%20and%20Harmless%20Assistant%20with%20Reinforcement%20Learning%20from%20Human%20Feedback/" title="arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback" target="_blank" rel="external">https://tyang816.github.io/2023/03/15/Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2023/03/19/Accurate%20and%20ef%EF%AC%81cient%20protein%20sequence%20design%20through%20learning%20concise%20local%20environment%20of%20residues/" title="Bioinformatics-2023 Accurate and efﬁcient protein sequence design through learning concise local environment of residues"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2023/03/14/Language%20models%20enable%20zero-shot%20prediction%20of%20the%20effects%20of%20mutations%20on%20protein%20function/" title="NIPS-2021 Language models enable zero-shot prediction of the effects of mutations on protein function"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
