@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2022/10/03/MSA%20Transformer/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2023/06/11/Structure-informed%20Language%20Models%20Are%20Protein%20Designers/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/05/21/Ankh%EF%BC%9AOptimized%20Protein%20Language%20Model%20Unlocks%20General-Purpose%20Modelling/</loc>
     <lastmod>2023-05-21</lastmod>
   </url>
@@ -802,10 +810,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/10/03/MSA%20Transformer/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
