@@ -2,6 +2,402 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/24/UniXcoder%EF%BC%9AUnified%20Cross-Modal%20Pre-training%20for%20Code%20Representation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/11/13/Supervised%20Contrastive%20Learning%20for%20Pre-trained%20Language%20Model%20Fine-tuning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/ActionCLIP%EF%BC%9AA%20New%20Paradigm%20for%20Video%20Action%20Recognition/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/PointCLIP%EF%BC%9APoint%20Cloud%20Understanding%20by%20CLIP/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/12/14/VLMo%EF%BC%9AUnified%20Vision-Language%20Pre-Training%20with%20Mixture-of-Modality-Experts/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/06/08/HELoC%EF%BC%9AHierarchical%20Contrastive%20Learning%20of%20Source%20Code%20Representation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/21/Bootstrap%20your%20own%20latent%EF%BC%9AA%20new%20approach%20to%20self-supervised%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/CLIP4Clip%EF%BC%9AAn%20Empirical%20Study%20of%20CLIP%20for%20End%20to%20End%20Video%20Clip%20Retrieval/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/CLIPasso%EF%BC%9ASemantically-Aware%20Object%20Sketching/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/GLIPv2%EF%BC%9AUnifying%20Localization%20and%20Vision-Language%20Understanding/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/04/GroupViT%EF%BC%9ASemantic%20Segmentation%20Emerges%20from%20Text%20Supervision/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2023/01/15/Image%20as%20a%20Foreign%20Language%EF%BC%9ABEiT%20Pretraining%20for%20All%20Vision%20and%20Vision-Language%20Tasks/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/10/Improved%20Baselines%20with%20Momentum%20Contrastive%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/07/10/Graph%20Contrastive%20Learning%20with%20Augmentations/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/10/03/MSA%20Transformer/</loc>
     
     <lastmod>2023-06-15</lastmod>
@@ -200,36 +596,9 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2023/01/15/Image%20as%20a%20Foreign%20Language%EF%BC%9ABEiT%20Pretraining%20for%20All%20Vision%20and%20Vision-Language%20Tasks/</loc>
-    
-    <lastmod>2023-01-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2023/01/14/BLIP%EF%BC%9ABootstrapping%20Language-Image%20Pre-training%20for%20Unified%20Vision-Language%20Understanding%20and%20Generation/</loc>
     
     <lastmod>2023-01-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
-    
-    <lastmod>2023-01-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/Can%20Language%20Understand%20Depth%EF%BC%9F/</loc>
-    
-    <lastmod>2023-01-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -272,24 +641,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/12/14/VLMo%EF%BC%9AUnified%20Vision-Language%20Pre-Training%20with%20Mixture-of-Modality-Experts/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/07/29/ViLT%EF%BC%9AVision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision/</loc>
     
     <lastmod>2022-12-14</lastmod>
@@ -299,88 +650,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/07/03/SynCoBERT%EF%BC%9ASyntax-Guided%20Multi-Modal%20Contrastive%20Pre-Training%20for%20Code%20Representation/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/08/11/CODE-MVP%EF%BC%9ALearning%20to%20Represent%20Source%20Code%20from%20Multiple%20Views%20with%20Contrastive%20Pre-Training/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/05/Grounded%20Language-Image%20Pre-training/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/03/Language-driven%20Semantic%20Segmentation/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/09/17/How%20Much%20Can%20CLIP%20Benefit%20Vision-and-Language%20Tasks%EF%BC%9F/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/05/GLIPv2%EF%BC%9AUnifying%20Localization%20and%20Vision-Language%20Understanding/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/07/08/Hierarchical%20Text-Conditional%20Image%20Generation%20with%20CLIP%20Latents/</loc>
-    
-    <lastmod>2022-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/02/11/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision/</loc>
     
     <lastmod>2022-12-14</lastmod>
     
@@ -416,34 +686,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
-    
-    <lastmod>2022-11-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/11/13/Supervised%20Contrastive%20Learning%20for%20Pre-trained%20Language%20Model%20Fine-tuning/</loc>
-    
-    <lastmod>2022-11-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/11/19/Robust%20Speech%20Recognition%20via%20Large-Scale%20Weak%20Supervision/</loc>
-    
-    <lastmod>2022-11-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
     
     <lastmod>2022-11-19</lastmod>
     
@@ -794,25 +1037,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/09/17/ActionCLIP%EF%BC%9AA%20New%20Paradigm%20for%20Video%20Action%20Recognition/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2021/12/08/An%20Image%20is%20Worth%2016x16%20Words%EF%BC%9ATransformers%20for%20Image%20Recognition%20at%20Scale/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/27/Exploring%20Simple%20Siamese%20Representation%20Learning/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -848,15 +1073,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/09/17/PointCLIP%EF%BC%9APoint%20Cloud%20Understanding%20by%20CLIP/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/01/15/Swin%20Transformer%EF%BC%9AHierarchical%20Vision%20Transformer%20using%20Shifted%20Windows/</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -867,15 +1083,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/05/Unsupervised%20Feature%20Learning%20via%20Non-Parametric%20Instance-level%20Discrimination/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -902,24 +1109,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/01/16/Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/CLIP4Clip%EF%BC%9AAn%20Empirical%20Study%20of%20CLIP%20for%20End%20to%20End%20Video%20Clip%20Retrieval/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2021/11/06/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -938,43 +1127,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/02/25/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/CLIPasso%EF%BC%9ASemantically-Aware%20Object%20Sketching/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/24/BYOL%20works%20even%20without%20batch%20statistics/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -992,34 +1145,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/04/17/Beyond%20Short%20Snippets%EF%BC%9ADeep%20Networks%20for%20Video%20Classification/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1046,43 +1172,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/01/21/Bootstrap%20your%20own%20latent%EF%BC%9AA%20new%20approach%20to%20self-supervised%20Learning/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/10/Improved%20Baselines%20with%20Momentum%20Contrastive%20Learning/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/04/17/Large-scale%20Video%20Classification%20with%20Convolutional%20Neural%20Networks/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/04/Representation%20Learning%20with%20Contrastive%20Predictive%20Coding/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1119,24 +1209,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/05/02/SlowFast%20Networks%20for%20Video%20Recognition/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/09/04/GroupViT%EF%BC%9ASemantic%20Segmentation%20Emerges%20from%20Text%20Supervision/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1433,15 +1505,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/09/24/UniXcoder%EF%BC%9AUnified%20Cross-Modal%20Pre-training%20for%20Code%20Representation/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -1488,15 +1551,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/02/17/A%20Novel%20Neural%20Source%20Code%20Representation%20Based%20on%20Abstract%20Syntax%20Tree/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/03/25/Contrastive%20Code%20Representation%20Learning/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1578,15 +1632,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/02/28/Retrieval-Augmented%20Generation%20for%20Code%20Summarization%20via%20Hybrid%20GNN/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/02/12/Self-Supervised%20Contrastive%20Learning%20for%20Code%20Retrieval%20and%20Summarization%20via%20Semantic-Preserving%20Transformations/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1677,15 +1722,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/07/24/A%20Multi-Modal%20Transformer-based%20Code%20Summarization%20Approach%20for%20Smart%20Contracts/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/06/08/HELoC%EF%BC%9AHierarchical%20Contrastive%20Learning%20of%20Source%20Code%20Representation/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -1874,33 +1910,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/04/02/AI%20Index%20Report/</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -1920,15 +1929,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/01/08/Advancing%20mathematics%20by%20guiding%20human%20intuition%20with%20AI/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/07/10/Graph%20Contrastive%20Learning%20with%20Augmentations/</loc>
     
     <lastmod>2022-11-14</lastmod>
     
@@ -2120,13 +2120,6 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/cs-Video/</loc>
-    <lastmod>2023-06-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/cs-Contralern/</loc>
     <lastmod>2023-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
