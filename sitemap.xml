@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
+    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
+    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -227,15 +227,6 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/2022/01/21/Bootstrap%20your%20own%20latent%EF%BC%9AA%20new%20approach%20to%20self-supervised%20Learning/</loc>
-    
-    <lastmod>2023-06-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tyang816.github.io/2022/09/17/CLIP4Clip%EF%BC%9AAn%20Empirical%20Study%20of%20CLIP%20for%20End%20to%20End%20Video%20Clip%20Retrieval/</loc>
     
     <lastmod>2023-06-15</lastmod>
@@ -246,6 +237,15 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/09/17/CLIPasso%EF%BC%9ASemantically-Aware%20Object%20Sketching/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tyang816.github.io/2022/01/21/Bootstrap%20your%20own%20latent%EF%BC%9AA%20new%20approach%20to%20self-supervised%20Learning/</loc>
     
     <lastmod>2023-06-15</lastmod>
     
@@ -947,6 +947,15 @@
   </url>
   
   <url>
+    <loc>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</loc>
+    
+    <lastmod>2022-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
     
     <lastmod>2022-11-14</lastmod>
@@ -957,15 +966,6 @@
   
   <url>
     <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
-    
-    <lastmod>2022-11-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</loc>
     
     <lastmod>2022-11-14</lastmod>
     

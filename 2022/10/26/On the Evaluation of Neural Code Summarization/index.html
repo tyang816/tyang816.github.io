@@ -413,9 +413,9 @@
 <p>比较实在的一篇文章，实验内容很详尽</p>
 </blockquote>
 <h2 id="CodeSumEvaluation：不同指标对模型结果影响">CodeSumEvaluation：不同指标对模型结果影响</h2>
-<h3 id="Abstract-123">Abstract</h3>
+<h3 id="Abstract-122">Abstract</h3>
 <p>本文系统性地在5个SOTA模型上，用6个广泛使用的BLEU变种，4种预处理操作和组合，3种广泛使用的数据集上进行了实验，评估结果表明一些因素对模型性能和模型之间的排名有很大影响。特别是1. BLEU指标的不同变种对模型结果有很大影响，此外本文还解决了在常用的包里面BLEU计算的未知bug，最终进行人工评估发现BLEU-DC是最适合人类的观念；2. 代码预处理选择有很大（-18%到+25%）的影响；3. 重要数据集的特征（语料大小，数据切分方法和重复率）对模型评估有很大影响。本文对不同场景下选择最佳方法提出了建议，并且分享了一个工具包</p>
-<h3 id="Introduction-103">Introduction</h3>
+<h3 id="Introduction-102">Introduction</h3>
 <p>本文聚焦一个问题：怎么更准确和全面的评估代码摘要模型</p>
 <ul>
 <li>
@@ -466,7 +466,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab2.png" alt="avatar" style="zoom:50%;" /></div>
 <p>表1是谷歌对BLEU分数的解释</p>
 <p>表2是现有方法在文章里汇报的分数，虽然astattgru只有19.61，Deepcom有38.17，但实际上astattgru比Deepcom还相对好一些</p>
-<h3 id="Experiment-54">Experiment</h3>
+<h3 id="Experiment-53">Experiment</h3>
 <h4 id="Experimental-Settings">Experimental Settings</h4>
 <p>实验在252GB主内存的机器和4张v100 32G，最大200个epoch，patience=20，每个实验进行了3次</p>
 <h4 id="Analysis-of-Different-Evaluation-Metrics">Analysis of Different Evaluation Metrics</h4>
