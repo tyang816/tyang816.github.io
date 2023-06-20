@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/06/19/PoET%EF%BC%9AA%20generative%20model%20of%20protein%20families%20as%20sequences-of-sequences/</loc>
+    <lastmod>2023-06-20</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/03/30/Text%20and%20Code%20Embeddings%20by%20Contrastive%20Pre-Training/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
@@ -413,15 +417,15 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/06/15/5.4%20Stacking/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/06/17/9.1%20%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</loc>
+    <lastmod>2022-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/06/13/5.3%20Boosting/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
