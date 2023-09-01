@@ -403,9 +403,9 @@
 <p>而Transformer和BERT都是想做技术上的提升，一个是想解决端到端的翻译问题，一个是想将CV领域的预训练和微调方式用到NLP领域，这种技术提升更容易复现</p>
 </blockquote>
 <h2 id="GPT：NLP预训练系列之一">GPT：NLP预训练系列之一</h2>
-<h3 id="Abstract-34">Abstract</h3>
+<h3 id="Abstract-36">Abstract</h3>
 <p>标好的数据是比较少的，因此这么训练比较难，但是有大量的没有标注的数据，用预训练的方法或许更好。在NLP领域每个任务都去构造自己的模型，作者提出只改变输入而不改变模型的方法（GPT在BERT之前，所以创新度更好）。</p>
-<h3 id="Introduction-31">Introduction</h3>
+<h3 id="Introduction-33">Introduction</h3>
 <ol>
 <li>
 <p>当时利用无监督的文本最好的模型还是词嵌入模型（word embedding）</p>
@@ -421,7 +421,7 @@
 <p>作者提出了一种半监督的方法在没有标号的数据上训练一个比较大的语言模型，模型基于Transformer架构，作者觉得这种架构能够有结构的记忆，能够处理更长的文本，抽取出更好的句子层面和段落层面的语义信息；迁移的时候做的是任务相关的迁移表示</p>
 </li>
 </ol>
-<h3 id="Model-4">Model</h3>
+<h3 id="Model-5">Model</h3>
 <p>最大化似然概率如下，$u$ 指一个个词，$\Phi$ 指模型</p>
 <p>$$<br>
 L_1(U)=\sum_i \log P(u_i|u_{i-k},…,u_i-1;\Phi)<br>
