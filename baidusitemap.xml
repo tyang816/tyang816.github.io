@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/09/30/PEER%EF%BC%9AA%20Comprehensive%20and%20Multi-Task%20Benchmark%20for%20Protein%20Sequence%20Understanding/</loc>
+    <lastmod>2023-09-30</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/09/16/DeepLoc%202.0%EF%BC%9Amulti-label%20subcellular%20localization%20prediction%20using%20protein%20language%20models/</loc>
     <lastmod>2023-09-16</lastmod>
   </url>
