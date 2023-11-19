@@ -419,14 +419,14 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="http://lin-group.cn/server/iThermo/index.html">http://lin-group.cn/server/iThermo/index.html</a></p>
 </blockquote>
 <h2 id="iThermo：手工特征-特征选择-MLP预测">iThermo：手工特征+特征选择+MLP预测</h2>
-<h3 id="Abstract-36">Abstract</h3>
+<h3 id="Abstract-65">Abstract</h3>
 <p>嗜热蛋白在生物技术和工业过程都有重要应用，因此需要一个快而准确的方法来识别嗜热蛋白。构建了一个1,368嗜热蛋白和1,445非嗜热蛋白的benchmark dataset，使用MLP和多特征融合策略来从非嗜热蛋白中识别出嗜热蛋白，准确度可以达到96.26%</p>
-<h3 id="Introduction-33">Introduction</h3>
+<h3 id="Introduction-60">Introduction</h3>
 <p>一般来说，在最佳生长温度（OGT）低于50◦C下生存的生物被认为是中温生物，而在50◦C或以上的OGT下生存的生物被称为嗜热生物，热稳定的蛋白质，甚至能有效抵抗高达120◦C的高温</p>
 <p>关于嗜热蛋白的研究已经有很多了。研究发现，蛋白质的热稳定性与蛋白质中<strong>氨基酸的分布</strong>、<strong>二肽组成</strong>（DC）、<strong>疏水性</strong>、<strong>氢键</strong>、<strong>残基</strong>和<strong>残基间接触</strong>、<strong>螺旋极性表面</strong>、<strong>侧链相互作用</strong>和<strong>盐桥</strong>有关</p>
 <h3 id="Materials-and-Methods-2">Materials and Methods</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/iThermo/fig1.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Dataset-3">Dataset</h4>
+<h4 id="Dataset-6">Dataset</h4>
 <p>在先前的研究中，学者把50°作为一个截止点来构建一个基准数据集。然而，这一标准似乎并不客观，因为蛋白质即使在微生物的OGT值以上也可能是稳定的，在50以下的负样本在60以上其实也能生存这就导致了混乱。例如，生活在45◦C的微生物产生的蛋白质在60◦C时可能不会变性</p>
 <p>为了消除这种情况采用分类是60°以上嗜热，30°以下不嗜热</p>
 <p>所有蛋白都是从UniPort里抓取的，随后，我们采用以下步骤来确保蛋白质数据的质量：</p>
@@ -704,20 +704,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

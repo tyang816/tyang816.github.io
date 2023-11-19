@@ -406,9 +406,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/DeepGraphLearning/GearNet">https://github.com/DeepGraphLearning/GearNet</a></p>
 </blockquote>
 <h2 id="ESM-GearNet-多视图对比学习ESM-1b-GearNet">ESM-GearNet: 多视图对比学习ESM-1b+GearNet</h2>
-<h3 id="Abstract-10">Abstract</h3>
+<h3 id="Abstract-42">Abstract</h3>
 <p>预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文探究了不同的结合结构编码器和PLM编码器的组合，提出了ESM-GearNet，使用对比学习预训练，蛋白质结构和其子序列结构对齐</p>
-<h3 id="Introduction-9">Introduction</h3>
+<h3 id="Introduction-39">Introduction</h3>
 <p>通过掩码语言建模损失进行预先训练，现有的PLM可以很好地捕获共同进化信息和隐式捕获残留间的接触信息。然而，由于它们没有明确地将蛋白质结构作为输入，因此它们是否能够捕获详细的蛋白质结构特征是值得怀疑的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 <h3 id="Methods-3">Methods</h3>
@@ -417,18 +417,18 @@
 <p>为了避免大幅改变模型表征，使用了比ESM-1b和GearNet更小的学习率</p>
 <h4 id="Pre-training-ESM-GearNet-with-Unlabeled-Protein-Structures">Pre-training ESM-GearNet with Unlabeled Protein Structures</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<h3 id="Experiments-2">Experiments</h3>
+<h3 id="Experiments-8">Experiments</h3>
 <h4 id="Experimental-Setup">Experimental Setup</h4>
 <h5 id="Pre-training-dataset">Pre-training dataset</h5>
 <p>AF数据库的v1和v2，365K个蛋白质组预测和440K的swiss-prot预测</p>
 <h5 id="Downstream-datasets">Downstream datasets</h5>
 <p>Enzyme Commission (EC) number prediction</p>
 <p>Gene Ontology (GO) term prediction molecular function (MF)包括biological process (BP) and cellular component (CC)</p>
-<h5 id="Training">Training</h5>
+<h5 id="Training-2">Training</h5>
 <p>50 epochs on AlphaFold Database and for 200 epochs on EC and GO prediction</p>
 <p>多视图对比学习裁剪的子序列长为50，mask ratio为15%，InfoNCE loss的temperature为0.07，batch size为256，学习率2e-4</p>
 <p>下游任务batch size为2，学习率1e-4，ReduceLROnPlateau scheduler with factor 0.6 and patience 5</p>
-<h4 id="Results-5">Results</h4>
+<h4 id="Results-9">Results</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab2.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab3.png" alt="avatar" style="zoom:70%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>
@@ -646,20 +646,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

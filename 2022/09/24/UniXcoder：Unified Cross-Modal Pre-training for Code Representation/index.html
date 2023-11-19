@@ -39,8 +39,8 @@
 <meta property="article:modified_time" content="2023-06-15T16:13:09.921Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="cs.Transformer">
-<meta property="article:tag" content="cs.ContraLern">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="cs.ContraLern">
 <meta property="article:tag" content="SE">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/UniXcoder/fig1.png">
@@ -411,9 +411,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/microsoft/CodeBERT/tree/master/UniXcoder">https://github.com/microsoft/CodeBERT/tree/master/UniXcoder</a></p>
 </blockquote>
 <h2 id="UniXcoder：编码器-解码器预训练-对比学习表征">UniXcoder：编码器-解码器预训练+对比学习表征</h2>
-<h3 id="Abstract-140">Abstract</h3>
+<h3 id="Abstract-139">Abstract</h3>
 <p>为了支持代码相关的理解和生成任务，最近的工作都是在尝试训练一个联合的encoder-decoder模型，但这种架构对回归任务是次优的，特别是仅需要解码器来进行推理的时候。本文提出了UnixCoder，一个统一的跨模态预训练的编程语言模型，利用了AST和注释来增强代码表征；此外还使用这种多模态内容来对比学习得到代码片段表征。在五个任务九个数据上实验，还构建了zero-shot code-to-code search数据集来评估代码片段表征</p>
-<h3 id="Introduction-119">Introduction</h3>
+<h3 id="Introduction-118">Introduction</h3>
 <p>与目前的联合编码器解码器模型相比，UniXcoder可以更好地应用于自回归任务，比如需要解码器方式来执行高效推理的代码补全。除了只考虑代码视为输入外，还把代码注释和AST作为多模态来增强代码表征，注释保留了语音信息，AST保留了句法信息，作者把AST变成了一个序列</p>
 <p>三个预训练任务来支持不同的下游任务：</p>
 <ul>
@@ -666,20 +666,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

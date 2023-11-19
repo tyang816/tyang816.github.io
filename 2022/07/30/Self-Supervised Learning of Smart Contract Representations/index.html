@@ -410,9 +410,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/SCRepslearner/SmartLearner">https://github.com/SCRepslearner/SmartLearner</a></p>
 </blockquote>
 <h2 id="SRCL：全局-局部学习，代码增强和自监督">SRCL：全局+局部学习，代码增强和自监督</h2>
-<h3 id="Abstract-137">Abstract</h3>
+<h3 id="Abstract-136">Abstract</h3>
 <p>为了处理智能合约数据稀少，同质化问题，提出了SRCL自监督学习智能合约表征，通过局部和全局信息自动提取AST结构，然后两个判别器指导transformer编码器学习局部和全局语义特征</p>
-<h3 id="Introduction-116">Introduction</h3>
+<h3 id="Introduction-115">Introduction</h3>
 <p>与其他程序比，智能合约更不能容忍错误，“code is law”，合约一旦发布就不能修改，因为如果有修改或Bug就会导致区块链很多钱的损失</p>
 <p>同时，智能合约数据高度同质和冗余，开发者倾向于复制现有代码而不是冒着风险从零开始写，有26%代码块是克隆了14.6次，只有20.8%的代码是原生的</p>
 <p>基于增强的代码变体，SRCL有三部分：局部判别器，全局判别器，解码器</p>
@@ -437,7 +437,7 @@
 <p>全局判别器执行的是<strong>真假样本预测</strong>任务，是一个分类任务。正样本是原样本和VR，负样本是TR和PI</p>
 <h5 id="Local-Discriminator">Local Discriminator</h5>
 <p>局部判别器执行的是<strong>词元替换预测</strong>任务，预测词元是否经过增强被替换</p>
-<h3 id="Experiment-55">Experiment</h3>
+<h3 id="Experiment-54">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SRCL/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SRCL/tab4-tab5.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SRCL/tab6.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SRCL/tab7.png" alt="avatar" style="zoom:50%;" /></div>
@@ -661,20 +661,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

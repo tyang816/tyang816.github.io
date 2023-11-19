@@ -410,9 +410,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/GJCEXP/CODESCRIBE">https://github.com/GJCEXP/CODESCRIBE</a></p>
 </blockquote>
 <h2 id="CodeScribe：三元组位置编码-transformer-GNN">CodeScribe：三元组位置编码+transformer+GNN</h2>
-<h3 id="Abstract-132">Abstract</h3>
+<h3 id="Abstract-134">Abstract</h3>
 <p>生成代码摘要的不同机器学习方法主要问题是缺乏保留原代码语义信息，也是被目前SOTA方法所忽视的。现有方法通过AST进行建模，但是AST的层次结构没有很好的开发，因此本文提出了CodeScribe建模一种新型的<strong>三元组位置</strong>生成代码摘要，利用图神经网络和transformer保留结构和序列信息，以及一个指针生成网络来关注词元。实验表示在java和python数据集上SOTA</p>
-<h3 id="Introduction-111">Introduction</h3>
+<h3 id="Introduction-113">Introduction</h3>
 <p>当将代码的AST线性化为顺序节点或路径时，所连接节点之间的关系通常会被丢弃，尽管基于GNN的方法就可以很好的保留代码语法结构，它们对结点顺序不敏感，比如a=c/b，GNN就没法抓住b和之间的先后顺序</p>
 <p>因此作者提出用三元组位置来建模层次语法结构，分别记录了深度，父节点位置，自己在兄弟结点中的位置</p>
 <p>主要贡献：</p>
@@ -426,7 +426,7 @@
 <p>节点的三元组位置包括：（1）节点在AST中的深度，（2）其父节点在层中的宽度位置，（3）该节点在其兄弟节点中的宽度位置。函数节点的宽度位置从0开始，属性结点从-1开始</p>
 <h3 id="CodeScribe">CodeScribe</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeScribe/fig2.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiment-51">Experiment</h3>
+<h3 id="Experiment-53">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeScribe/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeScribe/tab2.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeScribe/tab3.png" alt="avatar" style="zoom:50%;" /></div>
 <p>表2的R是移除了某一部分：（1）AST编码器(R-AST)，（2）源代码编码器(R-Code)，（3）三重位置(RASTPos)，（4）MPG(R-Copy)，（5）AST编码器中的残差连接(R-ASTRes)</p>
@@ -652,20 +652,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

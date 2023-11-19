@@ -36,10 +36,10 @@
 <meta property="article:published_time" content="2022-02-11T08:12:46.000Z">
 <meta property="article:modified_time" content="2023-06-15T16:13:09.831Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.ContraLern">
-<meta property="article:tag" content="CV">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="CV">
 <meta property="article:tag" content="cs.Multimodal">
+<meta property="article:tag" content="cs.ContraLern">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img1.png">
   <!-- Canonical links -->
@@ -430,7 +430,7 @@
 <p>即使预训练的模型训练好了之后把它冻住（Linear-Probe），只抽特征训练最后分类头训练分类任务也比 ImageNet 上的效果好，而且计算高效</p>
 </li>
 </ol>
-<h3 id="Method-12">Method</h3>
+<h3 id="Method-15">Method</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img2.png" alt="avatar" style="zoom:60%;" /></div>
 <ol>
 <li>
@@ -451,7 +451,7 @@
 <p>模型可以选择 ResNet，也可以选择 Transformer</p>
 </li>
 </ol>
-<h3 id="Experiment-14">Experiment</h3>
+<h3 id="Experiment-25">Experiment</h3>
 <ol>
 <li>
 <p>之前的无监督或无监督的方法主要研究特征学习的能力，目标是学习泛化性比较好的特征，比如MOCO，SimCLR，DINO等，但应用到下游任务时还是需要有标签的数据进行微调，能不能有一种不用调的</p>
@@ -486,7 +486,7 @@
 <ol start="6">
 <li>同时也做了人和 CLIP 对类别识别难易的对比，对人难识别的类对 CLIP 也难</li>
 </ol>
-<h3 id="Limitation-2">Limitation</h3>
+<h3 id="Limitation-3">Limitation</h3>
 <ol>
 <li>性能强是和 Res50 比较，实际上和各种 SOTA 比还是差了许多，估计得x1000才能达到。肯定需要新的方法在计算和数据的高效性上提高</li>
 <li>在有些数据集上 zero-shot 的结果也并不好，比如细分类等，也无法处理抽象和难的任务，可能在很多领域 CLIP 和瞎猜一样</li>
@@ -717,20 +717,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

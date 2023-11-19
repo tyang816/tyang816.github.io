@@ -410,9 +410,9 @@
 <p>facebook蛋白质esm系列工作，主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，介绍了该团队基于<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Transformer&amp;spm=1001.2101.3001.7020">Transformer</a>训练的顶尖水准(state-of-the-art)蛋白质语言模型ESM-1b，能够直接通过蛋白的氨基酸序列预测该蛋白的结构、功能等性质</p>
 </blockquote>
 <h2 id="ESM-1b：探究Transformer能否从蛋白序列中提取结构信息">ESM-1b：探究Transformer能否从蛋白序列中提取结构信息</h2>
-<h3 id="Abstract-4">Abstract</h3>
+<h3 id="Abstract-37">Abstract</h3>
 <p>AI领域大规模数据和无监督模型的组合能够在表征学习和统计生成方面有很大的进步，作者使用无监督学习训练了一个深度语言模型，针对跨越进化多样性的2.5亿个蛋白质序列中的860亿个氨基酸。学习到的表示空间具有多尺度的组织结构，反映了从氨基酸的生化特性水平到蛋白质的远端同源性的结构，同时，二级和三级结构信息也被编码在了表征中，这些信息能够通过线性投影(linear projection)显化</p>
-<h3 id="Introduction-4">Introduction</h3>
+<h3 id="Introduction-34">Introduction</h3>
 <p>重点是将一个单一的模型适合于跨进化的许多不同的序列。因此，研究高容量的神经网络，研究从大规模建模进化数据中了解蛋白质生物学</p>
 <p>蛋白质序列生成和自然语言是很大不同的，不能确定自然语言的目标函数和模型能否迁移到不同领域，作者通过在进化数据上训练高容量的transformer模型来探究这个问题</p>
 <h3 id="Scaling-language-models-to-250-million-diverse-protein-sequences">Scaling language models to 250 million diverse protein sequences</h3>
@@ -671,20 +671,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

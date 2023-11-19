@@ -408,9 +408,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/stanfordnlp/treelstm">https://github.com/stanfordnlp/treelstm</a></p>
 </blockquote>
 <h2 id="Tree-LSTM：把LSTM推广到树结构">Tree-LSTM：把LSTM推广到树结构</h2>
-<h3 id="Abstract-131">Abstract</h3>
+<h3 id="Abstract-128">Abstract</h3>
 <p>自然语言也有句法特征，可以把单词和短语结合起来，因此提出了Tree-LSTM</p>
-<h3 id="Introduction-110">Introduction</h3>
+<h3 id="Introduction-107">Introduction</h3>
 <p>大多数短语或句子的分布式表示分为三类：bag-of-words模型、sequence模型、tree-structured模型。词袋模型直接使用词汇的统计信息，没有考虑词汇的顺序，序列模型考虑的是序列结构，<strong>树型结构模型通过在给定句子的语法结构树上进行获取句子表示</strong></p>
 <h3 id="Tree-Structured-LSTMs">Tree-Structured LSTMs</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/fig1.png" alt="avatar" style="zoom:60%;" /></div>
@@ -658,20 +658,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

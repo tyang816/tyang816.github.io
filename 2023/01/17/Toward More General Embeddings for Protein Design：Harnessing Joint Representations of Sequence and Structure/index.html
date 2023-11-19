@@ -404,9 +404,9 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2021.09.01.458592">Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure</a></p>
 </blockquote>
 <h2 id="Masked-sequence-structure：掩码序列和结构做热稳定性单突变">Masked sequence-structure：掩码序列和结构做热稳定性单突变</h2>
-<h3 id="Abstract-33">Abstract</h3>
+<h3 id="Abstract-62">Abstract</h3>
 <p>提出了一个更加数据高效的方法，通过半监督的方法联合训练蛋白质序列和结构来编码蛋白质信息，实验表明这种方法可以编码两种信息来形成一个丰富的嵌入空间更好的利用到下游任务当中。通过预测单个突变的影响，将丰富的结构信息纳入所考虑的环境中，可以提高模型的性能。我们将准确性的提高归因于利用丰富表示中的邻近性，以识别将受到突变影响的顺序和空间上接近的残基，使用实验验证或预测的结构</p>
-<h3 id="Results-13">Results</h3>
+<h3 id="Results-16">Results</h3>
 <h4 id="Masked-Structure-and-Sequence-Recovery">Masked Structure and Sequence Recovery</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Masked sequence-structure/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 <p>把连续的5个残基mask掉得到总共15%的masked residues，图2a是masked validation points，平均而言，初始验证样本是5angstroms扰动，校正后样品与各自天然蛋白质的RMSD约为2埃；图2b的esm-1b随机选了15%的token进行mask，增加了结构信息后准确率是0.13，纯粹的序列准确率是0.06</p>
@@ -423,7 +423,7 @@
 <p>本文的模型比sequence-only的模型在单点突变上更敏感，在热稳定性单点突变上效果更好</p>
 <p>预测单突变效果用的RoseTTAFold模型</p>
 <p>还有一些方向可以提升联合模型的性能：比如增加模型参数，预测原子的修复</p>
-<h3 id="Methods-11">Methods</h3>
+<h3 id="Methods-10">Methods</h3>
 <h4 id="Input-sequence-embedding-and-structure-information">Input sequence embedding and structure information</h4>
 <p>使用trRosetta2数据集，把masked sequence输入预训练好的esm-1b，使用最后一层sequence embedding和模型33层里每一层的attention map。对于结构，只考虑N，Ca，C和Cb原子，长度限制128</p>
 <h4 id="Training-Objective-and-Details">Training Objective and Details</h4>
@@ -654,20 +654,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

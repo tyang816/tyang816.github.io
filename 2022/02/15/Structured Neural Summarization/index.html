@@ -404,7 +404,7 @@
 <p>代码：<a target="_blank" rel="noopener" href="https://github.com/CoderPat/structured-neural-summarization">https://github.com/CoderPat/structured-neural-summarization</a></p>
 </blockquote>
 <h2 id="seq-encoder-GNN的结构化摘要提取">seq encoder+GNN的结构化摘要提取</h2>
-<h3 id="1-简介-3">1. 简介</h3>
+<h3 id="1-简介-5">1. 简介</h3>
 <ol>
 <li>
 <p>作者发现图对于弱结构性数据具有很好的建模效果，同时单纯的seq模型和GNN模型效果都不好，于是作者提出了混和的</p>
@@ -416,7 +416,7 @@
 <p>2.3 自然语言总结：传统的NLP总结方法不是很在意结构，因此利用现有NLP工具加入了命名体和实体共同参考</p>
 </li>
 </ol>
-<h3 id="2-模型-3">2. 模型</h3>
+<h3 id="2-模型-4">2. 模型</h3>
 <h4 id="2-1-Gated-Graph-Neural-Networks">2.1 Gated Graph Neural Networks</h4>
 <ol>
 <li>图 $G=(V,E,X)$，顶点，边，特征</li>
@@ -433,7 +433,7 @@
 <li>增加 super node 连接每个顶点</li>
 <li>增加 NEXT edge 等多种边属性</li>
 </ol>
-<h3 id="3-实验-2">3. 实验</h3>
+<h3 id="3-实验-3">3. 实验</h3>
 <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/StruSum/StruSum-img1.png" alt="avatar" style="zoom:50%;" />
 <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.commyqcloud.com/StruSum/StruSum-img2.png" alt="avatar" style="zoom:50%;" />
 <HR align=left color=#987cb9 SIZE=1>
@@ -656,20 +656,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

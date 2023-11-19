@@ -407,9 +407,9 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2206.04415">Deep Meta-learning in Recommendation Systems: A Survey</a></p>
 </blockquote>
 <h2 id="Survey：推荐系统元学习综述">Survey：推荐系统元学习综述</h2>
-<h3 id="Abstract-74">Abstract</h3>
+<h3 id="Abstract-29">Abstract</h3>
 <p>目前的深度学习推荐系统方法都存在着数据和计算的瓶颈，而元学习方法能够很好的解决这种数据稀少的问题，能够带来更好的提升，特别是在可用数据非常有限的场景，比如用户冷启动或物品冷启动。因此本文主要讨论了现有的推荐系统场景，元学习技术，元知识表示，对于每种推荐场景还对使用元学习来提高模型泛化性的技术细节进行了讨论。最后指出了目前研究的限制以及高亮了未来的领域研究方向</p>
-<h3 id="Introduction-57">Introduction</h3>
+<h3 id="Introduction-27">Introduction</h3>
 <p>现有的推荐系统方法使用多种数据结构的（交互对，序列，图），在预定好的学习算法下通过大量数据从头训练。这些方法都是非常需要计算和数据的，但这里存在着数据量稀少的场景，这也就限制了推荐模型的瓶颈</p>
 <p>元学习方法的主要思想就是获取先验知识（元知识），通过原有的多任务训练好后迅速迁移到新任务上，能够在没有见过的任务下表现出不错的泛化性，类似于学习去学习（learn to learn），因其这种快速适应性使得其在图像识别，图像分割，自然语言处理，强化学习等领域都表现优异</p>
 <p>早期的元学习推荐系统主要在个性化推荐算法选择，提取元数据集特征并对不同的数据集（任务）选择合适的算法，这种对于元学习的定义类似于自动机器学习里面的研究。后来深度元学习成为了主流，先是主要应用于减轻数据不足（冷启动），以及点击率预测，在线推荐，时序推荐也在元学习策略下</p>
@@ -431,7 +431,7 @@
 <p>由于基于地理位置的社交网络的兴起，用户是愿意通过签到记录来分享兴趣点的。相比于一般的产品，音乐等的推荐，POI推荐更依赖于从历史数据中发现时空依赖，因为用户活动很大程度上受到地理空间和时间的限制。但这个场景的数据稀疏性很明显，因为用户必须到达POI共享位置，也就是只有少部分POI被用户访问</p>
 <h5 id="Sequential-recommendation">Sequential recommendation</h5>
 <p>时序推荐方法主要利用用户先前交互过的项目序列作为输入，并发现用户兴趣演化的顺序模式。当然，当历史用户信息降低时效果都会急剧下降</p>
-<h3 id="Taxonomy">Taxonomy</h3>
+<h3 id="Taxonomy-2">Taxonomy</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <h3 id="Meta-learning-task-construction-for-recommendation">Meta-learning task construction for recommendation</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Deep Meta-learning in Recommendation Systems/tab2.png" alt="avatar" style="zoom:60%;" /></div>
@@ -674,20 +674,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

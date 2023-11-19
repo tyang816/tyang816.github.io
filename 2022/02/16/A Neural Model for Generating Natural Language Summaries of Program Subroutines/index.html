@@ -401,12 +401,12 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1902.01954">A Neural Model for Generating Natural Language Summaries of Program Subroutines</a></p>
 </blockquote>
 <h2 id="ast-attentiongru">ast-attentiongru</h2>
-<h3 id="1-简介">1. 简介</h3>
+<h3 id="1-简介-2">1. 简介</h3>
 <ol>
 <li>将代码视作文本的词表示和AST表示，为了区别这两种表示，将他们同时视为输入</li>
 <li>设计了两种实验：① 标准实验，代码词+AST；② 挑战实验，没有代码词，只有AST</li>
 </ol>
-<h3 id="2-模型">2. 模型</h3>
+<h3 id="2-模型-2">2. 模型</h3>
 <p>作者提出模型ast-attendgru，使用的attention-based encoder-decoder架构。在表示代码方面，使用了代码的token sequence和代码的结构AST，并且这两个部分分别进行encode，架构图如下：</p>
 <img src="https://img-blog.csdnimg.cn/2021011920113124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpbmcwOTIy,size_16,color_FFFFFF,t_70#pic_center" alt="avatar" style="zoom:50%;" />
 <p>数据集：自己收集的Java method 语料，51 million Java method form 50000 projects，经过处理后得到大约2.1m methods。</p>
@@ -639,20 +639,5 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
