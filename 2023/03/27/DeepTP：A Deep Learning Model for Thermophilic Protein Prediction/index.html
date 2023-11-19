@@ -409,15 +409,15 @@
 <p>论文网站：<a target="_blank" rel="noopener" href="http://www.YangLabMI.org.cn/DeepTP">http://www.YangLabMI.org.cn/DeepTP</a></p>
 </blockquote>
 <h2 id="DeepTP：特征选择-特征融合做热稳定蛋白二分类">DeepTP：特征选择+特征融合做热稳定蛋白二分类</h2>
-<h2 id="Abstract-10">Abstract</h2>
+<h2 id="Abstract-8">Abstract</h2>
 <p>提出了一个基于自注意力机制和多通道特征融合技术来预测热蛋白质称为DeepTP。首先提出新数据集20,842个蛋白质，然后用卷积和双向LSTM网络提特征</p>
-<h3 id="Introduction-9">Introduction</h3>
+<h3 id="Introduction-7">Introduction</h3>
 <p>蛋白质工程和生物技术研究及依赖于蛋白质的热稳定性。嗜热蛋白的高热稳定性使其在工业生产中具有突出的优势。从家禽堆肥中分离的嗜热放线菌中纯化了一种细胞外等温角质酶（KERAK-29），具有耐热性高、催化反应速度快的优点。来自嗜热真菌的恒温木聚糖酶在食物、饲料和木质纤维素的生物转化中具有广泛的作用。</p>
 <p>通过生物实验区分嗜热蛋白和中温蛋白是耗时、劳动密集型和昂贵的。然而，计算方法可以从大量的蛋白质序列信息中快速准确地识别嗜热和中温蛋白，这是蛋白质热稳定性领域的一个重要课题</p>
 <p>蛋白质的热稳定性与氨基酸组成、氢键、盐桥、二硫键等生物特性密切相关。结果发现，嗜热蛋白比嗜中温蛋白具有更多的疏水残基、带电残基和芳香族残基。不同二肽的不同含量和不同类型的氢键也会影响蛋白质的热稳定性。在一些实验中，发现盐桥、二硫键等因素可以提高热稳定性。蛋白质的生物学特性对于嗜热蛋白的预测非常重要</p>
 <p>嗜热蛋白预测的计算方法大多基于传统的机器学习方法。在早期基于较少数据集的研究中，研究人员使用蛋白质序列的一级结构来获得氨基酸对、氨基酸分布和基本特征，然后使用逻辑模型树算法、支持向量机（SVMs）等经典算法来预测嗜热蛋白质</p>
 <p>像iThermo这样的工作只考虑了序列而没有考虑关于蛋白质序列本身的信息，所以本文用CNN提取蛋白质序列的局部信息，BiLSTM提取长短依赖信息</p>
-<h3 id="Results-4">Results</h3>
+<h3 id="Results-3">Results</h3>
 <h4 id="Cross-Validation-Performance-of-DeepTP">Cross-Validation Performance of DeepTP</h4>
 <p>为了建立能够准确识别嗜热和嗜中温蛋白的模型，我们提取了6组蛋白质（氨基酸组成[AAC]、二肽组成[DPC]、组成-过渡分布[DPC]、准序列顺序描述符[QSO]、伪氨基酸组成[PAAC]和两亲性伪氨基酸组成[APAAC]）的797个特征</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepTP/tab1.png" alt="avatar" style="zoom:100%;" /></div>

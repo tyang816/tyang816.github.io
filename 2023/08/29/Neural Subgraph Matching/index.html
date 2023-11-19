@@ -410,9 +410,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/snap-stanford/neural-subgraph-learning-GNN">https://github.com/snap-stanford/neural-subgraph-learning-GNN</a></p>
 </blockquote>
 <h2 id="NeuroMatch：图分解做子图匹配">NeuroMatch：图分解做子图匹配</h2>
-<h3 id="Abstract-104">Abstract</h3>
+<h3 id="Abstract-40">Abstract</h3>
 <p>NeuroMatch是一种用于有效子图匹配的图神经网络（GNN）架构。给定一个大的目标图和一个小的查询图，NeuroMatch将包含查询图的目标图的邻域识别为子图。NeuroMatch使用GNN在顺序嵌入空间中学习图嵌入，该空间反映了子图关系属性的结构（传递性、反对称性和非平凡交集），促进了以前不可能的规模上的实时近似子图匹配：它可以在500k大小的目标图中匹配100个节点的查询图。实验表明，NeuroMatch比现有的组合方法快100倍，比现有的近似子图匹配方法精确18%</p>
-<h3 id="Introduction-84">Introduction</h3>
+<h3 id="Introduction-38">Introduction</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 <p>子图同构匹配有很多应用</p>
 <ul>
@@ -455,7 +455,7 @@
 <h5 id="Curriculum">Curriculum</h5>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 <p>先在简单的查询上训练，再增加更复杂的query和batch size</p>
-<h3 id="Experiments-25">Experiments</h3>
+<h3 id="Experiments-9">Experiments</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/tab2.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuroMatch/fig3.png" alt="avatar" style="zoom:50%;" /></div>

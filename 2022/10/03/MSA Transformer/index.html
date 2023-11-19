@@ -407,9 +407,9 @@
 <p>facebook蛋白质esm系列工作,主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，在ESM-1b的基础上作出改进，将模型的输入从单一蛋白质序列改为MSA矩阵，并在Transformer中加入行、列两种轴向注意力机制，对位点 $x_{mi}$ 分别计算第m个序列和第i个对齐位置的影响，充分利用二维输入的优势</p>
 </blockquote>
 <h2 id="ESM-MSA-1b：轴注意力蛋白质预训练">ESM-MSA-1b：轴注意力蛋白质预训练</h2>
-<h3 id="Abstract-24">Abstract</h3>
+<h3 id="Abstract-21">Abstract</h3>
 <p>迄今为止的蛋白质语言模型都是从独立的序列进行推理，而计算生物学长期存在的方法是分别拟合各个家族，从进化相关序列家族中进行推理，本文工作结合了这两种范式，将序列集合以多序列对齐的形式输入，使用行列注意力，跨蛋白质家族的掩码语言模型目标</p>
-<h3 id="Introduction-22">Introduction</h3>
+<h3 id="Introduction-19">Introduction</h3>
 <p>由于进化不能自由地在折叠的三维结构中接触的位点上独立选择氨基酸的身份，因此模式被印在进化选择的序列上，对蛋白质结构的限制可以从相关序列的模式中推断出来</p>
 <p>目前蛋白质语言的新工作都是大规模的网络而不是分别拟合每个家族序列，在推理阶段用单条序列端到端的方法替换多阶段的计算生物学中传统的方法</p>
 <p>模型结构使用了轴注意力，掩码语言模型目标函数</p>
@@ -456,7 +456,7 @@
 <p>为了降低算法的时间复杂度，轴向注意力将来自二维平面的注意力分解为纵、横两个方向。轴向注意力认为MSA中某位点受到其他位点的影响主要来自于其所在的行和列，而矩阵中其他位置的影响可以忽略不计，对位点只需计算第行和第列对它的attention权重</p>
 <p>行注意力计算位点所在行的注意力权重，本质是提取该点所在蛋白序列的信息，计算同一蛋白序列中不同氨基酸之间的相互影响权值，能够反应这些氨基酸在蛋白二、三级结构中的相互作用，进而推测蛋白结构</p>
 <p>列注意力计算位点所在列的注意力权重，本质是提取该位置上氨基酸的共变信息</p>
-<h3 id="Result-3">Result</h3>
+<h3 id="Result-2">Result</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab2.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab3.png" alt="avatar" style="zoom:50%;" /></div>
 <ul>

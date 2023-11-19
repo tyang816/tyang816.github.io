@@ -407,9 +407,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/sjj0403/GSCS">https://github.com/sjj0403/GSCS</a></p>
 </blockquote>
 <h2 id="GSCS：语义和结构两个encoder融合">GSCS：语义和结构两个encoder融合</h2>
-<h3 id="Abstract-107">Abstract</h3>
+<h3 id="Abstract-108">Abstract</h3>
 <p>本文提出了GSCS利用了代码块的语义和结构信息，GAT处理AST，使用了多头注意力；还使用了RNN模型来获取语义特征</p>
-<h3 id="Introduction-86">Introduction</h3>
+<h3 id="Introduction-87">Introduction</h3>
 <p>源代码有复杂的嵌套结构，不能视作朴素文本；现有模型也不能很好的处理结构信息，比如SBT引入了大量的括号造成不必要的冗余，Tree-LSTM和ConvGNN没有考虑到AST节点的上下文，换句话说每个节点在AST里面都是有局部属性的，但上述两种方法是不考虑的（a+b和b+a是同等对待）</p>
 <p>作者认为使用GAT能自动学习并分配权重给邻居，是比Tree-LSTM和ConvGNN更好的选择</p>
 <h3 id="Approach-6">Approach</h3>

@@ -408,9 +408,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/XMUDM/BASTS">https://github.com/XMUDM/BASTS</a></p>
 </blockquote>
 <h2 id="BASTS：CFG用tree-LSTM做embedding给transformer">BASTS：CFG用tree-LSTM做embedding给transformer</h2>
-<h3 id="Abstract-129">Abstract</h3>
+<h3 id="Abstract-135">Abstract</h3>
 <p>本文展现了一种块级别的AST分割方法，将代码拆分为CFG的树状代码块，每个分割出的树用Tree-LSTM预训练获取局部非线性语法编码，再丢到transformer里面生成高质量代码摘要</p>
-<h3 id="Introduction-108">Introduction</h3>
+<h3 id="Introduction-114">Introduction</h3>
 <p>AST的深度一般非常大，导致一个heavy encoder的情况，并且训练困难，难以捕捉复杂的语义。此外基于GNN的方法也面临heavy encoder而且结果也没有很大的提升的问题</p>
 <p>把代码根据CFG的块拆分，生成一个用Tree-LSTM建模的split AST，然后预训练任务是预测控制树中的下一个分割AST，最后结合分割AST的表征和token表征丢入transformer的</p>
 <h3 id="Overview">Overview</h3>
@@ -422,7 +422,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BASTS/fig5.png" alt="avatar" style="zoom:60%;" /></div>
 <h3 id="Summarizing-Code-with-Transformer">Summarizing Code with Transformer</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BASTS/fig6.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiment-48">Experiment</h3>
+<h3 id="Experiment-54">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BASTS/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BASTS/tab2-tab3.png" alt="avatar" style="zoom:60%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>

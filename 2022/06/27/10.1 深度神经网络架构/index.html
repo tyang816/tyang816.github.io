@@ -430,7 +430,7 @@
 <p>$Y’$ 转回以前的 $Y$</p>
 </li>
 </ul>
-<h3 id="Code">Code</h3>
+<h3 id="Code-2">Code</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">bacth_norm</span>(<span class="params">X, gamma, beta, moving_mean, moving_var, eps, momentum</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> torch.is_grad_enabled(): <span class="comment"># in prediction mode</span></span><br><span class="line">        X_hat = (X - moving_mean) / torch.sqrt(moving_var + eps)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">assert</span> <span class="built_in">len</span>(X.shape) <span class="keyword">in</span> (<span class="number">2</span>, <span class="number">4</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(X.shape) == <span class="number">2</span>:</span><br><span class="line">            mean = X.mean(dim=<span class="number">0</span>)</span><br><span class="line">            var = ((X - mean)**<span class="number">2</span>).mean(dim=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            mean = X.mean(dim=(<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>), keepdim=<span class="literal">True</span>)</span><br><span class="line">            var = ((X - mean)**<span class="number">2</span>).mean(dim=(<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>), keepdim=<span class="literal">True</span>)</span><br><span class="line">        X_hat = (X - mean) / torch.sqrt(var + eps)</span><br><span class="line">        moving_mean = momentum * moving_mean + (<span class="number">1.0</span> - momentum) * mean</span><br><span class="line">        moving_var = momentum * moing_var + (<span class="number">1.0</span> - momentum) * var</span><br><span class="line">    Y = gamma * X_hat + beta</span><br><span class="line">    <span class="keyword">return</span> Y, moving_mean, moving_var</span><br></pre></td></tr></table></figure>
 <h3 id="Layer-Normalization">Layer Normalization</h3>
 <ul>
@@ -467,7 +467,7 @@
 <p>应用到权重或梯度</p>
 </li>
 </ul>
-<h3 id="Summary-5">Summary</h3>
+<h3 id="Summary-10">Summary</h3>
 <ul>
 <li>把中间层数值更稳定使训练更容易</li>
 <li>归一化技术主要三步：输入重置，归一化数据，还原步骤</li>

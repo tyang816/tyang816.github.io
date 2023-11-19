@@ -406,7 +406,7 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/microsoft/protein-sequence-models/tree/main">https://github.com/microsoft/protein-sequence-models/tree/main</a></p>
 </blockquote>
 <h2 id="CARP-卷积掩码网络预训练蛋白质语言模型">CARP: 卷积掩码网络预训练蛋白质语言模型</h2>
-<h3 id="Abstract-4">Abstract</h3>
+<h3 id="Abstract-5">Abstract</h3>
 <p>CNN能和transformer取得具有竞争力的结果，在很多下游任务上比如结构预测，zero-shot突变预测，out-of-domain生成上都取得很好效果</p>
 <h3 id="Introduction-and-backgroud">Introduction and backgroud</h3>
 <p>Transformer的主要问题是计算内存和输入序列成平方关系的复杂度增长，并且在训练的时候有着明显的长度限制，比如ESM最大长度1022，但Uniref50有42M序列，其中有1.1M，即2.6%是超过了1022，并且里面包含了很多人类感兴趣的蛋白，比如SARS-Cov-2 spike gylcoprotein和<em>Streptococcus pyogenes</em> CRISPR-associated endonuclease Cas9</p>
@@ -415,7 +415,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CARP/fig1.png" alt="avatar" style="zoom:70%;" /></div>
 <p>15%mask，其中80%替换为mask token，10%随机选择氨基酸，10%不变</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CARP/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<h3 id="Downstream-Tasks">Downstream Tasks</h3>
+<h3 id="Downstream-Tasks-2">Downstream Tasks</h3>
 <h4 id="Protein-Structure">Protein Structure</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CARP/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 <h4 id="Zero-shot-Mutation-Effect-Prediction">Zero-shot Mutation Effect Prediction</h4>

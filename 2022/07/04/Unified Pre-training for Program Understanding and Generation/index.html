@@ -410,9 +410,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/wasiahmad/PLBART">https://github.com/wasiahmad/PLBART</a></p>
 </blockquote>
 <h2 id="PLBART：多语言训练-去噪解码器">PLBART：多语言训练+去噪解码器</h2>
-<h3 id="Abstract-142">Abstract</h3>
+<h3 id="Abstract-141">Abstract</h3>
 <p>PLBART是端到端的模型，使用很多java和python的函数以及自然语言通过去噪自编码器来预训练，在代码注释生成，代码翻译7个语言上达到了SOTA，在程序修复，克隆检测等任务上取得了有竞争力的结果，分析显示还学习到了代码语法和风格</p>
-<h3 id="Introduction-121">Introduction</h3>
+<h3 id="Introduction-120">Introduction</h3>
 <p>如源代码摘要、生成和翻译，在很大程度上依赖于对PL和NL的理解——我们统称为PLUG（Program and Language Understanding and Generation）</p>
 <p>作者提出了PLBART（Program and Language BART），这是一种双向和自回归transformer，对跨PL和NL的未标记数据进行预训练，以学习适用于广泛的PLUG应用程序的多语言表示</p>
 <h3 id="PLBART">PLBART</h3>
@@ -440,7 +440,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLBART/tab3.png" alt="avatar" style="zoom:60%;" /></div>
 <h5 id="Sequence-Classifification">Sequence Classifification</h5>
 <p>连接一对输入之间插入 <code>&lt;/s&gt;</code>，在输入序列的末尾添加了一个特殊的标记，最后解码器表示丢入全连接层</p>
-<h3 id="Experiment-58">Experiment</h3>
+<h3 id="Experiment-57">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLBART/tab5.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLBART/tab6.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLBART/tab7.png" alt="avatar" style="zoom:60%;" /></div>

@@ -409,9 +409,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="http://www.daml.in.tum.de/code-transformer">www.daml.in.tum.de/code-transformer</a></p>
 </blockquote>
 <h2 id="CodeTransformer：只使用AST语言无关特征做多语言训练">CodeTransformer：只使用AST语言无关特征做多语言训练</h2>
-<h3 id="Abstract-133">Abstract</h3>
+<h3 id="Abstract-129">Abstract</h3>
 <p>原代码（context）和语法结构树（AST）是程序的两种互补表示，本文模型只使用了语言无关的特征，即原代码和特征可以直接从AST中计算得到。除了在五种编程语言单语言代码摘要SOTA外，也是第一个提出了多语言代码摘要模型，对来自多种编程语言的非并行数据进行联合训练可以提高所有单个语言的结果，特别是在低资源的语言上。只在context多语言训练不能得到同样的提升，所以结果肯定是结构和上下文组合得到的</p>
-<h3 id="Introduction-112">Introduction</h3>
+<h3 id="Introduction-108">Introduction</h3>
 <p>研究人员和从业者在机器学习模型中主要利用结构或上下文，作者证明了上下文和结构的联合学习改进了源代码的表示学习</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>作者提出了CodeTransformer结合了在<strong>自注意操作在结构和上下文上计算的距离</strong>，与通过边进行的局部处理相比，计算AST上的成对距离，如最短路径长度，使每一层的模型都可以访问完整的结构。此外在注意力计算时使用了相对距离替代绝对位置，这些都是语言无关的特征可以直接使用</p>
@@ -423,7 +423,7 @@
 <h4 id="Efficient-Relative-Attention-Computation">Efficient Relative Attention Computation</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/frm5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>这里用的解耦注意力和相对位置距离</p>
-<h3 id="Experiment-52">Experiment</h3>
+<h3 id="Experiment-49">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeTransformer/tab4.png" alt="avatar" style="zoom:50%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>
