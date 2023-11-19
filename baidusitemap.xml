@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/11/19/Convolutions%20are%20competitive%20with%20transformers%20for%20protein%20sequence%20pretraining/</loc>
+    <lastmod>2023-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/09/30/Protein%20generation%20with%20evolutionary%20diffusion%EF%BC%9Asequence%20is%20all%20you%20need/</loc>
     <lastmod>2023-09-30</lastmod>
   </url>
@@ -101,15 +105,27 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
+    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
+    <loc>https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -141,15 +157,15 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -177,11 +193,11 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/</loc>
+    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/</loc>
+    <loc>https://tyang816.github.io/2021/12/22/Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -193,23 +209,11 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <loc>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -381,11 +385,7 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/03/23/1.2%20%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/03/23/1.3%20%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/</loc>
+    <loc>https://tyang816.github.io/2022/03/24/2.1%20%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -393,7 +393,7 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/03/24/2.1%20%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <loc>https://tyang816.github.io/2022/03/23/1.3%20%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -401,19 +401,11 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/04/06/2.4%20%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/06/2.5%20%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/06/3.1%208%E5%88%86%E9%92%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>https://tyang816.github.io/2022/05/10/3.2%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -421,11 +413,19 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/05/12/3.4%20%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/</loc>
+    <loc>https://tyang816.github.io/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/05/10/3.2%20%E6%9C%80%E7%AE%80%E5%8D%95%E4%B9%9F%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%86%B3%E7%AD%96%E6%A0%91/</loc>
+    <loc>https://tyang816.github.io/2022/03/23/1.2%20%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/</loc>
+    <lastmod>2022-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/06/3.1%208%E5%88%86%E9%92%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2022-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/05/12/3.4%20%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -437,11 +437,15 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/05/12/3.6%20%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://tyang816.github.io/2022/04/06/2.5%20%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/05/14/4.1%20%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</loc>
+    <lastmod>2022-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/05/12/3.6%20%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -465,11 +469,11 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://tyang816.github.io/2022/06/26/9.3%20%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/26/9.3%20%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2/</loc>
+    <loc>https://tyang816.github.io/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
@@ -481,11 +485,11 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/</loc>
+    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/18/How%20to%20Retrain%20Recommender%20System%EF%BC%9FA%20Sequential%20Meta-Learning%20Method/</loc>
+    <loc>https://tyang816.github.io/2022/06/19/Deep%20Meta-learning%20in%20Recommendation%20Systems%EF%BC%9AA%20Survey/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
