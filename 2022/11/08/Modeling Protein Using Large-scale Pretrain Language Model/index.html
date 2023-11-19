@@ -412,12 +412,12 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/THUDM/ProteinLM">https://github.com/THUDM/ProteinLM</a></p>
 </blockquote>
 <h2 id="ProteinLM：悟道·文溯的30亿参数蛋白预训练模型">ProteinLM：悟道·文溯的30亿参数蛋白预训练模型</h2>
-<h3 id="Abstract-54">Abstract</h3>
+<h3 id="Abstract-46">Abstract</h3>
 <p>使用30亿参数的语言模型对进化规模的蛋白质序列进行预训练建模，将蛋白质生物学信息进行编码表示。模型在5个标识符级和序列级的下游任务中都获得了明显的改进，表明本文的大规模模型能够准确地从进化规模的单个序列预训练中捕捉到进化信息</p>
-<h3 id="Introduction-50">Introduction</h3>
+<h3 id="Introduction-41">Introduction</h3>
 <p>传统蛋白质实验分为两部分：实验和分析，实验包括纯化，晶体化和X光晶体学等；分析包括序列比对，分子动力学模拟；难以处理大规模的蛋白质数据</p>
 <p>在PFAM数据集上训练，有30亿参数，超过了TAPE的性能</p>
-<h3 id="Methodology-3">Methodology</h3>
+<h3 id="Methodology-2">Methodology</h3>
 <h4 id="Training-Objective">Training Objective</h4>
 <p>用的BERT的MLM和NSP</p>
 <h4 id="Downstream-Classification-Task">Downstream Classification Task</h4>
@@ -443,7 +443,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>蛋白质可以保持其原始折叠结构的浓度上限，输入是氨基酸序列，而输出是一个连续的值，预测蛋白质在多大程度上可以保持其折叠结构</p>
 <h3 id="Result-4">Result</h3>
-<h4 id="Training-4">Training</h4>
+<h4 id="Training-3">Training</h4>
 <p>480块v100的服务集群训练两种模型3个星期，用的megatron-lm</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <h4 id="Evalution">Evalution</h4>

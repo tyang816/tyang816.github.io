@@ -45,8 +45,8 @@
 <meta property="article:published_time" content="2023-03-15T12:48:24.000Z">
 <meta property="article:modified_time" content="2023-03-26T13:10:28.407Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.Transformer">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="cs.Transformer">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig1.png">
   <!-- Canonical links -->
@@ -416,9 +416,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/anthropics/hh-rlhf">https://github.com/anthropics/hh-rlhf</a></p>
 </blockquote>
 <h2 id="hh-rlhf：偏好模型-人类反馈微调">hh-rlhf：偏好模型+人类反馈微调</h2>
-<h3 id="Abstract-21">Abstract</h3>
+<h3 id="Abstract-20">Abstract</h3>
 <p>用RLHF来对语言模型做微调很有帮助，并且发现和人类行为的对齐训练（alignment training）可以提升几乎所有自然语言的评估性能，特别是像python coding或做summarization。还做了迭代的在线训练，每个星期会用新的人类反馈来更新模型和RL策略，这能提升数据和模型质量。RL reward调过的模型和KL散度的平方根大致有一个线性关系</p>
-<h3 id="Introduction-18">Introduction</h3>
+<h3 id="Introduction-17">Introduction</h3>
 <p>训练的模型需要有帮助，输出真实，输出无害等</p>
 <p>分别做了有效性和无害性的任务，都标注数据。对有效性对标注工去问模型一些纯文本的任务，比如问答，写作或改文档，讨论方案等。对无害性让标注工引诱模型讲违背规则的话，比如抢银行，骂人等。当然因为任务可能带有刺激人的心理或压力，所以两个任务交替来平复标注工的心情，主要让标注工给两种回答：better or worse</p>
 <p>有效性和无害性往往有冲突，比如馊主意有效但有害，平庸的方案无害但无用。但实际上发现两个数据集放一起训练问题也不大</p>

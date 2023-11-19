@@ -36,8 +36,8 @@
 <meta property="article:published_time" content="2022-07-03T06:54:16.000Z">
 <meta property="article:modified_time" content="2023-06-15T16:13:09.861Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.Transformer">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="cs.Transformer">
 <meta property="article:tag" content="cs.Multimodal">
 <meta property="article:tag" content="cs.ContraLern">
 <meta property="article:tag" content="SE">
@@ -410,9 +410,9 @@
 <p>对比学习的方法，做得估计比CodeBERT和GraphCodeBERT大不少，但是效果提升也很明显</p>
 </blockquote>
 <h2 id="SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习">SynCoBERT：标识符预测，AST边预测与多模态跨batch对比学习</h2>
-<h3 id="Abstract-137">Abstract</h3>
+<h3 id="Abstract-138">Abstract</h3>
 <p>目前预训练模型已经表现出了很好的下游任务效果，目前的方法也更加重视结构信息（AST，数据流）。作者提出了两个新的预训练目标，标识符预测（IP）和AST边预测（TEP），以及一种多模态的对比学习策略来最大化不同模态之间的互信息</p>
-<h3 id="Introduction-116">Introduction</h3>
+<h3 id="Introduction-117">Introduction</h3>
 <p>为了更好的表示代码的语法结构，我们考虑两个关键但容易忽视的代码特征：</p>
 <ul>
 <li>
@@ -447,7 +447,7 @@
 <p>图3b右NL-PL-AST和NL-AST-PL，就是换了个位置</p>
 <h5 id="Negative-Samples-2">Negative Samples</h5>
 <p>图3c，先拿一个batch为b1，然后取它的正样本对batch为b2，同一位置为正样本，不同位置为负样本，同一batch不同位置也为负样本</p>
-<h3 id="Experiment-55">Experiment</h3>
+<h3 id="Experiment-56">Experiment</h3>
 <p>8张32GB的V100</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynCoBERT/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>在两个数据集上所有语言都表现最好</p>

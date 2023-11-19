@@ -49,8 +49,8 @@
 <meta property="article:published_time" content="2022-08-02T01:34:10.000Z">
 <meta property="article:modified_time" content="2022-11-14T13:12:18.325Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="cs.Transformer">
 <meta property="article:tag" content="CL">
+<meta property="article:tag" content="cs.Transformer">
 <meta property="article:tag" content="SE">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig1.png">
@@ -421,9 +421,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/zetang94/ICSE2022_AST_Trans.git">https://github.com/zetang94/ICSE2022_AST_Trans.git</a></p>
 </blockquote>
 <h2 id="AST-trans：父子和兄弟结点做树注意力">AST-trans：父子和兄弟结点做树注意力</h2>
-<h3 id="Abstract-108">Abstract</h3>
+<h3 id="Abstract-110">Abstract</h3>
 <p>AST包含了结构信息但是比对应的原代码长很多，目前方法忽略了长度限制简单粗暴的把整个AST丢进编码器，这种方法难以有效利用关系依赖而且引起巨大的计算开销。本文提出AST-trans利用两种结点关系，祖先后代和兄弟关系，使用树结构注意力对相关和不想关结点分配权重，进一步提出了一个有效的实现来支持快速并行计算的树结构注意</p>
-<h3 id="Introduction-87">Introduction</h3>
+<h3 id="Introduction-89">Introduction</h3>
 <p>线性化的AST比对应的原代码长很多，一些线性算法甚至增加长度，比如线性化SBT使得扩大了数倍，这使得模型很难准确探测出有用的依赖关系。此外也带来了巨大的计算负担，比如基于transformer的SOTA方法的注意力操作随着序列长度增加也在增加</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>本文假设AST结点状态最受两点影响：1. 祖先-后代结点，表达了不同层次的跨block关系；2. 兄弟结点，表达了一个block内的时间关系。需要祖先-后代结点来理解高层次语义，兄弟关系理解低层次语义，这俩已经够生成注释和建模整个结点需要的注意力</p>
@@ -488,7 +488,7 @@
 <p>A和B是[N, m]矩阵，A[C; :]表示用C作为索引聚集A，|C|是C的元素个数</p>
 <p>具体的计算复杂度看原文，比较硬核</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig4-fig5.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiment-35">Experiment</h3>
+<h3 id="Experiment-37">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/tab3.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/tab4-tab5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/tab6-tab7.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig7.png" alt="avatar" style="zoom:60%;" /></div>
