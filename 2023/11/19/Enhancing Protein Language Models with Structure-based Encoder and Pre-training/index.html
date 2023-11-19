@@ -19,20 +19,28 @@
 
   
   
-  <title>2.3 数据变换【stanford-cs329p】 | tyang</title>
-  <meta name="description" content="Data Transformation  数据需要转换成与ML算法一致的类型 我们关注的是对于不同的数据类型在特殊步骤的方法  Normalization for Real Value Columns Min-max normalization：缩放到a-b之间 $$ x_i’&#x3D;\frac{x_i-\min_x}{\max_x-\min_x}(b-a)+a $$ Z-score normal">
+  <title>ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training | tyang</title>
+  <meta name="description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: Abstract 预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2.3 数据变换【stanford-cs329p】">
-<meta property="og:url" content="https://tyang816.github.io/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:title" content="ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training">
+<meta property="og:url" content="https://tyang816.github.io/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Data Transformation  数据需要转换成与ML算法一致的类型 我们关注的是对于不同的数据类型在特殊步骤的方法  Normalization for Real Value Columns Min-max normalization：缩放到a-b之间 $$ x_i’&#x3D;\frac{x_i-\min_x}{\max_x-\min_x}(b-a)+a $$ Z-score normal">
+<meta property="og:description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: Abstract 预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-04T07:25:58.000Z">
-<meta property="article:modified_time" content="2022-11-14T13:13:28.575Z">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab3.png">
+<meta property="article:published_time" content="2023-11-19T08:53:08.000Z">
+<meta property="article:modified_time" content="2023-11-19T08:55:59.219Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cs.GNN">
+<meta property="article:tag" content="BI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://tyang816.github.io/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/index.html">
+  <link rel="canonical" href="https://tyang816.github.io/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/index.html">
   
   <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
   
@@ -332,14 +340,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-stanford-cs329p/2.3 数据变换" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-PaperNote/BI/Enhancing Protein Language Models with Structure-based Encoder and Pre-training" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      2.3 数据变换【stanford-cs329p】
+      ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training
     </h1>
   
 
@@ -347,17 +355,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/" class="article-date">
-	  <time datetime="2022-04-04T07:25:58.000Z" itemprop="datePublished">2022-04-04</time>
+	<a href="/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/" class="article-date">
+	  <time datetime="2023-11-19T08:53:08.000Z" itemprop="datePublished">2023-11-19</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/stanford-cs329p/">stanford-cs329p</a>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
   </span>
 
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>, <a class="article-tag-link-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -370,15 +383,15 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/" class="leancloud_visitors"  data-flag-title="2.3 数据变换【stanford-cs329p】">
+    	<span id="/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/" class="leancloud_visitors"  data-flag-title="ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training">
 			<span class="leancloud-visitors-count">0</span>
 		</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 479(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 366(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -388,99 +401,37 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <iframe src="//player.bilibili.com/player.html?aid=720812513&bvid=BV1pQ4y167ej&cid=417224889&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2303.06275">Enhancing Protein Language Models with Structure-based Encoder and Pre-training</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/DeepGraphLearning/GearNet">https://github.com/DeepGraphLearning/GearNet</a></p>
+</blockquote>
+<h2 id="ESM-GearNet">ESM-GearNet:</h2>
+<h3 id="Abstract-15">Abstract</h3>
+<p>预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文探究了不同的结合结构编码器和PLM编码器的组合，提出了ESM-GearNet，使用对比学习预训练，蛋白质结构和其子序列结构对齐</p>
+<h3 id="Introduction-13">Introduction</h3>
+<p>通过掩码语言建模损失进行预先训练，现有的PLM可以很好地捕获共同进化信息和隐式捕获残留间的接触信息。然而，由于它们没有明确地将蛋白质结构作为输入，因此它们是否能够捕获详细的蛋白质结构特征是值得怀疑的</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Methods-3">Methods</h3>
+<h4 id="Enhanceing-Protein-Language-Model-with-Protein-Structures">Enhanceing Protein Language Model with Protein Structures</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>为了避免大幅改变模型表征，使用了比ESM-1b和GearNet更小的学习率</p>
+<h4 id="Pre-training-ESM-GearNet-with-Unlabeled-Protein-Structures">Pre-training ESM-GearNet with Unlabeled Protein Structures</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Experiments-2">Experiments</h3>
+<h4 id="Experimental-Setup">Experimental Setup</h4>
+<h5 id="Pre-training-dataset">Pre-training dataset</h5>
+<p>AF数据库的v1和v2，365K个蛋白质组预测和440K的swiss-prot预测</p>
+<h5 id="Downstream-datasets">Downstream datasets</h5>
+<p>Enzyme Commission (EC) number prediction</p>
+<p>Gene Ontology (GO) term prediction molecular function (MF)包括biological process (BP) and cellular component (CC)</p>
+<h5 id="Training">Training</h5>
+<p>50 epochs on AlphaFold Database and for 200 epochs on EC and GO prediction</p>
+<p>多视图对比学习裁剪的子序列长为50，mask ratio为15%，InfoNCE loss的temperature为0.07，batch size为256，学习率2e-4</p>
+<p>下游任务batch size为2，学习率1e-4，ReduceLROnPlateau scheduler with factor 0.6 and patience 5</p>
+<h4 id="Results-7">Results</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab3.png" alt="avatar" style="zoom:70%;" /></div>
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Data-Transformation">Data Transformation</h3>
-<ul>
-<li>数据需要转换成与ML算法一致的类型</li>
-<li>我们关注的是对于不同的数据类型在特殊步骤的方法</li>
-</ul>
-<h3 id="Normalization-for-Real-Value-Columns">Normalization for Real Value Columns</h3>
-<p>Min-max normalization：缩放到a-b之间<br>
-$$<br>
-x_i’=\frac{x_i-\min_x}{\max_x-\min_x}(b-a)+a<br>
-$$<br>
-Z-score normalization：均值变0方差变1<br>
-$$<br>
-x_i’=\frac{x_i-mean(x)}{std(x)}<br>
-$$<br>
-Decimal scaling：<br>
-$$<br>
-x_i’=x_i/10^j<br>
-$$<br>
-Log scaling：<br>
-$$<br>
-x_i’=\log(x_i)<br>
-$$</p>
-<h3 id="Image-Transformations">Image Transformations</h3>
-<ul>
-<li>直接爬取美国平均一年的卖房子的图片下下来会有15TB
-<ul>
-<li>平均每年出售五百万房子，平均每个房子20张图片，平均每张图片153kb，1041x732的分辨率</li>
-</ul>
-</li>
-<li>下采样和裁剪
-<ul>
-<li>减小图片大小存储</li>
-<li>ML对低分辨率的图片表现不错
-<ul>
-<li>~320x224分辨率 -&gt; 1.4TB</li>
-</ul>
-</li>
-<li>注意下采样时图片的质量，比如jpeg质量是85%
-<ul>
-<li>Medium（80%-90%）-&gt; 1%的精确率下降</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>图片白值化
-<ul>
-<li>使输入减少冗余</li>
-<li>模型收敛更快</li>
-</ul>
-</li>
-</ul>
-<h3 id="Video-Transformations">Video Transformations</h3>
-<ul>
-<li>视频平均时长
-<ul>
-<li>电影~2h，youtube~11min，抖音~15秒</li>
-</ul>
-</li>
-<li>预处理去平衡容量、质量和加载速度</li>
-<li>我们经常使用短视频切片（short video clips&lt;10s）
-<ul>
-<li>每一个切片通常包含了一个独立的事件，去除掉一些没用的片段</li>
-</ul>
-</li>
-<li>解码一个可播放的视频，采样一些序列帧
-<ul>
-<li>最好的方法是加载时采样，但会消耗10倍以上的空间</li>
-<li>压缩计算算法或许更便宜，容易存储（通常使用GPU来解码）</li>
-<li>可以应用其他的图片变形技术到帧上</li>
-</ul>
-</li>
-</ul>
-<h3 id="Text-Transformations">Text Transformations</h3>
-<ul>
-<li>词根化和语法化：把一个词变成常见的形式
-<ul>
-<li>比如am,are -&gt; be</li>
-</ul>
-</li>
-<li>分词：文本 -&gt; 一系列的词元</li>
-</ul>
-<h3 id="Summary-6">Summary</h3>
-<ul>
-<li>数据变换变成ML算法适合的形式，平衡数据大小、质量和加载速度</li>
-<li>表：归一化数值</li>
-<li>图片：检测，下采样</li>
-<li>视频：切片，采样帧</li>
-<li>文本：词根化，语法化、分词</li>
-</ul>
-<HR align=left color=#987cb9 SIZE=1>
-
       
     </div>
     <div class="article-footer">
@@ -489,7 +440,7 @@ $$</p>
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://tyang816.github.io/2022/04/04/2.3%20%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2/" title="2.3 数据变换【stanford-cs329p】" target="_blank" rel="external">https://tyang816.github.io/2022/04/04/2.3 数据变换/</a>
+      <a href="https://tyang816.github.io/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/" title="ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training" target="_blank" rel="external">https://tyang816.github.io/2023/11/19/Enhancing Protein Language Models with Structure-based Encoder and Pre-training/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -535,13 +486,9 @@ $$</p>
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/04/05/code2vec%EF%BC%9ALearning%20Distributed%20Representations%20of%20Code/" title="POPL-2019 code2vec：Learning Distributed Representations of Code"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/04/04/2.2%20%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86/" title="2.2 数据清理【stanford-cs329p】"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2023/11/19/Light%20attention%20predicts%20protein%20location%20from%20the%20language%20of%20life/" title="Bioinformatics Advances-2021 Light attention predicts protein location from the language of life"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
