@@ -405,7 +405,7 @@
 <p>来自谷歌的工作</p>
 </blockquote>
 <h2 id="稍长的视频处理：池化和LSTM在视频理解的作用">稍长的视频处理：池化和LSTM在视频理解的作用</h2>
-<h3 id="Abstract-64">Abstract</h3>
+<h3 id="Abstract-43">Abstract</h3>
 <p>提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出</p>
 <h3 id="Apporach">Apporach</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png" alt="avatar" style="zoom:60%;" /></div>
@@ -413,7 +413,7 @@
 <p>首先对于所有的帧肯定是要去抽特征，比如原始的手工或卷积神经网络，关键在于抽取到特征之后怎么去做pooling这个操作，可以简单的做一个max或average，这篇文章对这个做了很多的探索，<strong>最终的结论表示都差不多</strong>，ConvPooling最好。以及尝试了用LSTM去做特征融合，但实际上提升有限</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img4.png" alt="avatar" style="zoom:60%;" /></div>
 <p>每个视频帧对应一个卷积网络（权值共享）去抽取特征，用了五层LSTM，最后softmax</p>
-<h3 id="Result-7">Result</h3>
+<h3 id="Result-6">Result</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>在Sorts-1M数据集上LSTM没有想象中那么有用，可能是因为LSTM学到的东西比较high-level，<strong>视频即使帧比较多还是比较短</strong>，在这种情况下实际上<strong>语义信息并没有太多改变</strong>，相当于传了一些差不多的内容给LSTM，说实话LSTM可能也学不到什么，最终也就带不来很大的提升。在变化比较剧烈的情况，或者长视频上，LSTM应该还是有一定意义的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table7.png" alt="avatar" style="zoom:60%;" /></div>

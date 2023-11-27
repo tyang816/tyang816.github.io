@@ -412,10 +412,10 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/zyang1580/SML">https://github.com/zyang1580/SML</a></p>
 </blockquote>
 <h2 id="SML：时序训练-知识转移CNN">SML：时序训练+知识转移CNN</h2>
-<h3 id="Abstract-98">Abstract</h3>
+<h3 id="Abstract-94">Abstract</h3>
 <p>实际的推荐系统需要定期用新的交互数据来重新训练刷新模型，但因为历史数据往往很多，重新训练特别耗时，所以本文主要就研究推荐系统的模型重新训练机制。作者第一个初衷是在历史数据上重新训练没有必要，因为已经训练过了，同时只在新数据上训练容易过拟合，里面信息太少而且对用户长期偏好影响不剧烈，所以提出了新的训练方法，<strong>学习转移过去的训练经验而不是数据</strong>，通过一个神经网络组件，为了优化这种“未来性能”，在下一个时期评估推荐准确性</p>
 <p>实验表示在两个真实数据集上有巨大的加速，同时比重新训练的效果更好</p>
-<h3 id="Introduction-78">Introduction</h3>
+<h3 id="Introduction-73">Introduction</h3>
 <p>三种重新训练的方法：</p>
 <ul>
 <li>
@@ -448,7 +448,7 @@
 <p>所以本文主要只利用新的数据 $D_t$ 通过 $W_{t-1}$ 参数来训练，这样来获得一个在 $D_{t+1}$ 表现不错的模型</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/frm2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>与标准的元学习不同的是任务是一个序列，在先前时间完成后才能转移掉下个时间</p>
-<h3 id="Method-19">Method</h3>
+<h3 id="Method-18">Method</h3>
 <h4 id="Model-Overview">Model Overview</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>主要由三部分组成：</p>
@@ -482,7 +482,7 @@
 <p>最后是全连接和输出层</p>
 <h3 id="Sequential-Training">Sequential Training</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/alg2.png" alt="avatar" style="zoom:50%;" /></div>
-<h3 id="Experiment-31">Experiment</h3>
+<h3 id="Experiment-29">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>表现略低，但其实这个不是文章主要卖点</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SML/tab2.png" alt="avatar" style="zoom:60%;" /></div>

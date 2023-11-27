@@ -411,9 +411,9 @@
 <p>一些快速应用的网站与预览：<a target="_blank" rel="noopener" href="https://gpt3demo.com/">300+ GPT-3 Examples, Demos, Apps, Showcase, and NLP Use-cases | GPT-3 Demo</a></p>
 </blockquote>
 <h2 id="GPT-3：NLP预训练系列之三">GPT-3：NLP预训练系列之三</h2>
-<h3 id="Abstract-43">Abstract</h3>
+<h3 id="Abstract-77">Abstract</h3>
 <p>有1750亿个可学习参数，与非稀疏模型比大10倍，因此在做子任务时还更新模型成本受不了，因此不做梯度更新或微调。</p>
-<h3 id="Introduction-39">Introduction</h3>
+<h3 id="Introduction-58">Introduction</h3>
 <ol>
 <li>
 <p>三个问题：</p>
@@ -442,7 +442,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="Model-5">Model</h3>
+<h3 id="Model-10">Model</h3>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>还是有两个问题：</p>
 <ul>
@@ -461,15 +461,15 @@
 </ul>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img4.png" alt="avatar" style="zoom:60%;" /></div>
 <p>虽然Common Crawl数据很大，但依旧视作较差的数据，所以设置了一个采样率，保证批量里面有一定的高质量数据</p>
-<h3 id="Evaluation">Evaluation</h3>
+<h3 id="Evaluation-3">Evaluation</h3>
 <p>在下游任务中采样K个样本作为条件，多分类prompt使用的是”Answer:“或”A:“，二分类用”True“或”False“，自由答案用”Beam Search“</p>
-<h3 id="Result-5">Result</h3>
+<h3 id="Result-8">Result</h3>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img5.png" alt="avatar" style="zoom:60%;" /></div>
 <p>作者发现验证损失跟子任务的精度有一定关系，能够很好表示模型预训练的好坏。在找到一个最好的模型且不用过度训练的情况下，<strong>随着计算量指数的增加，损失线性下降</strong></p>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img6.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img7.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT3-img8.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Limitation">Limitation</h3>
+<h3 id="Limitation-3">Limitation</h3>
 <ol>
 <li>文本生成方面还是比较弱，写小说很难，但补全没问题</li>
 <li>结构和算法有局限，不能像BERT那样前后看</li>
