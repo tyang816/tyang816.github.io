@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2023/12/31/A%20joint%20embedding%20of%20protein%20sequence%20and%20structure%20enables%20robust%20variant%20effect%20predictions/</loc>
+    <lastmod>2023-12-31</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/05/21/ProteinGym%EF%BC%9ALarge-Scale%20Benchmarks%20for%20Protein%20Design%20and%20Fitness%20Prediction/</loc>
     <lastmod>2023-12-30</lastmod>
   </url>
@@ -125,6 +129,18 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
@@ -169,11 +185,11 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
+    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
+    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -222,18 +238,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
