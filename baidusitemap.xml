@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/04/30/Protein%20remote%20homology%20detection%20and%20structural%20alignment%20using%20deep%20learning/</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/04/27/Fast%20protein%20structure%20searching%20using%20structure%20graph%20embeddings/</loc>
     <lastmod>2024-04-27</lastmod>
   </url>
@@ -257,11 +261,11 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
