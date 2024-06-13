@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/06/13/Sensitive%20remote%20homology%20search%20by%20local%20alignment%20of%20small%20positional%20embeddings%20from%20protein%20language%20models/</loc>
+    <lastmod>2024-06-13</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/</loc>
     <lastmod>2024-05-29</lastmod>
   </url>
