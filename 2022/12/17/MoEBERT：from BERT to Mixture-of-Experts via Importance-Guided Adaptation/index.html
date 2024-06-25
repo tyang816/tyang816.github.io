@@ -300,7 +300,7 @@
                 <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
-                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
+                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Bioinformatics-2024 Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-05-29T03:35:20.000Z" itemprop="datePublished">2024-05-29</time>
@@ -417,7 +417,7 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/SimiaoZuo/MoEBERT">https://github.com/SimiaoZuo/MoEBERT</a></p>
 </blockquote>
 <h2 id="MoEBERT：MoE-distillation">MoEBERT：MoE+distillation</h2>
-<h3 id="Abstract-62">Abstract</h3>
+<h3 id="Abstract-63">Abstract</h3>
 <p>目前训练小的压缩的模型是通过知识蒸馏，但性能下降厉害，因此提出用MoE-BERT来提升模型性能和推理速度。初始化MoE-BERT通过把FFN适应到多个专家里，同时还提出了layer-wise distillation方法来训练MoE-BERT</p>
 <h3 id="Introduction-57">Introduction</h3>
 <p>蒸馏方法分为任务无关和任务特定两种</p>
@@ -462,7 +462,7 @@
 <h4 id="Model-Training">Model Training</h4>
 <p>使用随机哈希策略训练experts，每个token预先分配给一个随机的expert，在训练和推理的时候这个分配关系不改变，这种分配策略和其他的路由策略进行了比较</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm8.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiments-11">Experiments</h3>
+<h3 id="Experiments-12">Experiments</h3>
 <h4 id="Datasets-5">Datasets</h4>
 <p>GULE、Question Answering</p>
 <h4 id="Implementation-Details">Implementation Details</h4>

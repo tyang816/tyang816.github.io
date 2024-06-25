@@ -285,7 +285,7 @@
                 <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
-                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
+                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Bioinformatics-2024 Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-05-29T03:35:20.000Z" itemprop="datePublished">2024-05-29</time>
@@ -403,9 +403,9 @@
 <p>GPT-2的启发：<strong>做研究不要一条路走到黑，做过程可以一条路走到黑，但是在做研究的时候，要灵活一些，不要一条路走到黑，需要尝试从一个新的角度来看问题。</strong></p>
 </blockquote>
 <h2 id="GPT-2：NLP预训练系列之二">GPT-2：NLP预训练系列之二</h2>
-<h3 id="Abstract-57">Abstract</h3>
+<h3 id="Abstract-58">Abstract</h3>
 <p>文本变为百万级别，模型变成10亿级别，但发现比BERT强不到哪儿去，于是换一个角度，找了一个zero-shot的观点作为主要卖点</p>
-<h3 id="Introduction-52">Introduction</h3>
+<h3 id="Introduction-53">Introduction</h3>
 <ol>
 <li>现在的主流途径都是在一个任务上收集一个数据集去做预测，主要是由于目前的模型泛化性都不是很好</li>
 <li>多任务训练看上去比较好（在多个数据集，可能有多个目标函数的方法），但目前主流还是做预训练和有监督的微调，当然这样还是有两个问题
@@ -422,7 +422,7 @@
 <h3 id="Dataset-5">Dataset</h3>
 <p>因为你要加入提示符的概念，所以数据集中必须有类似的信息才行，这对数据又有一定要求了，就比如训练文本里必须出现英语翻译成法语的对话</p>
 <p>用Common Crawl，这个数据集很大，但不好用，信噪比较低。所以用Reddit，每个人提交感兴趣的网页，选取了至少有3个评论（karma？）的帖子，说明Reddit用户觉得有一定加直的，这种信息就算是过滤后的</p>
-<h3 id="Experiment-5">Experiment</h3>
+<h3 id="Experiment-6">Experiment</h3>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT2-img1.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GPT/GPT2-img2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>随着模型增大性能还在上升</p>

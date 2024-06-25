@@ -290,7 +290,7 @@
                 <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
               </p>
               <p class="item-title">
-                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
+                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Bioinformatics-2024 Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-05-29T03:35:20.000Z" itemprop="datePublished">2024-05-29</time>
@@ -407,9 +407,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/isl-org/lang-seg">https://github.com/isl-org/lang-seg</a></p>
 </blockquote>
 <h2 id="LSeg：增加文本编码器做有监督语义分割">LSeg：增加文本编码器做有监督语义分割</h2>
-<h3 id="Abstract-58">Abstract</h3>
+<h3 id="Abstract-57">Abstract</h3>
 <p>把CLIP直接用在做语义分割上，使用文本编码器计算离散的输入标签嵌入表征，基于transformer的编码器计算图像嵌入表征。文本编码器可以把语义上相似的标签比如cat和furry嵌入到相近空间中，这样可以推广到没见过的样本</p>
-<h3 id="Introduction-53">Introduction</h3>
+<h3 id="Introduction-52">Introduction</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LSeg/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>从图1可以看出来分割的效果很好，以及增加了没有的标签情况下的容错能力也很好，主要是展示这种强大的zero-shot的能力，甚至可以实现dog，pet这种子类父类分割</p>
 <h3 id="Language-Driven-Semantic-Segmentation">Language-Driven Semantic Segmentation</h3>
@@ -418,7 +418,7 @@
 <p>作者的text-encoder自始至终没有动，直接用的CLIP的文本编码器，训练也没动，因为语义分割的数据集很小，如果fine-tune可能就把模型带跑偏了而且训练困难</p>
 <p>作者发现image-encoder用的是ViT的预训练参数，用CLIP的不太行</p>
 <p>增加了一个spatial regularization blocks，在视觉和文本特征之后学习怎么进行融合交互达到更好的效果，比如加到2个效果好，但是加到4个就崩了，其实对性能没有多大影响</p>
-<h3 id="Experiment-6">Experiment</h3>
+<h3 id="Experiment-5">Experiment</h3>
 <p>数据集用的PASCAL-5，COCO-20，SFF-1000，其实就是PASCAL有20个类，5个当作知道的类，剩下15个就是不知道的类，这样做zero-shot，COCO把80类分为20类</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LSeg/tab1-tab2.png" alt="avatar" style="zoom:60%;" /></div>
 <h4 id="Failure-Cases">Failure Cases</h4>

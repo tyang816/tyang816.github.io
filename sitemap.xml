@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/</loc>
+    
+    <lastmod>2024-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2024/06/25/PLMSearch%EF%BC%9AProtein%20language%20model%20powers%20accurate%20and%20fast%20sequence%20search%20for%20remote%20homology/</loc>
     
     <lastmod>2024-06-25</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://tyang816.github.io/2024/06/13/Sensitive%20remote%20homology%20search%20by%20local%20alignment%20of%20small%20positional%20embeddings%20from%20protein%20language%20models/</loc>
     
     <lastmod>2024-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/</loc>
-    
-    <lastmod>2024-05-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
