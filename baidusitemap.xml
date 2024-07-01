@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/07/01/Simulating%20500%20million%20years%20of%20evolution%20with%20a%20language%20model/</loc>
+    <lastmod>2024-07-01</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/</loc>
     <lastmod>2024-06-25</lastmod>
   </url>
