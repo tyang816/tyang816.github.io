@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/07/15/Feature%20Reuse%20and%20Scaling%EF%BC%9AUnderstanding%20Transfer%20Learning%20with%20Protein%20Language%20Models/</loc>
+    <lastmod>2024-07-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/07/01/Simulating%20500%20million%20years%20of%20evolution%20with%20a%20language%20model/</loc>
     <lastmod>2024-07-01</lastmod>
   </url>
@@ -177,6 +181,18 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
@@ -186,10 +202,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/02/01/An%20Empirical%20Study%20of%20Training%20Self-Supervised%20Vision%20Transformers/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -205,10 +217,6 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/09/17/CLIP4Clip%EF%BC%9AAn%20Empirical%20Study%20of%20CLIP%20for%20End%20to%20End%20Video%20Clip%20Retrieval/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/09/17/CLIPasso%EF%BC%9ASemantically-Aware%20Object%20Sketching/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
@@ -217,7 +225,7 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
+    <loc>https://tyang816.github.io/2022/09/17/AudioCLIP%EF%BC%9AExtending%20CLIP%20to%20Image,%20Text%20and%20Audio/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -226,6 +234,10 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/09/17/CLIP4Clip%EF%BC%9AAn%20Empirical%20Study%20of%20CLIP%20for%20End%20to%20End%20Video%20Clip%20Retrieval/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -277,15 +289,7 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <loc>https://tyang816.github.io/2023/01/15/CoCa%EF%BC%9AContrastive%20Captioners%20are%20Image-Text%20Foundation%20Models/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
