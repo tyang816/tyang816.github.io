@@ -20,26 +20,26 @@
   
   
   <title>A joint embedding of protein sequence and structure enables robust variant effect predictions | tyang</title>
-  <meta name="description" content="论文地址：A joint embedding of protein sequence and structure enables robust variant effect predictions 论文实现：https:&#x2F;&#x2F;github.com&#x2F;KULL-Centre&#x2F;_2023_Blaabjerg_SSEmb  SSEmeb：MSA transformer+GVP突变预测 Abstract 融">
+  <meta name="description" content="论文地址：Evaluating the representational power of pre-trained DNA language models for regulatory genomics 论文实现：https:&#x2F;&#x2F;github.com&#x2F;amberT15&#x2F;LLM_eval  gLM-eval：评估glm在各种zero-shot下游任务表现 Abstract genomic lang">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A joint embedding of protein sequence and structure enables robust variant effect predictions">
 <meta property="og:url" content="https://tyang816.github.io/2023/12/31/A%20joint%20embedding%20of%20protein%20sequence%20and%20structure%20enables%20robust%20variant%20effect%20predictions/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：A joint embedding of protein sequence and structure enables robust variant effect predictions 论文实现：https:&#x2F;&#x2F;github.com&#x2F;KULL-Centre&#x2F;_2023_Blaabjerg_SSEmb  SSEmeb：MSA transformer+GVP突变预测 Abstract 融">
+<meta property="og:description" content="论文地址：Evaluating the representational power of pre-trained DNA language models for regulatory genomics 论文实现：https:&#x2F;&#x2F;github.com&#x2F;amberT15&#x2F;LLM_eval  gLM-eval：评估glm在各种zero-shot下游任务表现 Abstract genomic lang">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/fig1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tabs1.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/fig2.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab3.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/figs3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig6.png">
 <meta property="article:published_time" content="2023-12-31T03:35:20.000Z">
-<meta property="article:modified_time" content="2023-12-31T09:00:55.938Z">
+<meta property="article:modified_time" content="2024-07-28T05:25:22.307Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="BI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/fig1.png">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://tyang816.github.io/2023/12/31/A%20joint%20embedding%20of%20protein%20sequence%20and%20structure%20enables%20robust%20variant%20effect%20predictions/index.html">
   
@@ -212,7 +212,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearn/">DeepLearn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">211</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearn/">DeepLearn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">212</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
     </div>
   </div>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">50</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">95</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">51</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">95</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +241,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -253,6 +253,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/07/28/Evaluating%20the%20representational%20power%20of%20pre-trained%20DNA%20language%20models%20for%20regulatory%20genomics/" class="title">Evaluating the representational power of pre-trained DNA language models for regulatory genomics</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-07-28T05:22:43.000Z" itemprop="datePublished">2024-07-28</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -309,21 +324,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2024-06-13T09:04:42.000Z" itemprop="datePublished">2024-06-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
-              </p>
-              <p class="item-title">
-                <a href="/2024/05/29/Embedding-based%20alignment%EF%BC%9Acombining%20protein%20language%20models%20with%20dynamic%20programming%20alignment%20to%20detect%20structural%20similarities%20in%20the%20twilight-zone/" class="title">Bioinformatics-2024 Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2024-05-29T03:35:20.000Z" itemprop="datePublished">2024-05-29</time>
               </p>
             </div>
           </li>
@@ -392,10 +392,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/31/A%20joint%20embedding%20of%20protein%20sequence%20and%20structure%20enables%20robust%20variant%20effect%20predictions/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 423(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1.2k(words)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 4(minutes)</span>
 	
 
       </div>
@@ -403,43 +403,46 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2023.12.14.571755">A joint embedding of protein sequence and structure enables robust variant effect predictions</a></p>
-<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/KULL-Centre/_2023_Blaabjerg_SSEmb">https://github.com/KULL-Centre/_2023_Blaabjerg_SSEmb</a></p>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2024.02.29.582810">Evaluating the representational power of pre-trained DNA language models for regulatory genomics</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/amberT15/LLM_eval">https://github.com/amberT15/LLM_eval</a></p>
 </blockquote>
-<h2 id="SSEmeb：MSA-transformer-GVP突变预测">SSEmeb：MSA transformer+GVP突变预测</h2>
+<h2 id="gLM-eval：评估glm在各种zero-shot下游任务表现">gLM-eval：评估glm在各种zero-shot下游任务表现</h2>
 <h3 id="Abstract-3">Abstract</h3>
-<p>融合了蛋白质结构的图表示和MSA模型，能够有效预测蛋白质突变，同时对下游任务也有帮助，比如预测protein-protein binding sites</p>
+<p>genomic language models (gLMs)的涌现提供了一个无监督的方法来学习非编码基因组中的顺式调控模式。先前的评估已经展现了预训练的gLMs可以提高调节基因组任务的预测能力，尽管这样的微调效果很好，但确定gLM表征是否体现了对顺式调节生物学的基本理解仍然是一个悬而未决的问题。这里我们用预训练模型来解释跨越DNA和RNA调控的细胞类型特异性功能基因组学数据。研究结果表明，与使用单热编码序列的传统机器学习方法相比，目前的glm并没有提供实质性的优势。这项工作强调了当前glm的一个主要局限性，提出了非编码基因组的传统预训练策略的潜在问题</p>
 <h3 id="Introduction-3">Introduction</h3>
-<p>操作序列的变化来优化功能是蛋白质工程和设计的基础</p>
-<p>高通量的分析方法，通常被称为变异效应的Multiplexed Assay of Variant Effects（MAVE）或Deep Mutational Scanning experiments (DMS)</p>
-<p>这里提出SSEmb，将蛋白质信息的多个来源MSA和序列映射到一个单一的表征中</p>
-<h3 id="Results-and-Discussion">Results and Discussion</h3>
-<h4 id="Development-of-the-SSEmb-model">Development of the SSEmb model</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/fig1.png" alt="avatar" style="zoom:100%;" /></div>
-<p>结合MSA和蛋白质结构的自监督训练方法，训练集CATH 4.2，训练的时候随机mask wt序列的部分子集，限制了MSA Transformer的attention，只能attention在3D蛋白质结构上相邻的氨基酸（stucture-constrained MSA transformer）,GNN用的GVP</p>
-<h4 id="Validation-using-multiplexed-assays-of-variant-effects">Validation using multiplexed assays of variant effects</h4>
-<p>验证集是活性或丰度的，包含容易和困难获取MSA的</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab1.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Testing-SSEmb-on-ProteinGym-benchamark">Testing SSEmb on ProteinGym benchamark</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab2.png" alt="avatar" style="zoom:100%;" /></div>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tabs1.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Prediction-of-protein-protein-binding-sites-using-embeddings">Prediction of protein-protein binding sites using embeddings</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/tab3.png" alt="avatar" style="zoom:100%;" /></div>
-<h3 id="Methods">Methods</h3>
-<h4 id="Multiple-sequence-alignments">Multiple sequence alignments</h4>
-<p>使用的ColabFold，–-diff=512, –-filter-min-enable=64, –-max-seq-id=0.90还增加了–-cov=0.75只生成高覆盖率的序列</p>
-<h4 id="Subsampling-of-multiple-sequence-alignments">Subsampling of multiple sequence alignments</h4>
-<p>MSA的下采样序列为16，发现浅层的MSA比单个或深层的MSA更有效</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SSEmeb/figs3.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Model-training">Model training</h4>
-<p>使用的BERT策略，15%中60%mask，20%对应的MSA一列也全mask，10%随机突变，10%不变</p>
-<p>先训练GNN冻住MSA tansformer，然后再finetuneGNN和structure-constrained MSA transformer</p>
-<h4 id="GEMME-protocol">GEMME protocol</h4>
-<p>HHblits version 2.0.15，uniref30： -e 1e-10 -i 1 -p 40 -b 1 -B 20000</p>
-<h4 id="Downstream-model-for-protein-protein-binding-site-prediction">Downstream model for protein-protein binding site prediction</h4>
-<p>PPBS dataset</p>
-<HR align=left color=#987cb9 SIZE=1>
+<p>预训练蛋白质模型的表征用途很多，可以预测蛋白质结构、非同义突变效应，设计新的蛋白质序列，研究蛋白质进化关系</p>
+<p>而对基因组DNA序列进行预训练的模型加速了对非编码基因组中的功能元素理解，gLMs原则上可以帮助理解转录因子（TFs）控制顺式调节元件（CREs）活性的复杂协调</p>
+<p>输入是DNA序列，分词方法有单核苷酸和k-mer两种，基础架构有transformer，多头注意力或者一些变体，或是残差连接的卷积网络；数据比较丰富，比如有单个物种的基因组，多个物种的基因组或是基因组的特定区域，比如未翻译区域（UTRs）、pre-mRNA、启动子、编码区、非编码RNA或是保守位点</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>这里作者评估了六种主要的功能基因组预测任务，涵盖了在DNA和RNA水平上的顺式调控复杂性，结果显示目前的预训练gLMs并没有比传统的one-hot表示+深度学习强多少。同时，对功能的基因组数据进行监督学习的foundation models可以更好的迁移到其他功能基因组数据上。还有结果显示，当前的gLM的预训练方案难以理解细胞类型特定功能元素，还不能实现真正的基础模型的效果</p>
+<h3 id="Results">Results</h3>
+<h4 id="Task-1-Predicting-cell-type-specific-regulatory-activity-from-lentiMPRA-data">Task 1: Predicting cell-type specific regulatory activity from lentiMPRA data</h4>
+<p>通过考虑两种细胞类型，即HepG2和K562，我们可以评估预训练的gLM表示是否捕获了细胞类型特异性的CRE活性，输入DNA序列，预测一个CRE的标量</p>
+<p>使用CLS token或是mean embedding，使用CNN作为Baseline，用倒数第二层的full embedding和one-hot序列做比较，还是用了一个有监督的foundation model Sei，使用one-hot sequence的ResNet model，以做到全面而公平的比较</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>fig2 b可以看到很多情况下，embedding方法甚至不如one-hot</p>
+<h4 id="Task-2-Predicting-TF-binding-sites-from-ChIP-seq-data">Task 2: Predicting TF binding sites from ChIP-seq data</h4>
+<p>TF binding是一个细胞类型特异性的现象，而标准的语言建模方法是没有做到cell-type感知的，一个可能的原因是lentiMPRA预测任务在训练时丢失了关键motif</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Task-3-Zero-shot-variant-effect-prediction-with-MPRA-data">Task 3: Zero-shot variant effect prediction with MPRA data</h4>
+<p>预测非编码突变</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>使用gLM嵌入在lentiMPRA数据上训练的cnn相对于预先训练的同行产生了明显更好的性能</p>
+<h4 id="Task-4-Predicting-alternative-splicing-from-RNA-seq-data">Task 4: Predicting alternative splicing from RNA-seq data</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<p>先前的研究表明，Nucleotide-Transformer和GPN已经学习了与基因定义和剪接位点相关的特性，使用ASCOT数据集测试</p>
+<h4 id="Task-5-Predicting-RNA-pol-II-elongation-potential-from-INSERT-seq-data">Task 5: Predicting RNA pol II elongation potential from INSERT-seq data</h4>
+<p>以nt RNA序列作为输入，并预测RNA pol II的延伸，使用INSERT-seq dataset，从fig4可以看到预训练模型并不一定能取得更好的效果</p>
+<h4 id="Task-6-Predicting-RNA-binding-protein-binding-with-eCLIP-seq-data">Task 6: Predicting RNA-binding protein binding with eCLIP-seq data</h4>
+<p>RBP对于不同的RNA加工阶段都是必不可少的，使用eCLIP-seq（增强染色质免疫沉淀测序）数据集检测了gLMs预测RBP结合位点的能力</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Uncovering-cell-type-specific-motifs-learned-by-gLMs-is-challenging">Uncovering cell-type-specific motifs learned by gLMs is challenging</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Discussion">Discussion</h3>
+<p>与标准的one-hot序列相比，gLM表示几乎没有提供任何优势</p>
+<p>选择不对每个下游任务上的gLM的权重进行微调，虽然gLM的性能可能会通过微调而提高，但本研究的范围是严格衡量在训练前所学到的顺式调节生物学知识</p>
+<p>将当前的预训练的任务MLM扩展到整个基因组，难以捕获非编码基因组中有意义的表征，目前尚不清楚使用标准语言建模目标（即MLM或CLM）预训练的glm的持续缩放是否会最终会涌现s</p>
+<hr align="left" color="#987cb9" size="1">
 
       
     </div>
