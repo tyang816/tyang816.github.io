@@ -413,12 +413,12 @@
 <p>来自OpenAI的工作，能够通过文本对图片进行生成，修改</p>
 </blockquote>
 <h2 id="DALL·E-2：CLIP-扩散模型文本图片生成">DALL·E 2：CLIP+扩散模型文本图片生成</h2>
-<h3 id="Abstract-93">Abstract</h3>
+<h3 id="Abstract-89">Abstract</h3>
 <p>对比学习比如CLIP已经能够学习到很好的语义和风格信息，为了使用这些表示做图像生成，作者提出了一种两阶段模型：先是给定文本特征生成CLIP图像嵌入表示（prior），然后解码器根据表示生成图像（decoder），这种显式生成图像表示对多样性很好。解码器用了扩散模型</p>
-<h3 id="Introduction-80">Introduction</h3>
+<h3 id="Introduction-75">Introduction</h3>
 <p>CV领域主要的进展就是用了更大的数据集和模型，CLIP通过简单的对比学习方式就能学到很好的特征，对于分布偏移等问题也比较健壮。扩散模型在最近也推进了视频和图片任务的SOTA，多样性比GAN更好，但保真度，细节不如GAN系列工作，但最近的一些技术又推进了扩散模型</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig1.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Method-11">Method</h3>
+<h3 id="Method-10">Method</h3>
 <p>数据集和CLIP一样都是图像文本对，两个组件：prior和decoder</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>图2上半部分是CLIP，训练好了一直都是锁住的不会再训练了</p>
@@ -431,7 +431,7 @@
 <p>用扩散模型时仅训练了transformer的解码器，模型输入：文本，CLIP文本的嵌入，扩散步数的嵌入，加入噪声的CLIP图像嵌入，最后还有transformer本身的嵌入背用于预测没有噪声的CLIP图像嵌入</p>
 <p>这里作者发现直接预测图片比预测噪声效果更好</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/frm2.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Experiment-18">Experiment</h3>
+<h3 id="Experiment-16">Experiment</h3>
 <p>图像内差，图像与文本内差示例</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig4.png" alt="avatar" style="zoom:60%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DALL·E 2/fig5.png" alt="avatar" style="zoom:60%;" /></div>
