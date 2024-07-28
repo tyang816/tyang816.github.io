@@ -412,7 +412,7 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/salesforce/ALBEF">https://github.com/salesforce/ALBEF</a></p>
 </blockquote>
 <h2 id="ALBEF：多模态融合前先做动量对比学习">ALBEF：多模态融合前先做动量对比学习</h2>
-<h3 id="Abstract-86">Abstract</h3>
+<h3 id="Abstract-77">Abstract</h3>
 <p>最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个transformer的模型当作多模态的编码器，同时编码视觉的token和文本的token。用了预训练的目标检测器之后，视觉特征和文本特征其实不是align的(目标检测器是提前训练好的，导致视觉特征和文本特征可能隔很远)。为了在经过multimodal encoder之前（fusion之前）把图像和文本align起来，用了对比学习loss。为了更好的从有噪声的网络数据学习，用了一个momentum distillation自训练方式，打伪标签</p>
 <h3 id="ALBEF-Pre-training">ALBEF Pre-training</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig1.png" alt="avatar" style="zoom:90%;" /></div>
@@ -453,7 +453,7 @@
 </ul>
 <h5 id="Natural-Language-for-Visual-Reasoning">Natural Language for Visual Reasoning</h5>
 <p>预测一个文本能不能同时描述一对图片，二分类问题，衡量指标是准确度</p>
-<h3 id="Experiments-18">Experiments</h3>
+<h3 id="Experiments-15">Experiments</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab1.png" alt="avatar" style="zoom:80%;" /></div>
 <p>加了ITC之后提点很明显，用了hard negative之后效果也有提升，但对于换更大的数据集而言这些trick都无关紧要</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab2-tab3.png" alt="avatar" style="zoom:80%;" /></div>

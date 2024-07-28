@@ -404,13 +404,13 @@
 <p>抽取光流的方法不适合实时处理，因为每换一个数据集，就要重新处理光流，而且抽取光流时间还很长，此外在做推理的时候也需要抽取光流，这就导致了实时性非常差。如果有方法可以不单独对时间信息进行建模，直接从数据中学习到时序信息那自然是更好的了</p>
 </blockquote>
 <h2 id="C3D：3D网络抽特征">C3D：3D网络抽特征</h2>
-<h3 id="Abstract-103">Abstract</h3>
+<h3 id="Abstract-94">Abstract</h3>
 <p>用了一个更深的3D卷积网络在一个更大的数据集（sports 1M）上，设计比较简单直观</p>
-<h3 id="Model-11">Model</h3>
+<h3 id="Model-10">Model</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/img3.png" alt="avatar" style="zoom:60%;" /></div>
 <p>相当于把VGG网络里面每一个block减少了一层conv，再把所有的conv kernel从3x3变成3x3x3</p>
 <p>作者每次都从最后4096里面<strong>抽取特征</strong>，拿出来训练一个SVM分类器去做分类任务，效果快又好</p>
-<h3 id="Experiment-24">Experiment</h3>
+<h3 id="Experiment-19">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/table2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>从头到尾都是在做时空学习的操作，所以作者认为3D网络比2D网络更适合视频理解的任务</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/table3.png" alt="avatar" style="zoom:60%;" /></div>
