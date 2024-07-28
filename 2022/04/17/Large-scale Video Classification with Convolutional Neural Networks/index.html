@@ -404,9 +404,9 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Karpathy_Large-scale_Video_Classification_2014_CVPR_paper.pdf">Large-scale Video Classification with Convolutional Neural Networks</a></p>
 </blockquote>
 <h2 id="DeepVideo：使用深度学习处理视频理解的最早期工作之一">DeepVideo：使用深度学习处理视频理解的最早期工作之一</h2>
-<h3 id="Abstract-93">Abstract</h3>
+<h3 id="Abstract-102">Abstract</h3>
 <p>把卷积网络应用到视频分类上</p>
-<h3 id="Model-9">Model</h3>
+<h3 id="Model-10">Model</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepVideo/img1.png" alt="avatar" style="zoom:60%;" /></div>
 <ul>
 <li>Single Frame：就是一个图片任务，通过神经网络，2层FC得到结果</li>
@@ -417,7 +417,7 @@
 <p>但实际上以上效果差别不大，而且即使在100万个视频上做预训练之后，在UCF-101那个小数据上做迁移的时候还比不上手工特征，所以作者开始尝试下面这条路</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepVideo/img2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>既然2D卷积网络学时序特征很难，不好学，那就先不学了，把图像那边一些好用的trick拿过来看看是否也能工作得很好，也就是多分辨率卷积神经网络，原图+抠出来的图，两个网络权值共享</p>
-<h3 id="Experiment-18">Experiment</h3>
+<h3 id="Experiment-23">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepVideo/table1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>有提升但还是比较小，Early Fusion确实太Early了，效果还不如baseline，Late Fusion一样也不咋地</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepVideo/table3.png" alt="avatar" style="zoom:60%;" /></div>
