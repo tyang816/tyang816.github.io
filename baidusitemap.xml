@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/08/23/DivideMix%EF%BC%9ALearning%20with%20Noisy%20Labels%20as%20Semi-supervised%20Learning/</loc>
+    <lastmod>2024-08-23</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2023/12/31/A%20joint%20embedding%20of%20protein%20sequence%20and%20structure%20enables%20robust%20variant%20effect%20predictions/</loc>
     <lastmod>2024-07-28</lastmod>
   </url>
