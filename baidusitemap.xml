@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/10/07/Multistate%20and%20functional%20protein%20design%20using%20RoseTTAFold%20sequence%20space%20diffusion/</loc>
+    <lastmod>2024-10-07</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/08/23/DivideMix%EF%BC%9ALearning%20with%20Noisy%20Labels%20as%20Semi-supervised%20Learning/</loc>
     <lastmod>2024-08-23</lastmod>
   </url>
@@ -189,6 +193,18 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
+    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
+    <lastmod>2023-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2022/01/12/A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
@@ -286,18 +302,6 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/28/Contrastive%20Multi-View%20Representation%20Learning%20on%20Graphs/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/04/07/Deep%20Graph%20Contrastive%20Representation%20Learning/</loc>
-    <lastmod>2023-06-15</lastmod>
-  </url>
-  <url>
-    <loc>https://tyang816.github.io/2022/07/05/GCC%EF%BC%9AGraph%20Contrastive%20Coding%20for%20Graph%20Neural%20Network%20Pre-Training/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
