@@ -408,9 +408,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/lucidrains/perceiver-pytorch">https://github.com/lucidrains/perceiver-pytorch</a></p>
 </blockquote>
 <h2 id="Perceiver-不对称注意力多模态蒸馏压缩">Perceiver: 不对称注意力多模态蒸馏压缩</h2>
-<h3 id="Abstract-115">Abstract</h3>
+<h3 id="Abstract-101">Abstract</h3>
 <p>该模型利用非对称注意机制迭代地将输入压缩到一个紧密的潜在瓶颈中，允许其扩展以处理非常大的输入，这种架构在各种模式的分类任务上具有强大的专业模型：图像、点云、音频、视频和视频+音频。</p>
-<h3 id="Introduction-97">Introduction</h3>
+<h3 id="Introduction-82">Introduction</h3>
 <p>早期计算机视觉里面的空间局部性（spatial locality）这种归纳偏差对于提升性能是有益的，但是随着数据集的增加，继续把这种偏差引入模型是正确的吗？或者我们是否应该去鼓励让数据本身说话？</p>
 <p>具有强烈先验知识的框架有一个显眼的问题，就是非常的modality-specific，比如在输入单个图片时可以使用2D网络架构，但是如果换到立体像对时，怎么从多个sensor中联合处理像素呢，concat或是sum？如果换到audio，那么2D网络就不适用了，1D卷积或LSTM可能是必要的</p>
 <p>核心思想是引入一组潜在的单元，形成一个注意瓶颈，输入必须通过这个瓶颈</p>
@@ -429,7 +429,7 @@
 </ul>
 <h4 id="Uncoupling-depth-with-a-latent-Transformer">Uncoupling depth with a latent Transformer</h4>
 <p>使用的GPT-2架构</p>
-<h3 id="Experiments-28">Experiments</h3>
+<h3 id="Experiments-24">Experiments</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver/tab2.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver/tab3.png" alt="avatar" style="zoom:100%;" /></div>

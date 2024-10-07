@@ -409,9 +409,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://jerryxu.net/GroupViT">https://jerryxu.net/GroupViT</a></p>
 </blockquote>
 <h2 id="GroupViT：聚类无监督语义分割">GroupViT：聚类无监督语义分割</h2>
-<h3 id="Abstract-104">Abstract</h3>
+<h3 id="Abstract-90">Abstract</h3>
 <p>语义分割有监督很依赖于标注好的segementation mask，本文将group机制带回网络，在只有文本做监督信号的情况下做训练进行简单的分割任务</p>
-<h3 id="Method-13">Method</h3>
+<h3 id="Method-10">Method</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GroupViT/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <p>增加了grouping block和可学习的group token，将相邻的像素点做出segementation mask，学到后面越好</p>
 <p>group token就类似CLS token，但是这里不是对整个图片抽出一个特征，而是做分割，每个小块有特征来表示，所以用64而不是1，把相似的点归结到61个cluster里面</p>
@@ -423,7 +423,7 @@
 <h4 id="Zero-Shot-Transfer-to-Semantic-Segmentation">Zero-Shot Transfer to Semantic Segmentation</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GroupViT/fig4.png" alt="avatar" style="zoom:60%;" /></div>
 <p>图像编码器得到8个group embedding，然后和文本特征算相似度就能得到属于什么类，但也意味着最多只能检测8类</p>
-<h3 id="Experiment-20">Experiment</h3>
+<h3 id="Experiment-15">Experiment</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GroupViT/tab1-tab3.png" alt="avatar" style="zoom:60%;" /></div>
 <p>看起来选择8个token效果是最好的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GroupViT/fig7.png" alt="avatar" style="zoom:60%;" /></div>

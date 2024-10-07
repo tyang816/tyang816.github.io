@@ -406,10 +406,10 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v119/hassani20a.html">Contrastive Multi-View Representation Learning on Graphs</a></p>
 </blockquote>
 <h2 id="不同图结构视图对比学习应用于图分类任务">不同图结构视图对比学习应用于图分类任务</h2>
-<h3 id="Abstract-81">Abstract</h3>
+<h3 id="Abstract-110">Abstract</h3>
 <p>对比图的结构视图来学习节点和图级别的表示，与视觉表示不同，将视图的数量增加到两个以上或对比多尺度编码并不能提高性能，但是对比第一阶邻居和图扩散的编码能达到最好的性能</p>
 <p>作者在8/8个结点和图分类任务中达到了SOTA，与有监督的相比4/8有提高</p>
-<h3 id="Introduction-74">Introduction</h3>
+<h3 id="Introduction-88">Introduction</h3>
 <p>一些设计好的图神经网络可以处理大小可变且排列不变的图，并且通过不断地迭代传递、变形、聚合信息学习到低维表征，每次迭代扩大了感受野one-hop，k次迭代就获得了k-hops的相关结点对某个结点的影响</p>
 <p>GNN往往需要依赖于特定任务的标签来学习到深层次（丰富）的表征，但是标注图很困难，因为它往往是特定领域的，不像是其他的一些常见形式如视频、图像、文本等，它需要领域知识，也更贵。所以为了解决这一问题，一些自监督的方法比如基于重构或者基于对比学习的方法与GNN结合，可以不依赖标注数据</p>
 <p>最近的研究通过最大化结点和图表示之间的互信息来对比学习，在结点和图分类任务上取得了SOTA，但它们依赖<strong>特定的编码器</strong>来学习</p>
@@ -423,7 +423,7 @@
 <li>除了提前停止，其他正则化和归一化都对性能有负面效果</li>
 </ol>
 <p>用了上述的性能作者实现了SOTA</p>
-<h3 id="Related-Work-4">Related Work</h3>
+<h3 id="Related-Work-6">Related Work</h3>
 <h4 id="Unsupervised-Representation-Learning-on-Graphs">Unsupervised Representation Learning on Graphs</h4>
 <p><strong>Random walk</strong>：把结点铺平成序列，随机游走</p>
 <p><strong>Graph kernels</strong>：把图分解成子图，用核函数衡量相似度</p>
@@ -432,7 +432,7 @@
 <p>图扩散网络(GDN)协调了空间信息传递和广义图扩散，其中扩散作为一个去噪过滤器，允许信息通过高阶的邻居。有early-fusion和late-fusion两种</p>
 <h4 id="Learning-by-Mutul-Information-Maximization">Learning by Mutul Information Maximization</h4>
 <p>InfoMax使得编码器去最大化互信息学习表示，但编码器和互信息评价器对性能影响也很大</p>
-<h3 id="Method-7">Method</h3>
+<h3 id="Method-19">Method</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Contrastive Multi-View Representation Learning on Graphs/img1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>主要组件：</p>
 <ul>
@@ -468,7 +468,7 @@ $$</p>
 <h4 id="Training-6">Training</h4>
 <p>为了以端到端的方式训练编码器，学习下游任务不可知的丰富的节点和图水平表示,利用深度InfoMax方法，通过最大化互信息，在两种视角之间对比的一个视图中节点表示和其它视图中的图表示,反之亦然。经验证明，这种方法在节点和图分类基准上的性能始终优于对比图-图或多尺度编码</p>
 <p>（定义目标看原文吧）</p>
-<h3 id="Experiments-15">Experiments</h3>
+<h3 id="Experiments-27">Experiments</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Contrastive Multi-View Representation Learning on Graphs/table1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>基准如上</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Contrastive Multi-View Representation Learning on Graphs/table2.png" alt="avatar" style="zoom:60%;" /></div>
