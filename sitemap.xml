@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/about/index.html</loc>
+    
+    <lastmod>2024-11-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2024/11/19/%E9%9D%A2%E5%90%91%E9%9D%9E%E5%AE%8C%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2024-11-19</lastmod>
@@ -986,15 +995,6 @@
     <loc>https://tyang816.github.io/2022/12/09/DNA%20Replication%20and%20Repair/</loc>
     
     <lastmod>2022-12-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/about/index.html</loc>
-    
-    <lastmod>2022-12-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
