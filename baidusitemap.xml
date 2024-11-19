@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2024/11/19/%E9%9D%A2%E5%90%91%E9%9D%9E%E5%AE%8C%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/02/27/PyTorch%E7%AC%94%E8%AE%B0-matmul%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2024-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2024/10/07/Multistate%20and%20functional%20protein%20design%20using%20RoseTTAFold%20sequence%20space%20diffusion/</loc>
     <lastmod>2024-10-07</lastmod>
   </url>
@@ -237,11 +245,11 @@
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
+    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/01/02/Contrastive%20Multiview%20Coding/</loc>
+    <loc>https://tyang816.github.io/2022/11/22/Contrastive%20Deep%20Supervision/</loc>
     <lastmod>2023-06-15</lastmod>
   </url>
   <url>
@@ -557,15 +565,11 @@
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/06/26/9.3%20%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/06/22/9.2%20%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/02/27/PyTorch%E7%AC%94%E8%AE%B0-matmul%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://tyang816.github.io/2022/06/26/9.3%20%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2022-11-14</lastmod>
   </url>
   <url>
