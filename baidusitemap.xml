@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/</loc>
+    <lastmod>2025-01-07</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2025/01/02/IgDesign%EF%BC%9AIn%20vitro%20validated%20antibody%20design%20against%20multiple%20therapeutic%20antigens%20using%20inverse%20folding/</loc>
     <lastmod>2025-01-02</lastmod>
   </url>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures | tyang</title>
+  <meta name="description" content="论文地址：http:&#x2F;&#x2F;biorxiv.org&#x2F;lookup&#x2F;doi&#x2F;10.1101&#x2F;2022.07.10.499510 论文实现：https:&#x2F;&#x2F;github.com&#x2F;luost26&#x2F;diffab  DiffAb：扩散模型做序列-结构联合设计&#x2F;给定结构的序列设计&#x2F;抗体优化等 Abstract 抗体和抗原的结合主要取决于抗体的CDR区域，本文介绍了一个基于扩散概率模型和等变图神经网络的CDRs序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures">
+<meta property="og:url" content="https://tyang816.github.io/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：http:&#x2F;&#x2F;biorxiv.org&#x2F;lookup&#x2F;doi&#x2F;10.1101&#x2F;2022.07.10.499510 论文实现：https:&#x2F;&#x2F;github.com&#x2F;luost26&#x2F;diffab  DiffAb：扩散模型做序列-结构联合设计&#x2F;给定结构的序列设计&#x2F;抗体优化等 Abstract 抗体和抗原的结合主要取决于抗体的CDR区域，本文介绍了一个基于扩散概率模型和等变图神经网络的CDRs序">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm7-8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm9.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm10.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm11.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm12.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm13.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm14-16.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab2-3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig6.png">
+<meta property="article:published_time" content="2025-01-07T06:23:52.000Z">
+<meta property="article:modified_time" content="2025-01-07T06:27:18.108Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">216</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">95</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.77px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.85px;">CV</a> <a href="/tags/IR/" style="font-size: 13.38px;">IR</a> <a href="/tags/OS/" style="font-size: 13.31px;">OS</a> <a href="/tags/SE/" style="font-size: 13.77px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.69px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.15px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.62px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.31px;">cs.Meta</a> <a href="/tags/cs-MoE/" style="font-size: 13px;">cs.MoE</a> <a href="/tags/cs-Multimodal/" style="font-size: 13.54px;">cs.Multimodal</a> <a href="/tags/cs-Object/" style="font-size: 13.31px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.23px;">cs.Recom</a> <a href="/tags/cs-Speech/" style="font-size: 13px;">cs.Speech</a> <a href="/tags/cs-Transformer/" style="font-size: 13.92px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.46px;">cs.Video</a> <a href="/tags/cs-diffusion/" style="font-size: 13.08px;">cs.diffusion</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.15px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" class="title">NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:23:52.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/02/IgDesign%EF%BC%9AIn%20vitro%20validated%20antibody%20design%20against%20multiple%20therapeutic%20antigens%20using%20inverse%20folding/" class="title">IgDesign：In vitro validated antibody design against multiple therapeutic antigens using inverse folding</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-02T04:30:17.000Z" itemprop="datePublished">2025-01-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/DeepLearning/">DeepLearning</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/11/19/%E9%9D%A2%E5%90%91%E9%9D%9E%E5%AE%8C%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="title">面向非完备数据集的深度学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-11-19T05:31:02.000Z" itemprop="datePublished">2024-11-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/10/07/Multistate%20and%20functional%20protein%20design%20using%20RoseTTAFold%20sequence%20space%20diffusion/" class="title">Nature Biotechnology-2024 Multistate and functional protein design using RoseTTAFold sequence space diffusion</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-10-07T06:15:04.000Z" itemprop="datePublished">2024-10-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/08/23/DivideMix%EF%BC%9ALearning%20with%20Noisy%20Labels%20as%20Semi-supervised%20Learning/" class="title">ICLR-2020 DivideMix：Learning with Noisy Labels as Semi-supervised Learning</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-08-23T14:11:17.000Z" itemprop="datePublished">2024-08-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" class="article-date">
+	  <time datetime="2025-01-07T06:23:52.000Z" itemprop="datePublished">2025-01-07</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" class="leancloud_visitors"  data-flag-title="NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2.8k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2022.07.10.499510">http://biorxiv.org/lookup/doi/10.1101/2022.07.10.499510</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/luost26/diffab">https://github.com/luost26/diffab</a></p>
+</blockquote>
+<h2 id="DiffAb：扩散模型做序列-结构联合设计-给定结构的序列设计-抗体优化等">DiffAb：扩散模型做序列-结构联合设计/给定结构的序列设计/抗体优化等</h2>
+<h3 id="Abstract-6">Abstract</h3>
+<p>抗体和抗原的结合主要取决于抗体的CDR区域，本文介绍了一个基于扩散概率模型和等变图神经网络的CDRs序列和结构生成模型，能够进行序列结构协同设计、给定主干结构的的序列设计和抗体优化等，在生物物理能量函数和其他蛋白质设计指标测量的结合亲和度方面产生有竞争的结果</p>
+<h3 id="Introduction-6">Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>一种抗体包含两条重链和两条轻链，其整体结构相似。六个可变区域决定了一种抗体对抗原的特异性。它们被称为互补性决定区域（CDRs），记为H1、H2、H3、L1、L2和L3。</p>
+<p>传统方法依赖于从复杂的生物物理能量函数中取样蛋白质序列和结构，通常是耗时的，而且很容易陷入局部最优状态</p>
+<p>现有方法无法满足以下三个关键设计原则：</p>
+<ul>
+<li>模型必须显式地基于抗原的 3D 结构来生成与之匹配的 CDR</li>
+<li>模型需要同时考虑氨基酸的位置和方向（特别是侧链方向）来建模抗体-抗原的相互作用</li>
+<li>除了从头设计，还应能够优化已有抗体以提高与抗原的结合亲和力</li>
+</ul>
+<p>作者提出了一种基于扩散生成模型的框架，支持 <strong>CDR 的序列-结构联合生成</strong>，并直接条件化于抗原的 3D 结构。该模型首先聚集了来自抗原和抗体框架的信息。然后，迭代地更新CDR上每个氨基酸的氨基酸类型、位置和方向。在最后一步中，我们利用基于预测方向的侧链填充算法在原子水平上重建CDR结构。使用Diffusion的一个重要原因是它可以在序列结构空间中迭代地生成CDR候选对象，以便我们可以干扰并在采样过程上施加约束，以支持更广泛的设计任务</p>
+<h3 id="Methods-3">Methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig2.png" alt="avatar" style="zoom:50%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Definitions-and-Notations">Definitions and Notations</h4>
+<p>在这项工作中，假设给出了抗原结构和抗体框架（图2），重点是在抗体框架上设计CDR。氨基酸类型 <code>$s_i$</code> ，主 <code>$C_\alpha$</code> 坐标<code>$x_i\in\mathbb&#123;R&#125;^3$</code>，<code>$O_i\in SO(3)$</code> 描述侧链方向的旋转矩阵</p>
+<h4 id="Diffusion-Processes">Diffusion Processes</h4>
+<p><strong>Multinomial Diffusion for Amino Acid Types</strong></p>
+<p>单步扩散，在时间步t，氨基酸类型 <code>$s_j^t$</code> 的分布由以下公式定义</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm1.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$\beta_t^&#123;type&#125;$</code>控制噪音加入速率，随着时间步t增大逐渐增大</p>
+<p>从初始数据扩散至任意时间步</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm2.png" alt="avatar" style="zoom:50%;" /></div>
+<p>当t -&gt; T时，<code>$\alpha_t^&#123;type&#125;$</code> -&gt; 0，表示数据逐渐变成均匀分布</p>
+<p>正向扩散过程不依赖于上下文或其他输入，仅根据噪声参数来平滑真实数据分布</p>
+<p>生成扩散，在时间步t，氨基酸类型 <code>$s_j^&#123;t-1&#125;$</code> 的生成分布定义为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm3.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$F(R^t,C)[j]$</code> 通过神经网络预测的后验分布，条件化于：当前时间步的CDR状态和抗原抗体框架</p>
+<p>模型需要最小化生成分布与真实后验分布之间的 KL 散度：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm4.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$q(s_j&#123;t-1&#125;|s_jt,s_j^0)$</code> 是正向扩散的真实后验分布，<code>$p(s_j&#123;t-1&#125;|Rt,C)$</code> 是生成扩散的预测分布，m是CDR中氨基酸的数量</p>
+<p><strong>Diffusion for Cα Coordinates</strong></p>
+<p>在时间步t</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm5.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$\beta_t^&#123;pos&#125;$</code> 扩散速率0-1，随着时间步t增加逐渐增大，I单位矩阵，表示噪声的协方差矩阵，坐标数据逐渐平滑接近正态分布</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm6.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$\alpha_t^\mathrm&#123;pos&#125;=\prod_&#123;\tau=1&#125;t(1-\beta_\tau^\mathrm&#123;pos&#125;)$</code> 表示当前分布与初始真实数据的相似程度</p>
+<p>单步生成扩散</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm7-8.png" alt="avatar" style="zoom:50%;" /></div>
+<p>G是神经网络用于预测噪音</p>
+<p>模型最小化生成分布与真实后验分布之间的均方误差 (MSE) 损失函数：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm9.png" alt="avatar" style="zoom:50%;" /></div>
+<p><strong>SO(3) Denoising for Amino Acid Orientations</strong></p>
+<p>利用 <strong>SO(3)</strong> 群（3D 空间中的特殊正交群）来建模氨基酸的旋转方向，能够确保生成的方向具有物理一致性和旋转不变性</p>
+<p>单步扩散：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm10.png" alt="avatar" style="zoom:50%;" /></div>
+<p><code>$\mathrm&#123;IG_&#123;SO(3)&#125;&#125;$</code> 是定义在SO(3) 群上的等变高斯分布，<code>$\alpha_t^&#123;ori&#125;$</code> 是控制方向矩阵与初始真实方向的相似程度，随着时间步t增加而减少，ScaleRot 通过缩放旋转角度来模拟噪声的加入</p>
+<p>当t-&gt;T，<code>$\alpha_t^&#123;ori&#125;$</code> -&gt; 0表示方向逐渐被完全随机化，接近均匀分布</p>
+<p>生成扩散过程：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm11.png" alt="avatar" style="zoom:50%;" /></div>
+<p>H是神经网络预测方向的后验分布，<code>$\beta_t^&#123;ori&#125;$</code> 控制去噪过程中的不确定性</p>
+<p>模型需要最小化生成分布与真实分布之间的距离，用 Frobenius 范数最小化真实方向和预测方向之间的误差</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm12.png" alt="avatar" style="zoom:50%;" /></div>
+<p><strong>The Overall Training Objective</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm13.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="Parameterization-with-Neural-Networks">Parameterization with Neural Networks</h4>
+<p><code>$F(R^t,C)$</code> 用于预测氨基酸的类型（离散变量），<code>$G(R^t,C)$</code> 用于预测氨基酸的坐标变化（连续变量），<code>$H(R^t,C)$</code> 用于预测氨基酸的方向（旋转矩阵，SO(3)）</p>
+<p>每个神经网络的输入是当前时间步t和状态 <code>$R^t$</code>(扩散模型生成的中间状态，包括氨基酸的类型、坐标和方向) 和上下文C (抗原和抗体框架的上下文，包括抗体骨架和抗原的 3D 结构)</p>
+<ol>
+<li>
+<p>定义等变性</p>
+<p>对于任意旋转矩阵 <code>$R\in SO(3)$</code> 和平移矩阵 <code>$r\in \mathbb&#123;R&#125;^3$</code> ，网络满足</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm14-16.png" alt="avatar" style="zoom:50%;" /></div>
+</li>
+<li>
+<p>实现等变性</p>
+<p>使用图神经网络或等变注意力模块，将氨基酸的几何关系嵌入模型，同时确保输出结果在旋转和平移下保持一致性</p>
+</li>
+</ol>
+<h4 id="Sampling-Algorithms">Sampling Algorithms</h4>
+<p>采样算法的核心是生成抗体的 CDR 序列和结构，分为以下三个步骤：</p>
+<ol>
+<li><strong>初始化</strong>：从均匀分布（氨基酸类型）或标准正态分布（坐标和方向）中随机采样初始状态。</li>
+<li><strong>逐步去噪</strong>：从时间步 T 开始，采样算法逐步逆向执行扩散过程，通过神经网络在每一步预测去噪值并更新状态</li>
+<li><strong>结构重建</strong>：在最终时间步 t=0 完成生成后，根据预测的坐标和方向用 <strong>侧链填充算法</strong>（如 Rosetta 的 packing 功能）补全侧链原子位置，生成完整的抗体结构。</li>
+</ol>
+<h3 id="Experiments-2">Experiments</h3>
+<h4 id="Sequence-Structure-Co-design">Sequence-Structure Co-design</h4>
+<p>数据清洗：数据来源于 SAbDab 数据库，移除分辨率差于 4Å 的结构，丢弃针对非蛋白抗原的抗体；</p>
+<p>数据划分：根据 <strong>CDR-H3 序列</strong>（互补决定区）的 50% 序列相似性对抗体进行聚类，手动选择 <strong>5 个聚类</strong>作为测试集，总共包含 <strong>19 个抗体-抗原复合物</strong>，包含来自 <strong>SARS-CoV-2、MERS、流感等病原体</strong>的抗原</p>
+<p>与 Rosetta 能量函数驱动的抗体设计软件 <strong>RAbD</strong>【Adolf-Bryfogle et al., 2018】进行比较，每种方法为每个 CDR 生成 <strong>100 个样本</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab1.png" alt="avatar" style="zoom:40%;" /></div>
+<p>指标：</p>
+<ul>
+<li>
+<p><strong>Amino Acid Recovery (AAR)</strong>：</p>
+<ul>
+<li><strong>定义</strong>：生成序列与参考序列的序列一致性（序列相似度）。</li>
+<li><strong>作用</strong>：衡量模型生成准确性。</li>
+</ul>
+</li>
+<li>
+<p><strong>Root-Mean-Square Deviation (RMSD)</strong>：</p>
+<ul>
+<li><strong>定义</strong>：生成结构的 Cα 原子与原始结构的均方根偏差。</li>
+<li><strong>作用</strong>：衡量生成结构与真实结构的几何相似性。</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved Binding Percentage (IMP)</strong>：</p>
+<ul>
+<li><strong>定义</strong>：生成 CDR 与抗原的结合能低于原始 CDR 的比例（结合能由 Rosetta 的 InterfaceAnalyzer 计算）。</li>
+<li><strong>作用</strong>：评估生成抗体在结合性能上的改进。</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>提供了针对 SARS-CoV-2 RBD（PDB: 7chf）生成的 CDR-H3 示例及其结合能量分布。</li>
+<li>示例 1 与抗原的互补性最佳，结合能最低（ΔG = -15.45）。</li>
+<li>示例 3 的形状不适合抗原，结合能高于原始抗体</li>
+</ul>
+<h4 id="Fix-Backbone-Sequence-Design-and-Structure-Prediction">Fix-Backbone Sequence Design and Structure Prediction</h4>
+<ul>
+<li>在此任务中，已知抗体互补决定区（CDR）的骨架结构，目标是基于给定的骨架设计出新的 CDR 序列。</li>
+<li>同时模型可以通过固定序列来预测 CDR 的结构</li>
+</ul>
+<p>基准方法使用 <strong>FixBB</strong>，这是一种基于 Rosetta 的序列设计软件，可以根据 CDR 骨架结构设计序列</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab2-3.png" alt="avatar" style="zoom:40%;" /></div>
+<ul>
+<li>在 CDR H1、H2、L1、L2 和 L3 上，DiffAb 的结构预测精度非常高（RMSD ≤ 1.5 Å）。</li>
+<li>在 CDR-H3 上，预测精度较低，主要由于其较高的变异性</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+<p>图5a 显示了不同长度的 CDR-H3 结构的预测精度，短序列的预测更准确，而长度超过10个氨基酸的 CDR-H3 预测精度降低</p>
+<h4 id="Antibody-Optimization">Antibody Optimization</h4>
+<p>对现有抗体的 CDR（互补决定区）序列和结构进行优化，以增强抗体与抗原的结合能力（使其与目标抗原的结合能降低），同时尽量保持原始抗体的结构和功能特性</p>
+<p>先正向加噪：对原始抗体的 CDR 序列和结构进行 ttt 步的正向扩散（添加噪声），使其从原始状态逐渐接近随机分布；再从T-t开始反向去噪逐步生成优化后的CDR</p>
+<p>对测试集中抗体的 CDR-H3 进行优化，每个抗体的优化重复 <strong>100 次</strong>，以生成 <strong>100 个候选的优化 CDR</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab4.png" alt="avatar" style="zoom:40%;" /></div>
+<p>表4和图5c所示，通过 Rosetta 能量函数测量，优化方法可以产生抗体的结合能提高的抗体</p>
+<ul>
+<li>
+<p><strong>结合能改进</strong>：</p>
+<ul>
+<li>在较少优化步数（如 t=4）时，IMP 得分较高，说明优化后的 CDR 在结合能上有显著改进。</li>
+</ul>
+</li>
+<li>
+<p><strong>结构保持</strong>：</p>
+<ul>
+<li>RMSD 值随着 t 增加而升高，说明更多的优化步数导致结构偏离原始 CDR。</li>
+</ul>
+</li>
+<li>
+<p><strong>序列保持</strong>：</p>
+<ul>
+<li>SeqID 随着 t 增加显著降低，说明更大的步数会导致序列与原始序列的差异增大。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Design-Without-Bound-Antibody-Frameworks">Design Without Bound Antibody Frameworks</h4>
+<p>在没有已绑定抗体框架的情况下，根据抗原信息独立设计 CDR，生成合理的序列和结构，模拟抗体-抗原的结合</p>
+<ul>
+<li>
+<p><strong>输入条件</strong>：</p>
+<ul>
+<li><strong>抗原结构</strong>：目标抗原的 3D 结构（无已绑定抗体框架）。</li>
+<li><strong>抗体模板</strong>：通过 docking（分子对接）技术生成的抗体骨架模板。</li>
+</ul>
+</li>
+<li>
+<p><strong>对接（Docking）</strong>：</p>
+<ul>
+<li>使用抗体模板和抗原进行对接来生成初始抗体-抗原复合物。</li>
+<li>对接工具：使用 <strong>HDOCK</strong>【Yan et al., 2017】进行对接。</li>
+</ul>
+</li>
+<li>
+<p><strong>示例任务</strong>：</p>
+<ul>
+<li>设计针对 SARS-CoV-2 Omicron RBD 的抗体。</li>
+<li>抗体模板来源：针对流感病毒的抗体（PDB: 3bgf）。</li>
+<li>初始 CDR-H3 的残基范围为 <strong>A322-A590</strong></li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>
+<p><strong>结构结果</strong>：</p>
+<ul>
+<li>针对 SARS-CoV-2 Omicron RBD，生成的抗体在结构上表现出合理性，与抗原存在明显的结合位点。</li>
+<li>图 <strong>6</strong> 显示了对接后的抗体-抗原复合物以及生成的 CDR-H3 的结合模式。</li>
+</ul>
+</li>
+<li>
+<p><strong>结合能结果</strong>：</p>
+<ul>
+<li>生成的抗体虽然缺乏参考抗体的结合能力，但结合能分布表明其生成结果在合理范围内。</li>
+<li>结合能（ΔG）可以作为生成抗体合理性的支持证据。</li>
+</ul>
+</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" title="NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures" target="_blank" rel="external">https://tyang816.github.io/2025/01/07/Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/01/02/IgDesign%EF%BC%9AIn%20vitro%20validated%20antibody%20design%20against%20multiple%20therapeutic%20antigens%20using%20inverse%20folding/" title="IgDesign：In vitro validated antibody design against multiple therapeutic antigens using inverse folding"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
