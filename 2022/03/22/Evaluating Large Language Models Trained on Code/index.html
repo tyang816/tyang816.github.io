@@ -409,9 +409,9 @@
 <p>来自OpenAI团队的Codex，辅助程序员生成代码</p>
 </blockquote>
 <h2 id="Codex：基于GPT的code任务，应用创新而非算法">Codex：基于GPT的code任务，应用创新而非算法</h2>
-<h3 id="Abstract-144">Abstract</h3>
+<h3 id="Abstract-143">Abstract</h3>
 <p>OpenAI团队提出了Codex，一种基于GPT的在Github代码上的微调，创新不在模型而在应用，主要是研究的python语言，能解决28.8%的问题。如果允许重复采样的话，即假设采样100个结果，有一个解决了那就算解决了问题，那准确率可以提升到70.2%</p>
-<h3 id="Introduction-122">Introduction</h3>
+<h3 id="Introduction-121">Introduction</h3>
 <p>GPT-3可以生成简单代码，但复杂的不行，所以重新训练了一下。</p>
 <p>作者关注的是Python的docstring，即函数前的注释，生成的代码通过单元测试来验证正确性。作者造了一个数据集叫humaneval(<a target="_blank" rel="noopener" href="https://www.github.com/openai/human-eval">https://www.github.com/openai/human-eval</a>)，一些简单的数学，编程面试等问题。</p>
 <p>生成多个答案，看是不是有答案能通过单元测试。使用120亿参数的模型能达到28.8%精度，3个亿参数能达到13.2%，而GPT-J使用60亿参数只能达到11.4%精度，而其他的GPT基本是0%。</p>
