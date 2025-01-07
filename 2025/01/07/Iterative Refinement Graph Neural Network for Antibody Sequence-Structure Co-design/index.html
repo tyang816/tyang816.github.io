@@ -34,9 +34,6 @@
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm3.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm4.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm5-6.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm7.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm8.png">
-<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm9.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm10.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm11-13.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm14.png">
@@ -47,7 +44,7 @@
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/fig4.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/tab2.png">
 <meta property="article:published_time" content="2025-01-07T06:52:59.000Z">
-<meta property="article:modified_time" content="2025-01-07T06:57:42.648Z">
+<meta property="article:modified_time" content="2025-01-07T10:46:11.519Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="BI">
 <meta name="twitter:card" content="summary">
@@ -404,7 +401,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/01/07/Iterative%20Refinement%20Graph%20Neural%20Network%20for%20Antibody%20Sequence-Structure%20Co-design/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3.9k(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4k(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 14(minutes)</span>
@@ -457,11 +454,11 @@
 <p><strong>Notations</strong></p>
 <p>氨基酸序列表示为s，还有&lt;mask&gt;表示未知氨基酸type，x表示骨架坐标</p>
 <h4 id="Graph-Representation">Graph Representation</h4>
-<p>节点 <code>$v_i$</code> 特征表示为抗体的三种主链二面角，边特征由四部分组成，<code>$O_i$</code> 是残基i的局部坐标系，图中的边被限制为 KKK-近邻图（KNN），每个节点只与最近的 K=8 个节点相连，以减少计算复杂度</p>
+<p>节点  $v_i$  特征表示为抗体的三种主链二面角，边特征由四部分组成， $O_i$  是残基i的局部坐标系，图中的边被限制为 KKK-近邻图（KNN），每个节点只与最近的 K=8 个节点相连，以减少计算复杂度</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm1.png" alt="avatar" style="zoom:50%;" /></div>
 <h4 id="Iterative-Refinement-Graph-Neural-Network-RefineGNN">Iterative Refinement Graph Neural Network (RefineGNN)</h4>
-<p>输入是初始抗体图 <code>$G^&#123;(0)&#125;$</code>，其中所有的残基序列未知，用特殊符号&lt;mask&gt;初始化，每条边的初始距离设置为3|i-j|，方向和旋转特征初始化为0</p>
-<p>输出是一个完整的抗体图 <code>$G(s)$</code> ，包含所有节点的序列和3D结构信息</p>
+<p>输入是初始抗体图  $G^{(0)}$ ，其中所有的残基序列未知，用特殊符号&lt;mask&gt;初始化，每条边的初始距离设置为3|i-j|，方向和旋转特征初始化为0</p>
+<p>输出是一个完整的抗体图  $G(s)$  ，包含所有节点的序列和3D结构信息</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 <p>在每个生成步骤t中，主要分为以下三个过程：</p>
 <ul>
@@ -482,11 +479,11 @@
 <p>序列预测：</p>
 <ul>
 <li>
-<p>预测下一个残基（节点）的氨基酸类型，根据图编码器输出 <code>$h_&#123;t+1&#125;^&#123;(t)&#125;$</code> 通过softmax进行预测，图2A</p>
+<p>预测下一个残基（节点）的氨基酸类型，根据图编码器输出  $h_{t+1}^{(t)}$  通过softmax进行预测，图2A</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm4.png" alt="avatar" style="zoom:50%;" /></div>
 </li>
 <li>
-<p>得到新的抗体图 <code>$G^&#123;(t+0.5)&#125;$</code> ，其中新增残基的标签被更新，图2B</p>
+<p>得到新的抗体图  $G^{(t+0.5)}$  ，其中新增残基的标签被更新，图2B</p>
 </li>
 </ul>
 </li>
@@ -497,53 +494,45 @@
 <p>根据当前的抗体图，预测所有节点的 3D 坐标，图2C</p>
 </li>
 <li>
-<p>使用一个独立的结构预测网络（另一个MPN参数为 <code>$\tilde\theta$</code> ），对图进行编码并预测所有节点的坐标</p>
+<p>使用一个独立的结构预测网络（另一个MPN参数为  $\tilde\theta$  ），对图进行编码并预测所有节点的坐标</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm5-6.png" alt="avatar" style="zoom:50%;" /></div>
 </li>
 <li>
-<p>生成的新抗体图 <code>$G^&#123;(t+1)&#125;$</code> ，其节点标签和边特征已更新</p>
+<p>生成的新抗体图  $G^{(t+1)}$  ，其节点标签和边特征已更新</p>
 </li>
 </ul>
 </li>
 </ul>
 <p><strong>Training</strong></p>
 <ul>
-<li><strong>序列预测</strong>：使用 teacher forcing 方法，将前 ttt 个残基设置为真实的氨基酸类型，其余节点设置为 <code>&lt;MASK&gt;</code>。</li>
+<li><strong>序列预测</strong>：使用 teacher forcing 方法，将前 ttt 个残基设置为真实的氨基酸类型，其余节点设置为  <MASK> 。</li>
 <li><strong>结构预测</strong>：完全迭代细化，无需 teacher forcing，即每次更新结构时使用上一步预测的图作为输入。</li>
 </ul>
 <p><strong>Loss Function</strong></p>
-<p>总的来说包含序列和结构两部分损失 <code>$L=L_\mathrm&#123;seq&#125;+L_\mathrm&#123;struct&#125;$</code> </p>
+<p>总的来说包含序列和结构两部分损失  $L=L_\mathrm{seq}+L_\mathrm{struct}$  </p>
 <ul>
-<li>
-<p><code>$L_\mathrm&#123;seq&#125;$</code> 是交叉熵损失，衡量氨基酸序列的预测准确性</p>
-</li>
-<li>
-<p><code>$L_\mathrm&#123;struct&#125;$</code> 包含三部分：</p>
-<ul>
-<li>
-<p><strong>距离损失</strong>：预测与真实 Cα 原子间距离的 Huber 损失</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm7.png" alt="avatar" style="zoom:50%;" /></div>
-</li>
-<li>
-<p><strong>二面角损失</strong>：预测与真实二面角的均方误差。</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm8.png" alt="avatar" style="zoom:50%;" /></div>
-</li>
-<li>
-<p><strong>Cα 角度损失</strong>：预测与真实 Cα 原子之间角度和二面角的均方误差。</p>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm9.png" alt="avatar" style="zoom:50%;" /></div>
-</li>
+<li>$L_\mathrm{seq}$  是交叉熵损失，衡量氨基酸序列的预测准确性</li>
+<li>$L_\mathrm{struct}$  包含三部分：</li>
 </ul>
-</li>
-</ul>
+<pre><code>*   **距离损失**：预测与真实 Cα 原子间距离的 Huber 损失
+
+    &lt;div align=&quot;center&quot; style=&quot;float:center&quot;&gt;&lt;img src=&quot;https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm7.png&quot; alt=&quot;avatar&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/div&gt;
+*   **二面角损失**：预测与真实二面角的均方误差。
+
+    &lt;div align=&quot;center&quot; style=&quot;float:center&quot;&gt;&lt;img src=&quot;https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm8.png&quot; alt=&quot;avatar&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/div&gt;
+*   **Cα 角度损失**：预测与真实 Cα 原子之间角度和二面角的均方误差。
+
+    &lt;div align=&quot;center&quot; style=&quot;float:center&quot;&gt;&lt;img src=&quot;https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm9.png&quot; alt=&quot;avatar&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/div&gt;
+</code></pre>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm10.png" alt="avatar" style="zoom:50%;" /></div>
 <p><strong>独立网络设计</strong>：序列预测和结构预测使用不同的 MPN 网络，使其专注于不同的任务</p>
 <p><strong>旋转和平移不变性</strong>：通过使用基于距离和角度的损失函数，保证模型对抗体图的几何变换不敏感</p>
 <h4 id="Conditional-Generation-Given-the-Framework-Region">Conditional Generation Given the Framework Region</h4>
 <p><strong>抗体设计任务的实际需求</strong>：在实际中，抗体的框架区通常是固定的，只需要设计CDR序列。因此，模型需要在已知框架区（上下文序列）的条件下生成CDR序列</p>
-<p><strong>目标</strong>：学习条件分布 <code>$P(s^&#123;\prime&#125;|s_&#123;&lt;l&#125;,s_&#123;&gt;r&#125;)$</code> ，其中 <code>$s'$</code> 是要生成的CDR区域，其他是CDR左侧和右侧上下文</p>
+<p><strong>目标</strong>：学习条件分布  $P(s^{\prime}|s_{&lt;l},s_{&gt;r})$  ，其中  $s’$  是要生成的CDR区域，其他是CDR左侧和右侧上下文</p>
 <p>为了利用框架区域的信息，作者引入了注意力机制，将框架区的信息传播到CDR生成的过程中</p>
 <p><strong>Conditioning via attention</strong></p>
-<p>上下文构造，直接拼接：<code>$\tilde&#123;s&#125;=s_&#123;&lt;l&#125;\oplus\mathrm&#123;&lt;mask&gt;&#125;\cdots\mathrm&#123;&lt;mask&gt;&#125;\oplus s_&#123;&gt;r&#125;$</code></p>
+<p>上下文构造，直接拼接： $\tilde{s}=s_{&lt;l}\oplus\mathrm{<mask>}\cdots\mathrm{<mask>}\oplus s_{&gt;r}$</p>
 <p>用GRU对上下文进行编码，然后逐步预测序列、更新结构</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm11-13.png" alt="avatar" style="zoom:50%;" /></div>
 <p><strong>Multi-Resolution Modeling</strong></p>
@@ -560,12 +549,12 @@
 <h4 id="Property-Guided-Sequence-Optimization">Property-Guided Sequence Optimization</h4>
 <p>生成新抗体序列，使其具有特定的目标属性（如抗原中和能力）。这一任务可以形式化为一个优化问题</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/frm15.png" alt="avatar" style="zoom:50%;" /></div>
-<p>D是训练集抗体，Y是目标属性（例如中和能力）的二进制指标变量，<code>$b_&#123;l,r&#125;(s)$</code> 固定的框架区上下文序列，<code>$P(Y=1|b_&#123;l,r&#125;(s))$</code> 是条件生成模型的预测概率</p>
+<p>D是训练集抗体，Y是目标属性（例如中和能力）的二进制指标变量， $b_{l,r}(s)$  固定的框架区上下文序列， $P(Y=1|b_{l,r}(s))$  是条件生成模型的预测概率</p>
 <ol>
 <li>在真实抗体结构数据上预训练生成模型，以学习CDR序列和结构的先验分布</li>
 <li>随机从训练集中采样一个抗体序列 s，从中移除CDR序列，仅保留框架区上下文序列，利用生成模型生成M个新的候选序列</li>
-<li>使用预训练的目标属性预测器 <code>$f(s')$</code> 来评估每个候选序列 <code>$s'$</code> 的目标属性和分数，若 <code>$f(s_i^&#123;\prime&#125;)&gt;\max(f(s),\mathrm&#123;threshold&#125;)$</code> 则将该候选序列加入优化集 Q</li>
-<li>从优化集采样一批新的抗体序列作为训练目标，最小化器生成损失 <code>$L_\mathrm&#123;seq&#125;$</code></li>
+<li>使用预训练的目标属性预测器  $f(s’)$  来评估每个候选序列  $s’$  的目标属性和分数，若  $f(s_i^{\prime})&gt;\max(f(s),\mathrm{threshold})$  则将该候选序列加入优化集 Q</li>
+<li>从优化集采样一批新的抗体序列作为训练目标，最小化器生成损失  $L_\mathrm{seq}$</li>
 </ol>
 <h3 id="Experiments-6">Experiments</h3>
 <p><strong>Setup</strong></p>
@@ -727,9 +716,9 @@
 <p>将这些序列与抗体上下文序列拼接形成完整的 VH 序列。</p>
 </li>
 <li>
-<p>使用中和能力预测器 fff 评估生成抗体的中和分数：</p>
+<p>使用中和能力预测器 f 评估生成抗体的中和分数：</p>
 <ul>
-<li>若生成序列满足所有约束条件，则直接使用预测的分数 f(s′)f(s’)f(s′)。</li>
+<li>若生成序列满足所有约束条件，则直接使用预测的分数 f(s′)。</li>
 <li>否则，使用原始抗体的分数作为对比。</li>
 </ul>
 </li>
@@ -737,9 +726,9 @@
 </li>
 <li>
 <p><strong>困惑度（PPL）</strong>：</p>
-<ul>
-<li>使用训练于 SAbDab 数据的预训练模型，评估 CoVAbDab 测试集上的困惑度</li>
-</ul>
+</li>
+<li>
+<p>使用训练于 SAbDab 数据的预训练模型，评估 CoVAbDab 测试集上的困惑度</p>
 </li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RefineGNN/tab2.png" alt="avatar" style="zoom:100%;" /></div>

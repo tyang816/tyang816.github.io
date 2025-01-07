@@ -50,7 +50,7 @@
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab4.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig6.png">
 <meta property="article:published_time" content="2025-01-07T06:23:52.000Z">
-<meta property="article:modified_time" content="2025-01-07T06:27:18.108Z">
+<meta property="article:modified_time" content="2025-01-07T10:46:55.389Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="BI">
 <meta name="twitter:card" content="summary">
@@ -439,28 +439,28 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig2.png" alt="avatar" style="zoom:50%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 <h4 id="Definitions-and-Notations">Definitions and Notations</h4>
-<p>在这项工作中，假设给出了抗原结构和抗体框架（图2），重点是在抗体框架上设计CDR。氨基酸类型 <code>$s_i$</code> ，主 <code>$C_\alpha$</code> 坐标<code>$x_i\in\mathbb&#123;R&#125;^3$</code>，<code>$O_i\in SO(3)$</code> 描述侧链方向的旋转矩阵</p>
+<p>在这项工作中，假设给出了抗原结构和抗体框架（图2），重点是在抗体框架上设计CDR。氨基酸类型  $s_i$  ，主  $C_\alpha$  坐标$x_i\in\mathbb{R}^3$，$O_i\in SO(3)$ 描述侧链方向的旋转矩阵</p>
 <h4 id="Diffusion-Processes">Diffusion Processes</h4>
 <p><strong>Multinomial Diffusion for Amino Acid Types</strong></p>
-<p>单步扩散，在时间步t，氨基酸类型 <code>$s_j^t$</code> 的分布由以下公式定义</p>
+<p>单步扩散，在时间步t，氨基酸类型  $s_j^t$  的分布由以下公式定义</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm1.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$\beta_t^&#123;type&#125;$</code>控制噪音加入速率，随着时间步t增大逐渐增大</p>
+<p>$\beta_t^{type}$ 控制噪音加入速率，随着时间步t增大逐渐增大</p>
 <p>从初始数据扩散至任意时间步</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm2.png" alt="avatar" style="zoom:50%;" /></div>
-<p>当t -&gt; T时，<code>$\alpha_t^&#123;type&#125;$</code> -&gt; 0，表示数据逐渐变成均匀分布</p>
+<p>当t -&gt; T时， $\alpha_t^{type}$  -&gt; 0，表示数据逐渐变成均匀分布</p>
 <p>正向扩散过程不依赖于上下文或其他输入，仅根据噪声参数来平滑真实数据分布</p>
-<p>生成扩散，在时间步t，氨基酸类型 <code>$s_j^&#123;t-1&#125;$</code> 的生成分布定义为：</p>
+<p>生成扩散，在时间步t，氨基酸类型  $s_j^{t-1}$  的生成分布定义为：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm3.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$F(R^t,C)[j]$</code> 通过神经网络预测的后验分布，条件化于：当前时间步的CDR状态和抗原抗体框架</p>
+<p>$F(R^t,C)[j]$  通过神经网络预测的后验分布，条件化于：当前时间步的CDR状态和抗原抗体框架</p>
 <p>模型需要最小化生成分布与真实后验分布之间的 KL 散度：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm4.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$q(s_j&#123;t-1&#125;|s_jt,s_j^0)$</code> 是正向扩散的真实后验分布，<code>$p(s_j&#123;t-1&#125;|Rt,C)$</code> 是生成扩散的预测分布，m是CDR中氨基酸的数量</p>
+<p>$q(s_j{t-1}|s_jt,s_j^0)$  是正向扩散的真实后验分布， $p(s_j{t-1}|Rt,C)$  是生成扩散的预测分布，m是CDR中氨基酸的数量</p>
 <p><strong>Diffusion for Cα Coordinates</strong></p>
 <p>在时间步t</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm5.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$\beta_t^&#123;pos&#125;$</code> 扩散速率0-1，随着时间步t增加逐渐增大，I单位矩阵，表示噪声的协方差矩阵，坐标数据逐渐平滑接近正态分布</p>
+<p>$\beta_t^{pos}$  扩散速率0-1，随着时间步t增加逐渐增大，I单位矩阵，表示噪声的协方差矩阵，坐标数据逐渐平滑接近正态分布</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm6.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$\alpha_t^\mathrm&#123;pos&#125;=\prod_&#123;\tau=1&#125;t(1-\beta_\tau^\mathrm&#123;pos&#125;)$</code> 表示当前分布与初始真实数据的相似程度</p>
+<p>$\alpha_t^\mathrm{pos}=\prod_{\tau=1}t(1-\beta_\tau^\mathrm{pos})$  表示当前分布与初始真实数据的相似程度</p>
 <p>单步生成扩散</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm7-8.png" alt="avatar" style="zoom:50%;" /></div>
 <p>G是神经网络用于预测噪音</p>
@@ -470,22 +470,22 @@
 <p>利用 <strong>SO(3)</strong> 群（3D 空间中的特殊正交群）来建模氨基酸的旋转方向，能够确保生成的方向具有物理一致性和旋转不变性</p>
 <p>单步扩散：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm10.png" alt="avatar" style="zoom:50%;" /></div>
-<p><code>$\mathrm&#123;IG_&#123;SO(3)&#125;&#125;$</code> 是定义在SO(3) 群上的等变高斯分布，<code>$\alpha_t^&#123;ori&#125;$</code> 是控制方向矩阵与初始真实方向的相似程度，随着时间步t增加而减少，ScaleRot 通过缩放旋转角度来模拟噪声的加入</p>
-<p>当t-&gt;T，<code>$\alpha_t^&#123;ori&#125;$</code> -&gt; 0表示方向逐渐被完全随机化，接近均匀分布</p>
+<p>$\mathrm{IG_{SO(3)}}$  是定义在SO(3) 群上的等变高斯分布， $\alpha_t^{ori}$  是控制方向矩阵与初始真实方向的相似程度，随着时间步t增加而减少，ScaleRot 通过缩放旋转角度来模拟噪声的加入</p>
+<p>当t-&gt;T， $\alpha_t^{ori}$  -&gt; 0表示方向逐渐被完全随机化，接近均匀分布</p>
 <p>生成扩散过程：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm11.png" alt="avatar" style="zoom:50%;" /></div>
-<p>H是神经网络预测方向的后验分布，<code>$\beta_t^&#123;ori&#125;$</code> 控制去噪过程中的不确定性</p>
+<p>H是神经网络预测方向的后验分布， $\beta_t^{ori}$  控制去噪过程中的不确定性</p>
 <p>模型需要最小化生成分布与真实分布之间的距离，用 Frobenius 范数最小化真实方向和预测方向之间的误差</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm12.png" alt="avatar" style="zoom:50%;" /></div>
 <p><strong>The Overall Training Objective</strong></p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm13.png" alt="avatar" style="zoom:50%;" /></div>
 <h4 id="Parameterization-with-Neural-Networks">Parameterization with Neural Networks</h4>
-<p><code>$F(R^t,C)$</code> 用于预测氨基酸的类型（离散变量），<code>$G(R^t,C)$</code> 用于预测氨基酸的坐标变化（连续变量），<code>$H(R^t,C)$</code> 用于预测氨基酸的方向（旋转矩阵，SO(3)）</p>
-<p>每个神经网络的输入是当前时间步t和状态 <code>$R^t$</code>(扩散模型生成的中间状态，包括氨基酸的类型、坐标和方向) 和上下文C (抗原和抗体框架的上下文，包括抗体骨架和抗原的 3D 结构)</p>
+<p>$F(R^t,C)$  用于预测氨基酸的类型（离散变量）， $G(R^t,C)$  用于预测氨基酸的坐标变化（连续变量）， $H(R^t,C)$  用于预测氨基酸的方向（旋转矩阵，SO(3)）</p>
+<p>每个神经网络的输入是当前时间步t和状态  $R^t$ (扩散模型生成的中间状态，包括氨基酸的类型、坐标和方向) 和上下文C (抗原和抗体框架的上下文，包括抗体骨架和抗原的 3D 结构)</p>
 <ol>
 <li>
 <p>定义等变性</p>
-<p>对于任意旋转矩阵 <code>$R\in SO(3)$</code> 和平移矩阵 <code>$r\in \mathbb&#123;R&#125;^3$</code> ，网络满足</p>
+<p>对于任意旋转矩阵  $R\in SO(3)$  和平移矩阵  $r\in \mathbb{R}^3$  ，网络满足</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm14-16.png" alt="avatar" style="zoom:50%;" /></div>
 </li>
 <li>
