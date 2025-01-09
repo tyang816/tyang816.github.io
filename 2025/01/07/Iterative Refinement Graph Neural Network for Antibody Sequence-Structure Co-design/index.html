@@ -416,9 +416,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/wengong-jin/RefineGNN">https://github.com/wengong-jin/RefineGNN</a></p>
 </blockquote>
 <h2 id="RefineGNN：迭代生成序列和结构做CDR设计">RefineGNN：迭代生成序列和结构做CDR设计</h2>
-<h3 id="Abstract-25">Abstract</h3>
+<h3 id="Abstract-47">Abstract</h3>
 <p>这篇论文提出了一种新的生成模型，旨在自动设计抗体的互补决定区（CDRs），以增强其结合特异性或中和能力。传统的生成方法通常将蛋白质设计视为一个以已知三维结构为条件的序列生成任务。然而，这种方法在抗体设计中并不适用，因为所需的3D结构通常事先未知。为了解决这一问题，作者将CDR的序列和结构同时作为图进行联合设计。他们提出了一种迭代细化的图神经网络模型，该模型在自回归地生成序列的同时，迭代地细化其预测的全局结构。预测得到的结构又反过来指导后续残基的选择。为了提高计算效率，模型在处理CDR与框架区域之间的条件依赖性时，采用了一种粗粒度的表示方法。实验结果显示，该方法在测试集上取得了更高的对数似然值，并且在设计能够中和SARS-CoV-2病毒的抗体方面，表现优于之前的基线方法</p>
-<h3 id="Introduction-23">Introduction</h3>
+<h3 id="Introduction-42">Introduction</h3>
 <p>抗体通过其互补决定区（CDRs）与病原体结合，决定了其特异性和中和能力，是治疗疾病（如SARS-CoV-2）的重要工具。计算设计抗体的目标是生成具有特定功能（如高结合亲和力、稳定性）的CDR序列，但这在巨大的组合搜索空间中极具挑战性。</p>
 <p>现有的基于序列的生成方法忽视了3D结构的影响，可能导致亚优化性能，而基于已知3D结构的生成方法要求预先定义目标结构，但对于抗体设计，这通常是不现实的</p>
 <p>研究的核心问题：</p>
@@ -556,7 +556,7 @@
 <li>使用预训练的目标属性预测器  $f(s’)$  来评估每个候选序列  $s’$  的目标属性和分数，若  $f(s_i^{\prime})&gt;\max(f(s),\mathrm{threshold})$  则将该候选序列加入优化集 Q</li>
 <li>从优化集采样一批新的抗体序列作为训练目标，最小化器生成损失  $L_\mathrm{seq}$</li>
 </ol>
-<h3 id="Experiments-6">Experiments</h3>
+<h3 id="Experiments-9">Experiments</h3>
 <p><strong>Setup</strong></p>
 <ul>
 <li>

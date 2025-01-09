@@ -410,9 +410,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/microsoft/LoRA">https://github.com/microsoft/LoRA</a></p>
 </blockquote>
 <h2 id="LoRA：秩分解矩阵低成本微调">LoRA：秩分解矩阵低成本微调</h2>
-<h3 id="Abstract-70">Abstract</h3>
+<h3 id="Abstract-15">Abstract</h3>
 <p>自然语言处理的一个重要范例包括对一般领域数据进行大规模的预训练和对特定任务或领域的适应。本文提出Low-Rank Adaptation or LoRA，冻住原本预训练模型的参数，注入可训练的秩分解矩阵。与使用Adam进行微调的GPT-3 175B相比，LoRA可以减少可训练参数的数量10000倍，GPU内存需求减少3倍。LoRA在RoBERTa、DeBERTa、GPT-2和GPT-3上的性能相当或更好，尽管它具有更少的可训练参数、更高的训练吞吐量，而且与适配器不同的是，没有额外的推理延迟</p>
-<h3 id="Introduction-65">Introduction</h3>
+<h3 id="Introduction-14">Introduction</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 <p>微调需要调整整个模型参数，这带来了很大不便性</p>
 <p>现存的一些方法寻求使用一些参数或扩展模块来适应新任务，但是往往会因为加深了模型带来新的推理延迟，或是减少了模型可用的序列长度，更重要的是这些方法往往是性能和效率的一个trade off</p>

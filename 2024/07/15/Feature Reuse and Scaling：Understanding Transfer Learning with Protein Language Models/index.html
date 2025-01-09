@@ -409,9 +409,9 @@
 <p>论文实现：<a href="">https://github.com/microsoft/protein-transfer</a></p>
 </blockquote>
 <h2 id="protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响">protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响</h2>
-<h3 id="Abstract-23">Abstract</h3>
+<h3 id="Abstract-45">Abstract</h3>
 <p>PLM的表征非常强大，但是目前人们对预训练学习到的特征如何与下游任务相关并有用知之甚少。本文执行了370次实验，包括不同的下游任务，架构、模型大小和深度，预训练时间等。虽然与朴素序列表示相比，几乎所有的下游任务都从预训练模型中获益，但大多数任务的性能与预训练无关，而是依赖于在预训练早期学习到的低水平特征。我们的结果表明，当前的PLM预训练范式和这些模型的大多数应用之间的不匹配，这表明需要更好的预训练方法</p>
-<h3 id="Introduction-21">Introduction</h3>
+<h3 id="Introduction-40">Introduction</h3>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig1.png" alt="avatar" style /></div>
 <p>目前对于序列到功能的理解映射还是非常贫瘠，介于数据的稀少限制，采用迁移学习的方法是一个有效的解决方案</p>
 <p>计算机视觉等其他领域对于迁移学习的研究更加成熟，因此我们综合了一系列可能的假设来解释下游任务的改进，并设计进行了一系列的实验来研究</p>
@@ -446,7 +446,7 @@
 <p>Model checkpoint</p>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa7.png" alt="avatar" style /></div>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa8.png" alt="avatar" style /></div>
-<h3 id="Results-13">Results</h3>
+<h3 id="Results-15">Results</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 <h4 id="Structure-Prediction-Benefits-from-Transfer-Learning-Because-It-Is-Well-Aligned-with-MLM-pretraining">Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM pretraining</h4>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig3.png" alt="avatar" style="zoom:80%;" /></div>

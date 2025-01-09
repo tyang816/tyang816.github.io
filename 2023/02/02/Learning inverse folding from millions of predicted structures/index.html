@@ -414,9 +414,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/facebookresearch/esm">https://github.com/facebookresearch/esm</a></p>
 </blockquote>
 <h2 id="ESM-IF：额外使用UniRef50的12M数据做inverse-fold">ESM-IF：额外使用UniRef50的12M数据做inverse fold</h2>
-<h3 id="Abstract-30">Abstract</h3>
+<h3 id="Abstract-52">Abstract</h3>
 <p>考虑从骨架原子坐标中预测蛋白质序列的任务，使用AlphaFold2预测了12M蛋白质序列得到的结构数据来作为数据增强，在带有invariant geometric输入层的transformer得到了51% native sequence恢复率，对buried residues恢复为72%</p>
-<h3 id="Introduction-28">Introduction</h3>
+<h3 id="Introduction-47">Introduction</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 <p>设计编码具有所需特性的蛋白质的新型氨基酸序列，称为 de novo protein design</p>
 <p>这里主要探索预测出来的结构能否克服实验数据量的局限性，所以使用AlphaFold2预测UniRef50里12m的序列，即使预测的输入（即结构）质量较低，反翻译也能有效地从额外的目标数据（即序列）中学习</p>
@@ -446,7 +446,7 @@
 <h5 id="Span-masking">Span masking</h5>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig4.png" alt="avatar" style="zoom:70%;" /></div>
 <p>随机选择30个氨基酸知道是整个输入骨架的15%做mask</p>
-<h3 id="Results-16">Results</h3>
+<h3 id="Results-18">Results</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig5.png" alt="avatar" style="zoom:70%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-IF/fig6.png" alt="avatar" style="zoom:100%;" /></div>
