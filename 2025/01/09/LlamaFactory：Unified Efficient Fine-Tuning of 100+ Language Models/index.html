@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models | tyang</title>
+  <meta name="description" content="论文地址：LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;hiyouga&#x2F;LLaMA-Factory  LlamaFactory：高效微调LLM的框架 Abstract 在下游任务上高效微调大模型是非常重要的，作者这里提出了LlamaFactory，可以通过内置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models">
+<meta property="og:url" content="https://tyang816.github.io/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;hiyouga&#x2F;LLaMA-Factory  LlamaFactory：高效微调LLM的框架 Abstract 在下游任务上高效微调大模型是非常重要的，作者这里提出了LlamaFactory，可以通过内置">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab5.png">
+<meta property="article:published_time" content="2025-01-09T05:30:51.000Z">
+<meta property="article:modified_time" content="2025-01-09T05:33:46.472Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">218</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">56</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">96</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.79px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/IR/" style="font-size: 13.36px;">IR</a> <a href="/tags/OS/" style="font-size: 13.29px;">OS</a> <a href="/tags/SE/" style="font-size: 13.71px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.64px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.14px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.57px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.29px;">cs.Meta</a> <a href="/tags/cs-MoE/" style="font-size: 13px;">cs.MoE</a> <a href="/tags/cs-Multimodal/" style="font-size: 13.5px;">cs.Multimodal</a> <a href="/tags/cs-Object/" style="font-size: 13.29px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.21px;">cs.Recom</a> <a href="/tags/cs-Speech/" style="font-size: 13px;">cs.Speech</a> <a href="/tags/cs-Transformer/" style="font-size: 13.93px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.43px;">cs.Video</a> <a href="/tags/cs-diffusion/" style="font-size: 13.07px;">cs.diffusion</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="title">ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-09T05:30:51.000Z" itemprop="datePublished">2025-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Iterative%20Refinement%20Graph%20Neural%20Network%20for%20Antibody%20Sequence-Structure%20Co-design/" class="title">ICLR-2022 Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:52:59.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" class="title">NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:23:52.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/02/IgDesign%EF%BC%9AIn%20vitro%20validated%20antibody%20design%20against%20multiple%20therapeutic%20antigens%20using%20inverse%20folding/" class="title">IgDesign：In vitro validated antibody design against multiple therapeutic antigens using inverse folding</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-02T04:30:17.000Z" itemprop="datePublished">2025-01-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/DeepLearning/">DeepLearning</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/11/19/%E9%9D%A2%E5%90%91%E9%9D%9E%E5%AE%8C%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="title">面向非完备数据集的深度学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-11-19T05:31:02.000Z" itemprop="datePublished">2024-11-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/CL/LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="article-date">
+	  <time datetime="2025-01-09T05:30:51.000Z" itemprop="datePublished">2025-01-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/CL/" rel="tag">CL</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="leancloud_visitors"  data-flag-title="ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2.8k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a href="">LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/hiyouga/LLaMA-Factory">https://github.com/hiyouga/LLaMA-Factory</a></p>
+</blockquote>
+<h2 id="LlamaFactory：高效微调LLM的框架">LlamaFactory：高效微调LLM的框架</h2>
+<h3 id="Abstract-69">Abstract</h3>
+<p>在下游任务上高效微调大模型是非常重要的，作者这里提出了LlamaFactory，可以通过内置的web UI，不需要代码就可以轻易微调100+LLM</p>
+<h3 id="Introduction-64">Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab2.png" alt="avatar" style="zoom:50%;" /></div>
+<p>大型语言模型（LLMs）在推理能力和多种任务（如问答、机器翻译和信息提取）中表现卓越。近年来，LLMs在开源社区中得到广泛发展，例如 Hugging Face 的 LLM leaderboard 提供了超过 5000 个模型，便于用户利用 LLMs 的能力</p>
+<p>为了使LLMs适应下游任务，需要进行微调，但微调极大规模的模型参数需要大量计算资源，成为关键挑战。高效微调技术（如 LoRA、QLoRA 等）被提出以降低训练成本，但目前社区贡献了多种方法，缺乏统一的框架来支持这些技术的广泛适配与定制。</p>
+<p><strong>LLAMAFACTORY 框架</strong>：</p>
+<ul>
+<li>作者提出了 <strong>LLAMAFACTORY</strong>，一个统一的框架，用于高效微调超过 100 种 LLMs。</li>
+<li>框架整合了一系列最新的高效微调方法，能够以最小的资源和高吞吐量对模型进行微调。</li>
+<li>提供两种用户友好的操作方式：命令行和图形化界面（LLAMABOARD），支持用户灵活定制和微调LLMs，几乎无需编写代码。</li>
+</ul>
+<p><strong>LLAMAFACTORY由三个核心模块组成：</strong></p>
+<ol>
+<li><strong>Model Loader</strong>：加载和管理预训练模型。</li>
+<li><strong>Data Worker</strong>：处理和对齐不同格式的数据集。</li>
+<li><strong>Trainer</strong>：应用高效的微调方法。</li>
+</ol>
+<p><strong>技术实现</strong>：</p>
+<ul>
+<li>框架基于 PyTorch 和多个开源库（如 Transformers 和 PEFT）实现，提供了高抽象级别的开箱即用工具。</li>
+<li>使用 Gradio 构建的 LLAMABOARD 图形界面使用户无需编写代码即可微调LLMs。</li>
+</ul>
+<h3 id="Efficient-Fine-Tuning-Techniques">Efficient Fine-Tuning Techniques</h3>
+<h4 id="Efficient-Optimization">Efficient Optimization</h4>
+<p><strong>概述</strong></p>
+<p>高效优化技术的目标是以最小的资源成本调整LLMs的参数。这些技术通过冻结部分参数或引入低维适配器，减少计算复杂度。</p>
+<p><strong>技术细节</strong></p>
+<ol>
+<li>
+<p><strong>Freeze-tuning</strong>:</p>
+<ul>
+<li>仅微调模型的少量参数，冻结大部分层。</li>
+<li>通常只微调解码器层中少量参数，例如最后几层。</li>
+<li>减少了需要更新的参数数量，从而降低资源消耗。</li>
+</ul>
+</li>
+<li>
+<p><strong>Gradient Low-Rank Projection (GaLore)</strong>:</p>
+<ul>
+<li>将梯度投影到低维空间中，支持全参数学习的同时显著节省内存。</li>
+<li>适合大模型训练，既能保持性能又能减少内存开销。</li>
+</ul>
+</li>
+<li>
+<p><strong>BAdam</strong>:</p>
+<ul>
+<li>基于 <strong>Block Coordinate Descent (BCD)</strong> 的方法，将参数分块处理以优化训练效率。</li>
+<li>能高效优化大量参数。</li>
+</ul>
+</li>
+<li>
+<p><strong>Low-Rank Adaptation (LoRA)</strong>:</p>
+<ul>
+<li>冻结所有预训练权重，仅为指定层引入一对低秩矩阵，作为微调参数。</li>
+<li>结合量化技术（如QLoRA）时，可以进一步减少内存使用。</li>
+</ul>
+</li>
+<li>
+<p><strong>QLoRA</strong>:</p>
+<ul>
+<li>在量化权重的基础上进行LoRA微调。</li>
+<li>使用4位量化和双重量化技术（如LLM.int8），显著降低了内存消耗。</li>
+</ul>
+</li>
+<li>
+<p><strong>DoRA</strong>:</p>
+<ul>
+<li>将预训练权重分解为大小和方向两部分，仅更新方向部分以提升性能。</li>
+<li>比LoRA更高效，适用于复杂的微调场景。</li>
+</ul>
+</li>
+<li>
+<p><strong>LoRA+</strong>:</p>
+<ul>
+<li>针对LoRA的优化，通过解决低秩分解的次优问题，进一步提升性能。</li>
+</ul>
+</li>
+<li>
+<p><strong>PiSSA (Principal Singular Values and Singular Vectors Adaptation)</strong>:</p>
+<ul>
+<li>基于预训练权重的主成分初始化适配器，收敛速度更快。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Efficient-Computation">Efficient Computation</h4>
+<p><strong>概述</strong></p>
+<p>高效计算技术的目标是减少LLMs训练过程中的时间或内存需求，通过硬件优化和计算方法提升效率。</p>
+<p><strong>技术细节</strong></p>
+<ol>
+<li>
+<p><strong>Mixed Precision Training</strong>:</p>
+<ul>
+<li>使用混合精度（如float16和bfloat16）进行训练，减少内存占用。</li>
+<li>在不显著降低模型精度的情况下提高计算效率。</li>
+</ul>
+</li>
+<li>
+<p><strong>Activation Checkpointing</strong>:</p>
+<ul>
+<li>在前向传播中保存部分中间结果，并在反向传播时重新计算未保存的部分，以降低内存使用。</li>
+</ul>
+</li>
+<li>
+<p><strong>Flash Attention</strong>:</p>
+<ul>
+<li>一种硬件友好的注意力机制，减少了Attention层的I/O开销，提高计算效率。</li>
+</ul>
+</li>
+<li>
+<p><strong>S2Attention (Shifted Sparse Attention)</strong>:</p>
+<ul>
+<li>针对长上下文的LLMs，利用稀疏注意力机制减少内存消耗。</li>
+</ul>
+</li>
+<li>
+<p><strong>Quantization</strong>:</p>
+<ul>
+<li>通过权重的低精度表示（如4位或8位）降低模型的内存需求。</li>
+<li>支持多种后训练量化方法，如GPTQ、AWQ和AQLM。</li>
+</ul>
+</li>
+<li>
+<p><strong>Unsloth</strong>:</p>
+<ul>
+<li>利用Triton库实现LoRA的反向传播，减少浮点运算（FLOPs），加速梯度下降。</li>
+<li>提升了LoRA微调的效率。</li>
+</ul>
+</li>
+</ol>
+<p>LLAMAFACTORY 将上述优化和计算技术无缝集成到框架中，显著提升了LLMs微调的效率</p>
+<h3 id="LlamaFactory-Framework">LlamaFactory Framework</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/fig1.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="Model-Loader">Model Loader</h4>
+<p><strong>Model Loader</strong> 负责管理模型的初始化和微调，具体包括以下功能：</p>
+<ol>
+<li>
+<p><strong>Model Initialization（模型初始化）</strong>：</p>
+<ul>
+<li>使用 Transformers 的 Auto 类（如 AutoModelForCausalLM 和 AutoTokenizer）加载预训练模型和分词器。</li>
+<li>支持自动调整嵌入层大小并初始化新参数。</li>
+<li>利用 RoPE（旋转位置编码）的比例因子扩展上下文长度。</li>
+</ul>
+</li>
+<li>
+<p><strong>Model Patching（模型补丁）</strong>：</p>
+<ul>
+<li>使用“猴子补丁”技术为模型添加新功能，如 S²Attention。</li>
+<li>原生支持 Flash Attention，优化计算效率。</li>
+<li>在 DeepSpeed ZeRO stage-3 下优化 MoE（专家混合）模型，防止动态层过度分区。</li>
+</ul>
+</li>
+<li>
+<p><strong>Model Quantization（模型量化）</strong>：</p>
+<ul>
+<li>支持 4 位或 8 位动态量化（如 LLM.int8 和 QLoRA 的双量化）。</li>
+<li>兼容多种量化方法（如 GPTQ、AWQ 和 AQLM），但仅支持适配器方法对量化权重进行微调。</li>
+</ul>
+</li>
+<li>
+<p><strong>Adapter Attaching（适配器挂载）</strong>：</p>
+<ul>
+<li>自动检测适配器插入的位置（如所有线性层）以优化收敛性能。</li>
+<li>支持多种适配器方法（如 LoRA、DoRA 和 PiSSA）。</li>
+<li>使用 Unsloth 替换反向传播以加速训练。</li>
+</ul>
+</li>
+<li>
+<p><strong>Precision Adaptation（精度适配）</strong>：</p>
+<ul>
+<li>根据硬件计算能力调整浮点精度（如 bfloat16 或 float16）。</li>
+<li>在混合精度训练中保留所有可训练参数为 float32，以提高稳定性。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Data-Worker">Data Worker</h4>
+<p><strong>Data Worker</strong> 提供了一整套数据处理流水线，使得不同任务的数据能够被统一格式化处理。</p>
+<ol>
+<li>
+<p><strong>Dataset Loading（数据集加载）</strong>：</p>
+<ul>
+<li>基于 Datasets 库加载本地或远程数据集。</li>
+<li>使用 Arrow 格式减少内存开销，支持数据流模式，避免下载整个数据集。</li>
+</ul>
+</li>
+<li>
+<p><strong>Dataset Aligning（数据对齐）</strong>：</p>
+<ul>
+<li>提供数据描述规范，将多种数据格式（如 Alpaca、ShareGPT 等）标准化为统一结构。</li>
+</ul>
+</li>
+<li>
+<p><strong>Dataset Merging（数据合并）</strong>：</p>
+<ul>
+<li>
+<p>提供高效的合并方法：</p>
+<ul>
+<li>非流模式下直接拼接数据集。</li>
+<li>流模式下交替读取数据以保持随机性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dataset Preprocessing（数据预处理）</strong>：</p>
+<ul>
+<li>提供多种聊天模板（chat templates）来适配不同模型。</li>
+<li>默认仅计算生成部分的损失，支持序列压缩技术以减少训练时间。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Trainer">Trainer</h4>
+<p><strong>Trainer</strong> 是框架的核心模块之一，用于整合高效微调方法和训练机制。</p>
+<ol>
+<li>
+<p><strong>Efficient Training（高效训练）</strong>：</p>
+<ul>
+<li>支持最新的高效微调方法（如 LoRA+、GaLore 和 BAdam）。</li>
+<li>通过模块化设计，使不同任务能够灵活应用这些方法。</li>
+<li>使用 Transformers 和 TRL 库的训练器支持预训练、指令调优、偏好优化等任务。</li>
+</ul>
+</li>
+<li>
+<p><strong>Model-Sharing RLHF（模型共享的 RLHF）</strong>：</p>
+<ul>
+<li>提出一种新方法，使 RLHF（基于人类反馈的强化学习）能够在消费者设备上完成。</li>
+<li>通过动态切换适配器，单个预训练模型即可同时充当策略、价值、参考和奖励模型。</li>
+</ul>
+</li>
+<li>
+<p><strong>Distributed Training（分布式训练）</strong>：</p>
+<ul>
+<li>结合 DeepSpeed 实现数据并行，通过 ZeRO 优化器减少内存消耗。</li>
+</ul>
+</li>
+</ol>
+<h4 id="Utilities">Utilities</h4>
+<ul>
+<li>
+<p><strong>Model Inference（模型推理）</strong>：</p>
+<ul>
+<li>支持基于 Transformers 和 vLLM 的流式解码，提供高吞吐量推理服务。</li>
+<li>提供 OpenAI 风格的 API，方便集成至应用中。</li>
+</ul>
+</li>
+<li>
+<p><strong>Model Evaluation（模型评估）</strong>：</p>
+<ul>
+<li>支持多种任务的自动评估（如 MMLU、CMMLU 和 BLEU）。</li>
+<li>提供文本相似度计算和人类评估功能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="LLAMABOARD-A-Unified-Interface-for-LLAMAFACTORY">LLAMABOARD: A Unified Interface for LLAMAFACTORY</h4>
+<p>LLAMABOARD 是 LLAMAFACTORY 的图形界面，允许用户通过 Web 界面无代码地定制微调和评估流程。</p>
+<ol>
+<li>
+<p><strong>Easy Configuration（易配置）</strong>：</p>
+<ul>
+<li>默认提供推荐参数，用户可通过界面预览和验证数据集。</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitorable Training（可监控训练）</strong>：</p>
+<ul>
+<li>提供实时的训练日志和损失曲线，帮助用户分析训练进程。</li>
+</ul>
+</li>
+<li>
+<p><strong>Flexible Evaluation（灵活评估）</strong>：</p>
+<ul>
+<li>支持自动和人类评估，便于用户测量模型能力。</li>
+</ul>
+</li>
+<li>
+<p><strong>Multilingual Support（多语言支持）</strong>：</p>
+<ul>
+<li>支持界面本地化，目前支持英语、俄语和中文。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Empirical-Study">Empirical Study</h3>
+<h4 id="Training-Efficiency">Training Efficiency</h4>
+<p><strong>实验设置</strong></p>
+<ul>
+<li><strong>数据集</strong>：使用 <strong>PubMed 数据集</strong>，其中包含 3600 万条生物医学文献记录，抽取约 40 万个 token 构建训练语料</li>
+<li><strong>实验条件</strong>：学习率：10−5、Token 批大小：512、优化器：8位 AdamW、精度：bfloat16、使用激活检查点技术减少内存占用、Freeze-tuning：仅微调模型最后3层解码器、GaLore：秩设置为128，缩放因子设置为2.0、LoRA/QLoRA：在所有线性层附加适配器，秩为128，alpha 为256、硬件：单张 NVIDIA A100 40GB GPU、Flash Attention 在所有实验中启用；LoRA 和 QLoRA 还启用了 Unsloth。</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab4.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>在 Gemma-2B 上，QLoRA 的内存消耗为 5.21 GB，吞吐量为 3158.59 tokens/s，PPL 为 10.46。</li>
+<li>在 Llama2-13B 上，GaLore 的 PPL 为 5.72，比 LoRA 和 QLoRA 更优，但内存需求较高</li>
+</ul>
+<h4 id="Fine-Tuning-on-Downstream-Tasks">Fine-Tuning on Downstream Tasks</h4>
+<p><strong>实验设置</strong></p>
+<ul>
+<li>
+<p><strong>任务</strong>：</p>
+<ul>
+<li>CNN/DM：摘要生成任务</li>
+<li>XSum：极端摘要生成任务</li>
+<li>AdGen：广告文本生成任务</li>
+</ul>
+</li>
+<li>
+<p><strong>数据集划分</strong>：</p>
+<ul>
+<li>每个任务使用 2000 个训练样本和 1000 个测试样本。</li>
+<li>训练集和测试集互不重叠。</li>
+</ul>
+</li>
+<li>
+<p><strong>评估指标</strong>：</p>
+</li>
+<li>
+<p>使用 <strong>ROUGE 分数</strong>（包括 ROUGE-1、ROUGE-2 和 ROUGE-L）评估生成文本质量。</p>
+</li>
+<li>
+<p><strong>实验条件</strong>：</p>
+<ul>
+<li>学习率：10−5、批大小：4、最大输入长度：2048、优化器：8位 AdamW、硬件：NVIDIA A100 40GB GPU、LoRA 和 QLoRA 的适配器设置与训练效率实验相同</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab5.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>
+<p><strong>最佳微调方法</strong>：</p>
+<ul>
+<li>LoRA 和 QLoRA 在大多数任务和模型中表现最佳。</li>
+<li>例如，在 XSum 和 AdGen 任务中，Llama3-8B 使用 QLoRA 获得了最高 ROUGE 分数。</li>
+</ul>
+</li>
+<li>
+<p><strong>不同模型的表现</strong>：</p>
+<ul>
+<li>Llama3-8B 是所有模型中性能最好的，在多个任务中实现了最高分数。</li>
+<li>Yi-6B 和 Mistral-7B 在同等规模的模型中表现出竞争力。</li>
+</ul>
+</li>
+<li>
+<p><strong>任务相关性</strong>：</p>
+<ul>
+<li>QLoRA 在生成任务上表现稳定，尤其适用于高资源受限的场景。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong></p>
+<ol>
+<li>
+<p><strong>训练效率</strong>：</p>
+<ul>
+<li>QLoRA 和 LoRA 的内存效率和吞吐量显著高于传统的全参数微调方法。</li>
+<li>在大模型中，GaLore 通过优化梯度表现出更优的 PPL。</li>
+</ul>
+</li>
+<li>
+<p><strong>下游任务适配性</strong>：</p>
+<ul>
+<li>LoRA 和 QLoRA 展现了极强的适应能力，尤其是在小模型和资源受限场景中。</li>
+<li>不同模型在特定任务中表现存在差异，Llama3-8B 在多个任务中占据优势。</li>
+</ul>
+</li>
+<li>
+<p><strong>LLAMAFACTORY 的有效性</strong>：</p>
+<ul>
+<li>框架的高效微调方法不仅提升了训练效率，还能很好地适配下游任务，验证了其在多场景下的实用性。</li>
+</ul>
+</li>
+</ol>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" title="ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models" target="_blank" rel="external">https://tyang816.github.io/2025/01/09/LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/01/07/Iterative%20Refinement%20Graph%20Neural%20Network%20for%20Antibody%20Sequence-Structure%20Co-design/" title="ICLR-2022 Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
