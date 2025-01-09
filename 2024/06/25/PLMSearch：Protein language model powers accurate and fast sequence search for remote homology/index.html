@@ -412,11 +412,8 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41467-024-46808-5">PLMSearch: Protein language model powers accurate and fast sequence search for remote homology</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://dmiip.sjtu.edu.cn/PLMSearch">https://dmiip.sjtu.edu.cn/PLMSearch</a> and <a target="_blank" rel="noopener" href="https://github.com/maovshao/PLMSearch">https://github.com/maovshao/PLMSearch</a></p>
 </blockquote>
-<h2 id="PLMSearch：同源家族过滤-蛋白质相似度预测-PLMAlign">PLMSearch：同源家族过滤+蛋白质相似度预测+PLMAlign</h2>
-<h3 id="Abstract-63">Abstract</h3>
-<p>从序列当中检测结构同源性依旧是挑战，因此提出了PLMSearch，只需要使用序列作为输入。实验显示PLMSearch可以在数秒内搜索数百万的query-target蛋白，并且和最好的结构搜索方媲美，还可以召回出序列不同结构相似的远程同源对</p>
-<h3 id="Introduction-58">Introduction</h3>
-<p>基于序列搜索的方法很难检测出远距离的进化依赖，在序列相似度低于0.3的时候，使用sequence profile (MSA)的方法，如HMMER, HHsearch或HHblits更好</p>
+<h2 id="PLMSearch：同源家族过滤-蛋白质相似度预测-PLMAlign"><a href="#PLMSearch：同源家族过滤-蛋白质相似度预测-PLMAlign" class="headerlink" title="PLMSearch：同源家族过滤+蛋白质相似度预测+PLMAlign"></a>PLMSearch：同源家族过滤+蛋白质相似度预测+PLMAlign</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>从序列当中检测结构同源性依旧是挑战，因此提出了PLMSearch，只需要使用序列作为输入。实验显示PLMSearch可以在数秒内搜索数百万的query-target蛋白，并且和最好的结构搜索方媲美，还可以召回出序列不同结构相似的远程同源对</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>基于序列搜索的方法很难检测出远距离的进化依赖，在序列相似度低于0.3的时候，使用sequence profile (MSA)的方法，如HMMER, HHsearch或HHblits更好</p>
 <p>因为结构比序列的差异更大，因此结构相似性的搜索更加敏感，主要分为三种：</p>
 <ul>
 <li>contact/distance map-based: Map_align, EigenTHREADER, and DiscoVER</li>
@@ -424,56 +421,54 @@
 <li>structural alignment-based: CE, Dali, and TM-align</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>PLMSearch主要包含以下三步：</p>
 <ol>
 <li>PfamClan过滤出具有相同pfam clan domain的蛋白质对</li>
 <li>SS-predictor (structural similarity predictor)预测query-target pairs的相似性，使用TM-score作为ground truth训练</li>
 <li>PLMSearch根据预测的相似度对PfamClan对预过滤的对进行排序，并相应地输出每个查询蛋白的搜索结果。随后，PLMAlign为PLMSearch检索到的顶级蛋白质对提供序列比对和比对得分（图1d）</li>
 </ol>
-<h3 id="Results-23">Results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="PLMsearch-reaches-similar-sensitivity-as-structure-search-methods">PLMsearch reaches similar sensitivity as structure search methods</h4>
-<p>检索测试在SCOPe40-test和Swiss-Prot上显示出PLMSearch是达到了准确率和速度的最佳平衡</p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h4 id="PLMsearch-reaches-similar-sensitivity-as-structure-search-methods"><a href="#PLMsearch-reaches-similar-sensitivity-as-structure-search-methods" class="headerlink" title="PLMsearch reaches similar sensitivity as structure search methods"></a>PLMsearch reaches similar sensitivity as structure search methods</h4><p>检索测试在SCOPe40-test和Swiss-Prot上显示出PLMSearch是达到了准确率和速度的最佳平衡</p>
 <p>SCOPe40-test (2207 proteins)合计 4,870,849 query-target pairs，图2a-c，Table S2</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/tabs2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>Swiss-Prot search test随机从Swiss-Prots选了50个query，SCOPe40-test中选了50个query，在Swiss-Prot中430,140 target中检索，Fig S2, Table S1</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/figs2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/tabs1.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="PLMSearch-searches-millions-of-query-target-pairs-in-seconds">PLMSearch searches millions of query-target pairs in seconds</h4>
-<p>使用了相同的计算资源（一个56核的Intel ® Xeon ® CPU E5-2680 v4 @ 2.40 GHz和256 GB RAM服务器）</p>
-<h4 id="PLMSearch-accurately-detects-remote-homology-pairs">PLMSearch accurately detects remote homology pairs</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig3.png" alt="avatar" style="zoom:100%;" /></div>
-<p>序列相似度&gt;0.3且TM-score&gt;0.5称为easy pair，序列相似度&lt;0.3且TM-score &gt; 0.5称为remote homology pair</p>
-<h4 id="Ablation-experiments-PfamClan-SS-predictor-and-PLMAlign-make-PLMSearch-more-robust">Ablation experiments: PfamClan, SS-predictor, and PLMAlign make PLMSearch more robust</h4>
-<p>为了评估没有PfamClan组件的PLMSearch，从SCOPe40测试中的2207个查询中总共筛选了110个查询，这些查询没有扫描任何pfam域</p>
+
+<h4 id="PLMSearch-searches-millions-of-query-target-pairs-in-seconds"><a href="#PLMSearch-searches-millions-of-query-target-pairs-in-seconds" class="headerlink" title="PLMSearch searches millions of query-target pairs in seconds"></a>PLMSearch searches millions of query-target pairs in seconds</h4><p>使用了相同的计算资源（一个56核的Intel (R) Xeon (R) CPU E5-2680 v4 @ 2.40 GHz和256 GB RAM服务器）</p>
+<h4 id="PLMSearch-accurately-detects-remote-homology-pairs"><a href="#PLMSearch-accurately-detects-remote-homology-pairs" class="headerlink" title="PLMSearch accurately detects remote homology pairs"></a>PLMSearch accurately detects remote homology pairs</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+
+<p>序列相似度&gt;0.3且TM-score&gt;0.5称为easy pair，序列相似度<0.3且TM-score > 0.5称为remote homology pair</p>
+<h4 id="Ablation-experiments-PfamClan-SS-predictor-and-PLMAlign-make-PLMSearch-more-robust"><a href="#Ablation-experiments-PfamClan-SS-predictor-and-PLMAlign-make-PLMSearch-more-robust" class="headerlink" title="Ablation experiments: PfamClan, SS-predictor, and PLMAlign make PLMSearch more robust"></a>Ablation experiments: PfamClan, SS-predictor, and PLMAlign make PLMSearch more robust</h4><p>为了评估没有PfamClan组件的PLMSearch，从SCOPe40测试中的2207个查询中总共筛选了110个查询，这些查询没有扫描任何pfam域</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/figs3.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/tabs4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>为了评估没有 SS-predictor 组件的 PLMSearch，我们首先基于 PfamClan 对 SCOPe40 测试和 Swiss-Prot 数据集进行聚类</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/figs4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/tabs8.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>聚类结果显示出很明显的长尾效应，经过PfamClan的预过滤后，超过50%的预过滤的蛋白质对（图中的橙色矩形）来自最大的1-2个簇（大簇），因此，大的聚类会导致预过滤结果中产生大量的不相关的蛋白质对，降低准确性，必须根据相似性进一步进行分类和过滤，这就是ss-predictor所做的。</p>
-<h3 id="Methods-15">Methods</h3>
-<h4 id="PLMSearch-pipeline">PLMSearch pipeline</h4>
-<p>1.PfamScan检索出Pfam clan domains; 2.相似度预测；3.相似度排序；4.对于高排名的对，PLMAlign生成对比</p>
-<h4 id="PfamClan">PfamClan</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><h4 id="PLMSearch-pipeline"><a href="#PLMSearch-pipeline" class="headerlink" title="PLMSearch pipeline"></a>PLMSearch pipeline</h4><p>1.PfamScan检索出Pfam clan domains; 2.相似度预测；3.相似度排序；4.对于高排名的对，PLMAlign生成对比</p>
+<h4 id="PfamClan"><a href="#PfamClan" class="headerlink" title="PfamClan"></a>PfamClan</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>PfamClan过滤出共享相同Pfam clan结构域的蛋白质对（图1a）。值得注意的是，召回率在初始预过滤中更为重要。PfamClan基于一个更宽松的标准，共享相同的pfam clan域，而不是共享相同的pfam fmaliy（pfam家族所做的）。这一特性使得PfamClan在召回率上优于PfamFamily（图4）</p>
-<h4 id="Similarity-prediction">Similarity prediction</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Similarity-prediction"><a href="#Similarity-prediction" class="headerlink" title="Similarity prediction"></a>Similarity prediction</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>将蛋白质序列输入ESM-1b，预测TM-score，在SCOPe40-train和CATHS40上进行训练</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig6.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="PLMAlign">PLMAlign</h4>
-<p>和PLM-BLAST一样</p>
-<h4 id="Datasets-4">Datasets</h4>
-<h5 id="SCOPe40">SCOPe40</h5>
-<p>类似Foldseek，SCOPe40训练/测试集分割为8：2，测试集中没有和训练集一个fold的</p>
-<h5 id="New-protein-search-test">New protein search test</h5>
-<p>引入了一个额外的搜索测试，专门包含无法扫描任何pam域的查询蛋白质，从SCOPe40测试中的2207个查询中总共筛选了110个查询，这些查询没有扫描任何pfam域</p>
-<h5 id="Swiss-Prot">Swiss-Prot</h5>
-<p>开始下载了542,317个蛋白和结构，丢掉pLDDT小于70的得到498,659，丢掉与query蛋白质有40%序列相似度得到430,140</p>
+
+<h4 id="PLMAlign"><a href="#PLMAlign" class="headerlink" title="PLMAlign"></a>PLMAlign</h4><p>和PLM-BLAST一样</p>
+<h4 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h4><h5 id="SCOPe40"><a href="#SCOPe40" class="headerlink" title="SCOPe40"></a>SCOPe40</h5><p>类似Foldseek，SCOPe40训练/测试集分割为8：2，测试集中没有和训练集一个fold的</p>
+<h5 id="New-protein-search-test"><a href="#New-protein-search-test" class="headerlink" title="New protein search test"></a>New protein search test</h5><p>引入了一个额外的搜索测试，专门包含无法扫描任何pam域的查询蛋白质，从SCOPe40测试中的2207个查询中总共筛选了110个查询，这些查询没有扫描任何pfam域</p>
+<h5 id="Swiss-Prot"><a href="#Swiss-Prot" class="headerlink" title="Swiss-Prot"></a>Swiss-Prot</h5><p>开始下载了542,317个蛋白和结构，丢掉pLDDT小于70的得到498,659，丢掉与query蛋白质有40%序列相似度得到430,140</p>
 <p>最终是从SCOPe40-test和Swiss-Prot中各选择了50个作为query，测试了43,014,000 query-target pair</p>
-<h5 id="CATHS40">CATHS40</h5>
-<p>丢弃超过300氨基酸长度得到27,270 domains，丢掉和测试集有40%相似度的蛋白得到21,474</p>
+<h5 id="CATHS40"><a href="#CATHS40" class="headerlink" title="CATHS40"></a>CATHS40</h5><p>丢弃超过300氨基酸长度得到27,270 domains，丢掉和测试集有40%相似度的蛋白得到21,474</p>
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

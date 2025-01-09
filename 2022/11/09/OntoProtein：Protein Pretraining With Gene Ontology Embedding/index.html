@@ -20,12 +20,12 @@
   
   
   <title>ICLR-2022 OntoProtein：Protein Pretraining With Gene Ontology Embedding | tyang</title>
-  <meta name="description" content="论文地址：OntoProtein：Protein Pretraining With Gene Ontology Embedding 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zjunlp&#x2F;OntoProtein  OntoProtein：知识图谱+对比学习+预训练微调 Abstract 目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（K">
+  <meta name="description" content="论文地址：OntoProtein：Protein Pretraining With Gene Ontology Embedding 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zjunlp&#x2F;OntoProtein  OntoProtein：知识图谱+对比学习+预训练微调Abstract目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（KG）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICLR-2022 OntoProtein：Protein Pretraining With Gene Ontology Embedding">
 <meta property="og:url" content="https://tyang816.github.io/2022/11/09/OntoProtein%EF%BC%9AProtein%20Pretraining%20With%20Gene%20Ontology%20Embedding/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：OntoProtein：Protein Pretraining With Gene Ontology Embedding 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zjunlp&#x2F;OntoProtein  OntoProtein：知识图谱+对比学习+预训练微调 Abstract 目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（K">
+<meta property="og:description" content="论文地址：OntoProtein：Protein Pretraining With Gene Ontology Embedding 论文实现：https:&#x2F;&#x2F;github.com&#x2F;zjunlp&#x2F;OntoProtein  OntoProtein：知识图谱+对比学习+预训练微调Abstract目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（KG）">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig2.png">
@@ -410,12 +410,10 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2201.11147">OntoProtein：Protein Pretraining With Gene Ontology Embedding</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/zjunlp/OntoProtein">https://github.com/zjunlp/OntoProtein</a></p>
 </blockquote>
-<h2 id="OntoProtein：知识图谱-对比学习-预训练微调">OntoProtein：知识图谱+对比学习+预训练微调</h2>
-<h3 id="Abstract-61">Abstract</h3>
-<p>目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（KG），作者认为增加知识图谱可以增强蛋白质表征。本文提出OntoProtein，第一个使用GO（Gene Ontology）结构到蛋白质预训练模型中。构建了一个新的大规模的包含GO和相关蛋白质的知识图谱，提出了一种新的知识感知负抽样的对比学习，在训练前联合优化知识图和蛋白质嵌入</p>
-<h3 id="Introduction-56">Introduction</h3>
-<p>目前的蛋白质预训练模型不能充分捕捉生物学上的factual knowledge，所以作者采用了来自基因本体论的知识图。由于蛋白质的形状决定了其功能，因此模型更容易利用具有相似形状的蛋白质功能的先验知识来识别蛋白质的功能</p>
+<h2 id="OntoProtein：知识图谱-对比学习-预训练微调"><a href="#OntoProtein：知识图谱-对比学习-预训练微调" class="headerlink" title="OntoProtein：知识图谱+对比学习+预训练微调"></a>OntoProtein：知识图谱+对比学习+预训练微调</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（KG），作者认为增加知识图谱可以增强蛋白质表征。本文提出OntoProtein，第一个使用GO（Gene Ontology）结构到蛋白质预训练模型中。构建了一个新的大规模的包含GO和相关蛋白质的知识图谱，提出了一种新的知识感知负抽样的对比学习，在训练前联合优化知识图和蛋白质嵌入</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>目前的蛋白质预训练模型不能充分捕捉生物学上的factual knowledge，所以作者采用了来自基因本体论的知识图。由于蛋白质的形状决定了其功能，因此模型更容易利用具有相似形状的蛋白质功能的先验知识来识别蛋白质的功能</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>但是蛋白质序列和基因本体论数据类型不同，序列是氨基酸，但基因本体论是文本描述的知识图谱，因此，结构化知识编码和异构信息融合的严重问题仍然存在</p>
 <p>通过访问公开的基因本体知识图谱“Gene Ontology（Go）”，并将其和来自Swiss-Prot数据库的蛋白质序列对齐，来构建用于预训练的知识图谱ProteinKG25，该知识图谱包含4,990,097个三元组, 其中4,879,951个蛋白质-Go的三元组，110,146 个Go-Go三元组</p>
 <p>主要贡献：</p>
@@ -424,39 +422,38 @@
 <li>通过对比学习与知识感知采样，共同优化知识和蛋白质嵌入</li>
 <li>构建了ProteinKG25数据集</li>
 </ul>
-<h3 id="Methodologies">Methodologies</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Hybrid-Encoder">Hybrid Encoder</h4>
-<p>对蛋白质序列采用已有的蛋白质预训练模型ProtBert进行编码</p>
+<h3 id="Methodologies"><a href="#Methodologies" class="headerlink" title="Methodologies"></a>Methodologies</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h4 id="Hybrid-Encoder"><a href="#Hybrid-Encoder" class="headerlink" title="Hybrid Encoder"></a>Hybrid Encoder</h4><p>对蛋白质序列采用已有的蛋白质预训练模型ProtBert进行编码</p>
 <p>对文本序列（GO encoder）采用BERT进行编码，也是用的预训练好的模型</p>
-<h4 id="Knowledge-Embedding">Knowledge Embedding</h4>
-<p>使用Knowledge Embedding objective来获取知识图谱的表征</p>
+<h4 id="Knowledge-Embedding"><a href="#Knowledge-Embedding" class="headerlink" title="Knowledge Embedding"></a>Knowledge Embedding</h4><p>使用Knowledge Embedding objective来获取知识图谱的表征</p>
 <p>知识图谱由一堆元组组成，可以定义为(h, r, t)，h 和 t 是 head 和 tail 实体，r 是关系类型</p>
-<p>这里有两种不同的节点， $e_{GO}$ 和 $e_{protein}$ ，前者是图里的注释文本，后者是蛋白质序列，整个知识图谱可以定义为两组 $triple_{GO2GO}$ 和 $triple_{Protein2GO}$</p>
-<h4 id="Contrastive-Learning-With-Knowledge-Aware-Negative-Sampling">Contrastive Learning With Knowledge-Aware Negative Sampling</h4>
-<p>KE是学习实体和关系的低维表征，对比估计是一种可扩展的、推理连接模式的有效方法</p>
+<p>这里有两种不同的节点， $e<em>{GO}$ 和 $e</em>{protein}$ ，前者是图里的注释文本，后者是蛋白质序列，整个知识图谱可以定义为两组 $triple<em>{GO2GO}$ 和 $triple</em>{Protein2GO}$ </p>
+<h4 id="Contrastive-Learning-With-Knowledge-Aware-Negative-Sampling"><a href="#Contrastive-Learning-With-Knowledge-Aware-Negative-Sampling" class="headerlink" title="Contrastive Learning With Knowledge-Aware Negative Sampling"></a>Contrastive Learning With Knowledge-Aware Negative Sampling</h4><p>KE是学习实体和关系的低维表征，对比估计是一种可扩展的、推理连接模式的有效方法</p>
 <p>对比学习是把分布损坏来得到负样本，迫使模型去学习更有区别性的特征和关键特点，但先前的方法都太简单了，本文提出知识感应的负样本采样方法，KE目标如下：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>其中 $(h_t’,t_i’)$ 是负样本，head和tail实体是损坏的元组里随机采样的，n是负样本数，γ是范围值，d是打分函数，为了简单使用TransE</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>定义元组集和实体集分别为T和E，GO里的实体属于MFO（Molecular Function），CCO（Cellular Component）和BPO（Biological Process），对于 $T_{GO-GO}$ 元组，采样元组替换实体的时候用同一个方面的（MFO, CCO, BPO），最后定义负样本元组集 $T’$ ，采样如下：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm3.png" alt="avatar" style="zoom:60%;" /></div>
-<p>这里 $E’\in {E_{MFO},E_{CCO},E_{BPO}}$，对 $T_{Protein-GO}$ 只替换了tail实体</p>
-<h4 id="Pre-training-Objective">Pre-training Objective</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm4.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>这里 $E’\in {E<em>{MFO},E</em>{CCO},E<em>{BPO}}$，对 $T</em>{Protein-GO}$ 只替换了tail实体</p>
+<h4 id="Pre-training-Objective"><a href="#Pre-training-Objective" class="headerlink" title="Pre-training Objective"></a>Pre-training Objective</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>α是超参，整个方法可以嵌入到现有的微调场景中</p>
-<h3 id="Experiment-10">Experiment</h3>
-<h4 id="TAPE-Benchmark">TAPE Benchmark</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><h4 id="TAPE-Benchmark"><a href="#TAPE-Benchmark" class="headerlink" title="TAPE Benchmark"></a>TAPE Benchmark</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>在token level上没有用MSA可以取得有竞争力的结果，但在sequence level上效果不好，怀疑是缺少了sequence level的目标函数，留待后续工作</p>
-<h4 id="Protein-Portein-Interaction">Protein-Portein Interaction</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Protein-Portein-Interaction"><a href="#Protein-Portein-Interaction" class="headerlink" title="Protein-Portein Interaction"></a>Protein-Portein Interaction</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>数据小效果好，数据大只能说有竞争力</p>
-<h4 id="Protein-Function-Prediction-2">Protein Function Prediction</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Protein-Function-Prediction"><a href="#Protein-Function-Prediction" class="headerlink" title="Protein Function Prediction"></a>Protein Function Prediction</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>数据集中可能存在严重的长尾问题，知识注入可能会影响head的表示学习，但会削弱tail的表示，从而导致性能下降，留待后续工作</p>
-<h4 id="Analysis-2">Analysis</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab4-fig4.png" alt="avatar" style="zoom:80%;" /></div>
+<h4 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab4-fig4.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>在contact prediction的不同设置下都有不小的提升</p>
 <HR align=left color=#987cb9 SIZE=1>
       

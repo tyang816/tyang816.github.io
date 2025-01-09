@@ -20,12 +20,12 @@
   
   
   <title>2.2 数据清理【stanford-cs329p】 | tyang</title>
-  <meta name="description" content="Data Errors  数据经常存在错误 - 与ground truth不一致  比如缺少、错误或一些极端值   好的ML模型对错误有容忍  训练经常是可以收敛，只是精度会降低   部署模型上线可能影响到新收集数据的质量  Types of Data Errors  Outliters：数据值与正常分布不一致 Rule violations：规则冲突比如“Not NULL”等 Patter">
+  <meta name="description" content="Data Errors 数据经常存在错误 - 与ground truth不一致 比如缺少、错误或一些极端值   好的ML模型对错误有容忍 训练经常是可以收敛，只是精度会降低   部署模型上线可能影响到新收集数据的质量  Types of Data Errors Outliters：数据值与正常分布不一致 Rule violations：规则冲突比如“Not NULL”等 Pattern">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2.2 数据清理【stanford-cs329p】">
 <meta property="og:url" content="https://tyang816.github.io/2022/04/04/2.2%20%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Data Errors  数据经常存在错误 - 与ground truth不一致  比如缺少、错误或一些极端值   好的ML模型对错误有容忍  训练经常是可以收敛，只是精度会降低   部署模型上线可能影响到新收集数据的质量  Types of Data Errors  Outliters：数据值与正常分布不一致 Rule violations：规则冲突比如“Not NULL”等 Patter">
+<meta property="og:description" content="Data Errors 数据经常存在错误 - 与ground truth不一致 比如缺少、错误或一些极端值   好的ML模型对错误有容忍 训练经常是可以收敛，只是精度会降低   部署模型上线可能影响到新收集数据的质量  Types of Data Errors Outliters：数据值与正常分布不一致 Rule violations：规则冲突比如“Not NULL”等 Pattern">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-04T07:10:35.000Z">
 <meta property="article:modified_time" content="2022-11-14T13:13:28.575Z">
@@ -389,39 +389,34 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=718339394&bvid=BV1kQ4y1Q7mx&cid=416203650&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
+
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Data-Errors">Data Errors</h3>
-<ul>
-<li>数据经常存在错误 - 与ground truth不一致
-<ul>
+
+<h3 id="Data-Errors"><a href="#Data-Errors" class="headerlink" title="Data Errors"></a>Data Errors</h3><ul>
+<li>数据经常存在错误 - 与ground truth不一致<ul>
 <li>比如缺少、错误或一些极端值</li>
 </ul>
 </li>
-<li>好的ML模型对错误有容忍
-<ul>
+<li>好的ML模型对错误有容忍<ul>
 <li>训练经常是可以收敛，只是精度会降低</li>
 </ul>
 </li>
 <li>部署模型上线可能影响到新收集数据的质量</li>
 </ul>
-<h3 id="Types-of-Data-Errors">Types of Data Errors</h3>
-<ul>
+<h3 id="Types-of-Data-Errors"><a href="#Types-of-Data-Errors" class="headerlink" title="Types of Data Errors"></a>Types of Data Errors</h3><ul>
 <li>Outliters：数据值与正常分布不一致</li>
 <li>Rule violations：规则冲突比如“Not NULL”等</li>
 <li>Pattern violations：匹配规则错误，比如美元变成人民币，拼写错误等</li>
 </ul>
-<h3 id="Rule-based-Detection">Rule-based Detection</h3>
-<ul>
+<h3 id="Rule-based-Detection"><a href="#Rule-based-Detection" class="headerlink" title="Rule-based Detection"></a>Rule-based Detection</h3><ul>
 <li>Functional dependencies：x-&gt;y 表示一个x决定一个y</li>
 <li>Denial constraaints：制定更灵活的第一级逻辑规则，比如手机号非空等</li>
 </ul>
-<h3 id="Pattern-based-Detection">Pattern-based Detection</h3>
-<ul>
+<h3 id="Pattern-based-Detection"><a href="#Pattern-based-Detection" class="headerlink" title="Pattern-based Detection"></a>Pattern-based Detection</h3><ul>
 <li>Syntactic patterns：小写转大写</li>
 <li>Semantic patterns：知识图谱</li>
 </ul>
-<h3 id="Summary-6">Summary</h3>
-<ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
 <li>数据错误的类型</li>
 <li>查找错误修正：模型分布，数值约束等，语义句法模式</li>
 <li>多种工具去帮助数据清洗</li>

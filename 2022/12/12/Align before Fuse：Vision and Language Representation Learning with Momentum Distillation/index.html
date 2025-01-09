@@ -20,12 +20,12 @@
   
   
   <title>NIPS-2021 Align before Fuse：Vision and Language Representation Learning with Momentum Distillation | tyang</title>
-  <meta name="description" content="论文地址：Align before Fuse：Vision and Language Representation Learning with Momentum Distillation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;ALBEF  ALBEF：多模态融合前先做动量对比学习 Abstract 最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个tra">
+  <meta name="description" content="论文地址：Align before Fuse：Vision and Language Representation Learning with Momentum Distillation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;ALBEF  ALBEF：多模态融合前先做动量对比学习Abstract最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个trans">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NIPS-2021 Align before Fuse：Vision and Language Representation Learning with Momentum Distillation">
 <meta property="og:url" content="https://tyang816.github.io/2022/12/12/Align%20before%20Fuse%EF%BC%9AVision%20and%20Language%20Representation%20Learning%20with%20Momentum%20Distillation/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Align before Fuse：Vision and Language Representation Learning with Momentum Distillation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;ALBEF  ALBEF：多模态融合前先做动量对比学习 Abstract 最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个tra">
+<meta property="og:description" content="论文地址：Align before Fuse：Vision and Language Representation Learning with Momentum Distillation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;salesforce&#x2F;ALBEF  ALBEF：多模态融合前先做动量对比学习Abstract最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个trans">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm1.png">
@@ -411,54 +411,50 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2107.07651">Align before Fuse：Vision and Language Representation Learning with Momentum Distillation</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/salesforce/ALBEF">https://github.com/salesforce/ALBEF</a></p>
 </blockquote>
-<h2 id="ALBEF：多模态融合前先做动量对比学习">ALBEF：多模态融合前先做动量对比学习</h2>
-<h3 id="Abstract-83">Abstract</h3>
-<p>最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个transformer的模型当作多模态的编码器，同时编码视觉的token和文本的token。用了预训练的目标检测器之后，视觉特征和文本特征其实不是align的(目标检测器是提前训练好的，导致视觉特征和文本特征可能隔很远)。为了在经过multimodal encoder之前（fusion之前）把图像和文本align起来，用了对比学习loss。为了更好的从有噪声的网络数据学习，用了一个momentum distillation自训练方式，打伪标签</p>
-<h3 id="ALBEF-Pre-training">ALBEF Pre-training</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig1.png" alt="avatar" style="zoom:90%;" /></div>
-<h4 id="Pre-training-Objectives-2">Pre-training Objectives</h4>
-<p>图像特征和文本特征丢到多模态encoder之前先尽可能拉近，这里的ITC loss完全按照moco里面来的</p>
+<h2 id="ALBEF：多模态融合前先做动量对比学习"><a href="#ALBEF：多模态融合前先做动量对比学习" class="headerlink" title="ALBEF：多模态融合前先做动量对比学习"></a>ALBEF：多模态融合前先做动量对比学习</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个transformer的模型当作多模态的编码器，同时编码视觉的token和文本的token。用了预训练的目标检测器之后，视觉特征和文本特征其实不是align的(目标检测器是提前训练好的，导致视觉特征和文本特征可能隔很远)。为了在经过multimodal encoder之前（fusion之前）把图像和文本align起来，用了对比学习loss。为了更好的从有噪声的网络数据学习，用了一个momentum distillation自训练方式，打伪标签</p>
+<h3 id="ALBEF-Pre-training"><a href="#ALBEF-Pre-training" class="headerlink" title="ALBEF Pre-training"></a>ALBEF Pre-training</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig1.png" alt="avatar" style="zoom:90%;" /></div>
+
+<h4 id="Pre-training-Objectives"><a href="#Pre-training-Objectives" class="headerlink" title="Pre-training Objectives"></a>Pre-training Objectives</h4><p>图像特征和文本特征丢到多模态encoder之前先尽可能拉近，这里的ITC loss完全按照moco里面来的</p>
 <p>ITM loss这个对正样本还可能比较困难，但是对负样本来说还是非常简单的，这样训练再长时间其实也没有多少意义，所以在训练的时候需要加一些限制，去选择那些难的负样本（最接近正样本的负样本）。负样本是通过在前面的ITC loss里面算了cos sim然后拿出除了自己之外相似度最高的文本，其实文本和图片已经非常相似了，但是硬说这个是负样本（hard negative）</p>
 <p>最后一个loss就是MLM，把缺失的文本和图像经过ALBEF模型，最后把完整文本预测出来，借助了图像这边的信息</p>
 <p>因此每个训练的iteration其实做了两次模型的forward，一次用的原始的I和T，一次用的原始的I和mask后的T‘</p>
-<h4 id="Momentum-Distillation">Momentum Distillation</h4>
-<p>网上爬下来的图像文本对经常是weakly correlated，文本的很多单词图像没有，或图像的很多物体文本没有。这样在算对比学习loss就有偏差，比如负样本可能也描述了很多这个图片里的内容，可能不是爬下来当作ground truth的结果，但可能这个已经很好描述了。这时候非要把他当负样本，其实对ITC学习问题很大</p>
+<h4 id="Momentum-Distillation"><a href="#Momentum-Distillation" class="headerlink" title="Momentum Distillation"></a>Momentum Distillation</h4><p>网上爬下来的图像文本对经常是weakly correlated，文本的很多单词图像没有，或图像的很多物体文本没有。这样在算对比学习loss就有偏差，比如负样本可能也描述了很多这个图片里的内容，可能不是爬下来当作ground truth的结果，但可能这个已经很好描述了。这时候非要把他当负样本，其实对ITC学习问题很大</p>
 <p>对MLM来说，完形填空的空可能存在比ground truth更好的结果</p>
 <p>因此用网上爬下来的one-hot label对这两个loss是不好的，因此找到额外的监督信号，不是One-hot而是Multi-hot，或者是额外模型的输出就行了，就是self-training，用一个动量模型来生成pseudo-targets（一个softmax score，不是One-hot label）</p>
 <p>具体方法就是在已有的模型上做exponential-moving-average（EMA），训练的时候不仅和one-hot ground truth尽可能接近，和动量模型出来的pseudo-targets也尽可能match，达到一个不错的折中点</p>
 <p>对ITC来说</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm1.png" alt="avatar" style="zoom:70%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm6.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>因为q是一个softmax socre，而不是one-hot label，所以用的KL散度而不是交叉熵</p>
 <p>对MLM来说</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm7.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>所以对ALBEF的训练loss来说有五个，两个ITC，两个MLM和一个ITM。因为ITM本身就是基于ground truth的，需要知道这是不是一个pair，就是一个二分类任务，又做了hard negative，这和momentum model有冲突</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig2.png" alt="avatar" style="zoom:90%;" /></div>
+
 <p>可以看出确实有很多的选择比ground truth要好，使用pseudo-targets确实有好处</p>
-<h4 id="Pre-training-Datasets-2">Pre-training Datasets</h4>
-<p>两个web数据集 Conceptual Captions， SBU Captions；两个domain数据集 COCO and Visual Genome</p>
-<h3 id="Downstream-V-L-Tasks">Downstream V+L Tasks</h3>
-<h5 id="Image-Text-Retrieval">Image-Text Retrieval</h5>
-<p>图像文本，图像到图像的检索等，商用价值高</p>
+<h4 id="Pre-training-Datasets"><a href="#Pre-training-Datasets" class="headerlink" title="Pre-training Datasets"></a>Pre-training Datasets</h4><p>两个web数据集 Conceptual Captions， SBU Captions；两个domain数据集 COCO and Visual Genome</p>
+<h3 id="Downstream-V-L-Tasks"><a href="#Downstream-V-L-Tasks" class="headerlink" title="Downstream V+L Tasks"></a>Downstream V+L Tasks</h3><h5 id="Image-Text-Retrieval"><a href="#Image-Text-Retrieval" class="headerlink" title="Image-Text Retrieval"></a>Image-Text Retrieval</h5><p>图像文本，图像到图像的检索等，商用价值高</p>
 <p>给定一个数据库怎么搜到ground truth的图像文本对，一般用recall，R1，R5，R10，检索回来的几个sample里有没有ground truth sample</p>
-<h5 id="Visual-Entailment">Visual Entailment</h5>
-<p>给一个假设前提，能不能推理出这个前提，推理出来的就是蕴含，推不出来就是矛盾，不然就是中立</p>
+<h5 id="Visual-Entailment"><a href="#Visual-Entailment" class="headerlink" title="Visual Entailment"></a>Visual Entailment</h5><p>给一个假设前提，能不能推理出这个前提，推理出来的就是蕴含，推不出来就是矛盾，不然就是中立</p>
 <p>三分类问题，用分类准确度</p>
-<h5 id="Visual-Question-Answering">Visual Question Answering</h5>
-<p>视觉问答，给定问题，给定图片，能否回答问题</p>
+<h5 id="Visual-Question-Answering"><a href="#Visual-Question-Answering" class="headerlink" title="Visual Question Answering"></a>Visual Question Answering</h5><p>视觉问答，给定问题，给定图片，能否回答问题</p>
 <p>两种设置</p>
 <ul>
 <li>answer是固定的，固定的set，从里面选，变成了一个多分类问题，这就是闭集VQA</li>
 <li>另一种是开集VQA，生成文本，需要transformer decoder去生成，任务难度就大了很多</li>
 </ul>
-<h5 id="Natural-Language-for-Visual-Reasoning">Natural Language for Visual Reasoning</h5>
-<p>预测一个文本能不能同时描述一对图片，二分类问题，衡量指标是准确度</p>
-<h3 id="Experiments-18">Experiments</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab1.png" alt="avatar" style="zoom:80%;" /></div>
+<h5 id="Natural-Language-for-Visual-Reasoning"><a href="#Natural-Language-for-Visual-Reasoning" class="headerlink" title="Natural Language for Visual Reasoning"></a>Natural Language for Visual Reasoning</h5><p>预测一个文本能不能同时描述一对图片，二分类问题，衡量指标是准确度</p>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab1.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>加了ITC之后提点很明显，用了hard negative之后效果也有提升，但对于换更大的数据集而言这些trick都无关紧要</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab2-tab3.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>图文检索，数据集已经被刷爆了</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab4.png" alt="avatar" style="zoom:80%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

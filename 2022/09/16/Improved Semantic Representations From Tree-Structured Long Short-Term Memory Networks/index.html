@@ -20,12 +20,12 @@
   
   
   <title>ACL-2015 Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks | tyang</title>
-  <meta name="description" content="论文地址：Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks 论文实现：https:&#x2F;&#x2F;github.com&#x2F;stanfordnlp&#x2F;treelstm  Tree-LSTM：把LSTM推广到树结构 Abstract 自然语言也有句法特征，可以把单词和短语结合起来，因此提出了T">
+  <meta name="description" content="论文地址：Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks 论文实现：https:&#x2F;&#x2F;github.com&#x2F;stanfordnlp&#x2F;treelstm  Tree-LSTM：把LSTM推广到树结构Abstract自然语言也有句法特征，可以把单词和短语结合起来，因此提出了Tre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACL-2015 Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks">
 <meta property="og:url" content="https://tyang816.github.io/2022/09/16/Improved%20Semantic%20Representations%20From%20Tree-Structured%20Long%20Short-Term%20Memory%20Networks/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks 论文实现：https:&#x2F;&#x2F;github.com&#x2F;stanfordnlp&#x2F;treelstm  Tree-LSTM：把LSTM推广到树结构 Abstract 自然语言也有句法特征，可以把单词和短语结合起来，因此提出了T">
+<meta property="og:description" content="论文地址：Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks 论文实现：https:&#x2F;&#x2F;github.com&#x2F;stanfordnlp&#x2F;treelstm  Tree-LSTM：把LSTM推广到树结构Abstract自然语言也有句法特征，可以把单词和短语结合起来，因此提出了Tre">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm2-frm8.png">
@@ -393,7 +393,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/16/Improved%20Semantic%20Representations%20From%20Tree-Structured%20Long%20Short-Term%20Memory%20Networks/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 815(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 813(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
@@ -407,38 +407,37 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1503.00075">Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/stanfordnlp/treelstm">https://github.com/stanfordnlp/treelstm</a></p>
 </blockquote>
-<h2 id="Tree-LSTM：把LSTM推广到树结构">Tree-LSTM：把LSTM推广到树结构</h2>
-<h3 id="Abstract-152">Abstract</h3>
-<p>自然语言也有句法特征，可以把单词和短语结合起来，因此提出了Tree-LSTM</p>
-<h3 id="Introduction-130">Introduction</h3>
-<p>大多数短语或句子的分布式表示分为三类：bag-of-words模型、sequence模型、tree-structured模型。词袋模型直接使用词汇的统计信息，没有考虑词汇的顺序，序列模型考虑的是序列结构，<strong>树型结构模型通过在给定句子的语法结构树上进行获取句子表示</strong></p>
-<h3 id="Tree-Structured-LSTMs">Tree-Structured LSTMs</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/fig1.png" alt="avatar" style="zoom:60%;" /></div>
-<p>两种模型都能够处理树型结构的输入，标准的LSTM含有输入门 $i_j$ 和输出门 $o_j$ ，记忆单元 $c_j$ 和隐藏状态 $h_j$</p>
+<h2 id="Tree-LSTM：把LSTM推广到树结构"><a href="#Tree-LSTM：把LSTM推广到树结构" class="headerlink" title="Tree-LSTM：把LSTM推广到树结构"></a>Tree-LSTM：把LSTM推广到树结构</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>自然语言也有句法特征，可以把单词和短语结合起来，因此提出了Tree-LSTM</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>大多数短语或句子的分布式表示分为三类：bag-of-words模型、sequence模型、tree-structured模型。词袋模型直接使用词汇的统计信息，没有考虑词汇的顺序，序列模型考虑的是序列结构，<strong>树型结构模型通过在给定句子的语法结构树上进行获取句子表示</strong></p>
+<h3 id="Tree-Structured-LSTMs"><a href="#Tree-Structured-LSTMs" class="headerlink" title="Tree-Structured LSTMs"></a>Tree-Structured LSTMs</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>两种模型都能够处理树型结构的输入，标准的LSTM含有输入门 $i_j$ 和输出门 $o_j$ ，记忆单元 $c_j$ 和隐藏状态 $h_j$ </p>
 <p>标准的LSTM和树型LSTM之间的区别在于门向量和记忆单元向量的更新要基于多个child units，前者只需要从上一时刻筛选出信息，而后者需要从多个孩子节点筛选出信息</p>
-<h4 id="Child-Sum-Tree-LSTMs-Dependency-Tree-LSTMs">Child-Sum Tree-LSTMs (<strong>Dependency Tree-LSTMs</strong>)</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm2-frm8.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Child-Sum-Tree-LSTMs-Dependency-Tree-LSTMs"><a href="#Child-Sum-Tree-LSTMs-Dependency-Tree-LSTMs" class="headerlink" title="Child-Sum Tree-LSTMs (Dependency Tree-LSTMs)"></a>Child-Sum Tree-LSTMs (<strong>Dependency Tree-LSTMs</strong>)</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm2-frm8.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>第一个方程直接将所有孩子节点的隐藏状态求和，第三个方程就是和标准的LSTM不同，<strong>$f_{jk}$ 表示对于 j 节点的每一个孩子节点 k ，都会生成一个遗忘门，用于筛选对应孩子节点的信息</strong></p>
 <p>其中， $k∈C(j)$ ， $x_j$ 为输入， $h_k$ 为第 k 个孩子节点的隐藏状态。对于第二行的公式，在依赖树中，模型会学习得到参数 $W(i)$ 使得当该词汇比较重要的时候会输入门 $i_j$ 的值接近1</p>
 <p>由于该模型是<strong>直接将孩子节点的隐藏状态求和</strong>，因此，非常适合于分支因子比较大，或者孩子节点是无序的情况</p>
-<h4 id="N-ary-Tree-LSTMs-Constituency-Tree-LSTMs">N-ary Tree-LSTMs (<strong>Constituency Tree-LSTMs</strong>)</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm9-frm14.png" alt="avatar" style="zoom:60%;" /></div>
-<p>该模型适用于分支因子最大为 N 的情况，而且孩子节点有序，比如说，孩子节点可以被从1到N进行索引，对于节点 j ，假设第 k 个孩子节点的隐藏状态和记忆单元分别为 $h_{jk}$ 和 $c_{jk}$</p>
+<h4 id="N-ary-Tree-LSTMs-Constituency-Tree-LSTMs"><a href="#N-ary-Tree-LSTMs-Constituency-Tree-LSTMs" class="headerlink" title="N-ary Tree-LSTMs (Constituency Tree-LSTMs)"></a>N-ary Tree-LSTMs (<strong>Constituency Tree-LSTMs</strong>)</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm9-frm14.png" alt="avatar" style="zoom:60%;" /></div>
+
+<p>该模型适用于分支因子最大为 N 的情况，而且孩子节点有序，比如说，孩子节点可以被从1到N进行索引，对于节点 j ，假设第 k 个孩子节点的隐藏状态和记忆单元分别为 $h<em>{jk}$ 和 $c</em>{jk}$ </p>
 <p>其中， k=1,2,…,N 。该模型对每个孩子 k 都使用的单独的参数，由此，使得该模型能够学习到孩子节点更加细微的状态</p>
-<p>对于第二行的遗忘门参数，模型定义了第 k 个孩子的遗忘门 $f_{jk}$ ，参数包含非对角的参数矩阵 $U_{kℓ}^{(f)}$ ， $k≠ℓ$ 。这个参数使得能够更加细微地控制从孩子节点传递信息到双亲节点。对于比较大的 N 值，这些参数量会非常大，在这种情况下直接固定其参数或者置为零</p>
-<h3 id="Models-3">Models</h3>
-<h4 id="Tree-LSTM-Classfication">Tree-LSTM Classfication</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm4.1-1.png" alt="avatar" style="zoom:60%;" /></div>
+<p>对于第二行的遗忘门参数，模型定义了第 k 个孩子的遗忘门 $f<em>{jk}$ ，参数包含非对角的参数矩阵 $U</em>{kℓ}^{(f)}$ ， $k≠ℓ$ 。这个参数使得能够更加细微地控制从孩子节点传递信息到双亲节点。对于比较大的 N 值，这些参数量会非常大，在这种情况下直接固定其参数或者置为零</p>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><h4 id="Tree-LSTM-Classfication"><a href="#Tree-LSTM-Classfication" class="headerlink" title="Tree-LSTM Classfication"></a>Tree-LSTM Classfication</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm4.1-1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm4.1-2.png" alt="avatar" style="zoom:60%;" /></div>
-<h4 id="Semantic-Realatedness-of-Sentence-Pairs">Semantic Realatedness of Sentence Pairs</h4>
-<p>给定一个句子对，模型需要预测出一个实数值的相似度score，范围为 [1,K] ，其中， K&gt;1 是一个整数，分数越高，表示相似度越大。</p>
+
+<h4 id="Semantic-Realatedness-of-Sentence-Pairs"><a href="#Semantic-Realatedness-of-Sentence-Pairs" class="headerlink" title="Semantic Realatedness of Sentence Pairs"></a>Semantic Realatedness of Sentence Pairs</h4><p>给定一个句子对，模型需要预测出一个实数值的相似度score，范围为 [1,K] ，其中， K&gt;1 是一个整数，分数越高，表示相似度越大。</p>
 <p>模型首先产生两个句子的representation， $h_L$ 和 $h_R$ ，然后使用这两个向量预测出相似度score $\hat{y}$ ，同时考虑两个向量的距离和角度：</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/frm15.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>其中， $r^T=[12…K]$</p>
-<h3 id="Experiments-34">Experiments</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/tab2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tree-LSTM/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

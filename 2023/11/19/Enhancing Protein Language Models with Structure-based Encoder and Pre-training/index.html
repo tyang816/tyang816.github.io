@@ -20,12 +20,12 @@
   
   
   <title>ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training | tyang</title>
-  <meta name="description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: 多视图对比学习ESM-1b+GearNet Abstract 预训练语言模型能够建模氨基酸之间的内在">
+  <meta name="description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: 多视图对比学习ESM-1b+GearNetAbstract预训练语言模型能够建模氨基酸之间的内在联系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training">
 <meta property="og:url" content="https://tyang816.github.io/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: 多视图对比学习ESM-1b+GearNet Abstract 预训练语言模型能够建模氨基酸之间的内在">
+<meta property="og:description" content="论文地址：Enhancing Protein Language Models with Structure-based Encoder and Pre-training 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepGraphLearning&#x2F;GearNet  ESM-GearNet: 多视图对比学习ESM-1b+GearNetAbstract预训练语言模型能够建模氨基酸之间的内在联系">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig1.png">
@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/19/Enhancing%20Protein%20Language%20Models%20with%20Structure-based%20Encoder%20and%20Pre-training/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 376(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 369(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -405,32 +405,25 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2303.06275">Enhancing Protein Language Models with Structure-based Encoder and Pre-training</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/DeepGraphLearning/GearNet">https://github.com/DeepGraphLearning/GearNet</a></p>
 </blockquote>
-<h2 id="ESM-GearNet-多视图对比学习ESM-1b-GearNet">ESM-GearNet: 多视图对比学习ESM-1b+GearNet</h2>
-<h3 id="Abstract-39">Abstract</h3>
-<p>预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文探究了不同的结合结构编码器和PLM编码器的组合，提出了ESM-GearNet，使用对比学习预训练，蛋白质结构和其子序列结构对齐</p>
-<h3 id="Introduction-35">Introduction</h3>
-<p>通过掩码语言建模损失进行预先训练，现有的PLM可以很好地捕获共同进化信息和隐式捕获残留间的接触信息。然而，由于它们没有明确地将蛋白质结构作为输入，因此它们是否能够捕获详细的蛋白质结构特征是值得怀疑的</p>
+<h2 id="ESM-GearNet-多视图对比学习ESM-1b-GearNet"><a href="#ESM-GearNet-多视图对比学习ESM-1b-GearNet" class="headerlink" title="ESM-GearNet: 多视图对比学习ESM-1b+GearNet"></a>ESM-GearNet: 多视图对比学习ESM-1b+GearNet</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>预训练语言模型能够建模氨基酸之间的内在联系，加上结构信息之后增强PLM的能力，本文探究了不同的结合结构编码器和PLM编码器的组合，提出了ESM-GearNet，使用对比学习预训练，蛋白质结构和其子序列结构对齐</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>通过掩码语言建模损失进行预先训练，现有的PLM可以很好地捕获共同进化信息和隐式捕获残留间的接触信息。然而，由于它们没有明确地将蛋白质结构作为输入，因此它们是否能够捕获详细的蛋白质结构特征是值得怀疑的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab1.png" alt="avatar" style="zoom:100%;" /></div>
-<h3 id="Methods-5">Methods</h3>
-<h4 id="Enhanceing-Protein-Language-Model-with-Protein-Structures">Enhanceing Protein Language Model with Protein Structures</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><h4 id="Enhanceing-Protein-Language-Model-with-Protein-Structures"><a href="#Enhanceing-Protein-Language-Model-with-Protein-Structures" class="headerlink" title="Enhanceing Protein Language Model with Protein Structures"></a>Enhanceing Protein Language Model with Protein Structures</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>为了避免大幅改变模型表征，使用了比ESM-1b和GearNet更小的学习率</p>
-<h4 id="Pre-training-ESM-GearNet-with-Unlabeled-Protein-Structures">Pre-training ESM-GearNet with Unlabeled Protein Structures</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig2.png" alt="avatar" style="zoom:100%;" /></div>
-<h3 id="Experiments-8">Experiments</h3>
-<h4 id="Experimental-Setup">Experimental Setup</h4>
-<h5 id="Pre-training-dataset">Pre-training dataset</h5>
-<p>AF数据库的v1和v2，365K个蛋白质组预测和440K的swiss-prot预测</p>
-<h5 id="Downstream-datasets">Downstream datasets</h5>
-<p>Enzyme Commission (EC) number prediction</p>
+<h4 id="Pre-training-ESM-GearNet-with-Unlabeled-Protein-Structures"><a href="#Pre-training-ESM-GearNet-with-Unlabeled-Protein-Structures" class="headerlink" title="Pre-training ESM-GearNet with Unlabeled Protein Structures"></a>Pre-training ESM-GearNet with Unlabeled Protein Structures</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><h4 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h4><h5 id="Pre-training-dataset"><a href="#Pre-training-dataset" class="headerlink" title="Pre-training dataset"></a>Pre-training dataset</h5><p>AF数据库的v1和v2，365K个蛋白质组预测和440K的swiss-prot预测</p>
+<h5 id="Downstream-datasets"><a href="#Downstream-datasets" class="headerlink" title="Downstream datasets"></a>Downstream datasets</h5><p>Enzyme Commission (EC) number prediction</p>
 <p>Gene Ontology (GO) term prediction molecular function (MF)包括biological process (BP) and cellular component (CC)</p>
-<h5 id="Training">Training</h5>
-<p>50 epochs on AlphaFold Database and for 200 epochs on EC and GO prediction</p>
+<h5 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h5><p>50 epochs on AlphaFold Database and for 200 epochs on EC and GO prediction</p>
 <p>多视图对比学习裁剪的子序列长为50，mask ratio为15%，InfoNCE loss的temperature为0.07，batch size为256，学习率2e-4</p>
 <p>下游任务batch size为2，学习率1e-4，ReduceLROnPlateau scheduler with factor 0.6 and patience 5</p>
-<h4 id="Results-11">Results</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-GearNet/tab3.png" alt="avatar" style="zoom:70%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

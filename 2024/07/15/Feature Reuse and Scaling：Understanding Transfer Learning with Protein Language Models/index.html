@@ -20,12 +20,12 @@
   
   
   <title>Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models | tyang</title>
-  <meta name="description" content="论文地址：Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;protein-transfer  protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响 Abstract PLM的表">
+  <meta name="description" content="论文地址：Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;protein-transfer  protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响AbstractPLM的表征非">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models">
 <meta property="og:url" content="https://tyang816.github.io/2024/07/15/Feature%20Reuse%20and%20Scaling%EF%BC%9AUnderstanding%20Transfer%20Learning%20with%20Protein%20Language%20Models/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;protein-transfer  protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响 Abstract PLM的表">
+<meta property="og:description" content="论文地址：Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models 论文实现：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;protein-transfer  protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响AbstractPLM的表征非">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/tab1.png">
@@ -394,7 +394,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/07/15/Feature%20Reuse%20and%20Scaling%EF%BC%9AUnderstanding%20Transfer%20Learning%20with%20Protein%20Language%20Models/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 773(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 769(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2(minutes)</span>
@@ -408,11 +408,9 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.biorxiv.org/content/10.1101/2024.02.05.578959v2">Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models</a></p>
 <p>论文实现：<a href="">https://github.com/microsoft/protein-transfer</a></p>
 </blockquote>
-<h2 id="protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响">protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响</h2>
-<h3 id="Abstract-45">Abstract</h3>
-<p>PLM的表征非常强大，但是目前人们对预训练学习到的特征如何与下游任务相关并有用知之甚少。本文执行了370次实验，包括不同的下游任务，架构、模型大小和深度，预训练时间等。虽然与朴素序列表示相比，几乎所有的下游任务都从预训练模型中获益，但大多数任务的性能与预训练无关，而是依赖于在预训练早期学习到的低水平特征。我们的结果表明，当前的PLM预训练范式和这些模型的大多数应用之间的不匹配，这表明需要更好的预训练方法</p>
-<h3 id="Introduction-40">Introduction</h3>
-<div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig1.png" alt="avatar" style /></div>
+<h2 id="protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响"><a href="#protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响" class="headerlink" title="protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响"></a>protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>PLM的表征非常强大，但是目前人们对预训练学习到的特征如何与下游任务相关并有用知之甚少。本文执行了370次实验，包括不同的下游任务，架构、模型大小和深度，预训练时间等。虽然与朴素序列表示相比，几乎所有的下游任务都从预训练模型中获益，但大多数任务的性能与预训练无关，而是依赖于在预训练早期学习到的低水平特征。我们的结果表明，当前的PLM预训练范式和这些模型的大多数应用之间的不匹配，这表明需要更好的预训练方法</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig1.png" alt="avatar" style /></div>
+
 <p>目前对于序列到功能的理解映射还是非常贫瘠，介于数据的稀少限制，采用迁移学习的方法是一个有效的解决方案</p>
 <p>计算机视觉等其他领域对于迁移学习的研究更加成熟，因此我们综合了一系列可能的假设来解释下游任务的改进，并设计进行了一系列的实验来研究</p>
 <p><strong>Feature reuse (Fig1. 1c-i)</strong>: 一个流行的假设是，MLM预训练学习蛋白质生物学的一般特征，这些特征可以在任务中重复使用</p>
@@ -425,37 +423,36 @@
 <li>目前的MLM训练范式不适合生物</li>
 <li>系统证据表明，在许多蛋白质属性预测任务上的表现与PLM大小或预训练无关</li>
 </ul>
-<h3 id="Datasets-and-Pretrained-Models">Datasets and Pretrained Models</h3>
-<div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/tab1.png" alt="avatar" style /></div>
-<h4 id="Transfer-Learning-with-Protein-Language-Models">Transfer Learning with Protein Language Models</h4>
-<p>在UniRef50上训练的两个模型大小相当的蛋白质mlm家族，ESM和CARP</p>
-<h3 id="Experimental-Setup-2">Experimental Setup</h3>
-<h4 id="Baseline-and-ablations">Baseline and ablations</h4>
-<ul>
+<h3 id="Datasets-and-Pretrained-Models"><a href="#Datasets-and-Pretrained-Models" class="headerlink" title="Datasets and Pretrained Models"></a>Datasets and Pretrained Models</h3><div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/tab1.png" alt="avatar" style /></div>
+
+<h4 id="Transfer-Learning-with-Protein-Language-Models"><a href="#Transfer-Learning-with-Protein-Language-Models" class="headerlink" title="Transfer Learning with Protein Language Models"></a>Transfer Learning with Protein Language Models</h4><p>在UniRef50上训练的两个模型大小相当的蛋白质mlm家族，ESM和CARP</p>
+<h3 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h3><h4 id="Baseline-and-ablations"><a href="#Baseline-and-ablations" class="headerlink" title="Baseline and ablations"></a>Baseline and ablations</h4><ul>
 <li>One-hot baseline：直接使用氨基酸的one-hot representation</li>
 <li>Random init：随机初始化‘</li>
 <li>Stat transfer：为了评估迁移学习的效果是否由于权重统计和/或将权值初始化到一个合理的尺度，随机初始化匹配预先训练的权值分布的PLM的权值的影响</li>
 </ul>
-<h4 id="Scaling-experiments">Scaling experiments</h4>
-<p>Model size</p>
+<h4 id="Scaling-experiments"><a href="#Scaling-experiments" class="headerlink" title="Scaling experiments"></a>Scaling experiments</h4><p>Model size</p>
 <p>⚪是CARP，×ESM</p>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa2.png" alt="avatar" style /></div>
+
 <p>Model depth</p>
-<p>-是CARP，–是ESM</p>
+<p>-是CARP，—是ESM</p>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa6.png" alt="avatar" style /></div>
+
 <p>Model checkpoint</p>
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa7.png" alt="avatar" style /></div>
+
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa8.png" alt="avatar" style /></div>
-<h3 id="Results-15">Results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
-<h4 id="Structure-Prediction-Benefits-from-Transfer-Learning-Because-It-Is-Well-Aligned-with-MLM-pretraining">Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM pretraining</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
+<h4 id="Structure-Prediction-Benefits-from-Transfer-Learning-Because-It-Is-Well-Aligned-with-MLM-pretraining"><a href="#Structure-Prediction-Benefits-from-Transfer-Learning-Because-It-Is-Well-Aligned-with-MLM-pretraining" class="headerlink" title="Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM pretraining"></a>Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM pretraining</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>迁移学习提高二级结构预测性能，改进不是由于模型的归纳偏差或权重统计</p>
-<h4 id="Many-Tasks-Benefit-from-Transfer-Learning-Despite-Lack-of-Alignment-with-MLM-Pretraining">Many Tasks Benefit from Transfer Learning Despite Lack of Alignment with MLM Pretraining</h4>
-<div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig4-fig5.png" alt="avatar" style /></div>
+<h4 id="Many-Tasks-Benefit-from-Transfer-Learning-Despite-Lack-of-Alignment-with-MLM-Pretraining"><a href="#Many-Tasks-Benefit-from-Transfer-Learning-Despite-Lack-of-Alignment-with-MLM-Pretraining" class="headerlink" title="Many Tasks Benefit from Transfer Learning Despite Lack of Alignment with MLM Pretraining"></a>Many Tasks Benefit from Transfer Learning Despite Lack of Alignment with MLM Pretraining</h4><div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig4-fig5.png" alt="avatar" style /></div>
+
 <p>迁移学习提高了基线的表现，即使任务与预训练的任务不是很一致</p>
-<h4 id="Some-Tasks-Do-Not-Benefit-from-MLM-Pretraining">Some Tasks Do Not Benefit from MLM Pretraining</h4>
-<hr align="left" color="#987cb9" size="1">
+<h4 id="Some-Tasks-Do-Not-Benefit-from-MLM-Pretraining"><a href="#Some-Tasks-Do-Not-Benefit-from-MLM-Pretraining" class="headerlink" title="Some Tasks Do Not Benefit from MLM Pretraining"></a>Some Tasks Do Not Benefit from MLM Pretraining</h4><hr align="left" color="#987cb9" size="1">
       
     </div>
     <div class="article-footer">

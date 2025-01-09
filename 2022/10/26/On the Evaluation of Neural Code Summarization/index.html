@@ -20,12 +20,12 @@
   
   
   <title>ICSE-2022 On the Evaluation of Neural Code Summarization | tyang</title>
-  <meta name="description" content="论文地址：On the Evaluation of Neural Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepSoftwareAnalytics&#x2F;CodeSumEvaluation 比较实在的一篇文章，实验内容很详尽  CodeSumEvaluation：不同指标对模型结果影响 Abstract 本文系统性地在5个SOTA模型上，用6个广泛使用的">
+  <meta name="description" content="论文地址：On the Evaluation of Neural Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepSoftwareAnalytics&#x2F;CodeSumEvaluation 比较实在的一篇文章，实验内容很详尽  CodeSumEvaluation：不同指标对模型结果影响Abstract本文系统性地在5个SOTA模型上，用6个广泛使用的BL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICSE-2022 On the Evaluation of Neural Code Summarization">
 <meta property="og:url" content="https://tyang816.github.io/2022/10/26/On%20the%20Evaluation%20of%20Neural%20Code%20Summarization/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：On the Evaluation of Neural Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepSoftwareAnalytics&#x2F;CodeSumEvaluation 比较实在的一篇文章，实验内容很详尽  CodeSumEvaluation：不同指标对模型结果影响 Abstract 本文系统性地在5个SOTA模型上，用6个广泛使用的">
+<meta property="og:description" content="论文地址：On the Evaluation of Neural Code Summarization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;DeepSoftwareAnalytics&#x2F;CodeSumEvaluation 比较实在的一篇文章，实验内容很详尽  CodeSumEvaluation：不同指标对模型结果影响Abstract本文系统性地在5个SOTA模型上，用6个广泛使用的BL">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab2.png">
@@ -397,7 +397,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/26/On%20the%20Evaluation%20of%20Neural%20Code%20Summarization/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 859(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 854(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3(minutes)</span>
@@ -412,50 +412,33 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/DeepSoftwareAnalytics/CodeSumEvaluation">https://github.com/DeepSoftwareAnalytics/CodeSumEvaluation</a></p>
 <p>比较实在的一篇文章，实验内容很详尽</p>
 </blockquote>
-<h2 id="CodeSumEvaluation：不同指标对模型结果影响">CodeSumEvaluation：不同指标对模型结果影响</h2>
-<h3 id="Abstract-158">Abstract</h3>
-<p>本文系统性地在5个SOTA模型上，用6个广泛使用的BLEU变种，4种预处理操作和组合，3种广泛使用的数据集上进行了实验，评估结果表明一些因素对模型性能和模型之间的排名有很大影响。特别是1. BLEU指标的不同变种对模型结果有很大影响，此外本文还解决了在常用的包里面BLEU计算的未知bug，最终进行人工评估发现BLEU-DC是最适合人类的观念；2. 代码预处理选择有很大（-18%到+25%）的影响；3. 重要数据集的特征（语料大小，数据切分方法和重复率）对模型评估有很大影响。本文对不同场景下选择最佳方法提出了建议，并且分享了一个工具包</p>
-<h3 id="Introduction-136">Introduction</h3>
-<p>本文聚焦一个问题：怎么更准确和全面的评估代码摘要模型</p>
+<h2 id="CodeSumEvaluation：不同指标对模型结果影响"><a href="#CodeSumEvaluation：不同指标对模型结果影响" class="headerlink" title="CodeSumEvaluation：不同指标对模型结果影响"></a>CodeSumEvaluation：不同指标对模型结果影响</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>本文系统性地在5个SOTA模型上，用6个广泛使用的BLEU变种，4种预处理操作和组合，3种广泛使用的数据集上进行了实验，评估结果表明一些因素对模型性能和模型之间的排名有很大影响。特别是1. BLEU指标的不同变种对模型结果有很大影响，此外本文还解决了在常用的包里面BLEU计算的未知bug，最终进行人工评估发现BLEU-DC是最适合人类的观念；2. 代码预处理选择有很大（-18%到+25%）的影响；3. 重要数据集的特征（语料大小，数据切分方法和重复率）对模型评估有很大影响。本文对不同场景下选择最佳方法提出了建议，并且分享了一个工具包</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>本文聚焦一个问题：怎么更准确和全面的评估代码摘要模型</p>
 <ul>
-<li>
-<p>五个模型：CodeNN，Deepcom，Astattgru，Rencos，NCS</p>
+<li>五个模型：CodeNN，Deepcom，Astattgru，Rencos，NCS</li>
+<li>六个BLEU变体</li>
+<li>四个常见的预处理操作</li>
+<li><p>三个常用数据集：TL-Codesum，Funcom，CodeSearchNet</p>
 </li>
-<li>
-<p>六个BLEU变体</p>
-</li>
-<li>
-<p>四个常见的预处理操作</p>
-</li>
-<li>
-<p>三个常用数据集：TL-Codesum，Funcom，CodeSearchNet</p>
-</li>
-<li>
-<p>六个BLEU变体和四个处理操作涵盖了2010年来大部分的研究，每个数据集都至少有五项工作</p>
+<li><p>六个BLEU变体和四个处理操作涵盖了2010年来大部分的研究，每个数据集都至少有五项工作</p>
 </li>
 </ul>
 <p>第一个主要发现是BLEU指标不同导致评估结果不同：</p>
 <ul>
-<li>
-<p>有一些包计算BLEU有bug：</p>
+<li><p>有一些包计算BLEU有bug：</p>
 <ul>
-<li>
-<p>算出来分数高了100%，甚至700%，极大的夸大了模型性能</p>
+<li><p>算出来分数高了100%，甚至700%，极大的夸大了模型性能</p>
 </li>
-<li>
-<p>不同版本的包的分数也不同，不同论文直接没法比</p>
+<li><p>不同版本的包的分数也不同，不同论文直接没法比</p>
 </li>
 </ul>
 </li>
-<li>
-<p>本文发现BLEU-DC是和人类关联最贴近的</p>
+<li><p>本文发现BLEU-DC是和人类关联最贴近的</p>
 </li>
 </ul>
 <p>第二个主要发现是预处理有-18%到+25%的影响</p>
 <p>第三个主要发现是不同数据集有影响</p>
-<h3 id="Background-5">Background</h3>
-<h4 id="Bleu">Bleu</h4>
-<ul>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><h4 id="Bleu"><a href="#Bleu" class="headerlink" title="Bleu"></a>Bleu</h4><ul>
 <li>BLEU-CN：它通过在 $n≥2$的 $p_n$ 的分子和分母上加1，应用了类似拉普拉斯的平滑</li>
 <li>BLEU-DM：NLTK3.2.4的smooth method=0</li>
 <li>BLEU-DC：NLTK3.2.4的smooth method=4</li>
@@ -464,31 +447,31 @@
 <li>BLEU-RC：未平滑的Sentence BLEU，为了避免除零的误差，它在分子中加一个小数字10−15，在 $p_n$ 的分母中加一个小数字10−9</li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab2.png" alt="avatar" style="zoom:50%;" /></div>
+
 <p>表1是谷歌对BLEU分数的解释</p>
 <p>表2是现有方法在文章里汇报的分数，虽然astattgru只有19.61，Deepcom有38.17，但实际上astattgru比Deepcom还相对好一些</p>
-<h3 id="Experiment-53">Experiment</h3>
-<h4 id="Experimental-Settings">Experimental Settings</h4>
-<p>实验在252GB主内存的机器和4张v100 32G，最大200个epoch，patience=20，每个实验进行了3次</p>
-<h4 id="Analysis-of-Different-Evaluation-Metrics">Analysis of Different Evaluation Metrics</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab3.png" alt="avatar" style="zoom:80%;" /></div>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><h4 id="Experimental-Settings"><a href="#Experimental-Settings" class="headerlink" title="Experimental Settings"></a>Experimental Settings</h4><p>实验在252GB主内存的机器和4张v100 32G，最大200个epoch，patience=20，每个实验进行了3次</p>
+<h4 id="Analysis-of-Different-Evaluation-Metrics"><a href="#Analysis-of-Different-Evaluation-Metrics" class="headerlink" title="Analysis of Different Evaluation Metrics"></a>Analysis of Different Evaluation Metrics</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab3.png" alt="avatar" style="zoom:80%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab5.png" alt="avatar" style="zoom:80%;" /></div>
-<h5 id="Sentence-v-s-corpus-BLEU">Sentence v.s. corpus BLEU</h5>
-<p>sentence BLEU对每个句子的贡献的相等，而对于sorpus，每个句子的贡献与句子的长度呈正相关</p>
-<h5 id="Smoothing-methods">Smoothing methods</h5>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/fig1.png" alt="avatar" style="zoom:80%;" /></div>
+
+<h5 id="Sentence-v-s-corpus-BLEU"><a href="#Sentence-v-s-corpus-BLEU" class="headerlink" title="Sentence v.s. corpus BLEU"></a>Sentence v.s. corpus BLEU</h5><p>sentence BLEU对每个句子的贡献的相等，而对于sorpus，每个句子的贡献与句子的长度呈正相关</p>
+<h5 id="Smoothing-methods"><a href="#Smoothing-methods" class="headerlink" title="Smoothing methods"></a>Smoothing methods</h5><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/fig1.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>采用什么平滑方法处理匹配的n-gram为0的情况</p>
-<h5 id="Bugs-in-software-packages">Bugs in software packages</h5>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab6.png" alt="avatar" style="zoom:80%;" /></div>
+<h5 id="Bugs-in-software-packages"><a href="#Bugs-in-software-packages" class="headerlink" title="Bugs in software packages"></a>Bugs in software packages</h5><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab6.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p><strong>表6可以看出不同版本的NLTK即使在同一个参数设置下差距还是非常大</strong></p>
-<h5 id="Human-evaluation">Human evaluation</h5>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab7.png" alt="avatar" style="zoom:80%;" /></div>
-<h4 id="The-Impact-of-Different-Pre-processing-Operations">The Impact of Different Pre-processing Operations</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab8.png" alt="avatar" style="zoom:50%;" /></div>
+<h5 id="Human-evaluation"><a href="#Human-evaluation" class="headerlink" title="Human evaluation"></a>Human evaluation</h5><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab7.png" alt="avatar" style="zoom:80%;" /></div>
+
+<h4 id="The-Impact-of-Different-Pre-processing-Operations"><a href="#The-Impact-of-Different-Pre-processing-Operations" class="headerlink" title="The Impact of Different Pre-processing Operations"></a>The Impact of Different Pre-processing Operations</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab4.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab8.png" alt="avatar" style="zoom:50%;" /></div>
+
 <p>从表8可以看出执行分词操作的效果几乎是肯定更好的</p>
-<h4 id="How-Do-Different-Characteristics-of-Datasets-Affect-the-Performance">How Do Different Characteristics of Datasets Affect the Performance?</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab9.png" alt="avatar" style="zoom:80%;" /></div>
+<h4 id="How-Do-Different-Characteristics-of-Datasets-Affect-the-Performance"><a href="#How-Do-Different-Characteristics-of-Datasets-Affect-the-Performance" class="headerlink" title="How Do Different Characteristics of Datasets Affect the Performance?"></a>How Do Different Characteristics of Datasets Affect the Performance?</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab9.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>P中的0和1表示是否执行某种预处理操作</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeSumEvaluation/tab11-tab12.png" alt="avatar" style="zoom:80%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

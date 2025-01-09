@@ -20,12 +20,12 @@
   
   
   <title>Nature Biotechnology-2024 Multistate and functional protein design using RoseTTAFold sequence space diffusion | tyang</title>
-  <meta name="description" content="论文地址：https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41587-024-02395-w 论文实现：https:&#x2F;&#x2F;github.com&#x2F;RosettaCommons&#x2F;protein_generator  ProteinGenerator：序列diffusion多场景蛋白质生成 Abstract 蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和">
+  <meta name="description" content="论文地址：https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41587-024-02395-w 论文实现：https:&#x2F;&#x2F;github.com&#x2F;RosettaCommons&#x2F;protein_generator  ProteinGenerator：序列diffusion多场景蛋白质生成Abstract蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和功能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nature Biotechnology-2024 Multistate and functional protein design using RoseTTAFold sequence space diffusion">
 <meta property="og:url" content="https://tyang816.github.io/2024/10/07/Multistate%20and%20functional%20protein%20design%20using%20RoseTTAFold%20sequence%20space%20diffusion/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41587-024-02395-w 论文实现：https:&#x2F;&#x2F;github.com&#x2F;RosettaCommons&#x2F;protein_generator  ProteinGenerator：序列diffusion多场景蛋白质生成 Abstract 蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和">
+<meta property="og:description" content="论文地址：https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41587-024-02395-w 论文实现：https:&#x2F;&#x2F;github.com&#x2F;RosettaCommons&#x2F;protein_generator  ProteinGenerator：序列diffusion多场景蛋白质生成Abstract蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和功能">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig2.png">
@@ -404,17 +404,13 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41587-024-02395-w">https://www.nature.com/articles/s41587-024-02395-w</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/RosettaCommons/protein_generator">https://github.com/RosettaCommons/protein_generator</a></p>
 </blockquote>
-<h2 id="ProteinGenerator：序列diffusion多场景蛋白质生成">ProteinGenerator：序列diffusion多场景蛋白质生成</h2>
-<h3 id="Abstract-60">Abstract</h3>
-<p>蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和功能的蛋白上有限制，为了解决这个挑战提出了ProteinGenerator (PG)，一个基于RoseTTAFold的序列空间diffusion能够同时生成序列和结构，从一个噪声序列表示开始，PG通过迭代去噪生成序列和结构对。设计了具有不同氨基酸组成和内部序列重复序列的耐热蛋白和笼型生物活性肽，如蜂黄蛋白。通过对具有不同结构约束的融合轨迹之间的序列logits进行平均，设计了多态父子蛋白质三组，当相同的序列完整或分裂成两个子域时，相同的序列折叠成不同的超二级结构。PG的设计轨迹可以由实验序列-活动数据来指导，为蛋白质功能的综合计算和实验优化提供了一种通用的方法。</p>
-<h3 id="Introduction-55">Introduction</h3>
-<p>蛋白质功能起源于序列和结构之间的相互作用，因此设计新的蛋白质功能需要从序列和结构同时推理，大多数方法都是将结构和序列分开处理的，比如生成蛋白质骨架再通过逆折叠获得序列。传统方法比如Rosetta flexible backbone protein desgin是在序列和结构交替，而其他基于深度学习的方法都是先生成骨架，再序列设计比如ProteinMPNN。后者这类方法，DDPM在连续数据域中展现出相当大的前景。DDPM通过学习去噪被高斯噪声破坏的样本来近似于数据分布上的概率密度函数，能够从高斯先验中生成高质量的样本。尽管基于结构的方法比如RFdiffusion和Chroma非常有效，但在生成具有序列性质和识别多个fold或功能的序列上有所限制</p>
+<h2 id="ProteinGenerator：序列diffusion多场景蛋白质生成"><a href="#ProteinGenerator：序列diffusion多场景蛋白质生成" class="headerlink" title="ProteinGenerator：序列diffusion多场景蛋白质生成"></a>ProteinGenerator：序列diffusion多场景蛋白质生成</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>蛋白质去噪diffusion能够基于蛋白质骨架生成，但是在生成具有序列特异性和功能的蛋白上有限制，为了解决这个挑战提出了ProteinGenerator (PG)，一个基于RoseTTAFold的序列空间diffusion能够同时生成序列和结构，从一个噪声序列表示开始，PG通过迭代去噪生成序列和结构对。设计了具有不同氨基酸组成和内部序列重复序列的耐热蛋白和笼型生物活性肽，如蜂黄蛋白。通过对具有不同结构约束的融合轨迹之间的序列logits进行平均，设计了多态父子蛋白质三组，当相同的序列完整或分裂成两个子域时，相同的序列折叠成不同的超二级结构。PG的设计轨迹可以由实验序列-活动数据来指导，为蛋白质功能的综合计算和实验优化提供了一种通用的方法。</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>蛋白质功能起源于序列和结构之间的相互作用，因此设计新的蛋白质功能需要从序列和结构同时推理，大多数方法都是将结构和序列分开处理的，比如生成蛋白质骨架再通过逆折叠获得序列。传统方法比如Rosetta flexible backbone protein desgin是在序列和结构交替，而其他基于深度学习的方法都是先生成骨架，再序列设计比如ProteinMPNN。后者这类方法，DDPM在连续数据域中展现出相当大的前景。DDPM通过学习去噪被高斯噪声破坏的样本来近似于数据分布上的概率密度函数，能够从高斯先验中生成高质量的样本。尽管基于结构的方法比如RFdiffusion和Chroma非常有效，但在生成具有序列性质和识别多个fold或功能的序列上有所限制</p>
 <p>作者推断，在序列空间而不是结构空间中进行扩散可以指导基于序列的特征和显式的序列设计。从RoseTTAFold结构预测网络开始，将输入序列和结构信息映射到输出序列和结构。RoseTTAFold可以通过标记PDB中的蛋白质序列来适应序列空间扩散，训练去噪的同时增加一个结构预测的loss来保证对序列和结构的理解</p>
-<h3 id="Results-22">Results</h3>
-<h4 id="Categorical-DDPM-implementation-and-fine-tuning">Categorical DDPM implementation and fine-tuning</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><h4 id="Categorical-DDPM-implementation-and-fine-tuning"><a href="#Categorical-DDPM-implementation-and-fine-tuning" class="headerlink" title="Categorical DDPM implementation and fine-tuning"></a>Categorical DDPM implementation and fine-tuning</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>通过将蛋白质序列表示为离散的one-hot（对于原生序列，真值设置为1，所有其他值设置为−1）来实现扩散和数据噪声，噪音是高斯分布N(μ=0, σ=1)。为了微调RoseTTAFold，我们根据平方根计划输入逐步噪声的蛋白质序列（即噪声的强度与训练过程中的时间步相关联），输入数据不仅包括逐步加噪声的蛋白质序列，还可以包含<strong>可选的结构信息</strong>，用类别交叉损失来训练序列，用FAPE结构损失来训练结构。同时发现<strong>self-conditioning</strong>对于训练和推理的表现是有益的。</p>
-<p>PG生成蛋白质从一个维度为<strong>L×20</strong>的高斯噪声序列开始，结构也被初始化。模型还可以结合序列指导信息，比如活性数据、序列特定的潜在信息或其他实验数据，将这些信息与模型当前的预测结果<strong>x0</strong>结合，引导模型朝着受限的序列空间（即符合特定要求的蛋白质序列）生成。有些<strong>motif</strong>（序列片段）是固定的，不能进行扩散处理，这些固定的序列位置通过<strong>额外的token</strong>来表示。<strong>二级结构信息</strong>（如α螺旋、β折叠等）通过<strong>一维轨道（1D track）<strong>传递，<strong>三维坐标信息</strong>（即蛋白质的空间结构）被嵌入到</strong>二维轨道（2D track）<strong>中，表示蛋白质中氨基酸对之间的距离或关系，以及</strong>三维轨道（3D track）<strong>则嵌入了实际的空间坐标信息，不同维度的嵌入信息（1D、2D和3D）通过</strong>跨注意力机制</strong>（cross-attention）在RoseTTAFold模型中进行结合</p>
+<p>PG生成蛋白质从一个维度为<strong>L×20</strong>的高斯噪声序列开始，结构也被初始化。模型还可以结合序列指导信息，比如活性数据、序列特定的潜在信息或其他实验数据，将这些信息与模型当前的预测结果<strong>x0</strong>结合，引导模型朝着受限的序列空间（即符合特定要求的蛋白质序列）生成。有些<strong>motif</strong>（序列片段）是固定的，不能进行扩散处理，这些固定的序列位置通过<strong>额外的token</strong>来表示。<strong>二级结构信息</strong>（如α螺旋、β折叠等）通过<strong>一维轨道（1D track）</strong>传递，<strong>三维坐标信息</strong>（即蛋白质的空间结构）被嵌入到<strong>二维轨道（2D track）</strong>中，表示蛋白质中氨基酸对之间的距离或关系，以及<strong>三维轨道（3D track）</strong>则嵌入了实际的空间坐标信息，不同维度的嵌入信息（1D、2D和3D）通过<strong>跨注意力机制</strong>（cross-attention）在RoseTTAFold模型中进行结合</p>
 <p>在推理阶段，模型从当前时间步的序列状态<strong>xt</strong>开始，预测出<strong>x0</strong>，即没有噪声的初始状态，然后，模型通过给<strong>x0</strong>加入噪声来生成下一个时间步的状态<strong>xt-1</strong>，这是一个逐步反向去噪的过程。同时比较两种采用方法：1. 从<strong>q(xt-1 | x0)进行采样，这意味着xt-1</strong>的生成仅基于去噪后得到的<strong>x0</strong>；2. 从<strong>q(xt-1 | x0, xt)进行采样，这意味着在生成xt-1</strong>时，模型会同时考虑去噪后的<strong>x0</strong>和当前的<strong>xt</strong>。并发现，第一种方式（仅基于<strong>x0</strong>进行采样）在实际操作中更加有效</p>
 <p>PG容易设计出特定结构的motif，设计的与AF2的预测结构RMSD&lt;2，motif RMSD &lt; 1，AF2 pAE &lt; 5。同时通过ESM pseudo-perplexity测量了序列质量，与UniProt24中采样的原生序列难以区分，并且明显高于使用6.4亿参数的序列扩散模型EvoDiff生成的序列</p>
 <p>湿实验结果：</p>
@@ -424,8 +420,8 @@
 <li><strong>CD光谱实验</strong>表明，这些蛋白质具备设计的二级结构，即它们的折叠状态与设计时的预期一致。</li>
 <li><strong>热稳定性测试</strong>结果显示，这些蛋白质在<strong>高达95°C</strong>的温度下仍然保持稳定，表明它们具有良好的热稳定性，能够在高温下维持其结构不发生解折叠。</li>
 </ul>
-<h4 id="Design-of-rare-amino-acid-enriched-proteins">Design of rare amino acid enriched proteins</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Design-of-rare-amino-acid-enriched-proteins"><a href="#Design-of-rare-amino-acid-enriched-proteins" class="headerlink" title="Design of rare amino acid enriched proteins"></a>Design of rare amino acid enriched proteins</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>一个从序列空间上进行diffusion的优势是可以容易的实现基于序列的引导功能，能够在生成过程中通过特定的引导函数来影响生成的蛋白质序列，以满足某些特定的需求（如氨基酸组成）</p>
 <p>为了评估PG模型在设计中是否能够超出其训练数据（来自PDB，即蛋白质数据银行）的分布，特别是在设计进化上较少见的氨基酸富集的蛋白质时，是否能够合理处理序列-结构关系，如fig2a</p>
 <p>然后设计富含特定氨基酸的蛋白质，选择了一些在进化中较少出现的氨基酸，这些氨基酸具有重要的<strong>结构或功能特性</strong>，如色氨酸（Tryptophan）、半胱氨酸（Cysteine）、缬氨酸（Valine）、组氨酸（Histidine）和蛋氨酸（Methionine），根据这些目标氨基酸的<strong>频率</strong>对序列位置进行排序。</p>
@@ -436,36 +432,27 @@
 </ul>
 <p>实验结果显示，fig2e-fig2h：</p>
 <ul>
-<li>
-<p>68种在**大肠杆菌（Escherichia coli）**中成功表达并具有溶解性</p>
-</li>
-<li>
-<p>在<strong>富含半胱氨酸</strong>的5个设计中，有4个在SEC（体积排阻色谱）实验中显示为单体；在<strong>富含色氨酸</strong>的19个设计中，有8个为单体；在<strong>富含缬氨酸</strong>的22个设计中，有19个为单体；在<strong>富含组氨酸</strong>的12个设计中，有10个为单体；所有<strong>富含蛋氨酸</strong>的10个设计都显示为单体；</p>
-</li>
-<li>
-<p><strong>富含半胱氨酸的蛋白质</strong>，fig2e：</p>
+<li>68种在<strong>大肠杆菌（Escherichia coli）</strong>中成功表达并具有溶解性</li>
+<li>在<strong>富含半胱氨酸</strong>的5个设计中，有4个在SEC（体积排阻色谱）实验中显示为单体；在<strong>富含色氨酸</strong>的19个设计中，有8个为单体；在<strong>富含缬氨酸</strong>的22个设计中，有19个为单体；在<strong>富含组氨酸</strong>的12个设计中，有10个为单体；所有<strong>富含蛋氨酸</strong>的10个设计都显示为单体；</li>
+<li><p><strong>富含半胱氨酸的蛋白质</strong>，fig2e：</p>
 <ul>
 <li>在没有特定结构条件的情况下，富含半胱氨酸的设计生成了<strong>3-4个二硫键</strong>。这通过<strong>质谱</strong>实验在有无还原剂TCEP（50mM）的条件下进行了验证。二硫键的形成表明蛋白质中半胱氨酸之间发生了氧化还原反应，形成了稳定的结构。</li>
 </ul>
 </li>
-<li>
-<p><strong>富含色氨酸的蛋白质</strong>，fig2f：</p>
-<ul>
+<li><strong>富含色氨酸的蛋白质</strong>，fig2f：<ul>
 <li>这些蛋白质在280nm波长处具有较高的吸光度，这是色氨酸的典型特性。CD光谱显示这些蛋白质具有<strong>螺旋结构</strong>。</li>
 </ul>
 </li>
-<li>
-<p><strong>富含缬氨酸的蛋白质</strong>，fig2h：</p>
-<ul>
+<li><strong>富含缬氨酸的蛋白质</strong>，fig2h：<ul>
 <li>CD光谱显示富含缬氨酸的蛋白质具有较高的<strong>β折叠结构</strong>，这与缬氨酸的二级结构倾向相一致。此外，这些蛋白质在热稳定性测试中表现良好。</li>
 </ul>
 </li>
 </ul>
 <p>进一步探索了具有预先指定的电荷组成、等电点和疏水性的蛋白质的生成，fig2d</p>
-<h4 id="Design-of-sequence-repeat-proteins">Design of sequence repeat proteins</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Design-of-sequence-repeat-proteins"><a href="#Design-of-sequence-repeat-proteins" class="headerlink" title="Design of sequence repeat proteins"></a>Design of sequence repeat proteins</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p><strong>重复蛋白</strong>是指包含多个重复的<strong>序列-结构单元</strong>的蛋白质，在自然界中非常普遍。这类蛋白质在<strong>分子识别</strong>和<strong>信号传导</strong>等生物功能中起着重要作用。</p>
-<p>PG模型的设计思路是，给定<strong>重复单元的序列长度</strong>和<strong>所需的重复次数</strong>，模型可以在每个时间步中应用**重复对称性（repeat symmetry）**来对加噪的序列分布进行处理。通过这种方式，PG模型能够生成带有重复单元的序列，并逐步去噪，最终生成符合设计要求的重复蛋白，fig3a</p>
+<p>PG模型的设计思路是，给定<strong>重复单元的序列长度</strong>和<strong>所需的重复次数</strong>，模型可以在每个时间步中应用<strong>重复对称性（repeat symmetry）</strong>来对加噪的序列分布进行处理。通过这种方式，PG模型能够生成带有重复单元的序列，并逐步去噪，最终生成符合设计要求的重复蛋白，fig3a</p>
 <p>在没有特定结构指导的条件下，PG模型生成的重复蛋白主要是<strong>β螺旋结构</strong>（beta-solenoid structures）。为了鼓励模型生成更多样化的蛋白质结构，对PG模型进行训练，使其能够<strong>基于二级结构进行条件化生成</strong>。通过指定二级结构约束，模型可以生成多种类型的设计，包括全α螺旋、全β折叠，以及α螺旋和β折叠混合的结构，fig3b，为了提高设计蛋白的稳定性并减少聚集，研究人员在部分设计中<strong>加入了螺旋帽（helical caps）</strong></p>
 <p>湿实验结果：</p>
 <p>实验验证了<strong>74个带螺旋帽的重复蛋白</strong>和<strong>86个不带螺旋帽的重复蛋白</strong></p>
@@ -474,8 +461,8 @@
 <li>使用<strong>圆二色光谱（CD）对其中的8个蛋白质进行了测试，结果显示7个蛋白质具有预期的二级结构</strong>，验证了PG模型生成的蛋白质结构符合设计目标</li>
 </ul>
 <p>对一个由<strong>五个重复单元</strong>组成的设计蛋白质进行了<strong>晶体结构解析</strong>。这个设计是由一个<strong>四螺旋束</strong>（four-helix bundle）的不对称单元构成，晶体结构解析显示，该设计具有<strong>原子级精度</strong>，即生成的蛋白质结构与晶体结构非常接近，fig3c</p>
-<h4 id="Design-of-conditionally-active-peptide-cages-for-membrane-lysis">Design of conditionally active peptide cages for membrane lysis</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Design-of-conditionally-active-peptide-cages-for-membrane-lysis"><a href="#Design-of-conditionally-active-peptide-cages-for-membrane-lysis" class="headerlink" title="Design of conditionally active peptide cages for membrane lysis"></a>Design of conditionally active peptide cages for membrane lysis</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p><strong>条件性活性</strong>意味着蛋白质的功能或活动是由外部输入（例如特定的信号、化学物质或环境变化）触发的。这种设计在治疗药物和生物传感器中非常重要，因为它们需要根据环境或外部刺激进行精确控制，以便在特定时间或空间内发挥作用。例如，在治疗药物中，蛋白质可以根据病情或特定体内信号激活；而在生物传感器中，蛋白质可以对某种分子或物理信号产生响应，fig4a</p>
 <p>使用<strong>PG模型</strong>设计了包含<strong>生物活性肽序列</strong>的蛋白质。具体方法是将活性肽序列嵌入到一个<strong>惰性蛋白笼</strong>中（惰性蛋白质指的是没有活性的、结构稳定的蛋白质），这样肽序列可以保持其功能活性，而蛋白笼则提供稳定的支架和保护。指定了蛋白质链的某一区域（通常是<strong>N端或C端</strong>）为固定的生物活性肽序列。这意味着该区域的序列在生成过程中不会扩散或改变，从而保持其生物活性，其余的蛋白质序列则进行<strong>自由扩散</strong>，由PG模型生成，fig4b</p>
 <p>PG生成的设计不仅能够成功整合肽序列，还能预测该蛋白质在三维空间中正确折叠，具有较高的可信度（<strong>pLDDT大于85</strong>）和与AF2精度（与设计的蛋白质笼的<strong>RMSD小于2Å</strong>）</p>
@@ -492,13 +479,12 @@
 </ul>
 <p><strong>二级结构引导</strong>：</p>
 <ul>
-<li>为了保证melittin的功能正常，同时便于蛋白酶接触到切割位点，研究人员使用**二级结构引导（secondary structure conditioning）**来设计蛋白质笼。</li>
-<li>他们将melittin嵌入到一个**螺旋束（helical bundle）结构中，并将切割位点（furin切割位点）放置在一个环结构（loop）**中，以便蛋白酶更容易接触和切割这个位点。这种设计增加了蛋白酶对切割位点的可接近性，从而提高了melittin的可控释放性。</li>
+<li>为了保证melittin的功能正常，同时便于蛋白酶接触到切割位点，研究人员使用<strong>二级结构引导（secondary structure conditioning）</strong>来设计蛋白质笼。</li>
+<li>他们将melittin嵌入到一个<strong>螺旋束（helical bundle）结构中，并将切割位点（furin切割位点）放置在一个环结构（loop）</strong>中，以便蛋白酶更容易接触和切割这个位点。这种设计增加了蛋白酶对切割位点的可接近性，从而提高了melittin的可控释放性。</li>
 </ul>
 <p><strong>多重约束</strong>：</p>
 <ul>
-<li>
-<p>在设计过程中，研究人员面临<strong>多重约束</strong>，主要包括：</p>
+<li><p>在设计过程中，研究人员面临<strong>多重约束</strong>，主要包括：</p>
 <ul>
 <li><strong>将melittin序列嵌入到一个有序的结构中</strong>（如螺旋束），确保其在结构中能够正常发挥功能。</li>
 <li><strong>将furin切割序列置于环结构中</strong>，确保蛋白酶能够容易地切割这一部分以释放melittin。</li>
@@ -512,8 +498,7 @@
 </ul>
 <p><strong>实验验证</strong>，fig4e,f：</p>
 <ul>
-<li>
-<p>研究人员对13个通过PG模型生成的设计进行了实验验证，结果显示：</p>
+<li><p>研究人员对13个通过PG模型生成的设计进行了实验验证，结果显示：</p>
 <ul>
 <li><strong>5个设计</strong>在实验中表现良好，表现为<strong>可溶且为单分散</strong>（即蛋白质在溶液中保持单体状态，没有形成聚集体），通过体积排阻色谱（SEC）进行了验证。</li>
 <li>这些蛋白质在<strong>圆二色光谱（CD）测试中显示出具有螺旋二级结构</strong>，表明PG模型生成的设计能够成功地使melittin序列折叠成螺旋结构。</li>
@@ -523,8 +508,7 @@
 </ul>
 <p>fig4h，这个表格展示了通过<strong>质谱分析</strong>确认的不同蛋白质的质量与预期质量的对比。<strong>未切割蛋白质（Uncleaved）的质量为18,531 Da</strong>，与预期相符。<strong>切割后的蛋白质（Cleaved）的质量为15,558 Da</strong>，表明切割后蛋白质损失了部分结构（即melittin被释放）。<strong>释放的melittin肽</strong>的质量为<strong>2,992 Da</strong>，也与预期一致，表明melittin肽在切割后被完整释放。</p>
 <p>fig4i，<strong>条件性红细胞溶血实验</strong>展示了设计的封闭melittin蛋白质在特定条件下是否能够破坏红细胞膜。<strong>Triton X-100</strong>是阳性对照，显示了最高的溶血效果（强吸光度）。<strong>游离的melittin肽</strong>（第二个柱子）也表现出高溶血活性，表明melittin能够破坏细胞膜。<strong>未处理的缓冲液和furin蛋白酶本身</strong>（第三、四个柱子）没有明显溶血作用，作为阴性对照。</p>
-<h4 id="Scaffolding-barcode-peptide-sequences">Scaffolding barcode peptide sequences</h4>
-<p>肽条形码（Peptide barcoding）是一种技术，用于在大规模蛋白质库中进行筛选。例如，在结合实验或体积排阻色谱（SEC）中，通过使用条形码可以标识每个蛋白质的身份。条形码的身份可以通过质谱检测出来（例如在蛋白酶切割后读取条形码肽的序列）。</p>
+<h4 id="Scaffolding-barcode-peptide-sequences"><a href="#Scaffolding-barcode-peptide-sequences" class="headerlink" title="Scaffolding barcode peptide sequences"></a>Scaffolding barcode peptide sequences</h4><p>肽条形码（Peptide barcoding）是一种技术，用于在大规模蛋白质库中进行筛选。例如，在结合实验或体积排阻色谱（SEC）中，通过使用条形码可以标识每个蛋白质的身份。条形码的身份可以通过质谱检测出来（例如在蛋白酶切割后读取条形码肽的序列）。</p>
 <p>当前的方法通常通过在蛋白质的<strong>N末端或C末端</strong>附加一个灵活的条形码序列，但这种方式可能会影响蛋白质的<strong>表达</strong>和<strong>溶解性</strong>，使得实验结果不准确。为了解释无条形码蛋白质的行为，通常需要使用多个（5-10个）变体条形码来推断其行为。</p>
 <p>设计了一个带有条形码的蛋白质结构，将条形码嵌入到蛋白质的<strong>C末端</strong>，并且在条形码的两侧添加了<strong>赖氨酸（Lys）和精氨酸（Arg）</strong>，这样可以通过<strong>Lys-C蛋白酶和胰蛋白酶</strong>进行切割，方便释放条形码。</p>
 <p><strong>实验验证</strong>：</p>
@@ -534,8 +518,8 @@
 <li>作为对照，研究人员分别表达和纯化了这84个蛋白质，结果显示其中<strong>64个蛋白质成功表达</strong>，并且在这64个蛋白质中有<strong>48个蛋白质</strong>表现出预期的<strong>单分散洗脱峰</strong>，即这些蛋白质在溶液中保持单体状态。</li>
 <li>他们将这些设计蛋白质的<strong>SEC洗脱峰</strong>与质谱重构的条形码对应的洗脱曲线进行了对比，结果显示<strong>73/84</strong>的设计在条形码实验中表现良好，其中<strong>58个设计</strong>的蛋白质通过条形码验证，其中<strong>41个设计</strong>（71%）的SEC洗脱体积与条形码检测的质谱信号一致。</li>
 </ul>
-<h4 id="Multistate-design">Multistate design</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Multistate-design"><a href="#Multistate-design" class="headerlink" title="Multistate design"></a>Multistate design</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PG/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p><strong>多态设计</strong>指的是设计一种氨基酸序列，使其在不同的条件下能够采用不同的结构构象。也就是说，同一个序列在某种外部刺激下（如切割、化学信号等）能够从一种结构转变为另一种结构。这种设计具有挑战性，因为蛋白质的<strong>能量景观</strong>必须包含两个或多个离散的能量最低点（即两个不同的结构状态），并且这两个状态之间的<strong>自由能差异</strong>必须足够小，才能让外部触发机制引发这种状态的切换。</p>
 <p>输入给<strong>RoseTTAFold</strong>的并不是不同的序列，而是相同的序列但带有不同的<strong>结构调控信息（structural conditioning information）</strong>。换句话说，PG模型通过为同一个序列提供不同的结构约束条件，让模型可以生成多个不同的结构状态。在每个时间步的扩散过程中，模型根据这些不同的结构信息产生不同的<strong>logits</strong>（预测输出），然后对这些logits进行线性组合，作为输入传递到下一时间步</p>
 <p>希望用PG模型设计出一种蛋白质序列，当以单条链的形式连接时（即<strong>父状态</strong>），它会折叠成一种结构；而当这条链被蛋白酶切割成两条链时（即<strong>子状态A和B</strong>），它们会折叠成不同的结构。这种设计允许一个序列在不同状态下采取不同的折叠方式，fig5a</p>
@@ -545,16 +529,14 @@
 </ul>
 <p>DSSP特征被附加到每个家族成员的L×20序列表示中，以使蛋白质二级结构的条件作用，这些特征有助于模型在设计过程中对二级结构进行调控，使模型能够生成在父状态下采用<strong>α/β折叠</strong>，而在子状态下则采用<strong>全α螺旋折叠</strong>的多态序列，fig5b</p>
 <p>研究人员首先对72个父-子三联体设计进行了实验验证，确认这些蛋白质在<strong>未切割时处于父状态</strong>，在<strong>切割后进入子状态</strong>，AlphaFold2（AF2）预测的蛋白质结构具有高度的可信度和准确性。进一步选取了4个可溶且单分散的序列家族（标记为<strong>MS1–MS4</strong>）进行更详细的研究，这些家族的父-子结构在CD（圆二色光谱）和核磁共振（NMR）实验中进行了表征，fig5c,d,e,f</p>
-<h4 id="Guidance-with-experimental-data">Guidance with experimental data</h4>
-<p><strong>Protein Generator (PG)</strong> 模型结合实验数据来优化蛋白质功能，特别是在定向进化（directed evolution）过程中</p>
+<h4 id="Guidance-with-experimental-data"><a href="#Guidance-with-experimental-data" class="headerlink" title="Guidance with experimental data"></a>Guidance with experimental data</h4><p><strong>Protein Generator (PG)</strong> 模型结合实验数据来优化蛋白质功能，特别是在定向进化（directed evolution）过程中</p>
 <p>使用了一组针对<strong>GB1蛋白</strong>（IgG结合蛋白）的实验基准数据集进行测试。这个数据集的优势在于其<strong>完整性</strong>，即所有可能的四个氨基酸位点的组合及其对应的活性数据都已知。因此，研究人员可以直接评估PG模型生成的每个序列的活性。</p>
 <ul>
 <li>通过前几轮实验确定的适应性数据训练分类器（如多层感知器，MLP），并使用这些分类器的梯度来引导模型生成序列的采样过程。</li>
 <li>在每轮实验中，研究人员生成了<strong>96个设计</strong>并进行了测试，总共进行了三轮。</li>
 <li>PG模型生成的设计在每一轮实验中<strong>平均和最大适应性</strong>都有所提高，且表现优于贝叶斯优化的基线模型</li>
 </ul>
-<h3 id="Discussion-9">Discussion</h3>
-<p><strong>PG模型</strong>能够生成多种不同类型的蛋白质，满足不同的序列域约束，包括<strong>氨基酸组成偏差</strong>、<strong>重复序列对称性</strong>、<strong>生物活性肽的封闭设计</strong>以及<strong>多态设计</strong>。这些功能展示了PG在处理复杂蛋白质设计任务中的灵活性。</p>
+<h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><p><strong>PG模型</strong>能够生成多种不同类型的蛋白质，满足不同的序列域约束，包括<strong>氨基酸组成偏差</strong>、<strong>重复序列对称性</strong>、<strong>生物活性肽的封闭设计</strong>以及<strong>多态设计</strong>。这些功能展示了PG在处理复杂蛋白质设计任务中的灵活性。</p>
 <p>优势：</p>
 <ul>
 <li><strong>多态设计</strong>是PG的一个特别优势，指的是蛋白质序列能够折叠成两种或更多的不同结构。比如，在前面提到的<strong>父-子三联体设计</strong>中，PG通过<strong>logit平均</strong>（对不同状态下的预测结果取平均值）实现了多态设计。这种方法在<strong>结构空间扩散</strong>中不容易实现，因此RFdiffusion不适合处理这种任务。</li>

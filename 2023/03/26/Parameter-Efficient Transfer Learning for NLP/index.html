@@ -20,12 +20,12 @@
   
   
   <title>ICML-2019 Parameter-Efficient Transfer Learning for NLP | tyang</title>
-  <meta name="description" content="论文地址：http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00751 论文实现：https:&#x2F;&#x2F;github.com&#x2F;google-research&#x2F;adapter-bert  adapter-bert：小组件嵌入transformer Abstract NLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adapt">
+  <meta name="description" content="论文地址：http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00751 论文实现：https:&#x2F;&#x2F;github.com&#x2F;google-research&#x2F;adapter-bert  adapter-bert：小组件嵌入transformerAbstractNLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adaptor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2019 Parameter-Efficient Transfer Learning for NLP">
 <meta property="og:url" content="https://tyang816.github.io/2023/03/26/Parameter-Efficient%20Transfer%20Learning%20for%20NLP/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00751 论文实现：https:&#x2F;&#x2F;github.com&#x2F;google-research&#x2F;adapter-bert  adapter-bert：小组件嵌入transformer Abstract NLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adapt">
+<meta property="og:description" content="论文地址：http:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00751 论文实现：https:&#x2F;&#x2F;github.com&#x2F;google-research&#x2F;adapter-bert  adapter-bert：小组件嵌入transformerAbstractNLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adaptor">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/fig2.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/tab1-tab2.png">
@@ -388,7 +388,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/03/26/Parameter-Efficient%20Transfer%20Learning%20for%20NLP/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 229(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 227(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -402,14 +402,13 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1902.00751">http://arxiv.org/abs/1902.00751</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/google-research/adapter-bert">https://github.com/google-research/adapter-bert</a></p>
 </blockquote>
-<h2 id="adapter-bert：小组件嵌入transformer">adapter-bert：小组件嵌入transformer</h2>
-<h3 id="Abstract-17">Abstract</h3>
-<p>NLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adaptor 模块进行迁移：针对每个任s务仅添加少量可训练参数，之前网络的参数固定，参数高度复用。为了证明 adaptor 的有效性，将 BERT 迁移至 26 个不同的文本分类任务。实验证明作者的方法可以仅调整少量参数，并获得和调整所有参数的微调方法同样的效果</p>
-<h3 id="Adapter-tuning-for-NLP">Adapter tuning for NLP</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/fig2.png" alt="avatar" style="zoom:80%;" /></div>
+<h2 id="adapter-bert：小组件嵌入transformer"><a href="#adapter-bert：小组件嵌入transformer" class="headerlink" title="adapter-bert：小组件嵌入transformer"></a>adapter-bert：小组件嵌入transformer</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>NLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adaptor 模块进行迁移：针对每个任s务仅添加少量可训练参数，之前网络的参数固定，参数高度复用。为了证明 adaptor 的有效性，将 BERT 迁移至 26 个不同的文本分类任务。实验证明作者的方法可以仅调整少量参数，并获得和调整所有参数的微调方法同样的效果</p>
+<h3 id="Adapter-tuning-for-NLP"><a href="#Adapter-tuning-for-NLP" class="headerlink" title="Adapter tuning for NLP"></a>Adapter tuning for NLP</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/fig2.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>这里的adapter就是一个下采样的FC层，一个transformer block里面加了两个adapter，其他层都是锁住的，只学习了adapter</p>
-<h3 id="Experiments-4">Experiments</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
+
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

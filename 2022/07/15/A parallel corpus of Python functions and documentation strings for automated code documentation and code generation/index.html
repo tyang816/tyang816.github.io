@@ -390,7 +390,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/15/A%20parallel%20corpus%20of%20Python%20functions%20and%20documentation%20strings%20for%20automated%20code%20documentation%20and%20code%20generation/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 387(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 384(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -404,23 +404,21 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1707.02275">A parallel corpus of Python functions and documentation strings for automated code documentation and code generation</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/EdinburghNLP/code-docstring-corpus">https://github.com/EdinburghNLP/code-docstring-corpus</a></p>
 </blockquote>
-<h2 id="code-docstring-corpus：python代码注释生成数据集">code-docstring-corpus：python代码注释生成数据集</h2>
-<h3 id="Abstract-131">Abstract</h3>
-<p>作者提出了一个大的多样的Python函数与注释文本的平行语料库，以及实验了一些数据增强方法来增加训练数据量</p>
-<h3 id="Introduction-109">Introduction</h3>
-<h4 id="Existing-corpora">Existing corpora</h4>
-<p>一些现有的语料库，如 DJANGO 数据集和 Project Euler 数据集已经由人注释，可以产生高精度的样本，但导致成本高且小（从几百到不到20000个例子）和同质数据集</p>
+<h2 id="code-docstring-corpus：python代码注释生成数据集"><a href="#code-docstring-corpus：python代码注释生成数据集" class="headerlink" title="code-docstring-corpus：python代码注释生成数据集"></a>code-docstring-corpus：python代码注释生成数据集</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者提出了一个大的多样的Python函数与注释文本的平行语料库，以及实验了一些数据增强方法来增加训练数据量</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h4 id="Existing-corpora"><a href="#Existing-corpora" class="headerlink" title="Existing corpora"></a>Existing corpora</h4><p>一些现有的语料库，如 DJANGO 数据集和 Project Euler 数据集已经由人注释，可以产生高精度的样本，但导致成本高且小（从几百到不到20000个例子）和同质数据集</p>
 <p>其他语料库是由用户生成的描述与从公共网站挖掘的代码片段匹配的，如 StackOverflow 或 IFTTT。这些数据集可以很大（&gt;10万），但通常非常嘈杂</p>
 <p>其他的方法是适用于特定领域的</p>
 <p>这些语料库都存在一定的问题，比如 DJANGO 和 Project Euler 语料库使用伪代码而不是真正的自然语言作为代码描述，这导致代码片段和描述相似，易于对齐。The Magic the Gathering 和 Hearthstone 代码片段是重复的，例子中的大多数代码要么是样板，要么以有限的方式对应于描述中的特定关键字</p>
-<h4 id="Our-proposal">Our proposal</h4>
-<p>因此作者提出了包含了一条“docstring”的代码语料库，只提取最高层次的函数，添加了元信息（仓库所有者，仓库名等）可以重建上下文关系图</p>
-<h3 id="Dataset-7">Dataset</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="Our-proposal"><a href="#Our-proposal" class="headerlink" title="Our proposal"></a>Our proposal</h4><p>因此作者提出了包含了一条“docstring”的代码语料库，只提取最高层次的函数，添加了元信息（仓库所有者，仓库名等）可以重建上下文关系图</p>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/tab2.png" alt="avatar" style="zoom:50%;" /></div>
-<h3 id="Baseline-results">Baseline results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
+<h3 id="Baseline-results"><a href="#Baseline-results" class="headerlink" title="Baseline results"></a>Baseline results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/code-docstring-corpus/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
+
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

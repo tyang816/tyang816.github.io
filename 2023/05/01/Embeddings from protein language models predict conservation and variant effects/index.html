@@ -20,12 +20,12 @@
   
   
   <title>Human Genetics-2022 Embeddings from protein language models predict conservation and variant effects | tyang</title>
-  <meta name="description" content="论文地址：Embeddings from protein language models predict conservation and variant effects 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Rostlab&#x2F;VESPA  VESPA：保守性预测+BLOSUM+PLM embedding Abstract SAVs(single amino acid variants)">
+  <meta name="description" content="论文地址：Embeddings from protein language models predict conservation and variant effects 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Rostlab&#x2F;VESPA  VESPA：保守性预测+BLOSUM+PLM embeddingAbstractSAVs(single amino acid variants)。本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Human Genetics-2022 Embeddings from protein language models predict conservation and variant effects">
 <meta property="og:url" content="https://tyang816.github.io/2023/05/01/Embeddings%20from%20protein%20language%20models%20predict%20conservation%20and%20variant%20effects/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Embeddings from protein language models predict conservation and variant effects 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Rostlab&#x2F;VESPA  VESPA：保守性预测+BLOSUM+PLM embedding Abstract SAVs(single amino acid variants)">
+<meta property="og:description" content="论文地址：Embeddings from protein language models predict conservation and variant effects 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Rostlab&#x2F;VESPA  VESPA：保守性预测+BLOSUM+PLM embeddingAbstractSAVs(single amino acid variants)。本">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig3.png">
@@ -405,11 +405,8 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://link.springer.com/10.1007/s00439-021-02411-y">Embeddings from protein language models predict conservation and variant effects</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/Rostlab/VESPA">https://github.com/Rostlab/VESPA</a></p>
 </blockquote>
-<h2 id="VESPA：保守性预测-BLOSUM-PLM-embedding">VESPA：保守性预测+BLOSUM+PLM embedding</h2>
-<h3 id="Abstract-38">Abstract</h3>
-<p>SAVs(single amino acid variants)。本文使用蛋白质语言模型表征来预测序列保守性和SAV影响，而没有多重序列比对（MSAs）。将保守性预测，BLOSUM62矩阵喝plm mask重建概率输入到LR ensemble中来做variant effect score prediction任务，不需要在DMS数据上进一步优化。在一个标准的39个DMS数据集上进行比较，没有一个方法是完全超过了其他方法。最后本文研究了四种人类蛋白的DMS实验中的binary effect prediction</p>
-<h3 id="Introduction-34">Introduction</h3>
-<p>即使在现有的实验中，仍存在内在问题：</p>
+<h2 id="VESPA：保守性预测-BLOSUM-PLM-embedding"><a href="#VESPA：保守性预测-BLOSUM-PLM-embedding" class="headerlink" title="VESPA：保守性预测+BLOSUM+PLM embedding"></a>VESPA：保守性预测+BLOSUM+PLM embedding</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>SAVs(single amino acid variants)。本文使用蛋白质语言模型表征来预测序列保守性和SAV影响，而没有多重序列比对（MSAs）。将保守性预测，BLOSUM62矩阵喝plm mask重建概率输入到LR ensemble中来做variant effect score prediction任务，不需要在DMS数据上进一步优化。在一个标准的39个DMS数据集上进行比较，没有一个方法是完全超过了其他方法。最后本文研究了四种人类蛋白的DMS实验中的binary effect prediction</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>即使在现有的实验中，仍存在内在问题：</p>
 <ol>
 <li>在 vitro DMS 数据可以很好地捕捉到基于分子功能的突变效应，但对生物过程（例如疾病的发生）的影响则不够敏感。例如，虽然在线数据库如 OMIM 中包含了与疾病相关的突变信息，但在 MaveDB 中则不包含。</li>
 <li>大多数蛋白质具有多个结构域，因此它们很可能具有多种不同的分子功能。然而，每个实验方法往往只能测量对其中一种功能的影响。</li>
@@ -419,39 +416,32 @@
 <p>分析了使用DMS（Esposito等人2019年）和PMD（Kappata等人1999年）的实验数据，使用预先训练的pLMs嵌入来预测sav对蛋白质功能的影响，重点是分子功能的影响</p>
 <p>来自预训练的plm的embedding不变，然后再在有注释的数据集第二步监督训练。评估了两个独立的监督预测任务：conservation和SAV effects</p>
 <p>先使用plm作为静态的特征编码器，然后训练一个LR来预测SAV，还集成使用了最好的保守预测器（ProtT5cons）和替换分数BLOSUM62和ProtT5的替换概率。其实这里的替换概率已经和DMS scores相关了，但把另外两个东西结合起来可以提升效果</p>
-<h3 id="Methods-4">Methods</h3>
-<h4 id="Data-sets">Data sets</h4>
-<p>总的来说使用了五个数据集，ConSurf10k用来训练和评估残基保守性预测，Eff10k用来训练SAV effect prediction，PMD4k和DMS4是测试集评估二元SAV effects，回归的effect score用DMS39评估</p>
-<h5 id="ConSurf10k-assessed-conservation"><em>ConSurf10k</em> assessed conservation.</h5>
-<p>ConSurf-DB有89,673条蛋白，经过一致性，分辨率，残基数一系列清洗得到10,507条蛋白</p>
-<h5 id="Eff10k-assessed-SAV-effects"><em>Eff10k</em> assessed SAV effects</h5>
-<p>SNAP2 development set有100,737条二元SAV-effect annotations（neutral: 38,700, effect: 61,037），来源于9594条蛋白质</p>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><h4 id="Data-sets"><a href="#Data-sets" class="headerlink" title="Data sets"></a>Data sets</h4><p>总的来说使用了五个数据集，ConSurf10k用来训练和评估残基保守性预测，Eff10k用来训练SAV effect prediction，PMD4k和DMS4是测试集评估二元SAV effects，回归的effect score用DMS39评估</p>
+<h5 id="ConSurf10k-assessed-conservation"><a href="#ConSurf10k-assessed-conservation" class="headerlink" title="ConSurf10k assessed conservation."></a><em>ConSurf10k</em> assessed conservation.</h5><p>ConSurf-DB有89,673条蛋白，经过一致性，分辨率，残基数一系列清洗得到10,507条蛋白</p>
+<h5 id="Eff10k-assessed-SAV-effects"><a href="#Eff10k-assessed-SAV-effects" class="headerlink" title="Eff10k assessed SAV effects"></a><em>Eff10k</em> assessed SAV effects</h5><p>SNAP2 development set有100,737条二元SAV-effect annotations（neutral: 38,700, effect: 61,037），来源于9594条蛋白质</p>
 <p>把蛋白是一个cluster的放在相同的CV（cross-validation）分割里</p>
-<h5 id="PMD4k-assessed-binary-SAV-effects"><em>PMD4k</em> assessed binary SAV effects</h5>
-<p>从PMD提取注释（no change是neutral，功能增加或减少视为effect），得到51,817条二分类SAV（neutral: 13,638, effect: 38,179），来源于4061条蛋白质</p>
-<h5 id="DMS4-sampled-large-scale-DMS-in-vitro-experiments-annotating-binary-SAV-efects"><em>DMS4</em> sampled large-scale DMS in vitro experiments  annotating binary SAV efects</h5>
-<p>从四条人类蛋白质提取的二元分类数据集，在数据集分布均值95%视为neural，尾端的5%视为effect，可以调整这个比例</p>
-<h5 id="DMS39-collected-DMS-experiments-annotating-continuous-SAV-efects"><em>DMS39</em> collected DMS experiments annotating continuous SAV efects</h5>
-<p>DeepSequence的43DMS实验的子集</p>
-<h4 id="Input-features">Input features</h4>
-<p>plm的embedding，替换概率和BLOSUM62的替换分数</p>
-<h4 id="Method-development">Method development</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig1.png" alt="avatar" style="zoom:100%;" /></div>
-<h5 id="Conservation-prediction">Conservation prediction</h5>
-<p>使用plm模型embedding作为输入，训练三个有监督分类器。先是9分类的保守性预测，测试了几个模型：<a target="_blank" rel="noopener" href="http://1.LR">1.LR</a>；2.两层FFN+RELU；3.两层CNN，window size=7+RELU</p>
+<h5 id="PMD4k-assessed-binary-SAV-effects"><a href="#PMD4k-assessed-binary-SAV-effects" class="headerlink" title="PMD4k assessed binary SAV effects"></a><em>PMD4k</em> assessed binary SAV effects</h5><p>从PMD提取注释（no change是neutral，功能增加或减少视为effect），得到51,817条二分类SAV（neutral: 13,638, effect: 38,179），来源于4061条蛋白质</p>
+<h5 id="DMS4-sampled-large-scale-DMS-in-vitro-experiments-annotating-binary-SAV-efects"><a href="#DMS4-sampled-large-scale-DMS-in-vitro-experiments-annotating-binary-SAV-efects" class="headerlink" title="DMS4 sampled large-scale DMS in vitro experiments  annotating binary SAV efects"></a><em>DMS4</em> sampled large-scale DMS in vitro experiments  annotating binary SAV efects</h5><p>从四条人类蛋白质提取的二元分类数据集，在数据集分布均值95%视为neural，尾端的5%视为effect，可以调整这个比例</p>
+<h5 id="DMS39-collected-DMS-experiments-annotating-continuous-SAV-efects"><a href="#DMS39-collected-DMS-experiments-annotating-continuous-SAV-efects" class="headerlink" title="DMS39 collected DMS experiments annotating continuous SAV efects"></a><em>DMS39</em> collected DMS experiments annotating continuous SAV efects</h5><p>DeepSequence的43DMS实验的子集</p>
+<h4 id="Input-features"><a href="#Input-features" class="headerlink" title="Input features"></a>Input features</h4><p>plm的embedding，替换概率和BLOSUM62的替换分数</p>
+<h4 id="Method-development"><a href="#Method-development" class="headerlink" title="Method development"></a>Method development</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h5 id="Conservation-prediction"><a href="#Conservation-prediction" class="headerlink" title="Conservation prediction"></a>Conservation prediction</h5><p>使用plm模型embedding作为输入，训练三个有监督分类器。先是9分类的保守性预测，测试了几个模型：1.LR；2.两层FFN+RELU；3.两层CNN，window size=7+RELU</p>
 <p>最好的模型是在ProtT5上训练的CNN称为ProtT5cons</p>
-<h5 id="Relu-based-binary-SAV-effect-prediction">Relu-based binary SAV effect prediction</h5>
-<p>该方法首先使用了一个简单的阈值方法，将ProtT5cons输出的保守性评分（conservation score）大于5的残基标记为“effect”，其他标记为“neutral”。然后，该方法结合了SIFT中使用的BLOSUM62替代得分，对预测结果进行了优化。这个优化方法被称为BLOSUM62bin，被认为是一种简单直观的基线方法。在该方法中，那些比预期更不可能发生突变（在BLOSUM62中具有负值）的突变被标记为“effect”，其他被标记为“neutral”。</p>
+<h5 id="Relu-based-binary-SAV-effect-prediction"><a href="#Relu-based-binary-SAV-effect-prediction" class="headerlink" title="Relu-based binary SAV effect prediction"></a>Relu-based binary SAV effect prediction</h5><p>该方法首先使用了一个简单的阈值方法，将ProtT5cons输出的保守性评分（conservation score）大于5的残基标记为“effect”，其他标记为“neutral”。然后，该方法结合了SIFT中使用的BLOSUM62替代得分，对预测结果进行了优化。这个优化方法被称为BLOSUM62bin，被认为是一种简单直观的基线方法。在该方法中，那些比预期更不可能发生突变（在BLOSUM62中具有负值）的突变被标记为“effect”，其他被标记为“neutral”。</p>
 <p>最后，将两个基于规则的分类器进行结合，形成了第三种方法ProtT5bef。在这个方法中，如果ProtT5cons预测的保守性评分大于5且BLOSUM62替代得分为负，则标记为“effect”，否则标记为“neutral”。这种方法将来自ProtT5cons和BLOSUM62的位置感知信息和变异感知信息进行了合并，预测了突变的二进制分类（effect/neutral）结果，而不需要使用任何实验数据对突变效应进行优化</p>
-<h5 id="Supervised-prediction-of-SAV-effect-scores">Supervised prediction of SAV effect scores</h5>
-<p>训练了一个balanced LR 集成模型，使用的SciKit里的交叉验证，在Eff10k数据集上</p>
-<p>VESPA&lt;0.5是neutral，&gt;=0.5是effect</p>
-<h3 id="Results-10">Results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h5 id="Supervised-prediction-of-SAV-effect-scores"><a href="#Supervised-prediction-of-SAV-effect-scores" class="headerlink" title="Supervised prediction of SAV effect scores"></a>Supervised prediction of SAV effect scores</h5><p>训练了一个balanced LR 集成模型，使用的SciKit里的交叉验证，在Eff10k数据集上</p>
+<p>VESPA<0.5是neutral，>=0.5是effect</p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VESPA/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

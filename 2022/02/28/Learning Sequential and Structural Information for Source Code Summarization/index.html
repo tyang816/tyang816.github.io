@@ -20,12 +20,12 @@
   
   
   <title>ACL-2021 Learning Sequential and Structural Information for Source Code Summarization | tyang</title>
-  <meta name="description" content="论文地址：Learning Sequential and Structural Information for Source Code Summarization  mAST+GCN编码结构信息，Transformer编码序列信息 Abstract 用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码 Introduction 为了更好地表示结构信息，提出了修改A">
+  <meta name="description" content="论文地址：Learning Sequential and Structural Information for Source Code Summarization  mAST+GCN编码结构信息，Transformer编码序列信息Abstract用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码 Introduction为了更好地表示结构信息，提出了修改AST，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACL-2021 Learning Sequential and Structural Information for Source Code Summarization">
 <meta property="og:url" content="https://tyang816.github.io/2022/02/28/Learning%20Sequential%20and%20Structural%20Information%20for%20Source%20Code%20Summarization/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Learning Sequential and Structural Information for Source Code Summarization  mAST+GCN编码结构信息，Transformer编码序列信息 Abstract 用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码 Introduction 为了更好地表示结构信息，提出了修改A">
+<meta property="og:description" content="论文地址：Learning Sequential and Structural Information for Source Code Summarization  mAST+GCN编码结构信息，Transformer编码序列信息Abstract用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码 Introduction为了更好地表示结构信息，提出了修改AST，">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png">
@@ -395,7 +395,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/28/Learning%20Sequential%20and%20Structural%20Information%20for%20Source%20Code%20Summarization/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 256(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 253(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -408,29 +408,24 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://aclanthology.org/2021.findings-acl.251">Learning Sequential and Structural Information for Source Code Summarization</a></p>
 </blockquote>
-<h2 id="mAST-GCN编码结构信息，Transformer编码序列信息">mAST+GCN编码结构信息，Transformer编码序列信息</h2>
-<h3 id="Abstract-12">Abstract</h3>
-<p>用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码</p>
-<h3 id="Introduction-11">Introduction</h3>
-<p>为了更好地表示结构信息，提出了修改AST，同层次间添加了兄弟边来表示相邻的块</p>
-<h3 id="Model-6">Model</h3>
-<h4 id="Representing-Code-as-mAST">Representing Code as mAST</h4>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img1.png" alt="avatar" style="zoom:50%;" /></div>
+<h2 id="mAST-GCN编码结构信息，Transformer编码序列信息"><a href="#mAST-GCN编码结构信息，Transformer编码序列信息" class="headerlink" title="mAST+GCN编码结构信息，Transformer编码序列信息"></a>mAST+GCN编码结构信息，Transformer编码序列信息</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>为了更好地表示结构信息，提出了修改AST，同层次间添加了兄弟边来表示相邻的块</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><h4 id="Representing-Code-as-mAST"><a href="#Representing-Code-as-mAST" class="headerlink" title="Representing Code as mAST"></a>Representing Code as mAST</h4><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img1.png" alt="avatar" style="zoom:50%;" /></div>
+
 <p>对于 Java 代码是添加同层次相邻边</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png" alt="avatar" style="zoom:50%;" />
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png" alt="avatar" style="zoom:50%;" /></p>
 <p>对于 Python 代码作者发现函数名太重要了，就增加了“函数名”节点，然后加边</p>
-<h4 id="Proposed-Model">Proposed Model</h4>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img3.png" alt="avatar" style="zoom:50%;" />
+<h4 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h4><p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img3.png" alt="avatar" style="zoom:50%;" /></p>
 <p>作者指出 mAST 能够捕捉相邻块信息， GCN 能够将结构相邻节点的表示生成得在语义空间中比较相近，transformer 能够捕获长距离相同块中的依赖信息</p>
-<h3 id="Experiment-6">Experiment</h3>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img4.png" alt="avatar" style="zoom:50%;" />
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img5.png" alt="avatar" style="zoom:50%;" />
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img4.png" alt="avatar" style="zoom:50%;" /></p>
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img5.png" alt="avatar" style="zoom:50%;" /></p>
 <p>消融实验和数据如上</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img6.png" alt="avatar" style="zoom:50%;" />
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img6.png" alt="avatar" style="zoom:50%;" /></p>
 <p>作者还做了实验将 GCN放在 Transformer 编码器前后位置的影响，其实放哪，还是前后都放差距不大，放前面感觉还好一点</p>
-<div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img7.png" alt="avatar" style="zoom:50%;" />
+<p><div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img7.png" alt="avatar" style="zoom:50%;" /></p>
 <p>以及 GCN 层数的实验</p>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

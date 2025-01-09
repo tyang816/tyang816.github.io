@@ -20,12 +20,12 @@
   
   
   <title>ICML-2022 Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs | tyang</title>
-  <meta name="description" content="论文地址：Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs 论文实现：https:&#x2F;&#x2F;github.com&#x2F;lucidrains&#x2F;perceiver-pytorch  Perceiver IO：多模态统一架构 Abstract 提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入">
+  <meta name="description" content="论文地址：Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs 论文实现：https:&#x2F;&#x2F;github.com&#x2F;lucidrains&#x2F;perceiver-pytorch  Perceiver IO：多模态统一架构Abstract提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入和输">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ICML-2022 Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs">
 <meta property="og:url" content="https://tyang816.github.io/2023/11/26/Perceiver%20IO%EF%BC%9AA%20General%20Architecture%20for%20Structured%20Inputs%20&%20Outputs/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs 论文实现：https:&#x2F;&#x2F;github.com&#x2F;lucidrains&#x2F;perceiver-pytorch  Perceiver IO：多模态统一架构 Abstract 提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入">
+<meta property="og:description" content="论文地址：Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs 论文实现：https:&#x2F;&#x2F;github.com&#x2F;lucidrains&#x2F;perceiver-pytorch  Perceiver IO：多模态统一架构Abstract提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入和输">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig2.png">
@@ -408,11 +408,9 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.14795">Perceiver IO：A General Architecture for Structured Inputs &amp; Outputs</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/lucidrains/perceiver-pytorch">https://github.com/lucidrains/perceiver-pytorch</a></p>
 </blockquote>
-<h2 id="Perceiver-IO：多模态统一架构">Perceiver IO：多模态统一架构</h2>
-<h3 id="Abstract-104">Abstract</h3>
-<p>提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入和输出规模线性增长。模型通过一个灵活的查询机制，该机制支持各种大小和语义的输出，消除了对特定于任务的架构工程的需要。同样的架构再自然语言处理、视觉理解、多任务和多模态理解等任务都取得了很好的结果</p>
-<h3 id="Introduction-85">Introduction</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<h2 id="Perceiver-IO：多模态统一架构"><a href="#Perceiver-IO：多模态统一架构" class="headerlink" title="Perceiver IO：多模态统一架构"></a>Perceiver IO：多模态统一架构</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>提出perceiver IO，可以处理不同形态数据的通用模型，并且是随着输入和输出规模线性增长。模型通过一个灵活的查询机制，该机制支持各种大小和语义的输出，消除了对特定于任务的架构工程的需要。同样的架构再自然语言处理、视觉理解、多任务和多模态理解等任务都取得了很好的结果</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>大多数机器学习研究集中于建立定制的系统来处理与单个任务相关的刻板的输入和输出，并且随着输入或输出的增长而变得更加多样化，这类系统的复杂性可能会急剧增加，而任务的输入和输出的结构可能会对数据的处理方式产生强烈的限制，从而使适应新的设置变得困难。难道为每一组新的输入和输出开发特定于问题的模型是不可避免的吗？</p>
 <p>Perceiver使用注意力将各种模式的输入映射到一个固定大小的潜在空间，这个潜在空间被一个深度的、完全的注意网络进一步处理。这个过程将网络的大部分处理与输入的大小和特定于模态的细节解耦，允许它扩展到大型和多模态数据</p>
 <p>但是Perceiver只能处理简单的输出空间，比如分类。这项工作中，开发了一种解码结构化输出的机制——语言、光流场、视听序列、符号无序集等。直接来自感知器的潜在空间，它允许模型处理大量的新领域，而不牺牲深度的、与领域无关的处理的好处</p>
@@ -422,12 +420,14 @@
 <li>然后模型将使用查询参加并产生一个单一的流向量。该体系结构可以产生许多输出，每个输出都具有任意的形状和结构，但是模型中的潜在特征仍然与输出的形状和结构不可知</li>
 </ul>
 <p>Perceiver IO使用一个完全注意的读-过程-写架构来做到这一点：输入被编码（读）到一个潜在的空间，潜在的表示通过多层处理被细化（过程），并且潜在的空间被解码（写）以产生输出。使用了Transformers最好的特征，领域无关的Nonlocal processing of inputs和编码器-解码器架构，这种方法可以把元素输入大小和输入空间大小解耦，降低复杂度</p>
-<h3 id="The-Perceiver-IO-Architecture">The Perceiver IO Architecture</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<h3 id="The-Perceiver-IO-Architecture"><a href="#The-Perceiver-IO-Architecture" class="headerlink" title="The Perceiver IO Architecture"></a>The Perceiver IO Architecture</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig6.png" alt="avatar" style="zoom:100%;" /></div>
-<h4 id="Encoding-Processing-And-Decoding">Encoding, Processing, And Decoding</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/tab5.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h4 id="Encoding-Processing-And-Decoding"><a href="#Encoding-Processing-And-Decoding" class="headerlink" title="Encoding, Processing, And Decoding"></a>Encoding, Processing, And Decoding</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/tab5.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>每个模块都是用一个全局query-key-value（QKV）注意力操作，然后是一个多层感知器（MLP）。在Transformer的架构中，通常将MLP独立地应用于索引index维度的每个元素。</p>
 <p>编码器和解码器都接受两个输入矩阵，第一个用作模块的key和value网络的输入，第二个用作模块查询网络的输入。模块的输出具有与query输入相同的索引维度(即相同数量的元素)，这也是编码器和解码器模块能够产生不同大小输出的原因。</p>
 <p>那为什么不直接用Transformer？</p>
@@ -435,18 +435,20 @@
 <p>相比之下，Perceiver IO非均匀地使用注意力，首先使用它将输入映射到隐空间，然后在该隐空间中进行处理，最后使用注意力映射到输出空间。</p>
 <p>最终这个架构对输入或输出大小没有二次时间复杂度的依赖性，因为编码器和解码器注意模块分别线性依赖于输入和输出大小，而隐注意力独立于输入和输出大小。</p>
 <p>并且这个架构需要更少的计算和内存需求，Perceiver IO可以扩展到更大的输入和输出。虽然Transformer通常用于输入和输出最多几千维的设置，但这个新模型在输入和输出维度数十万的数据上都显示了不错的结果。</p>
-<h4 id="Decoding-The-Latent-Representation-with-a-Query-Array">Decoding The Latent  Representation with a Query Array</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Decoding-The-Latent-Representation-with-a-Query-Array"><a href="#Decoding-The-Latent-Representation-with-a-Query-Array" class="headerlink" title="Decoding The Latent  Representation with a Query Array"></a>Decoding The Latent  Representation with a Query Array</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>第二步是将隐空间中的表示向量进行解码，目标是在给定大小为N×D的隐表示的情况下，生成大小为O×E的输出矩阵，这意味着query信息应该反映下游任务，并能够捕获输出中所需的任何结构，可能也包括图像中的空间位置或序列中输出字的位置</p>
 <p>通过组合（连接或添加）一组向量到一个query向量中来构造queries，该查询向量包含与O个期望输出之一相关的所有信息。</p>
 <p>对于具有简单输出的任务，例如分类，这些query可以在每个示例中重复使用，并且可以从头开始学习。对于具有空间或序列结构的输出，例如，学习的位置编码或傅里叶特征，则额外包括表示输出中要解码的位置的位置编码。对于具有多任务或多模态结构的输出，学习每个任务或每个模态的单个查询，该信息允许网络将一个任务或模态查询与其他任务或模态查询区分开来，就像位置编码允许注意区分一个位置与另一个位置一样。</p>
 <p>为了评估Perceiver IO的通用性，研究人员在多个领域、多种数据的任务中对其进行评估，包括语言理解（masked language modeling和下游任务微调）、视觉理解（optical flow和图像分类）、游戏符号表示（星际争霸II）以及多模式和多任务设置。</p>
-<h3 id="Experiments-25">Experiments</h3>
-<p>为了评估Perceiver IO的通用性，研究人员在多个领域、多种数据的任务中对其进行评估，包括语言理解（masked language modeling和下游任务微调）、视觉理解（optical flow和图像分类）、游戏符号表示（星际争霸II）以及多模式和多任务设置。</p>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p>为了评估Perceiver IO的通用性，研究人员在多个领域、多种数据的任务中对其进行评估，包括语言理解（masked language modeling和下游任务微调）、视觉理解（optical flow和图像分类）、游戏符号表示（星际争霸II）以及多模式和多任务设置。</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Perceiver-IO/tab6.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>更多实验见原文</p>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

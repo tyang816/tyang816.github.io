@@ -20,12 +20,12 @@
   
   
   <title>Bioinformatics Advances-2021 Light attention predicts protein location from the language of life | tyang</title>
-  <meta name="description" content="论文地址：Light attention predicts protein location from the language of life 论文实现：https:&#x2F;&#x2F;github.com&#x2F;HannesStark&#x2F;protein-localization  LA-ProtT5: 语言模型表征+attention预测蛋白质定位 Abstract 知道蛋白质在细胞中的作用对于表征生物过程很重要，">
+  <meta name="description" content="论文地址：Light attention predicts protein location from the language of life 论文实现：https:&#x2F;&#x2F;github.com&#x2F;HannesStark&#x2F;protein-localization  LA-ProtT5: 语言模型表征+attention预测蛋白质定位Abstract知道蛋白质在细胞中的作用对于表征生物过程很重要，但目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bioinformatics Advances-2021 Light attention predicts protein location from the language of life">
 <meta property="og:url" content="https://tyang816.github.io/2023/11/19/Light%20attention%20predicts%20protein%20location%20from%20the%20language%20of%20life/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：Light attention predicts protein location from the language of life 论文实现：https:&#x2F;&#x2F;github.com&#x2F;HannesStark&#x2F;protein-localization  LA-ProtT5: 语言模型表征+attention预测蛋白质定位 Abstract 知道蛋白质在细胞中的作用对于表征生物过程很重要，">
+<meta property="og:description" content="论文地址：Light attention predicts protein location from the language of life 论文实现：https:&#x2F;&#x2F;github.com&#x2F;HannesStark&#x2F;protein-localization  LA-ProtT5: 语言模型表征+attention预测蛋白质定位Abstract知道蛋白质在细胞中的作用对于表征生物过程很重要，但目">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/tab1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig1.png">
@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/19/Light%20attention%20predicts%20protein%20location%20from%20the%20language%20of%20life/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 319(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 314(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
@@ -405,26 +405,23 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbab035/6432029">Light attention predicts protein location from the language of life</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/HannesStark/protein-localization">https://github.com/HannesStark/protein-localization</a></p>
 </blockquote>
-<h2 id="LA-ProtT5-语言模型表征-attention预测蛋白质定位">LA-ProtT5: 语言模型表征+attention预测蛋白质定位</h2>
-<h3 id="Abstract-55">Abstract</h3>
-<p>知道蛋白质在细胞中的作用对于表征生物过程很重要，但目前大多数已知的蛋白质是没有的，目前专家设计的需要MSA信息或机器学习预测，搜索MSA和专家设计是比较昂贵的。这里使用来自蛋白质语言模型的嵌入在没有MSA的情况下进行蛋白质定位预测，取得了SOTA</p>
-<h3 id="Introduction-50">Introduction</h3>
-<h4 id="Prediction-bridges-gap-between-proteins-with-and-without-location-annotations">Prediction bridges gap between proteins with and without location annotations</h4>
-<p>在分子生物学中标准的预测工具是homology-based inference (HBI)，从已经注释的相似蛋白迁移到未注释的蛋白上，但是HBI方法在大多数蛋白上不可靠或者不可用</p>
+<h2 id="LA-ProtT5-语言模型表征-attention预测蛋白质定位"><a href="#LA-ProtT5-语言模型表征-attention预测蛋白质定位" class="headerlink" title="LA-ProtT5: 语言模型表征+attention预测蛋白质定位"></a>LA-ProtT5: 语言模型表征+attention预测蛋白质定位</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>知道蛋白质在细胞中的作用对于表征生物过程很重要，但目前大多数已知的蛋白质是没有的，目前专家设计的需要MSA信息或机器学习预测，搜索MSA和专家设计是比较昂贵的。这里使用来自蛋白质语言模型的嵌入在没有MSA的情况下进行蛋白质定位预测，取得了SOTA</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h4 id="Prediction-bridges-gap-between-proteins-with-and-without-location-annotations"><a href="#Prediction-bridges-gap-between-proteins-with-and-without-location-annotations" class="headerlink" title="Prediction bridges gap between proteins with and without location annotations"></a>Prediction bridges gap between proteins with and without location annotations</h4><p>在分子生物学中标准的预测工具是homology-based inference (HBI)，从已经注释的相似蛋白迁移到未注释的蛋白上，但是HBI方法在大多数蛋白上不可靠或者不可用</p>
 <p>机器学习方法精度低，但是在大多蛋白上是可用的，比如使用MSA做输入，但随着数据库的增长，MSA的开销变得巨大</p>
-<h4 id="Protein-language-models-better-represent-sequences">Protein language models better represent sequences</h4>
-<p>使用蛋白质语言模型的表征来预测蛋白质定位，不需要MSA，使用一种Light Attention (LA)</p>
-<h3 id="Methods-11">Methods</h3>
-<h4 id="Data-2">Data</h4>
-<p>标准的DeepLoc和从swissprot中构建的新的setHARD</p>
-<h4 id="Models-2">Models</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/tab1.png" alt="avatar" style="zoom:80%;" /></div>
+<h4 id="Protein-language-models-better-represent-sequences"><a href="#Protein-language-models-better-represent-sequences" class="headerlink" title="Protein language models better represent sequences"></a>Protein language models better represent sequences</h4><p>使用蛋白质语言模型的表征来预测蛋白质定位，不需要MSA，使用一种Light Attention (LA)</p>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4><p>标准的DeepLoc和从swissprot中构建的新的setHARD</p>
+<h4 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/tab1.png" alt="avatar" style="zoom:80%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig1.png" alt="avatar" style="zoom:80%;" /></div>
-<h3 id="Results-21">Results</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/tab2.png" alt="avatar" style="zoom:80%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LA-ProtT5/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <HR align=left color=#987cb9 SIZE=1>
       
     </div>

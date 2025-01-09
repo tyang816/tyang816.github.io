@@ -391,7 +391,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/29/Chain%20of%20Thought%20Prompting%20Elicits%20Reasoning%20in%20Large%20Language%20Models/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 617(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 615(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2(minutes)</span>
@@ -407,15 +407,13 @@
 <p>AI需要求鼓励吗？在语言模型里面加上一句let’s think step by step就能在数学问题上涨点，这句话也变成了一个梗</p>
 <p>Auto-CoT设计一些问题和推理步骤给模型，让模型能够顺着问题推理下去得到正确结果，比人工设计的还要好</p>
 </blockquote>
-<h2 id="CoT：推理链引导语言模型">CoT：推理链引导语言模型</h2>
-<h3 id="Abstract-3">Abstract</h3>
-<p>语言模型规模越来越大，从计算量，数据量大小和参数量大小三个角度来衡量模型大小。但即使是大模型，对于推理，符号等任务依然表现不好，所以提出了chain of thought，就是人类遇到问题时的推理步骤，以一系列短句子来表示</p>
-<h3 id="Introduction-arxiv-v2">Introduction (arxiv v2)</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<h2 id="CoT：推理链引导语言模型"><a href="#CoT：推理链引导语言模型" class="headerlink" title="CoT：推理链引导语言模型"></a>CoT：推理链引导语言模型</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>语言模型规模越来越大，从计算量，数据量大小和参数量大小三个角度来衡量模型大小。但即使是大模型，对于推理，符号等任务依然表现不好，所以提出了chain of thought，就是人类遇到问题时的推理步骤，以一系列短句子来表示</p>
+<h3 id="Introduction-arxiv-v2"><a href="#Introduction-arxiv-v2" class="headerlink" title="Introduction (arxiv v2)"></a>Introduction (arxiv v2)</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>语言模型在达到100B参数量后就能在sentiment analysis和topic classication取得非常好的结果，这种就是system1任务，能够很快被理解的任务</p>
 <p>还有一类任务是system2，就需要仔细考虑，涉及逻辑，数学，常识的推理任务，即使模型上了几百B的参数量也很难把任务给撬开，很难实现性能随模型大小的提升而提升，不能大力出奇迹了</p>
-<h3 id="Chain-of-Thought-Prompting">Chain-of-Thought Prompting</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+<h3 id="Chain-of-Thought-Prompting"><a href="#Chain-of-Thought-Prompting" class="headerlink" title="Chain-of-Thought Prompting"></a>Chain-of-Thought Prompting</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+
 <p>在给出推理步骤，再给出答案，以这样的样例给模型</p>
 <ul>
 <li>CoT能够把问题分解成多个步骤，难的问题会生成更多token，使得需要更多推理的问题分配到更多计算量</li>
@@ -423,18 +421,17 @@
 <li>使用上任何人类能用语言能解决的问题</li>
 <li>通过few-shot learning引发语言模型续写中间步骤</li>
 </ul>
-<h3 id="Arithmetic-Reasoning">Arithmetic Reasoning</h3>
-<p>这里算术推理集中在6-10岁小朋友可以解决的问题</p>
-<h4 id="Chain-of-thought-prompting">Chain-of-thought prompting</h4>
-<p>人工设计了8个带有COT推理链条的few-shot样例，成本很高，很难调试</p>
+<h3 id="Arithmetic-Reasoning"><a href="#Arithmetic-Reasoning" class="headerlink" title="Arithmetic Reasoning"></a>Arithmetic Reasoning</h3><p>这里算术推理集中在6-10岁小朋友可以解决的问题</p>
+<h4 id="Chain-of-thought-prompting"><a href="#Chain-of-thought-prompting" class="headerlink" title="Chain-of-thought prompting"></a>Chain-of-thought prompting</h4><p>人工设计了8个带有COT推理链条的few-shot样例，成本很高，很难调试</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig4.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>这里能体现出COT的重要性</p>
-<h4 id="Ablation-Study">Ablation Study</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/tab6.png" alt="avatar" style="zoom:90%;" /></div>
+<h4 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/tab6.png" alt="avatar" style="zoom:90%;" /></div>
+
 <p>方法很简单，但是不能再简单了</p>
 <p>这里把COT部分替换成equation only，只包含算式的部分，或者其他方法，都有一定差距，体现出COT中自然语言的作用</p>
-<h4 id="Robustness-of-Chain-of-Thought">Robustness of Chain of Thought</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig6.png" alt="avatar" style="zoom:70%;" /></div>
+<h4 id="Robustness-of-Chain-of-Thought"><a href="#Robustness-of-Chain-of-Thought" class="headerlink" title="Robustness of Chain of Thought"></a>Robustness of Chain of Thought</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CoT/fig6.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>对COT比较敏感所以有必要评测一下这套方法的稳健性，带COT的都比不带COT的好很多</p>
 <HR align=left color=#987cb9 SIZE=1>
       

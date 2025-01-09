@@ -20,12 +20,12 @@
   
   
   <title>NIPS-2022 A Neural Corpus Indexer for Document Retrieval | tyang</title>
-  <meta name="description" content="论文地址：A Neural Corpus Indexer for Document Retrieval  NCI：端到端文档-索引模型+层次聚类+PAWA decoder Abstract 现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引">
+  <meta name="description" content="论文地址：A Neural Corpus Indexer for Document Retrieval  NCI：端到端文档-索引模型+层次聚类+PAWA decoderAbstract现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引，还">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NIPS-2022 A Neural Corpus Indexer for Document Retrieval">
 <meta property="og:url" content="https://tyang816.github.io/2022/12/19/A%20Neural%20Corpus%20Indexer%20for%20Document%20Retrieval/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="论文地址：A Neural Corpus Indexer for Document Retrieval  NCI：端到端文档-索引模型+层次聚类+PAWA decoder Abstract 现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引">
+<meta property="og:description" content="论文地址：A Neural Corpus Indexer for Document Retrieval  NCI：端到端文档-索引模型+层次聚类+PAWA decoderAbstract现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引，还">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig1.png">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig2.png">
@@ -408,11 +408,8 @@
         <blockquote>
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2206.02743">A Neural Corpus Indexer for Document Retrieval</a></p>
 </blockquote>
-<h2 id="NCI：端到端文档-索引模型-层次聚类-PAWA-decoder">NCI：端到端文档-索引模型+层次聚类+PAWA decoder</h2>
-<h3 id="Abstract-118">Abstract</h3>
-<p>现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引，还提出了一种prefix-aware weight-adaptive decoder架构，能够提升性能很大</p>
-<h3 id="Introduction-97">Introduction</h3>
-<p>文档检索和排序是搜索引擎最重要的两个stage，排序往往会做成一个神经网络，把query和document作为对输入来预测他们的相关分数。但这种行为比较贵，特别在文档数很多的情况下，因此最多选几百一千个，所以这个时候检索就很重要了，把相关的东西先都找出来</p>
+<h2 id="NCI：端到端文档-索引模型-层次聚类-PAWA-decoder"><a href="#NCI：端到端文档-索引模型-层次聚类-PAWA-decoder" class="headerlink" title="NCI：端到端文档-索引模型+层次聚类+PAWA decoder"></a>NCI：端到端文档-索引模型+层次聚类+PAWA decoder</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>现在的文档检索系统通常是基于索引的，但这种方法就很难根据最终要检索的目标来做优化。本文提出一个端到端的神经网络把训练和检索糅合在一起能够提高召回率，提出了一个叫NCI的方法，能够根据查询直接生成相关的文档索引，还提出了一种prefix-aware weight-adaptive decoder架构，能够提升性能很大</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>文档检索和排序是搜索引擎最重要的两个stage，排序往往会做成一个神经网络，把query和document作为对输入来预测他们的相关分数。但这种行为比较贵，特别在文档数很多的情况下，因此最多选几百一千个，所以这个时候检索就很重要了，把相关的东西先都找出来</p>
 <p>现有的检索方法分为两种</p>
 <ul>
 <li>term-based：建立一个对整个语料的inverted index（所有的term到index的映射），看个某个词就返回页面或词条，不能获取语义</li>
@@ -426,51 +423,53 @@
 <li>提出了NCI根据给定query直接生成docid</li>
 <li>设计了一个新的decoder</li>
 </ul>
-<h3 id="Neural-corpus-indexer">Neural corpus indexer</h3>
-<p>NCI是一个端到端的网络，以query为输入，输出最相关的document identifier（docid），但是只是这样就会使得模型没有记住文档的信息，因此肯定是要让模型能了解到文档的。可以把一个doc变成多个query，形成多个query-id对拼进去进入模型</p>
+<h3 id="Neural-corpus-indexer"><a href="#Neural-corpus-indexer" class="headerlink" title="Neural corpus indexer"></a>Neural corpus indexer</h3><p>NCI是一个端到端的网络，以query为输入，输出最相关的document identifier（docid），但是只是这样就会使得模型没有记住文档的信息，因此肯定是要让模型能了解到文档的。可以把一个doc变成多个query，形成多个query-id对拼进去进入模型</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>怎么映射成docid；给定文档怎么生成query；把生成的query和ground truth拼起来放入encoder-decoder，对decoder做一个改进和设计损失函数</p>
-<h4 id="Representing-document-with-semantic-identifiers">Representing document with semantic identifiers</h4>
-<p>使用hierarchical k-means，在图1a里面，先对所有的document embedding做聚类，比如分1、2、3，如果某个类多于某个阈值就进一步做聚类分11、12；21、22、23等，获得上一个类的前缀，最后得到的比如11里面的内容重新标号出111、112等得到最终的id，这就是层次多分类问题。这样的id多少有点语义信息的，后面的预测是根据前面的预测做出来的</p>
-<h4 id="Query-generation">Query generation</h4>
-<p><strong>DocT5Query</strong>：用一个巨大的transformer将一个document映射到一个query，每步根据预测出来的概率分布采样出一个词，这里采样不是用的beam search而是random sampling，作为训练数据多样性好随机性不错</p>
+<h4 id="Representing-document-with-semantic-identifiers"><a href="#Representing-document-with-semantic-identifiers" class="headerlink" title="Representing document with semantic identifiers"></a>Representing document with semantic identifiers</h4><p>使用hierarchical k-means，在图1a里面，先对所有的document embedding做聚类，比如分1、2、3，如果某个类多于某个阈值就进一步做聚类分11、12；21、22、23等，获得上一个类的前缀，最后得到的比如11里面的内容重新标号出111、112等得到最终的id，这就是层次多分类问题。这样的id多少有点语义信息的，后面的预测是根据前面的预测做出来的</p>
+<h4 id="Query-generation"><a href="#Query-generation" class="headerlink" title="Query generation"></a>Query generation</h4><p><strong>DocT5Query</strong>：用一个巨大的transformer将一个document映射到一个query，每步根据预测出来的概率分布采样出一个词，这里采样不是用的beam search而是random sampling，作为训练数据多样性好随机性不错</p>
 <p><strong>Document As Query</strong>：跟DSI一样，先把64个词作为query，然后接下来在全文随机中选10组，每组接下来的64个词又作为query</p>
-<h4 id="Prefix-aware-weight-adaptive-decoder">Prefix-aware weight-adaptive decoder</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig2.png" alt="avatar" style="zoom:70%;" /></div>
+<h4 id="Prefix-aware-weight-adaptive-decoder"><a href="#Prefix-aware-weight-adaptive-decoder" class="headerlink" title="Prefix-aware weight-adaptive decoder"></a>Prefix-aware weight-adaptive decoder</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig2.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>标准的decoder对时序信息感知还是不够，所以改了解码器</p>
 <p>假设编码是 $3_15_25_3$ 的情况下，下标表示位置，不是把355丢入学习，而是变成了(1, 3)(2, 5)(3, 5)，位置信息作为输入也加进去</p>
 <p>做softmax的时候不共享W，而是根据位置的不一样选择不一样的W，而且这个W不仅和位置相关，也应该和预测相关所以做一个新的解码器</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/frm4.png" alt="avatar" style="zoom:60%;" /></div>
-<p>最后再拼上 $h_i$ 得到 $softmax(h_iW_{ada}^i)$</p>
-<h4 id="Training-and-inference">Training and inference</h4>
-<p><strong>Consistency-based regularization</strong></p>
-<p>因为存在dropout等的一些随机性，所以要保证给一个query出来的 $z_{i,1}$ 和 $z_{i,2}$ 应该是尽量相似的</p>
+
+<p>最后再拼上 $h<em>i$ 得到 $softmax(h_iW</em>{ada}^i)$ </p>
+<h4 id="Training-and-inference"><a href="#Training-and-inference" class="headerlink" title="Training and inference"></a>Training and inference</h4><p><strong>Consistency-based regularization</strong></p>
+<p>因为存在dropout等的一些随机性，所以要保证给一个query出来的 $z<em>{i,1}$ 和 $z</em>{i,2}$ 应该是尽量相似的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/frm5.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p><strong>Training loss</strong></p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/frm6.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p><strong>Inference via beam search</strong></p>
 <p>因为每次搜索的类别都是有数目限制的，所以需要限制每次束搜索的时候要在合法的docid下</p>
-<h3 id="Experiment-30">Experiment</h3>
-<h4 id="Datasets-evaluation-metrics">Datasets &amp; evaluation metrics</h4>
-<p><strong>Datasets</strong>：Natiral Questions (NQ)和TriviaQA，两个都是去wikipedia找答案返回page</p>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><h4 id="Datasets-amp-evaluation-metrics"><a href="#Datasets-amp-evaluation-metrics" class="headerlink" title="Datasets &amp; evaluation metrics"></a>Datasets &amp; evaluation metrics</h4><p><strong>Datasets</strong>：Natiral Questions (NQ)和TriviaQA，两个都是去wikipedia找答案返回page</p>
 <p><strong>Metrics</strong>：Recall @N，Reciprocal Rank (MRR)，R-precision</p>
-<h4 id="Results-31">Results</h4>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h4><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>可以看到效果还是非常好的</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/tab3.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>最重要的是query生成，用T5生成的query效果是最好的，提出来的解码器效果也不错的，但是层次分类和暴力的32万的分类对比发现暴力其实可能也不错，然后是对比学习的阀和对beam search做合法校验</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/fig3-fig4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <p>三个不同大小模型训练速度，预测稳定性</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/tab4.png" alt="avatar" style="zoom:100%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NCI/tab5.png" alt="avatar" style="zoom:70%;" /></div>
+
 <p>效率分析，延迟100ms还可以，但是一张v100的throughput只有五十多，就是一张卡只能处理五十多个query/s</p>
-<h3 id="Limitation-Future-Works">Limitation &amp; Future Works</h3>
-<ul>
+<h3 id="Limitation-amp-Future-Works"><a href="#Limitation-amp-Future-Works" class="headerlink" title="Limitation &amp; Future Works"></a>Limitation &amp; Future Works</h3><ul>
 <li>要扩展到web scale的话需要非常庞大的模型容量</li>
 <li>推理速度离能上线还是很远</li>
 <li>新文档来的时候更新index困难，而且会变，模型又得重新训练，对不断增加文档得场景不适用</li>
 </ul>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

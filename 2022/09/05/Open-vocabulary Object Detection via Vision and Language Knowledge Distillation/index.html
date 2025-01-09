@@ -396,7 +396,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/05/Open-vocabulary%20Object%20Detection%20via%20Vision%20and%20Language%20Knowledge%20Distillation/#comments" class="article-comment-link">Comments</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 647(words)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 645(words)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2(minutes)</span>
@@ -410,59 +410,51 @@
 <p>论文地址：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2104.13921">Open-vocabulary Object Detection via Vision and Language Knowledge Distillation</a></p>
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild">https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild</a></p>
 </blockquote>
-<h2 id="ViLD：CLIP知识蒸馏做开放词库的目标检测">ViLD：CLIP知识蒸馏做开放词库的目标检测</h2>
-<h3 id="Abstract-103">Abstract</h3>
-<p>将从一个预先训练好的open-vocabulary图像分类模型（teacher）中提取的知识提取为一个两阶段的detector（student），用teacher模型编码文本和目标图像区域，训练一个student detector，其被检测到的box的区域嵌入与teacher推理的文本和图像嵌入对齐</p>
-<h3 id="Introduction-84">Introduction</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<h2 id="ViLD：CLIP知识蒸馏做开放词库的目标检测"><a href="#ViLD：CLIP知识蒸馏做开放词库的目标检测" class="headerlink" title="ViLD：CLIP知识蒸馏做开放词库的目标检测"></a>ViLD：CLIP知识蒸馏做开放词库的目标检测</h2><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>将从一个预先训练好的open-vocabulary图像分类模型（teacher）中提取的知识提取为一个两阶段的detector（student），用teacher模型编码文本和目标图像区域，训练一个student detector，其被检测到的box的区域嵌入与teacher推理的文本和图像嵌入对齐</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>本文主要想做一个open-vocabulary的目标检测，在不增加类别的基础上（base categories）不去额外标注一些黄鸭子，但是能检测出来黄鸭子，也就是模型有检测novel category的能力</p>
-<h3 id="Method-15">Method</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+
 <ul>
-<li>训练：
-<ul>
+<li>训练：<ul>
 <li>ViLD-text：给定图片和基础类，通过RPN得到region proposal，再通过conv得到region embedding，绿色的基础类通过prompt再通过文本编码器，得到绿色的文本编码，再算cross entropy loss</li>
 <li>ViLD-imgae：把抽取好的region proposal（骰子，stop sign）通过CLIP得到CLIP的embedding，希望I和R尽可能接近，就做到了知识蒸馏</li>
 </ul>
 </li>
-<li>推理：
-<ul>
+<li>推理：<ul>
 <li>给定图片和基础类+蓝色新类别，图像得到region embedding，文本通过编码做点乘，得到zero-shot的目标检测</li>
 </ul>
 </li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>这些baseline都是mask RCNN，第一阶段出region proposal，也就是图里面的N proposals；第二阶段就是根据proposals过一个detection head得到region embedding，再通过分类头得到bonding box的类别</p>
 <p>主要就是画box和分类</p>
 <ul>
-<li>
-<p>a方法是有监督的baseline</p>
-</li>
-<li>
-<p>b方法就是像CLIP一样直接把text加进去通过prompt，embedding之后与图像点乘算相似度，还是有监督学习，类别还是base category，不在基础类的都塞到背景类，这个方法只是把图像和文本连接到一起</p>
+<li>a方法是有监督的baseline</li>
+<li><p>b方法就是像CLIP一样直接把text加进去通过prompt，embedding之后与图像点乘算相似度，还是有监督学习，类别还是base category，不在基础类的都塞到背景类，这个方法只是把图像和文本连接到一起</p>
 <ul>
-<li>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/frm2.png" alt="avatar" style="zoom:60%;" /></div>
-</li>
+<li><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/frm2.png" alt="avatar" style="zoom:60%;" /></div></li>
 <li>因为只在CB上做训练，所以zero-shot的效果仍然不是很好</li>
 </ul>
 </li>
-<li>
-<p>c方法把图像做知识蒸馏，用CLIP预训练好的模型来训练student网络，这时候监督信号不再是人工标注了，而是CLIP带来的编码，就不受基础类的限制了，这就增强了CLIP的open-vocabulary的能力</p>
+<li><p>c方法把图像做知识蒸馏，用CLIP预训练好的模型来训练student网络，这时候监督信号不再是人工标注了，而是CLIP带来的编码，就不受基础类的限制了，这就增强了CLIP的open-vocabulary的能力</p>
 <ul>
 <li>如果每次都在训练的时候抽N proposals非常慢而且贵，所以作者先用region proposal network抽好了放磁盘里，也通过了CLIP得到了embedding放好了，这样训练就非常快</li>
 </ul>
 </li>
-<li>
-<p>d方法是b和c的合体，N个推理得到的算cross entorpy loss，M个抽好的算L1 loss</p>
-</li>
+<li>d方法是b和c的合体，N个推理得到的算cross entorpy loss，M个抽好的算L1 loss</li>
 </ul>
-<h3 id="Experiment-22">Experiment</h3>
-<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab5,fig4.png" alt="avatar" style="zoom:60%;" /></div>
+
 <p>直接拓展到其他数据集上的效果</p>
 <HR align=left color=#987cb9 SIZE=1>
+
 
       
     </div>

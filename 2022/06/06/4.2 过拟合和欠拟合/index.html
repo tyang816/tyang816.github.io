@@ -20,12 +20,12 @@
   
   
   <title>4.2 过拟合和欠拟合【stanford-cs329p】 | tyang</title>
-  <meta name="description" content="Who will Repay Their Loans?  假设一个放贷人雇佣了你去调查谁会去还贷款  你有100个申请人的所有信息文件 有5个人3年内违约了   一个惊讶的发现  所有的5个人面试时穿了蓝色衣服 你的模型使用了这个非常强烈的特征信号，穿蓝衣服的都给判定为会违约了，但这种肯定就过拟合了，对于实际应用而言有一定问题    Training and Generalization E">
+  <meta name="description" content="Who will Repay Their Loans? 假设一个放贷人雇佣了你去调查谁会去还贷款 你有100个申请人的所有信息文件 有5个人3年内违约了   一个惊讶的发现 所有的5个人面试时穿了蓝色衣服 你的模型使用了这个非常强烈的特征信号，穿蓝衣服的都给判定为会违约了，但这种肯定就过拟合了，对于实际应用而言有一定问题    Training and Generalization Er">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4.2 过拟合和欠拟合【stanford-cs329p】">
 <meta property="og:url" content="https://tyang816.github.io/2022/06/06/4.2%20%E8%BF%87%E6%8B%9F%E5%90%88%E5%92%8C%E6%AC%A0%E6%8B%9F%E5%90%88/index.html">
 <meta property="og:site_name" content="村雨">
-<meta property="og:description" content="Who will Repay Their Loans?  假设一个放贷人雇佣了你去调查谁会去还贷款  你有100个申请人的所有信息文件 有5个人3年内违约了   一个惊讶的发现  所有的5个人面试时穿了蓝色衣服 你的模型使用了这个非常强烈的特征信号，穿蓝衣服的都给判定为会违约了，但这种肯定就过拟合了，对于实际应用而言有一定问题    Training and Generalization E">
+<meta property="og:description" content="Who will Repay Their Loans? 假设一个放贷人雇佣了你去调查谁会去还贷款 你有100个申请人的所有信息文件 有5个人3年内违约了   一个惊讶的发现 所有的5个人面试时穿了蓝色衣服 你的模型使用了这个非常强烈的特征信号，穿蓝衣服的都给判定为会违约了，但这种肯定就过拟合了，对于实际应用而言有一定问题    Training and Generalization Er">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/4.2-img1.png">
 <meta property="article:published_time" content="2022-06-06T02:05:23.000Z">
@@ -391,96 +391,81 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <iframe src="https://player.bilibili.com/player.html?aid=209000361&bvid=BV1ah411t7Pp&cid=438434214&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: relative; width: 100%; height: 500px"> </iframe>
+
 <HR align=left color=#987cb9 SIZE=1>
-<h3 id="Who-will-Repay-Their-Loans">Who will Repay Their Loans?</h3>
-<ul>
-<li>假设一个放贷人雇佣了你去调查谁会去还贷款
-<ul>
+
+<h3 id="Who-will-Repay-Their-Loans"><a href="#Who-will-Repay-Their-Loans" class="headerlink" title="Who will Repay Their Loans?"></a>Who will Repay Their Loans?</h3><ul>
+<li>假设一个放贷人雇佣了你去调查谁会去还贷款<ul>
 <li>你有100个申请人的所有信息文件</li>
 <li>有5个人3年内违约了</li>
 </ul>
 </li>
-<li>一个惊讶的发现
-<ul>
+<li>一个惊讶的发现<ul>
 <li>所有的5个人面试时穿了蓝色衣服</li>
 <li>你的模型使用了这个非常强烈的特征信号，穿蓝衣服的都给判定为会违约了，但这种肯定就过拟合了，对于实际应用而言有一定问题</li>
 </ul>
 </li>
 </ul>
-<h3 id="Training-and-Generalization-Errors">Training and Generalization Errors</h3>
-<ul>
+<h3 id="Training-and-Generalization-Errors"><a href="#Training-and-Generalization-Errors" class="headerlink" title="Training and Generalization Errors"></a>Training and Generalization Errors</h3><ul>
 <li>训练误差：模型在训练数据集上的误差</li>
 <li>泛化误差：模型在新数据集上的误差</li>
-<li>例子：用过去的考试来练习未来的考试
-<ul>
+<li>例子：用过去的考试来练习未来的考试<ul>
 <li>在过去考试上降低了训练误差不一定能保证在未来考试上取得好成绩</li>
 <li>学生A在过去的考试上取得了误差0，可能只是把所有考试答案都背下来了</li>
 <li>学生B理解了给定答案背后的原因，即使有误差但是有思路，泛化更强</li>
 </ul>
 </li>
 </ul>
-<h3 id="Model-Complexity">Model Complexity</h3>
-<ul>
-<li>去你和多种函数的能力
-<ul>
+<h3 id="Model-Complexity"><a href="#Model-Complexity" class="headerlink" title="Model Complexity"></a>Model Complexity</h3><ul>
+<li>去你和多种函数的能力<ul>
 <li>低复杂度模型比较难拟合训练数据</li>
 <li>高复杂度模型甚至能记住训练数据</li>
 </ul>
 </li>
-<li>很难比较不同算法的复杂度
-<ul>
+<li>很难比较不同算法的复杂度<ul>
 <li>比如：树和神经网络</li>
 </ul>
 </li>
-<li>在一个算法系里面，两个因素比较重要
-<ul>
+<li>在一个算法系里面，两个因素比较重要<ul>
 <li>参数量</li>
 <li>每个学习参数的取值范围，是-1到1还是负无穷到正无穷</li>
 </ul>
 </li>
 </ul>
-<h3 id="Model-Complexity-Example-Decision-Tree">Model Complexity Example: Decision Tree</h3>
-<ul>
-<li>树大小可以通过层数来控制
-<ul>
+<h3 id="Model-Complexity-Example-Decision-Tree"><a href="#Model-Complexity-Example-Decision-Tree" class="headerlink" title="Model Complexity Example: Decision Tree"></a>Model Complexity Example: Decision Tree</h3><ul>
+<li>树大小可以通过层数来控制<ul>
 <li>在scikit-learn里面用 <code>DecisionTressRegressor(max_depth=n)</code></li>
 </ul>
 </li>
 </ul>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/stanfordML/4.2-img1.png" alt="avatar" style="zoom:60%;" /></div>
-<h3 id="Data-Complexity">Data Complexity</h3>
-<ul>
-<li>多种因素影响
-<ul>
+
+<h3 id="Data-Complexity"><a href="#Data-Complexity" class="headerlink" title="Data Complexity"></a>Data Complexity</h3><ul>
+<li>多种因素影响<ul>
 <li>样本数</li>
 <li>每个样本的元素</li>
 <li>时间空间结构</li>
 <li>多样性</li>
 </ul>
 </li>
-<li>同样的，很难比较不同的数据
-<ul>
+<li>同样的，很难比较不同的数据<ul>
 <li>比如：字符和像素</li>
 </ul>
 </li>
 </ul>
-<h3 id="Model-Selection">Model Selection</h3>
-<ul>
-<li>根据数据复杂度正确的挑选模型
-<ul>
+<h3 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h3><ul>
+<li>根据数据复杂度正确的挑选模型<ul>
 <li>最小化泛化误差</li>
 <li>也要考虑商业指标</li>
 </ul>
 </li>
-<li>先开始选一个模型系，再选择正确的超参数
-<ul>
+<li>先开始选一个模型系，再选择正确的超参数<ul>
 <li>树：树个数，最大深度</li>
 <li>神经网络：架构，深度，宽度，正则化</li>
 </ul>
 </li>
 </ul>
-<h3 id="Summary-13">Summary</h3>
-<ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
 <li>我们关心的是泛化误差</li>
 <li>模型复杂度：能拟合更的函数</li>
 <li>数据复杂度：信息量丰富程度</li>
