@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction | tyang</title>
+  <meta name="description" content="论文地址：Expert-guided protein language models enable accurate and blazingly fast fitness prediction 论文实现：https:&#x2F;&#x2F;github.com&#x2F;jschlensok&#x2F;vespag  VespaG：FNN+PLM表征在GEMME标注数据训练 Abstract Motivation: 使用湿实验注释蛋白">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction">
+<meta property="og:url" content="https://tyang816.github.io/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Expert-guided protein language models enable accurate and blazingly fast fitness prediction 论文实现：https:&#x2F;&#x2F;github.com&#x2F;jschlensok&#x2F;vespag  VespaG：FNN+PLM表征在GEMME标注数据训练 Abstract Motivation: 使用湿实验注释蛋白">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig4.png">
+<meta property="article:published_time" content="2025-01-19T12:38:06.000Z">
+<meta property="article:modified_time" content="2025-01-19T12:38:53.169Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">221</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.75px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.88px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="title">Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T12:38:06.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="title">ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T07:52:49.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/13/Large%20scale%20paired%20antibody%20language%20models/" class="title">Large scale paired antibody language models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-13T03:59:26.000Z" itemprop="datePublished">2025-01-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="title">ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-09T05:30:51.000Z" itemprop="datePublished">2025-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Iterative%20Refinement%20Graph%20Neural%20Network%20for%20Antibody%20Sequence-Structure%20Co-design/" class="title">ICLR-2022 Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:52:59.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Expert-guided protein language models enable accurate and blazingly fast fitness prediction" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="article-date">
+	  <time datetime="2025-01-19T12:38:06.000Z" itemprop="datePublished">2025-01-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="leancloud_visitors"  data-flag-title="Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2.9k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://academic.oup.com/bioinformatics/article/40/11/btae621/7907184">Expert-guided protein language models enable accurate and blazingly fast fitness prediction</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/jschlensok/vespag">https://github.com/jschlensok/vespag</a></p>
+</blockquote>
+<h2 id="VespaG：FNN-PLM表征在GEMME标注数据训练">VespaG：FNN+PLM表征在GEMME标注数据训练</h2>
+<h3 id="Abstract-21">Abstract</h3>
+<p><strong>Motivation</strong>: 使用湿实验注释蛋白质突变的影响成本仍然高昂，因此引入了VespaG，一个快速的氨基酸突变效应预测器，利用PLM的embedding作为最小深度模型的输入</p>
+<p><strong>Results</strong>: 为了克服实验训练数据的稀疏性，研究人员创建了一个基于GEMME的包含<strong>3900万个单一氨基酸变体</strong>的大型数据集，在<strong>ProteinGym基准测试</strong>（包括217个多重突变效应实验，涵盖约250万个变体）中，VespaG取得了<strong>平均Spearman相关系数为0.48 ± 0.02</strong>的成绩，能够在一台<strong>普通笔记本电脑</strong>（12核CPU，16GB RAM）上，在<strong>不到30分钟</strong>的时间内预测整个人类或果蝇蛋白质组的所有突变</p>
+<h3 id="Introduction-19">Introduction</h3>
+<p><strong>计算模型的引入</strong>可以帮助研究人员深入理解蛋白变体的功能影响，并优先考虑最具潜在价值的突变进行实验验证。然而，当前计算模型面临的主要挑战是<strong>实验数据的稀疏性</strong>。许多监督机器学习（ML）方法尽管在特定数据集上表现优异，但往往仅针对已经通过MAVE表征或与疾病相关的变体。这一局限性导致在极少数实验数据集上，各种方法之间的预测高度相关，但在<strong>人类蛋白质组的所有可能突变</strong>上，它们的预测一致性较差。此外，这些方法对数据中的<strong>噪声和不确定性</strong>高度敏感</p>
+<p>当前最成功的无监督方法中，<strong>GEMME（Global Epistatic Model for Mutational Effects）是一种表现优异的模型，它显式地建模蛋白序列的进化历史</strong>。GEMME依赖于多序列比对（MSA），通过沿着系统发育树的拓扑结构评估蛋白位点对突变的敏感性，以及适应替换所需的变异次数。该方法仅依赖少量生物学上有意义的参数，并且在输入MSA低变异性的情况下表现出良好的鲁棒性。</p>
+<p>在此工作中，研究人员提出了<strong>VespaG</strong>，该方法<strong>优化了预测速度</strong>，绕过了传统计算昂贵的掩码标记重建任务，而是直接将pLM嵌入映射到完整的突变景观。他们采用进化模型GEMME作为教师模型，训练了一个相对简单的深度学习网络（包含66万自由参数），从而避免了计算对数几率比的需要。VespaG不仅克服了实验训练数据稀缺的问题，还避免了实验数据固有的噪声和不一致性</p>
+<h3 id="Materials-and-methods-4">Materials and methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Comparison-to-state-of-the-art-methods">Comparison to state-of-the-art methods</h4>
+<p>ProteinGym上的GEMME、ESM2、TranceptEVE L、PoET等</p>
+<h4 id="Method-development-2">Method development</h4>
+<h5 id="Datasets-3">Datasets</h5>
+<p>为了生成训练数据，研究人员构建了一个主要数据集，基于<strong>人类蛋白质组</strong>，并为不同来源创建了额外的数据集，包括<strong>果蝇（Drosophila melanogaster）</strong>、<strong>大肠杆菌（Escherichia coli）</strong>、以及<strong>病毒</strong>（如流感病毒、HIV等）。每个训练数据集的构建过程如下：</p>
+<ol>
+<li>从<strong>UniProt</strong>（The UniProt Consortium 2023）下载参考蛋白质组，每个基因只包含一个蛋白质序列。</li>
+<li>剔除长度少于25个氨基酸或多于1024个氨基酸的蛋白质。</li>
+<li>通过两步去冗余处理：首先去除与测试数据冗余的蛋白质，其次去除数据集中自重复的蛋白质。</li>
+</ol>
+<p>训练和验证集按80/20的比例分割，以避免数据泄露。为了解决实验数据稀缺的问题，研究人员采用了<strong>GEMME方法</strong>。具体而言，对于每个训练集中的蛋白质，研究人员检索并对齐了一组同源序列，使用基于<strong>MMseqs2</strong>的多序列比对（MSA）生成策略来生成这些同源序列。然后，GEMME利用生成的MSA来计算突变效应得分。</p>
+<p>GEMME为每个输入的蛋白质序列生成一个完整的替代矩阵，矩阵维度为<strong>L × 20</strong>，其中L是蛋白质的长度。GEMME的得分范围为-10到+2。<strong>GEMME得分</strong>作为伪真值标准被用来训练<strong>VespaG</strong>。</p>
+<h5 id="Model-Specifications">Model Specifications</h5>
+<p>所有开发的模型都仅依赖于从预训练的pLM中提取的嵌入（embeddings）作为输入。具体来说，研究人员使用了两个预训练的pLM：</p>
+<ol>
+<li><strong>ProtT5-XL-U50</strong>：这是一个<strong>编码器-解码器</strong>的变换器架构（transformer architecture），它在<strong>Big Fantastic Database</strong>上进行了预训练，并在<strong>UniRef50</strong>数据集上进行了微调（Elnaggar等，2022年）。</li>
+<li><strong>ESM-2-T36-3B-UR50</strong>：这是一个基于<strong>BERT的编码器</strong>架构，具有30亿个参数，使用<strong>UniRef50</strong>集群的所有序列以及从UniRef90集群采样的代表链进行了训练（Lin等，2023年）。</li>
+</ol>
+<p>这两个pLM在推理时没有长度限制，因此它们能够处理完整的蛋白质序列。研究人员通过从<strong>HuggingFace</strong>平台下载预训练模型的编码器权重，并从最后一层隐藏层提取嵌入，来计算蛋白质序列的表示。<strong>ProtT5</strong>生成每个残基的1024维嵌入，<strong>ESM-2</strong>生成2560维嵌入。嵌入的提取方法可以在GitHub仓库中找到。</p>
+<p>研究人员没有对这些pLM进行微调，而是直接使用其预训练嵌入来进行变体效应的预测</p>
+<p>构建了以下五种架构用于突变效应预测：</p>
+<ol>
+<li><strong>线性回归（LinReg）</strong>：前馈神经网络（FNN）架构，没有隐藏层。</li>
+<li><strong>VespaG</strong>：具有一个256单元的隐藏层的FNN架构。</li>
+<li><strong>FNN_2_layer</strong>：具有两个隐藏层的FNN架构。</li>
+<li><strong>卷积神经网络（CNN）</strong>：包含一个1维卷积层和两个隐藏的全连接层。</li>
+<li><strong>FNN和CNN的集成模型</strong>：分别优化FNN和CNN（使用每种架构的最佳模型），最终输出为两者的平均值。</li>
+</ol>
+<h3 id="Results-11">Results</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>VespaG是一个前馈神经网络（FNN），它有一个隐藏层，包含256个隐藏单元，仅输入来自蛋白质语言模型（pLM）ESM-2的序列嵌入</p>
+<h4 id="VespaG-integrating-complementary-strengths">VespaG integrating complementary strengths</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig3.png" alt="avatar" style="zoom:50%;" /></div>
+<p>研究人员对VespaG与GEMME、ESM-2进行了深入对比，发现：</p>
+<ul>
+<li><strong>在病毒蛋白预测方面，VespaG优于ESM-2（Δρ = 0.140, P&lt;10⁻⁴），但仍低于GEMME（Δρ = -0.048, P&lt;10⁻⁴）</strong>。</li>
+<li><strong>在特定蛋白质（如酵母泛素、细菌蛋白等）上的预测表现超越GEMME，尤其在高突变敏感残基的识别方面表现出色。</strong></li>
+</ul>
+<p>此外，VespaG不依赖于多序列比对（MSA），使其在输入数据不充足时具有更强的泛化能力，避免了GEMME因MSA质量不稳定带来的不确定性。</p>
+<h4 id="VespaG-generalizing-across-multiple-organisms">VespaG generalizing across multiple organisms</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>
+<p><strong>相较于教师模型GEMME的改进</strong></p>
+<ul>
+<li>VespaG在部分蛋白（如酵母泛素蛋白RL40A）上超过了GEMME，尤其在预测高度敏感的残基（如G75和G76）时，VespaG比GEMME更加准确。</li>
+<li>GEMME在某些蛋白上的进化压力假设导致预测失误，而VespaG的深度学习方法能够更好地学习蛋白质突变与功能之间的复杂关系。</li>
+</ul>
+</li>
+<li>
+<p><strong>跨生物物种的泛化能力</strong></p>
+<ul>
+<li>研究通过在不同物种的蛋白质上进行训练（人类、果蝇、大肠杆菌、病毒等），评估模型的迁移能力。</li>
+<li>人类蛋白（5000种），果蝇蛋白（4000种），大肠杆菌蛋白（2000种），各类病毒蛋白（1500种）</li>
+</ul>
+</li>
+</ul>
+<p>结果显示，VespaG在不同物种的泛化能力良好，且在病毒蛋白上的预测性能虽然较低，但仍优于ESM-2。</p>
+<p><strong>VespaG无需重新训练即可适应新的蛋白数据集</strong>，而GEMME的性能会受限于输入的MSA质量。</p>
+<h4 id="VespaG-predictions-blazingly-fast">VespaG predictions blazingly fast</h4>
+<p>VespaG相比于其他最先进方法，在预测速度方面具有显著优势：</p>
+<ul>
+<li>
+<p>在一台普通的笔记本电脑（Intel i7-1355U，12核，1.3 GB RAM）上：</p>
+<ul>
+<li>处理73个蛋白的运行时间为<strong>5.7秒</strong>，而GEMME需要<strong>1.27小时</strong>。</li>
+<li>使用高性能CPU/GPU，VespaG可在<strong>1分钟内</strong>完成整个人类蛋白组的预测，而GEMME需要<strong>90分钟</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>与其他方法相比：</p>
+<ul>
+<li>VespaG的推理速度比ESM-2<strong>快10⁵倍</strong>（约10万倍）。</li>
+<li>比GEMME和VESPA<strong>快10³倍</strong>（约1000倍）。</li>
+</ul>
+<p>在相同计算资源下，VespaG可以在<strong>30分钟内</strong>完成整个人类蛋白组的单点突变预测，而GEMME只能完成25个蛋白的预测。</p>
+<h3 id="Discussion-5">Discussion</h3>
+<h4 id="VespaG-reached-SOTA-despite-its-simplicity">VespaG reached SOTA despite its simplicity</h4>
+<p>VespaG的卓越性能证明，即使是相对浅层的神经网络（仅包含66万可训练参数），也能够有效利用诸如GEMME这样的非监督方法所提供的信息。</p>
+<p>该方法的核心优势在于：</p>
+<ul>
+<li><strong>泛化能力强</strong>：VespaG可以利用预训练蛋白语言模型(PLM)所学习的蛋白质序列表征空间，从而在不同生物体之间进行迁移学习，而无需依赖特定的输入生成或训练方案。</li>
+<li><strong>超越传统的进化保守性假设</strong>：VespaG的pLM嵌入能够弥补GEMME的不足，例如对蛋白质泛化能力有限，尤其是在不遵循常见进化保守性趋势的情况下，如酵母泛素（Ubiquitin）蛋白。</li>
+<li><strong>病毒蛋白的挑战</strong>：尽管VespaG在病毒蛋白的预测性能不如对其他生物的预测，但它仍然优于ESM-2和SaProt，这表明监督学习有助于克服pLM在病毒蛋白上的固有局限性。</li>
+</ul>
+<h4 id="Saving-resources-as-criterion">Saving resources as criterion</h4>
+<p><strong>极快的推理速度</strong>：VespaG与其他SOTA方法相比，显著减少了计算时间和资源消耗。例如，它能够在标准消费级CPU上不到30分钟完成整个人类蛋白质组的突变预测，而GEMME在相同硬件下仅能处理25个蛋白。</p>
+<p><strong>计算资源友好</strong>：</p>
+<ul>
+<li>VespaG无需昂贵的GPU，甚至在低端硬件（Intel i7-1355U，12核，16GB RAM）上运行速度也远快于其他方法。</li>
+<li>相较于ESM-2的5.35天推理时间，VespaG减少了5个数量级（100,000倍），远超GEMME和VESPA等基于MSA的预测方法。</li>
+</ul>
+<h4 id="Gain-of-speed-at-the-expense-of-interpretability">Gain of speed at the expense of interpretability?</h4>
+<ul>
+<li>GEMME的优势在于其简单而可解释的两大参数（蛋白家族中的保守性程度与突变距离），而VespaG通过深度学习的方式学习这些关系，尽管缺乏直观的可解释性，但它在预测时提供了<strong>更精细的置信度</strong>，这对于研究人员具有重要价值。</li>
+<li>VespaG的预测可以量化突变效应的强度，而不是仅仅给出二元分类结果（影响/无影响）。</li>
+<li>在实际应用中，研究人员仍然可以使用MSA或进化树来支持VespaG的预测结果。</li>
+</ul>
+<h4 id="Interpretable-models-of-variant-effects">Interpretable models of variant effects?</h4>
+<ul>
+<li>
+<p>尽管VespaG在速度和准确性之间取得了平衡，但未来仍需开发<strong>更具生物学可解释性的模型</strong>，以提供具体的分子或机械机制解释。</p>
+</li>
+<li>
+<p>未来的改进方向：</p>
+<ul>
+<li><strong>引入GEMME的中间结果</strong>：例如进化距离等信息，可帮助pLM更准确地学习蛋白质序列的变异影响。</li>
+<li><strong>表征功能变化</strong>：结合VespaG与其他特定的表型预测方法（如稳定性预测），为蛋白质设计提供更全面的评估。</li>
+<li><strong>提高病毒蛋白的预测性能</strong>：当前pLM在病毒蛋白上的效果较差，可能由于其序列多样性较低。未来可以探索专门针对病毒蛋白的微调技术，以改进预测能力。</li>
+</ul>
+</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" title="Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction" target="_blank" rel="external">https://tyang816.github.io/2025/01/19/Expert-guided protein language models enable accurate and blazingly fast fitness prediction/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" title="ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tyang816.github.io/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/</loc>
+    
+    <lastmod>2025-01-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/2022/04/17/Temporal%20Segment%20Networks%EF%BC%9ATowards%20Good%20Practices%20for%20Deep%20Action%20Recognition/</loc>
     
     <lastmod>2025-01-19</lastmod>
@@ -2402,6 +2411,13 @@
   </url>
   
   <url>
+    <loc>https://tyang816.github.io/tags/BI/</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tyang816.github.io/tags/CV/</loc>
     <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -2416,7 +2432,7 @@
   </url>
   
   <url>
-    <loc>https://tyang816.github.io/tags/BI/</loc>
+    <loc>https://tyang816.github.io/tags/GNN/</loc>
     <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2424,13 +2440,6 @@
   
   <url>
     <loc>https://tyang816.github.io/tags/IR/</loc>
-    <lastmod>2025-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tyang816.github.io/tags/GNN/</loc>
     <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
