@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation | tyang</title>
+  <meta name="description" content="论文地址：Conditional Antibody Design as 3D Equivariant Graph Translation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;THUNLP-MT&#x2F;MEAN  MEAN：内外编码器输入重链轻链抗原联合设计CDR序列和结构 Abstract 抗体设计在治疗用途和生物学研究中具有重要价值，但现有的深度学习方法存在以下问题：1. 对补体决定区（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation">
+<meta property="og:url" content="https://tyang816.github.io/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Conditional Antibody Design as 3D Equivariant Graph Translation 论文实现：https:&#x2F;&#x2F;github.com&#x2F;THUNLP-MT&#x2F;MEAN  MEAN：内外编码器输入重链轻链抗原联合设计CDR序列和结构 Abstract 抗体设计在治疗用途和生物学研究中具有重要价值，但现有的深度学习方法存在以下问题：1. 对补体决定区（">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm1-3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm4-6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/tab3.png">
+<meta property="article:published_time" content="2025-01-19T07:52:49.000Z">
+<meta property="article:modified_time" content="2025-01-19T07:57:32.129Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">220</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">96</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-CoT/" rel="tag">cs.CoT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-ContraLern/" rel="tag">cs.ContraLern</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GAN/" rel="tag">cs.GAN</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">34</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-MoE/" rel="tag">cs.MoE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Multimodal/" rel="tag">cs.Multimodal</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Object/" rel="tag">cs.Object</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Recom/" rel="tag">cs.Recom</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Speech/" rel="tag">cs.Speech</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Transformer/" rel="tag">cs.Transformer</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Video/" rel="tag">cs.Video</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-diffusion/" rel="tag">cs.diffusion</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.79px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/IR/" style="font-size: 13.36px;">IR</a> <a href="/tags/OS/" style="font-size: 13.29px;">OS</a> <a href="/tags/SE/" style="font-size: 13.71px;">SE</a> <a href="/tags/cs-CoT/" style="font-size: 13px;">cs.CoT</a> <a href="/tags/cs-ContraLern/" style="font-size: 13.64px;">cs.ContraLern</a> <a href="/tags/cs-GAN/" style="font-size: 13.14px;">cs.GAN</a> <a href="/tags/cs-GNN/" style="font-size: 13.57px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13.29px;">cs.Meta</a> <a href="/tags/cs-MoE/" style="font-size: 13px;">cs.MoE</a> <a href="/tags/cs-Multimodal/" style="font-size: 13.5px;">cs.Multimodal</a> <a href="/tags/cs-Object/" style="font-size: 13.29px;">cs.Object</a> <a href="/tags/cs-Recom/" style="font-size: 13.21px;">cs.Recom</a> <a href="/tags/cs-Speech/" style="font-size: 13px;">cs.Speech</a> <a href="/tags/cs-Transformer/" style="font-size: 13.93px;">cs.Transformer</a> <a href="/tags/cs-Video/" style="font-size: 13.43px;">cs.Video</a> <a href="/tags/cs-diffusion/" style="font-size: 13.07px;">cs.diffusion</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="title">ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T07:52:49.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/13/Large%20scale%20paired%20antibody%20language%20models/" class="title">Large scale paired antibody language models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-13T03:59:26.000Z" itemprop="datePublished">2025-01-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="title">ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-09T05:30:51.000Z" itemprop="datePublished">2025-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Iterative%20Refinement%20Graph%20Neural%20Network%20for%20Antibody%20Sequence-Structure%20Co-design/" class="title">ICLR-2022 Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:52:59.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/07/Antigen-Specific%20Antibody%20Design%20and%20Optimization%20with%20Diffusion-Based%20Generative%20Models%20for%20Protein%20Structures/" class="title">NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-07T06:23:52.000Z" itemprop="datePublished">2025-01-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Conditional Antibody Design as 3D Equivariant Graph Translation" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="article-date">
+	  <time datetime="2025-01-19T07:52:49.000Z" itemprop="datePublished">2025-01-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="leancloud_visitors"  data-flag-title="ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 14(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a href="">Conditional Antibody Design as 3D Equivariant Graph Translation</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/THUNLP-MT/MEAN">https://github.com/THUNLP-MT/MEAN</a></p>
+</blockquote>
+<h2 id="MEAN：内外编码器输入重链轻链抗原联合设计CDR序列和结构">MEAN：内外编码器输入重链轻链抗原联合设计CDR序列和结构</h2>
+<h3 id="Abstract-8">Abstract</h3>
+<p>抗体设计在治疗用途和生物学研究中具有重要价值，但现有的深度学习方法存在以下问题：1. 对补体决定区（CDRs）的生成缺乏完整的上下文信息。2. 无法全面捕获输入结构的三维几何信息。3. 自回归生成方式效率低下，且易产生累积误差。本文提出MEAN模型，将抗体设计建模为一种条件图翻译任务，输入包括目标抗原和抗体轻链的信息，结合E(3)-等变消息传递和新型注意力机制，更好地捕获复杂几何关系，多轮渐进式全域解码同时生成CDR的1D序列和3D结构。MEAN在序列和结构建模、抗原结合的CDR设计以及结合亲和力优化任务中，显著优于当前最先进的方法，分别在抗原结合CDR设计和亲和力优化任务上提升约23%和34%</p>
+<h3 id="Introduction-8">Introduction</h3>
+<p>抗体设计在治疗用途和生物研究中具有重要价值。然而，现有基于深度学习的方法存在以下主要问题：</p>
+<ol>
+<li><strong>不完整的上下文信息</strong>：现有方法在生成互补决定区（CDRs）时，仅考虑相同抗体链的骨架上下文，而没有包括目标抗原和其他抗体链的信息。这种不足可能导致无法捕捉抗体设计中重要的性质，如结合亲和力。</li>
+<li><strong>难以捕捉输入结构的完整3D几何特性</strong>：现有方法通常将3D坐标预处理为某种不变特征，这种方式丢失了特征空间中方向相关的信息，导致在描述抗体/抗原中不同残基的空间接近性方面的效率降低。此外，许多生成模型以自回归方式逐一预测CDR序列，这种方法效率低下，并在推理阶段累积误差。</li>
+</ol>
+<p>为了解决这些问题，本文将抗体设计表述为 <strong>E(3)等变图翻译</strong> 问题，并提出了以下主要贡献：</p>
+<ol>
+<li><strong>新任务</strong>：将生成任务扩展为条件生成任务，输入不仅包含CDRs的重链上下文，还包括抗原和轻链的信息。</li>
+<li><strong>新模型</strong>：提出了一种端到端的 <strong>多通道等变注意力网络（MEAN）</strong>，能够同时生成CDRs的一维序列和三维结构。MEAN直接操作在三维坐标空间中，具有E(3)等变特性，能够完整地保留残基的几何信息。通过在内部上下文编码器和外部注意力编码器之间交替，MEAN利用3D信息传递和等变注意力机制捕捉输入复杂体内不同组件之间的长程和复杂空间交互。</li>
+<li><strong>高效预测</strong>：提出了一种逐步生成CDRs的 <strong>全幅解码策略（progressive full-shot decoding）</strong>，每轮生成同时更新序列和结构，避免了传统自回归模型中的误差累积，并在推理阶段提升了效率。</li>
+</ol>
+<p>实验结果表明，MEAN模型在以下任务上显著优于现有的最先进方法：</p>
+<ul>
+<li>序列和结构建模；</li>
+<li>抗原结合CDR设计；</li>
+<li>结合亲和力优化。</li>
+</ul>
+<p>具体而言，在抗原结合CDR设计中，MEAN比基线方法的相对提升约为23%；在亲和力优化中，相对提升约为34%。</p>
+<h3 id="Method">Method</h3>
+<h4 id="Preliminaries-Notations-and-Task-Formulation">Preliminaries, Notations and Task Formulation</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig1.png" alt="avatar" style="zoom:80%;" /></div>
+<p>抗体是“Y”形的蛋白质，由两对对称的链组成，每一对链包括一条重链和一条轻链。在每条链中，有一些常数结构域和一个可变结构域（VH / VL），其中有三个互补决定区（CDRs）。抗体的抗原结合位点位于可变结构域中，特别是在CDR-H3中。其他部分称为框架区，通常在结构上较为保守。</p>
+<p><strong>任务定义：</strong><br>
+本文的抗体设计任务是生成能与给定抗原结合的CDRs。传统的抗体设计方法专注于在重链的框架区中寻找合适的CDRs。与这些方法不同，本文不仅考虑重链的上下文，还结合抗原和轻链的信息，以便更好地控制生成抗体的结合特性。</p>
+<p><strong>图表示法：</strong><br>
+我们将每个抗体-抗原复合物表示为一个图，图中包含三个空间聚集的组件，分别是重链（VH）、轻链（VL）和抗原（VA）。图G = (V, E)中的节点V包含重链、轻链和抗原的残基，边E分为内部边（Ein）和外部边（Eex）。其中，Ein表示同一组件内的节点连接，而Eex表示跨组件的节点连接。</p>
+<p>每个节点i的特征由两个部分组成：</p>
+<ul>
+<li><strong>hᵢ</strong>：一个可训练的特征向量，表示氨基酸类型。</li>
+<li><strong>Zᵢ</strong>：一个包含多个背骨原子坐标的矩阵。</li>
+</ul>
+<p>对于生成的CDRs（即重链中的CDRs部分），我们将其初始化为掩码向量，并根据CDR前后的残基位置来分布坐标。</p>
+<p><strong>边的构建：</strong></p>
+<ul>
+<li><strong>内部边（Ein）：</strong><br>
+连接同一组件内的节点。如果两个残基之间的空间距离小于设定的阈值c₁，则建立边。相邻的残基总是建立边，以便捕获局部序列关系。</li>
+<li><strong>外部边（Eex）：</strong><br>
+连接不同组件之间的节点，如果它们之间的距离小于设定的阈值c₂（c₂ &gt; c₁）。这些边代表抗体链和抗原之间的相互作用，主要通过分子间的力传递。</li>
+</ul>
+<p><strong>全局节点（Global Nodes）：</strong><br>
+为了让生成的CDRs充分了解其所处链的整体结构，我们引入了全局节点，并将这些节点与组件内的其他节点相连。每个全局节点的坐标由相应链的可变结构域的所有坐标的均值来确定。</p>
+<h4 id="MEAN-Muti-Channel-Equivariant-Attention-Network">MEAN: Muti-Channel Equivariant Attention Network</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig2.png" alt="avatar" style="zoom:80%;" /></div>
+<p><strong>核心思想：</strong><br>
+MEAN模型通过在每一层交替使用两个模块来捕获抗体-抗原复合物中不同组件之间的几何和拓扑信息：</p>
+<ol>
+<li><strong>内部上下文编码器（Internal Context Encoder）：</strong><br>
+用于处理同一组件内的节点交互，捕获组件内部的结构信息。</li>
+<li><strong>外部注意力编码器（External Attention Encoder）：</strong><br>
+用于处理跨组件之间的节点交互，捕获抗体和抗原之间的相互作用。</li>
+</ol>
+<p>每一层的工作流程包括：</p>
+<ul>
+<li><strong>信息传递：</strong><br>
+对于每个节点，MEAN计算与邻居节点之间的E(3)-等变消息，并将该消息用于更新节点的特征向量和坐标。</li>
+<li><strong>节点更新：</strong><br>
+每一层后，节点的特征向量和坐标被更新，进入下一轮处理。</li>
+</ul>
+<p><strong>内部上下文编码器：</strong><br>
+这个编码器主要通过E(3)-等变图神经网络（EGNN）来更新节点信息。节点的特征更新包括：</p>
+<ul>
+<li>计算与邻居节点之间的消息（mᵢⱼ）。</li>
+<li>通过多层感知机（MLP）更新节点的特征（hᵢ）和坐标（Zᵢ）。</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm1-3.png" alt="avatar" style="zoom:50%;" /></div>
+<p>（l + 0.5）表示在该层中将由外部注意编码器进一步更新的特征和坐标</p>
+<p><strong>外部注意力编码器：</strong><br>
+这个模块使用图注意力机制（Graph Attention Mechanism）来描述不同组件之间残基的相关性。与传统的注意力机制不同，我们提出了一种新的E(3)-等变图注意力机制，保证了在3D空间中信息的准确传递。具体步骤包括：</p>
+<ul>
+<li>计算查询（qᵢ）、键（kᵢⱼ）和值（vᵢⱼ）向量。</li>
+<li>计算注意力权重（αᵢⱼ），并更新节点的特征和坐标。</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm4-6.png" alt="avatar" style="zoom:50%;" /></div>
+<p><strong>输出模块：</strong><br>
+在所有信息传递层之后，MEAN通过输出模块计算最终的节点特征和坐标，并预测每个残基的氨基酸类型。使用SoftMax函数计算氨基酸类型的概率分布。</p>
+<h4 id="Progressive-Full-Shot-Decoding">Progressive Full-Shot Decoding</h4>
+<p><strong>传统方法的不足：</strong><br>
+传统的生成方法（如RefineGNN）使用自回归方式逐一生成CDR序列，这会导致生成的错误随着时间的推移而累积。为了避免这种问题，MEAN提出了逐步全幅解码策略。</p>
+<p><strong>全幅解码过程：</strong></p>
+<p><strong>Progressive Full-Shot Decoding</strong> 策略的核心思想是通过多轮（而非一次性）生成来提高生成质量和效率。在每一轮中，模型不再逐个生成氨基酸或三维坐标，而是<strong>同时更新所有节点</strong>的信息，包括CDR的氨基酸序列和三维结构。</p>
+<p><strong>具体步骤：</strong></p>
+<ol>
+<li>
+<p><strong>初始输入和第一轮生成：</strong></p>
+<ul>
+<li>输入为抗体-抗原复合物的图，包括重链、轻链和抗原的特征。CDRs部分的初始特征被设定为掩码向量，并根据附近残基的坐标来初始化。</li>
+<li>在第一轮生成时，模型通过内部上下文编码器和外部注意力编码器对所有节点进行信息传递，更新每个残基的特征（氨基酸类型）和坐标（三维位置）。</li>
+</ul>
+</li>
+<li>
+<p><strong>逐步更新：</strong></p>
+<ul>
+<li>在每一轮的解码中，模型通过更新所有CDR残基的特征和坐标，使得整个结构逐渐完善。具体来说，模型首先根据当前轮次生成的结果（包括氨基酸分布和三维坐标）来更新节点的嵌入表示（hᵢ）和坐标（Zᵢ）。</li>
+<li>对所有节点进行全幅更新时，模型利用加权嵌入策略而非选择最大概率氨基酸，这样可以减少推理过程中的误差累积。加权策略通过将每个氨基酸类别的概率分布与其嵌入表示进行加权求和，避免了选择过程中可能带来的错误。</li>
+</ul>
+</li>
+<li>
+<p><strong>轮次循环：</strong></p>
+<ul>
+<li>逐步生成的过程中，每一轮的更新结果都会影响下一轮的输入。这种逐步的反馈机制使得生成结果在每一轮中都能逐渐变得更加精确和稳定。</li>
+</ul>
+</li>
+<li>
+<p><strong>最终输出：</strong></p>
+<ul>
+<li>在最后一轮，模型输出最终的CDR序列和三维结构。经过多轮更新，结果能够更好地捕捉到结构和序列之间的相互作用，使得生成的抗体更加准确。</li>
+</ul>
+</li>
+</ol>
+<p><strong>损失函数：</strong></p>
+<ul>
+<li>
+<p><strong>序列损失（Lₛₑq）：</strong> 使用交叉熵计算生成的氨基酸序列与真实序列之间的差异。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm7.png" alt="avatar" style="zoom:50%;" /></div>
+</li>
+<li>
+<p><strong>结构损失（Lₛₜʳᵤcₜ）：</strong> 使用Huber损失（Huber Loss）计算生成的坐标与真实坐标之间的差异。该方法相较于均方误差（MSE）具有更好的鲁棒性，能够应对噪声数据。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/frm8.png" alt="avatar" style="zoom:50%;" /></div>
+</li>
+</ul>
+<p>最终的损失函数是序列损失和λ结构损失的加权和</p>
+<h3 id="Experiments-3">Experiments</h3>
+<h4 id="Sequence-and-Structure-Modeling">Sequence and Structure Modeling</h4>
+<p><strong>任务描述：</strong><br>
+实验的目标是评估MEAN模型在生成抗体的1D序列（氨基酸序列）和3D结构（空间坐标）方面的能力。作者使用了 <strong>SAbDab（Structural Antibody Database）</strong> 数据集，该数据集包含3,127个抗体-抗原复合物。每个抗体包含多个互补决定区（CDRs），实验中重点评估了这些CDRs的1D序列和3D结构的恢复能力。</p>
+<p><strong>评估指标：</strong></p>
+<ul>
+<li><strong>Amino Acid Recovery (AAR)</strong>：氨基酸恢复率，即预测的1D序列与真实序列的重叠度。</li>
+<li><strong>Root Mean Square Deviation (RMSD)</strong>：3D结构预测的平均平方误差，用于衡量预测结构与真实结构之间的距离。</li>
+</ul>
+<p><strong>实验设置：</strong></p>
+<ul>
+<li><strong>数据预处理：</strong> 数据集中的每个抗体被按CDR类型（CDR-H1、CDR-H2、CDR-H3）进行聚类。每个CDR的聚类与MMseqs2进行序列相似性搜索，确保每个测试集中的CDR序列不与训练集中的序列过于相似。</li>
+<li><strong>数据分割：</strong> 按照8:1:1的比例将数据划分为训练集、验证集和测试集。</li>
+</ul>
+<p><strong>实验结果：</strong></p>
+<p>tab1</p>
+<p>实验结果表明，MEAN显著优于其他基线方法（如LSTM、RefineGNN等），在1D序列和3D结构建模任务中取得了更高的氨基酸恢复率（AAR）和更低的RMSD</p>
+<h4 id="Antigen-Binding-CDR-H3-Design">Antigen-Binding CDR-H3 Design</h4>
+<p><strong>任务描述：</strong><br>
+该实验评估了MEAN在设计结合特定抗原的CDR-H3时的表现。设计任务的目标是生成能够高效绑定给定抗原的CDR-H3序列，并与真实结构匹配。</p>
+<p><strong>评估指标：</strong></p>
+<ul>
+<li><strong>Amino Acid Recovery (AAR)</strong>：氨基酸恢复率，评估生成的序列与真实序列的匹配程度。</li>
+<li><strong>TM-score</strong>：用于衡量蛋白质结构之间的相似性，范围从0到1，值越大表示结构越相似。</li>
+<li><strong>RMSD</strong>：3D结构之间的均方根偏差，评估生成结构与真实结构的差异。</li>
+</ul>
+<p><strong>实验设置：</strong><br>
+实验中，作者从 <strong>RAbD（Antigen-Antibody Database）</strong> 中选取了60个抗体-抗原复合物进行设计，并将其作为测试集。训练集仍然使用 <strong>SAbDab</strong> 数据集，训练的集群/抗体数量为1443/32638,160/339进行验证。通过生成多个候选CDR-H3序列，作者对比了生成序列与目标抗原结合的能力。</p>
+<p><strong>实验结果：</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/tab2.png" alt="avatar" style="zoom:80%;" /></div>
+<p>实验表明，MEAN在抗原结合设计任务中优于所有其他方法，包括经典的RosettaAD方法。MEAN在AAR和TM-score上都表现优异，尤其在TM-score上，MEAN接近于0.99，表明生成的结构与真实结构几乎完全重合</p>
+<h4 id="Affinity-Optimization">Affinity Optimization</h4>
+<p><strong>任务描述：</strong><br>
+该实验评估了MEAN在优化抗体亲和力方面的能力，目标是通过联合优化CDR-H3的序列和结构来提高抗体与抗原的结合亲和力。</p>
+<p><strong>评估指标：</strong></p>
+<ul>
+<li><strong>∆∆G（变化的结合能）</strong>：衡量亲和力优化的效果，∆∆G值越低表示亲和力越强。</li>
+</ul>
+<p><strong>实验设置：</strong><br>
+作者使用 <strong>SKEMPI V2.0</strong>（Structural Kinetic and Energetic Mutant Protein Interactions）数据库来进行亲和力优化。实验中，作者通过 <strong>Iterative Target Augmentation (ITA)</strong> 算法进行优化，该算法通过生成多个候选结构并选择最佳的抗原-抗体结合体来实现亲和力优化。</p>
+<p><strong>实验结果：</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+<p>实验表明，表2右侧，MEAN显著改善了抗体的亲和力，相较于其他方法，MEAN能产生具有更低亲和力变化（更强结合力）的抗体。</p>
+<h4 id="CDR-H3-Design-with-Docked-Template">CDR-H3 Design with Docked Template</h4>
+<p><strong>任务描述：</strong><br>
+该实验探讨了如何利用已知的抗体-抗原结合模板来设计新的CDR-H3。目标是通过将已知的抗体框架与抗原结合模板结合，生成具有高亲和力的新CDR-H3序列。</p>
+<p><strong>实验设置：</strong><br>
+作者使用 <strong>HDOCK</strong> 工具对抗原进行对接，生成抗体-抗原复合物的模板，然后利用MEAN模型生成新的抗原结合CDR-H3序列，并评估其亲和力。</p>
+<p><strong>实验结果：</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/fig4.png" alt="avatar" style="zoom:80%;" /></div>
+<p>通过基于对接模板的生成，MEAN能够生成比C-RefineGNN和原始抗体更具亲和力的抗体。具体结果如下：</p>
+<ul>
+<li><strong>图示</strong>：作者展示了由MEAN设计的CDR-H3序列与原始结构在亲和力上的明显改进。优化后的抗体表现出显著提高的亲和力。</li>
+</ul>
+<h3 id="Analysis">Analysis</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MEAN/tab3.png" alt="avatar" style="zoom:80%;" /></div>
+<p>为了验证MEAN模型中的各个组成部分是否必要，作者进行了消融实验，结果显示：</p>
+<ul>
+<li>移除全局节点或注意力机制都会导致性能下降。</li>
+<li>只使用重链会显著削弱性能，表明考虑抗原和轻链的上下文信息至关重要。</li>
+<li>与逐步全幅解码相比，使用迭代优化方法的模型性能较差，证明逐步全幅解码策略在计算效率和生成质量方面的优势。</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" title="ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation" target="_blank" rel="external">https://tyang816.github.io/2025/01/19/Conditional Antibody Design as 3D Equivariant Graph Translation/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/01/13/Large%20scale%20paired%20antibody%20language%20models/" title="Large scale paired antibody language models"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
