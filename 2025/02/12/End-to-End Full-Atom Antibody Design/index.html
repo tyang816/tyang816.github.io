@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICML-2023 End-to-End Full-Atom Antibody Design | tyang</title>
+  <meta name="description" content="论文地址：End-to-End Full-Atom Antibody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;THUNLP-MT&#x2F;dyMEAN  DyMEAN：端到端影子互补桥接抗体抗原 Abstract 介绍了一种名为 dynamic Multi-channel Equivariant grAph Network (dyMEAN) 的新模型，它是一个 端到端（end-to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICML-2023 End-to-End Full-Atom Antibody Design">
+<meta property="og:url" content="https://tyang816.github.io/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：End-to-End Full-Atom Antibody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;THUNLP-MT&#x2F;dyMEAN  DyMEAN：端到端影子互补桥接抗体抗原 Abstract 介绍了一种名为 dynamic Multi-channel Equivariant grAph Network (dyMEAN) 的新模型，它是一个 端到端（end-to">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm2-6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm8-11.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm12.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm13.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm14.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm15.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm16.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm17-18.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm19.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm20.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm21.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm22-23.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab5.png">
+<meta property="article:published_time" content="2025-02-12T12:16:22.000Z">
+<meta property="article:modified_time" content="2025-02-12T12:17:36.192Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">222</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.86px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.29px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.57px;">IR</a> <a href="/tags/OS/" style="font-size: 13.43px;">OS</a> <a href="/tags/SE/" style="font-size: 13.71px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.29px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="title">ICML-2023 End-to-End Full-Atom Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-12T12:16:22.000Z" itemprop="datePublished">2025-02-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="title">Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T12:38:06.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="title">ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T07:52:49.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/13/Large%20scale%20paired%20antibody%20language%20models/" class="title">Large scale paired antibody language models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-13T03:59:26.000Z" itemprop="datePublished">2025-01-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/09/LlamaFactory%EF%BC%9AUnified%20Efficient%20Fine-Tuning%20of%20100+%20Language%20Models/" class="title">ACL-2024 LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-09T05:30:51.000Z" itemprop="datePublished">2025-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/End-to-End Full-Atom Antibody Design" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICML-2023 End-to-End Full-Atom Antibody Design
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="article-date">
+	  <time datetime="2025-02-12T12:16:22.000Z" itemprop="datePublished">2025-02-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="leancloud_visitors"  data-flag-title="ICML-2023 End-to-End Full-Atom Antibody Design">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5.9k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 22(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v202/kong23c.html">End-to-End Full-Atom Antibody Design</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/THUNLP-MT/dyMEAN">https://github.com/THUNLP-MT/dyMEAN</a></p>
+</blockquote>
+<h2 id="DyMEAN：端到端影子互补桥接抗体抗原">DyMEAN：端到端影子互补桥接抗体抗原</h2>
+<h3 id="Abstract-18">Abstract</h3>
+<p>介绍了一种名为 <strong>dynamic Multi-channel Equivariant grAph Network (dyMEAN)</strong> 的新模型，它是一个 <strong>端到端（end-to-end）</strong> 的 <strong>全原子（full-atom）</strong> 抗体设计方法。该方法的主要目标是改进现有的 <strong>基于学习的抗体设计</strong> 方法，解决以下两个主要问题：</p>
+<ol>
+<li><strong>现有方法的局限性</strong>：
+<ul>
+<li>现有的学习方法通常仅关注抗体设计流程的某个子任务，使得整体方案次优或资源消耗过大。</li>
+<li>这些方法要么忽略抗体的<strong>框架区（framework regions）</strong>，要么忽略<strong>侧链（side chains）</strong>，无法完整捕捉抗体的<strong>全原子几何信息</strong>。</li>
+</ul>
+</li>
+<li><strong>dyMEAN 的解决方案</strong>：
+<ul>
+<li><strong>端到端建模</strong>：dyMEAN 可直接处理 <strong>仅提供抗原表位（epitope）和部分抗体序列（incomplete sequence）</strong> 的问题，而无需多阶段流水线。</li>
+<li><strong>结构初始化</strong>：使用结构知识进行<strong>初始结构猜测</strong>（structural initialization）。</li>
+<li><strong>影子互补位（shadow paratope）</strong>：提出影子互补位来桥接抗原-抗体的交互信息。</li>
+<li><strong>多通道等变编码器（adaptive multi-channel equivariant encoder）</strong>：该编码器可以在全原子建模时，适应不同残基的<strong>原子数目</strong>变化，同时更新 <strong>1D 序列和 3D 结构</strong>。</li>
+<li><strong>最终对接（docking）</strong>：通过对齐影子互补位，完成抗原-抗体的结合结构预测。</li>
+</ul>
+</li>
+<li><strong>实验验证</strong>：
+<ul>
+<li>通过在 <strong>CDR-H3 设计（epitope-binding CDR-H3 design）</strong>、<strong>复合结构预测（complex structure prediction）</strong> 和 <strong>亲和力优化（affinity optimization）</strong> 三个任务上的实验，验证了 dyMEAN 在 <strong>端到端框架和全原子建模</strong> 方面的优越性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Introduction-17">Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig1.png" alt="avatar" style="zoom:50%;" /></div>
+<p>本文研究的是 <strong>抗体设计（antibody design）</strong>，其在 <strong>治疗学（therapeutics）</strong> 和 <strong>生物学（biology）</strong> 领域具有重要应用。然而，抗体设计仍然是一个极具挑战性的任务，主要原因包括 <strong>互补决定区（CDRs）</strong> 的高变异性以及抗原-抗体相互作用规律的复杂性。</p>
+<p>近年来，虽然计算方法在抗体设计方面取得了一些进展，但仍然存在两大核心问题：</p>
+<ol>
+<li><strong>现有方法多采用多阶段流水线（pipeline-based approach），结构预测、docking、CDR生成、side-chain packing，缺乏整体优化，导致结果次优或计算开销大。</strong></li>
+<li><strong>缺乏全原子级别的建模（full-atom modeling），导致对抗原-抗体复合物结构的描述不够精确。</strong></li>
+</ol>
+<p>本文提出了一种新的 <strong>端到端全原子抗体设计模型</strong>——<strong>dyMEAN（dynamic Multi-channel Equivariant grAph Network）</strong>，以克服上述问题。该模型直接从 <strong>抗原表位（epitope）</strong> 和 <strong>不完整抗体序列（incomplete antibody sequence）</strong> 生成完整的 <strong>1D 序列和 3D 结构</strong>，并通过 <strong>影子互补位（shadow paratope）</strong> 机制以及 <strong>E(3)-等变（E(3)-equivariance）</strong> 编码器提高抗体设计的准确性和对接（docking）精度</p>
+<p><strong>现有计算方法的不足</strong></p>
+<ol>
+<li>基于能量优化的方法采用统计能量函数（如 Rosetta）优化抗体结构，但能量函数的表达能力有限，难以准确建模抗体-抗原相互作用。</li>
+<li>训练 <strong>语言模型（Language Models, LMs）</strong> 仅使用抗体的 <strong>1D 序列</strong> 进行优化，由于缺乏 <strong>结构信息（3D Geometry）</strong>，序列生成效果受限。</li>
+<li>基于深度生成模型的序列-结构联合设计可以<strong>同时生成 CDR 序列和 3D 结构</strong> 有上下文建模不完整等问题</li>
+</ol>
+<p>为了克服上述问题，本文提出 <strong>dyMEAN（dynamic Multi-channel Equivariant grAph Network）</strong>，其特点如下：</p>
+<ol>
+<li>
+<p>直接从 <strong>抗原表位（epitope）</strong> 和 <strong>不完整抗体序列</strong> 生成 <strong>完整的抗体序列和 3D 结构</strong>，<strong>不依赖多阶段流水线</strong>，避免误差累积，减少计算资源消耗。</p>
+</li>
+<li>
+<p>通过 <strong>保守残基（conserved residues）</strong> 生成 <strong>抗体框架区（framework regions）的初始结构</strong>。</p>
+</li>
+<li>
+<p>在抗原表位附近创建<strong>影子互补位</strong>（shadow paratope），它：</p>
+<ul>
+<li><strong>共享</strong> 真实 CDR-H3 的 <strong>隐藏状态</strong>。</li>
+<li><strong>独立优化坐标</strong>，保证 <strong>抗体-抗原相互作用不依赖抗体初始位置</strong></li>
+</ul>
+</li>
+<li>
+<p>自适应多通道等变编码器</p>
+<ul>
+<li>
+<p>采用 <strong>E(3)-等变（E(3)-equivariant）</strong> 机制，同时更新 <strong>1D 序列和 3D 结构</strong>。</p>
+</li>
+<li>
+<p>处理 <strong>不同残基的可变原子数</strong>，支持 <strong>全原子建模（Full-Atom Modeling）</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>通过影子互补位 <strong>对齐真实 CDR-H3</strong>，实现抗体对接，生成最终的抗原-抗体复合物</p>
+</li>
+</ol>
+<h3 id="Notations-and-Definitions">Notations and Definitions</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig2.png" alt="avatar" style="zoom:70%;" /></div>
+<p>抗体（Antibody）是一种 <strong>Y 形对称蛋白质</strong>，由两个相同的链组成，每条链包括：</p>
+<ul>
+<li><strong>重链（Heavy Chain, VH）</strong></li>
+<li><strong>轻链（Light Chain, VL）</strong></li>
+</ul>
+<p>每条链由 <strong>多个恒定域（Constant Domains）</strong> 和 <strong>一个可变域（Variable Domain）</strong> 组成：</p>
+<ul>
+<li><strong>恒定域（Constant Domains）</strong> 在不同抗体中保持不变。</li>
+<li><strong>可变域（Variable Domains）</strong> 负责 <strong>特异性结合不同的抗原</strong>，是抗体设计的核心关注点。</li>
+</ul>
+<p>本文中，我们使用 $V_H$ 和 $V_L$  分别表示 <strong>重链（VH）和轻链（VL）的可变域</strong>。可变域由 <strong>四个框架区（Framework Regions, FRs）</strong> 和 <strong>三个互补决定区（Complementarity Determining Regions, CDRs）</strong> 交替排列构成</p>
+<p><strong>抗体的结合区域称为互补位（Paratope）</strong>，而<strong>抗原的结合区域称为表位（Epitope）</strong>，本文中，<strong>互补位专指 CDR-H3</strong>，因为它在抗原结合中起着主导作用</p>
+<ol>
+<li>
+<p>抗体和抗原的图表示</p>
+<ol>
+<li><strong>抗原表位图（Epitope Graph）</strong>：$G_E(V_E,E_E)$</li>
+<li><strong>抗体图（Antibody Graph）</strong>：$G_A(V_A,E_A)$</li>
+</ol>
+</li>
+<li>
+<p>残基的特征表示</p>
+<ol>
+<li>氨基酸类型 $s_i$：残基的氨基酸种类（如 Ala、Ser、Glu）。</li>
+<li>多通道3D坐标矩阵 $X_i\in \mathbb{R}^{3\times c_i}$
+<ol>
+<li>$c_i$ 代表该残基得原子数（包括主链和侧链）</li>
+<li>由于不同氨基酸的侧链结构不同，$c_i$ 不固定</li>
+<li>为了兼容不同残基的原子数，dyMEAN 采用 <strong>多通道表示</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>图的边构造</p>
+<ol>
+<li>
+<p>dyMEAN 采用 <strong>k-近邻（kNN）</strong> 机制来构造图的边，计算两个残基 $v_i$ 和 $v_j$ 之间的最小成对原子距离：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm1.png" alt="avatar" style="zoom:50%;" /></div>
+<p>其中：p和q表示原子坐标</p>
+</li>
+</ol>
+</li>
+<li>
+<p>此外还在重链、轻链和抗原表位上增加了三个全局节点</p>
+</li>
+</ol>
+<h4 id="Task-Definition">Task Definition</h4>
+<p>输入 <strong>抗原表位 + 部分抗体序列</strong>，预测 <strong>完整的 CDR-H3 序列和 3D 结构</strong>，预测结果应能 <strong>正确对接到抗原表位</strong>。</p>
+<h3 id="Our-Method-dyMEAN">Our Method: dyMEAN</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p><strong>每个顶点</strong>（来自抗原表位图 $G_E$ ，抗体图 $G_A$ 以及互补位子图 $G_P$ ）被赋予：</p>
+<ul>
+<li>一个 <strong>不变向量（invariant vector）</strong> $h_i\in\mathbb{R}^d$</li>
+<li>一个 <strong>等变坐标矩阵（equivariant coordinate matrix）</strong> $X_i\in\mathbb{R}^{3\times c_i}$</li>
+</ul>
+<p>总体流程可以表示为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm2-6.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中：</p>
+<ul>
+<li><strong>SI（Structural Initialization，结构初始化）</strong>：
+<ul>
+<li>通过已知的 <strong>不完整抗体序列</strong> 预测 <strong>初始坐标</strong> $X_i^{(0)}$ 和隐藏状态 $h_i^{(0)}$</li>
+</ul>
+</li>
+<li><strong>SP（Shadow Paratope，影子互补位）</strong>：
+<ul>
+<li>在 <strong>抗原表位</strong> 和 <strong>互补位</strong> 之间引入 <strong>影子互补位</strong> $G_S$，该影子互补位共享 CDR-H3 的隐藏状态，连接抗原和抗体，为 docking 提供锚点。</li>
+</ul>
+</li>
+<li><strong>AME（Adaptive Multi-channel Encoder，自适应多通道编码器）</strong>：
+<ul>
+<li>迭代更新所有顶点的 <strong>隐藏状态</strong> $h_i$ 和坐标 $X_i$</li>
+</ul>
+</li>
+<li><strong>预测模块（Prediction）</strong>：
+<ul>
+<li>计算 **CDR-H3 氨基酸分布 ** $p_i$</li>
+</ul>
+</li>
+<li><strong>对接模块（Docking）</strong>：
+<ul>
+<li>通过 <strong>对齐影子互补位</strong> $G_S$ 完成抗体-抗原结合。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Structural-Initialization-with-Conserved-Residues">Structural Initialization with Conserved Residues</h4>
+<p>在输入数据中，抗体序列 ${s_i}_{i\in V_A,i\notin V_P}$  <strong>缺失了 CDR-H3 信息</strong>，同时 <strong>3D 结构未知</strong>。因此，dyMEAN 需要初始化 <strong>抗体隐藏状态</strong> $h_i^{(0)}$ 和3D坐标 $X_i^{(0)}$</p>
+<p><strong>隐藏状态初始化</strong> $h_i^{(0)}$</p>
+<p>每个残疾的隐藏状态是氨基酸类型+位置编码得到，$h_i^{(0)}=f(s_i,r_i)=f_{s_i}+f_{r_i}$，对于缺失的 CDR 区域，dyMEAN 会用一个特殊类型 <strong>[MASK]</strong> 来表示这些残基。</p>
+<p><strong>初始化 3D 坐标</strong> $X_i^{(0)}$</p>
+<p>框架区（FRs）通常是保守的，因此，dyMEAN 使用 <strong>已知抗体结构中框架区的坐标</strong> 来初始化抗体的 <strong>3D 坐标</strong> ($X_i^{(0)}$)，具体步骤如下：</p>
+<ol>
+<li><strong>对齐保守残基</strong>：
+<ul>
+<li>通过对比 <strong>抗体序列</strong> 和 <strong>结构数据库中的抗体序列</strong>，识别出在多个抗体中都保持一致的残基，这些被认为是保守的残基。</li>
+<li><strong>通过抗体编号系统（如 IMGT 编号系统）</strong> 对抗体序列进行比对，找到 <strong>在超过 95% 的抗体中类型一致的残基</strong>。</li>
+</ul>
+</li>
+<li><strong>Kabsch 对齐算法</strong>：
+<ul>
+<li>使用 <strong>Kabsch 算法</strong> 将 <strong>框架区的保守残基</strong> 的 <strong>主链原子（backbone atoms）</strong> 进行对齐，从而得到这些保守残基的平均 <strong>3D 坐标</strong>。</li>
+<li>得到的坐标将用于初始化 <strong>框架区的 3D 坐标</strong>。</li>
+</ul>
+</li>
+<li><strong>插值和扩展</strong>：
+<ul>
+<li>对于框架区中的非保守残基，dyMEAN 通过 <strong>线性插值</strong> 将其坐标值插入到保守残基之间。对于位于链两端的残基，通过从最近的保守残基开始，进行 <strong>向外的线性插值</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>坐标的标准化</strong></p>
+<p>完成坐标初始化后，dyMEAN 会对 <strong>坐标进行标准化</strong>：</p>
+<ul>
+<li>对所有抗体的坐标进行 <strong>3D 平移</strong>，确保它们的 <strong>均值为 0</strong>。</li>
+<li><strong>1D 方差标准化</strong>：对所有抗体的坐标进行 <strong>1D 方差标准化</strong>，确保不同抗体之间的尺度一致。</li>
+</ul>
+<p>通过这种方式，dyMEAN 使用保守残基的结构信息为 <strong>框架区</strong> 提供了一个 <strong>合理的初始结构猜测</strong>。这为后续的 <strong>影子互补位（shadow paratope）</strong> 建立和 <strong>多通道消息传递（multi-channel message passing）</strong> 打下了基础</p>
+<h4 id="E-3-Invariant-Attachment-of-Shadow-Paratope">E(3)-Invariant Attachment of Shadow Paratope</h4>
+<p>在 dyMEAN 方法中，为了增强抗体与抗原之间的信息交换，研究者提出了<strong>Shadow Paratope</strong>（影子互补位点）的概念。它是一种在抗原的表位（epitope）附近附加的伪互补位点副本，主要具有两个关键作用：</p>
+<ol>
+<li><strong>传递 E(3)-不变（E(3)-invariant）信息</strong>：影子互补位点与原始互补位点共享相同的隐藏状态 $h_i$ 和拓扑结构，从而在抗原与抗体之间进行信息交换，而不依赖于抗体的初始位置。</li>
+<li><strong>作为关键对接点</strong>：影子互补位点将在抗体与抗原的对接过程中（详见 §4.4）发挥关键作用。</li>
+</ol>
+<p>值得注意的是，由于影子互补位点<strong>仅交换 E(3)-不变的信息（即隐藏状态 $h_i$），而不是坐标 $X_i$</strong>，因此其 3D 坐标和最终对接结构不会受到抗体初始位置的影响。这种特性确保了 dyMEAN 方法的通用性和鲁棒性。</p>
+<p><strong>影子互补位点的构造</strong></p>
+<p>影子互补位点由一个子图 $G_s=(V_S,E_S)$ 表示，其中“</p>
+<ul>
+<li>顶点集 $V_S$ 包含影子互补位点的残基</li>
+<li>边集 $E_S$ 分为两部分：
+<ul>
+<li><strong>内部边</strong>：直接复制自原始互补位点之间的连接。</li>
+<li><strong>外部边</strong>：用于连接影子互补位点和抗原表位（epitope）。</li>
+</ul>
+</li>
+</ul>
+<p>对任意表位残基 $v_i \in V_E$ 和影子互补位点 $v_j \in V_S$，其外部边根据<strong>k 近邻（kNN）距离</strong>构造：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm7.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中，$\varphi_e$ 是一个<strong>多层感知机（MLP, Multi-Layer Perceptron）</strong>，用于学习特定的距离表示。</p>
+<p><strong>影子互补位点的初始化</strong></p>
+<ul>
+<li>影子互补位点的<strong>隐藏向量</strong> $h_i$ 是从原始互补位点复制而来，以保证一致性。</li>
+<li>影子互补位点的<strong>坐标</strong> $X_i$ <strong>按照标准高斯分布 $N(0, I)$ 在表位中心附近初始化</strong>，确保在训练初期的随机性，同时不会破坏最终的 E(3)-不变性。</li>
+</ul>
+<p>最终，影子互补位点子图 $G_S$ 被<strong>合并</strong>到表位图 $G_E$ 中，从而构建一个新的图结构 $G_E \cup G_S$，用于后续的消息传递和抗体对接</p>
+<h4 id="Adaptive-Multi-Channel-Equivariant-Encoder">Adaptive Multi-Channel Equivariant Encoder</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm8-11.png" alt="avatar" style="zoom:60%;" /></div>
+<p><strong>Geometric Relation Extractor</strong> <em>$T_R$</em></p>
+<ol>
+<li>
+<p>计算通道级别的欧几里得距离，给定 $X_i\in\mathbb{R}^{3\times c_i}$ 和 $X_j\in\mathbb{R}^{3\times c_j}$ ，对于每个通道（每个原子）都计算 $D_{ij}(p, q) = ||X_i(:, p) - X_j(:, q)||_2$</p>
+</li>
+<li>
+<p>计算加权相关性</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm12.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 $w_{i}\in\mathbb{R}^{c_i\times 1}$ 和 $w_{j}\in\mathbb{R}^{c_j\times 1}$ ， $A_{i}\in\mathbb{R}^{c_i\times d}$  和 $A_{j}\in\mathbb{R}^{c_j\times d}$</p>
+<p>最后的 $R_{i,j}\in\mathbb{R}^{d\times d}$ 保持固定维度，确保输入的维度一致</p>
+</li>
+</ol>
+<p><strong>Geometric Message Scaler</strong>, $T_S$</p>
+<p>$T_S$ 负责 <strong>调整几何信息的尺度</strong>，确保不同残基的坐标信息能有效地传递和融合，坐标 $X\in\mathbb{R}^{3\times c}$ ，非几何信息 $s=\phi_x(m_{ij})\in\mathbb{R}^C$，其中C是通道数的上界大小，$T_S(X,s)$ 如下计算：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm13.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 $s’\in\mathbb{R}^c$ 是 s的平均池化，window size C-c+1，stride=1，diag(·)是矩阵的对角元素</p>
+<p><strong>Information Exchanging between $G_E$ and $G_A$</strong></p>
+<p><strong>抗原表位图 $G_E$</strong> 和 <strong>抗体图 $G_A$</strong> <strong>是初始状态下不直接连接的</strong>，但模型需要在二者之间进行有效的信息交换，以优化 <strong>抗体-抗原结合（docking）</strong>。为了解决这个问题，dyMEAN <strong>通过影子互补位（Shadow Paratope, $G_S$）</strong> 进行信息传递</p>
+<ol>
+<li><strong>第一阶段（Antibody Graph $G_A$ 处理）</strong>
+<ul>
+<li>先在 <strong>抗体图 $G_A$</strong> 上运行 <strong>1 层 AME（1-layer AME）</strong>。</li>
+<li><strong>将计算得到的隐藏向量 $h_i$ 从抗体互补位（Paratope $G_P$）复制到影子互补位（Shadow Paratope GSG_SGS）</strong>，使得 GSG_SGS 具有抗体互补位的关键信息。</li>
+</ul>
+</li>
+<li><strong>第二阶段（Epitope Graph $G_E$ 与 Shadow Paratope $G_S$ 处理）</strong>
+<ul>
+<li>在 <strong>联合图 $G_E \cup G_S$</strong> 上运行 <strong>1 层 AME</strong>，交换抗原表位和影子互补位之间的信息。</li>
+<li><strong>将影子互补位 $G_S$ 的隐藏向量 $h_i$ 反向复制回抗体互补位 $G_P$</strong>，使抗体获得抗原表位的信息。</li>
+</ul>
+</li>
+<li><strong>重复交替计算</strong>
+<ul>
+<li>上述两步 <strong>交替执行 LLL 层</strong>，在抗原和抗体之间反复交换信息，确保二者的交互信息逐渐收敛。</li>
+<li>之后，在 <strong>抗体图 $G_A$ 上额外执行 1 层 AME</strong>，以将更新的信息传播到整个抗体结构中。</li>
+</ul>
+</li>
+</ol>
+<p>dyMEAN 采用的 <strong>几何关系提取器（Geometric Relation Extractor, TR）</strong> 和 <strong>几何消息缩放器（Geometric Message Scaler, TS）</strong> 具有以下等变性属性：</p>
+<ul>
+<li><strong>TR 是 $E(3)$-不变（E(3)-Invariant）</strong>：保证了计算的几何关系在旋转、平移、反射下保持不变。</li>
+<li><strong>TS 是 $O(3)$-等变（O(3)-Equivariant）</strong>：确保在任何旋转下，消息传递保持等变性。</li>
+<li><strong>信息交换过程 $G_E ↔ G_A$ 通过 $G_S$ 进行，并且是 $E(3)$-不变的</strong>。</li>
+</ul>
+<h4 id="Prediction-Docking-and-Training-Losses">Prediction, Docking and Training Losses</h4>
+<p><strong>Prediction</strong></p>
+<p>dyMEAN 采用 <strong>逐步全镜头解码策略（progressive full-shot decoding strategy）</strong> 进行 <strong>CDR-H3 1D 氨基酸序列</strong> 和 <strong>3D 结构</strong> 预测，并在 T 轮迭代中逐步优化：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm14.png" alt="avatar" style="zoom:60%;" /></div>
+<p>dyMEAN 使用 <strong>多层感知机（MLP, Multi-Layer Perceptron）</strong> 进行 CDR-H3 的氨基酸预测：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm15.png" alt="avatar" style="zoom:60%;" /></div>
+<p>隐藏状态 $h_i^{(t)}$ 在每轮迭代后都会更新：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm16.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 $f(s_i,r_i)=f_{s_i}+f_{r_i}$ 是抗体序列的嵌入，$p_i^{(t)}(j)$   表示 CDR-H3 位置 i 处的氨基酸 j 的概率，$\phi_d(h_i^{(t)})$ 是memory term</p>
+<p>每次迭代后，dyMEAN 重新计算 <strong>抗体图 $G_A$ 和抗原表位图 $G_E$ 之间的边</strong>，以更新其拓扑结构</p>
+<p><strong>Docking</strong></p>
+<p><strong>最终迭代</strong> 结束后，dyMEAN 采用 <strong>Kabsch 算法（Kabsch, 1976）</strong> 进行抗体-抗原对接：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm17-18.png" alt="avatar" style="zoom:60%;" /></div>
+<ul>
+<li>
+<p>影子互补位 GSG_SGS 提供 <strong>抗体 CDR-H3 预测结构的参考对接点</strong>。</p>
+</li>
+<li>
+<p><strong>Kabsch 对齐的目标</strong> 是将 CDR-H3（$V_P$）调整到影子互补位（$V_S$）的位置，以优化抗原-抗体的对接关系。</p>
+</li>
+</ul>
+<p><strong>Loss Function</strong></p>
+<p>使用 <strong>交叉熵损失（Cross-Entropy Loss）</strong> 监督 CDR-H3 氨基酸预测：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm19.png" alt="avatar" style="zoom:60%;" /></div>
+<p><strong>Huber 损失（Huber Loss）</strong> 用于训练 <strong>最终 3D 坐标</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm20.png" alt="avatar" style="zoom:60%;" /></div>
+<p>此外，还添加了 <strong>化学键长监督损失</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm21.png" alt="avatar" style="zoom:60%;" /></div>
+<p>最终的结构损失是两者相加</p>
+<p>为了优化 <strong>抗体-抗原对接质量</strong>，dyMEAN 采用 <strong>两个额外损失</strong>：</p>
+<p>**影子互补位坐标损失 **和 <strong>外部距离损失</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm22-23.png" alt="avatar" style="zoom:60%;" /></div>
+<p>最终的dock损失是两者相加</p>
+<h3 id="Experiments-6">Experiments</h3>
+<p>dyMEAN 在 <strong>SAbDab 数据集</strong> 上训练，并使用 <strong>PyTorch 分布式计算框架</strong> 进行加速。</p>
+<h3 id="2-1-训练超参数"><strong>2.1. 训练超参数</strong></h3>
+<p><strong>训练细节</strong></p>
+<ul>
+<li><strong>优化器</strong>：Adam</li>
+<li><strong>初始学习率</strong>：$1 \times 10^{-3}$，<strong>指数衰减</strong> 到 $1 \times 10^{-4}$。</li>
+<li><strong>批量大小（Batch Size）</strong>：16</li>
+<li>训练轮数（Epochs）：
+<ul>
+<li><strong>CDR-H3 设计 &amp; 亲和力优化</strong>：200 轮</li>
+<li><strong>复合物结构预测</strong>：250 轮</li>
+</ul>
+</li>
+<li>梯度更新策略：<strong>采用余弦调度（cosine schedule）降低学习率</strong>，以 <strong>防止模型过拟合</strong>。</li>
+</ul>
+<p><strong>Masking 机制</strong></p>
+<p>由于 CDR-H3 是主要变异区域，研究者采用 <strong>动态 Masking 训练策略</strong>：</p>
+<ul>
+<li><strong>初始阶段</strong>：保留 <strong>90%</strong> 互补位（paratope）残基 <strong>不被 Mask</strong>。</li>
+<li><strong>随着训练进行</strong>，逐步减少 Mask 率，使最终阶段 <strong>所有互补位残基均被 Mask</strong>，确保 <strong>模型可以在未知残基下生成合适序列</strong>。</li>
+</ul>
+<p><strong>数据集与实验设定</strong></p>
+<ul>
+<li>
+<p>研究者<strong>提取了距离抗体最近的 48 个残基</strong> 作为抗原表位（epitope），这足以覆盖所有结合残基。</p>
+</li>
+<li>
+<p>由于之前没有</p>
+<p>端到端全原子抗体设计（end-to-end full-atom antibody design）<strong>的方法，研究者使用了一系列</strong>现有的竞争性方法</p>
+<p>作为基线：</p>
+<ul>
+<li><strong>IgFold</strong> (Ruffolo &amp; Gray, 2022)：专门用于抗体结构预测的 AlphaFold 变体。</li>
+<li><strong>HDock</strong> (Yan et al., 2020)：基于知识评分函数的 docking 方法。</li>
+<li><strong>RosettaAb</strong> (Adolf-Bryfogle et al., 2018)：基于统计能量函数优化抗体序列和结构。</li>
+<li><strong>MEAN</strong> (Kong et al., 2022)：基于等变注意力图网络（equivariant attention graph networks）的 CDR-H3 生成方法。</li>
+<li><strong>Diffab</strong> (Luo et al., 2022)：基于扩散模型（diffusion model）的 CDR 生成方法，并考虑了侧链方向。</li>
+<li><strong>HERN</strong> (Jin et al., 2022)：一个不需要结构预测、docking 和侧链优化的端到端抗体设计方法，但未考虑框架区建模（framework region modeling）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Epitope-binding-CDR-H3-Generation">Epitope-binding CDR-H3 Generation</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig4.png" alt="avatar" style="zoom:50%;" /></div>
+<p><strong>目标</strong>：CDR-H3 是抗体中<strong>变异性最高</strong> 的区域，决定了抗体的<strong>结合特异性和亲和力</strong>（Raybould et al., 2019）。本实验的目标是<strong>预测 CDR-H3 的 1D 序列和 3D 结构</strong>。</p>
+<p><strong>评估指标</strong></p>
+<ul>
+<li><strong>Amino Acid Recovery (AAR)</strong>：生成的序列与真实序列的<strong>重叠比例</strong>。</li>
+<li><strong>Contact AAR (CAAR)</strong>：仅计算与抗原表位距离小于 6.6Å 的 CDR-H3 残基的 AAR（Ramaraj et al., 2012）。</li>
+<li><strong>TM-score</strong>：衡量生成的 CDR-H3 结构与真实结构的全局相似性（Zhang &amp; Skolnick, 2004）。</li>
+<li><strong>Local Distance Difference Test (lDDT)</strong>：基于<strong>原子间距离矩阵</strong> 评估生成结构与真实结构的相似性（Mariani et al., 2013）。</li>
+<li><strong>RMSD（Root Mean Square Deviation）</strong>：计算 CDR-H3 绝对坐标的均方根偏差（未进行 Kabsch 对齐）。</li>
+<li><strong>DockQ</strong>：综合衡量 docking 质量的指标（Basu &amp; Wallner, 2016）。</li>
+</ul>
+<p>📌 <strong>实验结果：</strong></p>
+<p><strong>Table 1</strong>（CDR-H3 设计结果）：dyMEAN 的 <strong>AAR = 43.65%</strong>，<strong>TM-score = 0.9726</strong>，<strong>lDDT = 0.8454</strong>，<strong>DockQ = 0.409</strong>，在所有指标上均优于基线。</p>
+<h4 id="Complex-Structure-Prediction">Complex Structure Prediction</h4>
+<p><strong>目标</strong>：在<strong>给定 CDR-H3 序列</strong>的情况下，预测 <strong>整个抗体-抗原复合物的 3D 结构</strong>。</p>
+<p><strong>评估方法</strong></p>
+<p>研究者比较了 dyMEAN 与多个基线方法，包括：</p>
+<ul>
+<li><strong>IgFold⇒HDock</strong>（基于 IgFold 预测骨架，再用 HDock 进行 docking）</li>
+<li><strong>IgFold⇒HERN</strong>（HERN 进行 docking，再用 Rosetta 预测侧链）</li>
+<li><strong>GT⇒HERN</strong>（HERN 直接使用真实结构进行 docking）</li>
+<li><strong>dyMEAN</strong>（端到端全原子结构预测）</li>
+</ul>
+<p>📌 <strong>实验结果（Table 2）</strong></p>
+<p><strong>dyMEAN 在所有评估指标上超过基线方法</strong></p>
+<p><strong>即使 HERN 使用真实抗体结构（GT⇒HERN），dyMEAN 仍然表现更优</strong>，表明其能 <strong>有效建模抗体-抗原的相互作用</strong></p>
+<h4 id="Affinity-Optimization-2">Affinity Optimization</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab3.png" alt="avatar" style="zoom:60%;" /></div>
+<p><strong>目标</strong>：优化抗体的序列，以 <strong>最大化与抗原的结合亲和力（binding affinity）</strong>。亲和力由 <strong>ΔΔG（结合自由能变化）</strong> 评估，<strong>较低 ΔΔG 代表更好的结合能力</strong>。</p>
+<p><strong>实验方法</strong></p>
+<ul>
+<li><strong>使用 GNN-based predictor 计算 ΔΔG（Shan et al., 2022）</strong>。</li>
+<li><strong>采用 FoldX 作为亲和力打分工具</strong>。</li>
+<li><strong>衡量 ΔL（突变残基的数量）</strong>，以确保优化不会造成过度突变。</li>
+</ul>
+<p>📌 <strong>实验结果（Table 3）</strong></p>
+<p><strong>dyMEAN 在 ΔΔG 下降幅度上优于 MEAN 和 DiffAb</strong>，同时保持较低的 ΔL</p>
+<p><strong>相比 MEAN（ΔΔG = -5.84，ΔL = 5.09）和 DiffAb，dyMEAN 的亲和力优化能力更强</strong></p>
+<h3 id="Analysis-2">Analysis</h3>
+<p><strong>Ablation Study</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab4.png" alt="avatar" style="zoom:70%;" /></div>
+<p>研究者对 dyMEAN 进行了消融实验，以分析各组件的贡献。</p>
+<p>📌 <strong>实验结果（Table 4）</strong></p>
+<ul>
+<li><strong>T 主要影响 docking 性能，T=3 是最优选择</strong>。</li>
+<li><strong>移除全原子建模后，整体性能大幅下降</strong>，表明 <strong>侧链构象在建模中至关重要</strong>。</li>
+<li><strong>移除影子互补位共享后，所有指标（除了 CAAR）均明显下降</strong>，表明该机制对结构生成和 docking 至关重要。</li>
+<li><strong>去除可学习通道权重后，模型表现下降</strong>，表明通道权重类似于注意力机制（attention），对不同通道信息赋予不同的重要性。</li>
+<li><strong>记忆机制对 CDR-H3 设计有帮助，但对复合物结构预测影响较小</strong>，因为 CDR-H3 生成时，隐状态受记忆机制影响较大，而 <strong>3D 坐标则直接传播</strong>。</li>
+<li><strong>$L_{dist}$ 对 docking 任务至关重要</strong>，研究者推测仅靠坐标无法在早期迭代正确恢复影子互补位的结构</li>
+</ul>
+<p><strong>Multiple CDRs Design and Full Antibody Design</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab5.png" alt="avatar" style="zoom:50%;" /></div>
+<p><strong>多个 CDR 设计（Multiple CDRs Design）</strong>：在 CDR-H1、H2、H3 和 L1、L2、L3 <strong>全部 masked</strong> 的情况下进行生成。</p>
+<p><strong>完整抗体设计（Full Antibody Design）</strong>：生成 <strong>包括框架区（Framework Regions, FRs）在内的完整抗体</strong>。</p>
+<h3 id="Limitations">Limitations</h3>
+<p><strong>Data Diversity and Evaluation Metrics</strong></p>
+<p>目前，深度生成模型在抗体设计任务中仍然面临挑战，其中 <strong>抗原-抗体数据的多样性不足</strong> 是主要问题之一。</p>
+<p>研究者分析了训练集中 CDR-H3 每个位置最常见的单字母氨基酸模式，并对其从 <strong>两端向中间匹配</strong>，发现了一个 高频模式 “ARDG***DY”，其中大部分 “*” 位置都是 Y。</p>
+<ul>
+<li>
+<p>使用该单字母模式在测试集中计算 AAR，得到：<strong>AAR = 39.61%</strong>，<strong>CAAR = 26.57%</strong></p>
+</li>
+<li>
+<p>这表明：<strong>无意义的 unigram 模式在训练集和测试集中占据主导地位，可能会影响模型学习抗原-抗体相互作用的能力</strong>。</p>
+</li>
+<li>
+<p><strong>去除 CDR-H3 的前 4 个和后 2 个残基后</strong>，dyMEAN 的 AAR 下降至 <strong>31.76%</strong>，这表明 <strong>高频 unigram 模式影响了抗体序列预测的评估标准</strong>。</p>
+</li>
+</ul>
+<p>这些现象表明：</p>
+<ol>
+<li><strong>现有数据集可能需要增强</strong>（例如，通过实验室数据扩增，或者从更广泛的蛋白复合物中提取类似界面）。</li>
+<li>现有的评估指标可能需要改进，例如：
+<ul>
+<li><strong>排除可以通过 unigram 预测正确的残基，以减少数据偏差的影响</strong>。</li>
+<li><strong>引入更复杂的评估方法，以更准确衡量抗体-抗原相互作用的合理性</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>Reliability of Computational Energy Functions</strong></p>
+<p>最终，<strong>抗体的结合亲和力（binding affinity）决定了生成的候选抗体是否具有实际价值</strong>。本研究中，dyMEAN 采用 <strong>深度学习预测器计算 ΔΔG（结合自由能变化）</strong> 作为亲和力的度量方式。然而，研究者指出当前计算能量函数仍存在以下问题：</p>
+<p>基于统计的能量计算方法：FoldX (Schymkowitz et al., 2005)，Rosetta (Alford et al., 2017)，Docking 软件中的打分函数（Goodsell et al., 1996）</p>
+<p><strong>问题与挑战</strong></p>
+<ul>
+<li>这些计算能量函数的 <strong>可靠性仍然存在不确定性</strong>，其中一些方法已知与实验结果的相关性较低（Ramírez &amp; Caballero, 2016, 2018）。</li>
+<li>研究者提出了两个关键问题：
+<ol>
+<li><strong>这些能量函数是否能够区分结合能力较弱的复合物？</strong></li>
+<li><strong>这些能量函数（通常基于天然复合物数据训练）是否能够推广到深度学习生成的复合物？</strong>（即，深度学习模型可能会生成具有不同统计分布的复合物，而计算能量函数未必适用）</li>
+</ol>
+</li>
+</ul>
+<p><strong>结论</strong></p>
+<ul>
+<li><strong>如果没有可靠的计算能量函数，抗体设计仍然需要湿实验评估（wet-lab evaluation）</strong>，然而这会 <strong>增加成本和时间开销</strong>。</li>
+<li><strong>未来的研究需要开发更具泛化性的亲和力预测器，以提高深度学习驱动的抗体设计的可靠</strong></li>
+</ul>
+<hr align="left" color="#987cb9" size="1"> 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" title="ICML-2023 End-to-End Full-Atom Antibody Design" target="_blank" rel="external">https://tyang816.github.io/2025/02/12/End-to-End Full-Atom Antibody Design/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" title="Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
