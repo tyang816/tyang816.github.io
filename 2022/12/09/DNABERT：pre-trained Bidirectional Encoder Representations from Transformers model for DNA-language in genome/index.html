@@ -406,10 +406,10 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/jerryji1993/DNABERT">https://github.com/jerryji1993/DNABERT</a></p>
 </blockquote>
 <h2 id="DNABERT：预训练DNA模型">DNABERT：预训练DNA模型</h2>
-<h3 id="Abstract-32">Abstract</h3>
+<h3 id="Abstract-10">Abstract</h3>
 <p><strong>Motivation</strong>：解译非编码DNA的语言是基因组研究中的基本问题之一。由于存在多义关系和遥远的语义关系，基因调控编码高度复杂，以往的信息学方法往往无法捕捉到，尤其是在数据稀缺的情况下</p>
 <p><strong>Results</strong>：DNABERT捕获基于上游和下游核苷酸上下文的基因组DNA序列的全局和可转移的理解。单一预训练的transformer模型在使用小的任务特定标记数据进行微调后，可以同时在启动子、剪接位点和转录因子结合位点预测方面达到SOTA。DNABERT能够直接可视化输入序列中的核苷酸水平重要性和语义关系，从而更好地具有可解释性和准确识别保守序列基序和功能遗传变异候选。最后，我们证明了人类基因组预训练出来可以很容易地应用于其他生物体</p>
-<h3 id="Introduction-28">Introduction</h3>
+<h3 id="Introduction-9">Introduction</h3>
 <p>相同的顺式作用因子 Cis-regulatory elements在不同的生物环境中通常具有不同的功能和活性</p>
 <h3 id="Materials-and-methods-2">Materials and methods</h3>
 <h4 id="The-DNABERT-model">The DNABERT model</h4>
@@ -422,7 +422,7 @@
 <p>训练120k个steps，baatch_size=2000，前100k个steps用15%掩码，后20k用20%</p>
 <h4 id="Fine-tuning">Fine-tuning</h4>
 <p>在所有的下游应用中使用同样的训练trick，学习率先升再降，具体细节看代码就行</p>
-<h3 id="Results-5">Results</h3>
+<h3 id="Results-3">Results</h3>
 <ul>
 <li>第一个实验是用在预测启动因子上，作者给微调后的模型起名为DNABERT-Prom。为了和基线的方法比较，作者还增长了输入长度，采用了1001bp的模型，实验表明无论参数如何，DNABERT-Prom都优于传统的CNN，CNN+LSTM和CNN+GRU（如图2所示）</li>
 <li>第二个实验是识别转录因子结合位点，先前的模型在寻找true negative上达到了和作者提出的DNABERT-TF模型一样的表现，但是预测了过多的false postive和false negative位点。并且在低质量的数据集上，DNABERT-TF和其他的模型相比取得了极高的召回率</li>

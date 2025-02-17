@@ -412,9 +412,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/evolutionaryscale/esm">https://github.com/evolutionaryscale/esm</a></p>
 </blockquote>
 <h2 id="ESM3：多模态prompt蛋白质生成模型">ESM3：多模态prompt蛋白质生成模型</h2>
-<h3 id="Abstract-75">Abstract</h3>
+<h3 id="Abstract-53">Abstract</h3>
 <p>多模态生成式语言模型涵盖了蛋白质序列，结构和功能。通过prompt ESM3可以实现chain of thought的生成GFP，合成了58% identity的GFP，而实现相似的远端天然GFP需要几百万年的进化</p>
-<h3 id="Introduction-69">Introduction</h3>
+<h3 id="Introduction-50">Introduction</h3>
 <p>ESM3是生成式的掩码语言模型，每个模态在离散的token上进行训练，ALL-to-all的建模离散token使得ESM3可以通过任何模态的组合进行prompt</p>
 <p>训练集有2.78B个蛋白质和771B个token，有98B参数，并且发现ESM3对于prompt的响应性很强，能够在复杂的提示组合中找到创造性的解决办法，不同scale的模型可以通过跟随更好的提示实现aligment，并且更大的模型对于alignment有更好的响应</p>
 <p>通过生成一种新的GFP进行了验证，命名为esmGFP，与Aequorea victoria GFP有36%的相似度，与最相似的GFP有58%的相似度</p>
@@ -461,7 +461,7 @@
 </ol>
 <p>在96个孔板中对88个设计进行了实验，在B8井中发现了一个设计（用黑色圆圈突出显示），与1QY3序列的序列同源性仅为36%，与最近的现有荧光蛋白tagRFP的序列同源性为57%，但这个设计的比天然的暗50倍</p>
 <p>从B8井的设计序列开始，继续思维链，使用上述相同的迭代联合优化和排序程序，生成具有提高亮度的蛋白质。我们创建了第二个96孔板的设计，并使用相同的板阅读器分析，我们发现在这个队列中的几个设计的亮度在自然界中发现的gfp范围内。最好的设计，位于第二个板的C10井（图4B右），我们指定为esmGFP。</p>
-<h3 id="Discussion-15">Discussion</h3>
+<h3 id="Discussion-14">Discussion</h3>
 <p>蛋白质语言模型并没有在进化的物理约束下明确地工作，而是可以隐式地构建一个进化可能遵循的多种潜在路径的模型</p>
 <h2 id="Appendix">Appendix</h2>
 <h3 id="Architecture-2">Architecture</h3>

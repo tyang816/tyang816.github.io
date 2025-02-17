@@ -404,10 +404,10 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/jschlensok/vespag">https://github.com/jschlensok/vespag</a></p>
 </blockquote>
 <h2 id="VespaG：FNN-PLM表征在GEMME标注数据训练">VespaG：FNN+PLM表征在GEMME标注数据训练</h2>
-<h3 id="Abstract-44">Abstract</h3>
+<h3 id="Abstract-22">Abstract</h3>
 <p><strong>Motivation</strong>: 使用湿实验注释蛋白质突变的影响成本仍然高昂，因此引入了VespaG，一个快速的氨基酸突变效应预测器，利用PLM的embedding作为最小深度模型的输入</p>
 <p><strong>Results</strong>: 为了克服实验训练数据的稀疏性，研究人员创建了一个基于GEMME的包含<strong>3900万个单一氨基酸变体</strong>的大型数据集，在<strong>ProteinGym基准测试</strong>（包括217个多重突变效应实验，涵盖约250万个变体）中，VespaG取得了<strong>平均Spearman相关系数为0.48 ± 0.02</strong>的成绩，能够在一台<strong>普通笔记本电脑</strong>（12核CPU，16GB RAM）上，在<strong>不到30分钟</strong>的时间内预测整个人类或果蝇蛋白质组的所有突变</p>
-<h3 id="Introduction-39">Introduction</h3>
+<h3 id="Introduction-20">Introduction</h3>
 <p><strong>计算模型的引入</strong>可以帮助研究人员深入理解蛋白变体的功能影响，并优先考虑最具潜在价值的突变进行实验验证。然而，当前计算模型面临的主要挑战是<strong>实验数据的稀疏性</strong>。许多监督机器学习（ML）方法尽管在特定数据集上表现优异，但往往仅针对已经通过MAVE表征或与疾病相关的变体。这一局限性导致在极少数实验数据集上，各种方法之间的预测高度相关，但在<strong>人类蛋白质组的所有可能突变</strong>上，它们的预测一致性较差。此外，这些方法对数据中的<strong>噪声和不确定性</strong>高度敏感</p>
 <p>当前最成功的无监督方法中，<strong>GEMME（Global Epistatic Model for Mutational Effects）是一种表现优异的模型，它显式地建模蛋白序列的进化历史</strong>。GEMME依赖于多序列比对（MSA），通过沿着系统发育树的拓扑结构评估蛋白位点对突变的敏感性，以及适应替换所需的变异次数。该方法仅依赖少量生物学上有意义的参数，并且在输入MSA低变异性的情况下表现出良好的鲁棒性。</p>
 <p>在此工作中，研究人员提出了<strong>VespaG</strong>，该方法<strong>优化了预测速度</strong>，绕过了传统计算昂贵的掩码标记重建任务，而是直接将pLM嵌入映射到完整的突变景观。他们采用进化模型GEMME作为教师模型，训练了一个相对简单的深度学习网络（包含66万自由参数），从而避免了计算对数几率比的需要。VespaG不仅克服了实验训练数据稀缺的问题，还避免了实验数据固有的噪声和不一致性</p>
@@ -416,7 +416,7 @@
 <h4 id="Comparison-to-state-of-the-art-methods">Comparison to state-of-the-art methods</h4>
 <p>ProteinGym上的GEMME、ESM2、TranceptEVE L、PoET等</p>
 <h4 id="Method-development-2">Method development</h4>
-<h5 id="Datasets-4">Datasets</h5>
+<h5 id="Datasets-3">Datasets</h5>
 <p>为了生成训练数据，研究人员构建了一个主要数据集，基于<strong>人类蛋白质组</strong>，并为不同来源创建了额外的数据集，包括<strong>果蝇（Drosophila melanogaster）</strong>、<strong>大肠杆菌（Escherichia coli）</strong>、以及<strong>病毒</strong>（如流感病毒、HIV等）。每个训练数据集的构建过程如下：</p>
 <ol>
 <li>从<strong>UniProt</strong>（The UniProt Consortium 2023）下载参考蛋白质组，每个基因只包含一个蛋白质序列。</li>
@@ -441,7 +441,7 @@
 <li><strong>卷积神经网络（CNN）</strong>：包含一个1维卷积层和两个隐藏的全连接层。</li>
 <li><strong>FNN和CNN的集成模型</strong>：分别优化FNN和CNN（使用每种架构的最佳模型），最终输出为两者的平均值。</li>
 </ol>
-<h3 id="Results-13">Results</h3>
+<h3 id="Results-11">Results</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/VespaG/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 <p>VespaG是一个前馈神经网络（FNN），它有一个隐藏层，包含256个隐藏单元，仅输入来自蛋白质语言模型（pLM）ESM-2的序列嵌入</p>
 <h4 id="VespaG-integrating-complementary-strengths">VespaG integrating complementary strengths</h4>
@@ -489,7 +489,7 @@
 <li>比GEMME和VESPA<strong>快10³倍</strong>（约1000倍）。</li>
 </ul>
 <p>在相同计算资源下，VespaG可以在<strong>30分钟内</strong>完成整个人类蛋白组的单点突变预测，而GEMME只能完成25个蛋白的预测。</p>
-<h3 id="Discussion-6">Discussion</h3>
+<h3 id="Discussion-5">Discussion</h3>
 <h4 id="VespaG-reached-SOTA-despite-its-simplicity">VespaG reached SOTA despite its simplicity</h4>
 <p>VespaG的卓越性能证明，即使是相对浅层的神经网络（仅包含66万可训练参数），也能够有效利用诸如GEMME这样的非监督方法所提供的信息。</p>
 <p>该方法的核心优势在于：</p>

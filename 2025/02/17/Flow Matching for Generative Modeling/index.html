@@ -430,7 +430,7 @@
 <h2 id="FlowMatching：固定条件概率路径的向量场训练CNF">FlowMatching：固定条件概率路径的向量场训练CNF</h2>
 <h3 id="Abstract-98">Abstract</h3>
 <p><strong>Flow Matching</strong> 是一种新的训练CNF的方法，通过回归固定条件概率路径的向量场来进行训练。这种方法可以使用广义的高斯概率路径来进行数据样本与噪声之间的转换，从而拓展了现有扩散模型（Diffusion Models）的范畴。使用FM与扩散路径相比，实验表明其训练过程更加稳定和鲁棒，并且<strong>效果更好</strong>，尤其在生成图像时，能够获得更高的样本质量和更准确的似然估计。FM还允许使用其他非扩散概率路径进行训练，例如**最优传输（Optimal Transport，OT）**路径。使用OT路径相比于扩散路径，训练速度更快，采样效率更高，并且能实现更好的泛化能力。实验结果显示，FM框架在ImageNet数据集上表现出色，尤其在样本生成和训练效率方面优于传统的扩散方法。最后，FM方法能够通过现成的数值常微分方程（ODE）求解器进行快速、可靠的样本生成，展现了其优越的计算效率。</p>
-<h3 id="Introduction-85">Introduction</h3>
+<h3 id="Introduction-84">Introduction</h3>
 <p>扩散模型因其 <strong>训练稳定性</strong> 和 <strong>高质量样本</strong> 受到广泛关注。然而，它们<strong>依赖于固定的扩散过程</strong>，所有样本必须遵循相同的扩散路径，这导致训练和推理的灵活性受限，并导致<strong>训练时间较长，需要额外优化方法提升采样效率</strong>。</p>
 <p>论文提出了<strong>连续归一化流（Continuous Normalizing Flows, CNFs）</strong> 作为更一般化的生成建模框架。</p>
 <ul>

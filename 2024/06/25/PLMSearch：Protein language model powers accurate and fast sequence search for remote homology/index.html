@@ -413,9 +413,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://dmiip.sjtu.edu.cn/PLMSearch">https://dmiip.sjtu.edu.cn/PLMSearch</a> and <a target="_blank" rel="noopener" href="https://github.com/maovshao/PLMSearch">https://github.com/maovshao/PLMSearch</a></p>
 </blockquote>
 <h2 id="PLMSearch：同源家族过滤-蛋白质相似度预测-PLMAlign">PLMSearch：同源家族过滤+蛋白质相似度预测+PLMAlign</h2>
-<h3 id="Abstract-67">Abstract</h3>
+<h3 id="Abstract-45">Abstract</h3>
 <p>从序列当中检测结构同源性依旧是挑战，因此提出了PLMSearch，只需要使用序列作为输入。实验显示PLMSearch可以在数秒内搜索数百万的query-target蛋白，并且和最好的结构搜索方媲美，还可以召回出序列不同结构相似的远程同源对</p>
-<h3 id="Introduction-62">Introduction</h3>
+<h3 id="Introduction-43">Introduction</h3>
 <p>基于序列搜索的方法很难检测出远距离的进化依赖，在序列相似度低于0.3的时候，使用sequence profile (MSA)的方法，如HMMER, HHsearch或HHblits更好</p>
 <p>因为结构比序列的差异更大，因此结构相似性的搜索更加敏感，主要分为三种：</p>
 <ul>
@@ -430,7 +430,7 @@
 <li>SS-predictor (structural similarity predictor)预测query-target pairs的相似性，使用TM-score作为ground truth训练</li>
 <li>PLMSearch根据预测的相似度对PfamClan对预过滤的对进行排序，并相应地输出每个查询蛋白的搜索结果。随后，PLMAlign为PLMSearch检索到的顶级蛋白质对提供序列比对和比对得分（图1d）</li>
 </ol>
-<h3 id="Results-25">Results</h3>
+<h3 id="Results-23">Results</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 <h4 id="PLMsearch-reaches-similar-sensitivity-as-structure-search-methods">PLMsearch reaches similar sensitivity as structure search methods</h4>
 <p>检索测试在SCOPe40-test和Swiss-Prot上显示出PLMSearch是达到了准确率和速度的最佳平衡</p>
@@ -464,7 +464,7 @@
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLMSearch/fig6.png" alt="avatar" style="zoom:100%;" /></div>
 <h4 id="PLMAlign">PLMAlign</h4>
 <p>和PLM-BLAST一样</p>
-<h4 id="Datasets-5">Datasets</h4>
+<h4 id="Datasets-4">Datasets</h4>
 <h5 id="SCOPe40">SCOPe40</h5>
 <p>类似Foldseek，SCOPe40训练/测试集分割为8：2，测试集中没有和训练集一个fold的</p>
 <h5 id="New-protein-search-test">New protein search test</h5>

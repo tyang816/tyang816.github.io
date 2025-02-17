@@ -409,9 +409,9 @@
 <p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/OATML-Markslab/Tranception">https://github.com/OATML-Markslab/Tranception</a></p>
 </blockquote>
 <h2 id="Tranception：卷积多组attention-MSA-retrieval">Tranception：卷积多组attention+MSA retrieval</h2>
-<h3 id="Abstract-81">Abstract</h3>
+<h3 id="Abstract-59">Abstract</h3>
 <p>在多序列对齐上训练的深度蛋白质生成模型是目前处理蛋白质fitness最成功的方法，但这些方法的表现取决于是否有足够多和深的alignments来训练，这就限制了蛋白质的家族，大规模语言模型就不需要。提出了tranception，是transformer架构，利用了autoregressive prediction和homologous sequences of inference实现了SOTA。同时提出了ProteinGym数据集</p>
-<h3 id="Introduction-74">Introduction</h3>
+<h3 id="Introduction-55">Introduction</h3>
 <p>目前SOTA方法主要用了MSA，主要两个目的：</p>
 <ul>
 <li>作为一个数据采集工具，在一个大型的蛋白质数据库中识别与目标相关的序列，然后在一组相关的序列上训练一个模型</li>
@@ -461,7 +461,7 @@
 <p>logP_A是自回归的概率，logP_R是检索推理得到的概率，C是正则化常量</p>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/frm3.png" alt="avatar" style="zoom:70%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/frm4.png" alt="avatar" style="zoom:70%;" /></div>
-<h3 id="Results-31">Results</h3>
+<h3 id="Results-29">Results</h3>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/tab3.png" alt="avatar" style="zoom:100%;" /></div>
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/tab4.png" alt="avatar" style="zoom:70%;" /></div>
