@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions | tyang</title>
+  <meta name="description" content="论文地址：FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions 论文实现：https:&#x2F;&#x2F;github.com&#x2F;nohandsomewujun&#x2F;FlowDesign  FlowDesign：DiffAb+FlowMatching做co-design Abst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions">
+<meta property="og:url" content="https://tyang816.github.io/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions 论文实现：https:&#x2F;&#x2F;github.com&#x2F;nohandsomewujun&#x2F;FlowDesign  FlowDesign：DiffAb+FlowMatching做co-design Abst">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig7.png">
+<meta property="article:published_time" content="2025-02-18T11:21:35.000Z">
+<meta property="article:modified_time" content="2025-02-18T11:22:19.255Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">224</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.86px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.86px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.29px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.57px;">IR</a> <a href="/tags/OS/" style="font-size: 13.43px;">OS</a> <a href="/tags/SE/" style="font-size: 13.71px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.29px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.14px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="title">FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-18T11:21:35.000Z" itemprop="datePublished">2025-02-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/17/Flow%20Matching%20for%20Generative%20Modeling/" class="title">ICLR-2023 Flow Matching for Generative Modeling</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-17T10:07:49.000Z" itemprop="datePublished">2025-02-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="title">ICML-2023 End-to-End Full-Atom Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-12T12:16:22.000Z" itemprop="datePublished">2025-02-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="title">Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T12:38:06.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Conditional%20Antibody%20Design%20as%203D%20Equivariant%20Graph%20Translation/" class="title">ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T07:52:49.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="article-date">
+	  <time datetime="2025-02-18T11:21:35.000Z" itemprop="datePublished">2025-02-18</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="leancloud_visitors"  data-flag-title="FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4.8k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 17(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://www.biorxiv.org/content/10.1101/2024.11.07.622422v2">FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/nohandsomewujun/FlowDesign">https://github.com/nohandsomewujun/FlowDesign</a></p>
+</blockquote>
+<h2 id="FlowDesign：DiffAb-FlowMatching做co-design">FlowDesign：DiffAb+FlowMatching做co-design</h2>
+<h3 id="Abstract-27">Abstract</h3>
+<p>介绍了一种名为 <strong>FlowDesign</strong> 的新方法，用于 <strong>抗体互补决定区（CDR）</strong> 的 <strong>序列-结构联合设计</strong>。FlowDesign 主要基于 <strong>Flow Matching</strong> 技术，相较于传统的 <strong>扩散模型（diffusion models）</strong>，它具有以下优势：</p>
+<ol>
+<li><strong>灵活的先验分布选择</strong>：可以集成不同的先验知识，如 <strong>蛋白质语言模型（PLM）</strong> 和 <strong>数据驱动的结构模型</strong>，从而提高设计质量。</li>
+<li><strong>直接匹配离散分布</strong>：避免了在氨基酸类型上应用连续噪声导致的不稳定性。</li>
+<li><strong>高计算效率</strong>：相比扩散模型，FlowDesign 在 <strong>大规模抗体设计</strong> 任务中 <strong>计算成本更低</strong>。</li>
+</ol>
+<p>研究中，FlowDesign 在 <strong>氨基酸恢复率（AAR）、均方根偏差（RMSD）和 Rosetta 能量</strong> 方面均优于现有方法。此外，研究团队还利用 FlowDesign <strong>重新设计了 HIV-1 抗体 Ibalizumab 的 HCDR3 序列</strong>，并通过 <strong>生物层干涉（BLI）</strong> 和 <strong>伪病毒中和实验</strong> 证明其改进版本在多种 HIV 突变株上表现更优。最终，FlowDesign 在 <strong>抗体设计和蛋白质工程</strong> 领域展示了 <strong>良好的应用潜力</strong>。</p>
+<h3 id="Introduction-25">Introduction</h3>
+<p>抗体是免疫系统中至关重要的成分，能够通过与特定抗原结合中和病原体。设计能够特异性地靶向特定抗原的抗体，对药物研发和生物学研究具有重要意义。抗体的互补决定区（CDR）是决定抗体与抗原结合的关键区域，直接影响抗体的亲和力和特异性。因此，抗体设计的核心任务之一就是设计具有优异亲和力和特异性的CDR序列。</p>
+<p>然而，由于CDR的组合空间过于庞大，传统的实验方法，如体外筛选，往往受到高成本和时间限制。因此，计算方法显得尤为重要。通过模拟和机器学习模型，可以有效缩小实验验证的搜索范围并提高设计效率。传统的计算方法通常通过模拟来预测抗体与抗原的结合，但这些方法往往依赖于经验能量函数，且计算消耗大，容易陷入局部最优解。</p>
+<p><strong>现有方法的缺陷</strong>：</p>
+<ul>
+<li>
+<p>传统的 <strong>序列生成模型</strong> 基于序列的稳定性进行优化，但 <strong>抗体和抗原的结合亲和力</strong> 依赖于 <strong>抗体-抗原复合物的三维结构</strong>，而现有的序列模型往往缺乏结构建模能力。</p>
+</li>
+<li>
+<p><strong>扩散模型</strong>：尽管扩散模型在抗体设计中取得了一定进展，但仍然面临以下挑战：</p>
+<ul>
+<li><strong>先验分布问题</strong>：扩散模型常用标准高斯分布作为先验，但这无法充分反映抗体分子的物理可行性。</li>
+<li><strong>离散氨基酸的处理问题</strong>：扩散模型的连续性与氨基酸类型的离散性不兼容，导致模型在生成过程中出现不平滑的转换。</li>
+<li><strong>计算代价高</strong>：扩散模型需要多次迭代去噪，这使得大规模采样变得计算成本过高。</li>
+</ul>
+</li>
+</ul>
+<p>近年来，深度学习模型，尤其是蛋白质语言模型（PLM），被广泛应用于抗体设计。这些模型能够从大量已知蛋白质数据中学习序列的“语法”，从而生成具有潜力的抗体序列。然而，现有的序列生成模型主要侧重于序列稳定性的提升，往往忽视了抗体与抗原之间的结构性关系。抗体的亲和力不仅仅依赖于其序列，还涉及到抗体与抗原的三维结构，而现有的序列模型缺乏对抗体结构的建模能力。</p>
+<p>扩散模型作为近年来的一种新兴方法，虽然在抗体设计中取得了一定的进展，但仍然存在一些显著的缺陷。首先，扩散模型通常使用标准的高斯分布作为先验，这无法反映抗体分子的物理可行性。其次**，扩散模型的连续性与氨基酸类型的离散性不兼容**，容易导致模型在生成过程中出现不平滑的过渡，影响结果的准确性。最后，扩散模型需要多次迭代去噪，这导致其在大规模采样时计算代价过高。</p>
+<p>为了克服这些问题，本文提出了一种名为<strong>FlowDesign</strong>的新方法，基于<strong>Flow Matching</strong>技术来进行抗体的序列-结构联合设计。FlowDesign的创新之处在于，它能够灵活选择先验分布，结合不同类型的先验知识，如基于蛋白质语言模型或数据驱动的结构模型。同时，FlowDesign通过直接匹配氨基酸类型的离散分布，避免了扩散模型中不平滑的生成过程，能够更有效地生成抗体序列。与传统扩散模型相比，FlowDesign在计算效率上具有显著优势，适用于大规模的抗体设计任务。将 CDR 设计视为 <strong>传输映射问题</strong>（Transport Mapping Problem），通过学习将任意初始分布直接映射到目标分布。与常规的多步“扩散”模型不同，FlowDesign 采用了一步式映射，因此具有以下优点：首先，它在选择先验分布时非常灵活，能够集成多种不同的先验知识；其次，FlowDesign 能够直接匹配离散分布，避免了在氨基酸类型上的不平滑生成过程；最后，它的高计算效率使得大规模采样变得可行，并且计算成本较低。</p>
+<p>通过大量的实验评估，首先评估了不同形式的先验知识对抗体设计的影响，这些先验知识包括从 <strong>蛋白质语言模型</strong>、<strong>物理化学函数</strong> 以及 <strong>结构数据驱动模型</strong> 中提取的分布</p>
+<p>FlowDesign在多个指标上，如氨基酸恢复率（AAR）、均方根偏差（RMSD）和Rosetta能量，均优于现有的其他方法。该方法不仅成功地优化了HIV-1抗体Ibalizumab的设计，还展示了在多种HIV变种上的显著改善，尤其是在结合亲和力和中和效力方面。</p>
+<h3 id="Results-15">Results</h3>
+<h4 id="Overview-of-FlowDesign">Overview of FlowDesign</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig1.png" alt="avatar" style="zoom:80%;" /></div>
+<p>FlowDesign 采用了<strong>序列-结构联合设计</strong>（sequence-structure co-design）方法，用于优化抗体 CDR。抗体被表示为 <strong>{si, xi, Oi}</strong>，分别对应氨基酸类型、Cα 原子坐标以及主链取向。在设计过程中，FlowDesign 以<strong>抗体-抗原复合物</strong>为输入，并对待优化的 CDR 进行初始化。CDR 的初始状态来自于某种<strong>先验分布</strong>，而该分布可以灵活选择。接下来，FlowDesign 通过预测漂移力（drift forces），将 CDR 从初始分布映射到目标分布（图 1A）。</p>
+<p>在建模过程中，FlowDesign 允许两种工作模式：</p>
+<ol>
+<li><strong>CDR 设计模式</strong>：给定抗体框架和抗原复合物，仅优化 CDR 的序列和结构。</li>
+<li><strong>抗体-抗原复合物优化模式</strong>：固定抗体框架的氨基酸类型和结构，并结合 dyMEAN 和 AlphaFold3 进行复合物预测，然后优化 CDR。</li>
+</ol>
+<p>在推理阶段，FlowDesign 结合 <strong>Rosetta</strong> 进行<strong>侧链构建和结构优化</strong>，去除原子碰撞并提升模型预测的合理性。同时，在训练过程中，FlowDesign 直接匹配初始分布和目标分布，而非像扩散模型那样进行多步去噪。因此，它具备<strong>更快的计算速度和更好的生成稳定性</strong>（图 1B）。</p>
+<h4 id="Performance-for-different-prior-distributions">Performance for different prior distributions</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig2.png" alt="avatar" style="zoom:80%;" /></div>
+<p>FlowDesign 允许<strong>灵活选择先验分布</strong>，以确保更优的抗体序列和结构。研究对比了四种不同的先验分布：</p>
+<ul>
+<li><strong>随机分布（Random Distribution）</strong></li>
+<li><strong>dyMEAN 生成的序列-结构联合分布</strong></li>
+<li><strong>基于 KIC（Kinematic Closure）的结构分布</strong></li>
+<li><strong>基于蛋白质语言模型（PLM，如 ESM2）的序列分布</strong></li>
+</ul>
+<p>实验针对 <strong>CDRH3</strong> 进行了训练和评估，因为 <strong>CDRH3 是抗体结合抗原的关键区域，且多样性最高</strong>。结果显示：</p>
+<ul>
+<li>采用 <strong>dyMEAN 先验分布</strong> 的模型表现最佳，在 <strong>氨基酸恢复率（AAR）</strong> 上比随机初始化提高 <strong>约 15%</strong>（图 2A）。</li>
+<li><strong>dyMEAN 初始化</strong> 生成的抗体结构的 <strong>RMSD 最低</strong>（平均 2.291Å），说明它生成的 CDR 结构最接近真实结构（图 2B）。</li>
+<li><strong>KIC 方法</strong> 由于计算成本较高，生成的样本数量有限，因此效果不如 dyMEAN。</li>
+<li><strong>PLM（ESM2）</strong> 方法的序列多样性较大，但由于缺乏结构信息，导致其恢复率较低，无法为 CDR 结构提供良好的初始约束。</li>
+</ul>
+<p>综上，<strong>dyMEAN 作为先验分布最有效</strong>，因为它同时提供了抗体的序列和结构信息，使得 FlowDesign 能够更准确地优化 CDR 设计。</p>
+<h4 id="Performance-for-Sequence-Structure-Co-design">Performance for Sequence-Structure Co-design</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig3.png" alt="avatar" style="zoom:80%;" /></div>
+<p>FlowDesign 还与多个<strong>抗体设计基准方法</strong>进行了对比，包括：</p>
+<ul>
+<li><strong>HERN</strong>（仅生成序列），<strong>RefineGNN</strong>（仅优化结构），<strong>RosettaAb</strong>（基于经验能量的优化），<strong>Diffab</strong>（基于扩散模型的联合设计），<strong>dyMEAN</strong>（基于全原子建模的优化）</li>
+</ul>
+<p>评估实验针对 <strong>CDRH1、CDRH2、CDRH3、CDRL1、CDRL2、CDRL3</strong> 进行，主要指标包括：</p>
+<ul>
+<li><strong>氨基酸恢复率（AAR）</strong>（图 3A-3F）</li>
+<li><strong>均方根偏差（RMSD）</strong>（图 3G）</li>
+<li><strong>Rosetta 能量</strong>（图 3H）</li>
+</ul>
+<p>实验发现：</p>
+<ul>
+<li><strong>FlowDesign 在 CDRH3 设计方面优势显著</strong>，其氨基酸恢复率超过 <strong>60%</strong>，远高于其他方法（图 3A）。</li>
+<li><strong>RMSD 方面</strong>，FlowDesign 生成的抗体结构比大多数基准方法更接近真实结构，仅次于 dyMEAN（图 3G）。</li>
+<li><strong>能量优化</strong> 方面，FlowDesign 生成的抗体具有更低的 Rosetta 能量，表明它们在结合稳定性和亲和力方面更优（图 3H）。</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig4.png" alt="avatar" style="zoom:80%;" /></div>
+<p>FlowDesign 在与 <strong>Diffab</strong> 等其他生成模型进行对比时，展示了其在抗体设计中的优势，特别是在 <strong>氨基酸恢复率</strong> 和 <strong>结构优化</strong> 方面。实验结果表明，FlowDesign 的表现超越了 Diffab 等传统方法，尤其在 <strong>能量优化</strong> 和 <strong>抗体多样性</strong> 上表现更好。以下是详细结果：</p>
+<ul>
+<li><strong>能量差异</strong>：FlowDesign 生成的抗体相比 Diffab 具有更低的 <strong>ΔΔG</strong>（即能量变化）。在图 4A 中，FlowDesign 生成的抗体有更多的候选抗体能量低于原始抗体，特别是在 <strong>CDRH1</strong> 区域，改进幅度达到 <strong>13.11%</strong>。</li>
+<li><strong>氨基酸恢复率</strong>：在能量筛选后，FlowDesign 生成的抗体表现出比 <strong>dyMEAN</strong> 生成的抗体更高的 <strong>氨基酸恢复率</strong>，表明 FlowDesign 更好地整合了先验知识，并且学会了更加精确的 <strong>序列-结构联合分布</strong>（图 4B）。</li>
+<li><strong>多样性与稳定性</strong>：FlowDesign 在 <strong>大规模采样</strong> 下展示了 <strong>更高的多样性</strong>，即使在样本数量有限的情况下，它仍能提供更多高质量的候选抗体。图 4D 和 4E 展示了 FlowDesign 在不同的 <strong>能量筛选比例</strong> 下的表现，与 Diffab 进行对比，结果表明 FlowDesign 在 <strong>结构恢复</strong> 和 <strong>能量优化</strong> 上都具有明显优势。</li>
+</ul>
+<h4 id="Performance-for-designing-CDRs-based-solely-on-sequences">Performance for designing CDRs based solely on sequences</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig5.png" alt="avatar" style="zoom:80%;" /></div>
+<p>在现实应用中，抗体的三维结构可能未知，仅有序列信息可用。因此，研究进一步评估了 FlowDesign 在仅依赖 <strong>抗体框架序列</strong> 进行 CDR 设计的能力。</p>
+<p>研究使用了两种方法预测抗体框架结构：</p>
+<ol>
+<li><strong>dyMEAN 生成框架结构</strong></li>
+<li><strong>AlphaFold3 预测框架结构</strong></li>
+</ol>
+<p>之后，FlowDesign 设计了 <strong>CDRs</strong>，并与真实结构的设计进行了对比。以下是关键结果：</p>
+<ul>
+<li><strong>氨基酸恢复率</strong>（AAR）：在图 5A 中，使用 <strong>AlphaFold3 生成框架结构</strong> 的 <strong>FlowDesign</strong> 在 <strong>氨基酸恢复率</strong> 上表现优异，接近真实结构的设计方法。相比之下，使用 <strong>dyMEAN 生成框架结构</strong> 的 FlowDesign 表现较差，显示出 AlphaFold3 提供的框架结构更适合进行 CDR 设计。</li>
+<li><strong>RMSD 和能量</strong>：在图 5B 和 5C 中，<strong>AlphaFold3 生成的框架结构</strong> 所设计的 CDR 在 <strong>RMSD</strong> 和 <strong>ΔΔG</strong> （能量差异）方面表现最好，表明它生成的 CDR 结构和能量最接近实际的结构，并且具有较高的稳定性。</li>
+<li><strong>框架生成质量</strong>：图 5H 显示了三种不同框架生成方法的比较：<strong>dyMEAN</strong>、<strong>AlphaFold3</strong> 和真实结构。结果显示，<strong>AlphaFold3 预测的框架</strong> 更加接近真实结构，生成的抗体抗原复合物与真实结构的重合度更高，表现出较低的 <strong>RMSD</strong> 和较低的 <strong>能量</strong>（图 5G、5J、5K）。</li>
+</ul>
+<p>这些实验结果表明，FlowDesign 能够在缺乏真实结构的情况下，通过 <strong>AlphaFold3</strong> 预测框架的结构来设计高质量的 CDR，从而展示了其在实际应用中的 <strong>强大灵活性</strong> 和 <strong>鲁棒性</strong>。</p>
+<h4 id="Performance-for-HIV-antibody-design">Performance for HIV antibody design</h4>
+<p>FlowDesign 还被应用于 <strong>HIV-1 抗体设计</strong>，特别是优化 <strong>Ibalizumab 抗体的 CDRH3</strong>。实验过程中：</p>
+<ol>
+<li>
+<p><strong>生成 50,000 种不同的 CDRH3 变体</strong>，并使用 <strong>Rosetta 能量评分筛选出 12,000 个高质量候选抗体</strong>。</p>
+</li>
+<li>
+<p><strong>构建酵母展示文库</strong>，并进行 <strong>三轮 FACS（荧光激活细胞分选）</strong> 以筛选结合 CD4 受体能力最强的抗体。</p>
+</li>
+<li>
+<p><strong>选出结合能力最强的 10 种抗体，并进一步选择 3 种最低能量的候选抗体</strong>（imab-mut-1、imab-mut-2、imab-mut-3）。</p>
+</li>
+<li>
+<p><strong>BLI（生物层干涉）实验</strong> 评估抗体结合能力，结果显示新设计的抗体与 CD4 结合能力比原始 Ibalizumab 更强。</p>
+</li>
+<li>
+<p><strong>伪病毒中和实验</strong> 评估新抗体对 <strong>11 种 HIV-1 亚型（A、B、C、CRF01、CRF07）</strong> 的中和能力：</p>
+<ul>
+<li><strong>imab-mut-2 在 6 种 HIV-1 亚型上的中和能力优于 Ibalizumab</strong>。</li>
+<li>其 <strong>IC50 值比 Ibalizumab 低 4 倍</strong>，表明它能以更低浓度有效中和病毒。</li>
+</ul>
+</li>
+</ol>
+<p>这些实验结果表明，FlowDesign <strong>能够成功优化 HIV-1 抗体，提高其结合亲和力和中和能力</strong>，展示了该方法在 <strong>生物制药</strong> 领域的广阔应用前景。</p>
+<h4 id="Performance-for-HIV-antibody-design-2">Performance for HIV antibody design</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig6.png" alt="avatar" style="zoom:80%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FlowDesign/fig7.png" alt="avatar" style="zoom:80%;" /></div>
+<p>FlowDesign 还被应用于 <strong>HIV-1 抗体设计</strong>，特别是优化 <strong>Ibalizumab 抗体的 CDRH3</strong>。实验过程中：</p>
+<ol>
+<li>
+<p><strong>生成 50,000 种不同的 CDRH3 变体</strong>，并使用 <strong>Rosetta 能量评分筛选出 12,000 个高质量候选抗体</strong>。</p>
+</li>
+<li>
+<p><strong>构建酵母展示文库</strong>，并进行 <strong>三轮 FACS（荧光激活细胞分选）</strong> 以筛选结合 CD4 受体能力最强的抗体（图 6A-C）。</p>
+</li>
+<li>
+<p><strong>选出结合能力最强的 10 种抗体，并进一步选择 3 种最低能量的候选抗体</strong>（imab-mut-1、imab-mut-2、imab-mut-3）。</p>
+</li>
+<li>
+<p><strong>BLI（生物层干涉）实验</strong> 评估抗体结合能力，结果显示新设计的抗体与 CD4 结合能力比原始 Ibalizumab 更强（图 6F-6I）。</p>
+</li>
+<li>
+<p><strong>伪病毒中和实验</strong> 评估新抗体对 <strong>11 种 HIV-1 亚型（A、B、C、CRF01、CRF07）</strong> 的中和能力：</p>
+<ul>
+<li><strong>imab-mut-2 在 6 种 HIV-1 亚型上的中和能力优于 Ibalizumab</strong>（图 7）。</li>
+<li>其 <strong>IC50 值比 Ibalizumab 低 4 倍</strong>，表明它能以更低浓度有效中和病毒。</li>
+</ul>
+</li>
+</ol>
+<p>这些实验结果表明，FlowDesign <strong>能够成功优化 HIV-1 抗体，提高其结合亲和力和中和能力</strong>，展示了该方法在 <strong>生物制药</strong> 领域的广阔应用前景。</p>
+<h3 id="Methods-8">Methods</h3>
+<h4 id="Baselines">Baselines</h4>
+<p>在评估 FlowDesign 的性能时，研究团队选择了多个 <strong>抗体设计领域的基线方法</strong> 进行比较：</p>
+<ol>
+<li><strong>Diffab</strong>（扩散模型，约 400 万参数）：可以同时生成大规模 CDR 结构和序列。</li>
+<li><strong>RefineGNN</strong>（基于图神经网络，约 600 万参数）：通过迭代优化抗体序列和结构。</li>
+<li><strong>dyMEAN</strong>（全原子模型，约 200 万参数）：基于等变编码器更新抗体序列和结构。</li>
+<li><strong>HERN</strong>（分层等变优化，约 700 万参数）：专门用于 CDR 序列优化。</li>
+</ol>
+<p>为了确保公平对比，研究团队重新划分了数据集，并重新训练了所有基线模型。在测试 <strong>Diffab</strong> 这类生成模型时，研究团队采样了 <strong>相同数量的抗体</strong> 进行评估，而对于 <strong>非生成模型</strong>（如 RefineGNN），则直接测试其输出结果。</p>
+<p>此外，抗体的结合能计算由 <strong>PyRosetta</strong> 的 <strong>InterfaceAnalyzerMover</strong> 进行计算，使用 <strong>REF2015</strong> 作为能量权重设置。</p>
+<h4 id="Model-Input">Model Input</h4>
+<p>FlowDesign 采用 <strong>抗体-抗原复合物</strong> 作为输入，表示为：<br>
+$$<br>
+X = {s_i, x_i, O_i}<br>
+$$</p>
+<ul>
+<li>$s_i$：第 $i$ 个残基的氨基酸类型（20 维 one-hot 编码）。</li>
+<li>$x_i$：Cα 原子的三维坐标（3D 坐标）。</li>
+<li>$O_i$：骨架方向（旋转矩阵表示 SO(3)）。</li>
+</ul>
+<p>此外，CDR 片段的 <strong>初始状态</strong> 记为：<br>
+$$<br>
+T = {T s_i, T x_i, T O_i}<br>
+$$<br>
+其中 $T$ 由 <strong>先验分布</strong> 采样得到（如 dyMEAN 生成的结构）。</p>
+<p><strong>FlowDesign 的优化目标</strong></p>
+<p>FlowDesign 通过 <strong>学习一个映射</strong>：<br>
+$$<br>
+T(X) \to X_{\text{target}}<br>
+$$</p>
+<ul>
+<li>$T(X)$ 是模型生成的抗体 CDR 片段</li>
+<li>$X_{\text{target}}$ 是数据集中的真实抗体 CDR 片段</li>
+</ul>
+<p>该映射由 <strong>流匹配（Flow Matching）网络</strong> 进行建模。</p>
+<h4 id="Dataset-3">Dataset</h4>
+<p><strong>(1) 数据来源</strong></p>
+<p>FlowDesign 在 <strong>SAbDab（Structural Antibody Database）</strong> 上训练：</p>
+<ul>
+<li>包含 <strong>13,279 个抗体-抗原复合物</strong>。</li>
+<li>仅选择 <strong>蛋白抗原</strong>（去掉非蛋白抗原的数据）。</li>
+<li>过滤掉分辨率 <strong>低于 4Å</strong> 的结构。</li>
+<li>数据划分：<strong>训练集</strong>：80%，<strong>验证集</strong>：5%，<strong>测试集</strong>：15%
+<ul>
+<li>抗体 CDR 片段长度：
+<ul>
+<li>CDRH3：12.3（训练集），11.3（测试集）</li>
+<li>其他 CDR 片段长度范围 5.8~12.5</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>(2) 先验分布</strong></p>
+<p>FlowDesign 允许选择不同的 <strong>先验分布</strong> 进行初始化：<strong>随机分布</strong>（standard Gaussian），<strong>dyMEAN 生成的结构</strong>（数据驱动先验），<strong>KIC 运动学闭合法</strong>，<strong>ESM2 蛋白语言模型</strong></p>
+<h4 id="Loss-Function">Loss Function</h4>
+<p>FlowDesign 的损失函数由 <strong>四部分组成</strong>，分别优化：<strong>氨基酸类型（Amino Acid Type）</strong>，<strong>Cα 原子坐标（Cα Coordinate）</strong>，<strong>骨架方向（Backbone Orientation）</strong>，<strong>整体流匹配损失</strong></p>
+<h3 id="1-氨基酸类型损失"><strong>(1) 氨基酸类型损失</strong></h3>
+<p>使用 <strong>均方误差（MSE）</strong>：<br>
+$$<br>
+L_{\text{seq}} = \mathbb{E} \left[ \frac{1}{m} \sum_{k=1}^{m} \text{MSE}(s_k - T s_k, F(R^t, C)) \right]<br>
+$$</p>
+<ul>
+<li>$s_k$ 是真实的氨基酸类型（one-hot），$T s_k$ 是初始先验分布，$F(R^t, C)$ 是模型预测的氨基酸类型变换</li>
+</ul>
+<h3 id="2-Cα-原子坐标损失"><strong>(2) Cα 原子坐标损失</strong></h3>
+<p>使用 <strong>均方误差（MSE）</strong>：<br>
+$$<br>
+L_{\text{pos}} = \mathbb{E} \left[ \frac{1}{m} \sum_{k=1}^{m} \text{MSE}(x_k - T x_k, G(R^t, C)) \right]<br>
+$$</p>
+<ul>
+<li>$x_k$ 是目标坐标，$T x_k$ 是初始分布的坐标，$G(R^t, C)$ 是模型预测的坐标变换</li>
+</ul>
+<h3 id="3-骨架方向损失"><strong>(3) 骨架方向损失</strong></h3>
+<p>使用 <strong>四元数（quaternion）</strong> 表示方向，并计算误差：<br>
+$$<br>
+L_{\text{qua}} = \mathbb{E} \left[ \frac{1}{m} \sum_{k=1}^{m} \text{MSE}(q_k \wedge T q_k^*, H(R^t, C)) \right]<br>
+$$</p>
+<ul>
+<li>$q_k$ 是 SO(3) 旋转矩阵转换成的四元数，$T q_k$ 是初始状态的四元数，$H(R^t, C)$ 是模型预测的方向变换</li>
+</ul>
+<p>此外，还有 <strong>SO(3) 旋转矩阵损失</strong>：<br>
+$$<br>
+L_{\text{ori}} = \mathbb{E} \left[ \frac{1}{m} \sum_{k=1}^{m} | O_k^T (T O_k Q(H(R^t, C))) - I | \right]<br>
+$$</p>
+<h3 id="4-最终损失函数"><strong>(4) 最终损失函数</strong></h3>
+<p>将以上损失函数加权求和：<br>
+$$<br>
+L = \mathbb{E}<em>{t \sim U(0,1)} \left[ L</em>{\text{seq}} + L_{\text{pos}} + \alpha L_{\text{qua}} + \beta L_{\text{ori}} \right]<br>
+$$</p>
+<ul>
+<li>$\alpha, \betaα$ 为权重超参数，训练时动态调整：
+<ul>
+<li><strong>前 200K 轮</strong>：$\alpha = 1, \beta = 0$（先优化四元数损失）</li>
+<li><strong>后 5K 轮</strong>：$\alpha = 0, \beta = 1$（优化 SO(3) 损失）</li>
+</ul>
+</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" title="FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions" target="_blank" rel="external">https://tyang816.github.io/2025/02/18/FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/02/17/Flow%20Matching%20for%20Generative%20Modeling/" title="ICLR-2023 Flow Matching for Generative Modeling"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/</loc>
+    <lastmod>2025-02-18</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2025/02/17/Flow%20Matching%20for%20Generative%20Modeling/</loc>
     <lastmod>2025-02-17</lastmod>
   </url>
