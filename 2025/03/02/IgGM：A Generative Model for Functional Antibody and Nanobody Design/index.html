@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design | tyang</title>
+  <meta name="description" content="论文地址：IgGM：A Generative Model for Functional Antibody and Nanobody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;TencentAI4S&#x2F;IgGM  IgGM：两阶段PLM+Diffusion生成抗体抗原结构 Abstract 免疫球蛋白（Immunoglobulins）是由免疫系统产生的关键蛋白，能够识别并结合外来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design">
+<meta property="og:url" content="https://tyang816.github.io/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：IgGM：A Generative Model for Functional Antibody and Nanobody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;TencentAI4S&#x2F;IgGM  IgGM：两阶段PLM+Diffusion生成抗体抗原结构 Abstract 免疫球蛋白（Immunoglobulins）是由免疫系统产生的关键蛋白，能够识别并结合外来">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm5-6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm9.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm10.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/alg1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig9.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab3.png">
+<meta property="article:published_time" content="2025-03-02T08:35:51.000Z">
+<meta property="article:modified_time" content="2025-03-02T08:36:47.779Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">225</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="title">ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-02T08:35:51.000Z" itemprop="datePublished">2025-03-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="title">FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-18T11:21:35.000Z" itemprop="datePublished">2025-02-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/17/Flow%20Matching%20for%20Generative%20Modeling/" class="title">ICLR-2023 Flow Matching for Generative Modeling</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-17T10:07:49.000Z" itemprop="datePublished">2025-02-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="title">ICML-2023 End-to-End Full-Atom Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-12T12:16:22.000Z" itemprop="datePublished">2025-02-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/01/19/Expert-guided%20protein%20language%20models%20enable%20accurate%20and%20blazingly%20fast%20fitness%20prediction/" class="title">Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-01-19T12:38:06.000Z" itemprop="datePublished">2025-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/IgGM：A Generative Model for Functional Antibody and Nanobody Design" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="article-date">
+	  <time datetime="2025-03-02T08:35:51.000Z" itemprop="datePublished">2025-03-02</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="leancloud_visitors"  data-flag-title="ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5.5k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 20(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://openreview.net/forum?id=zmmfsJpYcq">IgGM：A Generative Model for Functional Antibody and Nanobody Design</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/TencentAI4S/IgGM">https://github.com/TencentAI4S/IgGM</a></p>
+</blockquote>
+<h2 id="IgGM：两阶段PLM-Diffusion生成抗体抗原结构">IgGM：两阶段PLM+Diffusion生成抗体抗原结构</h2>
+<h3 id="Abstract-29">Abstract</h3>
+<p>免疫球蛋白（Immunoglobulins）是由免疫系统产生的关键蛋白，能够识别并结合外来物质，在防御感染和疾病方面发挥重要作用。特异性抗体的设计为疾病治疗开辟了新的途径。随着深度学习的发展，AI 驱动的药物设计成为可能，并推动了多种抗体设计方法的出现。然而，许多现有方法依赖额外的实验条件，与实际应用场景存在差距，使得这些方法难以直接融入现有的抗体设计流程。为了解决这一问题，我们提出了 <strong>IgGM</strong>，一个用于 <strong>免疫球蛋白 de novo 设计</strong> 的生成模型，能够针对特定抗原同时生成抗体序列和三维结构。IgGM 由 <strong>三大核心模块</strong> 组成：<strong>预训练语言模型</strong>（用于提取序列特征）、<strong>特征学习模块</strong>（用于识别关键特征）、<strong>预测模块</strong>（用于生成抗体序列并预测完整的抗体-抗原复合体结构）。IgGM 不仅在结构预测任务中表现出色，还能设计具有新颖性的抗体和纳米抗体，这使其在抗体设计的多种实际应用场景中具有很高的实用价值。</p>
+<h3 id="Introduction-27">Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>抗体（Antibodies），也称为免疫球蛋白（Ig），是由 B 淋巴细胞分泌的 Y 形蛋白，主要存在于血液和淋巴液中（Silverthorn, 2015; Akkaya et al., 2020）。如 <strong>Figure 1(A)</strong> 所示，抗体由 <strong>两条重链（heavy chains）和两条轻链（light chains）</strong> 组成，每条链包含 <strong>可变区（VH 或 VL）</strong> 和 <strong>恒定区（CH 或 CL）</strong>。可变区包括 <strong>三个互补决定区（CDRs）</strong>，这些 CDR 负责抗原结合，并决定抗体的特异性。此外，可变区还包含 <strong>四个框架区（FRs）</strong>，其主要作用是提供结构支持，并且其序列变化较小。抗体在免疫系统中的核心功能是 <strong>识别并结合特定外来物质（如细菌、病毒、真菌和寄生虫）</strong>，并通过免疫反应清除这些外来物质（Schroeder Jr &amp; Cavacini, 2010; Litman et al., 1993）。抗体在医学、科学研究和生物技术领域具有重要价值，被广泛应用于 疾病治疗、个性化医疗、疫苗开发和新药研发（Nelson et al., 2010; Weiner, 2015; Sliwkowski &amp; Mellman, 2013）。</p>
+<p>然而，尽管抗体在各个领域具有广泛的应用价值，传统的抗体生产方法仍然面临诸多挑战，例如 <strong>生产周期长（Georgiou et al., 2014）、批次间变异性大（Bradbury et al., 2018），以及为了降低免疫原性而进行人源化改造的需求（Safdari et al., 2013）</strong>。这些问题限制了抗体在临床和工业中的广泛应用，并影响了其治疗效果。为了克服这些限制，研究者们开始探索 <strong>人工智能（AI）驱动的抗体设计</strong>。早期的方法多基于 <strong>能量计算</strong>（energy-based computational methods），如 基于统计能量函数的计算方法（Li et al., 2014; Adolf-Bryfogle et al., 2018），但其表达能力有限，难以满足复杂的抗体设计需求。随后，<strong>基于序列的语言模型</strong>（Liu et al., 2020; Saka et al., 2021; Akbar et al., 2022; Shin et al., 2021; Jing et al., 2020; Cao et al., 2021）开始应用于抗体设计，但由于 <strong>缺乏结构信息</strong>，其性能仍然不理想。</p>
+<p>最近，<strong>共设计方法（co-design methods）</strong> 逐渐兴起，这些方法能够同时设计蛋白质的序列和结构（Anishchenko et al., 2021; Wang et al., 2022; Anand &amp; Achim, 2022; Shi et al., 2023），为 AI 驱动的抗体设计提供了新的可能性（Jin et al., 2021; 2022; Luo et al., 2022; Kong et al., 2023a; b; Wu &amp; Li, 2024）。然而，现有共设计方法仍然面临重大挑战，主要包括：</p>
+<ol>
+<li><strong>依赖已知抗体-抗原复合体的实验结构</strong>，即许多方法需要已测定的抗体-抗原结构进行修饰或优化，而 <strong>在新抗原场景下，这些数据往往不可用</strong>。</li>
+<li><strong>需要已知的抗体框架区（FRs）结构或来自数据库的模板</strong>，然而在 <strong>de novo 设计</strong>（从头设计）时，<strong>框架区的结构通常是未知的</strong>，这限制了方法的通用性。</li>
+</ol>
+<p>为了解决上述问题，我们提出了 <strong>IgGM</strong>，一个用于 <strong>同时设计抗体序列和结构</strong> 的生成模型。IgGM 采用多级网络架构，首先利用 <strong>预训练蛋白语言模型</strong> 提取抗体序列的进化特征，然后通过 <strong>特征编码器</strong> 学习抗原-抗体的相互作用，最后由 <strong>预测模块</strong> 生成抗体的序列和完整三维结构。IgGM 的关键特性是它能够 <strong>利用序列和结构的相互作用，优化抗体设计，即使框架区（FRs）仅部分已知，也能生成合理的抗体结构</strong>。这种能力符合实际应用场景，并为抗体设计提供了新的可能性。</p>
+<p>IgGM 具有强大的适应性，支持多种抗体设计任务，包括：</p>
+<ol>
+<li><strong>预测抗原-抗体复合体结构</strong>。</li>
+<li><strong>设计 CDR H3 关键结合区域</strong>，以及 <strong>同时设计多个 CDR 片段（CDR H1-H3 &amp; CDR L1-L3）</strong>。</li>
+<li><strong>无需重新训练即可适应不同应用需求</strong>，例如 <strong>de novo 设计完整抗体或纳米抗体（nanobodies）</strong>。</li>
+<li><strong>适用于纳米抗体（VHH）设计</strong>，纳米抗体是一种小型单域抗体，具有强抗原结合能力和高稳定性（Cai et al., 2020）。</li>
+</ol>
+<p>实验结果表明，IgGM 在多个抗体设计任务中表现出色：</p>
+<ul>
+<li>在 <strong>抗原-抗体复合体结构预测任务</strong> 上，<strong>IgGM 的性能可与现有最先进的方法（如 AlphaFold3）媲美</strong>。</li>
+<li>在 <strong>抗体 de novo 设计任务</strong> 上，IgGM <strong>优于现有方法</strong>（如 dyMEAN、DiffAb），并在 <strong>序列恢复率（AAR）</strong> 和 <strong>DockQ 结构精准度</strong> 等关键指标上表现更优。</li>
+</ul>
+<p>综上，IgGM 通过结合 <strong>序列建模、结构预测和生成建模</strong>，突破了传统抗体设计方法的局限性，使其 更符合真实生物制药需求，并为抗体和纳米抗体的计算机辅助设计提供了强大的工具。</p>
+<h3 id="Background-3">Background</h3>
+<h4 id="Preliminaries">Preliminaries</h4>
+<p>由于纳米抗体（nanobody）可以被视为仅由抗体重链组成的单链抗体，因此在接下来的讨论中，我们将主要以抗体（antibody）为例进行说明。蛋白质由 20 种不同的氨基酸 组成，对于长度为 NNN 的蛋白质序列，可以表示为 $S = {s_i}<em>{i=1}^{N}$，其中每个 sis_isi 代表一个氨基酸残基。蛋白质的三维结构可以用骨架原子（backbone atoms）的 三维坐标 来表示，定义为 $X = {x</em>{i, \omega}}<em>{i=1}^{N}$，其中每个坐标 $x</em>{i, \omega} \in \mathbb{R}^3$，$\omega \in {C_{\alpha}, N, C, O}$ 代表蛋白质骨架中的不同原子。</p>
+<p>抗体是一类特殊的蛋白质，由两条不同的链组成，而 <strong>纳米抗体</strong> 仅包含 <strong>一条重链</strong>。每条抗体链由 <strong>四个框架区（FRs）</strong> 和 <strong>三个互补决定区（CDRs）</strong> 组成。CDRs 可进一步细分为：</p>
+<ul>
+<li>CDR H1, H2, H3（位于重链）</li>
+<li>CDR L1, L2, L3（位于轻链）</li>
+</ul>
+<p>抗原-抗体复合体可以表示为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>其中，$H : L - A$ 代表抗体的重链（H）、轻链（L）和抗原（A），而 $l_H$、$l_L$、$l_A$ 分别表示 <strong>重链、轻链和抗原的序列长度</strong>。对于 <strong>纳米抗体-抗原复合体</strong>，由于纳米抗体 <strong>不包含轻链（L）</strong>，因此相应的复合体表示中不包括轻链部分。</p>
+<p>过去的研究通常将 抗体设计问题 定义为：<strong>在已知框架区（FRs）序列的情况下，设计 CDRs 以生成能够结合特定抗原的抗体</strong>（Shin et al., 2021; Akbar et al., 2022）。由于框架区对抗原-抗体相互作用的影响相对较小，早期研究主要关注 <strong>CDR 设计</strong>，通常假设 <strong>框架区的结构是固定不变的</strong>。然而，在面对 <strong>全新的抗原</strong> 时，所设计抗体的整体结构（包括框架区）<strong>是未知的，无法提前确定</strong>。IgGM 允许在 <strong>抗原结合过程中考虑框架区的结构变化</strong>，使其能够在 <strong>无实验结构</strong> 的情况下进行完整抗体的设计。此外，由于框架区主要提供结构支持，并且某些已知框架区序列在物理化学性质上具有较好的稳定性（Bennett et al., 2024; Vincke et al., 2009），因此在设计时 <strong>没有必要完全重新生成框架区序列</strong>，而是主要 <strong>针对 CDR 进行设计</strong>。</p>
+<h4 id="Problem-Formulation">Problem Formulation</h4>
+<p>在实际的抗体设计任务中，现有研究通常使用已知的 <strong>框架区序列（FRs）</strong> 来引导抗体设计（Bennett et al., 2024）。然而，在没有 <strong>互补决定区（CDRs）</strong> 的情况下，抗体的结构并不是固定的。因此，我们的研究聚焦于更贴近真实应用场景的问题，即 <strong>在给定框架区序列的情况下，设计能够结合特定抗原表位（epitope）的位置的抗体序列和结构</strong>。</p>
+<p>为了更清晰地表示设计任务，我们将 <strong>CDRs 残基集</strong> 与 <strong>框架区残基集</strong> 进行区分：</p>
+<ul>
+<li>
+<p><strong>CDRs 残基集</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm2.png" alt="avatar" style="zoom:100%;" /></div>
+</li>
+<li>
+<p><strong>框架区（FRs）残基集</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm3.png" alt="avatar" style="zoom:100%;" /></div>
+</li>
+</ul>
+<p>最终，抗体设计问题可以简化为 <strong>在已知抗原结构 $R_A = (S_A, X_A, \omega)$ 和已知抗体框架区序列（$S_F$）的情况下，设计 CDR 序列 SCS_CSC 以及完整抗体的结构 $(X_C, X_F)$</strong>，以确保抗体能够有效结合抗原。</p>
+<h3 id="Methods-10">Methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Denoising-Network-Architecture">Denoising Network Architecture</h4>
+<p>IgGM 是一个灵活的抗体设计模型，能够生成能够结合特定抗原的抗体。该模型支持多种抗体设计任务，包括 <strong>抗体序列和结构的联合设计</strong>。在本节中，我们首先介绍 IgGM 的去噪网络架构（denoising network architecture），然后描述其训练方法和目标，最后介绍 IgGM 采样策略。</p>
+<p>IgGM 的整体网络架构如 <strong>Figure 3</strong> 所示，包括 <strong>预训练蛋白语言模型、特征学习模块和序列-结构设计模块</strong>。在输入抗原结构和初始化的抗体序列后，预训练的蛋白质语言模型首先提取序列特征，随后特征编码器（Sgformer）融合这些特征，最终由 <strong>序列-结构设计模块（预测模块）</strong> 生成抗体序列和结构，并确保其能有效结合抗原。</p>
+<h5 id="Feature-Extraction-from-Protein-Language-Models"><strong>Feature Extraction from Protein Language Models</strong></h5>
+<p>受到自然语言处理领域预训练语言模型成功的启发，我们采用 <strong>预训练蛋白语言模型（PLM）</strong> 作为特征提取器（Lin et al., 2022; Chen et al., 2023; Hayes et al., 2024）。我们选择 <strong>ESM-PPI</strong>（Wu et al., 2024）作为序列特征提取器，因为它能 <strong>有效建模蛋白-蛋白相互作用（PPI）</strong>。ESM-PPI 是 <strong>ESM2（Lin et al., 2022）</strong> 的扩展版本，针对多链蛋白复合体的结构和功能特征进行了优化。抗原和扰动后的抗体数据首先通过 <strong>PLM</strong> 进行处理，提取最终层的特征，并将其输入 <strong>特征编码器</strong>。在训练过程中，我们 <strong>冻结 PLM 的参数</strong> 以保持特征的完整性并减少计算成本。</p>
+<h5 id="Multi-level-Feature-Encoder"><strong>Multi-level Feature Encoder</strong></h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig5.png" alt="avatar" style="zoom:100%;" /></div>
+<p>为了充分利用不同特征之间的相互作用，我们设计了 <strong>多级特征编码器</strong>（multi-level feature encoder），如 <strong>Figure 3</strong> 所示。该编码器能够建模抗体结构的 <strong>不同链之间的相互作用</strong>，并通过 <strong>在 PLM 输出特征中引入链特定表示（chain-specific representations）</strong> 来增强模型的表达能力。此外，我们特别考虑了 <strong>抗原表位（epitope）</strong> 信息，在抗原特征中增加了专门的表示，以强化抗体-抗原相互作用的学习。该编码器还包含一个 <strong>结构编码器（structure encoder）</strong>，用于捕捉氨基酸的空间位置。这些特征随后被输入 <strong>16 层 Sgformer</strong> 进行进一步融合和编码，提取出的序列特征对于抗体的去噪恢复至关重要，而 <strong>配对（pair-wise）表示</strong> 则用于建模抗原-抗体复合体的复杂折叠结构。</p>
+<h5 id="Sequence-and-Structure-Design-Module"><strong>Sequence and Structure Design Module</strong></h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig6.png" alt="avatar" style="zoom:100%;" /></div>
+<p>IgGM 使用 <strong>8 层预测模块（Predict Modules）</strong> 进行结构优化和序列生成（见 <strong>Figure 6</strong>）。该模块采用 <strong>不变点注意力（Invariant Point Attention, IPA）</strong> 进行结构优化，并同时输出设计的抗体序列。由于 <strong>IPA 具有旋转和平移不变性</strong>，因此能够确保抗体结构在不同空间位置和取向下的一致性。预测模块利用 <strong>Sgformer</strong> 学习的序列和配对特征，同时结合从初始采样生成的抗体结构信息，迭代优化氨基酸坐标，最终得到完整的 <strong>抗体三维结构</strong>。</p>
+<h5 id="Inter-chain-Feature-Embedding-Module-and-Structure-Encoder"><strong>Inter-chain Feature Embedding Module and Structure Encoder</strong></h5>
+<p>IgGM 采用两个核心组件来建模不同抗体链的特征及其与抗原的相互作用，如 <strong>Figure 3</strong> 所示：</p>
+<ol>
+<li><strong>Inter-chain Feature Embedding Module</strong>：通过融合氨基酸的 <strong>位置信息</strong> 和 <strong>跨链信息</strong>，捕获抗体不同链的相对位置关系，并提取 <strong>链特定特征（chain-specific features）</strong>。</li>
+<li><strong>Structure Encoder</strong>：编码蛋白质结构信息，利用距离特征计算氨基酸之间的空间关系，并通过 <strong>离散化处理</strong> 生成可输入的特征。为了充分利用 <strong>抗原表位信息</strong>，我们将其编码为 <strong>单体表示（Single Representation）</strong> 和 <strong>配对表示（Pair Representation）</strong>，以增强对 <strong>表位附近结构的生成能力</strong>。</li>
+</ol>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig8.png" alt="avatar" style="zoom:100%;" /></div>
+<p>如 <strong>Figure 8</strong> 所示，IgGM 可生成能够特异性结合不同表位的抗体。</p>
+<h4 id="Training-Details-2">Training Details</h4>
+<p>我们采用 <strong>蒸馏（distillation）方法</strong> 训练 <strong>一致性模型（consistency model）</strong>，该训练分为 <strong>两个阶段</strong>。首先，我们预训练 <strong>扩散模型（diffusion model）</strong>，然后在第二阶段进行蒸馏，以获得最终的一致性模型。</p>
+<h5 id="Phase-1-结构训练"><strong>Phase 1: 结构训练</strong></h5>
+<p>在第一阶段，我们训练 <strong>结构生成</strong> 任务，同时 <strong>保持抗体原始序列信息</strong>。具体而言，我们 <strong>仅训练结构预测任务</strong>，以确保模型首先学习 <strong>抗体的三维折叠规律</strong>。训练时，我们从数据集中 <strong>随机采样抗原-抗体复合体</strong> $x$，并对抗体结构施加不同级别的噪声 $x_t$，然后训练模型 <strong>D</strong> 以恢复原始抗体结构。目标是确保恢复的结构尽可能接近真实结构。</p>
+<p>结构预测的总损失函数如下，最小化 <strong>几何损失、框架损失、结构违规损失</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm4.png" alt="avatar" style="zoom:100%;" /></div>
+<p>其中：</p>
+<ul>
+<li>
+<p>$L_{geo}$ 是几何监督损失（预测氨基酸之间的距离和角度）。</p>
+</li>
+<li>
+<p>$L_{Frame}$ 约束抗体整体结构，$L_{iFrame}$ 进一步扩展到多链抗体的建模。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm5-6.png" alt="avatar" style="zoom:100%;" /></div>
+</li>
+<li>
+<p>$L_{viol}$ 是 <strong>结构违规损失</strong>（用于修正不合理的键长、键角和空间冲突）。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm7.png" alt="avatar" style="zoom:100%;" /></div>
+</li>
+</ul>
+<h5 id="Phase-2-序列训练"><strong>Phase 2: 序列训练</strong></h5>
+<p>在第二阶段，我们 <strong>加入序列设计任务</strong>，训练目标变为最小化 <strong>序列恢复损失和结构损失</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm8.png" alt="avatar" style="zoom:100%;" /></div>
+<p>其中：</p>
+<ul>
+<li>$L_{srcv}$ 是 <strong>序列恢复损失</strong>，用于训练模型 <strong>预测正确的氨基酸类型</strong>（采用交叉熵损失）。</li>
+<li>其他损失项与第一阶段相同。</li>
+</ul>
+<p>训练过程中，我们采用 <strong>混合策略</strong>，赋予不同任务不同的采样概率（例如 CDR H3 设计的权重比其他 CDR 更高，4 :2： 2： 2用于设计CDR H3、CDR H和所有CDR），以提升模型的泛化能力。</p>
+<p><strong>Phase 3: 一致性蒸馏模型</strong></p>
+<p>完成扩散模型训练后，我们使用 <strong>一致性模型蒸馏（Consistency Model Distillation）</strong>，采用 <strong>Song et al. (2023)</strong> 提出的损失，减少去噪步骤（从 1000+ 步减少到 1-10 步）：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm9.png" alt="avatar" style="zoom:100%;" /></div>
+<p>其中，$ẑ_{\Psi t_n}$ 是 <strong>从 $t_{n+1}$ 到 $t_n$ 的估计值</strong>，用于一致性模型的优化。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/frm10.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="Directly-Generate-Antibodies">Directly Generate Antibodies</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/alg1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>如 <strong>Algorithm 1</strong> 所示，在设计特定抗原的抗体时，我们首先 <strong>随机初始化氨基酸</strong>，然后采样 <strong>位移坐标（translation coordinates）</strong> 和 <strong>旋转矩阵（SO(3)）</strong>，最终通过训练好的 <strong>IgGM 生成抗体序列和结构</strong>。由于 <strong>一致性模型</strong> 具有 <strong>高效采样能力</strong>，IgGM 既可以 <strong>单步生成抗体</strong>，也可以 <strong>采用多步优化以提高稳定性</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab4.png" alt="avatar" style="zoom:50%;" /></div>
+<p>实验结果表明，<strong>10 步采样在生成质量与速度之间取得了较好平衡</strong>（见 <strong>Table 4</strong>）。此外，我们可以使用 <strong>AlphaFold3 预测的结构作为初始输入</strong>，进一步提高 IgGM 的生成质量。</p>
+<h3 id="Experiments-8">Experiments</h3>
+<p>从<strong>SAbDab</strong>数据库中构建了训练、验证和测试集，使用了广泛使用的基于时间划分数据集的方法。我们从2023年下半年删除了与训练集序列相似的抗体，得到了一个包含60个抗体（SAb-23H2-Ab）和27个纳米体测试集（SAb-23H2-Nano）的测试集</p>
+<p>由于AlphaFold 3的局限性，为每个示例生成<strong>5</strong>个样本</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab5.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="Complex-Structure-Prediction-2">Complex Structure Prediction</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+<p><strong>复合物结构预测</strong>（Complex Structure Prediction）任务的目标是，在已知抗体序列和抗原的情况下，预测抗体-抗原复合体的三维结构。IgGM 能够在不进行序列设计的前提下完成结构预测。为了与现有方法进行公平比较，我们采用 <strong>tFold-Ag</strong> 作为基准评测标准，并使用 <strong>TM-Score、DockQ、成功率（SR, DockQ &gt; 0.23）</strong> 作为评测指标。</p>
+<p>在实验中，我们在 <strong>SAb23H2</strong> 测试集上评估了 IgGM，并与以下四种方法进行对比：</p>
+<ul>
+<li><strong>IgFold+ HDoc）</strong>：仅支持抗体结构预测，我们用 HDock 对抗体进行对接。</li>
+<li><strong>tFold-Ag</strong>：一种基于 AlphaFold 变体的抗体-抗原复合体预测方法。</li>
+<li><strong>AlphaFold3</strong> ：最新的通用蛋白质结构预测工具，直接用于复合体预测。</li>
+<li><strong>dyMEAN</strong>：一种利用模板初始化的抗体设计方法。</li>
+</ul>
+<p>实验结果（见 <strong>Table 1</strong>）表明，在 <strong>抗体结构预测</strong> 任务中，IgGM 的性能优于 dyMEAN，尽管相比专门的结构预测方法仍存在一定差距，但整体预测质量接近 SOTA（State-of-the-Art）。在 <strong>对接质量（DockQ）</strong> 方面，IgGM 超过了所有对比方法，显示其在 <strong>抗体-抗原相互作用建模</strong> 方面的能力。此外，IgGM 预测的抗体 <strong>iRMS 和 LRMS 更低</strong>，其 DockQ 成功率达到 <strong>46.67%</strong>，远超 dyMEAN（6.67%）。如果使用 <strong>AlphaFold 3 预测的抗体结构作为初始输入</strong>，IgGM 的性能进一步提升，DockQ 成功率提高至 <strong>66.67%</strong>，表明该策略能够增强结构预测质量。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig9.png" alt="avatar" style="zoom:100%;" /></div>
+<p><strong>Figure 9</strong> 进一步展示了 IgGM 在 <strong>修正 AlphaFold3 预测错误的复合物结构</strong> 方面的能力，使其生成更符合表位的结构。</p>
+<h4 id="De-Novo-Design-of-Antibodies-for-Specific-Antigen">De Novo Design of Antibodies for Specific Antigen</h4>
+<p>在 <strong>从头（de novo）设计抗体</strong> 任务中，我们评估了 IgGM 在 <strong>生成能结合特定抗原的抗体序列和结构</strong> 方面的能力。由于现有方法难以实现端到端的抗体设计，我们采用 <strong>两种 pipeline</strong> 进行对比：</p>
+<ol>
+<li><strong>Pipeline 1（dyMEAN 流程）</strong>：先用 <strong>IgFold</strong> 预测抗体结构 → 用 <strong>HDock</strong> 进行抗原对接 → 采用 <strong>CDR 生成方法（MEAN、DiffAb、dyMEAN）</strong> 设计 CDR → 进行侧链优化。</li>
+<li><strong>Pipeline 2（AlphaFold 3 流程）</strong>：使用 <strong>AlphaFold 3 直接预测抗体-抗原复合体结构</strong> → 进行抗原结构对齐 → 采用 <strong>CDR 生成方法</strong> 进行设计。</li>
+</ol>
+<p>我们在 <strong>SAb-2023H2-Ab</strong> 测试集上对比了 MEAN、DiffAb、dyMEAN 和 IgGM。实验结果（见 <strong>Table 2</strong>）显示：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li><strong>IgGM 在几乎所有评测指标上均优于其他方法</strong>，包括 DockQ、iRMS、LRMS、CDR 结构准确性和序列恢复率（AAR）。</li>
+<li>仅支持 <strong>CDR H3 设计</strong> 的 MEAN 表现较弱，而 <strong>dyMEAN 和 DiffAb</strong> 由于不支持整体结构设计，其生成的抗体结构质量较低。</li>
+<li><strong>IgGM 是唯一在 iRMS &lt; 8、LRMS &lt; 20 的方法，同时成功率（SR）高达 43.3%</strong>，表明其 <strong>对抗体整体结构和抗原结合界面的优化能力</strong>。</li>
+<li><strong>IgGM 的 CDR-H3 序列恢复率（AAR）达到 36%</strong>，比 dyMEAN 提高 22.4%，进一步验证其 <strong>抗体序列生成的可靠性</strong>。</li>
+<li><strong>使用 AlphaFold 3 作为初始结构输入</strong>，IgGM 在 DockQ 相关指标上进一步提升 <strong>近 20%</strong>，表明强结构预测工具的结合能增强生成效果。</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<p><strong>Figure 4(A)</strong> 展示了 IgGM 生成的抗体相比 dyMEAN 更贴合抗原表位，DockQ 分数更高。</p>
+<h4 id="Structure-Prediction-and-De-Novo-Design-of-Nanobodies">Structure Prediction and De Novo Design of Nanobodies</h4>
+<p><strong>纳米抗体（nanobody, VHH）</strong> 是 <strong>单链抗体</strong>，相比传统抗体，CDR H3 更长，且结合模式更加灵活，因此在结构预测和生成任务上更具挑战性。我们使用 <strong>SAb-2023H2-Nano</strong> 数据集，比较 IgGM 和 <strong>DiffAb（AF3 结构初始化）</strong> 在 <strong>纳米抗体结构预测和 de novo 设计</strong> 任务上的性能。</p>
+<p>实验结果（见 <strong>Table 3</strong>）表明：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/IgGM/tab3.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li><strong>纳米抗体的结构预测任务</strong> 由于其较为简单的单链特性，整体结果比传统抗体更好。</li>
+<li><strong>然而，在对接相关指标上，纳米抗体的 DockQ 和成功率低于传统抗体</strong>，表明其更复杂的结合模式对预测提出了更高要求。</li>
+<li><strong>IgGM 在 DockQ 和成功率（SR = 44%）上均优于 DiffAb</strong>，证明其在 <strong>纳米抗体-抗原复合体建模</strong> 方面的能力。</li>
+<li>在 <strong>de novo 设计任务</strong> 上，IgGM 仍然优于 DiffAb，虽然 CDR 序列恢复率有所下降（由于纳米抗体的 CDR 变异性较大），但生成的结构更加精确，最终 DockQ 成功率提升至 41.5%。</li>
+</ul>
+<p><strong>Figure 4(B)</strong> 展示了 IgGM 生成的纳米抗体相比 DiffAb 具有更高的 DockQ 分数，更贴合抗原表位。</p>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" title="ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design" target="_blank" rel="external">https://tyang816.github.io/2025/03/02/IgGM：A Generative Model for Functional Antibody and Nanobody Design/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" title="FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
