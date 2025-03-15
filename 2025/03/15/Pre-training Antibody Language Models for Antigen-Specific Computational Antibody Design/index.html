@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design | tyang</title>
+  <meta name="description" content="论文地址：Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;KyGao&#x2F;ABGNN  ABGNN：预训练AbBERT+图网络RefineGNN编码抗体抗原 Abstract 抗体是一种能够通过结合病原体来有效保护人体的蛋白">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design">
+<meta property="og:url" content="https://tyang816.github.io/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design 论文实现：https:&#x2F;&#x2F;github.com&#x2F;KyGao&#x2F;ABGNN  ABGNN：预训练AbBERT+图网络RefineGNN编码抗体抗原 Abstract 抗体是一种能够通过结合病原体来有效保护人体的蛋白">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/alg1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab6.png">
+<meta property="article:published_time" content="2025-03-15T15:17:46.000Z">
+<meta property="article:modified_time" content="2025-03-15T15:23:07.336Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">226</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">63</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="title">KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-15T15:17:46.000Z" itemprop="datePublished">2025-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="title">ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-02T08:35:51.000Z" itemprop="datePublished">2025-03-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="title">FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-18T11:21:35.000Z" itemprop="datePublished">2025-02-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/17/Flow%20Matching%20for%20Generative%20Modeling/" class="title">ICLR-2023 Flow Matching for Generative Modeling</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-17T10:07:49.000Z" itemprop="datePublished">2025-02-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/12/End-to-End%20Full-Atom%20Antibody%20Design/" class="title">ICML-2023 End-to-End Full-Atom Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-12T12:16:22.000Z" itemprop="datePublished">2025-02-12</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="article-date">
+	  <time datetime="2025-03-15T15:17:46.000Z" itemprop="datePublished">2025-03-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="leancloud_visitors"  data-flag-title="KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5.5k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 20(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3580305.3599468">Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/KyGao/ABGNN">https://github.com/KyGao/ABGNN</a></p>
+</blockquote>
+<h2 id="ABGNN：预训练AbBERT-图网络RefineGNN编码抗体抗原">ABGNN：预训练AbBERT+图网络RefineGNN编码抗体抗原</h2>
+<h3 id="Abstract-49">Abstract</h3>
+<p>抗体是一种能够通过结合病原体来有效保护人体的蛋白质。近年来，基于深度学习的计算抗体设计因其能够自动从数据中挖掘抗体模式，以补充人类经验而受到广泛关注。然而，计算方法严重依赖高质量的抗体结构数据，而这类数据非常有限。此外，决定抗体特异性和结合亲和力的关键部分——互补决定区（CDR）高度可变且难以预测，有限的高质量抗体结构数据的可用性进一步加剧了CDR生成的困难。幸运的是，已有大量抗体序列数据可用于辅助CDR建模并减少对结构数据的依赖。受预训练模型在蛋白质建模方面成功应用的启发，本文开发了一种<strong>抗体预训练语言模型</strong>，并将其系统性地<strong>融入抗原特异性的抗体设计模型中</strong>。具体而言，首先基于序列数据预训练了一个新型抗体语言模型，然后提出了一种CDR序列与结构的一次性生成方法，以减少自回归方法的高计算成本和误差传播问题，最后通过精心设计的模块利用预训练抗体模型来增强抗原特异性的抗体生成模型。实验结果表明，我们的方法在序列与结构生成、针对抗原结合的<strong>CDR-H3</strong>设计以及抗体优化等任务上优于现有基线模型。</p>
+<h3 id="1-Introduction">1 Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig1.png" alt="avatar" style="zoom:50%;" /></div>
+<p>抗体是Y形蛋白质，在人类免疫系统中发挥关键作用，可用于治疗各种病原体感染、癌症等疾病。抗体具有高度特异性，大多数抗体是单克隆抗体，每种抗体通常仅与特定的抗原结合。抗体的结合特异性主要由互补决定区（CDR）决定，尤其是重链上的CDR-H3，它是最关键且变异性最高的区域。因此，抗体设计的主要挑战在于识别和设计能够有效且稳定结合特定抗原的新CDR。</p>
+<p>近年来，计算方法被探索用于自动生成具有期望特性的CDR序列，例如高结合亲和力。深度学习在抗体设计中展现了巨大潜力，如基于深度生成模型和图神经网络的方法。然而，早期研究主要集中于生成CDR序列，而近年来，序列与三维结构的联合设计成为更具前景的趋势。例如，一些研究使用深度图神经网络同时建模抗体的序列和结构。然而，目前的方法仍然面临多个挑战。首先，现有数据集中抗体的三维结构数量有限，例如最广泛使用的抗体结构数据库 <strong>SAbDab</strong> 仅包含数千个结构，而抗原-抗体复合物的数据更为稀少，这给深度学习模型的训练带来了挑战，尤其是对于高度可变的CDR结构而言。其次，当前的抗体设计方法大多采用自回归方式逐步生成氨基酸类型及其对应的结构坐标，这种方法存在两个缺点：一是生成效率低下，需要多步迭代；二是存在误差累积问题，早期生成的错误会影响后续步骤的准确性，最终影响整体生成质量。</p>
+<p>为了解决上述挑战，本文提出了一些新的策略：</p>
+<ol>
+<li>尽管结构数据有限，但抗体序列数据规模庞大，而已有研究表明蛋白质的序列决定其结构，因此，特别设计了一种抗体序列预训练方法，以充分利用大量序列数据，提升抗体表示能力并缓解结构数据的稀缺问题。</li>
+<li>提出了一种 <strong>一次性（one-shot）</strong> 生成CDR序列和结构的方法，相比于自回归方法，该方法能够同时生成所有CDR氨基酸，并一次性更新其结构，从而避免了自回归方法的误差传播问题。同时，我们还引入多次迭代精炼步骤（类似于AlphaFold2），以进一步优化生成结果。</li>
+<li>我在抗体设计模型中系统性地融入了预训练抗体语言模型，而不仅仅是将其作为初始化。具体而言，我们使用 <strong>prompt tuning</strong> 方法来优化预训练模型，使其不仅保留原有能力，还能为下游抗体设计任务提供可迁移的知识。此外，我们将预训练模型的中间表示与抗体设计模型进行融合，以增强CDR序列和结构的预测能力。</li>
+</ol>
+<p>通过上述策略，我们在多个任务上验证了所提方法的有效性，包括 <strong>序列与结构生成、抗原结合的CDR-H3设计，以及抗体优化任务</strong>。实验结果表明，相比于现有方法，我们的方法在多个评测指标上达到了 <strong>最优性能</strong>，同时提升了生成的效率和准确性。本文的主要贡献总结如下：</p>
+<ol>
+<li>提出了一种 <strong>专门针对抗体的预训练方法</strong>，并将其成功应用于抗体序列-结构的联合设计。</li>
+<li>采用了一种 <strong>一次性（one-shot）</strong> 生成策略，以提高抗体生成的效率并避免误差累积。</li>
+<li>通过大量实验验证了所提出方法的有效性，达到了当前最优的抗体设计性能。</li>
+</ol>
+<h3 id="3-Methods">3 Methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="3-1-Background-and-Overview">3.1 Background and Overview</h4>
+<p>抗体由两个对称部分组成，每个部分包含重链和轻链（VH 和 VL），其中可变区（Variable Region）包含 <strong>框架区（Framework）</strong> 和 <strong>三条互补决定区（CDR-H1/H2/H3）</strong>。CDR 是决定抗体与抗原结合能力的关键区域，其中 CDR-H3 的变异性最高，因此其准确预测是抗体设计的核心挑战。本文的方法基于 <strong>深度图神经网络（GNN）</strong>，并结合 <strong>抗体-抗原复合物（Antigen-Antibody Complex）</strong> 进行抗体设计。与之前的方法不同，本文 <strong>仅考虑抗原的表位（epitope）区域，而不是整个抗原</strong>，并将 <strong>抗体框架区</strong> 作为上下文信息，以提高设计的准确性。</p>
+<p>本文的方法采用了 <strong>AbBERT 预训练模型</strong> 提供的抗体序列表示，并结合 <strong>序列 GNN（H_seq）和结构 GNN（H_str）</strong> 进行 <strong>抗体序列-结构联合生成</strong>，最后通过多轮迭代优化最终的生成结果。该方法的整体框架如 <strong>Figure 2</strong> 所示。</p>
+<h4 id="3-2-AbBERT-Antibody-Pre-training">3.2 AbBERT: Antibody Pre-training</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>由于高质量的抗体结构数据稀缺，而抗体序列数据量较大，因此本文借鉴蛋白质预训练的成功经验，设计了一种 <strong>针对抗体的预训练语言模型 AbBERT</strong>，以增强抗体表示能力并提升抗体设计的性能。</p>
+<p><strong>AbBERT 预训练采用了类似 BERT 的掩码语言模型（MLM）</strong>，但针对抗体序列的特殊性进行了优化：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm1.png" alt="avatar" style="zoom:40%;" /></div>
+<ul>
+<li>仅对 <strong>重链（Heavy Chain, VH）</strong> 进行训练，因为重链对于抗体功能至关重要。</li>
+<li>仅对 <strong>可变区（Variable Region, VH）</strong> 进行预训练，而不包括恒定区（Constant Region）。</li>
+<li><strong>掩码策略（Masking Strategy）</strong>：不同于普通 BERT 预训练，AbBERT <strong>仅对 CDR 区域进行掩码</strong>，而框架区（Framework）则用于提供上下文信息。这种设计有助于提高 CDR 预测的准确性。</li>
+<li><strong>区域嵌入（Region Embedding）</strong>：在输入中为不同的 <strong>CDR-H1/H2/H3 及框架区</strong> 分别引入独立的嵌入，以帮助模型区分不同区域的功能。</li>
+<li><strong>掩码比例（Masking Ratio）</strong>：由于 CDR 区域仅占 VH 序列的 15%，因此使用较高的掩码比例（50%、80% 和 100%）进行实验，以确保模型能够有效学习 CDR 的信息。</li>
+</ul>
+<p>训练完成后，AbBERT <strong>可以同时预测所有 CDR 残基（one-shot 预测）</strong>，提高生成效率，并为后续抗体设计任务提供强大的初始化信息。</p>
+<h4 id="3-3-Antibody-Sequence-structure-Co-design">3.3 Antibody Sequence-structure Co-design</h4>
+<p>本文将抗体设计建模为 <strong>3D 图补全任务（3D Graph Completion Task）</strong>，目标是预测 <strong>抗原结合区（paratope，即 CDR）</strong> 的结构，并生成相应的序列。为此，我们采用 <strong>层次化图神经网络（Hierarchical Graph Neural Network, GNN）</strong> 进行编码和解码，分别用于序列预测（H_seq）和结构预测（H_str）。所有图的构建均基于 <strong>K 近邻（KNN）</strong> 计算，节点可以是原子级别或残基级别的。</p>
+<p>在本文的方法中，与 Jin et al. [18] 的工作不同，我们不仅考虑了 <strong>抗原表位（epitope）和抗体结合区（paratope）</strong>，还额外加入了 <strong>抗体框架区（framework）</strong> 作为条件信息，以提高抗体设计的准确性。此外，我们采用 <strong>AbBERT 预训练模型</strong> 进行 <strong>初始化和特征融合</strong>，以进一步优化抗体设计的效果。</p>
+<h5 id="3-3-1-Encoding">3.3.1 Encoding</h5>
+<p>编码部分由 <strong>H_seq 和 H_str</strong> 共同完成，采用 <strong>分层处理（Hierarchical Processing）</strong>，包括 <strong>原子级别（atom-level）</strong> 和 <strong>残基级别（residue-level）</strong> 的特征提取。</p>
+<ul>
+<li><strong>原子级编码（Atom-level Encoding）</strong>
+<ul>
+<li>主要用于提取抗体和抗原之间的细粒度交互信息。</li>
+<li>包括 <strong>骨架（backbone）原子</strong> 和 <strong>侧链（side chain）原子</strong> 的特征。</li>
+<li>采用 <strong>径向基函数（RBF）</strong> 计算原子间的距离，作为 GNN 计算的输入。</li>
+</ul>
+</li>
+<li><strong>残基级编码（Residue-level Encoding）</strong>
+<ul>
+<li>主要用于提取 <strong>全局结构信息</strong>，确保模型能够学习到抗体-抗原的结合模式。</li>
+<li>每个残基的特征包括：<strong>氨基酸类型特征</strong>，<strong>二面角（Dihedral Angles）</strong>，<strong>极性（Polarity）</strong>，<strong>疏水性（Hydropathy）</strong></li>
+<li>采用 <strong>消息传递网络（MPN）</strong> 进行残基特征的传播和学习。</li>
+</ul>
+</li>
+</ul>
+<p><strong>Framework Encoding</strong></p>
+<p>框架区在抗体结构中较长，因此采用 <strong>粗粒度（Coarse-grained）</strong> 编码方式，以减少计算开销：</p>
+<ul>
+<li>
+<p>将框架区划分为 <strong>残基块（Residue Blocks）</strong>。</p>
+</li>
+<li>
+<p>每个残基块的嵌入表示 <strong>取其所有残基的平均值</strong>。</p>
+</li>
+<li>
+<p>计算公式如下：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm2.png" alt="avatar" style="zoom:40%;" /></div>
+<p>其中，$E(B_f^j)$ 和 $z(B_f^j)$ 分别表示框架区 <strong>第 j 个残基的特征和坐标</strong>。</p>
+</li>
+</ul>
+<p><strong>Initialization</strong></p>
+<p>在抗体设计任务中，由于 CDR 的序列和结构未知，因此必须进行合理的初始化。我们采用 <strong>两种不同的初始化策略</strong>：</p>
+<ol>
+<li>
+<p><strong>序列初始化（Sequence Initialization）</strong></p>
+<ul>
+<li>
+<p>以往的方法采用 <strong>随机猜测</strong> 作为初始序列分布，而我们使用 <strong>AbBERT 预训练模型</strong> 提供 <strong>soft 预测分布</strong> 作为初始化信息。</p>
+</li>
+<li>
+<p>具体而言，CDR 的初始状态采用 <strong>AbBERT 的 soft 预测分布</strong>：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm3.png" alt="avatar" style="zoom:40%;" /></div>
+<p>其中，$P(B_p^i | \hat{B})$ 是 <strong>AbBERT 预测的氨基酸概率分布</strong>，$f(k)$ 是 <strong>氨基酸 k 的特征表示</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>结构初始化（Structure Initialization）</strong></p>
+<ul>
+<li>以往的方法采用 <strong>基于距离的复杂初始化方法</strong>，而我们的方法 <strong>更简单高效</strong>：<strong>在框架区前后残基之间进行线性插值</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>Atom-level Encoding</strong></p>
+<p>节点特征（Node Features）：</p>
+<ul>
+<li>在 <strong>原子图（Atom Graph）</strong> 中，每个原子作为一个节点。</li>
+<li>其特征采用 <strong>独热编码（One-hot Encoding）</strong>，表示该原子的类型。</li>
+</ul>
+<p>边特征（Edge Features）：</p>
+<ul>
+<li>原子之间的边特征通过 <strong>径向基函数（Radial Basis Function, RBF）</strong> 计算距离，公式如下：$f(B_p^i, G_e^j) = \text{RBF}(| z(B_p^i, k) - z(G_e^j, l) |)$</li>
+<li>其中：$B_p^i, G_e^j$ 分别表示抗体和抗原的原子。$z(B_p^i, k)$ 和 $z(G_e^j, l)$ 分别表示原子的 3D 坐标。RBF 计算两个原子之间的距离</li>
+<li>使用 MPN 计算 <strong>原子级特征向量</strong></li>
+</ul>
+<p><strong>Residue-level Encoding</strong></p>
+<p>节点特征（Node Features）：</p>
+<ul>
+<li>
+<p>在 <strong>残基图（Residue Graph）</strong> 中，每个残基作为一个节点。</p>
+</li>
+<li>
+<p>残基的坐标采用 <strong>Cα 原子的 3D 坐标</strong> 作为位置信息。</p>
+</li>
+<li>
+<p>每个残基的氨基酸特征  $f(B_p^i)$</p>
+<p>由以下信息预定义：<strong>二面角（Dihedral Angles）</strong>，<strong>极性（Polarity）</strong>，<strong>疏水性（Hydropathy）</strong></p>
+</li>
+</ul>
+<p><strong>层次化特征融合（Hierarchical Feature Fusion）</strong>：</p>
+<ul>
+<li>
+<p>采用 <strong>原子级特征求和</strong> 的方式，将原子级信息汇总到残基级别，计算如下：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm4.png" alt="avatar" style="zoom:40%;" /></div>
+</li>
+<li>
+<p>其中：</p>
+<ul>
+<li>⊕ 表示 <strong>拼接（concatenation）</strong> 操作。</li>
+<li>$f(B_p^i)$ 和 $f(G_e^j)$ 分别是抗体和抗原的 <strong>初始残基特征</strong>。</li>
+<li>$\sum_k h(B_p^i, k)$ 是 <strong>所有原子级特征的求和</strong>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>边特征（Edge Features）</strong>：</p>
+<ul>
+<li>残基图的边特征 $f(B_p^i, B_p^j)$  包含：<strong>残基之间的欧几里得距离</strong>，<strong>方向信息</strong>，<strong>旋转方向</strong></li>
+<li>例如，边特征 $f(B_p^i, B_p^j)$ 计算 <strong>两个抗体残基 $B_p^i, B_p^j$ 之间的几何关系</strong></li>
+</ul>
+<p><strong>残基级消息传递（Residue-level Message Passing）</strong>：</p>
+<ul>
+<li>在获得残基的 <strong>节点特征</strong> 和 <strong>边特征</strong> 后，使用 <strong>MPN 进行消息传递</strong>，学习 <strong>抗原表位（epitope）和抗体结合区（paratope）</strong> 的残基级特征。</li>
+</ul>
+<h5 id="3-2-2-Decoding"><strong>3.2.2 Decoding</strong></h5>
+<p>在序列和结构的预测过程中，我们采用了一种 <strong>一次性（One-shot）生成策略</strong>，不同于以往的 <strong>自回归（Autoregressive）</strong> 方式：</p>
+<ol>
+<li><strong>传统自回归方法的缺点</strong>：
+<ul>
+<li><strong>生成效率低下</strong>：需要逐步预测每个氨基酸，计算量大。</li>
+<li><strong>误差累积问题</strong>：早期预测错误会 <strong>传播到后续步骤</strong>，导致最终结果偏差较大。</li>
+</ul>
+</li>
+<li><strong>本文采用一次性生成策略</strong>：<strong>所有 CDR 氨基酸同时生成</strong>，减少计算开销。<strong>结构预测同时进行</strong>，避免误差传播问题。<strong>生成后进行 T 轮迭代优化</strong>，类似于 AlphaFold2。</li>
+</ol>
+<p><strong>序列生成（Sequence Generation）</strong></p>
+<ul>
+<li>
+<p>采用 <strong>多分类交叉熵（Cross-entropy）</strong> 进行氨基酸预测：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm5.png" alt="avatar" style="zoom:40%;" /></div>
+</li>
+<li>
+<p><strong>在前 T-1 轮优化中，采用 soft 预测分布</strong>，最后一轮进行 hard 采样，决定最终氨基酸类型。</p>
+</li>
+</ul>
+<p><strong>结构预测（Structure Decoding）</strong></p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig4.png" alt="avatar" style="zoom:40%;" /></div>
+<ul>
+<li>
+<p>采用 <strong>力驱动（Force-based）</strong> 方法，而非直接坐标预测，以保持 <strong>旋转和平移等变性（Equivariance）</strong>。</p>
+</li>
+<li>
+<p>计算 <strong>Cα 原子之间的相互作用力</strong>，更新主链坐标：</p>
+<p>$F(i, j) = g(h(B_p^i), h(B_p^j)) \cdot (z(B_p^i) - z(B_p^j))$</p>
+<p>其中，$g$ 为 <strong>前馈神经网络（FFN）</strong>，$z(B_p^i)$ 为 <strong>第 i 个 CDR 残基的坐标</strong>。</p>
+</li>
+<li>
+<p><strong>更新规则</strong>：<br>
+$$<br>
+z_t(B_p^i) = z_{t-1}(B_p^i) + \frac{1}{n} \sum_{j \neq i} F_t(i, j) + \frac{1}{m} \sum_k F_t(i, k)<br>
+$$<br>
+其中，n 和 m 分别表示 <strong>相邻 Cα 原子和其他原子的数量</strong>。</p>
+</li>
+</ul>
+<h4 id="3-4-Incorporating-Pre-training">3.4 Incorporating Pre-training</h4>
+<p>在抗体设计任务中，CDR 片段的序列预测需要良好的初始化，而随机初始化往往会导致不稳定的生成。因此，利用 <strong>AbBERT 预训练模型</strong> 提供的 <strong>软概率分布（soft prediction distribution）</strong> 来初始化 CDR 残基的特征。</p>
+<p>除了初始化，我们进一步 <strong>在整个抗体设计过程中</strong> 充分利用 AbBERT 的能力，而不仅仅是在最初的输入阶段。为此，我们采用 <strong>多层特征融合策略</strong>，将 AbBERT 的表征融入抗体 GNN 设计模型：</p>
+<ul>
+<li>
+<p>融合方式：</p>
+<ul>
+<li>
+<p>在 <strong>H_seq（序列编码 GNN）</strong> 和 <strong>H_str（结构编码 GNN）</strong> 计算过程中，我们引入 <strong>AbBERT 的中间表示</strong>，以增强对 <strong>CDR 序列特征的建模能力</strong>。</p>
+</li>
+<li>
+<p>具体而言，我们将 <strong>AbBERT 的上下文表征</strong> 作为额外输入：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/frm6.png" alt="avatar" style="zoom:40%;" /></div>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>前缀微调（Prefix-tuning）</strong>：</p>
+<ul>
+<li>传统的微调方法会导致 <strong>预训练模型遗忘原始知识</strong>，为避免这种情况，我们使用 <strong>前缀微调（Prefix-tuning）</strong>：</li>
+<li>在 <strong>不改变 AbBERT 参数</strong> 的情况下，我们仅训练 <strong>一个额外的前缀向量</strong>，用于 <strong>适配抗体设计任务</strong>。</li>
+<li>这样可以 <strong>保留 AbBERT 的知识</strong>，同时让其适应新的抗体序列生成任务。</li>
+</ul>
+<h4 id="3-5-Summary-and-Algorithm">3.5 Summary and Algorithm</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/alg1.png" alt="avatar" style="zoom:40%;" /></div>
+<ol>
+<li><strong>输入数据</strong>：<strong>抗原表位（Epitope）</strong>，<strong>抗体框架区（Framework Region）</strong>，<strong>初始 CDR 片段（CDR Region）</strong></li>
+<li><strong>初始化（Initialization）</strong>：采用 <strong>AbBERT 生成 soft 预测分布</strong> 初始化 <strong>CDR 序列特征</strong>。采用 <strong>线性插值方法</strong> 初始化 <strong>CDR 结构坐标</strong>。</li>
+<li><strong>序列-结构联合优化（Sequence-Structure Co-design）</strong>：
+<ul>
+<li>使用 <strong>H_seq GNN 预测 CDR 序列</strong>（基于 softmax 预测分布）。</li>
+<li>使用 <strong>H_str GNN 预测 CDR 结构</strong>（基于力驱动的坐标更新）。</li>
+<li>进行 <strong>T 轮迭代优化</strong>，逐步调整 CDR 结构，使其更符合物理稳定性和抗原结合特性。</li>
+</ul>
+</li>
+<li><strong>最终输出</strong>：<strong>最优 CDR 序列</strong>，<strong>优化后的 CDR 结构</strong></li>
+</ol>
+<h3 id="4-Experiments">4 Experiments</h3>
+<h4 id="4-1-Overview-Settings">4.1 Overview Settings</h4>
+<p>(1) <strong>序列与结构预测（Sequence and Structure Prediction）</strong><br>
+(2) <strong>抗原结合 CDR-H3 设计（Antigen-binding CDR-H3 Design）</strong><br>
+(3) <strong>针对 SARS-CoV-2 的抗体优化（Antibody Optimization for SARS-CoV-2）</strong></p>
+<h5 id="基线模型（Baseline-Models）"><strong>基线模型（Baseline Models）</strong></h5>
+<p>为了公平比较，我们选择了以下基线方法：</p>
+<ul>
+<li><strong>RAbD（Rosetta Antibody Design）</strong>：基于物理建模的方法，用于序列生成和能量最小化。</li>
+<li><strong>LSTM-based 方法</strong>：只针对序列生成，不考虑结构信息。</li>
+<li><strong>AR-GNN（Autoregressive Graph Neural Network）</strong>：一种图神经网络方法，仅对抗体进行编码，并以自回归方式逐步预测氨基酸。</li>
+<li><strong>RefineGNN</strong>：与 AR-GNN 类似，但在每两个氨基酸生成之间进行结构调整，同时对 CDR 和框架区域采用不同分辨率编码，以更好地关注 CDR。</li>
+<li><strong>HSRN（Hierarchical Structure Refinement Network）</strong>：采用 <strong>层次化等变消息传递神经网络（Hierarchical Equivariant Message Passing Neural Networks）</strong> 进行抗原-抗体相互作用建模，同时使用 <strong>自回归解码和迭代优化</strong> 进行抗体设计。</li>
+<li><strong>MEAN</strong>：引入 <strong>内部（internal）和外部（external）消息传递机制</strong>，用于分别编码上下文和表面信息，同时考虑轻链（Light Chain）、重链（Heavy Chain）和抗原（Antigen）。</li>
+</ul>
+<h5 id="模型设置（Model-Settings）"><strong>模型设置（Model Settings）</strong></h5>
+<ul>
+<li>预训练的 AbBERT（Antibody BERT）：<strong>12 层 Transformer（BERT-base 结构）</strong>，<strong>隐藏层维度：768</strong>，<strong>注意力头数：12</strong>，<strong>前缀微调（Prefix-tuning）：添加 5 个软 token</strong></li>
+<li>GNN 结构（H_seq 和 H_str）
+<ul>
+<li><strong>使用 9 近邻（9-nearest neighbors）构建图边</strong></li>
+<li><strong>每个消息传递网络（MPN）包含 4 层，隐藏维度为 256</strong></li>
+<li><strong>框架区域（Framework）序列降维处理，每 8 个残基为 1 个 block</strong></li>
+<li><strong>迭代优化步数 T=5T = 5T=5</strong></li>
+</ul>
+</li>
+</ul>
+<h5 id="预训练（Pre-training）"><strong>预训练（Pre-training）</strong></h5>
+<ul>
+<li>数据来源：Observed Antibody Space（OAS）数据库，包含 <strong>超过 10 亿条抗体序列</strong>，涵盖 <strong>不同免疫状态、生物体和个体</strong>。</li>
+<li>数据处理
+<ul>
+<li>仅使用 <strong>抗体重链（Heavy Chain）序列</strong> 进行预训练。</li>
+<li>经过 <strong>序列过滤、聚类（MMseqs2，最小序列同一性设定为 0.7）</strong> 以减少冗余数据。</li>
+<li>最终 <strong>随机抽取 5000 万条抗体序列</strong> 用于预训练。</li>
+</ul>
+</li>
+<li>训练设置：16 块 32GB V100 GPU，<strong>Batch Size</strong>：每块 GPU 256，<strong>梯度累积步数</strong>：4，<strong>学习率</strong>：0.0003</li>
+</ul>
+<h4 id="4-2-Task-1-Sequence-and-Structure-Prediction">4.2 Task 1: Sequence and Structure Prediction</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab1.png" alt="avatar" style="zoom:50%;" /></div>
+<p>本任务评估模型在 <strong>CDR 设计任务</strong> 中 <strong>同时预测序列和结构</strong> 的能力。实验基于 <strong>抗体-抗原复合物</strong> 数据，要求模型生成 <strong>完整的 CDR 片段</strong>，包括其 <strong>氨基酸序列</strong> 和 <strong>三维结构</strong>。</p>
+<ul>
+<li><strong>数据集</strong>：从 SAbDab 数据库，在CDR区域上使用MMseqs2，两个序列相似度&gt;40%视为同一个cluster，随机划分8:1:1训练验证测试，分别对CDR-H1，CHR-H2和CDR-H3得到765，1093，1659个cluster。</li>
+<li>测试数据：采用 <strong>不同的抗原</strong> 进行评估，以测试泛化能力。重点关注 <strong>CDR-H3</strong>，因其在 <strong>抗原结合和抗体功能</strong> 中最具变异性和决定性。</li>
+</ul>
+<h4 id="4-3-Task-2-Antigen-binding-CDR-H3-Design">4.3 Task 2: Antigen-binding CDR-H3 Design</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig5.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab4.png" alt="avatar" style="zoom:50%;" /></div>
+<h5 id="数据（Data）"><strong>数据（Data）</strong></h5>
+<p>本任务比一般的 CDR 设计更具挑战性，因为其目标是 <strong>生成特定抗原结合的 CDR-H3</strong>，因此 <strong>抗原被视为条件输入</strong>。在此任务中，仅生成 <strong>CDR-H3</strong>，不涉及其他 CDR 片段。</p>
+<ul>
+<li><strong>测试数据</strong>：来自 Adolf-Bryfogle et al. [1] 的数据集，其中包含 <strong>60 种不同抗原类型的抗体-抗原复合物</strong>。</li>
+<li><strong>训练数据</strong>：使用 <strong>SAbDab 数据库</strong>，但 <strong>仅使用抗体-抗原复合物数据</strong>，不包含单独的抗体结构。</li>
+<li><strong>数据处理</strong>：采用 Jin et al. [18] 处理后的数据集，其中：
+<ul>
+<li>训练集和验证集共包含 <strong>2777 和 169 个抗体-抗原复合物</strong>。</li>
+</ul>
+</li>
+</ul>
+<h5 id="实验设置（Inference-Procedure）"><strong>实验设置（Inference Procedure）</strong></h5>
+<ul>
+<li><strong>候选 CDR-H3 生成</strong>：在推理阶段，本文遵循 Jin et al. [18] 的方法，为 <strong>每个抗体生成 10,000 条候选 CDR-H3 序列</strong>。</li>
+<li><strong>筛选策略</strong>：从 10,000 个候选序列中，选择 <strong>困惑度（Perplexity）最低的前 100 个</strong>，用于计算 <strong>AAR（Amino Acid Recovery，氨基酸恢复率）</strong> 和 <strong>RMSD（Root Mean Square Deviation，均方根偏差）</strong>。</li>
+</ul>
+<h4 id="4-4-Task-3-SARS-CoV-2-Antibody-Optimization">4.4 Task 3: SARS-CoV-2 Antibody Optimization</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab3.png" alt="avatar" style="zoom:50%;" /></div>
+<h5 id="数据（Data）-2"><strong>数据（Data）</strong></h5>
+<p>本任务的目标是 <strong>优化 SARS-CoV-2 结合抗体的 CDR-H3</strong>。实验数据来源于 <strong>Coronavirus Antibody Database [41]</strong>，其中包含 <strong>2411 个与 SARS-CoV-1 或 SARS-CoV-2 结合的抗体</strong>。</p>
+<ul>
+<li>数据集划分：CDR-H3 片段按 <strong>8:1:1</strong> 的比例划分为 <strong>训练集、验证集和测试集</strong>。</li>
+<li>数据预处理：采用 Jin et al. [19] 预处理后的数据集，其中包含 <strong>详细的 CDR 片段筛选和序列生成约束</strong>（具体处理方式可参考原论文）。</li>
+<li>优化方法：
+<ul>
+<li>训练方法遵循 Jin et al. [19]，使用 <strong>ITA 算法（Iterative Targeted Antibody Optimization, ITA）</strong> 对 <strong>生成的抗体进行微调（finetuning）</strong>。</li>
+<li>CDR 片段的生成方式和约束条件与 Jin et al. [19] 保持一致，以确保对比公平性。</li>
+</ul>
+</li>
+</ul>
+<h5 id="实验结果（Result）"><strong>实验结果（Result）</strong></h5>
+<ul>
+<li><strong>由于缺乏湿实验支持，本研究采用</strong> **中和效应预测器 <strong>进行评估</strong>。</li>
+<li>评测方式：采用 <strong>二分类（binary classification）</strong> 任务，使用 <strong>Jin et al. [19] 预训练的预测模型</strong> 评估生成抗体的 <strong>中和能力（neutralization effect）</strong>。</li>
+<li>实验结论：
+<ul>
+<li>本文方法相比于现有 SOTA 方法，能够优化抗体，使其在预测的中和效应上表现更优。</li>
+<li>结果显示，模型能够成功重新设计抗体，提高其潜在的中和效果，进一步证明了 AbBERT 在抗体优化任务中的有效性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-Study">5 Study</h3>
+<h4 id="5-1-Ablation-Study">5.1 Ablation Study</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/fig6.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="5-2-Effect-of-Decoding-ways">5.2 Effect of Decoding ways</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab4.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="5-3-AbBERT-Incorporating-Ways">5.3 AbBERT Incorporating Ways</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab5.png" alt="avatar" style="zoom:50%;" /></div>
+<h4 id="5-4-Effect-of-Pre-training">5.4 Effect of Pre-training</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ABGNN/tab6.png" alt="avatar" style="zoom:50%;" /></div>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" title="KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design" target="_blank" rel="external">https://tyang816.github.io/2025/03/15/Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" title="ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
