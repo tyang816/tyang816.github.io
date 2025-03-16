@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2025/03/16/Multi-Scale%20Representation%20Learning%20for%20Protein%20Fitness%20Prediction/</loc>
+    <lastmod>2025-03-16</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/</loc>
     <lastmod>2025-03-15</lastmod>
   </url>
