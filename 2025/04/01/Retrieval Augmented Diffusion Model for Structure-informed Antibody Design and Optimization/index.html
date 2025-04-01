@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization | tyang</title>
+  <meta name="description" content="论文地址：Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;GENTEL-lab&#x2F;RADAb  RADAb：DiffAb+结构检索做序列设计 Abstract 提出了一种检索增强扩散模型（Retrieval-Augm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization">
+<meta property="og:url" content="https://tyang816.github.io/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization 论文实现：https:&#x2F;&#x2F;github.com&#x2F;GENTEL-lab&#x2F;RADAb  RADAb：DiffAb+结构检索做序列设计 Abstract 提出了一种检索增强扩散模型（Retrieval-Augm">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/alg1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm3-4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm7-8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/tab1-3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/tab4.png">
+<meta property="article:published_time" content="2025-04-01T06:21:33.000Z">
+<meta property="article:modified_time" content="2025-04-01T06:22:19.238Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">228</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="title">ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-01T06:21:33.000Z" itemprop="datePublished">2025-04-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/16/Multi-Scale%20Representation%20Learning%20for%20Protein%20Fitness%20Prediction/" class="title">NeurIPS-2024 Multi-Scale Representation Learning for Protein Fitness Prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-16T05:56:58.000Z" itemprop="datePublished">2025-03-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="title">KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-15T15:17:46.000Z" itemprop="datePublished">2025-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="title">ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-02T08:35:51.000Z" itemprop="datePublished">2025-03-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/02/18/FlowDesign%EF%BC%9AImproved%20Design%20of%20Antibody%20CDRs%20Through%20Flow%20Matching%20and%20Better%20Prior%20Distributions/" class="title">FlowDesign：Improved Design of Antibody CDRs Through Flow Matching and Better Prior Distributions</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-02-18T11:21:35.000Z" itemprop="datePublished">2025-02-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="article-date">
+	  <time datetime="2025-04-01T06:21:33.000Z" itemprop="datePublished">2025-04-01</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="leancloud_visitors"  data-flag-title="ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5.1k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 19(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://openreview.net/forum?id=a6U41REOa5">Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/GENTEL-lab/RADAb">https://github.com/GENTEL-lab/RADAb</a></p>
+</blockquote>
+<h2 id="RADAb：DiffAb-结构检索做序列设计">RADAb：DiffAb+结构检索做序列设计</h2>
+<h3 id="Abstract-55">Abstract</h3>
+<p>提出了一种<strong>检索增强扩散模型（Retrieval-Augmented Diffusion Model, RADM）</strong>，用于<strong>结构信息驱动的抗体设计与优化</strong>。RADM 结合了检索机制和扩散模型，以提高抗体序列的生成质量，同时保证其结构稳定性和功能优化。</p>
+<p>该方法利用一个包含已知抗体序列和结构的大规模数据库，在生成过程中检索最相关的抗体序列，并将其信息融入扩散模型的去噪过程。这种方式使模型能够借鉴已有的高质量抗体，从而提高生成序列的可行性和功能性。实验表明，RADM 在多项抗体设计任务上优于现有方法，包括序列多样性、结构保真度和功能优化能力。</p>
+<h3 id="1-Introduction-3">1 Introduction</h3>
+<p>抗体是<strong>免疫系统中关键的 Y 形蛋白</strong>，负责识别和中和特定的抗原。这种特异性主要来源于<strong>互补决定区（CDRs）</strong>，CDRs 在抗原结合亲和力方面起着至关重要的作用。因此，<strong>设计有效的 CDRs 是开发高效治疗性抗体的核心</strong>。目前，抗体的开发主要依赖于<strong>动物免疫、抗体文库筛选等劳动密集型实验方法</strong>，但这些方法成本高昂、效率较低。</p>
+<p>近年来，<strong>深度学习和生成模型</strong>在蛋白质设计领域取得了重要进展，例如<strong>几何学习和生成建模</strong>能够直接从数据中捕捉氨基酸残基之间的高阶相互作用。然而，尽管这些方法具有强大的生成能力，<strong>当前的生成模型在抗体设计上仍面临挑战</strong>，主要问题包括：</p>
+<ol>
+<li><strong>结构约束的缺失</strong>：现有模型难以生成符合物理化学特性的抗体，导致<strong>设计出的抗体序列不符合天然抗体的结构规律</strong>。</li>
+<li><strong>训练数据的多样性不足</strong>：主流研究主要依赖于 SAbDab 数据库（Dunbar et al., 2014），其中包含的<strong>抗原-抗体复合体结构不足 1 万个</strong>，数据量有限，难以全面捕捉抗体与抗原之间的高阶相互作用信息，增加了模型<strong>过拟合的风险</strong>。</li>
+<li><strong>缺乏模板指导</strong>：目前大多数方法采用<strong>从头（de novo）序列生成</strong>，未能有效利用已有的抗体模板信息。这种方法需要<strong>大量数据和长时间训练</strong>，才能在实际应用中达到可接受的性能。</li>
+</ol>
+<p><strong>本文工作</strong></p>
+<p>受到<strong>模板驱动</strong>和<strong>片段驱动抗体设计</strong>的启发，本文提出了一种<strong>检索增强扩散抗体设计模型（Retrieval-Augmented Diffusion Antibody Design Model, RADAb）</strong>。该模型综合利用：</p>
+<ul>
+<li><strong>蛋白质结构数据库</strong>，检索最相关的 CDR 片段；</li>
+<li><strong>有效的结构-进化信号融合机制</strong>，防止模型过拟合；</li>
+<li><strong>半参数生成神经网络</strong>，减少训练需求，提高实际应用的可行性。</li>
+</ul>
+<p>具体来说，RADM 采用以下策略：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig1.png" alt="avatar" style="zoom:60%;" /></div>
+<ol>
+<li><strong>构建 CDR 片段数据库</strong>：从<strong>非冗余蛋白数据库（PDB）</strong>（Berman et al., 2000）中提取 CDR 片段，这些片段<strong>不仅存在于抗体结构中，也可以是 PDB 中符合 CDR 结构特征的其他蛋白质片段</strong>。</li>
+<li><strong>检索最相关的 CDR 片段</strong>：对于目标抗体序列，RADM 通过<strong>结构检索</strong>找到具有<strong>相似骨架</strong>的 CDR 片段，并假设<strong>这些片段在进化上具有相似性，可增强模型的泛化能力</strong>。</li>
+<li><strong>融合多个结构同源片段进行序列优化</strong>：不同于传统方法只利用<strong>单一 CDR 片段进行优化</strong>，RADM 采用<strong>一组结构同源的 CDR 片段</strong>，结合目标抗体的骨架进行<strong>迭代优化</strong></li>
+</ol>
+<p><strong>主要贡献</strong></p>
+<ol>
+<li><strong>首次提出</strong>基于检索增强的生成框架用于抗体设计。该框架通过<strong>一组 CDR 片段</strong>指导生成，确保序列符合目标骨架结构，并满足所有所需的生物化学性质。</li>
+<li><strong>创新性地引入检索机制</strong>，在输入抗体骨架的基础上，<strong>利用双分支去噪模块</strong>整合结构和进化信息。此外，<strong>耦合条件扩散模块</strong>（coupled conditional diffusion module）在生成过程中迭代优化，结合<strong>全局和局部信息</strong>，比传统抗体逆折叠（inverse folding）方法能捕捉到更多功能性信息。</li>
+<li><strong>实验结果表明</strong>，RADM 在多个抗体逆折叠任务上<strong>超越了现有 SOTA 方法</strong>，例如：
+<ul>
+<li>在长 CDRH3 逆折叠任务中<strong>提高了 8.08% 的 AAR（Amino Acid Recovery）</strong>；</li>
+<li>在功能优化任务中<strong>提升了 7 cal/mol 的绝对 ∆∆G 评分</strong>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-Preliminaries-and-Notations">3 Preliminaries and Notations</h3>
+<h4 id="3-1-Notations">3.1 Notations</h4>
+<p>抗体由<strong>两条重链（heavy chain, H）和两条轻链（light chain, L）*<em>组成。每条链的末端都含有一个互补结合位点，该位点*<em>特异性地与抗原（antigen）上的特定位点（表位，epitope）结合</em></em>。该结合位点主要由</strong>六个互补决定区（CDRs）** 组成：</p>
+<ul>
+<li><strong>重链 CDRs</strong>：CDR-H1、CDR-H2、CDR-H3</li>
+<li><strong>轻链 CDRs</strong>：CDR-L1、CDR-L2、CDR-L3</li>
+</ul>
+<p>CDRs 负责抗体的特异性结合，因此<strong>优化 CDR 序列是抗体设计的核心任务</strong>。</p>
+<p>在本文中，每个氨基酸残基（residue）被表示为以下三种信息：</p>
+<ol>
+<li><strong>残基类型</strong>（Residue type）
+<ul>
+<li>记作 sis_isi，属于<strong>20 种天然氨基酸集合</strong>：$s_i \in { A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y }$</li>
+</ul>
+</li>
+<li><strong>空间坐标</strong>（Coordinates）
+<ul>
+<li>记作 $x_i \in \mathbb{R}^3$，表示该残基在三维空间中的位置。</li>
+</ul>
+</li>
+<li><strong>取向信息</strong>（Orientation）
+<ul>
+<li>记作 $O_i \in SO(3)$，表示该残基的三维旋转取向。</li>
+</ul>
+</li>
+</ol>
+<p>此外，给定一个 CDR 片段，其氨基酸序列包含 $m$ 个残基，从位置 $a$ 开始，可表示为：$R = {s_j | j \in {a+1, \dots, a+m}}$</p>
+<p>其中，RRR 代表待优化的 CDR 序列。</p>
+<p>整个抗体序列长度为 MMM，其<strong>抗体骨架（Antibody Framework）</strong> 由除 CDR 片段外的其余部分组成：$C_{ab} = { (s_i, x_j, O_j) | i \in {1, \dots, M} \setminus {a+1, \dots, a+m}, j \in {1, \dots, M} }$</p>
+<p>其中：</p>
+<ul>
+<li>
+<p><strong>抗体骨架序列</strong>（Antibody Framework Sequence）：$S_{ab} = { s_i | i \in {1, …, M} \setminus {a+1, …, a+m} }$</p>
+</li>
+<li>
+<p><strong>抗原信息</strong>（Antigen）：$C_{ag} = { (s_i, x_i, O_i) | i \in {M+1, …, N} }$</p>
+<p>其中，抗原序列的索引范围是 $M+1$ 到 $N$。</p>
+</li>
+<li>
+<p><strong>检索得到的 CDR 片段</strong>（Retrieved CDR-like Fragments）：$A = { A_i | i \in {1, …, k} }$</p>
+<p>其中，kkk 代表检索得到的 CDR 片段数量。</p>
+</li>
+</ul>
+<p><strong>模型目标</strong>：</p>
+<ol>
+<li><strong>提取抗体骨架复合物 $C_{ab}$ 中的 CDR 结构</strong>；</li>
+<li><strong>输入 CDR 结构至检索模块，获取相似的 CDR 片段 $A$</strong>；</li>
+<li><strong>结合 $C_{ag}$（抗原）、$C_{ab}$（抗体骨架）和 $A$（检索片段），预测目标 CDR 片段 $R$ 的分布</strong>。</li>
+</ol>
+<h4 id="3-2-Diffusion-Model-for-Antibody-Design">3.2 Diffusion Model for Antibody Design</h4>
+<p>由于扩散模型（Diffusion Models, DMs）在<strong>生成任务中的出色表现和可控性</strong>，近年来，许多基于扩散的工作已经取得了显著成果（Luo et al., 2022; Villegas-Morcillo et al., 2023; Kulytė et al., 2024）。</p>
+<p>本文关注<strong>序列生成</strong>（sequence generation），其中前向扩散过程（Forward Process）会对氨基酸序列数据进行扰动，具体如下（Hoogeboom et al., 2021）：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm1.png" alt="avatar" style="zoom:60%;" /></div>
+<ol>
+<li>其中：
+<ul>
+<li>$\beta^t$ 是扩散过程的噪声调度（noise schedule），当 $t$ 逐渐接近终点 $T$ 时，$\beta^t$ 会趋于 1，使得概率分布最终接近纯噪声（均匀分布）。</li>
+<li>$\mathbf{1}$ 代表一个 20 维的全 1 向量，对应于<strong>20 种氨基酸的均匀分布</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>去噪过程（Denoising Process）</strong></p>
+<p>为了<strong>逆转上述前向扩散过程</strong>，并<strong>恢复抗体 CDR 序列</strong>，需要通过一个神经网络 $F(\cdot)$ 进行预测。该网络的输入是抗体-抗原复合体的上下文信息，输出是去噪后的残基分布：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中：</p>
+<ul>
+<li>$\mathcal{R}^t$ 是当前时间步 $t$ 的 CDR 片段。</li>
+<li>$C_{ab}$ 是抗体骨架（framework）。</li>
+<li>$C_{ag}$ 是抗原（antigen）。</li>
+<li>$F(\cdot)$ 是用于去噪的神经网络。</li>
+</ul>
+<p>本文使用 <strong>DiffAb</strong>（Luo et al., 2022）作为生成模型的骨干（backbone），用于进行检索增强</p>
+<h3 id="4-Methods">4 Methods</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>本研究提出 <strong>RADAb</strong>（如图 2 所示），这是一种<strong>基于结构信息的检索增强扩散框架</strong>，用于抗体序列设计和优化。该模型采用<strong>结构检索算法</strong>来搜索具有同源性的抗体结构，并将其序列作为扩散模型的条件输入，以提供<strong>同源模式</strong>和<strong>进化信息</strong>。</p>
+<h4 id="4-1-Structural-Retrieval-of-CDR-Fragments">4.1 Structural Retrieval of CDR Fragments</h4>
+<p>蛋白质的结构由其序列决定，而能够折叠成相似结构的蛋白质序列通常具有相似的性质。因此，<strong>结构相似的蛋白质序列往往富含进化信息</strong>。基于这一原理，我们在 <strong>PDB（Protein Data Bank）数据库</strong>中进行检索，目标是找到<strong>与目标 CDR 结构相似且具有同源性的片段</strong>，并期望它们具有<strong>相似的功能</strong>。</p>
+<p><strong>检索方法：MASTER</strong></p>
+<p>为了平衡检索质量与速度，我们使用 <strong>MASTER</strong>（Zhou &amp; Grigoryan, 2015）进行搜索。<br>
+MASTER 使用 <strong>主链原子（backbone atoms）的均方根偏差（RMSD）</strong> 作为相似性度量指标，能够高效地在 PDB 数据库中搜索与查询结构匹配的片段。</p>
+<p>MASTER 的特点：</p>
+<ul>
+<li>可以查询由一个或多个<strong>非连续片段</strong>组成的结构片段。</li>
+<li>允许在给定的 <strong>RMSD 阈值</strong> 内找到所有匹配的片段。</li>
+<li>仅利用蛋白质的 <strong>骨架信息（backbone information）</strong> 进行搜索，<strong>不会泄露序列数据</strong>。</li>
+</ul>
+<p><strong>检索过程</strong></p>
+<p>检索的具体过程如 <strong>Algorithm 1</strong> 所示，详细信息可见 <strong>附录 A.3</strong>。</p>
+<ol>
+<li><strong>计算 RMSD 评分并排序</strong>
+<ul>
+<li>对于检索到的 CDR 片段，我们计算它们与真实 CDR 片段的 <strong>RMSD</strong>，并以此进行排序。</li>
+<li>之后，我们会<strong>过滤掉</strong>原始 CDR 片段，以确保训练时不会过度依赖原始数据。</li>
+</ul>
+</li>
+<li><strong>CDR 片段数据库</strong>
+<ul>
+<li>为了方便使用，我们进一步构建了一个<strong>CDR-like 片段数据库</strong>（详见附录 A.4）。</li>
+</ul>
+</li>
+<li><strong>训练 vs. 生成</strong>
+<ul>
+<li><strong>训练阶段</strong>：为了让模型学习更加丰富的进化信息，我们会<strong>去除</strong>完全相同的 CDR 片段，以防止模型过拟合。</li>
+<li><strong>生成阶段</strong>：我们不会执行相同的过滤，以提高生成质量。</li>
+</ul>
+</li>
+</ol>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/alg1.png" alt="avatar" style="zoom:60%;" /></div>
+<h4 id="4-2-Model-Architectures">4.2 Model Architectures</h4>
+<p>RADAb 模型利用抗原-抗体复合物的<strong>结构</strong>和<strong>序列上下文</strong>，结合检索得到的<strong>CDR-like 片段序列</strong>作为条件输入，进行逐步去噪生成抗体 CDR 序列。该模型由两个分支组成：</p>
+<ol>
+<li><strong>全局几何上下文信息分支</strong>（Global Geometry Context Information Branch）
+<ul>
+<li>负责学习抗原-抗体复合物的全局上下文信息。</li>
+</ul>
+</li>
+<li><strong>局部 CDR 关注信息分支</strong>（Local CDR-Focused Information Branch）
+<ul>
+<li>负责学习 CDR-like 片段的局部同源信息，以捕获具有相似结构的残基间的功能相似性和进化信息。</li>
+</ul>
+</li>
+</ol>
+<p>这两个分支的输出共同用于生成最终的 CDR 序列。</p>
+<h5 id="4-2-1-Global-Geometry-Context-Information-Branch">4.2.1 Global Geometry Context Information Branch</h5>
+<p><strong>（1）Context Encoder</strong></p>
+<p>蛋白质由多个残基连接形成，每个残基的特征主要包括：</p>
+<ul>
+<li><strong>单个残基</strong>：残基类型（Residue Type），主链原子坐标（Backbone Atom Coordinates），主链二面角（Backbone Dihedral Angles）</li>
+<li><strong>成对残基</strong>：残基类型对（Residue Pair Types），序列相对位置（Sequential Relative Position），空间距离（Spatial Distance），成对的主链二面角（Pairwise Backbone Dihedrals）</li>
+</ul>
+<p>这些特征被拼接后，输入到两个独立的<strong>多层感知机（MLP）</strong>，分别输出：<strong>$z_i$</strong>（单个残基特征），<strong>$y_{ij}$</strong>（成对残基特征）</p>
+<p><strong>（2）Evolutionary Encoder</strong></p>
+<p>近年来，基于<strong>结构信息</strong>的**蛋白质语言模型（PLM）**被证明是提取蛋白质序列嵌入和提供进化信息的优秀工具（Zheng et al., 2023; Shanker et al., 2024）。因此，我们选择 ESM2 作为抗体序列编码器。</p>
+<p>具体而言，在时间步 t，将抗体序列（包含 CDR 区域）输入 <strong>ESM2</strong>，得到进化嵌入：$e^t = E(S_{ab} \cup R^t)$</p>
+<ul>
+<li>$S_{ab}$：抗体框架序列</li>
+<li>$R^t$：当前时间步 $t$ 的 CDR 序列</li>
+</ul>
+<p><strong>（3）Structure-Informed Network</strong></p>
+<ul>
+<li>以上编码结果作为条件输入，结合<strong>当前时间步的 CDR 序列和结构状态</strong>，输入到 <strong>一系列 Invariant Point Attention（IPA） 层（Jumper et al., 2021）</strong>，转换为隐藏表示：$h_i = \text{IPA} (z_i, y_{ij}, e^t)$</li>
+<li>随后，隐藏表示 <strong>$h_i$</strong> 通过 <strong>MLP</strong> 转换为 CDR 位点的<strong>氨基酸类型概率分布</strong>：$r_{\text{global}} = \text{MLP}(h_i)$</li>
+<li>该全局信息作为输入传递给<strong>局部 CDR 关注信息分支</strong>。</li>
+</ul>
+<h5 id="4-2-2-Local-CDR-Focused-Information-Branch">4.2.2 Local CDR-Focused Information Branch</h5>
+<p><strong>（1）CDR-like 片段预处理</strong></p>
+<ul>
+<li><strong>去除 CDR 片段</strong>，仅保留抗体框架序列。</li>
+<li><strong>填充 CDR-like 片段</strong>到抗体框架中，构造一个 CDR-like 片段矩阵 <strong>$E$</strong>。</li>
+</ul>
+<p><strong>（2）CDR-Focused Axial Attention</strong></p>
+<p>该分支由一组**轴向注意力层（Axial Attention Layers）**组成，被称为 <strong>CDR-Focused Axial Attention</strong>：</p>
+<ul>
+<li><strong>CDR-like 片段结构</strong>与真实 CDR 结构高度相似，因此可利用 <strong>MSA-Transformer（Rao et al., 2021）</strong> 提出的**绑定行注意力（Tied Row Attention）**机制。</li>
+<li>在<strong>标准轴向注意力（Axial Attention, Ho et al., 2019）中，行和列是独立计算的</strong>；</li>
+<li>但在 <strong>MSA（Multiple Sequence Alignment）</strong> 中，各序列具有较高的结构相似性，我们的 CDR-like 片段矩阵也符合这一特性，因此：
+<ul>
+<li>计算某一行的注意力时，同时考虑<strong>其他行的注意力</strong>，提高模型对结构相似性的利用效率，同时降低显存占用。</li>
+</ul>
+</li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm3-4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>输入 CDR-Focused Axial Attention 的矩阵 P 构造公式3：</p>
+<p>其中：</p>
+<ul>
+<li><strong>第 1 行</strong>：抗体框架序列 + 当前时间步的 CDR 噪声序列 $R^t$（从全局概率分布 $r_{\text{global}}$ 采样得到）。</li>
+<li><strong>第 2 - k 行</strong>：检索得到的<strong>CDR-like 片段矩阵 $E$</strong>（选取前 15 个相似片段）。</li>
+</ul>
+<p>该矩阵输入 <strong>CDR-Focused Axial Attention</strong> 后，计算<strong>同源嵌入</strong>并得到 CDR 位点的局部概率分布：</p>
+<ul>
+<li><strong>列注意力（Column Self-Attention）</strong> 计算 CDR 残基与检索片段的关系。</li>
+<li><strong>行注意力（Row Self-Attention）</strong> 计算抗体-抗原序列内部的关系。</li>
+</ul>
+<p><strong>（3）Skip Connection for Information Fusion</strong></p>
+<p>虽然全局分支已生成 CDR 氨基酸的概率分布，但在前向传播过程中可能会<strong>丢失抗原-抗体上下文信息</strong>，公式4因此：</p>
+<ul>
+<li><strong>全局信息 $r_{\text{global}}$</strong> 与 <strong>局部信息 $r_{\text{local}}$</strong> 进行<strong>跳跃连接</strong></li>
+<li>通过 <strong>Softmax</strong> 计算最终 CDR 氨基酸概率分布。</li>
+</ul>
+<h4 id="4-3-Model-Training-and-Inference">4.3 Model Training and Inference</h4>
+<p><strong>(1) The overall training objective</strong></p>
+<p>训练目标是使模型在每个时间步上预测的概率分布与真实后验分布尽可能接近。</p>
+<p>采用 <strong>KL 散度（Kullback-Leibler Divergence）</strong> 作为损失函数：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>训练过程中，对整个扩散过程的损失函数进行均匀采样：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm6.png" alt="avatar" style="zoom:60%;" /></div>
+<p><strong>(2) Conditional reverse diffusion process</strong></p>
+<p>从时间步 <strong>T</strong> 开始，将 CDR 位置初始化为均匀分布的噪声。</p>
+<p>通过 ESM2 编码器 <strong>$E(\cdot)$</strong>、全局上下文网络 <strong>$F(\cdot)[j]$</strong> 和局部 CDR 网络 <strong>$G(\cdot)[j]$</strong>，预测每个时间步的噪声分布并进行去噪：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/frm7-8.png" alt="avatar" style="zoom:60%;" /></div>
+<p>采样时，移除 CDR 片段，填充随机噪声，并利用检索得到的 CDR 片段来引导扩散模型进行逐步去噪，最终生成完整的 CDR 序列。</p>
+<h3 id="5-Experiments">5 Experiments</h3>
+<p>为了评估模型的生成能力，设定了两个主要任务：</p>
+<ol>
+<li><strong>抗体 CDR 序列逆向折叠（Antibody CDR Sequence Inverse Folding）</strong>（5.1），即在已知抗体骨架结构的情况下，生成对应的 CDR 序列。</li>
+<li><strong>基于序列设计的抗体优化（Antibody Optimization Based on Sequence Design）</strong>（5.2），用于优化抗体序列以提高其亲和力或稳定性。</li>
+</ol>
+<p>此外，还进行了一系列消融实验（5.3），以验证检索增强方法的有效性。</p>
+<p><strong>数据集与预处理</strong></p>
+<ul>
+<li>训练数据来自 <strong>SAbDab</strong> 数据库，并结合了我们构建的 CDR 类似片段数据集。</li>
+<li>参照 <strong>Luo et al., 2022</strong> 的处理方法：
+<ul>
+<li>移除分辨率低于 4Å 的结构。</li>
+<li>排除靶标为非蛋白质抗原的抗体。</li>
+<li>使用 <strong>ANARCI</strong>（Dunbar &amp; Deane, 2016）进行抗体残基编号（基于 <strong>Chothia &amp; Lesk, 1987</strong>）。</li>
+<li>以 <strong>CDR-H3 50% 序列相似性</strong>进行聚类，并选择 **50 个 PDB 文件（共 63 组抗原-抗体复合物）**作为测试集。</li>
+<li>确保测试集与训练集无重叠（即移除训练集中与测试集同属一个簇的结构）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-1-Antibody-CDR-Sequence-Inverse-Folding">5.1 Antibody CDR Sequence Inverse Folding</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/tab1-3.png" alt="avatar" style="zoom:90%;" /></div>
+<p>实验结果见 <strong>Table 1</strong>：</p>
+<ul>
+<li>RADAb 在 所有指标和所有 CDR 区域上均优于 现有的最先进方法。</li>
+<li>特别是在 <strong>CDR-H3</strong>（最具变异性和特异性的区域），RADAb在 <strong>AAR</strong> 指标上相较于 <strong>Diffab-fix 和 AbMPNN</strong> 提升明显。</li>
+<li>结果表明：<strong>检索增强方法</strong> 通过引入 <strong>结构相似的同源序列</strong>，有效提高了模型的 <strong>准确性、一致性和合理性</strong>。</li>
+</ul>
+<p>此外，CDR-H3 由于 <strong>长度、序列和结构变异性大</strong>，通常 <strong>深度学习模型在生成较长 CDR-H3 序列时表现较差</strong>（Luo et al., 2022; Høie et al., 2024）。因此，我们 <strong>从测试集中选取 CDR-H3 长度大于 14 的子集</strong> 进行额外评估，结果见 <strong>Table 2</strong>：</p>
+<p><strong>所有方法的生成性能均有所下降</strong>，但RADAb依然保持 <strong>较强的一致性</strong>，并且 <strong>相较于其他方法的改进幅度更大</strong>。</p>
+<h4 id="5-2-Antibody-Functionality-Optimization">5.2 Antibody Functionality Optimization</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>在本节中，关注<strong>抗体序列的进化</strong>，并评估进化后的序列在折叠后的三维结构中是否比原始抗体序列具有更好的<strong>功能性</strong>（即更强的抗原结合能力）。</p>
+<ol>
+<li><strong>折叠设计的 CDR-H3 序列</strong>：
+<ul>
+<li>通过 <strong>ABodyBuilder2</strong> 将生成的 <strong>CDR-H3 序列</strong> 与抗体框架序列结合，并预测完整的蛋白质结构。</li>
+<li>同时，将 <strong>原始真实抗体序列</strong> 也折叠成完整蛋白质结构，作为对照组。</li>
+</ul>
+</li>
+<li><strong>能量优化与计算</strong>：
+<ul>
+<li>使用 <strong>PyRosetta</strong>（Alford et al., 2017）中的 <strong>FastRelax</strong> 和 <strong>InterfaceAnalyzer</strong>：
+<ul>
+<li><strong>FastRelax</strong>：对抗原-抗体复合物进行结构松弛（Relaxation）。</li>
+<li><strong>InterfaceAnalyzer</strong>：计算抗体-抗原复合物的<strong>结合能（Binding Energy, ∆G）</strong>，用于评估抗体的结合能力。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Table 3 结果分析</strong>：</p>
+<ul>
+<li>RADAb设计的抗体序列，在折叠和结构松弛后，结合能显著降低，比其他方法更稳定。</li>
+<li>其中 37.3% 的设计序列，其结合能低于原始抗体序列折叠后的结合能，表明序列优化在一定比例上成功改善了抗体的结合功能。</li>
+</ul>
+<p><strong>特定抗体优化案例分析</strong>：</p>
+<ul>
+<li>我们从测试集中选择了一个抗原-抗体复合物（靶向 SARS-CoV-2 受体结合域的中和抗体，PDB: 7d6i）。</li>
+<li><strong>生成 50 个 CDR-H3 序列</strong> 并计算其折叠后的结合能（∆G）。</li>
+<li><strong>其中 68% 的样本比原始复合物具有更低的结合能</strong>，即优化后的序列表现出更强的抗原结合能力。</li>
+</ul>
+<p><strong>Figure 3 结果分析</strong>：</p>
+<ul>
+<li>选取了两个具有代表性的样本：
+<ul>
+<li>尽管它们没有获得最高的氨基酸恢复率（AAR），但它们的结合亲和力显著优于原始抗体结构。</li>
+<li>这表明：优化后的抗体序列可能会发生突变，导致部分氨基酸序列不同于原始抗体，但整体结构更有利于抗原结合。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-Analysis">5.3 Analysis</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RADAb/tab4.png" alt="avatar" style="zoom:80%;" /></div>
+<p><strong>实验结果（Table 4）</strong></p>
+<ul>
+<li>首先用 CDR 序列的真实值（ground truth）作为输入，验证检索增强模块的效果。</li>
+<li><strong>分别去除检索增强机制和进化嵌入机制</strong>，评估它们的单独贡献。</li>
+<li><strong>实验结果表明</strong>：
+<ul>
+<li>检索增强模块和进化嵌入模块单独使用时，都能提升模型的性能。</li>
+<li><strong>两者结合使用时，模型性能达到最优</strong>。</li>
+<li><strong>这表明，检索增强和进化嵌入是互补的，能够协同提升抗体序列的生成质量</strong>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实验结果（Figure 4）</strong></p>
+<ul>
+<li>当 k 过低时（例如 k = 1 或 2），模型的性能下降，甚至可能带来负面影响。
+<ul>
+<li>可能的原因：<strong>检索数据不足，导致模型过拟合（overfitting）</strong>。</li>
+</ul>
+</li>
+<li><strong>随着 k 的增加，模型的性能逐步提高</strong>，表明检索到的 CDR 片段为模型提供了有益的信息。</li>
+<li><strong>当 k = 15 时，模型达到最佳性能</strong>。</li>
+<li><strong>当 k &gt; 15 后，性能开始下降</strong>，可能是因为<strong>过多的检索片段引入了噪声</strong>，影响了模型的泛化能力。</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" title="ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization" target="_blank" rel="external">https://tyang816.github.io/2025/04/01/Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/03/16/Multi-Scale%20Representation%20Learning%20for%20Protein%20Fitness%20Prediction/" title="NeurIPS-2024 Multi-Scale Representation Learning for Protein Fitness Prediction"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
