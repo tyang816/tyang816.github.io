@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation | tyang</title>
+  <meta name="description" content="论文地址：Prot42: a Novel Family of Protein Language Models for Target-aware Protein Binder Generation 论文实现：https:&#x2F;&#x2F;huggingface.co&#x2F;inceptionai  Prot42：预训练GPT设计binder Abstract 本论文针对蛋白质工程的一个核心难题：传统方法复杂、耗时且资">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation">
+<meta property="og:url" content="https://tyang816.github.io/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Prot42: a Novel Family of Protein Language Models for Target-aware Protein Binder Generation 论文实现：https:&#x2F;&#x2F;huggingface.co&#x2F;inceptionai  Prot42：预训练GPT设计binder Abstract 本论文针对蛋白质工程的一个核心难题：传统方法复杂、耗时且资">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm1.jpg">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig4.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm7.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig5.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig6.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig7-8.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig9.png">
+<meta property="article:published_time" content="2025-04-10T15:04:28.000Z">
+<meta property="article:modified_time" content="2025-04-10T15:05:27.685Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">229</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" class="title">Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-10T15:04:28.000Z" itemprop="datePublished">2025-04-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="title">ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-01T06:21:33.000Z" itemprop="datePublished">2025-04-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/16/Multi-Scale%20Representation%20Learning%20for%20Protein%20Fitness%20Prediction/" class="title">NeurIPS-2024 Multi-Scale Representation Learning for Protein Fitness Prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-16T05:56:58.000Z" itemprop="datePublished">2025-03-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="title">KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-15T15:17:46.000Z" itemprop="datePublished">2025-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/02/IgGM%EF%BC%9AA%20Generative%20Model%20for%20Functional%20Antibody%20and%20Nanobody%20Design/" class="title">ICLR-2025 IgGM：A Generative Model for Functional Antibody and Nanobody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-02T08:35:51.000Z" itemprop="datePublished">2025-03-02</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" class="article-date">
+	  <time datetime="2025-04-10T15:04:28.000Z" itemprop="datePublished">2025-04-10</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" class="leancloud_visitors"  data-flag-title="Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4.5k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 16(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2504.04453">Prot42: a Novel Family of Protein Language Models for Target-aware Protein Binder Generation</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://huggingface.co/inceptionai">https://huggingface.co/inceptionai</a></p>
+</blockquote>
+<h2 id="Prot42：预训练GPT设计binder">Prot42：预训练GPT设计binder</h2>
+<h3 id="Abstract-51">Abstract</h3>
+<p>本论文针对蛋白质工程的一个核心难题：<strong>传统方法复杂、耗时且资源密集</strong>。当前的生成式 AI 技术虽然有突破，但大多依赖<strong>目标蛋白的三维结构和特定结合位点信息</strong>，例如 AlphaProteo 和 RFdiffusion。这些模型在缺乏结构信息的情况下会面临严重瓶颈。</p>
+<p>为了突破这一限制，作者提出了 <strong>Prot42</strong> ——一个全新的 <strong>Protein Language Model (pLM)</strong> 家族。该模型以大规模的无标注蛋白序列进行预训练，通过 <strong>先进的自回归解码器结构</strong>（受自然语言处理中 decoder-only 模型的启发），捕捉蛋白质的<strong>进化、结构和功能特征</strong>。</p>
+<p>Prot42 模型的突出特点之一是：它支持输入<strong>长达 8192 个氨基酸残基的序列</strong>，这远超当前主流模型（如 ProtBert、ESM-1b 通常限制在 1024 个残基左右）。这使得 Prot42 能够建模大型蛋白和多结构域序列，适用于更复杂的生物分子场景。</p>
+<p>此外，论文展示了两个实际应用场景：</p>
+<ol>
+<li><strong>高亲和力的蛋白质结合体（protein binders）生成</strong></li>
+<li><strong>序列特异性的 DNA 结合蛋白生成</strong></li>
+</ol>
+<p>模型可在 huggingface 上公开获取，作为一个高效、精确、可扩展的工具包，支持快速的蛋白质工程任务。</p>
+<h3 id="1-Introduction-3">1 Introduction</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>蛋白质结合体（protein binders），包括<strong>抗体</strong>和<strong>工程蛋白</strong>，在<strong>生物技术</strong>和<strong>治疗应用</strong>中起着关键作用，涉及从<strong>诊断</strong>到<strong>靶向药物输送</strong>等多个领域。传统的生成特异性结合体的<strong>实验方法</strong>存在<strong>资源消耗大</strong>和<strong>组合复杂性限制</strong>的问题。近年来，<strong>结构驱动的计算方法</strong>成为一种有前景的替代方案，例如 <strong>AlphaProteo</strong> 和 <strong>RFdiffusion</strong>，这些方法在实验中的<strong>成功率更高</strong>，所需筛选的候选数量也显著减少。尽管如此，这些方法仍存在关键局限：它们<strong>依赖目标蛋白的三维结构</strong>以及<strong>明确的结合位点信息</strong>，这对那些结构信息缺乏的目标蛋白构成了瓶颈。</p>
+<p><strong>蛋白语言模型</strong>（Protein Language Models, pLMs）提供了另一种可行途径，它们主要在序列层面工作，利用<strong>大规模无标注蛋白序列数据</strong>学习<strong>进化关系</strong>和<strong>结构属性</strong>的表示。已有研究表明，pLMs 在蛋白的<strong>功能注释</strong>、<strong>结构预测</strong>和<strong>新序列生成</strong>等任务上相较于传统的基于<strong>物理化学特征</strong>或<strong>统计特征</strong>的方法有显著优势。然而，目前的 pLMs 存在两大限制：一是<strong>最大可处理的序列长度有限</strong>，二是<strong>缺乏原生的生成能力</strong>。例如，<strong>ESM-1b</strong> 和 <strong>ProtBert</strong> 等模型虽然在表示学习方面表现优异，但<strong>不能生成新序列</strong>，且通常只能处理最多约 <strong>1024 个氨基酸</strong>，这使得它们在处理复杂蛋白质和结合界面建模任务时效果受限。虽然像 <strong>Evo-2</strong> 这样的基础模型支持<strong>上百万 token 的上下文窗口</strong>，但它主要面向 <strong>DNA 建模任务</strong>，并未解决蛋白质层面的生成问题，因此仍存在对<strong>专门的蛋白生成模型</strong>的需求。</p>
+<p>在本文中，我们提出了 <strong>Prot42</strong> ——一个新的 <strong>蛋白语言模型家族</strong>，采用<strong>自回归的 decoder-only 架构</strong>，灵感来自于 NLP 中如 <strong>LLaMA 模型</strong>的最新进展。我们预训练了两个 Prot42 变体，分别拥有 <strong>5 亿</strong>和 <strong>11 亿参数</strong>，起初支持最多 <strong>1024</strong> 个氨基酸残基。通过<strong>持续预训练（continuous pretraining）</strong>，我们将上下文长度扩展至 <strong>8192</strong>，从而使模型能够捕捉到对建模<strong>大型蛋白质</strong>、<strong>多结构域复合体</strong>和<strong>复杂分子相互作用</strong>至关重要的<strong>长距离依赖关系</strong>。这种增强的表示能力对于<strong>生成高亲和力的蛋白结合体</strong>非常关键，也有助于<strong>发现新的生物分子相互作用</strong>。</p>
+<p>我们详细描述了 Prot42 的<strong>模型架构</strong>、<strong>预训练策略</strong>，以及<strong>上下文长度扩展机制</strong>，并展示了其在<strong>序列建模精度</strong>方面的提升。我们使用<strong>困惑度（perplexity）*<em>作为评估指标，验证 Prot42 在更长序列上的预测性能。为了验证其实用性，我们重点展示了两个实际应用：**蛋白结合体生成**和*<em>序列特异性的 DNA 结合蛋白生成</em></em>。结果表明，Prot42 拥有先进的</strong>生成能力**，能够推动<strong>计算蛋白设计</strong>的边界，实现<strong>快速</strong>、<strong>精准</strong>和<strong>可扩展的蛋白质工程</strong>。</p>
+<p>作为 Prot42 的能力展示，我们在图 1 中给出一个示例：模型生成了一个高亲和力的结合体，靶向的是<strong>胰岛素受体（InsR）α 亚基</strong>，并与天然结合体 <strong>胰岛素</strong>（PDB ID 4oga）进行了比较。</p>
+<h3 id="3-Methodology">3 Methodology</h3>
+<p>本节展示了如何使用 Prot42 首次实现一种 <strong>instruction-tuning</strong>（指令微调）的方法，用于从<strong>目标蛋白序列</strong>直接生成<strong>高亲和力、长序列的蛋白结合体</strong>，<strong>完全不依赖结构信息</strong>或额外的辅助任务训练目标。</p>
+<p>通过一种<strong>新颖的多模态策略</strong>整合了 <strong>Gene42 的基因组嵌入</strong> 和 <strong>Prot42 的蛋白质嵌入</strong>，进一步扩展模型能力以生成 <strong>序列特异性的 DNA 结合蛋白</strong>。这一方法消除了对<strong>明确结构限制</strong>或**预定义结合基序（motifs）**的依赖，强调了计算模型在设计具有功能的蛋白结合体时对多种分子上下文的适应能力。</p>
+<h4 id="3-1-Data-Preparation">3.1 Data Preparation</h4>
+<p>使用了 <strong>UniRef50 数据集</strong>，包含 <strong>6320 万条</strong>氨基酸序列，并使用一个由 <strong>20种标准氨基酸组成的词表</strong>进行分词。为处理不常见或模糊的残基，引入了 <strong>X token</strong>，表示任意氨基酸。</p>
+<p>每条序列都被限制在最大长度 <strong>1024 tokens</strong>，超出长度的序列被剔除。最终我们得到了一个<strong>筛选后的子集，包含 5710 万条序列</strong>，初始的<strong>token 填充率（packing density）为 27%</strong>。为了更好地利用计算资源并提升效率，采用了 <strong>可变序列长度（VSL）打包技术</strong>，使得在固定上下文窗口中最大化 token 的占用。</p>
+<p>这种方法将数据集减少到 <strong>1620 万条打包后的序列</strong>，同时实现了 <strong>96% 的填充效率</strong>，在保持序列多样性和完整性的同时显著提升了计算效率</p>
+<p>训练了以下模型变体，参数配置如下</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab1.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="3-2-Model-Architecture-and-Pretraining">3.2 Model Architecture and Pretraining</h4>
+<p>Prot42 是一个 <strong>基于 LLaMA 的 decoder-only 自回归 Transformer 模型</strong>。训练了两个主模型：<strong>Prot42-B</strong>：5亿参数，<strong>Prot42-L</strong>：11亿参数</p>
+<p>使用了一种 <strong>maximal update parametrization (μP)</strong> 的超参数选择方法。具体流程是：先训练一个 <strong>81M 参数的小模型</strong>，用于超参数搜索；再将这些超参数通过 μ-transfer 转移到 500M 和 1.1B 模型中。</p>
+<p>训练期间，每个 batch 的总 token 数固定为 <strong>100 万</strong>，学习率使用 <strong>线性 warm-up + cosine 衰减</strong>策略，并全部在 <strong>Cerebras CS-2</strong> 上进行训练。</p>
+<h5 id="Continuous-Pretraining-for-a-Larger-Context-Length">Continuous Pretraining for a Larger Context Length</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>将 Prot42-L 从支持 1024 序列长度的版本，持续扩展至支持 <strong>8192 残基</strong>，通过 **逐步增加最大序列长度（MSL）**实现。</p>
+<p>训练流程：</p>
+<ol>
+<li>前10%的训练步骤使用 MSL = 1024；</li>
+<li>随后阶段使用逐步增加的 MSL：2048 → 4096 → 8192；</li>
+<li>每阶段保持<strong>有效 token 数</strong>恒定为 1M。</li>
+</ol>
+<p>数据划分见 Table 2。每个阶段的 MSL、样本数量、步数、平均有效长度等均有详细记录。最终训练阶段实现了最高 5324 的有效序列长度。</p>
+<h5 id="Model-Evaluation-using-Validation-Perplexity">Model Evaluation using Validation Perplexity</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>使用 <strong>perplexity（PPL）</strong> 作为评估自回归模型性能的标准指标。对不同上下文长度的模型（1K 到 8K）在验证集上进行评估。结果显示：</p>
+<ul>
+<li>所有模型在 1024 tokens 时 PPL 较高（9–10）；</li>
+<li>在 2048 tokens 降至约 6.5；</li>
+<li><strong>8K 模型在最大上下文长度下 PPL 降至最低的 5.1</strong>，表明它能更好地建模长距离依赖关系；</li>
+<li>特别是 4096–8192 token 区间的持续下降，显示其优越的长序列建模能力。</li>
+</ul>
+<h5 id="Embeddings-Evaluation">Embeddings Evaluation</h5>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>使用来自 <strong>PEER benchmark + UniProt 注释数据</strong>的蛋白质序列，用于预测 10 类<strong>亚细胞定位</strong>（如细胞核、线粒体、质膜等）。</p>
+<p>方法：将每个蛋白嵌入为大小为 32×2048 的高维向量，对其进行平均池化处理以获得全局表示。再使用 <strong>t-SNE</strong> 降维可视化，显示模型能清晰地区分不同亚细胞定位的蛋白类别。</p>
+<p>结果表明：Prot42-L 学到的嵌入具有生物学意义，可用于下游任务如<strong>蛋白功能预测、药物靶点发现、合成生物设计等</strong>。</p>
+<h4 id="3-3-Protein-Binder-Generation">3.3 Protein Binder Generation</h4>
+<p>蛋白质通常不会孤立地发挥作用，而是通过相互作用、结合形成复杂网络来驱动细胞过程。设计能够<strong>特异性结合目标蛋白</strong>的蛋白质，是分子生物学中的一个基本问题，具有广泛的应用，包括治疗、合成生物学等方向。</p>
+<p>设目标蛋白的氨基酸序列表示为 $x = (x_1, x_2, …, x_n) \in \mathcal{X}$，其中 $x_i$ 表示目标蛋白第 $i$ 个残基；设结合体蛋白序列为 $y = (y_1, y_2, …, y_m) \in \mathcal{Y}$，表示能够与目标蛋白结合的序列。目标是建模条件概率分布 $p(y | x)$，即在给定目标蛋白序列 $x$ 的前提下，生成结合体序列 $y$ 的概率分布。</p>
+<p>为此，作者使用了一个受机器翻译任务启发的<strong>序列到序列（sequence-to-sequence）模型</strong>。该模型在训练时使用一个由蛋白互作对组成的数据集 $\mathcal{B} = {(x_i, y_i)}$，其中每对 $(x, y) \in \mathcal{B}$ 被拼接为：$s = (x_1, …, x_n, \texttt{[SEP]}, y_1, …, y_m)$。其中 [SEP] 是一个特殊分隔符 token，用于标识目标序列与结合体序列的分界。</p>
+<p>训练过程中，模型优化以下自回归损失函数：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm1.jpg" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 θ 表示模型参数，损失函数从目标序列末尾加上分隔符后的第一个 token 开始，逐步学习生成整个结合体序列。</p>
+<p>在推理（inference）时，模型以目标蛋白序列 x 为条件，接上 [SEP] token 以及一个起始的甲硫氨酸残基（“M”）作为初始输入。训练集中所有蛋白序列通常以甲硫氨酸开始，因此使用 “M” 可以有效引导生成。</p>
+<p>结合体序列 y 的生成过程是逐步自回归的，满足：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm2.png" alt="avatar" style="zoom:60%;" /></div>
+<p>确保生成序列的<strong>多样性和质量</strong>，作者使用了<strong>随机采样策略</strong>，结合了温度控制（temperature scaling）、nucleus sampling（top-p）和 top-k 筛选。具体地，对于第 i 个 token，其被采样的概率为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm3.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 T 是温度参数，控制生成的随机性；$z_i$ 是当前 token 的 logit 值；$V’ \subseteq V$ 是在 top-k 和 top-p 限制下保留的候选 token 子集。</p>
+<p>整个生成过程可表示为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm4.png" alt="avatar" style="zoom:60%;" /></div>
+<p>其中 $\hat{Y} = (y_1, y_2, …, y_m)$ 是生成的结合体序列，$M_p$ 表示 Prot42 模型。</p>
+<p>图 4 提供了一个实际示例：目标蛋白为 <strong>VEGF-A</strong>（血管内皮生长因子 A），其链 V 被用作结合目标。模型学习了 $p(y \mid x)$ 并自回归地生成 $\hat{Y}$，输出结合体蛋白。</p>
+<p>在推理阶段，模型以 VEGF-A 序列为输入，以 [SEP] 和 “M” 启动解码过程，然后按照上述采样策略生成每一个氨基酸残基。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<p>结构层面，图中显示了生成的结合体与目标蛋白之间的结合区域，并计算了它们之间的<strong>结合亲和力 $A(\hat{Y}, X)$</strong>，用于定量评估生成效果。</p>
+<h4 id="3-4-DNA-Sequence-specific-Binders-Generation">3.4 DNA Sequence-specific Binders Generation</h4>
+<p>除了蛋白-蛋白相互作用，设计能与特定 DNA 序列结合的蛋白质同样具有重要意义，这在<strong>基因调控</strong>和<strong>基因组工程</strong>领域开辟了新的前沿方向。</p>
+<p>设有一个 DNA-蛋白序列对的数据集 $\mathcal{D}$，目标是生成一个蛋白序列 $\hat{X}$，其能有效结合某个给定的 DNA 序列。具体而言，一个 DNA-蛋白对可表示为三元组 $(X_d^{(1)}, X_d^{(2)}, X_p) \in \mathcal{D}$，其中：</p>
+<ul>
+<li>$X_d^{(1)} = (d_1^{(1)}, d_2^{(1)}, …, d_n^{(1)})$和 $X_d^{(2)} = (d_1^{(2)}, d_2^{(2)}, …, d_n^{(2)})$是长度为 $n$ 的两条 DNA 链，属于某个 DNA 词表 $\mathcal{V}_d$​，分别表示正负链。</li>
+<li>$X_p = (p_1, p_2, …, p_m)$ 是由 $m$ 个氨基酸 token 构成的蛋白质序列。</li>
+</ul>
+<p>DNA 模型 $M_d$ 将 DNA 序列编码为潜在表示：</p>
+<ul>
+<li>$H_d^{(1)} = (h_1^{(1)}, …, h_n^{(1)})$，来自 $X_d^{(1)}$</li>
+<li>$H_d^{(2)} = (h_1^{(2)}, …, h_n^{(2)})$，来自 $X_d^{(2)}$  其中每个 $h_t^{(i)} \in \mathbb{R}^{1408}$ 是 DNA 模型输出的嵌入向量。</li>
+</ul>
+<p>蛋白模型 $M_p$ 将蛋白序列 $X_p$ 编码为表示序列：$E_p = (e_1, e_2, …, e_m), \quad e_i \in \mathbb{R}^{2048}$</p>
+<p>为将 DNA 上下文整合进蛋白质生成，作者对 DNA 表示做了投影，将其维度从 1408 映射至 2048：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm5.png" alt="avatar" style="zoom:60%;" /></div>
+<p>整合机制采用<strong>交叉注意力（cross-attention）</strong>，用于将 DNA 信息与蛋白嵌入融合。注意力分数计算如下：</p>
+<p>其中：$A = \text{Softmax}\left(\frac{QK^\top}{\sqrt{2048}}\right)$</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm6.png" alt="avatar" style="zoom:60%;" /></div>
+<ul>
+<li>查询向量 $Q = \theta_q (H_d^{(1)} \oplus H_d^{(2)})$</li>
+<li>键和值向量 $K = \theta_k E_p$, $V = \theta_v E_p$</li>
+</ul>
+<p>这里 $\oplus$ 表示拼接操作，$\theta_q, \theta_k, \theta_v \in \mathbb{R}^{2048 \times 2048}$ 是可训练的参数。</p>
+<p>由此得到 DNA 调制后的蛋白表示：$C_p = A V, \quad E_p’ = E_p + C_p$</p>
+<p>其中 $C_p$ 是融合后的上下文信息，$E_p’$ 是最终输入到 protein decoder 的特征。</p>
+<p>蛋白质生成仍然遵循自回归机制：每个位置的 token 由之前生成的 token 以及 DNA 上下文决定。输出概率分布如下：$p_t = \text{Softmax}(\theta_h e_t’ + \theta_c C_t), \quad \hat{p}<em>t = \arg\max_j (p</em>{t,j})$</p>
+<p>其中 $\theta_h, \theta_c$ 是可学习参数，最终的蛋白质序列为：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/frm7.png" alt="avatar" style="zoom:60%;" /></div>
+<p>在实际推理中，先将两条 DNA 链编码成嵌入表示，传入蛋白模型 $M_p$。然后，以一个固定的起始 token（“M”）作为初始氨基酸残基，逐步生成后续序列。通过固定起始 token，模型可以专注于结合位点的预测生成。</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig5.png" alt="avatar" style="zoom:80%;" /></div>
+<p>图 5 展示了一个具体示例，其中 DNA 链 C = ACCTGACGCGA，D = TTCGCGTCAGG，Prot42 根据 DNA 信息生成了与之结合的蛋白序列，并与已知 DNA 结合蛋白（PDB ID: 8TAC）进行比较。可视化结构显示模型能在空间结构上有效实现 DNA-蛋白的匹配。</p>
+<h3 id="4-Experimental-Evaluation">4 Experimental Evaluation</h3>
+<h4 id="4-1-Evaluation-on-PEER-Benchmarks">4.1 Evaluation on PEER Benchmarks</h4>
+<p>在 PEER benchmark（Protein sEquence undERstanding）上，Prot42 被用于 14 项下游任务，涵盖：</p>
+<ul>
+<li><strong>蛋白功能预测</strong>（如荧光、稳定性、酶活性、溶解性）</li>
+<li><strong>亚细胞定位预测</strong></li>
+<li><strong>结构预测</strong>（如接触图、折叠分类、二级结构）</li>
+<li><strong>蛋白-蛋白/小分子相互作用预测</strong></li>
+</ul>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/tab3.png" alt="avatar" style="zoom:100%;" /></div>
+<p><strong>结果总结：</strong></p>
+<ul>
+<li>Prot42 在 <strong>功能预测</strong>任务中表现优异，尤其在稳定性、酶活性和溶解性方面达到最优。</li>
+<li>在 <strong>亚细胞定位任务</strong>中，其准确率与 ESM-1b 等模型持平或略优。</li>
+<li>在 <strong>结构相关任务</strong>中（如接触图、二级结构），Prot42 结果具有竞争力。</li>
+<li>在 <strong>蛋白-蛋白/蛋白-小分子相互作用预测</strong>中，也取得了可靠结果。</li>
+</ul>
+<p>此外，在蛋白-配体任务中，作者整合了 Chem42 生成的化学嵌入，进一步提升预测性能。</p>
+<h4 id="4-2-Protein-Binders-generation">4.2 Protein Binders generation</h4>
+<p>该任务评估 Prot42 相较于结构依赖方法（如 <strong>AlphaProteo</strong>）在设计结合蛋白方面的能力。</p>
+<p>目标蛋白包含：BHRF1（EB 病毒抗凋亡蛋白）、SARS-CoV-2 RBD、IL-7Rα（白细胞介素受体）、PD-L1（免疫检查点）、TrkA（神经营养因子受体）、IL-17A（炎症因子）、TNF-α（肿瘤坏死因子）</p>
+<p>实验流程：</p>
+<ul>
+<li>使用 STRING 数据库中的高置信度互作对（score ≥ 90%）训练模型；</li>
+<li>限制目标与结合体序列长度不超过 250；</li>
+<li>微调后，针对每个目标生成 500 个候选结合体；</li>
+<li>使用 Boltz-1 预测目标-结合体复合结构；</li>
+<li>使用 <strong>PRODIGY</strong> 工具评估：<strong>结合自由能（ΔG）</strong>、<strong>解离常数（Kd）</strong>、<strong>界面面积、接触残基数、极性分布等指标</strong></li>
+</ul>
+<p>核心结果：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig6.png" alt="avatar" style="zoom:80%;" /></div>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig7-8.png" alt="avatar" style="zoom:100%;" /></div>
+<ul>
+<li>Prot42 在所有目标上都生成了具有<strong>纳摩尔级别（nM）Kd 值</strong>的高亲和力结合体；</li>
+<li>多数目标的 Kd 明显优于 AlphaProteo 的 in silico 结果；</li>
+<li>尤其在 TrkA、PD-L1 和 VEGF-A 等目标上表现突出；</li>
+<li>图示案例包括对 SARS-CoV-2 RBD 的结合体，能准确对接关键位点（如 E484–E505）；</li>
+<li>Prot42 所生成结合体有望作为竞争性抑制剂，用于阻断病毒感染。</li>
+</ul>
+<h4 id="4-3-DNA-Sequence-specific-Binders-Generation">4.3 DNA Sequence-specific Binders Generation</h4>
+<p>本实验使用 <strong>PDIdb 2010</strong> 数据集中的 922 个 DNA-蛋白配对样本进行评估。</p>
+<p>数据来源：</p>
+<ul>
+<li>选取的结构包括 PDB ID: 1TUP、1JJ6、1A1F、8TAC 等；</li>
+<li>目标是生成能识别特定 DNA 序列的蛋白质。</li>
+</ul>
+<p>验证方法：</p>
+<ul>
+<li>使用 <strong>DeepPBS</strong> 工具评估生成蛋白对目标 DNA 的结合特异性；</li>
+<li>该模型使用结构、理化和几何上下文预测位置权重矩阵（PWM），从而间接衡量结合能力。</li>
+</ul>
+<p>实验结果：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Prot42/fig9.png" alt="avatar" style="zoom:80%;" /></div>
+<ul>
+<li>Prot42 生成的结合体能够精确对接 DNA 主沟区域；</li>
+<li>与参考蛋白相比，在结合位置和形状上高度一致；</li>
+<li>图 9 展示了多个成功结合的三维复合体结构。</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" title="Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation" target="_blank" rel="external">https://tyang816.github.io/2025/04/10/Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" title="ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
