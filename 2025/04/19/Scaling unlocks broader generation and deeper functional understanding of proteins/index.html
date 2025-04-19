@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>Scaling unlocks broader generation and deeper functional understanding of proteins | tyang</title>
+  <meta name="description" content="论文地址：Scaling unlocks broader generation and deeper functional understanding of proteins 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Profluent-AI&#x2F;progen3  ProGen3：MOE+GLM+CLM蛋白质设计 Abstract 生成式蛋白质语言模型（Protein Language Mod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scaling unlocks broader generation and deeper functional understanding of proteins">
+<meta property="og:url" content="https://tyang816.github.io/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Scaling unlocks broader generation and deeper functional understanding of proteins 论文实现：https:&#x2F;&#x2F;github.com&#x2F;Profluent-AI&#x2F;progen3  ProGen3：MOE+GLM+CLM蛋白质设计 Abstract 生成式蛋白质语言模型（Protein Language Mod">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig2.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig4.png">
+<meta property="article:published_time" content="2025-04-19T08:08:41.000Z">
+<meta property="article:modified_time" content="2025-04-19T08:09:21.653Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">230</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/" class="title">Scaling unlocks broader generation and deeper functional understanding of proteins</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-19T08:08:41.000Z" itemprop="datePublished">2025-04-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" class="title">Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-10T15:04:28.000Z" itemprop="datePublished">2025-04-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="title">ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-01T06:21:33.000Z" itemprop="datePublished">2025-04-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/16/Multi-Scale%20Representation%20Learning%20for%20Protein%20Fitness%20Prediction/" class="title">NeurIPS-2024 Multi-Scale Representation Learning for Protein Fitness Prediction</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-16T05:56:58.000Z" itemprop="datePublished">2025-03-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/03/15/Pre-training%20Antibody%20Language%20Models%20for%20Antigen-Specific%20Computational%20Antibody%20Design/" class="title">KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-03-15T15:17:46.000Z" itemprop="datePublished">2025-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Scaling unlocks broader generation and deeper functional understanding of proteins" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Scaling unlocks broader generation and deeper functional understanding of proteins
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/" class="article-date">
+	  <time datetime="2025-04-19T08:08:41.000Z" itemprop="datePublished">2025-04-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/" class="leancloud_visitors"  data-flag-title="Scaling unlocks broader generation and deeper functional understanding of proteins">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6.5k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 23(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://www.biorxiv.org/content/10.1101/2025.04.15.649055v1.full.pdf">Scaling unlocks broader generation and deeper functional understanding of proteins</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://github.com/Profluent-AI/progen3">https://github.com/Profluent-AI/progen3</a></p>
+</blockquote>
+<h2 id="ProGen3：MOE-GLM-CLM蛋白质设计">ProGen3：MOE+GLM+CLM蛋白质设计</h2>
+<h3 id="Abstract-58">Abstract</h3>
+<p>生成式蛋白质语言模型（Protein Language Models, PLMs）是当前用于定制蛋白质设计的强大工具，可广泛应用于医药、农业和工业等领域。尽管已有研究训练了规模不断扩大的语言模型，但关于<strong>最优训练数据分布</strong>和<strong>模型规模对生成蛋白序列的影响</strong>仍缺乏系统研究。</p>
+<p>本文提出了<strong>ProGen3</strong>系列的稀疏生成式蛋白语言模型，并推导了<strong>计算最优的 scaling law（扩展规律）</strong>，将模型扩展至<strong>460亿参数</strong>，并在<strong>1.5万亿个氨基酸 token</strong>上进行预训练。ProGen3 的预训练数据采样自精心构建的<strong>Profluent Protein Atlas v1（PPA-1）</strong>，包含<strong>34 亿条全长蛋白质序列</strong>。</p>
+<p>研究首次在<strong>湿实验（wet lab）中系统评估了模型规模对生成蛋白质序列的影响</strong>，发现<strong>更大规模的模型能够生成来自更广泛蛋白家族的可表达蛋白质</strong>。</p>
+<p>此外，无论在计算还是实验上，结果都表明<strong>更大模型在对实验数据对齐（alignment）时表现出更高的响应性</strong>，从而在<strong>蛋白质适应度预测</strong>和<strong>序列生成能力</strong>上实现显著提升。</p>
+<p>总体而言，这项研究表明，<strong>如 ProGen3-46B 这类大规模、基于高质量数据训练的蛋白质语言模型</strong>，可作为强有力的基础模型，推动<strong>蛋白质设计领域</strong>的研究边界。</p>
+<h3 id="1-Introduction-5">1 Introduction</h3>
+<p>蛋白质在各类生物过程中发挥核心作用，涵盖催化反应、免疫调节、信号通路调控以及分子运输等功能，在治疗、农业、能源和工业等领域均具有重要应用价值。长期以来，功能性蛋白主要依赖于自然发现，而人工设计通常依靠随机突变与实验筛选，方法依赖性强且效率较低，难以满足特定场景下对蛋白功能的定制需求。</p>
+<p>近年来，随着 DNA 测序成本的大幅下降，大规模天然蛋白质序列得以被采集。生成式蛋白语言模型（Protein Language Models, PLMs）因此应运而生，成为学习自然蛋白序列分布的有效工具。已有研究实验证明，PLMs 在多种实际任务中具备设计功能性蛋白的能力。</p>
+<p>PLMs 的发展路径与自然语言处理（NLP）中的语言模型高度一致。NLP 领域已广泛验证，<strong>更大规模的模型</strong>不仅具备更强的迁移能力，还能通过精细的模型与数据扩展策略获得更优的性能。而在蛋白质建模领域，已有工作指出，PLMs 所学习的 embedding 可隐式捕捉蛋白质适应度，并能在监督或无监督场景下进行有效利用。</p>
+<p>尽管如此，PLM 研究中仍存在若干关键问题尚未充分探索：</p>
+<ol>
+<li>在蛋白数据量爆炸式增长的背景下，如何构建最优训练分布仍缺乏系统性研究；</li>
+<li>相较于 embedding 层表征的性能评估，尚不清楚生成序列本身在模型扩展下的表现如何；</li>
+<li>虽然 NLP 和蛋白建模领域均已有通过后训练策略对齐模型以满足用户偏好的尝试，但模型规模对对齐效果的具体影响尚无系统研究。</li>
+</ol>
+<p>为回应上述挑战，研究者提出了 ProGen3——一组基于<strong>稀疏 Mixture-of-Experts（MoE）结构</strong>的自回归蛋白语言模型。该模型系列在保持性能的同时显著提升了训练效率。为训练 ProGen3，作者构建了规模达 34 亿全长蛋白的高质量数据集 Profluent Protein Atlas v1（PPA-1），并据此优化了训练数据分布。</p>
+<p>在计算资源限制下，研究者推导了适用于稀疏模型的<strong>计算最优扩展规律（scaling law）</strong>，并据此将模型规模扩展至 460 亿参数，在 1.5 万亿个氨基酸 token 上完成预训练。进一步地，他们首次在湿实验中系统验证了模型规模对生成蛋白质序列表达能力与多样性的影响，发现大型模型能够生成更广泛蛋白空间中的功能性序列。</p>
+<p>最后，研究还表明，<strong>通过与实验数据对齐（如 IRPO 策略）</strong>，无论模型规模如何，PLMs 均能显著提升适应度预测与序列生成能力，且<strong>模型越大，受益越显著</strong>。</p>
+<h3 id="2-ProGen3">2 ProGen3</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<h4 id="2-1-Architecture">2.1 Architecture</h4>
+<p>ProGen3 是一系列<strong>自回归（autoregressive, AR）蛋白语言模型</strong>（PLMs），基于 Transformer 架构，并引入了**稀疏混合专家（sparse Mixture of Experts, MoE）**机制。每次前向传播仅激活模型总参数的约 27%（如图 1b 所示）。该模型系列涵盖从 1.12 亿到 460 亿参数的 8 种不同规模，所有模型均使用 <strong>8192 token 的上下文长度</strong>。关于架构细节，详见附录 C.1。</p>
+<p>与 NLP 中的类似研究一致，作者发现，在固定计算预算下，稀疏模型显著优于同规模的稠密模型（详见附录 C.2）。</p>
+<p>标准的 AR PLM 可支持<strong>因果语言建模（causal language modeling, CLM）</strong>，即从 N 端（氨基）到 C 端（羧基），或反向，从 C 端到 N 端逐步生成蛋白质序列。此外，ProGen3 还支持<strong>广义语言建模（generalized language modeling, GLM）</strong>，即在蛋白序列中间进行片段填充（infill）。该过程通过插入特殊哨兵 token 取代目标片段，并将这些片段及其对应哨兵标记放置在序列末尾（图 1a）。这种机制使得用户能够在保留上下文残基的情况下重新设计蛋白的局部区域。详细方法见附录 C.3。</p>
+<h4 id="2-2-Training-Data">2.2 Training Data</h4>
+<p>ProGen3 的预训练数据来自研究者自行构建的高质量蛋白质数据集 <strong>Profluent Protein Atlas v1（PPA-1）</strong>，包含 <strong>34 亿条全长蛋白质序列</strong>，总计约 <strong>1.1 万亿氨基酸 token</strong>。该数据集整合了广泛的基因组和宏基因组来源，并经过多层过滤，确保其适用于训练生成式 PLM。特别地，所有蛋白片段均被排除，仅保留完整序列。整体上，PPA-1 的规模和多样性与 OMG 数据集相当，与 ESM3 的训练数据在序列数量上相近，但 ESM3 包含片段数据。PPA-1 远大于 UniRef和 BFD，更详细的数据处理流程见附录 B。</p>
+<p>值得注意的是，尽管蛋白数据集正在迅速扩展，但其内在偏倚仍可能影响训练结果。因此，作者特别关注<strong>训练数据分布的优化问题</strong>，这是此前 PLM 研究较少涉及的方面（详见附录 A.2）。</p>
+<p>研究者设计了四种不同的数据平衡策略，对 50% 序列相似性（ID）聚类进行采样控制，分别命名为：<strong>Uniform（均匀）</strong>、<strong>Square Root（平方根）</strong>、<strong>Inverse Log（逆对数）</strong>、<strong>Unmodified（原始分布）</strong></p>
+<p>这些策略控制从某个聚类（大小为 <em>n</em>）中采样的概率，分别与 1、$\sqrt{n}$、$\frac{n}{1 + \log n}$ 成正比。每次采样先从 50% 聚类中采样，再在该聚类内选择一个 90% ID 子聚类，最终从中均匀选取一个序列。</p>
+<p>为了衡量模型的泛化能力，研究者构建了与训练数据无重合的验证集，分别在 30%、50%、90% ID 水平上采样，每个集合包含 250 万条蛋白质序列，均衡覆盖聚类大小（1–10, 11–100, 101–1000）范围。最终的验证损失是这三个验证集结果的平均。</p>
+<p>如图 1d 所示，在训练 token 数固定为 80B 的情况下：</p>
+<ul>
+<li><strong>Unmodified 分布</strong>在接近训练数据（90% ID）时表现最好；</li>
+<li><strong>Inverse Log 分布</strong>在远离训练数据（30%、50% ID）时表现最佳；</li>
+<li><strong>Uniform 分布</strong>效果最差，说明 PLM 仍能从频繁出现的蛋白之间学到重要信号。</li>
+</ul>
+<p>基于以上分析，所有后续模型均采用 <strong>Inverse Log 分布</strong>进行训练。</p>
+<h4 id="2-3-Scaling-Up-to-a-46B-Parameter-Model">2.3 Scaling Up to a 46B Parameter Model</h4>
+<p>为了在固定计算资源下最优地分配模型参数量与训练数据规模，研究者遵循 <strong>Kaplan 等人提出的扩展规律（scaling law）</strong>，将验证损失建模为模型参数数量 <em>N</em> 与训练 token 数 <em>D</em> 的函数：<br>
+$$<br>
+L(N,D) = \left( AN^{-\alpha/\beta} + BD^{-1} \right)^\beta + C<br>
+$$<br>
+拟合后得出 ProGen3 的稀疏架构满足以下近似最优参数–数据对关系（图 1e）：<br>
+$$<br>
+N_{\text{opt}}(D) = 2.462 \times 10^{-7} \cdot D^{1.479}<br>
+$$<br>
+基于此，计算表明：若总 FLOPs 限制为 $1.1 \times 10^{23}$，理论上应训练一个 900 亿参数模型，使用 753B token，可达到 1.376 的验证损失。但出于实际推理硬件的考虑，研究者选择训练一个 <strong>460 亿参数模型（ProGen3-46B）</strong>，使用 1.5T token，预测验证损失为 1.397，实际结果更优（达到了 <strong>1.345</strong>），超过了 compute-optimal 理论边界。</p>
+<p>他们还发现，将 warmup 训练步数从 2000 增加到 10000 可显著提升训练稳定性，这可能是实际损失优于理论预测的一个原因（附录 C.4）。</p>
+<h3 id="3-Computational-and-Experimental-Analysis-of-Model-Generations">3 Computational and Experimental Analysis of Model Generations</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig2.png" alt="avatar" style="zoom:100%;" /></div>
+<p>前文已展示：随着预训练计算资源的扩展，PLMs 在验证集上的损失持续降低——无论测试蛋白是否接近训练数据。这意味着<strong>更大规模的模型更好地表示了自然蛋白分布</strong>。</p>
+<p>然而，<strong>模型扩展对生成能力的影响</strong>此前鲜有研究。因此，本节聚焦于三种计算开销相差三个数量级的 ProGen3 模型：</p>
+<ul>
+<li><strong>ProGen3-339M</strong>：训练于 200B tokens（1.2 × 10²⁰ FLOPs）</li>
+<li><strong>ProGen3-3B</strong>：训练于 500B tokens（2.6 × 10²¹ FLOPs）</li>
+<li><strong>ProGen3-46B</strong>：训练于 1.5T tokens（1.1 × 10²³ FLOPs）</li>
+</ul>
+<h4 id="3-1-Larger-PLMs-generate-more-diverse-proteins-that-express-in-vitro">3.1 Larger PLMs generate more diverse proteins that express <em>in vitro</em></h4>
+<h5 id="生成与过滤流程"><strong>生成与过滤流程</strong></h5>
+<p>作者使用 <strong>top-p 采样（p = 0.95）</strong>，温度在 [0.5,1.0] 区间变化，从每个模型中无条件生成蛋白序列：ProGen3-339M：生成 <strong>4 百万条序列</strong>，ProGen3-3B：生成 <strong>3 百万条序列</strong>，ProGen3-46B：生成 <strong>2 百万条序列</strong></p>
+<p>为了提取“蛋白样”的序列，作者对这些生成结果施加以下质量过滤：</p>
+<ol>
+<li><strong>低复杂性区域过滤</strong>：移除低复杂性区域占比超过 25% 的序列（语言模型常会生成重复片段）；作为参考，PPA-1 中有 95.5% 的序列通过该过滤。</li>
+<li><strong>终止 token 要求</strong>：必须包含恰当的终止符。</li>
+<li><strong>与自然序列的比对</strong>：要求序列对 PPA-1 中任一自然序列比对覆盖率大于 80%。</li>
+</ol>
+<p>结果显示：</p>
+<ul>
+<li>模型越大，<strong>通过质量过滤的序列越多</strong>；</li>
+<li>从 339M 扩展到 3B 时，<strong>重复序列显著减少</strong>（见图 2a）。</li>
+</ul>
+<h5 id="结构族覆盖分析：更大模型生成更丰富的蛋白类型"><strong>结构族覆盖分析：更大模型生成更丰富的蛋白类型</strong></h5>
+<p>接下来，作者将通过质量过滤的序列与 PPA-1 中的 30% 序列身份（ID）聚类代表比对。若某生成序列与某聚类代表的序列满足以下条件，即认为该序列“覆盖”该聚类：</p>
+<ul>
+<li>与聚类代表的序列 <strong>ID &gt; 30%</strong></li>
+<li>且 <strong>比对覆盖率 &gt; 90%</strong></li>
+</ul>
+<p>⚠️ 注意：一个生成序列可能覆盖多个聚类（即便这些聚类代表间彼此 ID &lt; 30%）。</p>
+<p>结果：</p>
+<ul>
+<li><strong>更大模型生成的序列覆盖更多结构聚类</strong>（图 2b）。</li>
+<li>小模型所覆盖的聚类几乎都被大模型覆盖；</li>
+<li><strong>大模型还能生成小模型完全未触及的新聚类</strong>（图 2c）。</li>
+</ul>
+<h5 id="模型生成能力是否受困于训练分布？使用困惑度解释"><strong>模型生成能力是否受困于训练分布？使用困惑度解释</strong></h5>
+<p>为回答“小模型是否能通过增加采样数量生成大模型覆盖的聚类”，作者分析了这些聚类中自然蛋白的 <strong>平均困惑度（perplexity）</strong>：</p>
+<ul>
+<li>若某模型对某个聚类中的自然序列赋予高困惑度，则说明它“不理解该聚类”，因而<strong>难以生成来自该聚类的蛋白质</strong>。</li>
+</ul>
+<p>观察：</p>
+<ul>
+<li><strong>大模型能频繁地生成来自小模型高困惑度的聚类</strong>；</li>
+<li>反之则不成立（图 2d）；</li>
+<li>因此，<strong>大模型可完全覆盖小模型的生成能力，但其部分生成分布对小模型而言是“分布外”的</strong>。</li>
+</ul>
+<p>此外，分析显示：<strong>随着模型规模增长，其在“较小的聚类”上表现更好</strong>（图 2e），这部分解释了其拓展能力。</p>
+<h5 id="实验验证：体外表达评估（split-GFP-系统）"><strong>实验验证：体外表达评估（split-GFP 系统）</strong></h5>
+<p>为了验证这些生成蛋白在体内是否具有“现实存在性”，作者在大肠杆菌中执行了 <strong>split-GFP 表达实验</strong>，该实验用于评估蛋白质的<strong>可溶性表达水平</strong>，其敏感指标包括：</p>
+<ul>
+<li>mRNA 表达量与稳定性、翻译效率、折叠稳定性（热力学和平衡）、抗蛋白酶能力、易聚集性、细胞毒性</li>
+</ul>
+<p>split-GFP 系统与 SDS-PAGE、Western blot 等直接实验方法高度相关，且适合大规模高通量检测，已广泛用于生成模型 benchmarking</p>
+<h5 id="实验设计细节"><strong>实验设计细节</strong></h5>
+<p>从不同模型中分别选取以下类别的聚类进行实验：</p>
+<ul>
+<li>所有三个模型都生成过的：<strong>42 个聚类</strong></li>
+<li>仅 ProGen3-3B 和 46B 生成过的：<strong>62 个聚类</strong></li>
+<li>仅 ProGen3-46B 生成过的：<strong>45 个聚类</strong>（见图 2f）</li>
+</ul>
+<p>对于每个聚类：</p>
+<ul>
+<li>每个模型各选两条序列：一条对PPA-1自然蛋白 ID 为 <strong>40–60%</strong>，一条为 <strong>60–80%</strong></li>
+<li>优先选择困惑度最低的生成序列；</li>
+<li>控制组为该聚类中的两条随机自然序列；</li>
+<li>所选序列长度覆盖范围为 <strong>75–300 个氨基酸</strong>，具备结构多样性。</li>
+</ul>
+<h5 id="实验结果：蛋白质表达率分析（图-2g）"><strong>实验结果：蛋白质表达率分析（图 2g）</strong></h5>
+<ul>
+<li>所有模型生成序列的平均表达率相近；</li>
+<li>但<strong>更大模型能在更多的聚类中生成可表达蛋白</strong>，表现出更强的泛化；</li>
+<li>对所有模型而言，<strong>ID 为 60–80% 的生成蛋白表达率高于 40–60% 的</strong>；</li>
+<li>有趣的是：<strong>生成蛋白与其所在聚类的自然蛋白在表达率上高度一致</strong>，说明生成序列真实可靠。</li>
+</ul>
+<h4 id="3-2-PLMs-generate-viable-proteins-outside-natural-sequence-space">3.2 PLMs generate viable proteins outside natural sequence space</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>在上一节，作者已经证明：PLMs 可以在自然序列聚类中生成<strong>具备表达能力的蛋白质</strong>。</p>
+<p>本节的目标是进一步探索：</p>
+<blockquote>
+<p><strong>模型是否能够在没有自然参考点的区域（即“自然分布之外”）生成功能蛋白？</strong></p>
+</blockquote>
+<p>作者设定了如下标准：</p>
+<blockquote>
+<p>选取与 PPA-1 数据集中任意蛋白质的序列相似性（Identity）<strong>低于 30%</strong> 或**无法比对（unalignable）**的生成序列。</p>
+</blockquote>
+<p>这些序列代表了<strong>模型生成能力的极端边界</strong> —— 它们所处的序列空间中 <strong>没有自然蛋白作为“锚点”</strong>。</p>
+<p><strong>生成样本选取</strong></p>
+<p>从之前无条件生成的蛋白质中，作者按以下规则采样：</p>
+<ul>
+<li>按照<strong>二级结构类型</strong>分为三类：
+<ul>
+<li><strong>mostly-alpha（主要为 α 螺旋）</strong></li>
+<li><strong>mostly-beta（主要为 β 折叠）</strong></li>
+<li><strong>mixed alpha/beta（混合型）</strong></li>
+</ul>
+</li>
+<li>每种结构类别下，从每个模型中（ProGen3-339M、3B、46B）各选取 <strong>10 条序列</strong>，共 90 条样本<br>
+（见图 3a，结构预测使用的是 <strong>ESMFold</strong>）</li>
+</ul>
+<h5 id="实验验证：表达能力分析"><strong>实验验证：表达能力分析</strong></h5>
+<p>这些 90 条序列被投入到 <strong>split-GFP 体系</strong> 中，在大肠杆菌中评估其<strong>可溶性表达水平</strong>。</p>
+<p>作者将它们的表达结果与一个已知表达良好的“正对照蛋白”作比较（图 3b）：</p>
+<p><strong>结果：</strong></p>
+<ul>
+<li>三个模型生成的蛋白在整体表达能力上<strong>大致相当</strong>；</li>
+<li>但来自 <strong>更大模型（ProGen3-46B）</strong> 的序列在多数情况下拥有<strong>更高的表达水平</strong>，即便它们位于自然分布之外；</li>
+<li>表明：<strong>大模型在生成“全新蛋白”时更有可能得到结构稳定、表达良好的结果</strong>。</li>
+</ul>
+<h4 id="3-3-Larger-PLMs-are-better-infillers">3.3 Larger PLMs are better infillers</h4>
+<p>ProGen3 不仅支持传统的从头生成（causal generation），还具备强大的 <strong>“infilling”能力</strong> —— 即在<strong>已知蛋白质序列中间的某些位置重建片段</strong>。这类能力对于蛋白设计尤为重要，例如：</p>
+<ul>
+<li><strong>改造活性位点、连接环（loops）、可变区等关键区域</strong>；</li>
+<li><strong>保留框架结构的同时引入功能增强突变</strong>。</li>
+</ul>
+<p>为系统评估不同模型在 infilling 上的表现，作者设计了如下实验：</p>
+<h5 id="目标蛋白选择："><strong>目标蛋白选择：</strong></h5>
+<ol>
+<li><strong>9 条工业/药用相关蛋白质</strong>（长度 100–400 个氨基酸）：
+<ul>
+<li>这些蛋白具备一定的表达先例，来自人类或常用表达系统；</li>
+<li>每条蛋白中，<strong>随机</strong>选取：<strong>2 段短片段</strong>，<strong>2 段长片段</strong> 使用 ProGen3-3B 和 46B 各自对这些片段进行 infilling。</li>
+</ul>
+</li>
+<li><strong>9 条来自大肠杆菌胞质蛋白（cytosolic E. coli proteins）</strong>（长度 100–300 aa）：
+<ul>
+<li>每条选取：<strong>1 段短片段</strong>，<strong>1 段长片段</strong> 同样由 3B 和 46B 模型分别进行 infill。</li>
+</ul>
+</li>
+</ol>
+<h5 id="实验评估："><strong>实验评估：</strong></h5>
+<ul>
+<li>每段 in-filled 片段，从每个模型中选出 <strong>2 条序列</strong>；</li>
+<li>并测量：这 2 条生成序列的表达水平；对应的<strong>天然完整蛋白</strong>的表达水平（作为 baseline）；</li>
+<li>使用 split-GFP 系统进行可溶性表达量检测。</li>
+</ul>
+<h5 id="表达分析与模型对比"><strong>表达分析与模型对比</strong></h5>
+<ul>
+<li>在这 18 条目标蛋白中，有 <strong>11 条来源于大肠杆菌自身</strong>，理论上它们可能表现出更好的表达；</li>
+<li>但这也意味着 split-GFP 对这些本源蛋白的检测存在 <strong>天花板效应</strong>，或可能偏低估计。</li>
+</ul>
+<h5 id="实验观察（图-3c）："><strong>实验观察（图 3c）：</strong></h5>
+<ul>
+<li><strong>总体趋势</strong>：infilling 后的表达量平均 <strong>低于天然蛋白</strong>；</li>
+<li>但出现了多例 infill 片段表达 <strong>高于原始蛋白</strong> 的情况，说明 infill 并非总是“降解”功能；</li>
+<li>在所有条件下，<strong>ProGen3-46B 的 infill 表达表现优于 ProGen3-3B</strong>，体现在：
+<ul>
+<li>所有片段平均表达量；</li>
+<li>相同片段下 infill 的相对表达量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Aligning-Protein-Language-Models-to-Laboratory-Data">4 Aligning Protein Language Models to Laboratory Data</h3>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProGen3/fig4.png" alt="avatar" style="zoom:100%;" /></div>
+<p>蛋白语言模型（PLMs）通常基于进化数据进行预训练，为评估其泛化能力，研究者常采用 <strong>零样本适应度预测（zero-shot fitness prediction）</strong> 的标准任务：</p>
+<ul>
+<li>任务形式：输入突变后的蛋白序列，让模型基于其概率/似然性进行评估；</li>
+<li>评估方式：将模型对不同突变序列给出的 <strong>似然（log-likelihood）</strong> 与实验中测得的 <strong>适应度评分</strong> 做 <strong>Spearman 等级相关系数（ρ）</strong> 分析；</li>
+<li>数据来源：通常使用深度突变扫描（<strong>Deep Mutational Scanning, DMS</strong>）数据集，如 <strong>ProteinGym</strong></li>
+</ul>
+<h5 id="问题：大模型验证损失虽低，但零样本预测能力下降"><strong>问题：大模型验证损失虽低，但零样本预测能力下降</strong></h5>
+<p>作者发现了一个有趣现象：</p>
+<blockquote>
+<p><strong>尽管更大规模的 ProGen3 模型（&gt;3B 参数）在验证损失和序列多样性上表现更优，</strong></p>
+<p><strong>但它们在 ProteinGym 的零样本预测中表现反而变差（图 4a）</strong>。</p>
+</blockquote>
+<p>这一发现印证了已有文献中的两个重要假设：</p>
+<ul>
+<li>Weinstein et al.和 Gordon et al.曾指出：
+<ul>
+<li>在某个临界点之后，<strong>越能精确刻画自然分布的模型，反而越不利于预测突变的功能效应</strong>；</li>
+<li>原因在于：自然蛋白演化过程中的<strong>协变量结构</strong>可能与突变适应度不一致，导致预训练目标（建模分布）与评估目标（功能预测）出现张力。</li>
+</ul>
+</li>
+</ul>
+<p><strong>应对策略：通过对齐显式引导模型能力</strong></p>
+<p>尽管大型模型在零样本设置下表现不佳，但作者认为它们<strong>具备可唤醒的潜在能力（latent ability）</strong>，只需合适地引导即可显现。</p>
+<p>为此，作者引入了 <strong>IRPO（Iterative Reasoning Preference Optimization）</strong>：</p>
+<ul>
+<li>IRPO 是一种受大语言模型对齐启发的策略，旨在将模型的原始 log-likelihood 分布进行微调，使其更贴合<strong>实验测得的目标属性</strong>。</li>
+<li>在本研究中，IRPO 用于对齐的实验指标包括：<strong>酶活性（activity）</strong>，<strong>分子结合能力（binding）</strong>，<strong>有机体适应度（organismal fitness）</strong>，<strong>蛋白稳定性（stability）</strong></li>
+</ul>
+<h4 id="4-1-Supervised-Fitness-Prediction">4.1 Supervised Fitness Prediction</h4>
+<p>作者希望展示：</p>
+<blockquote>
+<p><strong>经过 IRPO alignment 的 PLM 能在仅使用本地突变（局部训练）信息的情况下，实现对远距离突变蛋白的准确预测</strong>，从而提升定向进化（directed evolution）的效率。</p>
+</blockquote>
+<h5 id="实验设置（ProteinGym）">实验设置（ProteinGym）</h5>
+<ul>
+<li>使用 <strong>ProteinGym 数据集</strong>，其中包含多个深度突变扫描（DMS）实验；</li>
+<li>选择包含 <strong>≥3 位点突变</strong>的所有实验（assays）；</li>
+<li>训练数据：包含与野生型相差不超过 <em>k</em> 位突变的所有变体；<em>k</em> 是使得训练集 <strong>数量超过 500 条序列</strong>的最小值；</li>
+<li>为确保训练/测试集的适应度分布相似，设置约束：<strong>训练与测试集中适应度分布的总变差（Total Variation Distance） &lt; 1</strong>。</li>
+</ul>
+<p>最终筛选得到 <strong>8 个测量不同蛋白功能属性的 assay</strong>，涵盖广泛蛋白种类（见补充表 8）。</p>
+<h5 id="结果一：训练局部，预测远程，ProGen3-泛化能力显著">结果一：训练局部，预测远程，ProGen3 泛化能力显著</h5>
+<ul>
+<li>使用不到 500 条单突变体的实验数据，IRPO 对齐后的模型就能准确<strong>排序相距十数个突变的远程变体</strong>；</li>
+<li>模型规模越大，预测能力越强（图 4b，补充图 6）：
+<ul>
+<li><strong>ProGen3-46B（ρ = 0.673）</strong> 优于 <strong>KERMUT（ρ = 0.628）</strong></li>
+<li>与 SOTA 方法 <strong>ConFit（ρ = 0.679）</strong> 相当；</li>
+</ul>
+</li>
+<li>相比 KERMUT 和 ConFit 等专为预测突变效应设计的模型，ProGen3 作为一个<strong>通用的生成模型</strong>，不依赖结构信息或特定手工特征，仍能达到竞争性能；</li>
+<li>值得注意的是，IRPO 可用于优化替换突变、插入和缺失的适应度评估，而非仅限于 substitution</li>
+</ul>
+<h5 id="实验扩展：预测蛋白稳定性（ΔG）">实验扩展：预测蛋白稳定性（ΔG）</h5>
+<ul>
+<li>将 IRPO 应用于 <strong>Megascale 蛋白稳定性数据集</strong>：
+<ul>
+<li>包含近 <strong>80 万个单/双突变体</strong>，分布于 <strong>479 个蛋白结构域</strong>；</li>
+<li>每个样本均标注了<strong>折叠自由能（ΔG）</strong>；</li>
+</ul>
+</li>
+<li>使用 <strong>FoldSeek easy-cluster</strong>（比对覆盖率 ≥50%）对蛋白结构域进行聚类：留出 <strong>5% 聚类用于验证，5% 用于测试</strong>；</li>
+<li>模型仅在<strong>单点突变体</strong>上进行训练，以检验其泛化能力。</li>
+</ul>
+<h5 id="结果二：大模型可在结构未知场景中精准预测蛋白稳定性">结果二：大模型可在结构未知场景中精准预测蛋白稳定性</h5>
+<ul>
+<li>对齐后的 ProGen3 模型在蛋白稳定性预测任务上同样随着规模提升而表现更好（图 4c–e）；</li>
+<li>与结构感知模型 <strong>ProteinDPO</strong>对比：
+<ul>
+<li>在相同训练/测试划分下：
+<ul>
+<li><strong>ProteinDPO：ρ = 0.72</strong></li>
+<li><strong>ProGen3-46B（IRPO）：ρ = 0.737</strong></li>
+</ul>
+</li>
+<li>尽管 ProGen3 是基于序列的模型，<strong>在未见的双突变体上</strong>具有更强的泛化能力：
+<ul>
+<li>多突变体预测上：<strong>ProGen3-46B：ρ = 0.820</strong></li>
+<li>同条件下：<strong>ProteinDPO 仅为：ρ = 0.468</strong>（图 4e）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-Sequence-Generation"><strong>4.2 Sequence Generation</strong></h4>
+<blockquote>
+<p>在前文验证了对齐策略（IRPO）显著提升了 ProGen3 的适应度与稳定性预测能力后，作者进一步评估： <strong>对齐后的模型在蛋白生成任务中的表现是否也更优？</strong></p>
+</blockquote>
+<h5 id="序列生成设置">序列生成设置</h5>
+<p>作者从第 3.1 节中使用的自然蛋白中，挑选出 <strong>32 条结构多样的自然蛋白质</strong>作为生成提示（prompts），这些蛋白长度在 <strong>98–282 个氨基酸</strong>之间，远长于 Megascale 稳定性数据集中 40–72 氨基酸的蛋白结构域。</p>
+<p>对于每个 prompt，他们使用 <strong>稳定性对齐模型与原始预训练模型</strong>分别进行生成：</p>
+<ul>
+<li>每种模型、每个 prompt，各生成 <strong>50,000 条序列</strong>；</li>
+<li>每条序列需通过图 2a 中定义的质量过滤标准；</li>
+<li>使用两种条件化方式生成：
+<ul>
+<li>用前 25% 条件化生成后 75%；</li>
+<li>用后 25% 条件化生成前 75%；</li>
+</ul>
+</li>
+<li>最终，从每组（模型 × prompt）中选出 <strong>100 条困惑度最低</strong>且通过质量过滤的序列，进入后续分析。</li>
+</ul>
+<h5 id="结构与稳定性评估（计算模拟）">结构与稳定性评估（计算模拟）</h5>
+<p>作为初步评估，作者使用 <strong>in silico 稳定性预测流程</strong>：</p>
+<ol>
+<li>对所有生成序列及其对应的自然 prompt 序列使用 <strong>ESMFold</strong> 预测三维结构；</li>
+<li>在 <strong>PyRosetta</strong> 中进行：4 轮最小化（MinMover）；4 轮结构松弛（FastRelax）；每个序列进行 <strong>5 条独立轨迹</strong>；</li>
+<li>记录每个序列在所有轨迹中达到的<strong>最低 Rosetta 能量值</strong>；</li>
+<li>与对应自然序列的最低能量值做差值计算，差值越低表示生成序列更稳定。</li>
+</ol>
+<p><strong>结果显示</strong>（图 4f）：</p>
+<ul>
+<li>更大模型生成的蛋白质<strong>平均更稳定</strong>；</li>
+<li>经过 IRPO 对齐后，<strong>所有模型的稳定性进一步提升</strong>；</li>
+<li>说明 alignment 不仅优化了模型预测能力，也显著改善了其生成能力。</li>
+</ul>
+<h5 id="湿实验验证（split-GFP-表达实验）">湿实验验证（split-GFP 表达实验）</h5>
+<p>前人研究已表明，split-GFP 表达水平与蛋白稳定性显著正相关。</p>
+<p>为进一步验证 alignment 是否确实提高了生成序列的稳定性，作者设计以下实验流程：</p>
+<ul>
+<li>对每个 prompt，从两个模型（原始 ProGen3-46B 和对齐版）中各选择：<strong>2 条困惑度最低的生成序列</strong>；</li>
+<li>使用 split-GFP 实验系统测量蛋白质表达水平；</li>
+<li>表达结果以对应的野生型蛋白为基准归一化，进行比较（图 4g）；</li>
+<li>使用 <strong>配对样本 Welch’s t 检验</strong>（p &lt; 0.01）评估差异显著性。</li>
+</ul>
+<p><strong>实验结果</strong>：</p>
+<ul>
+<li>在 32 个 prompt 中：alignment 提高表达的有 8 个；降低表达的有 3 个；无显著影响的有 21 个；</li>
+<li>显示 alignment 对于一部分蛋白序列的生成质量有显著提升，且在多数情况下并不会带来负面影响。</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/" title="Scaling unlocks broader generation and deeper functional understanding of proteins" target="_blank" rel="external">https://tyang816.github.io/2025/04/19/Scaling unlocks broader generation and deeper functional understanding of proteins/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" title="Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
