@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tyang816.github.io/2025/05/23/Predicting%20a%20Protein%E2%80%99s%20Stability%20under%20a%20Million%20Mutations/</loc>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
     <loc>https://tyang816.github.io/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
@@ -577,10 +581,6 @@
     <lastmod>2025-01-19</lastmod>
   </url>
   <url>
-    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
-    <lastmod>2025-01-19</lastmod>
-  </url>
-  <url>
     <loc>https://tyang816.github.io/2022/01/03/Unsupervised%20Embedding%20Learning%20via%20Invariant%20and%20Spreading%20Instance%20Feature/</loc>
     <lastmod>2025-01-19</lastmod>
   </url>
@@ -590,6 +590,10 @@
   </url>
   <url>
     <loc>https://tyang816.github.io/2022/01/18/Unsupervised%20Learning%20of%20Visual%20Features%20by%20Contrasting%20Cluster%20Assignments/</loc>
+    <lastmod>2025-01-19</lastmod>
+  </url>
+  <url>
+    <loc>https://tyang816.github.io/2022/01/22/Understanding%20of%20BYOL/</loc>
     <lastmod>2025-01-19</lastmod>
   </url>
   <url>
