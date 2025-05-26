@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+
+  
+  
+  <title>NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design | tyang</title>
+  <meta name="description" content="论文地址：Mixture of Experts Enable Efficient and Effective Protein Understanding and Design 论文实现：https:&#x2F;&#x2F;huggingface.co&#x2F;genbio-ai&#x2F;AIDO.Protein-RAG-16B-proteingym-dms-zeroshot  AIDO.Protein：MOE预训练蛋白质语言模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design">
+<meta property="og:url" content="https://tyang816.github.io/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/index.html">
+<meta property="og:site_name" content="村雨">
+<meta property="og:description" content="论文地址：Mixture of Experts Enable Efficient and Effective Protein Understanding and Design 论文实现：https:&#x2F;&#x2F;huggingface.co&#x2F;genbio-ai&#x2F;AIDO.Protein-RAG-16B-proteingym-dms-zeroshot  AIDO.Protein：MOE预训练蛋白质语言模型">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/fig1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/frm1.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/tab2-tab3.png">
+<meta property="og:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/tab4-fig2.png">
+<meta property="article:published_time" content="2025-05-26T02:37:01.000Z">
+<meta property="article:modified_time" content="2025-05-26T02:38:03.653Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="BI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/fig1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://tyang816.github.io/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/index.html">
+  
+  <link rel="alternate" href="/atom.xml" title="村雨" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/tyang816" target="_blank">
+          <img class="img-circle img-rotate" src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Yang Tan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Master Student @ECUST</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/about">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/.">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">Blogs</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>Bioinformation (BI)<br>Computation and Language (CL)<br>Software Engineering (SE)<br>Computer Vision (CV)<br>Information Retrieval (IR)<br>Operating System (OS)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BlogNote/">BlogNote</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BookNote/">BookNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MIT-molecular-biology/">MIT-molecular biology</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MeetingNote/">MeetingNote</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PaperNote/">PaperNote</a><span class="category-list-count">232</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/stanford-cs329p/">stanford-cs329p</a><span class="category-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BI/" rel="tag">BI</a><span class="tag-list-count">69</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CL/" rel="tag">CL</a><span class="tag-list-count">97</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GNN/" rel="tag">GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IR/" rel="tag">IR</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SE/" rel="tag">SE</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-GNN/" rel="tag">cs.GNN</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cs-Meta/" rel="tag">cs.Meta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logic/" rel="tag">logic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/" rel="tag">other</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BI/" style="font-size: 13.88px;">BI</a> <a href="/tags/CL/" style="font-size: 14px;">CL</a> <a href="/tags/CV/" style="font-size: 13.75px;">CV</a> <a href="/tags/GNN/" style="font-size: 13.25px;">GNN</a> <a href="/tags/IR/" style="font-size: 13.5px;">IR</a> <a href="/tags/OS/" style="font-size: 13.38px;">OS</a> <a href="/tags/SE/" style="font-size: 13.63px;">SE</a> <a href="/tags/cs-GNN/" style="font-size: 13.25px;">cs.GNN</a> <a href="/tags/cs-Meta/" style="font-size: 13px;">cs.Meta</a> <a href="/tags/logic/" style="font-size: 13px;">logic</a> <a href="/tags/other/" style="font-size: 13.13px;">other</a> <a href="/tags/pytorch/" style="font-size: 13px;">pytorch</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/" class="title">NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-05-26T02:37:01.000Z" itemprop="datePublished">2025-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/05/23/Predicting%20a%20Protein%E2%80%99s%20Stability%20under%20a%20Million%20Mutations/" class="title">NeurIPS-2023 Predicting a Protein’s Stability under a Million Mutations</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-05-23T02:51:58.000Z" itemprop="datePublished">2025-05-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/19/Scaling%20unlocks%20broader%20generation%20and%20deeper%20functional%20understanding%20of%20proteins/" class="title">Scaling unlocks broader generation and deeper functional understanding of proteins</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-19T08:08:41.000Z" itemprop="datePublished">2025-04-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/10/Prot42%EF%BC%9Aa%20Novel%20Family%20of%20Protein%20Language%20Models%20for%20Target-aware%20Protein%20Binder%20Generation/" class="title">Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-10T15:04:28.000Z" itemprop="datePublished">2025-04-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/PaperNote/">PaperNote</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/04/01/Retrieval%20Augmented%20Diffusion%20Model%20for%20Structure-informed%20Antibody%20Design%20and%20Optimization/" class="title">ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-04-01T06:21:33.000Z" itemprop="datePublished">2025-04-01</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PaperNote/BI/Mixture of Experts Enable Efficient and Effective Protein Understanding and Design" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/" class="article-date">
+	  <time datetime="2025-05-26T02:37:01.000Z" itemprop="datePublished">2025-05-26</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/PaperNote/">PaperNote</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/BI/" rel="tag">BI</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/" class="leancloud_visitors"  data-flag-title="NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3.6k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 13(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>论文地址：<a target="_blank" rel="noopener" href="http://biorxiv.org/lookup/doi/10.1101/2024.11.29.625425">Mixture of Experts Enable Efficient and Effective Protein Understanding and Design</a></p>
+<p>论文实现：<a target="_blank" rel="noopener" href="https://huggingface.co/genbio-ai/AIDO.Protein-RAG-16B-proteingym-dms-zeroshot">https://huggingface.co/genbio-ai/AIDO.Protein-RAG-16B-proteingym-dms-zeroshot</a></p>
+</blockquote>
+<h2 id="AIDO-Protein：MOE预训练蛋白质语言模型">AIDO.Protein：MOE预训练蛋白质语言模型</h2>
+<h3 id="Abstract-43">Abstract</h3>
+<p>蛋白质在生命中扮演着基础角色 ，理解其语言对于生物学和医学等领域至关重要 。尽管如ESM2-15B和xTrimoPGLM-100B这样的大型蛋白质语言模型（PLMs）表现优异，但它们的密集Transformer架构导致<strong>计算效率低下</strong> 。为了解决这个问题，本研究引入了<strong>AIDO.Protein</strong> ，这是蛋白质领域<strong>第一个专家混合（MoE）模型</strong>，拥有<strong>160亿参数</strong> 。它利用<strong>稀疏MoE架构</strong>，每个Transformer块有<strong>8个专家</strong>，并为每个输入token<strong>激活2个</strong> ，从而显著提高了训练和推理效率。该模型在UniRef90和ColabfoldDB收集的<strong>1.2万亿氨基酸</strong>上进行了预训练 。AIDO.Protein在xTrimoPGLM基准测试的大多数任务中取得了<strong>SOTA结果</strong> ，并在超过280个ProteinGym DMS分析中，达到了<strong>最佳MSA模型性能的近99%</strong>，且显著优于不使用MSA的先前SOTA模型 。此外，它在结构条件下的蛋白质序列生成任务中也取得了<strong>新的SOTA</strong> 。</p>
+<h3 id="1-Introduction">1 Introduction</h3>
+<p>蛋白质作为生命的基本执行者，承担着细胞内大部分生物学功能 。它们的功能多种多样，包括作为生物催化剂、提供结构支持、运输分子、识别病原体以及传递信号等 。</p>
+<p>为了理解蛋白质的功能，研究主要有两个方向：</p>
+<ol>
+<li><strong>序列-结构-功能</strong>: 通过研究蛋白质的3D结构（其活性形式）来理解其功能。</li>
+<li><strong>序列-功能</strong>: 直接从序列信息推断功能，尤其是在蛋白质结构信息稀缺的情况下。 无论哪个方向，都凸显了理解蛋白质序列“语言”的共同需求。</li>
+</ol>
+<p>理解蛋白质语言对于推进遗传学研究和加速药物发现至关重要 。例如，它可以帮助设计能分解塑料垃圾或水解污染毒素的酶 ，或是在大流行期间及时创造疫苗 。</p>
+<p><strong>人工智能的介入</strong>：</p>
+<ul>
+<li><strong>大型语言模型的启发</strong>: 人工智能，特别是大型语言模型（LLMs）的最新进展，为实现这一目标提供了有前景的途径。LLMs在自然语言处理（NLP）领域的巨大成功，激发了研究者在蛋白质领域应用自监督预训练，即使用无标签的蛋白质序列进行训练。</li>
+<li><strong>蛋白质语言模型 (PLMs)</strong>: 这些PLMs在蛋白质结构预测、功能预测和序列设计等多种任务中展现了卓越的性能。例如，基于PLM的ESMFold在结构预测上达到了原子级精度，接近AlphaFold2的水平，而拥有1000亿参数的xTrimoPGLM在多种功能预测任务上表现优越。</li>
+<li><strong>规模与效率的权衡</strong>: 模型规模是提升性能的关键驱动力之一，趋势表明更大的模型性能更好 。然而，随着PLMs变大，其计算效率会下降，因为运行更大模型需要更多计算资源 。现有工作主要关注通过扩大模型规模来提升性能，而较少关注计算效率 。</li>
+</ul>
+<p><strong>研究问题与解决方案</strong>：</p>
+<ul>
+<li><strong>核心问题</strong>: 能否在保持或提升PLM性能的同时，维持其训练和推理的效率？</li>
+<li><strong>潜在方案</strong>: 稀疏专家模型（Sparse expert models）提供了一个可能的解决方案。</li>
+<li><strong>稀疏专家模型机制</strong>: 在这些模型中，一部分参数被分为“专家”，每个专家有独立的权重。模型会将输入样本路由到特定的专家进行处理。因此，每个样本只与网络参数的一个子集交互，这与密集模型不同。由于只使用了一部分专家，计算量相对于总模型大小可以保持较小。</li>
+<li><strong>专家混合 (MoE)</strong>: MoE是一种突出的稀疏专家模型，当集成到Transformer中时，它已成为NLP领域密集Transformer模型的有力竞争者 。</li>
+</ul>
+<p><strong>本文工作</strong>：</p>
+<ul>
+<li><strong>首个蛋白质MoE模型</strong>: 本文探索了在蛋白质领域预训练第一个MoE模型，这与所有现有的采用密集Transformer架构的PLMs不同。</li>
+<li><strong>AIDO.Protein</strong>: 提出了AIDO.Protein，一个拥有160亿参数的MoE模型，在从UniRef90和ColabfoldDB收集的1.2万亿个氨基酸（token）上进行了预训练。</li>
+<li><strong>效率</strong>: 在训练和推理过程中，每个输入token由45亿参数处理，仅使用了总参数数量的28%。</li>
+<li><strong>评估</strong>: 在xTrimoPGLM基准（18项任务）和ProteinGym DMS基准（283项蛋白质适应性预测任务）等广泛任务上评估了模型。</li>
+<li><strong>结果</strong>: 实验结果显示，AIDO.Protein在保持更高计算效率的同时，在各项任务中均取得了强大的性能。它还被用于蛋白质逆向折叠，并超越了先前的SOTA方法。</li>
+<li><strong>结论</strong>: 这些结果表明AIDO.Protein是一个强大且高效的蛋白质理解与设计基础模型 。</li>
+</ul>
+<h3 id="3-Pre-training-AIDO-Protein">3 Pre-training AIDO.Protein</h3>
+<h4 id="3-1-Model-architecture">3.1 Model architecture</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/fig1.png" alt="avatar" style="zoom:100%;" /></div>
+<p>AIDO.Protein的模型架构基于Transformer编码器，但进行了关键修改以提高效率。</p>
+<ul>
+<li>
+<p><strong>核心设计</strong>: 模型采用了<strong>Transformer编码器架构</strong>，但将每个Transformer块中的密集MLP（多层感知器）层替换为了<strong>稀疏MoE层</strong>。</p>
+</li>
+<li>
+<p><strong>MoE层</strong>:</p>
+<ul>
+<li>
+<p>其设计很大程度上遵循了Mixtral 8×7B 模型的MoE层。</p>
+</li>
+<li>
+<p>这一层对输入序列中的每个token（氨基酸）独立应用。</p>
+</li>
+<li>
+<p>它包含N=8个专家网络（Ei(x)）和一个路由网络（Wg）。</p>
+</li>
+<li>
+<p>对于每个输入token x，路由网络会计算权重，并通过TopK机制选择<strong>K=2个</strong>最相关的专家。</p>
+</li>
+<li>
+<p>输出 y 是所选专家网络输出的加权和，其计算方式如下：</p>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/frm1.png" alt="avatar" style="zoom:80%;" /></div>
+</li>
+<li>
+<p><strong>模型参数</strong>: 在实验中，设置 N=8, K=2, d=2304。模型包含<strong>36个Transformer层</strong>和<strong>36个注意力头</strong>，总参数达到<strong>160亿</strong>。</p>
+</li>
+<li>
+<p><strong>计算效率</strong>: 尽管总参数量巨大，但在训练和推理期间，每个输入token仅由<strong>45亿参数</strong>处理，这只占总参数量的<strong>28%</strong>。</p>
+</li>
+<li>
+<p><strong>训练目标</strong>: 使用标准**掩码语言建模（MLM）**目标进行训练。模型需要预测序列中被掩盖的氨基酸，从而学习蛋白质序列中固有的复杂依赖关系。MoE层有助于模型为不同类型的序列模式分配不同的专家，从而捕捉更广泛的序列特征。</p>
+</li>
+<li>
+<p><strong>可视化</strong>: 图1展示了该架构，包括带有RoPE（旋转位置编码）的自注意力层和包含路由器及8个前馈网络（FFN）的MoE层。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-Pre-training-data">3.2 Pre-training data</h4>
+<p>为了训练AIDO.Protein，研究者们构建了一个大规模且经过精心筛选的蛋白质序列数据库。</p>
+<ul>
+<li>数据来源: 模型最初在ColabfoldDB和UniRef90数据库的组合上进行预训练。
+<ul>
+<li><strong>ColabfoldDB</strong>: 侧重于宏基因组数据源，如BFD、MGnify以及各种真核和病毒数据集。</li>
+<li><strong>UniRef90</strong>: 提供了来自UniProt知识库的聚类序列集，以全面的覆盖度和最小的数据冗余度为特点。具体使用了UniRef90/50（2022年12月之前的数据）。</li>
+</ul>
+</li>
+<li><strong>持续训练</strong>: 鉴于UniRef90对先前PLMs的有效性以及持续训练对下游任务性能的提升作用，模型在UniRef90上额外训练了<strong>1000亿个token</strong>。</li>
+<li>模型版本: 共开发了两个版本：
+<ul>
+<li><strong>AIDO.Protein-16B</strong>: 在ColabfoldDB和Uniref90的<strong>1.2万亿氨基酸</strong>上训练。</li>
+<li><strong>AIDO.Protein-16B-v1</strong>: 在前一版本基础上，又在Uniref90上持续训练了1000亿氨基酸。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-Pre-training-settings">3.3 Pre-training settings</h4>
+<p>预训练过程采用了特定的超参数和多阶段策略。</p>
+<ul>
+<li>通用设置:
+<ul>
+<li>全局批量大小为2048，上下文长度为2048。</li>
+<li>优化器使用AdamW，权重衰减为0.1。</li>
+<li>学习率调度采用余弦退火，预热比例为总训练步数的2.5%。</li>
+<li>使用FP16混合精度训练以加速。</li>
+<li>训练框架为Megatron-Deepspeed，使用了<strong>256块Nvidia A100-80G GPU</strong>，耗时<strong>25天</strong>。</li>
+</ul>
+</li>
+<li>三阶段训练:
+<ul>
+<li><strong>第一阶段</strong>: 在UniRef90和Colab数据库的1万亿token上训练18.5天，学习率从2e-4衰减到2e-6。</li>
+<li><strong>第二阶段</strong>: 在相同数据源的2000亿token上训练4天，学习率从1e-5降至1e-6。</li>
+<li><strong>第三阶段</strong>: 在UniRef90的1000亿token上进一步训练2.5天，学习率在1e−5到1e-6之间。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Experiments">4 Experiments</h3>
+<h4 id="4-1-AIDO-Protein-achieves-strong-results-across-diverse-tasks-from-xTrimoPGLM-benchmark">4.1 AIDO.Protein achieves strong results across diverse tasks from xTrimoPGLM benchmark</h4>
+<p>为了全面测试模型在各种蛋白质理解任务中的能力，研究人员在xTrimoPGLM基准上进行了评估 。该基准包含18项不同的任务，分为四类 ：</p>
+<ul>
+<li>蛋白质结构预测: 接触图预测 (Contact map prediction)，蛋白质折叠预测 (Fold prediction)，二级结构预测 (Secondary structure prediction)</li>
+<li>蛋白质功能预测: 抗生素抗性预测 (Antibiotic resistance prediction)，荧光预测 (Fluorescence prediction)，适应性预测 (Fitness prediction)，定位预测 (Localization prediction)</li>
+<li>蛋白质-蛋白质相互作用预测: 酶催化效率 (Enzyme catalytic efficiency)，肽-HLA/MHC亲和力 (Peptide-HLA/MHC affinity)，金属离子结合 (Metal ion binding)，TCR-pMHC亲和力 (TCR pMHC affinity)</li>
+<li>蛋白质开发: 溶解度 (Solubility)，稳定性 (Stability)，温度稳定性 (Temperature stability)，最适温度 (Optimal temperature)，最适pH (Optimal ph)，克隆分类 (Cloning clf)，材料生产 (Material production)</li>
+</ul>
+<p><strong>微调方法</strong>: 所有任务都使用了**LoRA（Low-Rank Adaptation）**进行微调，设置秩（rank）为16，alpha为16</p>
+<p><strong>优化器与学习率</strong>:</p>
+<ul>
+<li>大多数任务使用了Adam优化器，峰值学习率为1e-4，并配合余弦学习率调度器（预热比例为0.05）。</li>
+<li>对于接触图预测任务，则使用了Adam优化器和1e-4的恒定学习率 。</li>
+</ul>
+<p><strong>训练周期与选择</strong>: 模型被微调了10、15或20个周期（epochs），并根据验证集上的得分选择最佳的模型检查点</p>
+<h4 id="4-2-AIDO-Protein-demonstrates-impressive-performance-on-ProteinGym-DMS-benchmark">4.2 AIDO.Protein demonstrates impressive performance on ProteinGym DMS benchmark</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/tab2-tab3.png" alt="avatar" style="zoom:100%;" /></div>
+<p>该基准测试包含66个插入/删除（indels）分析和217个替换（substitutions）分析 。每个分析都提供了针对特定目标蛋白质的所有可能突变及其相应的适应性得分 。评估指标采用<strong>Spearman秩相关系数</strong>和<strong>均方误差（MSE）</strong></p>
+<h5 id="4-2-1-DMS-indels-supervised-benchmark">4.2.1 DMS indels supervised benchmark</h5>
+<p><strong>微调设置</strong>:</p>
+<ul>
+<li>所有任务均在5折交叉验证（ProteinGym提供的随机划分方案）下评估。</li>
+<li>对于54个小样本任务，使用线性探测（Linear Probing），即冻结AIDO.Protein的参数以减轻过拟合。预测头是一个2层MLP（隐藏层大小128，dropout率0.1）。使用AdamW优化器，峰值学习率1e-3，余弦学习率调度（预热比例0.05）。不使用验证集进行模型选择，而是直接训练1000步，并使用最后一个检查点进行预测。</li>
+<li>对于其他<strong>12个大样本任务</strong>，使用<strong>LoRA微调（rank 16, alpha 32）</strong>，峰值学习率1e-4 。使用一个折作为验证集，训练10,000步并采用早停策略。</li>
+</ul>
+<h5 id="4-2-2-DMS-substitutions-supervised-benchmark">4.2.2 DMS substitutions supervised benchmark</h5>
+<p><strong>任务描述</strong>: 替换突变是指将蛋白质序列中的一个或多个残基替换为其他残基。该基准包含217个分析，其中69个为单点替换，148个为多点替换。</p>
+<p><strong>数据特点</strong>: 如表2所示，序列长度从37到3423不等，样本量从63到536,962不等。小样本任务易过拟合，而超长序列会导致内存溢出（OOM）问题。因此，根据样本大小和序列长度采用了不同的微调策略。</p>
+<p><strong>模型选择</strong>: 评估了<strong>AIDO.Protein-16B-v1</strong>版本，因为它在Uniref90上的持续预训练显著提升了零样本替换预测性能。</p>
+<p><strong>微调设置</strong>:</p>
+<ul>
+<li>采用随机5折交叉验证方案。</li>
+<li>使用Adam优化器和余弦学习率调度。</li>
+<li>使用LoRA微调（rank 16, alpha 32），峰值学习率1e-4，训练10,000步，并设有早停机制。</li>
+<li>对于样本量超过20,000的13个任务，每个折只训练一个epoch。</li>
+<li>对于序列长度超过2048的4个任务，将序列截断至2048，并调整LoRA rank为4，alpha为8。</li>
+</ul>
+<h4 id="4-3-DMS-overall-supervised-benchmark">4.3 DMS overall supervised benchmark</h4>
+<p>在表3 评估了插入/删除（Indels）和替换（Substitutions）任务的性能之后，研究人员进一步考察了 AIDO.Protein 在整个 DMS 监督基准上的<strong>整体表现</strong>。这部分综合了 <strong>66 个 Indels 分析</strong>和 <strong>217 个 Substitutions 分析</strong>的结果，共计 283 个任务。</p>
+<h4 id="4-4-AIDO-Protein-offers-enhanced-capabilities-for-protein-design">4.4 AIDO.Protein offers enhanced capabilities for protein design</h4>
+<div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AIDO.Protein/tab4-fig2.png" alt="avatar" style="zoom:80%;" /></div>
+<p>蛋白质设计在生物化学、分子生物学和生物技术领域是一项至关重要的研究和应用。本节讨论了如何将 AIDO.Protein 模型应用于这一目的。</p>
+<p><strong>核心应用：蛋白质逆向折叠 (Protein Inverse Folding)</strong></p>
+<ul>
+<li>研究团队特别关注了<strong>蛋白质逆向折叠</strong>，这是从头设计蛋白质（de novo protein design）的关键步骤。其目标是生成能够折叠成特定三维结构的蛋白质序列。</li>
+<li>他们为此开发了一个基于<strong>离散扩散模型 (discrete diffusion modeling)</strong> 的框架。</li>
+</ul>
+<p><strong>框架细节与方法</strong>:</p>
+<ul>
+<li><strong>结构编码器</strong>: 该框架使用了 <strong>ProteinMPNN-CMLM</strong> (ProteinMPNN 的一个变体) 作为结构编码器，以实现结构条件下的扩散过程。</li>
+<li><strong>详细信息</strong>: 关于该框架的更多技术细节可以在论文的附录 A.1 中找到。</li>
+</ul>
+<p><strong>实验与评估</strong>:</p>
+<ul>
+<li><strong>数据集</strong>: 实验使用了 <strong>CATH 4.2 数据集</strong>进行评估，这是一个公认的蛋白质设计评估资源。</li>
+<li>结果 (见表 4):
+<ul>
+<li>该框架被命名为 <strong>AIDO.Protein-IFdiff</strong>。</li>
+<li>它取得了 <strong>58.26% 的中位序列恢复率 (Median Sequence Recovery)</strong>。</li>
+<li>这一结果<strong>显著高于</strong>之前所有的最先进（SOTA）方法，例如 LM-Design (54.41%) 和 DPLM (54.54%)。</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例展示 (见图 2)</strong>:</p>
+<ul>
+<li>论文展示了一个具体的例子（PDB ID: 2DLX, Chain: A）。</li>
+<li>图中比较了：
+<ul>
+<li><strong>左侧</strong>: 使用 AIDO.Protein-IFdiff 框架生成的序列，以及通过 AlphaFold2 预测的该序列的 3D 结构（并用 pIDDT 值显示了预测置信度）。</li>
+<li><strong>右侧</strong>: 来自蛋白质数据库 (PDB) 的真实（Ground truth）序列和结构。</li>
+</ul>
+</li>
+<li>这个例子显示，生成的序列所预测的结构与真实结构高度吻合，并且预测置信度很高，证明了该框架在生成有效蛋白质序列方面的能力。</li>
+</ul>
+<hr align="left" color="#987cb9" size="1">
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://tyang816.github.io/2025/05/26/Mixture%20of%20Experts%20Enable%20Efficient%20and%20Effective%20Protein%20Understanding%20and%20Design/" title="NeurIPSw-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design" target="_blank" rel="external">https://tyang816.github.io/2025/05/26/Mixture of Experts Enable Efficient and Effective Protein Understanding and Design/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/tyang816" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/tyang816" target="_blank"><span class="text-dark">Yang Tan</span><small class="ml-1x">Master Student @ECUST</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/05/23/Predicting%20a%20Protein%E2%80%99s%20Stability%20under%20a%20Million%20Mutations/" title="NeurIPS-2023 Predicting a Protein’s Stability under a Million Mutations"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/tyang816" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: '写点啥',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
