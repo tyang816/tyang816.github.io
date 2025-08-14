@@ -18,12 +18,9 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 My name is Yang Tan (谭扬). I am now a PhD student in Shanghai Jiao Tong University & Shanghai Innovation Institute & Shanghai AI Lab, supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022, and M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm).
-Currently I am working on AI4Science.
-- *AI research*: Large Language Models, Graph Neural Networks and Agent Workflow.
+My research interests lie at the intersection of Artificial Intelligence and Biology. I have published over 20 papers in the field of AI4Bio in prestigious venues such as *NeurIPS*, *ICLR*, and *eLife*. I also serve as a reviewer for leading journals including *Nature Machine Intelligence* and *Journal of Chemical Information and Modeling*.
+- *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
 - *Biology research*: focues on Directed Evolution, Function Prediction, and Binder Design
-
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
-
 
 # 🔥 News
 - *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
