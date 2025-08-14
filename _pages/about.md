@@ -29,7 +29,7 @@ I have published over 20 papers in the field of AI4Bio in prestigious venues suc
 - *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
 - *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
 
-# 📝 Selcted Publications 
+# 📝 Selected Publications 
 
 \* denotes equal contribution.
 
