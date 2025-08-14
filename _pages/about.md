@@ -21,9 +21,9 @@ My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong 
 
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
-- *Biology research*: focues on Directed Evolution, Function Prediction, and Binder Design
+- *Biology research*: Directed Evolution, Function Prediction, and Binder Design.
 
-I have published over 20 papers in the field of AI4Bio in prestigious venues such as *NeurIPS*, *ICLR*, and *eLife*. I also serve as a reviewer for leading journals including *Nature Machine Intelligence* and *Journal of Chemical Information and Modeling*.
+I have published over 20 papers in the field of AI4Bio in prestigious venues such as ***NeurIPS***, ***ICLR***, and ***eLife***. I also serve as a reviewer for leading journals including ***Nature Machine Intelligence*** and ***Journal of Chemical Information and Modeling***.
 
 # 🔥 News
 - *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
