@@ -17,10 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-My name is Yang Tan (谭扬). I am now a PhD student in Shanghai Jiao Tong University & Shanghai Innovation Institute & Shanghai AI Lab, supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022, and M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm).
-My research interests lie at the intersection of Artificial Intelligence and Biology. I have published over 20 papers in the field of AI4Bio in prestigious venues such as *NeurIPS*, *ICLR*, and *eLife*. I also serve as a reviewer for leading journals including *Nature Machine Intelligence* and *Journal of Chemical Information and Modeling*.
+My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/) & [Shanghai Artificial Intelligence Laboratory](https://www.shlab.org.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022, and M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm).
+
+My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
 - *Biology research*: focues on Directed Evolution, Function Prediction, and Binder Design
+
+I have published over 20 papers in the field of AI4Bio in prestigious venues such as *NeurIPS*, *ICLR*, and *eLife*. I also serve as a reviewer for leading journals including *Nature Machine Intelligence* and *Journal of Chemical Information and Modeling*.
 
 # 🔥 News
 - *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
@@ -31,7 +34,6 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 \* denotes equal contribution.
 
 ## ✈️ Conference
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL Demo 2025</div><img src='images/papers/venusfactory.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -39,7 +41,7 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 
 **Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
 
-<a href="http://venusfactory.cn"><img src="https://img.shields.io/badge/Demo-🌐_Websit-blue" style="max-width: 100%;"></a>
+<a href="http://venusfactory.cn"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
 </div>
@@ -81,7 +83,6 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 </div>
 
 ## 📚 Journal
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">eLife 2025</div><img src='images/papers/protssn.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -137,12 +138,13 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 - *2022*, Arkema Bachelor's Scholarship (3 in university).
 - *2021/2020*, *Second/Third Prize*, National College Students Computer Design Competition.
 - *2021/2020*, *Special Scholarship*, East China University of Technology.
-- *2021*, National Undergraduate Innovation Training Program, Project Leader.
+- *2021*, National Undergraduate Innovation Training Program, *Project Leader*.
 - *2020*, ***National Scholarship***, B.S.
 - *2019*, Lingma Bachelor’s Scholarship (4 in major).
 - *2018*, "District Mayor Award for Science and Technology Innovation" in Shapingba, Chongqing.
-
-
+- *2017*, *Third Prize*, FIRST Tech Challenge Houston World Championship, *Team Leader*.
+- *2017*，*Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
+- *2017/2016*, *First/Second Prize*, FIRST Tech Challenge of China, *Team Leader*.
 
 # 📖 Educations
 - *2025.09 - Now*, Shanghai Jiao Tong University. Ph.D. in Computer Science. 
