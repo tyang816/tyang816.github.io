@@ -42,6 +42,7 @@ I have published over 20 papers in the field of AI4Bio in prestigious venues suc
 **Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
 
 <a href="http://venusfactory.cn"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
 </div>
@@ -53,7 +54,7 @@ I have published over 20 papers in the field of AI4Bio in prestigious venues suc
 
 **Yang Tan**, Ruilin Wang, Banghao Wu, Liang Hong, Bingxin Zhou
 
-<a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusREM"><img src="https://img.shields.io/github/stars/ai4protein/VenusREM?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
 </div>
