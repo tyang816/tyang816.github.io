@@ -3,7 +3,9 @@ layout: null
 permalink: /search.json
 ---
 [
-{% assign posts = site.posts | where_exp: 'post', 'post.categories contains "BI" or post.categories contains "ML"' %}
+{% assign bi_posts = site.posts | where: "categories", "BI" %}
+{% assign ml_posts = site.posts | where: "categories", "ML" %}
+{% assign posts = bi_posts | concat: ml_posts %}
 {% for post in posts %}
 {
   "title": {{ post.title | jsonify }},
