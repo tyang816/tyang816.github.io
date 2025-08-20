@@ -23,7 +23,7 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
 - *Biology research*: Directed Evolution, Function Prediction, and Binder Design.
 
-I have published over 20 papers in the field of AI4Bio in prestigious venues such as ***NeurIPS***, ***ICLR***, and ***eLife***. I also serve as a reviewer for leading journals including ***Nature Machine Intelligence*** and ***Journal of Chemical Information and Modeling***.
+I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***Nature Machine Intelligence***](https://www.nature.com/natmachintell/) and [***Journal of Chemical Information and Modeling***](https://pubs.acs.org/journal/jcisd8).
 
 # 🔥 News
 - *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
@@ -149,7 +149,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 # 📖 Educations
 - *2025.09 - Now*, Shanghai Jiao Tong University. Ph.D. in Computer Science. 
-- *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4 & #1 in major ranking. 
+- *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 in major ranking. 
 - *2018.09 - 2022.06*, East China University of Science and Technology. B.S. in Software Engineering & GPA 3.8/4.0 & #1 in major ranking / #1 in overall ranking.
 
 # 💬 Invited Talks
