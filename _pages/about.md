@@ -172,28 +172,25 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 # 🗒 Notes
 <span class='anchor' id='notes'></span>
 
-{% assign bi_posts = site.posts | where: "categories", "BI" %}
-{% assign ml_posts = site.posts | where: "categories", "ML" %}
-{% assign notes_posts = bi_posts | concat: ml_posts | uniq | sort: "date" | reverse %}
-
+{% assign notes_posts = site.posts | where_exp: 'post', 'post.categories contains "BI" or post.categories contains "ML"' %}
 {% if notes_posts and notes_posts.size > 0 %}
-  {% for post in notes_posts limit:5 %}
-    <div class="note-item" style="margin: 1.5rem 0;">
-      <h2 style="margin-bottom: 0.25rem; font-size: 1.25rem;"><a href="{{ post.url | relative_url }}">{{ post.title | default: post.slug }}</a></h2>
-      <div style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">
-        {{ post.date | date: "%Y-%m-%d" }}
-        {% if post.categories and post.categories.size > 0 %}
-          • {{ post.categories | join: ', ' }}
-        {% endif %}
-      </div>
-      <div class="note-excerpt" style="color:#333; line-height:1.6;">
-        {{ post.excerpt | markdownify }}
-      </div>
-      <div><a href="{{ post.url | relative_url }}">Read more →</a></div>
-    </div>
-    <hr/>
-  {% endfor %}
-  <div style="margin-top: 1rem;"><a href="{{ '/notes/' | relative_url }}">View all notes →</a></div>
+  {% for post in notes_posts limit:5 %}
+  <div class="note-item" style="margin: 1.5rem 0;">
+    <h2 style="margin-bottom: 0.25rem; font-size: 1.25rem;"><a href="{{ post.url | relative_url }}">{{ post.title | default: post.slug }}</a></h2>
+    <div style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">
+      {{ post.date | date: "%Y-%m-%d" }}
+      {% if post.categories and post.categories.size > 0 %}
+        • {{ post.categories | join: ', ' }}
+      {% endif %}
+    </div>
+    <div class="note-excerpt" style="color:#333; line-height:1.6;">
+      {{ post.excerpt | markdownify }}
+    </div>
+    <div><a href="{{ post.url | relative_url }}">Read more →</a></div>
+  </div>
+  <hr/>
+  {% endfor %}
+  <div style="margin-top: 1rem;"><a href="{{ '/notes/' | relative_url }}">View all notes →</a></div>
 {% else %}
-  <p>No notes yet.</p>
+  <p>No notes yet.</p>
 {% endif %}
