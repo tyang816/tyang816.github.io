@@ -1,7 +1,7 @@
 # main links links
 main:
   - title: "About Me"
-    url: "/#about-me"
+    url: "/"
 
   - title: "News"
     url: "/#-news"
@@ -20,3 +20,6 @@ main:
 
   - title: "Internships"
     url: "/#-internships"
+
+  - title: "Notes"
+    url: "/notes/"
