@@ -2,7 +2,7 @@
 layout: post
 title: Nature Biotechnology-2022 Learning protein fitness models from evolutionary and assay-labeled data
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: Nature Biotechnology
 date: 2022-01-17
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: ICML-2022 Tranception：protein fitness prediction with autoregressive transformers and inference-time retrieval
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: ICML
 date: 2022-05-27
 ---

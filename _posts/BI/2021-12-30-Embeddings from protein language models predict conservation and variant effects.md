@@ -2,7 +2,7 @@
 layout: post
 title: Human Genetics-2021 Embeddings from protein language models predict conservation and variant effects
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: Human Genetics
 date: 2021-12-30
 ---

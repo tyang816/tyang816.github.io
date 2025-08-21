@@ -2,7 +2,7 @@
 layout: post
 title: NeurIPS-2021 Language models enable zero-shot prediction of the effects of mutations on protein function
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: NeurIPS
 date: 2021-11-10
 ---

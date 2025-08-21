@@ -2,7 +2,7 @@
 layout: post
 title: bioRxiv-2021 Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: bioRxiv
 date: 2021-09-01
 ---
@@ -24,7 +24,7 @@ date: 2021-09-01
 
 把连续的5个残基mask掉得到总共15%的masked residues，图2a是masked validation points，平均而言，初始验证样本是5angstroms扰动，校正后样品与各自天然蛋白质的RMSD约为2埃；图2b的esm-1b随机选了15%的token进行mask，增加了结构信息后准确率是0.13，纯粹的序列准确率是0.06
 
-#### Predicting the effect of a single mutation on thermal stability
+#### Predicting the effect of a single fitness-prediction on thermal stability
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Masked sequence-structure/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 

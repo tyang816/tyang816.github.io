@@ -2,7 +2,7 @@
 layout: post
 title: Nature Communications-2024 A joint embedding of protein sequence and structure enables robust variant effect predictions
 categories: [BI]
-tags: [protein, mutation, PLM]
+tags: [protein, fitness-prediction, PLM]
 proceedings: Nature Communications
 date: 2024-11-07
 ---

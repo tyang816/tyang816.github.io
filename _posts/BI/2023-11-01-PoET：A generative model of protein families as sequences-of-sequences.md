@@ -2,7 +2,7 @@
 layout: post
 title: NeurIPS-2023 PoET：A generative model of protein families as sequences-of-sequences
 categories: [BI]
-tags: [protein, PLM, mutation]
+tags: [protein, PLM, fitness-prediction]
 proceedings: NeurIPS
 date: 2023-11-01
 ---
