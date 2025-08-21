@@ -2,7 +2,7 @@
 layout: post
 title: ICLR-2022 Language-driven Semantic Segmentation
 categories: [CV]
-tags: [LLM, NLP, multimodal]
+tags: [LLM, NLP, vision-language]
 proceedings: ICLR
 date: 2022-01-10
 ---

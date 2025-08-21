@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ICLR-2020 DivideMix：Learning with Noisy Labels as Semi-supervised Learning
-categories: [ML]
+categories: [CV]
 tags: [noisy label, semi-supervised, GMM, MixMatch]
 proceedings: ICLR
 date: 2020-04-26

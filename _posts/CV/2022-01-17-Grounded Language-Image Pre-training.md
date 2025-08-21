@@ -2,7 +2,7 @@
 layout: post
 title: CVPR-2022 Grounded Language-Image Pre-trainin
 categories: [CV]
-tags: [LLM, NLP, multimodal]
+tags: [LLM, NLP, vision-language]
 proceedings: CVPR
 date: 2022-01-17
 ---
