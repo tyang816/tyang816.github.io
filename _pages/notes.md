@@ -7,6 +7,9 @@ author_profile: true
 
 <span class='anchor' id='notes'></span>
 
+### Categories overview
+<div id="notes-stats" style="margin-bottom:8px;"></div>
+
 ### Filter and search
 
 <input id="notes-search" type="search" placeholder="Search notes..." style="min-width:220px; margin-bottom:8px;">
@@ -26,8 +29,8 @@ author_profile: true
 async function fetchIndex(){
   const res = await fetch('{{ '/search.json' | relative_url }}');
   const data = await res.json();
-  // Filter to only show posts from subfolders (BI, ML categories)
-  return data.filter(p => (p.categories || []).some(cat => cat === 'BI' || cat === 'ML' || cat === 'CL' || cat === 'OS' || cat === 'IR' || cat === 'CV' || cat === 'SE' ));
+  // Keep the current category scope consistent with your search.json categories
+  return data;
 }
 function byDateDesc(a,b){ return (b.date||'').localeCompare(a.date||''); }
 function groupByYear(items){
@@ -65,6 +68,12 @@ function collectFacets(data){
   });
   return { categories: [...cats].sort(), proceedings: [...procs].sort(), tags: [...tags].sort() };
 }
+function renderCategoryStats(data){
+  const counts = {};
+  data.forEach(p => (p.categories||[]).forEach(c => { if(!c) return; counts[c] = (counts[c]||0) + 1; }));
+  const html = Object.keys(counts).sort().map(c => `<span style="margin-right:12px;">${c} (${counts[c]})</span>`).join('');
+  document.getElementById('notes-stats').innerHTML = html || 'No categories';
+}
 function applyFilters(list){
   const cat = document.getElementById('notes-filter-category').value;
   const proc = document.getElementById('notes-filter-proceedings').value;
@@ -89,6 +98,7 @@ async function main(){
   const selTag = document.getElementById('notes-filter-tag');
   const inputs = [searchInput, selCat, selProc, selTag, document.getElementById('notes-filter-from'), document.getElementById('notes-filter-to')];
   const facets = collectFacets(data);
+  renderCategoryStats(data);
   populateSelect(selCat, facets.categories);
   populateSelect(selProc, facets.proceedings);
   populateSelect(selTag, facets.tags);
