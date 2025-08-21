@@ -8,7 +8,7 @@ permalink: /search.json
 {% assign cl_posts = site.posts | where: "categories", "CL" %}
 {% assign cv_posts = site.posts | where: "categories", "CV" %}
 {% assign ir_posts = site.posts | where: "categories", "IR" %}
-{% assign os_posts = site.posts | where: "categories", "os" %}
+{% assign os_posts = site.posts | where: "categories", "OS" %}
 {% assign se_posts = site.posts | where: "categories", "SE" %}
 {% assign posts = bi_posts | concat: ml_posts | concat: cl_posts | concat: cv_posts | concat: ir_posts | concat: os_posts | concat: se_posts %}
 {% for post in posts %}

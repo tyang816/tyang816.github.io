@@ -27,7 +27,7 @@ async function fetchIndex(){
   const res = await fetch('{{ '/search.json' | relative_url }}');
   const data = await res.json();
   // Filter to only show posts from subfolders (BI, ML categories)
-  return data.filter(p => (p.categories || []).some(cat => cat === 'BI' || cat === 'ML'));
+  return data.filter(p => (p.categories || []).some(cat => cat === 'BI' || cat === 'ML' || cat === 'CL' || cat === 'OS' || cat === 'IR' || cat === 'CV' || cat === 'SE' ));
 }
 function byDateDesc(a,b){ return (b.date||'').localeCompare(a.date||''); }
 function groupByYear(items){
