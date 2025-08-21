@@ -1,9 +1,9 @@
 ---
 layout: post
-title: arxiv-2020 Neural Subgraph Matching
+title: arXiv-2020 Neural Subgraph Matching
 categories: [ML]
 tags: [GNN]
-proceedings: NeurIPS
+proceedings: arXiv
 date: 2020-07-03
 ---
 
