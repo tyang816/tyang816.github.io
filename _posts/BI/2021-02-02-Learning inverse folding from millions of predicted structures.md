@@ -4,7 +4,7 @@ title: ICML-2021 Learning inverse folding from millions of predicted structures
 categories: [BI]
 tags: [protein, inverse folding, PLM, GNN]
 proceedings: ICML
-date: 2023-02-02
+date: 2021-02-02
 ---
 
 > 论文地址：[Learning inverse folding from millions of predicted structures](https://proceedings.mlr.press/v162/hsu22a.html)

@@ -4,7 +4,7 @@ title: Frontiers in Microbiology-2022 iThermo：A Sequence-Based Model for Ident
 categories: [BI]
 tags: [protein]
 proceedings: Frontiers in Microbiology
-date: 2023-02-22
+date: 2022-02-22
 ---
 
 > 论文地址：[iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Multi-Feature Fusion Strategy](https://www.frontiersin.org/articles/10.3389/fmicb.2022.790063/full)
