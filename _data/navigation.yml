@@ -12,5 +12,8 @@ main:
   - title: "Educations/Talks/Internships"
     url: "/#-educations"
 
-  - title: "Notes"
+  - title: "Paper Notes"
     url: "/notes/"
+
+  - title: "Life Timeline"
+    url: "/timeline/"
