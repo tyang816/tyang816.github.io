@@ -2,7 +2,7 @@
 layout: post
 title: CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition
 categories: [CV]
-tags: [video, action recognition]
+tags: [video, action-recognition]
 proceedings: CVPR
 date: 2016-04-20
 ---

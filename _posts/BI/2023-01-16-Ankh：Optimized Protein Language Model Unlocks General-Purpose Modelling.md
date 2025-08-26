@@ -2,7 +2,7 @@
 layout: post
 title: bioRxiv-2023 Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling
 categories: [BI]
-tags: [protein, PLM, language model]
+tags: [protein, PLM, language-model]
 proceedings: bioRxiv
 date: 2023-01-16
 ---

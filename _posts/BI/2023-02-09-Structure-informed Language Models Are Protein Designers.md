@@ -2,7 +2,7 @@
 layout: post
 title: ICML-2023 Structure-informed Language Models Are Protein Designers
 categories: [BI]
-tags: [protein, PLM, protein design]
+tags: [protein, PLM, protein-design]
 proceedings: ICML
 date: 2023-02-09
 ---

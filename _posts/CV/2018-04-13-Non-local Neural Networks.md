@@ -2,7 +2,7 @@
 layout: post
 title: CVPR-2018 Non-local Neural Networks
 categories: [CV]
-tags: [convolutional-neural-networks]
+tags: [convolutional-neural-network]
 proceedings: CVPR
 date: 2018-04-13
 ---

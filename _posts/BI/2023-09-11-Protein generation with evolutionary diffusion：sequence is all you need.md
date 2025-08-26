@@ -2,7 +2,7 @@
 layout: post
 title: bioRxiv-2023 Protein generation with evolutionary diffusion：sequence is all you need
 categories: [BI]
-tags: [protein, PLM, protein design]
+tags: [protein, PLM, protein-design]
 proceedings: bioRxiv
 date: 2023-09-11
 ---

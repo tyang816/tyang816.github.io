@@ -2,7 +2,7 @@
 layout: post
 title: Bioinformatics-2023 Accurate and efﬁcient protein sequence design through learning concise local environment of residues
 categories: [BI]
-tags: [protein, protein design, GNN, PLM]
+tags: [protein, protein-design, GNN, PLM]
 proceedings: Bioinformatics
 date: 2023-03-14
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: ICLR-2023 AIM：Adapting Image Models for Efficient Video Action Recognition
 categories: [CV]
-tags: [video, action recognition]
+tags: [video, action-recognition]
 proceedings: ICLR
 date: 2023-02-06
 ---

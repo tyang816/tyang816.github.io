@@ -2,7 +2,7 @@
 layout: post
 title: CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition
 categories: [CV]
-tags: [video, action recognition]
+tags: [video, action-recognition]
 proceedings: CVPR
 date: 2018-04-12
 ---
