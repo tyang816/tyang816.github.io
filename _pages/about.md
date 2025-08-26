@@ -54,6 +54,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 **Yang Tan**, Ruilin Wang, Banghao Wu, Liang Hong, Bingxin Zhou
 
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusREM"><img src="https://img.shields.io/github/stars/ai4protein/VenusREM?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
@@ -78,6 +79,7 @@ Song Li*, **Yang Tan\***, Song Ke, Liang Hong, Bingxin Zhou
 
 Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wanli Ouyang, Bingxin Zhou, Pan Tan, Liang Hong
 
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/AI4Protein/ProSST-2048"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/ProSST"><img src="https://img.shields.io/github/stars/ai4protein/ProSST?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
@@ -91,6 +93,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 **Yang Tan**, Bingxin Zhou, Lirong Zheng, Guisheng Fan, Liang Hong
 
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/tyang816/ProtSSN"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/ProtSSN"><img src="https://img.shields.io/github/stars/ai4protein/ProtSSN?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
@@ -103,6 +106,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 **Yang Tan**, Zhixing Zhang, Mingchen Li, Fei Pan, Hao Duan, Zijie Huang, Hua Deng, Zhuohang Yu, Chen Yang, Guoyang Shen, Peng Qi, Chengyuan Yue, Yuxian Liu, Liang Hong, Huiqun Yu, Guisheng Fan, Yun Tang
 
+<a href="https://huggingface.co/datasets/tyang816/MedChatZH"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/tyang816/medchatzh"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/tyang816/medchatzh"><img src="https://img.shields.io/github/stars/tyang816/medchatzh?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
