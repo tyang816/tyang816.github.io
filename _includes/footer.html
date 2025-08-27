@@ -1,0 +1,121 @@
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+// wait for busuanzi to load
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const pvContainer = document.getElementById('busuanzi_container_site_pv');
+    const uvContainer = document.getElementById('busuanzi_container_site_uv');
+    
+    if (pvContainer && uvContainer) {
+      // check if stats are loaded
+      const checkStats = setInterval(function() {
+        const pvValue = document.getElementById('busuanzi_value_site_pv');
+        const uvValue = document.getElementById('busuanzi_value_site_uv');
+        
+        if (pvValue && uvValue && pvValue.textContent !== '0' && uvValue.textContent !== '0') {
+          clearInterval(checkStats);
+          // add loading animation
+          pvContainer.style.opacity = '1';
+          uvContainer.style.opacity = '1';
+        }
+      }, 100);
+      
+      // set initial opacity
+      pvContainer.style.opacity = '0.7';
+      uvContainer.style.opacity = '0.7';
+      pvContainer.style.transition = 'opacity 0.5s ease';
+      uvContainer.style.transition = 'opacity 0.5s ease';
+    }
+  }, 1000);
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-stats">
+      <span id="busuanzi_container_site_pv">
+        <i class="fas fa-eye"></i> Total visits <span id="busuanzi_value_site_pv">0</span> times
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <i class="fas fa-users"></i> Visitors <span id="busuanzi_value_site_uv">0</span> people
+      </span>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/jekyll/minima" target="_blank">Minima</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e1e4e8;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-stats {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #495057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.footer-stats span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-stats i {
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #6c757d;
+  border-top: 1px solid #dee2e6;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .footer-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-stats span {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
