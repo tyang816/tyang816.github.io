@@ -5,6 +5,7 @@ categories: [BI]
 tags: [protein, fitness-prediction, PPI]
 proceedings: ICLR
 date: 2025-01-23
+
 ---
 
 > 论文地址：[Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions](https://openreview.net/forum?id=lzdFImKK8w)
@@ -23,11 +24,11 @@ date: 2025-01-23
 
 ### 1 Introduction
 
-蛋白质-蛋白质相互作用（PPIs）是所有生物体中执行多样化和关键生物功能的基础 。对这些相互作用进行高保真的计算建模是不可或缺的 。蛋白质结合的特性可以通过结合自由能（ΔG）来定量表征，即结合态与非结合态之间吉布斯自由能的差异 。而预测结合自由能的变化（ΔΔG），也被称为突变效应，对于调控蛋白质间的相互作用至关重要 。准确预测$\Delta\Delta G$能够帮助识别增强或减弱结合强度的突变，从而指导高效的蛋白质设计，加速治疗性干预措施的开发，并加深我们对生物学机制的理解 。
+蛋白质-蛋白质相互作用（PPIs）是所有生物体中执行多样化和关键生物功能的基础 。对这些相互作用进行高保真的计算建模是不可或缺的 。蛋白质结合的特性可以通过结合自由能（ΔG）来定量表征，即结合态与非结合态之间吉布斯自由能的差异 。而预测结合自由能的变化（ΔΔG），也被称为突变效应，对于调控蛋白质间的相互作用至关重要 。准确预测 $\Delta\Delta G$ 能够帮助识别增强或减弱结合强度的突变，从而指导高效的蛋白质设计，加速治疗性干预措施的开发，并加深我们对生物学机制的理解 。
 
-深度学习在蛋白质建模方面展现出巨大潜力，并引发了$\Delta\Delta G$预测计算方法的范式转变。然而，尽管取得了进展，$\Delta\Delta G$预测任务仍然受到**标注实验数据稀缺**的严重制约 。因此，在大量无标签数据上进行**预训练**已成为一种主流策略 。最近的研究观察到，结构预测模型和逆折叠模型能隐式地捕捉蛋白质的能量分布 。
+深度学习在蛋白质建模方面展现出巨大潜力，并引发了 $\Delta\Delta G$ 预测计算方法的范式转变。然而，尽管取得了进展，$\Delta\Delta G$预测任务仍然受到**标注实验数据稀缺**的严重制约 。因此，在大量无标签数据上进行**预训练**已成为一种主流策略 。最近的研究观察到，结构预测模型和逆折叠模型能隐式地捕捉蛋白质的能量分布 。
 
-尽管基于预训练的方法是有效的，但它们仅仅采用监督微调（SFT）的方式，而忽略了“对齐”（alignment）的重要性 。监督微调可能会导致模型灾难性地遗忘其在无监督预训练阶段学到的通用知识，因此在知识迁移方面仍有提升空间 。在其他生物学任务中，已有研究借鉴了大型语言模型（LLM）的对齐技术，如直接偏好优化（DPO），来将实验适应性信息整合到生物生成模型中 。然而，作者指出，直接将这些对齐技术用于$\Delta\Delta G$预测是不够的，因为它们**缺乏与能量相关的生物学任务所需的物理归纳偏置**（physical inductive bias） 。
+尽管基于预训练的方法是有效的，但它们仅仅采用监督微调（SFT）的方式，而忽略了“对齐”（alignment）的重要性 。监督微调可能会导致模型灾难性地遗忘其在无监督预训练阶段学到的通用知识，因此在知识迁移方面仍有提升空间 。在其他生物学任务中，已有研究借鉴了大型语言模型（LLM）的对齐技术，如直接偏好优化（DPO），来将实验适应性信息整合到生物生成模型中 。然而，作者指出，直接将这些对齐技术用于 $\Delta\Delta G$ 预测是不够的，因为它们**缺乏与能量相关的生物学任务所需的物理归纳偏置**（physical inductive bias） 。
 
 为此，本文提出了一种名为**玻尔兹曼对齐（Boltzmann Alignment）**的新技术，旨在将知识从预训练的逆折叠模型迁移到$\Delta\Delta G$预测任务中 。
 
@@ -55,7 +56,7 @@ date: 2025-01-23
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BA-DDG/frm2.png" alt="avatar" style="zoom:100%;" /></div>
 
-其中，$k_{B}$ 是玻尔兹曼常数，T是热力学温度。这里的 $p_{bnd}$ 和 $p_{unbnd}$ 分别代表给定蛋白质序列$S_{AB}$时，其构象处于结合态($\mathcal{X}_{bnd}$)和非结合态($\mathcal{X}_{unbnd}$)的条件概率，即$p(\mathcal{X}_{bnd}|S_{AB})$ 和 $p(\mathcal{X}_{unbnd}|S*{AB})$ 。
+其中，$k_{B}$ 是玻尔兹曼常数，T是热力学温度。这里的 $p_{bnd}$ 和 $p_{unbnd}$ 分别代表给定蛋白质序列 $S_{AB}$ 时，其构象处于结合态( $\mathcal{X}_{bnd}$ )和非结合态( $\mathcal{X}_{unbnd}$ )的条件概率，即 $p(\mathcal{X}_{bnd}|S_{AB})$ 和 $p(\mathcal{X}_{unbnd}|S*{AB})$ 。
 
 直接估算 $p(\mathcal{X}|S)$ 是极其困难的，因为目前的蛋白质结构预测模型难以提供真实的概率解释。为了解决这个棘手的问题，作者巧妙地运用了**贝叶斯定理**：
 
@@ -69,13 +70,13 @@ date: 2025-01-23
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BA-DDG/frm6-7.png" alt="avatar" style="zoom:100%;" /></div>
 
-为了进一步简化，作者引入了一个关键假设：**蛋白质的骨架结构在突变前后保持不变**，即$\mathcal{X}_{bnd}^{mut} \approx \mathcal{X}_{bnd}^{wt}$ 和 $\mathcal{X}_{unbnd}^{mut} \approx \mathcal{X}_{unbnd}^{wt}$ 。基于此假设，与结构相关的概率项 $p(\mathcal{X})$可以被消去，最终得到一个仅依赖于序列似然的$\Delta\Delta G$表达式 ：
+为了进一步简化，作者引入了一个关键假设：**蛋白质的骨架结构在突变前后保持不变**，即 $\mathcal{X}_{bnd}^{mut} \approx \mathcal{X}_{bnd}^{wt}$ 和 $\mathcal{X}_{unbnd}^{mut} \approx \mathcal{X}_{unbnd}^{wt}$ 。基于此假设，与结构相关的概率项 $p(\mathcal{X})$ 可以被消去，最终得到一个仅依赖于序列似然的 $\Delta\Delta G$ 表达式 ：
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BA-DDG/frm8.png" alt="avatar" style="zoom:100%;" /></div>
 
 #### 3.2 Probability Estimation
 
-- **结合态 (Bound state) 概率估算**：在$\Delta\Delta G$ 预测任务中，复合物的结合态骨架结构$\mathcal{X}_{bnd}$ 通常是已知的。因此，可以直接将复合物的结构和序列输入逆折叠模型，来评估其概率 $p_{\theta}(S_{AB}|\mathcal{X}_{bnd})$ 。
+- **结合态 (Bound state) 概率估算**：在$\Delta\Delta G$ 预测任务中，复合物的结合态骨架结构 $\mathcal{X}_{bnd}$ 通常是已知的。因此，可以直接将复合物的结构和序列输入逆折叠模型，来评估其概率 $p_{\theta}(S_{AB}|\mathcal{X}_{bnd})$ 。
 
 - **非结合态 (Unbound state) 概率估算**：非结合态的结构通常没有明确给出 。作者提出了一个合理的近似方法：非结合态可以看作是链A和链B相距很远、相互作用极小的情况 。因此，其概率可以近似为**两条链概率的乘积**，即分别独立地评估链A和链B的概率，然后相乘 ：
 
@@ -170,3 +171,4 @@ date: 2025-01-23
 - **结果**：如表5所示，对于已知的5个有利突变，**微调后的BA-DDG通常给出了比原始ProteinMPNN更低的困惑度和更高的偏好概率** 。这一结果表明，为 $\Delta\Delta G$ 预测任务进行的微调，能够引导模型设计出潜在结合亲和力更高、中和效果更好的抗体序列 。在多点突变上的结果也进一步支持了这一结论 。
 
 <hr align="left" color="#987cb9" size="1">
+
