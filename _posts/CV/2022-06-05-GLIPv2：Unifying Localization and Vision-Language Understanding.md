@@ -2,7 +2,7 @@
 layout: post
 title: arXiv-2022 GLIPv2：Unifying Localization and Vision-Language Understanding
 categories: [CV]
-tags: [vision-language, contrastive-learning, object detection]
+tags: [vision-language, contrastive-learning, object-detection]
 proceedings: arXiv
 date: 2022-06-05
 ---

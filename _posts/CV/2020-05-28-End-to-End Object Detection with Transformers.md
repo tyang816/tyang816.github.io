@@ -2,7 +2,7 @@
 layout: post
 title: ECCV-2020 End-to-End Object Detection with Transformers
 categories: [CV]
-tags: [transformer, object detection]
+tags: [transformer, object-detection]
 proceedings: ECCV
 date: 2020-05-28
 ---
