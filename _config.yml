@@ -116,6 +116,22 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
+    preview_as_code: false
+    delimiters:
+      inline: ['$', '$']
+      block: ['$$', '$$']
+    macros:
+      RR: "\\mathbb{R}"
+      NN: "\\mathbb{N}"
+      ZZ: "\\mathbb{Z}"
+      QQ: "\\mathbb{Q}"
+      CC: "\\mathbb{C}"
+      FF: "\\mathbb{F}"
+      PP: "\\mathbb{P}"
+      EE: "\\mathbb{E}"
 
 # Defaults
 defaults:
