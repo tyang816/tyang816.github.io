@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/) & [Shanghai Artificial Intelligence Laboratory](https://www.shlab.org.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022, and M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm).
+My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022, and M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm).
 
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
@@ -156,19 +156,3 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 - *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 in major ranking. 
 - *2018.09 - 2022.06*, East China University of Science and Technology. B.S. in Software Engineering & GPA 3.8/4.0 & #1 in major ranking / #1 in overall ranking.
 
-# 💬 Invited Talks
-- *2025.08*, Shanghai Jiao Tong University 3th AI4BioE Summer School. Oral report/poster was rated as excellent (1/20).
-- *2024.08*, Shanghai Jiao Tong University 2th AI4BioE Summer School. Oral report/poster was rated as excellent (1/200).
-- *2023.08*, Shanghai "Green Biomanufacturing" Summer School. Oral report at the Youth Academic Forum and was rated as excellent (6/100).
-- *2023.07*, Shanghai Jiao Tong University 1th AI4SCIENCE Summer School. Oral report/group report was rated as excellent (3/100).
-
-# 💻 Internships
-- *2023.08 - Now*, [Shanghai Artificial Intelligence Laboratory](https://www.shlab.org.cn/), China.
-  - Algorithm Intern, AI4Science.
-  - Protein language model and graph network model for protein engineering.
-- *2023.06 - 2023.08*, [Shanghai-Chongqing Artificial Intelligence Research Institute](https://www.sjtu.cq.cn/platform), China.
-  - Algorithm Intern, Large Languge Model.
-  - Participated in the research and development of the "Zhaoyan" large language model.
-- *2022.10 - 2023.05*, [Shanghai Tianwu Technology Co., Ltd](https://www.matwings.com/), China.
-  - Algorithm Intern, AI4Bio.
-  - Protein language model pre-training and zero-shot mutantion prediction.
