@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institue](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my M.S. degree of Computer Science (GPA 3.8/4.0) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0) from East China University of Science and Technology in 2022.
+My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institue](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html). I receive my M.S. degree of Computer Science (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2022.
 
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
@@ -154,6 +154,6 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 # 📖 Educations
 - *2025.09 - Now*, Shanghai Jiao Tong University. Ph.D. in Computer Science. 
-- *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 in major ranking. 
-- *2018.09 - 2022.06*, East China University of Science and Technology. B.S. in Software Engineering & GPA 3.8/4.0 & #1 in major ranking / #1 in overall ranking.
+- *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 ranking. 
+- *2018.09 - 2022.06*, East China University of Science and Technology. B.S. in Software Engineering & GPA 3.8/4.0 & #1 ranking.
 
