@@ -137,6 +137,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 # 🏆 Honors and Awards
 - *2025/2022*, College Graduate Excellence Award of Shanghai.
+- *2024*, ***Annual Student***, East China University of Science and Technology.
 - *2024*, ***National Scholarship***, M.S.
 - *2023*, *Bronze Award*, National "Challenge Cup" Competition.
 - *2022*, *Silver Award*, Shanghai "Internet+" Competition.
@@ -146,7 +147,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 - *2021*, National Undergraduate Innovation Training Program, *Project Leader*.
 - *2020*, ***National Scholarship***, B.S.
 - *2019*, Lingma Bachelor’s Scholarship (4 in major).
-- *2018*, "District Mayor Award for Science and Technology Innovation" in Shapingba, Chongqing.
+- *2018*, District Mayor Award for Science and Technology Innovation of Shapingba, Chongqing.
 - *2017*, *Third Prize*, FIRST Tech Challenge Houston World Championship, *Team Leader*.
 - *2017*，*Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
 - *2017/2016*, *First/Second Prize*, FIRST Tech Challenge of China, *Team Leader*.
