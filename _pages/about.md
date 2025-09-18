@@ -26,7 +26,7 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***Nature Machine Intelligence***](https://www.nature.com/natmachintell/) and [***Journal of Chemical Information and Modeling***](https://pubs.acs.org/journal/jcisd8).
 
 # 🔥 News
-- *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusREM) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
+- *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusFactory) releases a **free** website at [venusfactory.cn](http://www.venusfactory.cn/).
 - *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
 
 # 📝 Selected Publications 
