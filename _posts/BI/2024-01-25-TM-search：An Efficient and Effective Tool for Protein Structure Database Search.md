@@ -1,9 +1,9 @@
 ---
 layout: post
-title: JCIM-2024 TM-search：An Efficient and Effective Tool for Protein Structure Database Search
+title: Journal of Chemical Information and Modeling-2024 TM-search：An Efficient and Effective Tool for Protein Structure Database Search
 categories: [BI]
 tags: [protein, structure search]
-proceedings: JCIM
+proceedings: Journal of Chemical Information and Modeling
 date: 2024-01-25
 ---
 

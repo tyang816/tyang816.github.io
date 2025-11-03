@@ -1,9 +1,9 @@
 ---
 layout: post
-title: PNAS-2021 Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+title: Proceedings of the National Academy of Sciences-2021 Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
 categories: [BI]
 tags: [protein, PLM]
-proceedings: PNAS
+proceedings: Proceedings of the National Academy of Sciences
 date: 2021-04-05
 ---
 

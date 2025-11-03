@@ -1,9 +1,9 @@
 ---
 layout: post
-title: TNNLS-2020 A Comprehensive Survey on Graph Neural Networks
+title: Transactions on Neural Networks and Learning Systems-2020 A Comprehensive Survey on Graph Neural Networks
 categories: [ML]
 tags: [GNN]
-proceedings: TNNLS
+proceedings: Transactions on Neural Networks and Learning Systems
 date: 2020-03-24
 ---
 

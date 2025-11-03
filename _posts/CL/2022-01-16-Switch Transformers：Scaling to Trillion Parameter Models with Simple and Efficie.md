@@ -1,9 +1,9 @@
 ---
 layout: post
-title: JMLR-2022 Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+title: Journal of Machine Learning Research-2022 Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
 categories: [CL]
 tags: [LLM, NLP, transformer]
-proceedings: JMLR
+proceedings: Journal of Machine Learning Research
 date: 2022-01-16
 ---
 

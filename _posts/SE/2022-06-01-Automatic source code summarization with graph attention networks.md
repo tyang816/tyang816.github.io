@@ -1,9 +1,9 @@
 ---
 layout: post
-title: JSS-2022 Automatic source code summarization with graph attention networks
+title: Journal of Systems and Software-2022 Automatic source code summarization with graph attention networks
 categories: [SE]
 tags: [code-summarization, GNN]
-proceedings: JSS
+proceedings: Journal of Systems and Software
 date: 2022-06-01
 ---
 

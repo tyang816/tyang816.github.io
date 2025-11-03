@@ -1,9 +1,9 @@
 ---
 layout: post
-title: TPAMI-2021 ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised Learning
+title: IEEE Transactions on Pattern Analysis and Machine Intelligence-2021 ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised Learning
 categories: [BI]
 tags: [protein, PLM, transformer, self-supervised]
-proceedings: TPAMI
+proceedings: IEEE Transactions on Pattern Analysis and Machine Intelligence
 date: 2021-07-01
 ---
 

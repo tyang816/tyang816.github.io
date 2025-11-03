@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ASE-2021 Automating just-in-time comment updating
+title: Automated Software Engineering-2021 Automating just-in-time comment updating
 categories: [SE]
 tags: [code-summarization]
-proceedings: ASE
+proceedings: Automated Software Engineering
 date: 2021-01-27
 ---
 
