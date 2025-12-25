@@ -1,8 +1,8 @@
 ---
 layout: post
 title: arXiv-2025 Evaluating Large Language Models in Scientific Discovery
-categories: [BI, CL]
-tags: [Agent, NLP]
+categories: [CL]
+tags: [Agent, LLM, NLP]
 proceedings: arXiv
 date: 2025-12-17
 ---
