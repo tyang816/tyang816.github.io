@@ -27,7 +27,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 # 🔥 News
 - *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine.
-- *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusFactory) releases a **free** website at [venusfactory.cn/playground](http://www.venusfactory.cn/playground).
+- *2025.08*: &nbsp;🎉 [VenusFactory](https://github.com/ai4protein/VenusFactory) releases a **free** website at [venusfactory.cn/playground](https://venusfactory.cn/playground).
 - *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
 
 # 📝 Selected Publications 
@@ -42,7 +42,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 **Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
 
-<a href="http://venusfactory.cn/playground"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
+<a href="https://venusfactory.cn/playground"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 </div>
