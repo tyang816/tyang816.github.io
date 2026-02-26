@@ -1,5 +1,16 @@
 # Timeline data for the life timeline page
 timeline_items:
+  - date: "2025-09-03"
+    title: "Japan Tour"
+    description: "Short trip to Osaka."
+    image: "/images/timeline/japan/2025/person1.jpg"
+    image2: "/images/timeline/japan/2025/person2.jpg"
+    image3: "/images/timeline/japan/2025/person3.jpg"
+    image4: "/images/timeline/japan/2025/building1.jpg"
+    image5: "/images/timeline/japan/2025/building2.jpg"
+    category: "travel"
+    location: "Osaka, Japan"
+
   - date: "2025-08-01"
     title: "Travel to Hungary"
     description: "One day trip in Budapest."
