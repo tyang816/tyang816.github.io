@@ -7,12 +7,16 @@
         {% endif %}
         $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
             var totalCitation = data['citedby']
-            document.getElementById('total_cit').innerHTML = totalCitation;
+            var totalCitEle = document.getElementById('total_cit');
+            if (totalCitEle) totalCitEle.innerHTML = totalCitation;
             var citationEles = document.getElementsByClassName('show_paper_citations')
             Array.prototype.forEach.call(citationEles, element => {
                 var paperId = element.getAttribute('data')
-                var numCitations = data['publications'][paperId]['num_citations']
-                element.innerHTML = '| Citations: ' + numCitations;
+                var pub = data['publications'][paperId]
+                if (pub) {
+                    var n = pub['num_citations']
+                    element.innerHTML = '<a><img src="https://img.shields.io/badge/Citations-' + n + '-blue?style=social&logo=googlescholar" style="max-width: 100%;"></a>';
+                }
             });
         });
     })

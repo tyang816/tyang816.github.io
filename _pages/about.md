@@ -46,6 +46,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 <a href="https://ai4protein.github.io/venusx/"><img src="https://img.shields.io/badge/VenusX-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/collections/AI4Protein/venusx-dataset"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusX"><img src="https://img.shields.io/github/stars/ai4protein/VenusX?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSX"></span>
 </div>
 </div>
 
@@ -60,6 +61,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 <a href="https://venusfactory.cn/playground"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSFACTORY"></span>
 </div>
 </div>
 
@@ -73,6 +75,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 <a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusREM"><img src="https://img.shields.io/github/stars/ai4protein/VenusREM?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSREM"></span>
 </div>
 </div>
 
@@ -87,6 +90,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 <a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/AI4Protein/ProSST-2048"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/ProSST"><img src="https://img.shields.io/github/stars/ai4protein/ProSST?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PROSST"></span>
 </div>
 </div>
 
@@ -101,6 +105,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 <a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/tyang816/ProtSSN"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/ProtSSN"><img src="https://img.shields.io/github/stars/ai4protein/ProtSSN?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PROTSSN"></span>
 </div>
 </div>
 
@@ -114,6 +119,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 <a href="https://huggingface.co/datasets/tyang816/MedChatZH"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/tyang816/medchatzh"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
 <a href="https://github.com/tyang816/medchatzh"><img src="https://img.shields.io/github/stars/tyang816/medchatzh?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_MEDCHATZH"></span>
 </div>
 </div>
 
@@ -125,6 +131,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 **Yang Tan**, Mingchen Li, Bingxin Zhou, Bozitao Zhong, Lirong Zheng, Pan Tan, Ziyi Zhou, Huiqun Yu, Guisheng Fan, Liang Hong
 
 <a href="https://github.com/tyang816/ses-adapter"><img src="https://img.shields.io/github/stars/tyang816/ses-adapter?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_SESADAPTER"></span>
 </div>
 </div>
 
@@ -136,6 +143,7 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 **Yang Tan**, Mingchen Li, Ziyi Zhou, Pan Tan, Huiqun Yu, Guisheng Fan, Liang Hong
 
 <a href="https://github.com/mingchen-li/ProteinPretraining"><img src="https://img.shields.io/github/stars/mingchen-li/ProteinPretraining?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PETA"></span>
 </div>
 </div>
 
