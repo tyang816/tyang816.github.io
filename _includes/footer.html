@@ -1,35 +1,5 @@
-<!-- busuanzi -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script>
-// wait for busuanzi to load
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    const pvContainer = document.getElementById('busuanzi_container_site_pv');
-    const uvContainer = document.getElementById('busuanzi_container_site_uv');
-    
-    if (pvContainer && uvContainer) {
-      // check if stats are loaded
-      const checkStats = setInterval(function() {
-        const pvValue = document.getElementById('busuanzi_value_site_pv');
-        const uvValue = document.getElementById('busuanzi_value_site_uv');
-        
-        if (pvValue && uvValue && pvValue.textContent !== '0' && uvValue.textContent !== '0') {
-          clearInterval(checkStats);
-          // add loading animation
-          pvContainer.style.opacity = '1';
-          uvContainer.style.opacity = '1';
-        }
-      }, 100);
-      
-      // set initial opacity
-      pvContainer.style.opacity = '0.7';
-      uvContainer.style.opacity = '0.7';
-      pvContainer.style.transition = 'opacity 0.5s ease';
-      uvContainer.style.transition = 'opacity 0.5s ease';
-    }
-  }, 1000);
-});
-</script>
+<!-- vercount (busuanzi replacement) -->
+<script defer src="https://cn.vercount.one/js"></script>
 
 <footer class="site-footer">
   <div class="footer-content">
