@@ -149,7 +149,8 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 
 # 🏆 Honors and Awards
-- *2025*, Young Science and Technology Talent Development Program, CAST, Ph.D.
+- *2026*, ***Shanghai Innovation Institute Student Project (1250,000 RMB)***, *Project Leader*, Ph.D.
+- *2025*, ***Young Science and Technology Talent Development Program (40,000 RMB)***, CAST, Ph.D.
 - *2025*, College Graduate Excellence Award of Shanghai, M.S.
 - *2025*, Huanchuang Scholarship (10 in university), M.S.
 - *2024*, ***Annual Student***, East China University of Science and Technology.
