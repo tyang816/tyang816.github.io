@@ -26,7 +26,7 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc).
 
 # 🔥 News
-- *2026.04*: &nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) releases a **free** website at [venusfactory.cn/playground](https://venusfactory.cn/playground) and technical report [here](https://arxiv.org/abs/2603.27303).
+- *2026.04*: &nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
 - *2026.01*: &nbsp;🎉 [VenusX](https://github.com/ai4protein/VenusX) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here](https://ai4protein.github.io/venusx/).
 - *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine.
 - *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
@@ -58,7 +58,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 **Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
 
-<a href="https://venusfactory.cn/playground"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
+<a href="https://venusfactory.bio"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
 <a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
 <span class="show_paper_citations" data="PLACEHOLDER_VENUSFACTORY"></span>
