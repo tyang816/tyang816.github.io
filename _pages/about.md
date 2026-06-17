@@ -169,6 +169,17 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 - *2017*，*Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
 - *2017/2016*, *First/Second Prize*, China FIRST Tech Challenge, *Team Leader*.
 
+# 📰 Media Coverage
+- *2026.06*, **【专访】** [学科交叉·研途探路｜张江高研院优秀学子](https://mp.weixin.qq.com/s/G02NyULQ77qx9cjaZGzUdw), *Interdisciplinary Research Paths | ZIAS Outstanding Student Feature*, 上海交通大学张江高等研究院 / SJTU Zhangjiang Institute of Advanced Study (ZIAS).
+- *2026.05*, **【专访】** [智咖请就位｜在交叉地带，做 AI for Science 的「枢纽」](https://mp.weixin.qq.com/s/Rd5htZnrumOPLIyVZ7XKoA), *Meet the Innovators | Being a Hub at the Crossroads of AI for Science*, 上海创智学院 / Shanghai Innovation Institute (SII).
+- *2026.05*, **【专访】** [做生物制造，先学好与 AI「对话」](https://app.ceweekly.cn/h5/#/pages/detail/articleDetail/articleDetail?id=493769), *Learning Bio-manufacturing Starts with Dialogue with AI*, 中国经济周刊 / China Economic Weekly.
+- *2025.06*, [信息学院 2025 届毕业典礼研究生代表发言](https://cise.ecust.edu.cn/2025/0626/c7691a180334/page.htm), *Graduate Representative Speech at CISE 2025 Commencement*, 华东理工大学信息科学与工程学院 / ECUST School of Information Science & Engineering.
+- *2025.04*, [追光而行！年度大学生人物名单揭晓](https://mp.weixin.qq.com/s?__biz=MjM5ODcwMDgyMQ==&mid=2650775806&idx=1&sn=5fa12b4bfa771b2b1ea3c4fe066daab1&chksm=bf5857a043ce8308517a98edde1c5ee26e0fa199a75d559e57110977eb81b5531cbcaafe47f6&scene=27), *Chasing the Light | ECUST Annual Student Figures*, 小花梨 / Huahli (ECUST Official WeChat).
+- *2022.05*, [花梨学子说｜华东理工大学优秀学生分享](https://mp.weixin.qq.com/s/zmPQTAUalat6FGJk-Ulffw), *Huahli Student Stories | ECUST Outstanding Student Feature*, 华东理工大学 / East China University of Science and Technology (ECUST).
+- *2017.06*, [重庆七中：为孩子更美好的未来奠基](https://news.youth.cn/jsxw/201706/t20170629_10189005.htm), *Chongqing No.7 High School: Building a Better Future for Children*, 重庆日报、中国青年网 / Chongqing Daily, China Youth Daily.
+- *2016.06*, [2016 重庆七中优秀学子青春成长故事会](https://education.cqnews.net/html/node_378089.htm), *2016 CQ No.7 High School Outstanding Students Growth Stories*, 华龙网 / CQNEWS (Chongqing News Network).
+- *2016.04*, [2016 FTC 科技挑战赛：重庆七中斩获「冠、亚军联盟」](https://www.163.com/news/article/BL1A019800014AEE.html), *2016 FTC Challenge: Chongqing No.7 High School Wins Champion & Finalist Alliance*, 网易新闻 / NetEase News.
+
 # 📖 Educations
 - *2025.09 - Now*, Shanghai Jiao Tong University & Shanghai Innovation Institute. Ph.D. in Computer Science. 
 - *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 ranking. 
