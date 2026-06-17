@@ -171,16 +171,16 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 <span class='anchor' id='-media-coverage'></span>
 
-# 📰 媒体报道 / Media Coverage
+# 📰 Media Coverage
 
 - *2026.06* &nbsp;**【专访】** [学科交叉·研途探路｜张江高研院优秀学子](https://mp.weixin.qq.com/s/G02NyULQ77qx9cjaZGzUdw)  
-  *Interdisciplinary Research Paths | ZIAS Outstanding Student Feature* · 上海交通大学张江高等研究院 / SJTU ZIAS
+  **Interview**: *Interdisciplinary Research Paths | ZIAS Outstanding Student Feature* · 上海交通大学张江高等研究院 / SJTU ZIAS
 
 - *2026.05* &nbsp;**【专访】** [智咖请就位｜在交叉地带，做 AI for Science 的「枢纽」](https://mp.weixin.qq.com/s/Rd5htZnrumOPLIyVZ7XKoA)  
-  *Meet the Innovators | Being a Hub at the Crossroads of AI for Science* · 上海创智学院 / Shanghai Innovation Institute (SII)
+  **Interview**: *Meet the Innovators | Being a Hub at the Crossroads of AI for Science* · 上海创智学院 / Shanghai Innovation Institute (SII)
 
 - *2026.05* &nbsp;**【专访】** [做生物制造，先学好与 AI「对话」](https://app.ceweekly.cn/h5/#/pages/detail/articleDetail/articleDetail?id=493769)  
-  *Learning Bio-manufacturing Starts with Dialogue with AI* · 中国经济周刊 / China Economic Weekly
+  **Interview**: *Learning Bio-manufacturing Starts with Dialogue with AI* · 中国经济周刊 / China Economic Weekly
 
 - *2025.06* &nbsp;[信息学院 2025 届毕业典礼研究生代表发言](https://cise.ecust.edu.cn/2025/0626/c7691a180334/page.htm)  
   *Graduate Representative Speech at CISE 2025 Commencement* · 华东理工大学信息科学与工程学院 / ECUST School of Information Science & Engineering
