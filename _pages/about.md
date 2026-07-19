@@ -1,7 +1,16 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
+lang: en
+description: "Yang Tan (谭扬) — PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI for Biology, protein language models, and Traditional Chinese Medicine LLMs."
+seo_description: "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI for Biology, protein LMs, and TCM LLMs. Browse paper notes and the TCM AI resource portal."
+keywords:
+  - Yang Tan
+  - 谭扬
+  - AI for Biology
+  - protein language model
+  - TCM LLM
+  - 中医大模型
 author_profile: true
 redirect_from: 
   - /about/
@@ -19,11 +28,15 @@ redirect_from:
 
 My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html) and co-advised by Prof. [Nanqing Dong](https://eveningdong.github.io/). I receive my M.S. degree of Computer Science (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2022.
 
+谭扬，上海交通大学与上海创智学院博士生，研究方向为人工智能与生物学交叉（AI for Biology）、蛋白质语言模型，并维护开源[中医大模型资源列表]({{ '/tcm/' | relative_url }})（[Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM)）。
+
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
 - *Biology research*: Directed Evolution, Function Prediction, and Binder Design.
 
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc).
+
+**On this site:** [Paper Notes]({{ '/notes/' | relative_url }}) · [TCM AI resources / 中医大模型]({{ '/tcm/' | relative_url }}) · [Life Timeline]({{ '/timeline/' | relative_url }}).
 
 # 🔥 News
 - *2026.04*: &nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).

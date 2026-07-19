@@ -1,15 +1,24 @@
 ---
 permalink: /tcm/
-title: "TCM AI"
+title: "中医大模型资源 | TCM AI"
+lang: zh-CN
 layout: default
 author_profile: true
+description: "中医大模型（TCM LLM）开源资源导航：论文、模型、评测基准、数据集与产业动态，与 Awesome-TCM-LLM 同源更新。"
+seo_description: "Curated Traditional Chinese Medicine LLM resources — open models, benchmarks, datasets, and news. 中医大模型资源列表。"
+keywords:
+  - 中医大模型
+  - TCM LLM
+  - Traditional Chinese Medicine
+  - benchmark
+  - Awesome-TCM-LLM
 ---
 
 <span class='anchor' id='tcm'></span>
 
 # 中医大模型资源
 
-Curated open resources for Traditional Chinese Medicine LLMs — models, benchmarks, datasets, and news.
+Curated open resources for Traditional Chinese Medicine LLMs — models, benchmarks, datasets, and news. 本页汇总中医/中医药大模型相关论文、开源权重、评测基准与数据集，便于检索与引用。
 
 <p id="tcm-updated" style="margin:4px 0 12px; opacity:0.8;"></p>
 <p style="margin-bottom:16px;">

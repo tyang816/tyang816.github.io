@@ -1,8 +1,10 @@
 ---
 permalink: /timeline/
 title: "Life Timeline"
+lang: en
 layout: default
 author_profile: true
+description: "Personal life timeline of Yang Tan — travel, research milestones, and camera moments."
 ---
 
 <span class='anchor' id='timeline'></span>

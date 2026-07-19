@@ -1,11 +1,20 @@
 ---
 permalink: /notes/
-title: "Notes"
+title: "Paper Notes"
+lang: en
 layout: default
 author_profile: true
+description: "Searchable paper notes by Yang Tan on AI for Biology, protein models, computer vision, and related research."
+seo_description: "Paper notes index — filter by category, tag, and date. Notes on AI4Bio, LLMs, and scientific discovery."
+keywords:
+  - paper notes
+  - AI for Biology
+  - Yang Tan
 ---
 
 <span class='anchor' id='notes'></span>
+
+Search and filter research paper notes (AI for Biology, protein language models, scientific LLMs, and more).
 
 ### Categories overview
 <div id="notes-stats" style="margin-bottom:8px;"></div>

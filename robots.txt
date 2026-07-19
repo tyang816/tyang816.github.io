@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Primary sitemap (also emitted by jekyll-sitemap)
+Sitemap: https://tyang816.github.io/sitemap.xml

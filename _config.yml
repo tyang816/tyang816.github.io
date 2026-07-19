@@ -7,14 +7,27 @@
 
 # Site Settings
 title                    : "Yang Tan"
-description              : "Work smarter, not harder."
+seo_title                : "Yang Tan | AI for Biology & TCM LLMs"
+description              : "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI for Biology, protein language models, and Traditional Chinese Medicine LLMs."
+description_zh           : "谭扬（Yang Tan），上海交通大学与上海创智学院博士生。研究方向：AI for Biology、蛋白质语言模型、中医大模型资源与评测。"
+lang                     : "en"
+url                      : "https://tyang816.github.io"
+baseurl                  : ""
 repository               : "tyang816/tyang816.github.io"
 google_scholar_stats_use_cdn : true
+keywords:
+  - Yang Tan
+  - 谭扬
+  - AI for Biology
+  - protein language model
+  - TCM LLM
+  - 中医大模型
+  - Shanghai Jiao Tong University
 
 # google analytics
 google_analytics_id      : "G-2M9QLSPN5Y"  # get google_analytics_id from https://analytics.google.com/analytics/
 
-# SEO Related
+# SEO Related — paste tokens from each webmaster console (see docs/SEO.md)
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
 bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
 baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
@@ -22,6 +35,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Yang Tan"
+  name_zh          : "谭扬"
   avatar           : "images/profile.png"
   bio              : "ECUST -> SJTU & SII"
   location         : "Shanghai, China"

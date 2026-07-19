@@ -1,63 +1,79 @@
 <!-- begin SEO -->
-{% if site.url %}
-  {% assign seo_url = site.url %}
+{% assign seo_url = site.url | default: site.github.url | default: "https://tyang816.github.io" %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}
+  {% assign og_locale = "zh_CN" %}
+  {% assign og_locale_alt = "en_US" %}
+{% else %}
+  {% assign og_locale = "en_US" %}
+  {% assign og_locale_alt = "zh_CN" %}
 {% endif %}
-{% assign seo_url = seo_url | default: site.github.url %}
 
-{% if site.url %}
-  {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
+{% assign page_path = page.url | replace: "index.html", "" %}
+{% assign canonical_url = page_path | absolute_url %}
+
+{% assign raw_title = page.title | strip %}
+{% if page_path == "/" or raw_title == "" %}
+  {% assign seo_title = site.seo_title | default: "Yang Tan | AI for Biology & TCM LLMs" %}
+{% else %}
+  {% assign seo_title = raw_title | append: " | " | append: site.title %}
 {% endif %}
 
-<title>{{ site.title }} - Homepage</title>
-
-{% assign seo_description = page.description | default: page.excerpt | default: site.description %}
+{% assign seo_description = page.description | default: page.seo_description | default: page.excerpt %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}
+  {% assign seo_description = seo_description | default: site.description_zh | default: site.description %}
+{% else %}
+  {% assign seo_description = seo_description | default: site.description %}
+{% endif %}
 {% if seo_description %}
   {% assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once %}
 {% endif %}
 
-{% assign seo_author = page.author | default: page.author[0] | default: site.author[0] %}
-{% if seo_author %}
-  {% if seo_author.twitter %}
-    {% assign seo_author_twitter = seo_author.twitter %}
+{% assign seo_keywords = page.keywords | default: site.keywords %}
+
+<title>{{ seo_title | escape }}</title>
+
+{% if seo_description %}
+  <meta name="description" content="{{ seo_description }}">
+{% endif %}
+{% if seo_keywords %}
+  {% if seo_keywords[0] %}
+    <meta name="keywords" content="{{ seo_keywords | join: ', ' | escape }}">
   {% else %}
-    {% if site.data.authors and site.data.authors[seo_author] %}
-      {% assign seo_author_twitter = site.data.authors[seo_author].twitter  %}
-    {% else %}
-      {% assign seo_author_twitter = seo_author  %}
-    {% endif %}
+    <meta name="keywords" content="{{ seo_keywords | escape }}">
   {% endif %}
-  {% assign seo_author_twitter = seo_author_twitter | replace: "@", "" %}
 {% endif %}
 
-<meta property="og:locale" content="en">
-<meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{{ site.title }}">
-
-{% if seo_url %}
-  <link rel="canonical" href="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
-  <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
-{% endif %}
-
-{% if page.excerpt %}
+<meta property="og:locale" content="{{ og_locale }}">
+<meta property="og:locale:alternate" content="{{ og_locale_alt }}">
+<meta property="og:type" content="{% if page_path == '/' %}website{% else %}article{% endif %}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+{% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
-
-{% if site.twitter.username %}
-  <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
-  <meta name="twitter:description" content="{{ seo_description }}">
-  <meta name="twitter:url" content="{{ canonical_url }}">
-
-  {% if seo_author_twitter %}
-    <meta name="twitter:creator" content="@{{ seo_author_twitter }}">
-  {% endif %}
+{% if site.author.avatar %}
+  <meta property="og:image" content="{{ site.author.avatar | absolute_url }}">
 {% endif %}
+
+<link rel="canonical" href="{{ canonical_url }}">
+
+<meta name="twitter:card" content="summary">
+{% if site.author.twitter %}
+  <meta name="twitter:site" content="@{{ site.author.twitter | replace: '@', '' }}">
+  <meta name="twitter:creator" content="@{{ site.author.twitter | replace: '@', '' }}">
+{% endif %}
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+{% if seo_description %}
+  <meta name="twitter:description" content="{{ seo_description }}">
+{% endif %}
+<meta name="twitter:url" content="{{ canonical_url }}">
 
 {% if site.facebook %}
   {% if site.facebook.publisher %}
     <meta property="article:publisher" content="{{ site.facebook.publisher }}">
   {% endif %}
-
   {% if site.facebook.app_id %}
     <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
   {% endif %}
@@ -72,4 +88,6 @@
 {% if site.baidu_site_verification %}
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}" />
 {% endif %}
+
+{% include json-ld.html %}
 <!-- end SEO -->

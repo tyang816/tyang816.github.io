@@ -1,0 +1,77 @@
+{% assign seo_url = site.url | default: site.github.url | default: "https://tyang816.github.io" %}
+{% assign page_path = page.url | replace: "index.html", "" %}
+{% assign canonical_url = page_path | absolute_url %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign raw_title = page.title | strip %}
+{% if page_path == "/" or raw_title == "" %}
+  {% assign ld_name = site.seo_title | default: "Yang Tan | AI for Biology & TCM LLMs" %}
+{% else %}
+  {% assign ld_name = raw_title | append: " | " | append: site.title %}
+{% endif %}
+{% assign ld_description = page.description | default: page.seo_description | default: page.excerpt %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}
+  {% assign ld_description = ld_description | default: site.description_zh | default: site.description %}
+{% else %}
+  {% assign ld_description = ld_description | default: site.description %}
+{% endif %}
+{% if ld_description %}
+  {% assign ld_description = ld_description | markdownify | strip_html | strip_newlines | replace: '&amp;', '&' | replace: '&quot;', '"' | replace: '&#39;', "'" %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ seo_url }}/#website",
+      "url": "{{ seo_url }}/",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": ["en", "zh-CN"],
+      "publisher": { "@id": "{{ seo_url }}/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ seo_url }}/#person",
+      "name": {{ site.author.name | jsonify }},
+      "alternateName": {{ site.author.name_zh | default: "谭扬" | jsonify }},
+      "url": "{{ seo_url }}/",
+      "image": {{ site.author.avatar | absolute_url | jsonify }},
+      "jobTitle": "PhD Student",
+      "email": {{ site.author.email | jsonify }},
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "Shanghai Jiao Tong University"
+        },
+        {
+          "@type": "Organization",
+          "name": "Shanghai Innovation Institute"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/{{ site.author.github }}",
+        {{ site.author.googlescholar | jsonify }},
+        {{ site.author.orcid | jsonify }},
+        {{ site.author.researchgate | jsonify }},
+        "https://twitter.com/{{ site.author.twitter }}"
+      ],
+      "knowsAbout": {{ site.keywords | jsonify }}
+    },
+    {
+      "@type": {% if page_path == "/tcm/" %}["WebPage", "CollectionPage"]{% else %}"WebPage"{% endif %},
+      "@id": "{{ canonical_url }}#webpage",
+      "url": {{ canonical_url | jsonify }},
+      "name": {{ ld_name | jsonify }},
+      "description": {{ ld_description | jsonify }},
+      "isPartOf": { "@id": "{{ seo_url }}/#website" },
+      "about": { "@id": "{{ seo_url }}/#person" },
+      "inLanguage": {{ page_lang | jsonify }}
+      {% if page_path == "/tcm/" %}
+      ,"relatedLink": "https://github.com/tyang816/Awesome-TCM-LLM"
+      {% endif %}
+    }
+  ]
+}
+</script>
