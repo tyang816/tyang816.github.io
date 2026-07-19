@@ -28,17 +28,14 @@ redirect_from:
 
 My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html) and co-advised by Prof. [Nanqing Dong](https://eveningdong.github.io/). I receive my M.S. degree of Computer Science (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2022.
 
-谭扬，上海交通大学与上海创智学院博士生，研究方向为人工智能与生物学交叉（AI for Biology）、蛋白质语言模型，并维护开源[中医大模型资源列表]({{ '/tcm/' | relative_url }})（[Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM)）。
-
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
 - *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
 - *Biology research*: Directed Evolution, Function Prediction, and Binder Design.
 
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc).
 
-**On this site:** [Paper Notes]({{ '/notes/' | relative_url }}) · [TCM AI resources / 中医大模型]({{ '/tcm/' | relative_url }}) · [Life Timeline]({{ '/timeline/' | relative_url }}).
-
 # 🔥 News
+- *2026.07*: &nbsp;🎉 [MatwingsVenus (晓鹜)](https://matvenus.com/) wins the **WAIC 2026 National Treasure** and is featured at the [WAIC 2026](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A).
 - *2026.04*: &nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
 - *2026.01*: &nbsp;🎉 [VenusX](https://github.com/ai4protein/VenusX) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here](https://ai4protein.github.io/venusx/).
 - *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine — browse at [/tcm/]({{ '/tcm/' | relative_url }}).
@@ -162,7 +159,8 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 
 
 # 🏆 Honors and Awards
-- *2026*, ***Shanghai Innovation Institute Student Project (1250,000 RMB)***, *Project Leader*, Ph.D.
+- *2026*, ***WAIC 2026 National Treasure***, *MatwingsVenus (晓鹜)*, *Project Leader*, Ph.D.
+- *2026*, ***Shanghai Innovation Institute Student Project (1,250,000 RMB)***, *Project Leader*, Ph.D.
 - *2025*, ***Young Science and Technology Talent Development Program (40,000 RMB)***, CAST, Ph.D.
 - *2025*, College Graduate Excellence Award of Shanghai, M.S.
 - *2025*, Huanchuang Scholarship (10 in university), M.S.
@@ -185,6 +183,15 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 <span class='anchor' id='-media-coverage'></span>
 
 # 📰 Media Coverage
+
+- *2026.07* &nbsp;**【直播嘉宾】** [澎湃科技聊天室｜智能体时代的生产力变革和Token工厂](https://m.thepaper.cn/newsDetail_forward_33581042)  
+  **Livestream guest**: *The Paper Tech Chat Room | Productivity Shifts and Token Factories in the Agent Era* · 澎湃新闻 / The Paper
+
+- *2026.07* &nbsp;**【专访】** [00后博士生鏖战两年5个月，自研AI平台登顶世界人工智能大会“镇馆之宝”](http://www.why.com.cn/wx/article/2026/07/17/17842888641296148616.html)  
+  **Interview**: *Gen-Z PhD Student Builds AI Platform Featured as a WAIC Highlight* · 青年报 / Youth Daily
+
+- *2026.07* &nbsp;**【专访】** [WAIC2026镇馆之宝背后：一场00后“天才少年”始于亲情的AI跨界](https://mp.weixin.qq.com/s/PVAmXrhJTFOu2yW1QC-8gg)  
+  **Interview**: *Behind the WAIC 2026 Highlight: A Gen-Z “Whiz Kid” and an AI Journey Rooted in Family* · 天鹜科技 / Tianwu Tech
 
 - *2026.06* &nbsp;**【专访】** [学科交叉·研途探路｜张江高研院优秀学子](https://mp.weixin.qq.com/s/G02NyULQ77qx9cjaZGzUdw)  
   **Interview**: *Interdisciplinary Research Paths | ZIAS Outstanding Student Feature* · 上海交通大学张江高等研究院 / SJTU ZIAS
