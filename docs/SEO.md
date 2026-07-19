@@ -1,6 +1,6 @@
 # SEO 与中英文收录操作指南
 
-站点已支持全站双语（`/` ↔ `/zh/` 等）与 `hreflang`。以下步骤需你在各站长平台用账号完成；拿到验证码后填入仓库根目录 `_config.yml` 对应字段并重新部署。
+站点已支持全站双语（`/` ↔ `/zh/` 等）与 `hreflang`。**Google Search Console 站点验证已完成**（`google_site_verification` 已写入 `_config.yml` 并部署）。以下步骤需你在各站长平台用账号完成。
 
 ## 规范 URL
 
@@ -14,24 +14,28 @@
 | 双语对照 sitemap | `https://tyang816.github.io/sitemap_i18n.xml` |
 | robots | `https://tyang816.github.io/robots.txt` |
 
-重点申请索引：`/`、`/zh/`、`/tcm/`、`/tcm-en/`、`/notes/`、`/zh/notes/`。
+重点申请索引：`/`、`/zh/`、`/tcm/`、`/tcm-en/`、`/notes/`、`/zh/notes/`、`/timeline/`、`/zh/timeline/`。
 
 ---
 
-## 1. Google Search Console
+## 1. Google Search Console（验证已完成 → 收尾）
 
-1. 打开 [Google Search Console](https://search.google.com/search-console)
-2. 「网址前缀」添加 `https://tyang816.github.io`
-3. 验证选 **HTML 标记**，复制 content 字符串
-4. 填入 `_config.yml`：
+1. 打开 [Google Search Console](https://search.google.com/search-console)，确认属性 `https://tyang816.github.io` 已验证
+2. **站点地图**：左侧「站点地图」→ 分别提交：
+   - `sitemap.xml`
+   - `sitemap_i18n.xml`
+3. **请求编入索引**：顶部「网址检查」→ 逐条粘贴下列 URL →「请求编入索引」：
+   - `https://tyang816.github.io/`
+   - `https://tyang816.github.io/zh/`
+   - `https://tyang816.github.io/tcm/`
+   - `https://tyang816.github.io/tcm-en/`
+   - `https://tyang816.github.io/notes/`
+   - `https://tyang816.github.io/zh/notes/`
+   - `https://tyang816.github.io/timeline/`
+   - `https://tyang816.github.io/zh/timeline/`
+4. 数日后在「页面」/「索引」中查看上述 URL 是否已收录
 
-```yaml
-google_site_verification: "粘贴这里"
-```
-
-5. 部署后确认首页源码含验证 meta，再点验证
-6. 提交站点地图：`sitemap.xml` 与 `sitemap_i18n.xml`
-7. 网址检查并请求索引：`/`、`/zh/`、`/tcm/`、`/notes/`
+> 仓库侧：`robots.txt` 已声明两个 sitemap；`sitemap.xml`（jekyll-sitemap）与 `sitemap_i18n.xml`（手写 hreflang 对照）均已包含上表全部关键 URL。
 
 ---
 
@@ -39,18 +43,20 @@ google_site_verification: "粘贴这里"
 
 1. 打开 [Bing Webmaster](https://www.bing.com/webmasters)
 2. 可从 Google 导入，或独立验证（`msvalidate.01`）
-3. 填入：
+3. 若尚未验证，填入 `_config.yml`：
 
 ```yaml
 bing_site_verification: "粘贴这里"
 ```
 
 4. 提交上述两个 sitemap
-5. 对重点 URL 提交收录
+5. 对「重点申请索引」中的 URL 提交收录
 
 ---
 
-## 3. 百度搜索资源平台（中文）
+## 3. 百度搜索资源平台（可选，可跳过）
+
+GitHub Pages 在国内访问与百度抓取均不稳定，**可跳过**。若仍要尝试：
 
 1. 打开 [百度搜索资源平台](https://ziyuan.baidu.com/)
 2. 添加 `https://tyang816.github.io`
@@ -73,6 +79,10 @@ curl -sL https://tyang816.github.io/ | rg 'hreflang|canonical|title>'
 curl -sL https://tyang816.github.io/zh/ | rg 'hreflang|lang=|谭扬|title>'
 curl -sL https://tyang816.github.io/sitemap_i18n.xml | head -40
 curl -sL https://tyang816.github.io/robots.txt
+# 确认 sitemap.xml 含关键页
+for u in / /zh/ /tcm/ /tcm-en/ /notes/ /zh/notes/ /timeline/ /zh/timeline/; do
+  curl -sL https://tyang816.github.io/sitemap.xml | grep -F "https://tyang816.github.io${u}</loc>" && echo "OK $u" || echo "MISSING $u"
+done
 ```
 
 期望：
@@ -81,12 +91,17 @@ curl -sL https://tyang816.github.io/robots.txt
 - 各自 `canonical` 指向自身语言 URL
 - 导航可见 **EN | 中文** 切换
 - `/tcm/` ↔ `/tcm-en/` 互为 alternate
+- `robots.txt` 声明 `sitemap.xml` 与 `sitemap_i18n.xml`；两个 sitemap 均含上表 8 个关键 URL
 
 ---
 
-## 5. Token 状态提醒
+## 5. Token 状态
 
-当前 `_config.yml` 中三家 verification 字段仍为空。完成验证前，搜索引擎可能延迟信任站点；**请尽快填入 token 并 push**，否则双语 SEO 无法在站长后台闭环。
+| 平台 | `_config.yml` 字段 | 状态 |
+|------|-------------------|------|
+| Google | `google_site_verification` | ✅ 已配置并验证 |
+| Bing | `bing_site_verification` | 待填（可选） |
+| 百度 | `baidu_site_verification` | 可跳过 |
 
 ---
 

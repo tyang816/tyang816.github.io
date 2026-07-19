@@ -30,7 +30,7 @@ author_profile: true
 - *2026.07*：&nbsp;🎉 [MatwingsVenus（晓鹜）](https://matvenus.com/) 获 **WAIC 2026 镇馆之宝**，见 [报道](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A)。
 - *2026.04*：&nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
 - *2026.01*：&nbsp;🎉 [VenusX](https://github.com/ai4protein/VenusX) 被 [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG) 接收，榜单见 [VenusX Leaderboard](https://ai4protein.github.io/venusx/)。
-- *2025.10*：&nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 汇总中医大模型新闻与开源资源，浏览 [中医大模型门户]({{ '/tcm/' | relative_url }})。
+- *2025.10*：&nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 汇总中医大模型新闻与开源资源，与 [中医大模型门户]({{ '/tcm/' | relative_url }}) 同源同步更新。
 - *2025.04*：&nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) 在 [ProteinGym Substitution](https://proteingym.org/benchmarks) 与 [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) 取得第一。
 
 <span class='anchor' id='-selected-publications'></span>

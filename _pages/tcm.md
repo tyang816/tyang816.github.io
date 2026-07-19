@@ -25,9 +25,13 @@ Curated open resources for Traditional Chinese Medicine LLMs — models, benchma
 
 <p id="tcm-updated" style="margin:4px 0 12px; opacity:0.8;"></p>
 <p style="margin-bottom:16px;">
-  <a href="https://github.com/tyang816/Awesome-TCM-LLM">GitHub Awesome-TCM-LLM</a>
+  数据与 <a href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">GitHub Awesome-TCM-LLM</a> 同源维护
   ·
-  <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml">Submit a resource</a>
+  <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml" target="_blank" rel="noopener noreferrer">提交资源</a>
+  ·
+  <a href="{{ '/tcm-en/' | relative_url }}">English /tcm-en/</a>
+  ·
+  <a href="{{ '/zh/' | relative_url }}">谭扬主页 /zh/</a>
 </p>
 
 ### Overview
@@ -47,7 +51,7 @@ Curated open resources for Traditional Chinese Medicine LLMs — models, benchma
 <div id="tcm-results" style="margin-top:16px;"></div>
 
 <p style="margin-top:24px; opacity:0.85;">
-  Star the list on <a href="https://github.com/tyang816/Awesome-TCM-LLM">GitHub</a> if you find it useful.
+  觉得有用请在 <a href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">GitHub</a> 点 Star；英文说明见 <a href="{{ '/tcm-en/' | relative_url }}">/tcm-en/</a>。
 </p>
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>

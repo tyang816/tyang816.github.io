@@ -35,6 +35,8 @@ Data is maintained in [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-
 Suggest a resource via [GitHub Issue](https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml).
 
 <p style="margin-top:1.5rem;">
+  <a href="{{ '/' | relative_url }}">Yang Tan homepage /</a>
+  ·
   <a href="{{ '/tcm/' | relative_url }}">中文版门户 /tcm/</a>
   ·
   <a href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">GitHub Awesome-TCM-LLM</a>

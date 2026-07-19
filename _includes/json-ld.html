@@ -68,7 +68,7 @@
       "isPartOf": { "@id": "{{ seo_url }}/#website" },
       "about": { "@id": "{{ seo_url }}/#person" },
       "inLanguage": {{ page_lang | jsonify }}
-      {% if page_path == "/tcm/" %}
+      {% if page_path == "/tcm/" or page_path == "/tcm-en/" %}
       ,"relatedLink": "https://github.com/tyang816/Awesome-TCM-LLM"
       {% endif %}
     }
