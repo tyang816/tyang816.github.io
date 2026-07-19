@@ -1,4 +1,4 @@
-# main links links
+# English nav (default)
 main:
   - title: "News"
     url: "/#-news"
@@ -16,7 +16,30 @@ main:
     url: "/notes/"
 
   - title: "TCM AI"
-    url: "/tcm/"
+    url: "/tcm-en/"
 
   - title: "Life Timeline"
     url: "/timeline/"
+
+# Chinese nav
+main_zh:
+  - title: "新闻"
+    url: "/zh/#-news"
+
+  - title: "代表性论文"
+    url: "/zh/#-selected-publications"
+
+  - title: "荣誉奖项"
+    url: "/zh/#-honors-and-awards"
+
+  - title: "教育与媒体"
+    url: "/zh/#-educations"
+
+  - title: "论文笔记"
+    url: "/zh/notes/"
+
+  - title: "中医大模型"
+    url: "/tcm/"
+
+  - title: "人生时间线"
+    url: "/zh/timeline/"

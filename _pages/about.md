@@ -2,15 +2,15 @@
 permalink: /
 title: ""
 lang: en
-description: "Yang Tan (谭扬) — PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI for Biology, protein language models, and Traditional Chinese Medicine LLMs."
-seo_description: "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI for Biology, protein LMs, and TCM LLMs. Browse paper notes and the TCM AI resource portal."
+alt_url: /zh/
+description: "Yang Tan (谭扬) — PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI4Science."
+seo_description: "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI4Science."
 keywords:
   - Yang Tan
   - 谭扬
-  - AI for Biology
-  - protein language model
-  - TCM LLM
-  - 中医大模型
+  - AI4Science
+  - Shanghai Jiao Tong University
+  - Shanghai Innovation Institute
 author_profile: true
 redirect_from: 
   - /about/
@@ -41,122 +41,13 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 - *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine — browse at [/tcm/]({{ '/tcm/' | relative_url }}).
 - *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
 
+<span class='anchor' id='-selected-publications'></span>
+
 # 📝 Selected Publications 
 
-\* denotes equal contribution.
+{% include selected-publications.html %}
 
-## ✈️ Conference
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/papers/venusx.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[VenusX: Unlocking Fine-Grained Functional Understanding of Proteins](https://openreview.net/forum?id=zcmL592XRG)
-
-**Yang Tan**, Wenrui Gou, Bozitao Zhong, Huiqun Yu, Liang Hong, Bingxin Zhou
-
-<a href="https://ai4protein.github.io/venusx/"><img src="https://img.shields.io/badge/VenusX-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/collections/AI4Protein/venusx-dataset"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
-<a href="https://github.com/ai4protein/VenusX"><img src="https://img.shields.io/github/stars/ai4protein/VenusX?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_VENUSX"></span>
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL Demo 2025</div><img src='images/papers/venusfactory.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[VenusFactory: An Integrated System for Protein Engineering with Data Retrieval and Language Model Fine-Tuning](https://aclanthology.org/2025.acl-demo.23/)
-
-**Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
-
-<a href="https://venusfactory.bio"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
-<a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_VENUSFACTORY"></span>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISMB/ECCB 2025</div><img src='images/papers/venusrem.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[From high-throughput evaluation to wet-lab studies: advancing mutation effect prediction with a retrieval-enhanced model](https://academic.oup.com/bioinformatics/article/41/Supplement_1/i401/8199374)
-
-**Yang Tan**, Ruilin Wang, Banghao Wu, Liang Hong, Bingxin Zhou
-
-<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
-<a href="https://github.com/ai4protein/VenusREM"><img src="https://img.shields.io/github/stars/ai4protein/VenusREM?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_VENUSREM"></span>
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/papers/prosst.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[ProSST: Protein Language Modeling with Quantized Structure and Disentangled Attention](https://proceedings.neurips.cc/paper_files/paper/2024/file/3ed57b293db0aab7cc30c44f45262348-Paper-Conference.pdf)
-
-Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wanli Ouyang, Bingxin Zhou, Pan Tan, Liang Hong
-
-<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/AI4Protein/ProSST-2048"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
-<a href="https://github.com/ai4protein/ProSST"><img src="https://img.shields.io/github/stars/ai4protein/ProSST?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_PROSST"></span>
-</div>
-</div>
-
-## 📚 Journal
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">eLife 2025</div><img src='images/papers/protssn.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Semantical and geometrical protein encoding toward enhanced bioactivity and thermostability](https://elifesciences.org/articles/98033)
-
-**Yang Tan**, Bingxin Zhou, Lirong Zheng, Guisheng Fan, Liang Hong
-
-<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/tyang816/ProtSSN"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
-<a href="https://github.com/ai4protein/ProtSSN"><img src="https://img.shields.io/github/stars/ai4protein/ProtSSN?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_PROTSSN"></span>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Comput. Biol. Med. 2024</div><img src='images/papers/medchatzh.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[MedChatZH: A tuning LLM for traditional Chinese medicine consultations](https://www.researchgate.net/profile/Yang-Tan-33/publication/378954165_MedChatZH_A_tuning_LLM_for_traditional_Chinese_medicine_consultations/links/665fddc716dcf74fcec20c20/MedChatZH-A-tuning-LLM-for-traditional-Chinese-medicine-consultations.pdf)
-
-**Yang Tan**, Zhixing Zhang, Mingchen Li, Fei Pan, Hao Duan, Zijie Huang, Hua Deng, Zhuohang Yu, Chen Yang, Guoyang Shen, Peng Qi, Chengyuan Yue, Yuxian Liu, Liang Hong, Huiqun Yu, Guisheng Fan, Yun Tang
-
-<a href="https://huggingface.co/datasets/tyang816/MedChatZH"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
-<a href="https://huggingface.co/tyang816/medchatzh"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
-<a href="https://github.com/tyang816/medchatzh"><img src="https://img.shields.io/github/stars/tyang816/medchatzh?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_MEDCHATZH"></span>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">J. Chem. Inf. Model. 2024</div><img src='images/papers/ses-adapter.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Simple, efficient, and scalable structure-aware adapter boosts protein language models](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00689)
-
-**Yang Tan**, Mingchen Li, Bingxin Zhou, Bozitao Zhong, Lirong Zheng, Pan Tan, Ziyi Zhou, Huiqun Yu, Guisheng Fan, Liang Hong
-
-<a href="https://github.com/tyang816/ses-adapter"><img src="https://img.shields.io/github/stars/tyang816/ses-adapter?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_SESADAPTER"></span>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">J. Cheminformatics 2024</div><img src='images/papers/peta.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[PETA: evaluating the impact of protein transfer learning with sub-word tokenization on downstream applications](https://link.springer.com/article/10.1186/s13321-024-00884-3)
-
-**Yang Tan**, Mingchen Li, Ziyi Zhou, Pan Tan, Huiqun Yu, Guisheng Fan, Liang Hong
-
-<a href="https://github.com/mingchen-li/ProteinPretraining"><img src="https://img.shields.io/github/stars/mingchen-li/ProteinPretraining?style=social&label=Code+Stars" style="max-width: 100%;"></a>
-<span class="show_paper_citations" data="PLACEHOLDER_PETA"></span>
-</div>
-</div>
-
+<span class='anchor' id='-honors-and-awards'></span>
 
 # 🏆 Honors and Awards
 - *2026*, ***WAIC 2026 National Treasure***, *MatwingsVenus (晓鹜)*, *Project Leader*, Ph.D.
@@ -177,48 +68,14 @@ Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wa
 - *2019*, Lingma Scholarship (4 in major), B.S.
 - *2018*, District Mayor Award for Science and Technology Innovation of Shapingba, Chongqing.
 - *2017*, ***Third Prize at World Championship***, American Houston FIRST Tech Challenge, *Team Leader*.
-- *2017*，*Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
+- *2017*, *Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
 - *2017/2016*, *First/Second Prize*, China FIRST Tech Challenge, *Team Leader*.
 
 <span class='anchor' id='-media-coverage'></span>
 
 # 📰 Media Coverage
 
-- *2026.07* &nbsp;**【直播嘉宾】** [澎湃科技聊天室｜智能体时代的生产力变革和Token工厂](https://m.thepaper.cn/newsDetail_forward_33581042)  
-  **Livestream guest**: *The Paper Tech Chat Room | Productivity Shifts and Token Factories in the Agent Era* · 澎湃新闻 / The Paper
-
-- *2026.07* &nbsp;**【专访】** [00后博士生鏖战两年5个月，自研AI平台登顶世界人工智能大会“镇馆之宝”](http://www.why.com.cn/wx/article/2026/07/17/17842888641296148616.html)  
-  **Interview**: *Gen-Z PhD Student Builds AI Platform Featured as a WAIC Highlight* · 青年报 / Youth Daily
-
-- *2026.07* &nbsp;**【专访】** [WAIC2026镇馆之宝背后：一场00后“天才少年”始于亲情的AI跨界](https://mp.weixin.qq.com/s/PVAmXrhJTFOu2yW1QC-8gg)  
-  **Interview**: *Behind the WAIC 2026 Highlight: A Gen-Z “Whiz Kid” and an AI Journey Rooted in Family* · 天鹜科技 / Tianwu Tech
-
-- *2026.06* &nbsp;**【专访】** [学科交叉·研途探路｜张江高研院优秀学子](https://mp.weixin.qq.com/s/G02NyULQ77qx9cjaZGzUdw)  
-  **Interview**: *Interdisciplinary Research Paths | ZIAS Outstanding Student Feature* · 上海交通大学张江高等研究院 / SJTU ZIAS
-
-- *2026.05* &nbsp;**【专访】** [智咖请就位｜在交叉地带，做 AI for Science 的「枢纽」](https://mp.weixin.qq.com/s/Rd5htZnrumOPLIyVZ7XKoA)  
-  **Interview**: *Meet the Innovators | Being a Hub at the Crossroads of AI for Science* · 上海创智学院 / Shanghai Innovation Institute (SII)
-
-- *2026.05* &nbsp;**【专访】** [做生物制造，先学好与 AI「对话」](https://app.ceweekly.cn/h5/#/pages/detail/articleDetail/articleDetail?id=493769)  
-  **Interview**: *Learning Bio-manufacturing Starts with Dialogue with AI* · 中国经济周刊 / China Economic Weekly
-
-- *2025.06* &nbsp;[信息学院 2025 届毕业典礼研究生代表发言](https://cise.ecust.edu.cn/2025/0626/c7691a180334/page.htm)  
-  *Graduate Representative Speech at CISE 2025 Commencement* · 华东理工大学信息科学与工程学院 / ECUST School of Information Science & Engineering
-
-- *2025.04* &nbsp;[追光而行！年度大学生人物名单揭晓](https://mp.weixin.qq.com/s?__biz=MjM5ODcwMDgyMQ==&mid=2650775806&idx=1&sn=5fa12b4bfa771b2b1ea3c4fe066daab1&chksm=bf5857a043ce8308517a98edde1c5ee26e0fa199a75d559e57110977eb81b5531cbcaafe47f6&scene=27)  
-  *Chasing the Light | ECUST Annual Student Figures* · 小花梨 / Huahli (ECUST Official WeChat)
-
-- *2022.05* &nbsp;[花梨学子说｜华东理工大学优秀学生分享](https://mp.weixin.qq.com/s/zmPQTAUalat6FGJk-Ulffw)  
-  *Huahli Student Stories | ECUST Outstanding Student Feature* · 华东理工大学 / East China University of Science and Technology (ECUST)
-
-- *2017.06* &nbsp;[重庆七中：为孩子更美好的未来奠基](https://news.youth.cn/jsxw/201706/t20170629_10189005.htm)  
-  *Chongqing No.7 High School: Building a Better Future for Children* · 重庆日报、中国青年网 / Chongqing Daily, China Youth Daily
-
-- *2016.06* &nbsp;[2016 重庆七中优秀学子青春成长故事会](https://education.cqnews.net/html/node_378089.htm)  
-  *2016 CQ No.7 High School Outstanding Students Growth Stories* · 华龙网 / CQNEWS
-
-- *2016.04* &nbsp;[2016 FTC 科技挑战赛：重庆七中斩获「冠、亚军联盟」](https://www.163.com/news/article/BL1A019800014AEE.html)  
-  *2016 FTC Challenge: Chongqing No.7 High School Wins Champion & Finalist Alliance* · 网易新闻 / NetEase News
+{% include media-list.html lang="en" %}
 
 # 📖 Educations
 - *2025.09 - Now*, Shanghai Jiao Tong University & Shanghai Innovation Institute. Ph.D. in Computer Science. 

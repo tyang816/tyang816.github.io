@@ -4,23 +4,29 @@
 {% if page_lang == "zh-CN" or page_lang == "zh" %}
   {% assign og_locale = "zh_CN" %}
   {% assign og_locale_alt = "en_US" %}
+  {% assign is_zh_page = true %}
 {% else %}
   {% assign og_locale = "en_US" %}
   {% assign og_locale_alt = "zh_CN" %}
+  {% assign is_zh_page = false %}
 {% endif %}
 
 {% assign page_path = page.url | replace: "index.html", "" %}
 {% assign canonical_url = page_path | absolute_url %}
 
 {% assign raw_title = page.title | strip %}
-{% if page_path == "/" or raw_title == "" %}
+{% if page.seo_title %}
+  {% assign seo_title = page.seo_title %}
+{% elsif page_path == "/zh/" %}
+  {% assign seo_title = site.seo_title_zh | default: "谭扬 | AI for Biology 与中医大模型" %}
+{% elsif page_path == "/" or raw_title == "" %}
   {% assign seo_title = site.seo_title | default: "Yang Tan | AI for Biology & TCM LLMs" %}
 {% else %}
   {% assign seo_title = raw_title | append: " | " | append: site.title %}
 {% endif %}
 
 {% assign seo_description = page.description | default: page.seo_description | default: page.excerpt %}
-{% if page_lang == "zh-CN" or page_lang == "zh" %}
+{% if is_zh_page %}
   {% assign seo_description = seo_description | default: site.description_zh | default: site.description %}
 {% else %}
   {% assign seo_description = seo_description | default: site.description %}
@@ -46,7 +52,7 @@
 
 <meta property="og:locale" content="{{ og_locale }}">
 <meta property="og:locale:alternate" content="{{ og_locale_alt }}">
-<meta property="og:type" content="{% if page_path == '/' %}website{% else %}article{% endif %}">
+<meta property="og:type" content="{% if page_path == '/' or page_path == '/zh/' %}website{% else %}article{% endif %}">
 <meta property="og:site_name" content="{{ site.title | escape }}">
 <meta property="og:title" content="{{ seo_title | escape }}">
 <meta property="og:url" content="{{ canonical_url }}">
@@ -59,6 +65,18 @@
 
 <link rel="canonical" href="{{ canonical_url }}">
 
+{% if page.alt_url %}
+  {% assign alt_abs = page.alt_url | absolute_url %}
+  {% if is_zh_page %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ canonical_url }}">
+    <link rel="alternate" hreflang="en" href="{{ alt_abs }}">
+  {% else %}
+    <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ alt_abs }}">
+  {% endif %}
+  <link rel="alternate" hreflang="x-default" href="{{ seo_url }}/">
+{% endif %}
+
 <meta name="twitter:card" content="summary">
 {% if site.author.twitter %}
   <meta name="twitter:site" content="@{{ site.author.twitter | replace: '@', '' }}">
@@ -69,15 +87,6 @@
   <meta name="twitter:description" content="{{ seo_description }}">
 {% endif %}
 <meta name="twitter:url" content="{{ canonical_url }}">
-
-{% if site.facebook %}
-  {% if site.facebook.publisher %}
-    <meta property="article:publisher" content="{{ site.facebook.publisher }}">
-  {% endif %}
-  {% if site.facebook.app_id %}
-    <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
-  {% endif %}
-{% endif %}
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />

@@ -1,0 +1,13 @@
+{% assign media_lang = include.lang | default: page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if media_lang == "zh-CN" or media_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% for item in site.data.media.items %}
+{% assign role_meta = site.data.media.roles[item.role] %}
+{% if is_zh %}
+- *{{ item.date }}* &nbsp;**【{{ role_meta.zh }}】** [{{ item.title_zh | default: item.title_en }}]({{ item.url }})  
+  {{ item.outlet_zh | default: item.outlet_en }}{% if item.title_en and item.title_en != item.title_zh %} · *{{ item.title_en }}*{% endif %}
+{% else %}
+- *{{ item.date }}* &nbsp;**【{{ role_meta.zh }}】** [{{ item.title_zh | default: item.title_en }}]({{ item.url }})  
+  **{{ role_meta.en }}**: *{{ item.title_en | default: item.title_zh }}* · {{ item.outlet_zh }} / {{ item.outlet_en }}
+{% endif %}
+{% endfor %}

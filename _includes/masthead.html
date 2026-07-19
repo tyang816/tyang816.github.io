@@ -1,16 +1,44 @@
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign nav_links = site.data.navigation.main_zh %}
+  {% assign home_label = site.data.i18n.zh.home %}
+  {% assign home_url = "/zh/" %}
+{% else %}
+  {% assign nav_links = site.data.navigation.main %}
+  {% assign home_label = site.data.i18n.en.home %}
+  {% assign home_url = "/" %}
+{% endif %}
+{% assign alt_url = page.alt_url | default: "/zh/" %}
+{% if is_zh %}
+  {% assign alt_url = page.alt_url | default: "/" %}
+{% endif %}
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="{{ '/' | relative_url }}">Homepage</a></li>
-          {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="{{ home_url | relative_url }}">{{ home_label }}</a></li>
+          {% for link in nav_links %}
+            <li class="masthead__menu-item"><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
+    </div>
+    <div class="masthead__lang" aria-label="Language">
+      {% if is_zh %}
+        <a href="{{ alt_url | relative_url }}" hreflang="en" lang="en">EN</a>
+        <span class="masthead__lang-sep" aria-hidden="true">|</span>
+        <span class="masthead__lang-current" aria-current="true">中文</span>
+      {% else %}
+        <span class="masthead__lang-current" aria-current="true">EN</span>
+        <span class="masthead__lang-sep" aria-hidden="true">|</span>
+        <a href="{{ alt_url | relative_url }}" hreflang="zh-CN" lang="zh-CN">中文</a>
+      {% endif %}
     </div>
   </div>
 </div>

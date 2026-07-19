@@ -1,0 +1,124 @@
+{% assign pubs_lang = page.lang | default: site.lang | default: "en" %}
+{% if pubs_lang == "zh-CN" or pubs_lang == "zh" %}
+\* 表示共同一作。
+
+## ✈️ 会议论文
+{% else %}
+\* denotes equal contribution.
+
+## ✈️ Conference
+{% endif %}
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src="{{ '/images/papers/venusx.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[VenusX: Unlocking Fine-Grained Functional Understanding of Proteins](https://openreview.net/forum?id=zcmL592XRG)
+
+**Yang Tan**, Wenrui Gou, Bozitao Zhong, Huiqun Yu, Liang Hong, Bingxin Zhou
+
+<a href="https://ai4protein.github.io/venusx/"><img src="https://img.shields.io/badge/VenusX-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/collections/AI4Protein/venusx-dataset"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
+<a href="https://github.com/ai4protein/VenusX"><img src="https://img.shields.io/github/stars/ai4protein/VenusX?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSX"></span>
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL Demo 2025</div><img src="{{ '/images/papers/venusfactory.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[VenusFactory: An Integrated System for Protein Engineering with Data Retrieval and Language Model Fine-Tuning](https://aclanthology.org/2025.acl-demo.23/)
+
+**Yang Tan**, Chen Liu, Jingyuan Gao, Banghao Wu, Mingchen Li, Ruilin Wang, Lingrong Zhang, Huiqun Yu, Guisheng Fan, Liang Hong, Bingxin Zhou
+
+<a href="https://venusfactory.bio"><img src="https://img.shields.io/badge/Demo-🌐_Website-blue" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/AI4Protein/datasets"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
+<a href="https://github.com/ai4protein/VenusFactory"><img src="https://img.shields.io/github/stars/ai4protein/VenusFactory?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSFACTORY"></span>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISMB/ECCB 2025</div><img src="{{ '/images/papers/venusrem.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[From high-throughput evaluation to wet-lab studies: advancing mutation effect prediction with a retrieval-enhanced model](https://academic.oup.com/bioinformatics/article/41/Supplement_1/i401/8199374)
+
+**Yang Tan**, Ruilin Wang, Banghao Wu, Liang Hong, Bingxin Zhou
+
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/datasets/AI4Protein/VenusREM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
+<a href="https://github.com/ai4protein/VenusREM"><img src="https://img.shields.io/github/stars/ai4protein/VenusREM?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_VENUSREM"></span>
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src="{{ '/images/papers/prosst.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[ProSST: Protein Language Modeling with Quantized Structure and Disentangled Attention](https://proceedings.neurips.cc/paper_files/paper/2024/file/3ed57b293db0aab7cc30c44f45262348-Paper-Conference.pdf)
+
+Mingchen Li*, **Yang Tan\***, Xinzhu Ma, Bozitao Zhong, Huiqun Yu, Ziyi Zhou, Wanli Ouyang, Bingxin Zhou, Pan Tan, Liang Hong
+
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/AI4Protein/ProSST-2048"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
+<a href="https://github.com/ai4protein/ProSST"><img src="https://img.shields.io/github/stars/ai4protein/ProSST?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PROSST"></span>
+</div>
+</div>
+
+{% if pubs_lang == "zh-CN" or pubs_lang == "zh" %}
+## 📚 期刊论文
+{% else %}
+## 📚 Journal
+{% endif %}
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">eLife 2025</div><img src="{{ '/images/papers/protssn.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Semantical and geometrical protein encoding toward enhanced bioactivity and thermostability](https://elifesciences.org/articles/98033)
+
+**Yang Tan**, Bingxin Zhou, Lirong Zheng, Guisheng Fan, Liang Hong
+
+<a href="https://proteingym.org/benchmarks"><img src="https://img.shields.io/badge/ProteinGym-📈_Leaderboard-yellow" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/tyang816/ProtSSN"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
+<a href="https://github.com/ai4protein/ProtSSN"><img src="https://img.shields.io/github/stars/ai4protein/ProtSSN?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PROTSSN"></span>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Comput. Biol. Med. 2024</div><img src="{{ '/images/papers/medchatzh.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[MedChatZH: A tuning LLM for traditional Chinese medicine consultations](https://www.researchgate.net/profile/Yang-Tan-33/publication/378954165_MedChatZH_A_tuning_LLM_for_traditional_Chinese_medicine_consultations/links/665fddc716dcf74fcec20c20/MedChatZH-A-tuning-LLM-for-traditional-Chinese-medicine-consultations.pdf)
+
+**Yang Tan**, Zhixing Zhang, Mingchen Li, Fei Pan, Hao Duan, Zijie Huang, Hua Deng, Zhuohang Yu, Chen Yang, Guoyang Shen, Peng Qi, Chengyuan Yue, Yuxian Liu, Liang Hong, Huiqun Yu, Guisheng Fan, Yun Tang
+
+<a href="https://huggingface.co/datasets/tyang816/MedChatZH"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Dataset" style="max-width: 100%;"></a>
+<a href="https://huggingface.co/tyang816/medchatzh"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-red?label=Model" style="max-width: 100%;"></a>
+<a href="https://github.com/tyang816/medchatzh"><img src="https://img.shields.io/github/stars/tyang816/medchatzh?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_MEDCHATZH"></span>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">J. Chem. Inf. Model. 2024</div><img src="{{ '/images/papers/ses-adapter.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Simple, efficient, and scalable structure-aware adapter boosts protein language models](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00689)
+
+**Yang Tan**, Mingchen Li, Bingxin Zhou, Bozitao Zhong, Lirong Zheng, Pan Tan, Ziyi Zhou, Huiqun Yu, Guisheng Fan, Liang Hong
+
+<a href="https://github.com/tyang816/ses-adapter"><img src="https://img.shields.io/github/stars/tyang816/ses-adapter?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_SESADAPTER"></span>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">J. Cheminformatics 2024</div><img src="{{ '/images/papers/peta.png' | relative_url }}" alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[PETA: evaluating the impact of protein transfer learning with sub-word tokenization on downstream applications](https://link.springer.com/article/10.1186/s13321-024-00884-3)
+
+**Yang Tan**, Mingchen Li, Ziyi Zhou, Pan Tan, Huiqun Yu, Guisheng Fan, Liang Hong
+
+<a href="https://github.com/mingchen-li/ProteinPretraining"><img src="https://img.shields.io/github/stars/mingchen-li/ProteinPretraining?style=social&label=Code+Stars" style="max-width: 100%;"></a>
+<span class="show_paper_citations" data="PLACEHOLDER_PETA"></span>
+</div>
+</div>

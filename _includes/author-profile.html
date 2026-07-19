@@ -9,18 +9,21 @@
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% assign profile_lang = page.lang | default: site.lang | default: "en" %}
+    {% if profile_lang == "zh-CN" or profile_lang == "zh" %}
+      <h3 class="author__name">{{ author.name_zh | default: author.name }}{% if author.name_zh %} <span style="font-weight:400;opacity:.75;">({{ author.name }})</span>{% endif %}</h3>
+      {% if author.bio_zh or author.bio %}<p class="author__bio">{{ author.bio_zh | default: author.bio }}</p>{% endif %}
+    {% else %}
+      <h3 class="author__name">{{ author.name }}{% if author.name_zh %} <span style="font-weight:400;opacity:.75;">({{ author.name_zh }})</span>{% endif %}</h3>
+      {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
-      {% if site.description %}
-        <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
-      {% endif %}
-      {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+      {% if author.location or author.location_zh %}
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>{% if profile_lang == "zh-CN" or profile_lang == "zh" %} {{ author.location_zh | default: author.location }}{% else %} {{ author.location }}{% endif %}</li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>

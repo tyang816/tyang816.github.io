@@ -1,0 +1,110 @@
+roles:
+  interview:
+    en: "Interview"
+    zh: "专访"
+  livestream_guest:
+    en: "Livestream guest"
+    zh: "直播嘉宾"
+  speech:
+    en: "Speech"
+    zh: "发言"
+  feature:
+    en: "Feature"
+    zh: "报道"
+
+items:
+  - date: "2026.07"
+    role: livestream_guest
+    title_zh: "澎湃科技聊天室｜智能体时代的生产力变革和Token工厂"
+    title_en: "The Paper Tech Chat Room | Productivity Shifts and Token Factories in the Agent Era"
+    url: "https://m.thepaper.cn/newsDetail_forward_33581042"
+    outlet_zh: "澎湃新闻"
+    outlet_en: "The Paper"
+
+  - date: "2026.07"
+    role: interview
+    title_zh: "00后博士生鏖战两年5个月，自研AI平台登顶世界人工智能大会“镇馆之宝”"
+    title_en: "Gen-Z PhD Student Builds AI Platform Featured as a WAIC Highlight"
+    url: "http://www.why.com.cn/wx/article/2026/07/17/17842888641296148616.html"
+    outlet_zh: "青年报"
+    outlet_en: "Youth Daily"
+
+  - date: "2026.07"
+    role: interview
+    title_zh: "WAIC2026镇馆之宝背后：一场00后“天才少年”始于亲情的AI跨界"
+    title_en: "Behind the WAIC 2026 Highlight: A Gen-Z “Whiz Kid” and an AI Journey Rooted in Family"
+    url: "https://mp.weixin.qq.com/s/PVAmXrhJTFOu2yW1QC-8gg"
+    outlet_zh: "天鹜科技"
+    outlet_en: "Tianwu Tech"
+
+  - date: "2026.06"
+    role: interview
+    title_zh: "学科交叉·研途探路｜张江高研院优秀学子"
+    title_en: "Interdisciplinary Research Paths | ZIAS Outstanding Student Feature"
+    url: "https://mp.weixin.qq.com/s/G02NyULQ77qx9cjaZGzUdw"
+    outlet_zh: "上海交通大学张江高等研究院"
+    outlet_en: "SJTU ZIAS"
+
+  - date: "2026.05"
+    role: interview
+    title_zh: "智咖请就位｜在交叉地带，做 AI for Science 的「枢纽」"
+    title_en: "Meet the Innovators | Being a Hub at the Crossroads of AI for Science"
+    url: "https://mp.weixin.qq.com/s/Rd5htZnrumOPLIyVZ7XKoA"
+    outlet_zh: "上海创智学院"
+    outlet_en: "Shanghai Innovation Institute (SII)"
+
+  - date: "2026.05"
+    role: interview
+    title_zh: "做生物制造，先学好与 AI「对话」"
+    title_en: "Learning Bio-manufacturing Starts with Dialogue with AI"
+    url: "https://app.ceweekly.cn/h5/#/pages/detail/articleDetail/articleDetail?id=493769"
+    outlet_zh: "中国经济周刊"
+    outlet_en: "China Economic Weekly"
+
+  - date: "2025.06"
+    role: speech
+    title_zh: "信息学院 2025 届毕业典礼研究生代表发言"
+    title_en: "Graduate Representative Speech at CISE 2025 Commencement"
+    url: "https://cise.ecust.edu.cn/2025/0626/c7691a180334/page.htm"
+    outlet_zh: "华东理工大学信息科学与工程学院"
+    outlet_en: "ECUST School of Information Science & Engineering"
+
+  - date: "2025.04"
+    role: feature
+    title_zh: "追光而行！年度大学生人物名单揭晓"
+    title_en: "Chasing the Light | ECUST Annual Student Figures"
+    url: "https://mp.weixin.qq.com/s?__biz=MjM5ODcwMDgyMQ==&mid=2650775806&idx=1&sn=5fa12b4bfa771b2b1ea3c4fe066daab1&chksm=bf5857a043ce8308517a98edde1c5ee26e0fa199a75d559e57110977eb81b5531cbcaafe47f6&scene=27"
+    outlet_zh: "小花梨"
+    outlet_en: "Huahli (ECUST Official WeChat)"
+
+  - date: "2022.05"
+    role: feature
+    title_zh: "花梨学子说｜华东理工大学优秀学生分享"
+    title_en: "Huahli Student Stories | ECUST Outstanding Student Feature"
+    url: "https://mp.weixin.qq.com/s/zmPQTAUalat6FGJk-Ulffw"
+    outlet_zh: "华东理工大学"
+    outlet_en: "East China University of Science and Technology (ECUST)"
+
+  - date: "2017.06"
+    role: feature
+    title_zh: "重庆七中：为孩子更美好的未来奠基"
+    title_en: "Chongqing No.7 High School: Building a Better Future for Children"
+    url: "https://news.youth.cn/jsxw/201706/t20170629_10189005.htm"
+    outlet_zh: "重庆日报、中国青年网"
+    outlet_en: "Chongqing Daily, China Youth Daily"
+
+  - date: "2016.06"
+    role: feature
+    title_zh: "2016 重庆七中优秀学子青春成长故事会"
+    title_en: "2016 CQ No.7 High School Outstanding Students Growth Stories"
+    url: "https://education.cqnews.net/html/node_378089.htm"
+    outlet_zh: "华龙网"
+    outlet_en: "CQNEWS"
+
+  - date: "2016.04"
+    role: feature
+    title_zh: "2016 FTC 科技挑战赛：重庆七中斩获「冠、亚军联盟」"
+    title_en: "2016 FTC Challenge: Chongqing No.7 High School Wins Champion & Finalist Alliance"
+    url: "https://www.163.com/news/article/BL1A019800014AEE.html"
+    outlet_zh: "网易新闻"
+    outlet_en: "NetEase News"

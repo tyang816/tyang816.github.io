@@ -8,7 +8,8 @@
 # Site Settings
 title                    : "Yang Tan"
 seo_title                : "Yang Tan | AI for Biology & TCM LLMs"
-description              : "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI for Biology, protein language models, and Traditional Chinese Medicine LLMs."
+seo_title_zh             : "谭扬 | AI for Biology 与中医大模型"
+description              : "Yang Tan (谭扬) — PhD student at SJTU & SII."
 description_zh           : "谭扬（Yang Tan），上海交通大学与上海创智学院博士生。研究方向：AI for Biology、蛋白质语言模型、中医大模型资源与评测。"
 lang                     : "en"
 url                      : "https://tyang816.github.io"
@@ -38,7 +39,9 @@ author:
   name_zh          : "谭扬"
   avatar           : "images/profile.png"
   bio              : "ECUST -> SJTU & SII"
+  bio_zh           : "华理 → 交大 & 创智学院"
   location         : "Shanghai, China"
+  location_zh      : "中国上海"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=dnDHy6YAAAAJ"

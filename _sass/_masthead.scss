@@ -16,6 +16,9 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: .5em;
     font-family: $sans-serif-narrow;
 
@@ -34,6 +37,8 @@
 }
 
 .masthead__menu {
+  flex: 1 1 auto;
+  min-width: 0;
 
   ul {
     margin: 0;
@@ -41,6 +46,38 @@
     clear: both;
     list-style-type: none;
   }
+}
+
+.masthead__lang {
+  flex: 0 0 auto;
+  margin-left: auto;
+  z-index: 30;
+  white-space: nowrap;
+  font-size: 0.95em;
+  line-height: 1;
+  padding: 0.35rem 0.15rem 0.35rem 0.5rem;
+
+  a {
+    color: $masthead-link-color;
+    font-weight: 700;
+    margin: 0;
+    padding: 0.25rem 0.15rem;
+
+    &:hover {
+      color: $masthead-link-color-hover;
+    }
+  }
+}
+
+.masthead__lang-sep {
+  margin: 0 0.35rem;
+  opacity: 0.35;
+  user-select: none;
+}
+
+.masthead__lang-current {
+  opacity: 0.45;
+  font-weight: 600;
 }
 
 .masthead__menu-home-item {

@@ -1,21 +1,21 @@
 ---
-permalink: /timeline/
-title: "Life Timeline"
-lang: en
-alt_url: /zh/timeline/
+permalink: /zh/timeline/
+title: "人生时间线"
+lang: zh-CN
+alt_url: /timeline/
 layout: default
 author_profile: true
-description: "Personal life timeline of Yang Tan — travel, research milestones, and camera moments."
+description: "谭扬的人生时间线：旅行、科研节点与影像瞬间。"
 ---
 
 <span class='anchor' id='timeline'></span>
 
-# 🌍 Life Timeline
+# 🌍 人生时间线
 
 <div class="timeline-filters">
-  <button class="filter-btn active" data-category="all">All</button>
-  <button class="filter-btn" data-category="travel">Travel World</button>
-  <button class="filter-btn" data-category="person">Camera Moment</button>
+  <button class="filter-btn active" data-category="all">全部</button>
+  <button class="filter-btn" data-category="travel">环球旅行</button>
+  <button class="filter-btn" data-category="person">影像瞬间</button>
 </div>
 
 <div class="timeline-container">
@@ -29,62 +29,65 @@ description: "Personal life timeline of Yang Tan — travel, research milestones
           {% assign month = date_parts[1] %}
           {% assign day = date_parts[2] %}
           {% case month %}
-            {% when '01' %}{% assign month_name = 'January' %}
-            {% when '02' %}{% assign month_name = 'February' %}
-            {% when '03' %}{% assign month_name = 'March' %}
-            {% when '04' %}{% assign month_name = 'April' %}
-            {% when '05' %}{% assign month_name = 'May' %}
-            {% when '06' %}{% assign month_name = 'June' %}
-            {% when '07' %}{% assign month_name = 'July' %}
-            {% when '08' %}{% assign month_name = 'August' %}
-            {% when '09' %}{% assign month_name = 'September' %}
-            {% when '10' %}{% assign month_name = 'October' %}
-            {% when '11' %}{% assign month_name = 'November' %}
-            {% when '12' %}{% assign month_name = 'December' %}
+            {% when '01' %}{% assign month_name = '一月' %}
+            {% when '02' %}{% assign month_name = '二月' %}
+            {% when '03' %}{% assign month_name = '三月' %}
+            {% when '04' %}{% assign month_name = '四月' %}
+            {% when '05' %}{% assign month_name = '五月' %}
+            {% when '06' %}{% assign month_name = '六月' %}
+            {% when '07' %}{% assign month_name = '七月' %}
+            {% when '08' %}{% assign month_name = '八月' %}
+            {% when '09' %}{% assign month_name = '九月' %}
+            {% when '10' %}{% assign month_name = '十月' %}
+            {% when '11' %}{% assign month_name = '十一月' %}
+            {% when '12' %}{% assign month_name = '十二月' %}
           {% endcase %}
+          {% assign item_title = item.title_zh | default: item.title %}
+          {% assign item_location = item.location_zh | default: item.location %}
+          {% assign item_description = item.description_zh | default: item.description %}
           <div class="date-day">{{ day }}</div>
           <div class="date-month">{{ month_name }}</div>
           <div class="date-year">{{ year }}</div>
         </div>
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-title">{{ item.title }}</div>
+          <div class="timeline-title">{{ item_title }}</div>
           <div class="timeline-location">
-            <i class="fas fa-map-marker-alt"></i> {{ item.location }}
+            <i class="fas fa-map-marker-alt"></i> {{ item_location }}
           </div>
           <div class="timeline-description">
-            {{ item.description }}
+            {{ item_description }}
           </div>
           <div class="timeline-gallery" data-item-id="{{ forloop.index }}">
             <div class="gallery-container">
               <div class="gallery-images">
-                <img src="{{ item.image }}" alt="{{ item.title }}" class="gallery-image active" onerror="this.style.display='none'">
+                <img src="{{ item.image }}" alt="{{ item_title }}" class="gallery-image active" onerror="this.style.display='none'">
                 {% if item.image2 %}
-                  <img src="{{ item.image2 }}" alt="{{ item.title }} 2" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image2 }}" alt="{{ item_title }} 2" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image3 %}
-                  <img src="{{ item.image3 }}" alt="{{ item.title }} 3" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image3 }}" alt="{{ item_title }} 3" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image4 %}
-                  <img src="{{ item.image4 }}" alt="{{ item.title }} 4" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image4 }}" alt="{{ item_title }} 4" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image5 %}
-                  <img src="{{ item.image5 }}" alt="{{ item.title }} 5" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image5 }}" alt="{{ item_title }} 5" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image6 %}
-                  <img src="{{ item.image6 }}" alt="{{ item.title }} 6" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image6 }}" alt="{{ item_title }} 6" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image7 %}
-                  <img src="{{ item.image7 }}" alt="{{ item.title }} 7" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image7 }}" alt="{{ item_title }} 7" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image8 %}
-                  <img src="{{ item.image8 }}" alt="{{ item.title }} 8" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image8 }}" alt="{{ item_title }} 8" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image9 %}
-                  <img src="{{ item.image9 }}" alt="{{ item.title }} 8" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image9 }}" alt="{{ item_title }} 9" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image10 %}
-                  <img src="{{ item.image10 }}" alt="{{ item.title }} 10" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image10 }}" alt="{{ item_title }} 10" class="gallery-image" onerror="this.style.display='none'">
                 {% endif %}
               </div>
               <button class="gallery-nav gallery-prev" onclick="changeImage({{ forloop.index }}, -1)">

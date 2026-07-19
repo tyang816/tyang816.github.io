@@ -1,18 +1,32 @@
 <!-- vercount (busuanzi replacement) -->
 <script defer src="https://cn.vercount.one/js"></script>
+{% assign footer_lang = page.lang | default: site.lang | default: "en" %}
 
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-stats">
+      {% if footer_lang == "zh-CN" or footer_lang == "zh" %}
+      <span id="busuanzi_container_site_pv">
+        <i class="fas fa-eye"></i> 总访问 <span id="busuanzi_value_site_pv">0</span> 次
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <i class="fas fa-users"></i> 访客 <span id="busuanzi_value_site_uv">0</span> 人
+      </span>
+      {% else %}
       <span id="busuanzi_container_site_pv">
         <i class="fas fa-eye"></i> Total visits <span id="busuanzi_value_site_pv">0</span> times
       </span>
       <span id="busuanzi_container_site_uv">
         <i class="fas fa-users"></i> Visitors <span id="busuanzi_value_site_uv">0</span> people
       </span>
+      {% endif %}
     </div>
     <div class="footer-copyright">
+      {% if footer_lang == "zh-CN" or footer_lang == "zh" %}
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} / {{ site.author.name_zh }}. 保留所有权利。技术支持 <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and <a href="https://github.com/jekyll/minima" target="_blank" rel="noopener noreferrer">Minima</a>.</p>
+      {% else %}
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and <a href="https://github.com/jekyll/minima" target="_blank" rel="noopener noreferrer">Minima</a>.</p>
+      {% endif %}
     </div>
   </div>
 </footer>
@@ -76,13 +90,12 @@
   margin: 0;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .footer-stats {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .footer-stats span {
     width: 100%;
     justify-content: center;

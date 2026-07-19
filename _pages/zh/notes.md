@@ -1,35 +1,34 @@
 ---
-permalink: /notes/
-title: "Paper Notes"
-lang: en
-alt_url: /zh/notes/
+permalink: /zh/notes/
+title: "论文笔记"
+lang: zh-CN
+alt_url: /notes/
 layout: default
 author_profile: true
-description: "Searchable paper notes by Yang Tan on AI for Biology, protein models, computer vision, and related research."
-seo_description: "Paper notes index — filter by category, tag, and date. Notes on AI4Bio, LLMs, and scientific discovery."
+description: "谭扬的论文笔记检索页：AI for Biology、蛋白质模型、科学大模型等。"
 keywords:
-  - paper notes
+  - 论文笔记
   - AI for Biology
-  - Yang Tan
+  - 谭扬
 ---
 
 <span class='anchor' id='notes'></span>
 
-Search and filter research paper notes (AI for Biology, protein language models, scientific LLMs, and more).
+检索与筛选论文笔记（AI for Biology、蛋白质语言模型、科学大模型等）。笔记正文保持原文，不另做批量翻译。
 
-### Categories overview
+### 分类概览
 <div id="notes-stats" style="margin-bottom:8px;"></div>
 
-### Filter and search
+### 筛选与搜索
 
-<input id="notes-search" type="search" placeholder="Search notes..." style="min-width:220px; margin-bottom:8px;">
+<input id="notes-search" type="search" placeholder="搜索笔记..." style="min-width:220px; margin-bottom:8px;">
 
 <div id="notes-filters" style="display:flex; gap:12px; align-items:center; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap;">
-  <label>Category <select id="notes-filter-category"><option value="">All</option></select></label>
-  <label>Proceedings <select id="notes-filter-proceedings"><option value="">All</option></select></label>
-  <label>Tag <select id="notes-filter-tag"><option value="">All</option></select></label>
-  <label>Date from <input type="date" id="notes-filter-from"></label>
-  <label>Date to <input type="date" id="notes-filter-to"></label>
+  <label>分类 <select id="notes-filter-category"><option value="">全部</option></select></label>
+  <label>会议/期刊 <select id="notes-filter-proceedings"><option value="">全部</option></select></label>
+  <label>标签 <select id="notes-filter-tag"><option value="">全部</option></select></label>
+  <label>起始日期 <input type="date" id="notes-filter-from"></label>
+  <label>结束日期 <input type="date" id="notes-filter-to"></label>
 </div>
 
 <div id="notes-results"></div>
@@ -38,15 +37,13 @@ Search and filter research paper notes (AI for Biology, protein language models,
 <script>
 async function fetchIndex(){
   const res = await fetch('{{ '/search.json' | relative_url }}');
-  const data = await res.json();
-  // Keep the current category scope consistent with your search.json categories
-  return data;
+  return await res.json();
 }
 function byDateDesc(a,b){ return (b.date||'').localeCompare(a.date||''); }
 function groupByYear(items){
   const groups = {};
   items.forEach(p => {
-    const y = (p.date||'').slice(0,4) || 'Unknown';
+    const y = (p.date||'').slice(0,4) || '未知';
     if(!groups[y]) groups[y] = [];
     groups[y].push(p);
   });
@@ -82,7 +79,7 @@ function renderCategoryStats(data){
   const counts = {};
   data.forEach(p => (p.categories||[]).forEach(c => { if(!c) return; counts[c] = (counts[c]||0) + 1; }));
   const html = Object.keys(counts).sort().map(c => `<span style="margin-right:12px;">${c} (${counts[c]})</span>`).join('');
-  document.getElementById('notes-stats').innerHTML = html || 'No categories';
+  document.getElementById('notes-stats').innerHTML = html || '暂无分类';
 }
 function applyFilters(list){
   const cat = document.getElementById('notes-filter-category').value;
@@ -122,5 +119,3 @@ async function main(){
 }
 main();
 </script>
-
-
