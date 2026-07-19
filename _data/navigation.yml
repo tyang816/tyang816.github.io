@@ -15,5 +15,8 @@ main:
   - title: "Paper Notes"
     url: "/notes/"
 
+  - title: "TCM AI"
+    url: "/tcm/"
+
   - title: "Life Timeline"
     url: "/timeline/"
