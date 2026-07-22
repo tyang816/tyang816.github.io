@@ -69,6 +69,14 @@ items:
     outlet_zh: "华东理工大学信息科学与工程学院"
     outlet_en: "ECUST School of Information Science & Engineering"
 
+  - date: "2025.06"
+    role: feature
+    title_zh: "研·菁英风采｜信息学院2025届上海市优秀研究生毕业生风采放送（第一期）"
+    title_en: "Research Elite Spotlight | CISE 2025 Shanghai Outstanding Graduates (Part 1)"
+    url: "https://mp.weixin.qq.com/s/wfbm4ZXsZt6mKriUUgptIQ"
+    outlet_zh: "iConnect信院互联"
+    outlet_en: "iConnect (ECUST CISE)"
+
   - date: "2025.04"
     role: feature
     title_zh: "追光而行！年度大学生人物名单揭晓"
