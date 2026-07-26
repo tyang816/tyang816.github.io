@@ -13,6 +13,10 @@
 
 {% assign page_path = page.url | replace: "index.html", "" %}
 {% assign canonical_url = page_path | absolute_url %}
+{% assign is_post = false %}
+{% if page.collection == "posts" or page.layout == "post" %}
+  {% assign is_post = true %}
+{% endif %}
 
 {% assign raw_title = page.title | strip %}
 {% if page.seo_title %}
@@ -25,7 +29,34 @@
   {% assign seo_title = raw_title | append: " | " | append: site.title %}
 {% endif %}
 
-{% assign seo_description = page.description | default: page.seo_description | default: page.excerpt %}
+{% assign seo_description = page.description | default: page.seo_description %}
+{% unless seo_description %}
+  {% assign excerpt_plain = page.excerpt | default: "" | markdownify | strip_html | strip_newlines | strip %}
+  {% assign excerpt_is_linkdump = false %}
+  {% if excerpt_plain contains "论文地址" or excerpt_plain contains "论文实现" %}
+    {% assign excerpt_is_linkdump = true %}
+  {% endif %}
+  {% if excerpt_plain != "" and excerpt_is_linkdump == false %}
+    {% assign seo_description = excerpt_plain | truncate: 160 %}
+  {% elsif is_post %}
+    {% assign content_plain = page.content | strip_html | strip_newlines | strip %}
+    {% assign desc_candidate = "" %}
+    {% if content_plain contains "Abstract" %}
+      {% assign abs_parts = content_plain | split: "Abstract" %}
+      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% endif %}
+    {% if desc_candidate == blank and content_plain contains "摘要" %}
+      {% assign abs_parts = content_plain | split: "摘要" %}
+      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% endif %}
+    {% if desc_candidate == blank %}
+      {% assign desc_candidate = content_plain %}
+    {% endif %}
+    {% assign seo_description = desc_candidate | truncate: 160 %}
+  {% elsif excerpt_plain != "" %}
+    {% assign seo_description = excerpt_plain | truncate: 160 %}
+  {% endif %}
+{% endunless %}
 {% if is_zh_page %}
   {% assign seo_description = seo_description | default: site.description_zh | default: site.description %}
 {% else %}
@@ -62,19 +93,34 @@
 {% if site.author.avatar %}
   <meta property="og:image" content="{{ site.author.avatar | absolute_url }}">
 {% endif %}
+{% if is_post and page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
 
 <link rel="canonical" href="{{ canonical_url }}">
 
+{% comment %}
+  Emit hreflang only for true language pairs. /tcm/ and /tcm-en/ are not equivalent
+  (full catalog vs stub), so keep alt_url for UI switching but skip hreflang.
+{% endcomment %}
+{% assign emit_hreflang = false %}
 {% if page.alt_url %}
+  {% unless page_path == "/tcm/" or page_path == "/tcm-en/" %}
+    {% assign emit_hreflang = true %}
+  {% endunless %}
+{% endif %}
+{% if emit_hreflang %}
   {% assign alt_abs = page.alt_url | absolute_url %}
   {% if is_zh_page %}
     <link rel="alternate" hreflang="zh-CN" href="{{ canonical_url }}">
     <link rel="alternate" hreflang="en" href="{{ alt_abs }}">
+    {% assign x_default_url = alt_abs %}
   {% else %}
     <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ alt_abs }}">
+    {% assign x_default_url = canonical_url %}
   {% endif %}
-  <link rel="alternate" hreflang="x-default" href="{{ seo_url }}/">
+  <link rel="alternate" hreflang="x-default" href="{{ x_default_url }}">
 {% endif %}
 
 <meta name="twitter:card" content="summary">

@@ -55,6 +55,7 @@ author:
   facebook         :
   foursquare       :
   github           : "tyang816"
+  huggingface      : "tyang816"
   google_plus      :
   keybase          :
   instagram        : "mashiroaugust"
@@ -158,6 +159,18 @@ defaults:
       type: pages
     values:
       layout: default
+      author_profile: true
+  # Keep Google HTML verification out of sitemap.xml
+  - scope:
+      path: "googlec0aed3ddfe20902d.html"
+    values:
+      sitemap: false
+  # Posts stay English by default (site.lang)
+  - scope:
+      path: ""
+      type: posts
+    values:
+      lang: en
       author_profile: true
 
 

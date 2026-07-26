@@ -2,13 +2,48 @@
 {% assign page_path = page.url | replace: "index.html", "" %}
 {% assign canonical_url = page_path | absolute_url %}
 {% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign is_post = false %}
+{% if page.collection == "posts" or page.layout == "post" %}
+  {% assign is_post = true %}
+{% endif %}
 {% assign raw_title = page.title | strip %}
-{% if page_path == "/" or raw_title == "" %}
+{% if page.seo_title %}
+  {% assign ld_name = page.seo_title %}
+{% elsif page_path == "/zh/" %}
+  {% assign ld_name = site.seo_title_zh | default: "谭扬 | AI for Biology 与中医大模型" %}
+{% elsif page_path == "/" or raw_title == "" %}
   {% assign ld_name = site.seo_title | default: "Yang Tan | AI for Biology & TCM LLMs" %}
 {% else %}
   {% assign ld_name = raw_title | append: " | " | append: site.title %}
 {% endif %}
-{% assign ld_description = page.description | default: page.seo_description | default: page.excerpt %}
+{% assign ld_description = page.description | default: page.seo_description %}
+{% unless ld_description %}
+  {% assign excerpt_plain = page.excerpt | default: "" | markdownify | strip_html | strip_newlines | strip %}
+  {% assign excerpt_is_linkdump = false %}
+  {% if excerpt_plain contains "论文地址" or excerpt_plain contains "论文实现" %}
+    {% assign excerpt_is_linkdump = true %}
+  {% endif %}
+  {% if excerpt_plain != "" and excerpt_is_linkdump == false %}
+    {% assign ld_description = excerpt_plain | truncate: 160 %}
+  {% elsif is_post %}
+    {% assign content_plain = page.content | strip_html | strip_newlines | strip %}
+    {% assign desc_candidate = "" %}
+    {% if content_plain contains "Abstract" %}
+      {% assign abs_parts = content_plain | split: "Abstract" %}
+      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% endif %}
+    {% if desc_candidate == blank and content_plain contains "摘要" %}
+      {% assign abs_parts = content_plain | split: "摘要" %}
+      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% endif %}
+    {% if desc_candidate == blank %}
+      {% assign desc_candidate = content_plain %}
+    {% endif %}
+    {% assign ld_description = desc_candidate | truncate: 160 %}
+  {% elsif excerpt_plain != "" %}
+    {% assign ld_description = excerpt_plain | truncate: 160 %}
+  {% endif %}
+{% endunless %}
 {% if page_lang == "zh-CN" or page_lang == "zh" %}
   {% assign ld_description = ld_description | default: site.description_zh | default: site.description %}
 {% else %}
@@ -17,6 +52,52 @@
 {% if ld_description %}
   {% assign ld_description = ld_description | markdownify | strip_html | strip_newlines | replace: '&amp;', '&' | replace: '&quot;', '"' | replace: '&#39;', "'" %}
 {% endif %}
+
+{% capture same_as_json %}
+[
+  {%- assign same_as_first = true -%}
+  {%- if site.author.github -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    "https://github.com/{{ site.author.github }}"
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.googlescholar -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    {{ site.author.googlescholar | jsonify }}
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.orcid -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    {{ site.author.orcid | jsonify }}
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.researchgate -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    {{ site.author.researchgate | jsonify }}
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.huggingface -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    "https://huggingface.co/{{ site.author.huggingface }}"
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.twitter -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    "https://twitter.com/{{ site.author.twitter }}"
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.dblp -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    {{ site.author.dblp | jsonify }}
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+  {%- if site.author.linkedin -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    "https://www.linkedin.com/in/{{ site.author.linkedin }}"
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
+]
+{% endcapture %}
 
 <script type="application/ld+json">
 {
@@ -50,13 +131,7 @@
           "name": "Shanghai Innovation Institute"
         }
       ],
-      "sameAs": [
-        "https://github.com/{{ site.author.github }}",
-        {{ site.author.googlescholar | jsonify }},
-        {{ site.author.orcid | jsonify }},
-        {{ site.author.researchgate | jsonify }},
-        "https://twitter.com/{{ site.author.twitter }}"
-      ],
+      "sameAs": {{ same_as_json | strip_newlines | strip }},
       "knowsAbout": {{ site.keywords | jsonify }}
     },
     {
@@ -71,7 +146,20 @@
       {% if page_path == "/tcm/" or page_path == "/tcm-en/" %}
       ,"relatedLink": "https://github.com/tyang816/Awesome-TCM-LLM"
       {% endif %}
-    }
+    }{% if is_post %},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ canonical_url }}#blogposting",
+      "mainEntityOfPage": { "@id": "{{ canonical_url }}#webpage" },
+      "headline": {{ raw_title | jsonify }},
+      "description": {{ ld_description | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "inLanguage": {{ page_lang | jsonify }},
+      "author": { "@id": "{{ seo_url }}/#person" },
+      "publisher": { "@id": "{{ seo_url }}/#person" },
+      "isPartOf": { "@id": "{{ seo_url }}/#website" },
+      "url": {{ canonical_url | jsonify }}
+    }{% endif %}
   ]
 }
 </script>

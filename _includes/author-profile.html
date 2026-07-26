@@ -70,6 +70,9 @@
       {% if author.github %}
         <li><a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
       {% endif %}
+      {% if author.huggingface %}
+        <li><a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-smile" aria-hidden="true"></i> Hugging Face</a></li>
+      {% endif %}
       {% if author.stackoverflow %}
         <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>
       {% endif %}
@@ -164,6 +167,9 @@
       {% endif %}
       {% if author.github %}
         <a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if author.huggingface %}
+        <a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-smile" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.stackoverflow %}
         <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i></a>
