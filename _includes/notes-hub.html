@@ -25,7 +25,7 @@
 {%- endfor -%}
 }{% endcapture %}
 
-<div class="project-hub notes-hub" id="notes-hub" data-index="{{ '/search.json' | relative_url }}">
+<div class="project-hub notes-hub" id="notes-hub" data-index="{{ '/notes-index.json' | relative_url }}" data-search-index="{{ '/search.json' | relative_url }}">
   <script type="application/json" id="notes-cat-meta">{{ cat_meta_json }}</script>
 
   <div class="hub-title-row">

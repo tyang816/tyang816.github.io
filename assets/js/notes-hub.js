@@ -17,7 +17,8 @@
       prev: 'Prev',
       next: 'Next',
       showing: 'Showing',
-      results: 'notes'
+      results: 'notes',
+      loading: 'Loading notes…'
     },
     zh: {
       searchPlaceholder: '搜索笔记…',
@@ -31,7 +32,8 @@
       prev: '上一页',
       next: '下一页',
       showing: '共',
-      results: '篇'
+      results: '篇',
+      loading: '正在加载笔记…'
     }
   };
 
@@ -96,29 +98,56 @@
     var pagerRow = document.getElementById('notes-pager-row');
     var pagerEl = document.getElementById('notes-pagination');
     var links = document.querySelectorAll('[data-notes-cat-link]');
-    var indexUrl = (document.getElementById('notes-hub') || {}).getAttribute('data-index') || '/search.json';
+    var hubEl = document.getElementById('notes-hub');
+    var indexUrl = (hubEl && hubEl.getAttribute('data-index')) || '/notes-index.json';
+    var searchUrl = (hubEl && hubEl.getAttribute('data-search-index')) || '/search.json';
 
     if (searchInput) searchInput.placeholder = t(locale, 'searchPlaceholder');
+    if (resultsEl) resultsEl.innerHTML = '<p class="notes-hub-empty">' + t(locale, 'loading') + '</p>';
+
+    var wantLang = locale === 'zh' ? 'zh' : 'en';
+    function langFilter(list) {
+      return (list || []).filter(function (p) {
+        var lang = p.lang || 'en';
+        if (lang === 'zh-CN') lang = 'zh';
+        return lang === wantLang;
+      });
+    }
+
+    function buildFuse(list, withContent) {
+      if (typeof Fuse === 'undefined') return null;
+      var keys = ['title', 'excerpt', 'tags', 'categories', 'proceedings'];
+      if (withContent) keys.push('content');
+      return new Fuse(list, { keys: keys, threshold: 0.35 });
+    }
 
     var data;
     try {
       var res = await fetch(indexUrl);
-      data = await res.json();
+      data = langFilter(await res.json());
     } catch (err) {
       if (resultsEl) resultsEl.innerHTML = '<p>' + t(locale, 'fail') + '</p>';
       return;
     }
 
-    var wantLang = locale === 'zh' ? 'zh' : 'en';
-    data = (data || []).filter(function (p) {
-      var lang = p.lang || 'en';
-      if (lang === 'zh-CN') lang = 'zh';
-      return lang === wantLang;
-    });
-
-    var fuse = typeof Fuse !== 'undefined'
-      ? new Fuse(data, { keys: ['title', 'content', 'excerpt', 'tags', 'categories', 'proceedings'], threshold: 0.35 })
-      : null;
+    // First paint uses the light metadata index; the full-text index
+    // (with post content) is fetched lazily when the user searches.
+    var fuse = buildFuse(data, false);
+    var fullReady = false;
+    var fullPromise = null;
+    function ensureFullIndex() {
+      if (fullReady) return Promise.resolve();
+      if (!fullPromise) {
+        fullPromise = fetch(searchUrl)
+          .then(function (res) { return res.json(); })
+          .then(function (full) {
+            fuse = buildFuse(langFilter(full), true);
+            fullReady = true;
+          })
+          .catch(function () { fullPromise = null; });
+      }
+      return fullPromise;
+    }
 
     var activeCat = 'all';
     var activeProc = '';
@@ -312,7 +341,12 @@
     });
 
     if (searchInput) {
-      searchInput.addEventListener('input', update);
+      // Warm up the full-text index as soon as the user heads for the box.
+      searchInput.addEventListener('focus', ensureFullIndex);
+      searchInput.addEventListener('input', function () {
+        update();
+        if (!fullReady) ensureFullIndex().then(update);
+      });
     }
 
     var rawHash = location.hash || '#cat-all';
