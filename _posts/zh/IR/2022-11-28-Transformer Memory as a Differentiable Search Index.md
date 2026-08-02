@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 Transformer Memory as a Differentiable Search Index
+title: NeurIPS-2022 Transformer 记忆作为可微搜索索引
 categories: [IR]
 tags: [transformer]
 proceedings: NeurIPS

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DeepMind-2022 Competition-Level Code Generation with AlphaCode
+title: DeepMind-2022 AlphaCode：竞赛级代码生成
 categories: [SE]
 tags: [code-generation]
 proceedings: DeepMind

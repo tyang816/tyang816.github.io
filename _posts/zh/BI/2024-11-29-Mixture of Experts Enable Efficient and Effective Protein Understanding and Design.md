@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2024 Mixture of Experts Enable Efficient and Effective Protein Understanding and Design
+title: bioRxiv-2024 混合专家模型实现高效蛋白质理解与设计
 categories: [BI]
 tags: [protein, language-model]
 proceedings: bioRxiv

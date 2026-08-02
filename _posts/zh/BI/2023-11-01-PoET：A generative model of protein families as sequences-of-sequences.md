@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2023 PoET：A generative model of protein families as sequences-of-sequences
+title: NeurIPS-2023 PoET：将蛋白质家族建模为序列之序列的生成模型
 categories: [BI]
 tags: [protein, PLM, fitness-prediction]
 proceedings: NeurIPS

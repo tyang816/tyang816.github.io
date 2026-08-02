@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2020 Contrastive Multi-View Representation Learning on Graphs
+title: ICML-2020 图上的对比多视图表示学习
 categories: [ML]
 tags: [contrastive-learning, GNN]
 proceedings: ICML

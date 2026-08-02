@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2019 GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism
+title: NeurIPS-2019 GPipe：基于流水线并行的高效巨型神经网络训练
 categories: [OS]
 tags: [pipeline-parallelism]
 proceedings: NeurIPS

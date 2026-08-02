@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AAAI-2018 Generative Adversarial Network for Abstractive Text Summarization
+title: AAAI-2018 用于生成式文本摘要的生成对抗网络
 categories: [CL]
 tags: [NLP]
 proceedings: AAAI

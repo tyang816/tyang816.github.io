@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2019 Unified Language Model Pre-training for Natural Language Understanding and Generation
+title: arXiv-2019 面向自然语言理解与生成的统一语言模型预训练
 categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: arXiv

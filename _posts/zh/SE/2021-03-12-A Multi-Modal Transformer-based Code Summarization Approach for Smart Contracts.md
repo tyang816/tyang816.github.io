@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICPC-2021 A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts
+title: ICPC-2021 基于多模态 Transformer 的智能合约代码摘要方法
 categories: [SE]
 tags: [transformer, code-summarization]
 proceedings: ICPC

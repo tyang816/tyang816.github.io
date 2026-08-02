@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automated Software Engineering-2021 Automating just-in-time comment updating
+title: Automated Software Engineering-2021 自动化即时注释更新
 categories: [SE]
 tags: [code-summarization]
 proceedings: Automated Software Engineering

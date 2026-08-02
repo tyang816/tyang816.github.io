@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NAACL-2022 MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation
+title: NAACL-2022 MoEBERT：基于重要性引导适配从 BERT 到混合专家模型
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: NAACL

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2021 CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval
+title: arXiv-2021 CLIP4Clip：CLIP 端到端视频片段检索的实证研究
 categories: [CV]
 tags: [Video, Contrastive Learning]
 proceedings: arXiv

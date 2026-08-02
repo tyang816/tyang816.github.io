@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AAAI-2022 Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization
+title: AAAI-2022 用于语法感知摘要的层次化异构图注意力网络
 categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: AAAI

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SIGIR-2020 How to Retrain Recommender System？A Sequential Meta-Learning Method
+title: SIGIR-2020 如何重训推荐系统？一种序列元学习方法
 categories: [IR]
 tags: [meta-learning, recommendation-system]
 proceedings: SIGIR

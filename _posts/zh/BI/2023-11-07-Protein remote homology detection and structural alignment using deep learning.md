@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2023 Protein remote homology detection and structural alignment using deep learning
+title: Nature Biotechnology-2023 基于深度学习的蛋白质远程同源检测与结构比对
 categories: [BI]
 tags: [protein, homology]
 proceedings: Nature Biotechnology

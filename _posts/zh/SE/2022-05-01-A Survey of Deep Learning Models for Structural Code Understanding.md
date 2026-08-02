@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2022 A Survey of Deep Learning Models for Structural Code Understanding
+title: arXiv-2022 结构代码理解的深度学习模型综述
 categories: [SE]
 tags: [code-understanding]
 proceedings: arXiv

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Frontiers in Microbiology-2022 iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Multi-Feature Fusion Strategy
+title: Frontiers in Microbiology-2022 iThermo：基于多特征融合策略的嗜热蛋白序列识别模型
 categories: [BI]
 tags: [protein]
 proceedings: Frontiers in Microbiology

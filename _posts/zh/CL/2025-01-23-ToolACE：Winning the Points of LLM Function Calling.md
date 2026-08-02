@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2025 ToolACE：Winning the Points of LLM Function Calling
+title: ICLR-2025 ToolACE：赢得 LLM 函数调用的关键分
 categories: [CL]
 tags: [LLM, NLP, Agent]
 proceedings: ICLR

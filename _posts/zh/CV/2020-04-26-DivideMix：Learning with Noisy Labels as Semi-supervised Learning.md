@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2020 DivideMix：Learning with Noisy Labels as Semi-supervised Learning
+title: ICLR-2020 DivideMix：将噪声标签学习视为半监督学习
 categories: [CV]
 tags: [noisy label, semi-supervised, GMM, MixMatch]
 proceedings: ICLR

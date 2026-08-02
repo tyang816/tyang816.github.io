@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2020 Language Models are Few-Shot Learners
+title: OpenAI-2020 语言模型是少样本学习者（GPT-3）
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: OpenAI

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 Perceiver IO：A General Architecture for Structured Inputs & Outputs
+title: ICLR-2022 Perceiver IO：结构化输入输出的通用架构
 categories: [CV]
 tags: [vision-language]
 proceedings: ICLR

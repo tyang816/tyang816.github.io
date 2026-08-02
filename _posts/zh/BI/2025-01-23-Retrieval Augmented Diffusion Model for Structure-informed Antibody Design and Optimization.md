@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2025 Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization
+title: ICLR-2025 检索增强扩散模型用于结构信息抗体设计与优化
 categories: [BI]
 tags: [GNN, antibody]
 proceedings: ICLR

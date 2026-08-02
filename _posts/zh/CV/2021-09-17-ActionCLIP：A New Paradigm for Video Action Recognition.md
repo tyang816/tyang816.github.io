@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2021 ActionCLIP：A New Paradigm for Video Action Recognition
+title: arXiv-2021 ActionCLIP：视频动作识别新范式
 categories: [CV]
 tags: [video, action-recognition, contrastive-learning]
 proceedings: arXiv

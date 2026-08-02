@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICPC-2022 HELoC：Hierarchical Contrastive Learning of Source Code Representation
+title: ICPC-2022 HELoC：源代码表示的层次化对比学习
 categories: [SE]
 tags: [contrastive-learning, GNN]
 proceedings: ICPC

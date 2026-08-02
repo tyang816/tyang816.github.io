@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2020 BYOL works even without batch statistics
+title: arXiv-2020 BYOL 无需批统计依然有效
 categories: [CV]
 tags: [vision-language, transformer, contrastive-learning]
 proceedings: arXiv

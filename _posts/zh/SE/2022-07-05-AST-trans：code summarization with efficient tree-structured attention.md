@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICSE-2022 AST-trans：code summarization with efficient tree-structured attention
+title: ICSE-2022 AST-trans：基于高效树结构注意力的代码摘要
 categories: [SE]
 tags: [code-summarization]
 proceedings: ICSE

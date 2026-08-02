@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KDD-2020 GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training
+title: KDD-2020 GCC：图神经网络预训练的图对比编码
 categories: [ML]
 tags: [contrastive-learning, GNN]
 proceedings: KDD

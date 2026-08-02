@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2019 Language Models are Unsupervised Multitask Learners
+title: OpenAI-2019 语言模型是无监督多任务学习者（GPT-2）
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: OpenAI

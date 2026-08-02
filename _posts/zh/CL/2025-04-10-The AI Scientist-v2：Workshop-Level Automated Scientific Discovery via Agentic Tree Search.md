@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2025 The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search
+title: arXiv-2025 AI Scientist-v2：基于智能体树搜索的研讨会级自动科学发现
 categories: [CL]
 tags: [Agent, LLM, NLP]
 proceedings: arXiv

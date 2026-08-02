@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GTC-2020 Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Parallelism
+title: GTC-2020 Megatron-LM：基于模型并行训练百亿参数语言模型
 categories: [OS]
 tags: [model-parallelism]
 proceedings: GTC

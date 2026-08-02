@@ -644,6 +644,83 @@ $project-wide: 100%;
   color: $project-muted;
 }
 
+.notes-topic-links {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+  font-size: 0.9rem;
+  color: $project-muted;
+
+  .notes-topic-label {
+    margin-right: 0.25rem;
+  }
+
+  a {
+    color: $project-ink;
+    text-decoration: none;
+    border-bottom: 1px dotted $project-muted;
+
+    &:hover {
+      color: $link-color;
+      border-bottom-color: $link-color;
+    }
+  }
+}
+
+.notes-cat-head {
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  p {
+    color: $project-muted;
+  }
+}
+
+.notes-cat-all {
+  margin-top: 1.5rem;
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px dotted $project-muted;
+  }
+}
+
+.notes-related-projects {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+
+  > h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
+.post-related-project {
+  margin: 0 0 1.5rem;
+  padding: 0.6rem 1rem;
+  border-left: 3px solid $link-color;
+  background: rgba($link-color, 0.06);
+  font-size: 0.95rem;
+
+  &__label {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: $project-muted;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px dotted $project-muted;
+  }
+}
+
 .notes-pagination {
   display: flex;
   flex-wrap: wrap;

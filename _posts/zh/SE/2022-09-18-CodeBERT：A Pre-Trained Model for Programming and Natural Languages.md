@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2020 CodeBERT：A Pre-Trained Model for Programming and Natural Languages
+title: EMNLP-2020 CodeBERT：面向编程语言与自然语言的预训练模型
 categories: [SE]
 tags: [code-understanding, transformer]
 proceedings: EMNLP

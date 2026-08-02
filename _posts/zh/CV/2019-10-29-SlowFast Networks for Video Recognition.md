@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICCV-2019 SlowFast Networks for Video Recognition
+title: ICCV-2019 用于视频识别的 SlowFast 网络
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: ICCV

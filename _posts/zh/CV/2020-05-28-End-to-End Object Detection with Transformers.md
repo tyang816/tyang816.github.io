@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECCV-2020 End-to-End Object Detection with Transformers
+title: ECCV-2020 基于 Transformer 的端到端目标检测（DETR）
 categories: [CV]
 tags: [transformer, object-detection]
 proceedings: ECCV

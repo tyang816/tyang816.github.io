@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2021 VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts
+title: NeurIPS-2021 VLMo：基于模态专家混合的统一视觉-语言预训练
 categories: [CV]
 tags: [vision-language, contrastive-learning, transformer]
 proceedings: NeurIPS

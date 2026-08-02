@@ -5,6 +5,7 @@
 - name: VenusFactory2
   name_zh: VenusFactory2
   slug: venusfactory2
+  image: "/images/papers/venusfactory2.png"
   category: platform
   venue: arXiv 2026
   venue_zh: arXiv 2026
@@ -22,6 +23,7 @@
 - name: VenusRAR
   name_zh: VenusRAR
   slug: venusrar
+  image: "/images/papers/venusrar.png"
   category: agents
   venue: arXiv 2026
   venue_zh: arXiv 2026
@@ -56,6 +58,7 @@
 - name: TCM AI
   name_zh: 中医大模型
   slug: tcm
+  image: "/images/papers/tcm.png"
   category: llm
   venue: Resource hub
   venue_zh: 资源导航
@@ -162,6 +165,7 @@
 - name: ProtLOCA
   name_zh: ProtLOCA
   slug: protloca
+  image: "/images/papers/protloca.png"
   category: plm
   venue: IEEE BIBM 2024
   venue_zh: IEEE BIBM 2024
@@ -177,6 +181,7 @@
 - name: ProtSolM
   name_zh: ProtSolM
   slug: protsolm
+  image: "/images/papers/protsolm.png"
   category: fitness
   venue: IEEE BIBM 2024
   venue_zh: IEEE BIBM 2024

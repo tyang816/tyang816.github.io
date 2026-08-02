@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2021 E(n) Equivariant Graph Neural Networks
+title: ICML-2021 E(n) 等变图神经网络
 categories: [BI]
 tags: [GNN]
 proceedings: ICML

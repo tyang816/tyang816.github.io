@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2021 Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi-Task Learning Approach
+title: EMNLP-2021 重新思考低资源神经机器翻译的数据增强：多任务学习方法
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: EMNLP

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DeepMind-2018 Representation Learning with Contrastive Predictive Coding
+title: DeepMind-2018 基于对比预测编码的表示学习（CPC）
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: DeepMind

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICMLw-2025 ProteinCrow：A Language Model Agent That Can Design Proteins
+title: ICMLw-2025 ProteinCrow：能设计蛋白质的语言模型智能体
 categories: [BI]
 tags: [protein, Agent]
 proceedings: ICMLw

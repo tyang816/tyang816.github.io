@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2018 Non-local Neural Networks
+title: CVPR-2018 非局部神经网络
 categories: [CV]
 tags: [convolutional-neural-network]
 proceedings: CVPR

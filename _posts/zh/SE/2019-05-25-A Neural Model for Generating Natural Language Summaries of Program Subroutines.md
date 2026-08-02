@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICSE-2019 A Neural Model for Generating Natural Language Summaries of Program Subroutines
+title: ICSE-2019 生成程序子例程自然语言摘要的神经模型
 categories: [SE]
 tags: [code-summarization]
 proceedings: ICSE

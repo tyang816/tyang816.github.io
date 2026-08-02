@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2018 Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination
+title: CVPR-2018 基于非参数实例级判别的无监督特征学习
 categories: [CV]
 tags: [unsupervised-learning, contrastive-learning]
 proceedings: CVPR

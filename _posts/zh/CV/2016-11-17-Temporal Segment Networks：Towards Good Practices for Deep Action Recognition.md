@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECCV-2016 Temporal Segment Networks：Towards Good Practices for Deep Action Recognition
+title: ECCV-2016 时序段网络：深度动作识别的良好实践
 categories: [CV]
 tags: [video, action-recognition]
 proceedings: ECCV

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECCV-2020 CMC：Contrastive Multiview Coding
+title: ECCV-2020 CMC：对比多视图编码
 categories: [CV]
 tags: [contrastive-learning]
 proceedings: ECCV

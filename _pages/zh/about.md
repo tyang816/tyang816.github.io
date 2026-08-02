@@ -19,6 +19,8 @@ author_profile: true
 
 <span class='anchor' id='about-me'></span>
 
+<h1 class="visually-hidden">谭扬（Yang Tan）——上海交通大学与上海创智学院博士生，研究方向为 AI for Biology、蛋白质语言模型与中医大模型</h1>
+
 我是**谭扬（Yang Tan）**，现于[上海交通大学](https://www.sjtu.edu.cn/)与[上海创智学院](https://www.sii.edu.cn/)攻读博士学位，导师为[洪亮](https://ins.sjtu.edu.cn/people/lhong/index.html)教授，联培导师为[董楠卿](https://eveningdong.github.io/)教授。2025 年获华东理工大学计算机科学与技术硕士学位（GPA 3.8/4.0，专业第一），2022 年获软件工程学士学位（GPA 3.8/4.0，专业第一）。
 
 研究方向位于人工智能与生物学交叉（AI for Biology）：
@@ -29,7 +31,8 @@ author_profile: true
 
 <span class='anchor' id='-news'></span>
 
-# 🔥 新闻
+## 🔥 新闻
+{:.home-section}
 - *2026.07*：&nbsp;🎉 [MatwingsVenus（晓鹜）](https://matvenus.com/) 获 **WAIC 2026 镇馆之宝**，见 [报道](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A)。
 - *2026.04*：&nbsp;🎉 [VenusFactory2]({{ '/zh/projects/venusfactory2/' | relative_url }}) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
 - *2026.01*：&nbsp;🎉 [VenusX]({{ '/zh/projects/venusx/' | relative_url }}) 被 [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG) 接收，榜单见 [VenusX Leaderboard]({{ '/projects/venusx/leaderboard/' | relative_url }})。
@@ -38,13 +41,15 @@ author_profile: true
 
 <span class='anchor' id='-selected-publications'></span>
 
-# 📝 代表性论文
+## 📝 代表性论文
+{:.home-section}
 
 {% include selected-publications.html %}
 
 <span class='anchor' id='-honors-and-awards'></span>
 
-# 🏆 荣誉奖项
+## 🏆 荣誉奖项
+{:.home-section}
 - *2026*，***WAIC 2026 镇馆之宝***，MatwingsVenus（晓鹜），项目负责人，博士
 - *2026*，***上海创智学院学生项目（125 万元）***，项目负责人，博士
 - *2025*，***青年科技人才培育工程（4 万元）***，中国科协，博士
@@ -68,13 +73,15 @@ author_profile: true
 
 <span class='anchor' id='-media-coverage'></span>
 
-# 📰 媒体报道
+## 📰 媒体报道
+{:.home-section}
 
 {% include media-list.html lang="zh-CN" %}
 
 <span class='anchor' id='-educations'></span>
 
-# 📖 教育经历
+## 📖 教育经历
+{:.home-section}
 - *2025.09 - 至今*，上海交通大学 & 上海创智学院，计算机科学博士在读
 - *2022.06 - 2025.06*，华东理工大学，计算机科学与技术硕士，GPA 3.8/4.0，专业第一
 - *2018.09 - 2022.06*，华东理工大学，软件工程学士，GPA 3.8/4.0，专业第一

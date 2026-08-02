@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2022 Holistic Evaluation of Language Models
+title: arXiv-2022 语言模型的整体评估（HELM）
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: arXiv

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2020 Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
+title: NeurIPS-2020 通过对比簇分配的无监督视觉特征学习（SwAV）
 categories: [CV]
 tags: [unsupervised-learning, contrastive-learning]
 proceedings: NeurIPS

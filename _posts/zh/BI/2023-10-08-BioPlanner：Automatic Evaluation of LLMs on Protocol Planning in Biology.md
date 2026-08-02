@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2023 BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology
+title: EMNLP-2023 BioPlanner：自动评估 LLM 的生物学实验方案规划能力
 categories: [BI]
 tags: [Agent，LLM]
 proceedings: EMNLP

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stanford-2022 AI Index Report
+title: Stanford-2022 AI 指数报告
 categories: [ML]
 tags: [other]
 proceedings: Stanford

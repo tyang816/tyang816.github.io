@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IJCAI-2021 Graph-Augmented Code Summarization in Computational Notebooks
+title: IJCAI-2021 计算笔记本中图增强的代码摘要
 categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: IJCAI

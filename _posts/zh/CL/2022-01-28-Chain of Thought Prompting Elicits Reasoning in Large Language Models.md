@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 Chain of Thought Prompting Elicits Reasoning in Large Language Models
+title: NeurIPS-2022 思维链提示激发大语言模型推理能力
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: NeurIPS

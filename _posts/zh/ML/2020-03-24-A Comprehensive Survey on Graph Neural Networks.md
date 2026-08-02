@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Transactions on Neural Networks and Learning Systems-2020 A Comprehensive Survey on Graph Neural Networks
+title: Transactions on Neural Networks and Learning Systems-2020 图神经网络综合综述
 categories: [ML]
 tags: [GNN]
 proceedings: Transactions on Neural Networks and Learning Systems

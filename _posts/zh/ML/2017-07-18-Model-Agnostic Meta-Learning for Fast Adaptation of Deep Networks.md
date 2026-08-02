@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2017 Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
+title: ICML-2017 模型无关元学习实现深度网络快速适配（MAML）
 categories: [ML]
 tags: [meta-learning]
 proceedings: ICML

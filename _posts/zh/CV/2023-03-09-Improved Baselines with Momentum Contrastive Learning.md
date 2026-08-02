@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2020 Improved Baselines with Momentum Contrastive Learning
+title: CVPR-2020 动量对比学习的改进基线（MoCo v2）
 categories: [CV]
 tags: [vision-language]
 proceedings: CVPR

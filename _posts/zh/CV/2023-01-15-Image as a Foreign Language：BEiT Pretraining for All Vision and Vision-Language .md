@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2023 Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks
+title: CVPR-2023 图像即外语：BEiT 预训练统一视觉与视觉-语言任务
 categories: [CV]
 tags: [vision-language]
 proceedings: CVPR

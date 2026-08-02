@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bioinformatics-2017 DeepLoc：prediction of protein subcellular localization using deep learning
+title: Bioinformatics-2017 DeepLoc：基于深度学习的蛋白质亚细胞定位预测
 categories: [BI]
 tags: [protein, subcellular localization]
 proceedings: Bioinformatics

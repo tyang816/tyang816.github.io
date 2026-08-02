@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2020 Graph-based, Self-Supervised Program Repair from Diagnostic Feedback
+title: ICML-2020 基于图的、从诊断反馈中自监督学习的程序修复
 categories: [SE]
 tags: [program-repair, GNN]
 proceedings: ICML

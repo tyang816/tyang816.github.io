@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MM-2022 Can Language Understand Depth？
+title: MM-2022 语言能理解深度吗
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: MM

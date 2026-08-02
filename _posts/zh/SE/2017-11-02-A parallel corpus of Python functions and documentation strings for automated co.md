@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IJCNLP-2017 A parallel corpus of Python functions and documentation strings for automated code documentation and code generation
+title: IJCNLP-2017 面向自动代码文档与代码生成的 Python 函数-文档字符串平行语料
 categories: [SE]
 tags: [code-generation, code-documentation]
 proceedings: IJCNLP

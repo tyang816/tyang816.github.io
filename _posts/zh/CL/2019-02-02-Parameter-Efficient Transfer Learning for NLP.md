@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2019 Parameter-Efficient Transfer Learning for NLP
+title: ICML-2019 NLP 的参数高效迁移学习
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: ICML

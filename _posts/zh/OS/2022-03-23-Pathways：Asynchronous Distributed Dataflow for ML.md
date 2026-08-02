@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLSys-2022 Pathways：Asynchronous Distributed Dataflow for ML
+title: MLSys-2022 Pathways：面向机器学习的异步分布式数据流
 categories: [OS]
 tags: [distributed-dataflow]
 proceedings: MLSys

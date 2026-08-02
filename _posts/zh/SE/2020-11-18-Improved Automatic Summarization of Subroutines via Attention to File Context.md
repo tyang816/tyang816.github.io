@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MSR-2020 Improved Automatic Summarization of Subroutines via Attention to File Context
+title: MSR-2020 利用文件上下文注意力改进子例程自动摘要
 categories: [SE]
 tags: [code-summarization]
 proceedings: MSR

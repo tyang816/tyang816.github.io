@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2022 Single-sequence protein structure prediction using a language model and deep learning
+title: Nature Biotechnology-2022 基于语言模型与深度学习的单序列蛋白质结构预测
 categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Nature Biotechnology

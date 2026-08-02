@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2020 A Simple Framework for Contrastive Learning of Visual Representations
+title: ICML-2020 视觉表示对比学习的简单框架（SimCLR）
 categories: [CV]
 tags: [contrastive-learning]
 proceedings: ICML

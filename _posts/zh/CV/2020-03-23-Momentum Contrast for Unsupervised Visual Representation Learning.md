@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2020 Momentum Contrast for Unsupervised Visual Representation Learning
+title: CVPR-2020 用于无监督视觉表示学习的动量对比（MoCo）
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: CVPR

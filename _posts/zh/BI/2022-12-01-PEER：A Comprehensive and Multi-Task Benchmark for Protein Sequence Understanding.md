@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding
+title: NeurIPS-2022 PEER：蛋白质序列理解的综合多任务基准
 categories: [BI]
 tags: [protein, benchmark, PLM]
 proceedings: NeurIPS

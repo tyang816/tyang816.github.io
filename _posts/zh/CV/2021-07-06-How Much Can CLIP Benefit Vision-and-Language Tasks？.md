@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2021 How Much Can CLIP Benefit Vision-and-Language Tasks？
+title: arXiv-2021 CLIP 能为视觉-语言任务带来多大收益
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: arXiv

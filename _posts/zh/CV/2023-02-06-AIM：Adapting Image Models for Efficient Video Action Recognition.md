@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2023 AIM：Adapting Image Models for Efficient Video Action Recognition
+title: ICLR-2023 AIM：适配图像模型实现高效视频动作识别
 categories: [CV]
 tags: [video, action-recognition]
 proceedings: ICLR

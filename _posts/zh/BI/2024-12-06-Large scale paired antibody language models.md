@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PLOS Computational Biology-2024 Large scale paired antibody language models
+title: PLOS Computational Biology-2024 大规模配对抗体语言模型
 categories: [BI]
 tags: [protein, antibody, PLM]
 proceedings: PLOS Computational Biology

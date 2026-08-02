@@ -62,11 +62,70 @@
     </header>
   {% endfor %}
 
-  <div id="notes-results" class="notes-results"></div>
+  <div id="notes-results" class="notes-results">
+    {% comment %}
+      Static server-rendered list: crawlable without JS and shown instantly on load.
+      notes-hub.js replaces this with the interactive paginated view once the
+      lightweight index (/notes-index.json) has been fetched.
+    {% endcomment %}
+    {% if is_zh %}
+      {% assign static_posts = site.posts | where: "lang", "zh-CN" %}
+    {% else %}
+      {% assign static_posts = site.posts | where: "lang", "en" %}
+    {% endif %}
+    {% assign static_posts = static_posts | sort: "date" | reverse %}
+    {% assign posts_by_year = static_posts | group_by_exp: "p", "p.date | date: '%Y'" | reverse %}
+    {% for year_group in posts_by_year %}
+      <div class="notes-year-block" id="notes-year-{{ year_group.name }}">
+        <h3 class="notes-year-heading">{{ year_group.name }}</h3>
+        <div class="project-grid">
+          {% for post in year_group.items %}
+            {% assign primary_cat = "" %}
+            {% for c in post.categories %}
+              {% unless c == "zh" or c == "en" %}
+                {% if primary_cat == "" %}{% assign primary_cat = c %}{% endif %}
+              {% endunless %}
+            {% endfor %}
+            {% assign cat_label = primary_cat %}
+            {% for cat in site.data.note_categories %}
+              {% if cat.id == primary_cat %}
+                {% if is_zh %}
+                  {% assign cat_label = cat.name_zh | default: cat.name %}
+                {% else %}
+                  {% assign cat_label = cat.name %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            <a class="project-card-link" href="{{ post.url | relative_url }}" data-cat="{{ primary_cat }}">
+              {% if post.proceedings or primary_cat != "" %}
+                <div class="venue">{% if post.proceedings %}{{ post.proceedings }}{% if primary_cat != "" %} &middot; {% endif %}{% endif %}{{ cat_label }}</div>
+              {% endif %}
+              <h2>{{ post.title | escape_once }}</h2>
+              <p>{{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} &middot; {{ post.tags | slice: 0, 4 | join: ", " }}{% endif %}</p>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
   <div class="hub-pager-row" id="notes-pager-row" hidden>
     <p id="notes-stats" class="notes-stats"></p>
     <nav id="notes-pagination" class="notes-pagination" aria-label="Pagination"></nav>
   </div>
+
+  {% comment %} Static topic links: crawlable hub → category → note chain. {% endcomment %}
+  <nav class="notes-topic-links" aria-label="{% if is_zh %}按主题浏览{% else %}Browse by topic{% endif %}">
+    <span class="notes-topic-label">{% if is_zh %}按主题浏览：{% else %}Browse by topic:{% endif %}</span>
+    {% for cat in site.data.note_categories %}
+      {% assign cslug = cat.id | downcase %}
+      {% if is_zh %}
+        <a href="{{ '/zh/notes/' | append: cslug | append: '/' | relative_url }}">{{ cat.name_zh | default: cat.name }}</a>
+      {% else %}
+        <a href="{{ '/notes/' | append: cslug | append: '/' | relative_url }}">{{ cat.name }}</a>
+      {% endif %}
+      {% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+    {% endfor %}
+  </nav>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>

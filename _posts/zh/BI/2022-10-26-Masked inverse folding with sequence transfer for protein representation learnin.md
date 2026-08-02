@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PEDS-2022 Masked inverse folding with sequence transfer for protein representation learning
+title: PEDS-2022 用于蛋白质表示学习的掩码逆折叠与序列迁移
 categories: [BI]
 tags: [protein, PLM]
 proceedings: PEDS

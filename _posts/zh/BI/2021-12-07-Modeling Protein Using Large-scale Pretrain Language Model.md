@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KDD-2021 Modeling Protein Using Large-scale Pretrain Language Model
+title: KDD-2021 基于大规模预训练语言模型的蛋白质建模
 categories: [BI]
 tags: [protein, PLM]
 proceedings: KDD

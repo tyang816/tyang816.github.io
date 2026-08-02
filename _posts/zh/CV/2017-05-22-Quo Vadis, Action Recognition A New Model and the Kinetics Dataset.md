@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2017 Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset
+title: CVPR-2017 动作识别路在何方？新模型与 Kinetics 数据集
 categories: [CV]
 tags: [vision-language, video, action-recognition]
 proceedings: CVPR

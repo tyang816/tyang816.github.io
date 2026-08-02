@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2020 Neural Subgraph Matching
+title: arXiv-2020 神经子图匹配
 categories: [ML]
 tags: [GNN]
 proceedings: arXiv

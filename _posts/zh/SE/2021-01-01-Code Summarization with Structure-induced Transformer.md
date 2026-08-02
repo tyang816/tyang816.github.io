@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2021 Code Summarization with Structure-induced Transformer
+title: ACL-2021 基于结构诱导 Transformer 的代码摘要
 categories: [SE]
 tags: [code-summarization, transformer]
 proceedings: ACL

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2019 Evaluating Protein Transfer Learning with TAPE
+title: NeurIPS-2019 用 TAPE 评估蛋白质迁移学习
 categories: [BI]
 tags: [protein, PLM, benchmark]
 proceedings: NeurIPS

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACS Synthetic Biology-2019 Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enzyme Catalytic Optima
+title: ACS Synthetic Biology-2019 机器学习预测微生物生长温度与酶催化最适条件
 categories: [BI]
 tags: [protein, PLM]
 proceedings: ACS Synthetic Biology

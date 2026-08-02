@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2021 Learning from Protein Structure with Geometric Vector Perceptrons
+title: ICLR-2021 用几何向量感知机从蛋白质结构中学习
 categories: [BI]
 tags: [protein, GNN, inverse folding]
 proceedings: ICLR

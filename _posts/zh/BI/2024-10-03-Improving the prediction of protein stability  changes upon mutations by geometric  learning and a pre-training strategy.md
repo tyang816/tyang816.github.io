@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Computational Science-2025 Improving the prediction of protein stability  changes upon mutations by geometric  learning and a pre-training strategy
+title: Nature Computational Science-2025 几何学习与预训练策略改进蛋白质突变稳定性预测
 categories: [BI]
 tags: [GNN, protein, fitness-prediction]
 proceedings: Nature Computational Science

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GCPR-2021 AudioCLIP：Extending CLIP to Image, Text and Audio
+title: GCPR-2021 AudioCLIP：将 CLIP 扩展至图像、文本与音频
 categories: [CV]
 tags: [vision-language, transformer, contrastive-learning]
 proceedings: GCPR

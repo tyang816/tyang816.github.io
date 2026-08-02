@@ -71,31 +71,31 @@ keywords:
               <div class="gallery-images">
                 <img src="{{ item.image }}" alt="{{ item_title }}" class="gallery-image active" onerror="this.style.display='none'">
                 {% if item.image2 %}
-                  <img src="{{ item.image2 }}" alt="{{ item_title }} 2" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image2 }}" alt="{{ item_title }} 2" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image3 %}
-                  <img src="{{ item.image3 }}" alt="{{ item_title }} 3" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image3 }}" alt="{{ item_title }} 3" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image4 %}
-                  <img src="{{ item.image4 }}" alt="{{ item_title }} 4" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image4 }}" alt="{{ item_title }} 4" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image5 %}
-                  <img src="{{ item.image5 }}" alt="{{ item_title }} 5" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image5 }}" alt="{{ item_title }} 5" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image6 %}
-                  <img src="{{ item.image6 }}" alt="{{ item_title }} 6" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image6 }}" alt="{{ item_title }} 6" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image7 %}
-                  <img src="{{ item.image7 }}" alt="{{ item_title }} 7" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image7 }}" alt="{{ item_title }} 7" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image8 %}
-                  <img src="{{ item.image8 }}" alt="{{ item_title }} 8" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image8 }}" alt="{{ item_title }} 8" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image9 %}
-                  <img src="{{ item.image9 }}" alt="{{ item_title }} 9" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image9 }}" alt="{{ item_title }} 9" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
                 {% if item.image10 %}
-                  <img src="{{ item.image10 }}" alt="{{ item_title }} 10" class="gallery-image" onerror="this.style.display='none'">
+                  <img src="{{ item.image10 }}" alt="{{ item_title }} 10" class="gallery-image" loading="lazy" onerror="this.style.display='none'">
                 {% endif %}
               </div>
               <button class="gallery-nav gallery-prev" onclick="changeImage({{ forloop.index }}, -1)">

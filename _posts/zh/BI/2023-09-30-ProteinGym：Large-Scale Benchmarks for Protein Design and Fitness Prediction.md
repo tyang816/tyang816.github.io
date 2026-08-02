@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2023 ProteinGym：Large-Scale Benchmarks for Protein Design and Fitness Prediction
+title: NeurIPS-2023 ProteinGym：蛋白质设计与适应度预测的大规模基准
 categories: [BI]
 tags: [protein, PLM, benchmark]
 proceedings: NeurIPS

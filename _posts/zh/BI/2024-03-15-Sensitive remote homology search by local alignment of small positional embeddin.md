@@ -1,6 +1,6 @@
 ---
 layout: post
-title: eLife-2024 Sensitive remote homology search by local alignment of small positional embeddings from protein language models
+title: eLife-2024 基于蛋白质语言模型局部位置嵌入比对的灵敏远程同源搜索
 categories: [BI]
 tags: [protein, homology, PLM]
 proceedings: eLife

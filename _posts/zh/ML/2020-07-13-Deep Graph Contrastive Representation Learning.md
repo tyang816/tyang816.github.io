@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2020 Deep Graph Contrastive Representation Learning
+title: NeurIPS-2020 深度图对比表示学习
 categories: [ML]
 tags: [contrastive-learning, GNN]
 proceedings: NeurIPS

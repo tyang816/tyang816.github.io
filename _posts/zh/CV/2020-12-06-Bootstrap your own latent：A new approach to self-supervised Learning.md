@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2020 Bootstrap your own latent：A new approach to self-supervised Learning
+title: NeurIPS-2020 自举潜在表示：自监督学习新方法（BYOL）
 categories: [CV]
 tags: [self-supervised learning]
 proceedings: NeurIPS

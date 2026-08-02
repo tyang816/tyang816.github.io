@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACEBench：Who Wins the Match Point in Tool Usage
+title: ACEBench：谁赢得工具使用的赛点
 categories: [CL]
 tags: [Agent, LLM, NLP]
 proceedings: arXiv

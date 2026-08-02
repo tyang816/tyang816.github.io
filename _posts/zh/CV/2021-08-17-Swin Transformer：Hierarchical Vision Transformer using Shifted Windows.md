@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICCV-2021 Swin Transformer：Hierarchical Vision Transformer using Shifted Windows
+title: ICCV-2021 Swin Transformer：基于移位窗口的层次化视觉 Transformer
 categories: [CV]
 tags: [vision-language, transformer]
 proceedings: ICCV

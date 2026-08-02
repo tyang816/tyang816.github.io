@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Machine Intelligence-2023 Structure-inducing pre-training for generalizable representation learning
+title: Nature Machine Intelligence-2023 面向可泛化表示学习的结构诱导预训练
 categories: [BI]
 tags: [pre-training, PLM]
 proceedings: Nature Machine Intelligence

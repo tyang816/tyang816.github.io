@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Journal of Chemical Information and Modeling-2024 TM-search：An Efficient and Effective Tool for Protein Structure Database Search
+title: Journal of Chemical Information and Modeling-2024 TM-search：高效准确的蛋白质结构数据库搜索工具
 categories: [BI]
 tags: [protein, structure search]
 proceedings: Journal of Chemical Information and Modeling

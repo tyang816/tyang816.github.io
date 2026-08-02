@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bioinformatics Advances-2021 Light attention predicts protein location from the language of life
+title: Bioinformatics Advances-2021 轻量注意力从生命语言中预测蛋白质定位
 categories: [BI]
 tags: [protein, localization, PLM]
 proceedings: Bioinformatics Advances

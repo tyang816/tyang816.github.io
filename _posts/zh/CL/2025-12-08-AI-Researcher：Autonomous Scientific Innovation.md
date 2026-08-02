@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2025 AI-Researcher：Autonomous Scientific Innovation
+title: NeurIPS-2025 AI-Researcher：自主科学创新
 categories: [CL]
 tags: [Agent, NLP, LLM]
 proceedings: NeurIPS

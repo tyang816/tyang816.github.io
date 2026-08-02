@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2024 Multi-Scale Representation Learning for Protein Fitness Prediction
+title: NeurIPS-2024 面向蛋白质适应度预测的多尺度表示学习
 categories: [BI]
 tags: [GNN, protein, fitness-prediction]
 proceedings: NeurIPS

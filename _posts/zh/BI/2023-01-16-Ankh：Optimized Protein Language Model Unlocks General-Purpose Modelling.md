@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2023 Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling
+title: bioRxiv-2023 Ankh：优化的蛋白质语言模型解锁通用建模
 categories: [BI]
 tags: [protein, PLM, language-model]
 proceedings: bioRxiv

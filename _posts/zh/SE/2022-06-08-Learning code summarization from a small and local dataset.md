@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2022 Learning code summarization from a small and local dataset
+title: arXiv-2022 从小型本地数据集学习代码摘要
 categories: [SE]
 tags: [Transformer, GNN]
 proceedings: arXiv

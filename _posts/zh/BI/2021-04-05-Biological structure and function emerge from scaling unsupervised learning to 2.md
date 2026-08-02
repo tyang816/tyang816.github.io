@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Proceedings of the National Academy of Sciences-2021 Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+title: Proceedings of the National Academy of Sciences-2021 无监督学习扩展至 2.5 亿条蛋白质序列涌现生物结构与功能
 categories: [BI]
 tags: [protein, PLM]
 proceedings: Proceedings of the National Academy of Sciences

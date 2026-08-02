@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KDD-2019 MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation
+title: KDD-2019 MeLU：面向冷启动推荐的元学习用户偏好估计器
 categories: [IR]
 tags: [meta-learning, recommendation-system]
 proceedings: KDD

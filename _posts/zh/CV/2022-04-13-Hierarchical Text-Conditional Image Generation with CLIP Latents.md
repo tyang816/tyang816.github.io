@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2022 Hierarchical Text-Conditional Image Generation with CLIP Latents
+title: OpenAI-2022 基于 CLIP 潜在表示的层次化文本条件图像生成（DALL·E 2）
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: OpenAI

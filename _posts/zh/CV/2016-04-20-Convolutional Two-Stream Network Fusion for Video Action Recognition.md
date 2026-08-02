@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2016 Convolutional Two-Stream Network Fusion for Video Action Recognition
+title: CVPR-2016 视频动作识别的卷积双流网络融合
 categories: [CV]
 tags: [video, action-recognition]
 proceedings: CVPR

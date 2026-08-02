@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Communications-2024 PLMSearch：Protein language model powers accurate and fast sequence search for remote homology
+title: Nature Communications-2024 PLMSearch：蛋白质语言模型驱动准确快速的远程同源序列搜索
 categories: [BI]
 tags: [protein, PLM, alignment]
 proceedings: Nature Communications

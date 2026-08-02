@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Science-2023 Evolutionary-scale prediction of atomic-level protein structure with a language model
+title: Science-2023 语言模型实现进化尺度的原子级蛋白质结构预测
 categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Science

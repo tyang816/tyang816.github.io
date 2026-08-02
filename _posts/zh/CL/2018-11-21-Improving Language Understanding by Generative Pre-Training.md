@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2018 Improving Language Understanding by Generative Pre-Training
+title: OpenAI-2018 生成式预训练改进语言理解（GPT）
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: OpenAI

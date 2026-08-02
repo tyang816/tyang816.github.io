@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2025 Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions
+title: ICLR-2025 Boltzmann 对齐逆折叠模型预测突变对蛋白质相互作用的影响
 categories: [BI]
 tags: [protein, fitness-prediction, PPI]
 proceedings: ICLR

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NAACL-2022 CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training
+title: NAACL-2022 CODE-MVP：基于对比预训练的多视图源代码表示学习
 categories: [SE]
 tags: [code-summarization, transformer, contrastive-learning]
 proceedings: NAACL

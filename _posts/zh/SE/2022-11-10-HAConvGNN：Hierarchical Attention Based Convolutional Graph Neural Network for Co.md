@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2021 HAConvGNN：Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks
+title: EMNLP-2021 HAConvGNN：基于层次注意力的卷积图神经网络用于 Jupyter 笔记本代码文档生成
 categories: [SE]
 tags: [code-documentation, GNN]
 proceedings: EMNLP

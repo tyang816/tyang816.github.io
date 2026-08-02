@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2021 Align before Fuse：Vision and Language Representation Learning with Momentum Distillation
+title: NeurIPS-2021 先对齐后融合：基于动量蒸馏的视觉-语言表示学习（ALBEF）
 categories: [CV]
 tags: [vision-language]
 proceedings: NeurIPS

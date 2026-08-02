@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2026 BiomniBench：Process-level Evaluation of LLM Agents for Real-world Biomedical Research
+title: arXiv-2026 BiomniBench：真实生物医学研究中 LLM 智能体的过程级评估
 categories: [BI]
 tags: [protein, agent]
 proceedings: arXiv

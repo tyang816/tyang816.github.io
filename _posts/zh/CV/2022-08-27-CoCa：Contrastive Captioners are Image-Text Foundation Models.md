@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 CoCa：Contrastive Captioners are Image-Text Foundation Models
+title: NeurIPS-2022 CoCa：对比字幕器即图像-文本基础模型
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: NeurIPS

@@ -29,6 +29,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+<h1 class="visually-hidden">Yang Tan (谭扬) — PhD student at SJTU &amp; SII, AI for Biology, protein language models, and TCM LLMs</h1>
+
 My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html) and co-advised by Prof. [Nanqing Dong](https://eveningdong.github.io/). I receive my M.S. degree of Computer Science (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2022.
 
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
@@ -37,7 +39,8 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc).
 
-# 🔥 News
+## 🔥 News
+{:.home-section}
 - *2026.07*: &nbsp;🎉 [MatwingsVenus (晓鹜)](https://matvenus.com/) wins the **WAIC 2026 National Treasure** and is featured at the [WAIC 2026](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A).
 - *2026.04*: &nbsp;🎉 [VenusFactory2]({{ '/projects/venusfactory2/' | relative_url }}) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
 - *2026.01*: &nbsp;🎉 [VenusX]({{ '/projects/venusx/' | relative_url }}) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here]({{ '/projects/venusx/leaderboard/' | relative_url }}).
@@ -46,13 +49,16 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 <span class='anchor' id='-selected-publications'></span>
 
-# 📝 Selected Publications 
+## 📝 Selected Publications
+{:.home-section}
+
 
 {% include selected-publications.html %}
 
 <span class='anchor' id='-honors-and-awards'></span>
 
-# 🏆 Honors and Awards
+## 🏆 Honors and Awards
+{:.home-section}
 - *2026*, ***WAIC 2026 National Treasure***, *MatwingsVenus (晓鹜)*, *Project Leader*, Ph.D.
 - *2026*, ***Shanghai Innovation Institute Student Project (1,250,000 RMB)***, *Project Leader*, Ph.D.
 - *2025*, ***Young Science and Technology Talent Development Program (40,000 RMB)***, CAST, Ph.D.
@@ -76,11 +82,13 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 <span class='anchor' id='-media-coverage'></span>
 
-# 📰 Media Coverage
+## 📰 Media Coverage
+{:.home-section}
 
 {% include media-list.html lang="en" %}
 
-# 📖 Educations
+## 📖 Educations
+{:.home-section}
 - *2025.09 - Now*, Shanghai Jiao Tong University & Shanghai Innovation Institute. Ph.D. in Computer Science. 
 - *2022.06 - 2025.06*, East China University of Science and Technology. M.S. in Computer Science & GPA: 3.8 / 4.0 & #1 ranking. 
 - *2018.09 - 2022.06*, East China University of Science and Technology. B.S. in Software Engineering & GPA 3.8/4.0 & #1 ranking.

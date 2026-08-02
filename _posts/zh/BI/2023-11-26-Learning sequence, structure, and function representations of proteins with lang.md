@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2023 Learning sequence, structure, and function representations of proteins with language models
+title: bioRxiv-2023 用语言模型学习蛋白质序列、结构与功能表示
 categories: [BI]
 tags: [protein, PLM, function, MOE]
 proceedings: bioRxiv

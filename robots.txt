@@ -8,3 +8,4 @@ Allow: /
 
 Sitemap: https://tyang816.github.io/sitemap.xml
 Sitemap: https://tyang816.github.io/sitemap_i18n.xml
+Sitemap: https://tyang816.github.io/sitemap_notes.xml

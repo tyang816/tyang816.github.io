@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2019 Unsupervised Embedding Learning via Invariant and Spreading Instance Feature
+title: CVPR-2019 基于不变性与分散性实例特征的无监督嵌入学习
 categories: [CV]
 tags: [unsupervised-learning]
 proceedings: CVPR

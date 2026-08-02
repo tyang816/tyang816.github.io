@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WACV-2023 MixGen：A New Multi-Modal Data Augmentation
+title: WACV-2023 MixGen：新型多模态数据增强
 categories: [CV]
 tags: [vision-language, data-augmentation]
 proceedings: WACV

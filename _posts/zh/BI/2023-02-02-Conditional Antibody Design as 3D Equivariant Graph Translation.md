@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2023 Conditional Antibody Design as 3D Equivariant Graph Translation
+title: ICLR-2023 基于 3D 等变图翻译的条件抗体设计
 categories: [BI]
 tags: [protein, antibody, GNN]
 proceedings: ICLR

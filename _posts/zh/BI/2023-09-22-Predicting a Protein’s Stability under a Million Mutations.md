@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2023 Predicting a Protein’s Stability under a Million Mutations
+title: NeurIPS-2023 预测蛋白质在百万级突变下的稳定性
 categories: [BI]
 tags: [protein, fitness-prediction]
 proceedings: NeurIPS

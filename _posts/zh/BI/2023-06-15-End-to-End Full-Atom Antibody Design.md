@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2023 End-to-End Full-Atom Antibody Design
+title: ICML-2023 端到端全原子抗体设计
 categories: [BI]
 tags: [protein, antibody, GNN]
 proceedings: ICML

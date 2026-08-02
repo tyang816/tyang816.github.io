@@ -9,23 +9,36 @@ layout: null
   Priority bilingual sitemap for Search Console.
   Includes hubs + every project (and leaderboard when present) from projects.yml.
 {% endcomment %}
+{% comment %}
+  lastmod strategy: hubs change when content changes → latest post date;
+  project pages → their projects.yml date. Avoids site.time, which would
+  refresh every URL on every build and make lastmod untrustworthy.
+{% endcomment %}
+{% assign latest_post = site.posts | sort: "date" | last %}
+{% assign hub_lastmod = latest_post.date | date_to_xmlschema %}
 {% assign pairs = "" | split: "" %}
-{% capture pair_home %}/|/zh/{% endcapture %}
-{% capture pair_notes %}/notes/|/zh/notes/{% endcapture %}
-{% capture pair_timeline %}/timeline/|/zh/timeline/{% endcapture %}
-{% capture pair_project %}/projects/|/zh/projects/{% endcapture %}
+{% capture pair_home %}/|/zh/|{{ hub_lastmod }}{% endcapture %}
+{% capture pair_notes %}/notes/|/zh/notes/|{{ hub_lastmod }}{% endcapture %}
+{% capture pair_timeline %}/timeline/|/zh/timeline/|{{ hub_lastmod }}{% endcapture %}
+{% capture pair_project %}/projects/|/zh/projects/|{{ hub_lastmod }}{% endcapture %}
 {% assign pairs = pairs | push: pair_home | push: pair_notes | push: pair_timeline | push: pair_project %}
+{% comment %} Note-category landing pages (/notes/bi/ ↔ /zh/notes/bi/ etc.) {% endcomment %}
+{% for c in site.data.note_categories %}
+  {% assign cslug = c.id | downcase %}
+  {% capture pair_c %}/notes/{{ cslug }}/|/zh/notes/{{ cslug }}/|{{ hub_lastmod }}{% endcapture %}
+  {% assign pairs = pairs | push: pair_c %}
+{% endfor %}
 {% for p in site.data.projects %}
   {% if p.url and p.url_zh %}
-    {% capture pair_p %}{{ p.url }}|{{ p.url_zh }}{% endcapture %}
+    {% capture pair_p %}{{ p.url }}|{{ p.url_zh }}|{{ p.date | append: "-01" }}{% endcapture %}
     {% assign pairs = pairs | push: pair_p %}
   {% endif %}
 {% endfor %}
-{% assign lastmod = site.time | date_to_xmlschema %}
 {% for pair in pairs %}
   {% assign parts = pair | split: "|" %}
   {% assign en_path = parts[0] %}
   {% assign zh_path = parts[1] %}
+  {% assign lastmod = parts[2] %}
   <url>
     <loc>{{ site.url }}{{ en_path }}</loc>
     <lastmod>{{ lastmod }}</lastmod>
@@ -50,7 +63,7 @@ layout: null
   {% if p.leaderboard %}
   <url>
     <loc>{{ site.url }}{{ p.leaderboard }}</loc>
-    <lastmod>{{ lastmod }}</lastmod>
+    <lastmod>{{ p.date | append: "-01" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
   </url>

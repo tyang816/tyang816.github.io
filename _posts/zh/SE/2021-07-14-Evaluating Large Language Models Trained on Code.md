@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2021 Evaluating Large Language Models Trained on Code
+title: OpenAI-2021 评估代码上训练的大语言模型（Codex）
 categories: [SE]
 tags: [LLM, code-generation]
 proceedings: OpenAI

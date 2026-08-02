@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2021 FLIP：Benchmark tasks in fitness landscape inference for proteins
+title: NeurIPS-2021 FLIP：蛋白质适应度景观推断基准任务
 categories: [BI]
 tags: [protein, benchmark]
 proceedings: NeurIPS

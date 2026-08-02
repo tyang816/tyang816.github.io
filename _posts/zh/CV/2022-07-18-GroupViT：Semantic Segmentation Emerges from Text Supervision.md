@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2022 GroupViT：Semantic Segmentation Emerges from Text Supervision
+title: CVPR-2022 GroupViT：文本监督下涌现的语义分割
 categories: [CV]
 tags: [video, vision-language]
 proceedings: CVPR

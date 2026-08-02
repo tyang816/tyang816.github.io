@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICCV-2021 An Empirical Study of Training Self-Supervised Vision Transformers
+title: ICCV-2021 自监督视觉 Transformer 训练的实证研究
 categories: [CV]
 tags: [vision-language]
 proceedings: ICCV

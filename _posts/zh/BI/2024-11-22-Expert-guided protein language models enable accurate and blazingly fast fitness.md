@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bioinformatics-2024 Expert-guided protein language models enable accurate and blazingly fast fitness prediction
+title: Bioinformatics-2024 专家引导的蛋白质语言模型实现准确且极速的适应度预测
 categories: [BI]
 tags: [protein, fitness-prediction, PLM]
 proceedings: Bioinformatics

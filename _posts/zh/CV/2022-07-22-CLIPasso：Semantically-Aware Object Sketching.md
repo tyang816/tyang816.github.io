@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SIGGRAPH-2022 CLIPasso：Semantically-Aware Object Sketching
+title: SIGGRAPH-2022 CLIPasso：语义感知的目标素描
 categories: [CV]
 tags: [contrastive-learning]
 proceedings: SIGGRAPH

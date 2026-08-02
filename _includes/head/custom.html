@@ -1,4 +1,7 @@
-<link rel="shashengwan" sizes="180x180" href="{{ '/images/shashengwan.png' | relative_url }}">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/shashengwan.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/shashengwan.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/shashengwan.png' | relative_url }}">
 <link rel="manifest" href="{{ '/images/site.webmanifest' | relative_url }}">
@@ -9,6 +12,8 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}"/>
 
+{% comment %} MathJax (~1MB) is only needed on note pages with formulas. {% endcomment %}
+{% if page.layout == "post" or page.mathjax %}
 <script>
   window.MathJax = {
     tex: {
@@ -32,3 +37,4 @@
   };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}

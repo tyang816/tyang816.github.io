@@ -1,0 +1,75 @@
+{% comment %}
+  Static landing page for one note category (e.g. /notes/bi/).
+  Requires page.note_cat = category id from note_categories.yml.
+  Crawlable without JS; links every note in the category.
+{% endcomment %}
+{% assign nc_id = page.note_cat %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+
+{% assign nc_meta = nil %}
+{% for cat in site.data.note_categories %}
+  {% if cat.id == nc_id %}{% assign nc_meta = cat %}{% endif %}
+{% endfor %}
+
+{% if is_zh %}
+  {% assign nc_name = nc_meta.name_zh | default: nc_meta.name %}
+  {% assign nc_blurb = nc_meta.blurb_zh | default: nc_meta.blurb %}
+  {% assign nc_suffix = "论文笔记" %}
+  {% assign nc_all = "浏览全部笔记" %}
+  {% assign nc_lang = "zh-CN" %}
+{% else %}
+  {% assign nc_name = nc_meta.name %}
+  {% assign nc_blurb = nc_meta.blurb %}
+  {% assign nc_suffix = "Paper Notes" %}
+  {% assign nc_all = "Browse all notes" %}
+  {% assign nc_lang = "en" %}
+{% endif %}
+
+<header class="notes-cat-head">
+  <h1>{{ nc_name }} — {{ nc_suffix }}</h1>
+  {% if nc_blurb %}<p>{{ nc_blurb }}</p>{% endif %}
+</header>
+
+{% assign nc_posts = site.posts | where: "lang", nc_lang | where: "categories", nc_id %}
+{% assign nc_posts = nc_posts | sort: "date" | reverse %}
+{% assign nc_by_year = nc_posts | group_by_exp: "p", "p.date | date: '%Y'" | reverse %}
+
+<div class="notes-results">
+  {% for year_group in nc_by_year %}
+    <div class="notes-year-block" id="notes-year-{{ year_group.name }}">
+      <h3 class="notes-year-heading">{{ year_group.name }}</h3>
+      <div class="project-grid">
+        {% for post in year_group.items %}
+          <a class="project-card-link" href="{{ post.url | relative_url }}" data-cat="{{ nc_id }}">
+            {% if post.proceedings %}<div class="venue">{{ post.proceedings }}</div>{% endif %}
+            <h2>{{ post.title | escape_once }}</h2>
+            <p>{{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} &middot; {{ post.tags | slice: 0, 4 | join: ", " }}{% endif %}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% if nc_meta.projects %}
+  <section class="notes-related-projects">
+    <h2>{% if is_zh %}相关开源项目{% else %}Related Open Projects{% endif %}</h2>
+    <div class="project-grid">
+      {% for slug in nc_meta.projects %}
+        {% for p in site.data.projects %}
+          {% if p.slug == slug %}
+            <a class="project-card-link" href="{% if is_zh %}{{ p.url_zh | relative_url }}{% else %}{{ p.url | relative_url }}{% endif %}">
+              {% if p.venue %}<div class="venue">{% if is_zh %}{{ p.venue_zh | default: p.venue }}{% else %}{{ p.venue }}{% endif %}</div>{% endif %}
+              <h2>{{ p.name }}</h2>
+              <p>{% if is_zh %}{{ p.tagline_zh | default: p.tagline }}{% else %}{{ p.tagline }}{% endif %}</p>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+<p class="notes-cat-all"><a href="{% if is_zh %}{{ '/zh/notes/' | relative_url }}{% else %}{{ '/notes/' | relative_url }}{% endif %}">&larr; {{ nc_all }}</a></p>

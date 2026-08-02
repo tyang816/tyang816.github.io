@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bioinformatics-2021 DNABERT：pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome
+title: Bioinformatics-2021 DNABERT：面向基因组 DNA 语言的预训练双向 Transformer 编码模型
 categories: [BI]
 tags: [DNA, genomics, PLM]
 proceedings: Bioinformatics

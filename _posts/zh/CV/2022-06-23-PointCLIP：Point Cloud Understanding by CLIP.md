@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2022 PointCLIP：Point Cloud Understanding by CLIP
+title: CVPR-2022 PointCLIP：用 CLIP 理解点云
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: CVPR

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Journal of Systems and Software-2022 Automatic source code summarization with graph attention networks
+title: Journal of Systems and Software-2022 基于图注意力网络的自动源代码摘要
 categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: Journal of Systems and Software

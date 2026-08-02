@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures
+title: NeurIPS-2022 基于扩散生成模型的抗原特异性抗体设计与优化
 categories: [BI]
 tags: [protein, antibody, diffusion, GNN]
 proceedings: NeurIPS

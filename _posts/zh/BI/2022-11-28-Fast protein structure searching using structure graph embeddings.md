@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2022 Fast protein structure searching using structure graph embeddings
+title: bioRxiv-2022 基于结构图嵌入的快速蛋白质结构搜索
 categories: [BI]
 tags: [protein, PLM, alignment]
 proceedings: bioRxiv

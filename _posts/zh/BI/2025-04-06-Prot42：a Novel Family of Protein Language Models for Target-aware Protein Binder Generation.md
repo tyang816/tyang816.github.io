@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2025 Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation
+title: arXiv-2025 Prot42：面向靶点感知蛋白质结合体生成的新型蛋白质语言模型家族
 categories: [BI]
 tags: [GNN, protein, protein-design]
 proceedings: arXiv

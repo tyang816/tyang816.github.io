@@ -1,0 +1,41 @@
+---
+permalink: /sitemap_notes.xml
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% comment %}
+  Dedicated sitemap for paper notes. Notes stay out of sitemap.xml so crawl
+  budget favors hubs/projects; this file gives search engines the full note
+  inventory with en ↔ zh hreflang pairs (EN posts carry alt_url → zh twin).
+{% endcomment %}
+{% assign en_posts = site.posts | where: "lang", "en" | sort: "date" %}
+{% for post in en_posts %}
+  {% assign en_abs = post.url | absolute_url %}
+  {% if post.alt_url %}{% assign zh_abs = post.alt_url | absolute_url %}{% endif %}
+  <url>
+    <loc>{{ en_abs }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    {% if post.alt_url %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs }}"/>
+    {% endif %}
+  </url>
+  {% if post.alt_url %}
+  <url>
+    <loc>{{ zh_abs }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs }}"/>
+  </url>
+  {% endif %}
+{% endfor %}
+</urlset>

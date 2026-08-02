@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2022 Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback
+title: arXiv-2022 基于人类反馈强化学习训练有益且无害的助手
 categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: arXiv

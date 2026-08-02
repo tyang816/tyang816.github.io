@@ -173,7 +173,7 @@
       "knowsAbout": {{ site.keywords | jsonify }}
     },
     {
-      "@type": {% if page.project == "tcm" %}["WebPage", "CollectionPage"]{% else %}"WebPage"{% endif %},
+      "@type": {% if page.project == "tcm" or page.note_cat %}["WebPage", "CollectionPage"]{% else %}"WebPage"{% endif %},
       "@id": "{{ canonical_url }}#webpage",
       "url": {{ canonical_url | jsonify }},
       "name": {{ ld_name | jsonify }},
@@ -244,6 +244,33 @@
       "publisher": { "@id": "{{ seo_url }}/#person" },
       "isPartOf": { "@id": "{{ seo_url }}/#website" },
       "url": {{ canonical_url | jsonify }}
+    },
+    {
+      {% assign bc_cat = "" %}
+      {% for c in page.categories %}
+        {% unless c == "zh" or c == "en" %}
+          {% if bc_cat == "" %}{% assign bc_cat = c %}{% endif %}
+        {% endunless %}
+      {% endfor %}
+      {% assign bc_cat_name = bc_cat %}
+      {% for cat in site.data.note_categories %}
+        {% if cat.id == bc_cat %}
+          {% if is_zh_ld %}
+            {% assign bc_cat_name = cat.name_zh | default: cat.name %}
+          {% else %}
+            {% assign bc_cat_name = cat.name %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      "@type": "BreadcrumbList",
+      "@id": "{{ canonical_url }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": {% if is_zh_ld %}"首页"{% else %}"Home"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/{% else %}{{ seo_url }}/{% endif %}" },
+        { "@type": "ListItem", "position": 2, "name": {% if is_zh_ld %}"论文笔记"{% else %}"Paper Notes"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/notes/{% else %}{{ seo_url }}/notes/{% endif %}" }{% if bc_cat != "" %},
+        { "@type": "ListItem", "position": 3, "name": {{ bc_cat_name | jsonify }}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/notes/{{ bc_cat | downcase }}/{% else %}{{ seo_url }}/notes/{{ bc_cat | downcase }}/{% endif %}" },
+        { "@type": "ListItem", "position": 4, "name": {{ raw_title | jsonify }} }{% else %},
+        { "@type": "ListItem", "position": 3, "name": {{ raw_title | jsonify }} }{% endif %}
+      ]
     }{% endif %}
   ]
 }

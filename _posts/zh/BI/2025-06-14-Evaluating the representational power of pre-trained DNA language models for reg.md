@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Genome Biology-2025 Evaluating the representational power of pre-trained DNA language models for regulatory genomics
+title: Genome Biology-2025 评估预训练 DNA 语言模型在调控基因组学中的表示能力
 categories: [BI]
 tags: [DNA, genomics, PLM]
 proceedings: Genome Biology

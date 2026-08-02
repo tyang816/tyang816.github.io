@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KDD-2023 Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design
+title: KDD-2023 面向抗原特异性计算抗体设计的抗体语言模型预训练
 categories: [BI]
 tags: [protein, antibody, GNN, PLM]
 proceedings: KDD

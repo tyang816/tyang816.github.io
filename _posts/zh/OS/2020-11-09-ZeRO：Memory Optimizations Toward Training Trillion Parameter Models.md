@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SC-2020 ZeRO：Memory Optimizations Toward Training Trillion Parameter Models
+title: SC-2020 ZeRO：面向万亿参数模型训练的内存优化
 categories: [OS]
 tags: [distributed-dataflow]
 proceedings: SC

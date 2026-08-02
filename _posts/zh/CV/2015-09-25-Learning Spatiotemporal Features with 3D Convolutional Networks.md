@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICCV-2015 Learning Spatiotemporal Features with 3D Convolutional Networks
+title: ICCV-2015 用 3D 卷积网络学习时空特征
 categories: [CV]
 tags: [video]
 proceedings: ICCV

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICPC-2018 Deep code comment generation
+title: ICPC-2018 深度代码注释生成
 categories: [SE]
 tags: [code-comment]
 proceedings: ICPC

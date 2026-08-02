@@ -3,6 +3,51 @@ layout: default
 author_profile: true
 ---
 
+{% assign post_lang = page.lang | default: "en" %}
+{% assign post_is_zh = false %}
+{% if post_lang == "zh-CN" or post_lang == "zh" %}{% assign post_is_zh = true %}{% endif %}
+{% assign primary_cat = "" %}
+{% for c in page.categories %}
+  {% unless c == "zh" or c == "en" %}
+    {% if primary_cat == "" %}{% assign primary_cat = c %}{% endif %}
+  {% endunless %}
+{% endfor %}
+{% assign cat_label = primary_cat %}
+{% for cat in site.data.note_categories %}
+  {% if cat.id == primary_cat %}
+    {% if post_is_zh %}
+      {% assign cat_label = cat.name_zh | default: cat.name %}
+    {% else %}
+      {% assign cat_label = cat.name %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<header class="post-header">
+  <h1 class="page__title">{{ page.title | escape_once }}</h1>
+  <p class="page__meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+    {%- if page.proceedings %} &middot; {{ page.proceedings }}{% endif %}
+    {%- if primary_cat != "" %}
+      {%- assign cat_slug = primary_cat | downcase -%}
+      &middot; <a href="{% if post_is_zh %}{{ '/zh/notes/' | append: cat_slug | append: '/' | relative_url }}{% else %}{{ '/notes/' | append: cat_slug | append: '/' | relative_url }}{% endif %}" rel="tag">{{ cat_label }}</a>
+    {%- endif %}
+    {%- if page.tags.size > 0 %} &middot; {{ page.tags | join: ", " }}{% endif %}
+  </p>
+</header>
+
+{% comment %} Optional: link this note to one of my open projects via `project: <slug>`. {% endcomment %}
+{% if page.project %}
+  {% for p in site.data.projects %}
+    {% if p.slug == page.project %}
+      <aside class="post-related-project">
+        <span class="post-related-project__label">{% if post_is_zh %}相关项目{% else %}Related project{% endif %}</span>
+        <a href="{% if post_is_zh %}{{ p.url_zh | relative_url }}{% else %}{{ p.url | relative_url }}{% endif %}">
+          <strong>{{ p.name }}</strong>{% if p.tagline %} — {% if post_is_zh %}{{ p.tagline_zh | default: p.tagline }}{% else %}{{ p.tagline }}{% endif %}{% endif %}
+        </a>
+      </aside>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {{ content }}
-
-

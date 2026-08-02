@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2014 Large-scale Video Classification with Convolutional Neural Networks
+title: CVPR-2014 基于卷积神经网络的大规模视频分类
 categories: [CV]
 tags: [video]
 proceedings: CVPR

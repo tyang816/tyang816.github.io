@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2021 An Image is Worth 16x16 Words：Transformers for Image Recognition at Scale
+title: ICLR-2021 一张图抵 16x16 个词：大规模图像识别的 Transformer（ViT）
 categories: [CV]
 tags: [vision-language, transformer]
 proceedings: ICLR

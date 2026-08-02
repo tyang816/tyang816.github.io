@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2021 Is Space-Time Attention All You Need for Video Understanding
+title: ICML-2021 时空注意力是视频理解所需的一切吗
 categories: [CV]
 tags: [video, vision-language, transformer]
 proceedings: ICML

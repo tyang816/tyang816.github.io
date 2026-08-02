@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2024 Movie Gen：A Cast of Media Foundation Models
+title: arXiv-2024 Movie Gen：媒体基础模型家族
 categories: [CV]
 tags: [video-generation]
 proceedings: arXiv

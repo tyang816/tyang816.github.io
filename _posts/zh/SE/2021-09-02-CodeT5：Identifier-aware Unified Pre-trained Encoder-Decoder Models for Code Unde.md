@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2021 CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+title: EMNLP-2021 CodeT5：标识符感知的代码理解与生成统一预训练编码器-解码器模型
 categories: [SE]
 tags: [code-understanding, transformer]
 proceedings: EMNLP

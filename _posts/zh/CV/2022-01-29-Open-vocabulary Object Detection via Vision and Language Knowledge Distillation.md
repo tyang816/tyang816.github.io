@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 Open-vocabulary Object Detection via Vision and Language Knowledge Distillation
+title: ICLR-2022 基于视觉-语言知识蒸馏的开放词汇目标检测
 categories: [CV]
 tags: [vision-language, contrastive-learning, object-detection]
 proceedings: ICLR

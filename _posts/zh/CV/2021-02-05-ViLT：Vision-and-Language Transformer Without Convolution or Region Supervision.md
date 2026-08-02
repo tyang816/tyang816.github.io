@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2021 ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision
+title: ICML-2021 ViLT：无卷积无区域监督的视觉-语言 Transformer
 categories: [CV]
 tags: [vision-language, contrastive-learning, transformer]
 proceedings: ICML

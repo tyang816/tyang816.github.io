@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IJCAI-2019 Commit Message Generation for Source Code Changes
+title: IJCAI-2019 面向源代码变更的提交信息生成
 categories: [SE]
 tags: [code-understanding]
 proceedings: IJCAI

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2020 Big Self-Supervised Models are Strong Semi-Supervised Learners
+title: NeurIPS-2020 大型自监督模型是强大的半监督学习者
 categories: [CV]
 tags: [semi-supervised learning]
 proceedings: NeurIPS

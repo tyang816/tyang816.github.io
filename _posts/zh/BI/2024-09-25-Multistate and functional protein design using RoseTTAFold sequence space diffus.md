@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2024 Multistate and functional protein design using RoseTTAFold sequence space diffusion
+title: Nature Biotechnology-2024 基于 RoseTTAFold 序列空间扩散的多态与功能蛋白质设计
 categories: [BI]
 tags: [protein, diffusion, protein-design]
 proceedings: Nature Biotechnology

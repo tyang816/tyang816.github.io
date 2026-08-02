@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2023 Protein generation with evolutionary diffusion：sequence is all you need
+title: bioRxiv-2023 进化扩散生成蛋白质：序列即一切
 categories: [BI]
 tags: [protein, PLM, protein-design]
 proceedings: bioRxiv

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2019 Graph2Seq：Graph to Sequence Learning with Attention-based Neural Networks
+title: ICLR-2019 Graph2Seq：基于注意力神经网络的图到序列学习
 categories: [CL]
 tags: [NLP, GNN]
 proceedings: ICLR

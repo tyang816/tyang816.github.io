@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2021 Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure
+title: bioRxiv-2021 面向蛋白质设计的更通用嵌入：融合序列与结构的联合表示
 categories: [BI]
 tags: [protein, PLM, fitness-prediction]
 proceedings: bioRxiv

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: International Journal of Molecular Sciences-2023 DeepTP：A Deep Learning Model for Thermophilic Protein Prediction
+title: International Journal of Molecular Sciences-2023 DeepTP：嗜热蛋白预测的深度学习模型
 categories: [BI]
 tags: [protein]
 proceedings: International Journal of Molecular Sciences

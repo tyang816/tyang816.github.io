@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 LoRA：Low-Rank Adaptation of Large Language Models
+title: ICLR-2022 LoRA：大语言模型的低秩适配
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: ICLR

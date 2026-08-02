@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Computational Science-2025 SciToolAgent：A Knowledge Graph-Driven Scientific Agent for Multi-Tool Integration
+title: Nature Computational Science-2025 SciToolAgent：知识图谱驱动的多工具集成科学智能体
 categories: [CL]
 tags: [Agent, LLM]
 proceedings: Nature Computational Science

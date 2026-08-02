@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Machine Intelligence-2022 Learning functional properties of proteins with language models
+title: Nature Machine Intelligence-2022 用语言模型学习蛋白质功能特性
 categories: [BI]
 tags: [protein, PLM, functional prediction]
 proceedings: Nature Machine Intelligence

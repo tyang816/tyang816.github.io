@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICSE-2018 Deep code search
+title: ICSE-2018 深度代码搜索
 categories: [SE]
 tags: [code-search]
 proceedings: ICSE

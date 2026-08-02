@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 Language-driven Semantic Segmentation
+title: ICLR-2022 语言驱动的语义分割
 categories: [CV]
 tags: [LLM, NLP, vision-language]
 proceedings: ICLR

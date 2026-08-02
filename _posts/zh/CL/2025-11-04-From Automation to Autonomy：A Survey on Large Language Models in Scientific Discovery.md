@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMNLP-2025 From Automation to Autonomy：A Survey on Large Language Models in Scientific Discovery
+title: EMNLP-2025 从自动化到自主：大语言模型在科学发现中的综述
 categories: [CL]
 tags: [Agent, NLP, LLM]
 proceedings: EMNLP

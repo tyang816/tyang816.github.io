@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2025 Evaluating Large Language Models in Scientific Discovery
+title: arXiv-2025 评估大语言模型在科学发现中的能力
 categories: [CL]
 tags: [Agent, LLM, NLP]
 proceedings: arXiv

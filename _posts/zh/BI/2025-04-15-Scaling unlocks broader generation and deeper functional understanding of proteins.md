@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2025 Scaling unlocks broader generation and deeper functional understanding of proteins
+title: arXiv-2025 规模化解锁更广泛的蛋白质生成与更深入的功能理解
 categories: [BI]
 tags: [GNN, protein, protein-design, transformer]
 proceedings: arXiv

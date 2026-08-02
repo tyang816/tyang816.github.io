@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2020 A Transformer-based Approach for Source Code Summarization
+title: ACL-2020 基于 Transformer 的源代码摘要方法
 categories: [SE]
 tags: [code-summarization, transformer]
 proceedings: ACL

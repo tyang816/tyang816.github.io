@@ -17,8 +17,7 @@
       prev: 'Prev',
       next: 'Next',
       showing: 'Showing',
-      results: 'notes',
-      loading: 'Loading notes…'
+      results: 'notes'
     },
     zh: {
       searchPlaceholder: '搜索笔记…',
@@ -32,8 +31,7 @@
       prev: '上一页',
       next: '下一页',
       showing: '共',
-      results: '篇',
-      loading: '正在加载笔记…'
+      results: '篇'
     }
   };
 
@@ -103,7 +101,8 @@
     var searchUrl = (hubEl && hubEl.getAttribute('data-search-index')) || '/search.json';
 
     if (searchInput) searchInput.placeholder = t(locale, 'searchPlaceholder');
-    if (resultsEl) resultsEl.innerHTML = '<p class="notes-hub-empty">' + t(locale, 'loading') + '</p>';
+    // #notes-results already contains the server-rendered static list;
+    // it stays visible until the light index arrives and render() replaces it.
 
     var wantLang = locale === 'zh' ? 'zh' : 'en';
     function langFilter(list) {
@@ -126,7 +125,13 @@
       var res = await fetch(indexUrl);
       data = langFilter(await res.json());
     } catch (err) {
-      if (resultsEl) resultsEl.innerHTML = '<p>' + t(locale, 'fail') + '</p>';
+      // Keep the static server-rendered list; only flag that interactivity failed.
+      if (resultsEl) {
+        var errEl = document.createElement('p');
+        errEl.className = 'notes-hub-empty';
+        errEl.textContent = t(locale, 'fail');
+        resultsEl.parentNode.insertBefore(errEl, resultsEl);
+      }
       return;
     }
 

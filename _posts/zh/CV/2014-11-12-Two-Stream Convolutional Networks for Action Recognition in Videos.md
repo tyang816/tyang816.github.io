@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2014 Two-Stream Convolutional Networks for Action Recognition in Videos
+title: NeurIPS-2014 用于视频动作识别的双流卷积网络
 categories: [CV]
 tags: [video, action-recognition]
 proceedings: NeurIPS

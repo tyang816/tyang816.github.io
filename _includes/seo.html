@@ -28,6 +28,16 @@
   {% endfor %}
 {% endif %}
 
+{% comment %} Resolve note-category landing metadata from _data/note_categories.yml {% endcomment %}
+{% assign seo_notecat = false %}
+{% if page.note_cat %}
+  {% for c in site.data.note_categories %}
+    {% if c.id == page.note_cat %}
+      {% assign seo_notecat = c %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {% assign raw_title = page.title | strip %}
 {% if page.seo_title %}
   {% assign seo_title = page.seo_title %}
@@ -51,6 +61,13 @@
       {% assign seo_title = _pname | append: ": " | append: _ptag | append: " (" | append: _pvenue | append: ") | Yang Tan" %}
     {% endif %}
   {% endif %}
+{% elsif seo_notecat %}
+  {% if is_zh_page %}
+    {% assign _cname = seo_notecat.name_zh | default: seo_notecat.name %}
+    {% assign seo_title = _cname | append: "论文笔记 | 谭扬" %}
+  {% else %}
+    {% assign seo_title = seo_notecat.name | append: " Paper Notes | Yang Tan" %}
+  {% endif %}
 {% elsif page_path == "/zh/" %}
   {% assign seo_title = site.seo_title_zh | default: "谭扬 | AI for Biology 与中医大模型" %}
 {% elsif page_path == "/" or raw_title == "" %}
@@ -66,6 +83,23 @@
       {% assign seo_description = seo_project.summary_zh | default: seo_project.summary %}
     {% else %}
       {% assign seo_description = seo_project.summary %}
+    {% endif %}
+  {% endif %}
+{% endunless %}
+{% unless seo_description %}
+  {% if seo_notecat %}
+    {% if is_zh_page %}
+      {% assign _cblurb = seo_notecat.blurb_zh | default: seo_notecat.blurb %}
+      {% assign _clang = "zh-CN" %}
+    {% else %}
+      {% assign _cblurb = seo_notecat.blurb %}
+      {% assign _clang = "en" %}
+    {% endif %}
+    {% assign _ccount = site.posts | where: "lang", _clang | where: "categories", page.note_cat | size %}
+    {% if is_zh_page %}
+      {% capture seo_description %}{{ _cblurb }}——谭扬（Yang Tan）的 {{ _ccount }} 篇{{ seo_notecat.name_zh | default: seo_notecat.name }}方向论文笔记，持续更新。{% endcapture %}
+    {% else %}
+      {% capture seo_description %}{{ _cblurb }} — {{ _ccount }} paper notes by Yang Tan (SJTU & SII), updated regularly.{% endcapture %}
     {% endif %}
   {% endif %}
 {% endunless %}
@@ -109,6 +143,9 @@
 {% unless page.keywords %}
   {% if seo_project %}
     {% capture _kw %}{{ seo_project.name }}, {{ seo_project.tagline }}, {{ seo_project.venue }}, protein AI, Yang Tan{% endcapture %}
+    {% assign seo_keywords = _kw %}
+  {% elsif seo_notecat %}
+    {% capture _kw %}{{ seo_notecat.name }}, {{ seo_notecat.name_zh }}, paper notes, 论文笔记, Yang Tan, 谭扬{% endcapture %}
     {% assign seo_keywords = _kw %}
   {% endif %}
 {% endunless %}
@@ -160,6 +197,9 @@
 {% endif %}
 
 <link rel="canonical" href="{{ canonical_url }}">
+{% if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+{% endif %}
 
 {% comment %}
   Emit hreflang for true language pairs via page.alt_url.

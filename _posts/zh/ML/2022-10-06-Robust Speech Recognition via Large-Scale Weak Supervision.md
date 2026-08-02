@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2022 Robust Speech Recognition via Large-Scale Weak Supervision
+title: OpenAI-2022 基于大规模弱监督的鲁棒语音识别（Whisper）
 categories: [ML]
 tags: [speech-recognition, transformer]
 proceedings: NeurIPS

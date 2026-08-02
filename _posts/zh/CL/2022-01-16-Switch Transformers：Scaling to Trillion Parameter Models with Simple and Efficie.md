@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Journal of Machine Learning Research-2022 Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+title: Journal of Machine Learning Research-2022 Switch Transformer：以简单高效稀疏性扩展至万亿参数模型
 categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: Journal of Machine Learning Research

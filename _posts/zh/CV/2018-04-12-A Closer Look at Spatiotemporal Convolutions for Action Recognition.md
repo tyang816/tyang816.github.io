@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2018 A Closer Look at Spatiotemporal Convolutions for Action Recognition
+title: CVPR-2018 深入审视动作识别中的时空卷积
 categories: [CV]
 tags: [video, action-recognition]
 proceedings: CVPR

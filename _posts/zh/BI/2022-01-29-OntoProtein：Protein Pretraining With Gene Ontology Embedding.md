@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 OntoProtein：Protein Pretraining With Gene Ontology Embedding
+title: ICLR-2022 OntoProtein：融合基因本体嵌入的蛋白质预训练
 categories: [BI]
 tags: [protein, PLM]
 proceedings: ICLR

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECCV-2022 CDS：Contrastive Deep Supervision
+title: ECCV-2022 CDS：对比深度监督
 categories: [CV]
 tags: [contrastive-learning]
 proceedings: ECCV

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bioinformatics-2024 Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone
+title: Bioinformatics-2024 基于嵌入的比对：蛋白质语言模型结合动态规划检测暮光区结构相似性
 categories: [BI]
 tags: [protein, PLM, alignment]
 proceedings: Bioinformatics

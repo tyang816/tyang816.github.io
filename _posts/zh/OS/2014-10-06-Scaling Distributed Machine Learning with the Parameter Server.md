@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OSDI-2014 Scaling Distributed Machine Learning with the Parameter Server
+title: OSDI-2014 用参数服务器扩展分布式机器学习
 categories: [OS]
 tags: [distributed-dataflow]
 proceedings: OSDI

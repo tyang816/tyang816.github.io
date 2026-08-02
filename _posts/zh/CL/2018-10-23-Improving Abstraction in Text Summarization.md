@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2018 Improving Abstraction in Text Summarization
+title: ACL-2018 改进文本摘要的抽象生成能力
 categories: [CL]
 tags: [NLP]
 proceedings: ACL

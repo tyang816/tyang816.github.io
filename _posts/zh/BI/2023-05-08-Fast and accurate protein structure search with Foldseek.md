@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2023 Fast and accurate protein structure search with Foldseek
+title: Nature Biotechnology-2023 Foldseek：快速准确的蛋白质结构搜索
 categories: [BI]
 tags: [protein, alignment]
 proceedings: Nature Biotechnology

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2021 Masked Autoencoders Are Scalable Vision Learners
+title: CVPR-2021 掩码自编码器是可扩展的视觉学习者（MAE）
 categories: [CV]
 tags: [vision-language, Transformer]
 proceedings: CVPR

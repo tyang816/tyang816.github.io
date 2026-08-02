@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AAAI-2017 SeqGAN：Sequence Generative Adversarial Nets with Policy Gradient
+title: AAAI-2017 SeqGAN：基于策略梯度的序列生成对抗网络
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: AAAI

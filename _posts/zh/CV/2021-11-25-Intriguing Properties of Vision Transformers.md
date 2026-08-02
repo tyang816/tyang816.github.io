@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2021 Intriguing Properties of Vision Transformers
+title: NeurIPS-2021 视觉 Transformer 的有趣特性
 categories: [CV]
 tags: [vision-language, transformer]
 proceedings: NeurIPS

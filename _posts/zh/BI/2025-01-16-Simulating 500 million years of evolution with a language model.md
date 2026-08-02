@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Science-2025 Simulating 500 million years of evolution with a language model
+title: Science-2025 用语言模型模拟 5 亿年进化
 categories: [BI]
 tags: [protein, evolution, PLM, generative]
 proceedings: Science

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2016 A Convolutional Attention Network  for Extreme Summarization of Source Code
+title: ICML-2016 用于源代码极致摘要的卷积注意力网络
 categories: [SE]
 tags: [convolutional-neural-network, code-summarization]
 proceedings: ICML

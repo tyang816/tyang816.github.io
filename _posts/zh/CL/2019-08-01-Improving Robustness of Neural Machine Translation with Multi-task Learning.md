@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2019 Improving Robustness of Neural Machine Translation with Multi-task Learning
+title: ACL-2019 多任务学习提升神经机器翻译鲁棒性
 categories: [CL]
 tags: [LLM, NLP]
 proceedings: ACL

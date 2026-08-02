@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2015 Beyond Short Snippets：Deep Networks for Video Classification
+title: CVPR-2015 超越短片段：用于视频分类的深度网络
 categories: [CV]
 tags: [video, vision-language, transformer]
 proceedings: CVPR

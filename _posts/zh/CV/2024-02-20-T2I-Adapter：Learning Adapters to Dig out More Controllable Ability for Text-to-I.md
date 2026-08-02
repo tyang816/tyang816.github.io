@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AAAI-2024 T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models
+title: AAAI-2024 T2I-Adapter：学习适配器挖掘文生图扩散模型的可控能力
 categories: [CV]
 tags: [vision-language, diffusion]
 proceedings: AAAI

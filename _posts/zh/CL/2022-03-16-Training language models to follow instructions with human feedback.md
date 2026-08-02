@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenAI-2022 Training language models to follow instructions with human feedback
+title: OpenAI-2022 基于人类反馈训练遵循指令的语言模型（InstructGPT）
 categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: OpenAI

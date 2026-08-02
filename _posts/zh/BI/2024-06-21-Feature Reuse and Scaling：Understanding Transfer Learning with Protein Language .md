@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2024 Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models
+title: ICML-2024 特征复用与扩展：理解蛋白质语言模型的迁移学习
 categories: [BI]
 tags: [protein, PLM, transfer learning]
 proceedings: ICML

@@ -223,6 +223,10 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
+
+# Atom feed (default limit is only 10 posts)
+feed:
+  posts_limit: 25
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate

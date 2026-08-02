@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2022 Impact of Evaluation Methodologies on Code Summarization
+title: ACL-2022 评估方法对代码摘要的影响
 categories: [SE]
 tags: [code-summarization]
 proceedings: ACL

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cell Systems-2024 Convolutions are competitive with transformers for protein sequence pretraining
+title: Cell Systems-2024 卷积在蛋白质序列预训练中可与 Transformer 媲美
 categories: [BI]
 tags: [protein, PLM, CNN, transformer]
 proceedings: Cell Systems

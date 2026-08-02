@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2021 Learning Sequential and Structural Information for Source Code Summarization
+title: ACL-2021 学习序列与结构信息用于源代码摘要
 categories: [SE]
 tags: [Transformer, GNN]
 proceedings: ACL

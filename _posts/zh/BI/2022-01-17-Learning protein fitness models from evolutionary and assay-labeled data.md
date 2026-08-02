@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2022 Learning protein fitness models from evolutionary and assay-labeled data
+title: Nature Biotechnology-2022 从进化数据与实验标注数据中学习蛋白质适应度模型
 categories: [BI]
 tags: [protein, PLM, fitness-prediction]
 proceedings: Nature Biotechnology

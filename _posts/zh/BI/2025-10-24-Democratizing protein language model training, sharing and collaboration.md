@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature Biotechnology-2025 Democratizing protein language model training, sharing and collaboration
+title: Nature Biotechnology-2025 蛋白质语言模型训练、共享与协作的民主化
 categories: [BI]
 tags: [protein]
 proceedings: Nature Biotechnology

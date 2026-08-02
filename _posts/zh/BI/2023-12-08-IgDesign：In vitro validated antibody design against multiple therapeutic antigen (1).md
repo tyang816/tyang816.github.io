@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2023 IgDesign-In vitro validated antibody design against multiple therapeutic antigens using inverse folding
+title: bioRxiv-2023 IgDesign：逆折叠实现多治疗抗原的体外验证抗体设计
 categories: [BI]
 tags: [protein, antibody, inverse folding, protein-design]
 proceedings: bioRxiv

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CVPR-2022 Grounded Language-Image Pre-trainin
+title: CVPR-2022 定位式语言-图像预训练（GLIP）
 categories: [CV]
 tags: [LLM, NLP, vision-language]
 proceedings: CVPR

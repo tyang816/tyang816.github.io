@@ -66,6 +66,14 @@
     border-bottom: 1px solid $border-color;
   }
 
+  /* Homepage sections use h2 (single h1 per page) but keep the old h1 look */
+  h2.home-section {
+    margin-top: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $border-color;
+    font-size: $type-size-3;
+  }
+
   p, li, dl {
     font-size: 1em;
   }

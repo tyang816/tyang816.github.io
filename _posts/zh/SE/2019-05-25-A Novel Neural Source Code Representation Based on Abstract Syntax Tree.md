@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICSE-2019 A Novel Neural Source Code Representation Based on Abstract Syntax Tree
+title: ICSE-2019 基于抽象语法树的新型神经源代码表示
 categories: [SE]
 tags: [GNN, code-summarization]
 proceedings: ICSE

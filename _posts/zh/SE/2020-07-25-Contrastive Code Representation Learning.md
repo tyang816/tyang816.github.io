@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ACL-2020 Contrastive Code Representation Learning
+title: ACL-2020 对比代码表示学习
 categories: [SE]
 tags: [code-understanding, contrastive-learning]
 proceedings: ACL

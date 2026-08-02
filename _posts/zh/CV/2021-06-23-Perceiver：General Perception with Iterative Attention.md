@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2021 Perceiver：General Perception with Iterative Attention
+title: ICML-2021 Perceiver：基于迭代注意力的通用感知
 categories: [CV]
 tags: [vision-language]
 proceedings: ICML

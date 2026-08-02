@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COLING-2025 AutoProteinEngine：A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering
+title: COLING-2025 AutoProteinEngine：LLM 驱动的蛋白质工程多模态 AutoML 智能体框架
 categories: [BI]
 tags: [protein, Agent]
 proceedings: COLING

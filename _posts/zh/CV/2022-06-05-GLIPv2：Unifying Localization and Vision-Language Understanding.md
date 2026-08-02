@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2022 GLIPv2：Unifying Localization and Vision-Language Understanding
+title: arXiv-2022 GLIPv2：统一定位与视觉-语言理解
 categories: [CV]
 tags: [vision-language, contrastive-learning, object-detection]
 proceedings: arXiv

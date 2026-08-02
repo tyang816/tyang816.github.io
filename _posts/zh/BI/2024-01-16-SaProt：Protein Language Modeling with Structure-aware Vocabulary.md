@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2024 SaProt：Protein Language Modeling with Structure-aware Vocabulary
+title: ICLR-2024 SaProt：结构感知词表的蛋白质语言建模
 categories: [BI]
 tags: [protein, PLM]
 proceedings: ICLR

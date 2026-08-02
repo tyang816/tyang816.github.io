@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLRw-2023 Enhancing Protein Language Models with Structure-based Encoder and Pre-training
+title: ICLRw-2023 基于结构编码器与预训练增强蛋白质语言模型
 categories: [BI]
 tags: [PLM, GNN]
 proceedings: ICLRw

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICLR-2022 Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design
+title: ICLR-2022 用于抗体序列-结构协同设计的迭代优化图神经网络
 categories: [BI]
 tags: [protein, antibody, GNN]
 proceedings: ICLR

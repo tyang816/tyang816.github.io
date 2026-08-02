@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2022 BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation
+title: ICML-2022 BLIP：自举语言-图像预训练实现统一视觉-语言理解与生成
 categories: [CV]
 tags: [vision-language, transformer, contrastive-learning]
 proceedings: ICML

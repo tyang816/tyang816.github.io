@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2020 Graph Contrastive Learning with Augmentations
+title: NeurIPS-2020 基于数据增强的图对比学习
 categories: [ML]
 tags: [contrastive-learning, GNN]
 proceedings: NeurIPS

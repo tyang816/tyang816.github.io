@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ICML-2021 Learning Transferable Visual Models From Natural Language Supervision
+title: ICML-2021 从自然语言监督中学习可迁移视觉模型（CLIP）
 categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: ICML

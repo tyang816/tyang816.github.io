@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NeurIPS-2022 A Neural Corpus Indexer for Document Retrieval
+title: NeurIPS-2022 用于文档检索的神经语料索引器
 categories: [IR]
 tags: [document-retrieval]
 proceedings: NeurIPS

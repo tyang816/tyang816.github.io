@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nature-2021 Highly accurate protein structure prediction with AlphaFold
+title: Nature-2021 AlphaFold：高精度蛋白质结构预测
 categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Nature

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arXiv-2026 evedesign accessible biosequence design with a unified framework
+title: arXiv-2026 evedesign：统一框架让生物序列设计触手可及
 categories: [BI]
 tags: [protein]
 proceedings: arXiv

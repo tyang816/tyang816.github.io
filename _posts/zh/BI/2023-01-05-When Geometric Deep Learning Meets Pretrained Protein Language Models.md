@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bioRxiv-2023 When Geometric Deep Learning Meets Pretrained Protein Language Models
+title: bioRxiv-2023 当几何深度学习遇见预训练蛋白质语言模型
 categories: [BI]
 tags: [protein, PLM, GNN]
 proceedings: bioRxiv
