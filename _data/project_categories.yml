@@ -1,0 +1,35 @@
+- id: llm
+  name: LLM
+  name_zh: 大语言模型
+  blurb: Natural-language and TCM large language models
+  blurb_zh: 自然语言与中医大模型
+
+- id: plm
+  name: PLM
+  name_zh: 蛋白质语言模型
+  blurb: Protein language models and representation learning
+  blurb_zh: 蛋白质语言模型与表征学习
+
+- id: agents
+  name: Agents
+  name_zh: 智能体
+  blurb: Multi-agent systems for protein engineering decisions
+  blurb_zh: 面向蛋白工程决策的多智能体系统
+
+- id: fitness
+  name: Fitness
+  name_zh: 适应度预测
+  blurb: Mutation effect, immunogenicity, and property prediction
+  blurb_zh: 突变效应、免疫原性与性质预测
+
+- id: benchmark
+  name: Benchmark
+  name_zh: 基准评测
+  blurb: Evaluation suites for protein understanding and transfer learning
+  blurb_zh: 蛋白质理解与迁移学习评测
+
+- id: platform
+  name: Platform
+  name_zh: 平台工具
+  blurb: Toolkits, web servers, and curated resource hubs
+  blurb_zh: 工具箱、Web 服务与资源导航

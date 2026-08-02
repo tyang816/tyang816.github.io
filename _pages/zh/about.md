@@ -4,12 +4,15 @@ title: ""
 lang: zh-CN
 alt_url: /
 seo_title: "谭扬 | AI for Biology 与中医大模型"
-description: "谭扬（Yang Tan），上海交通大学与上海创智学院博士生。研究方向：AI for Biology、蛋白质语言模型、中医大模型。"
+description: "谭扬（Yang Tan），上海交通大学与上海创智学院博士生。研究方向：AI for Biology、蛋白质语言模型、适应度预测与中医大模型。"
+seo_description: "谭扬（Yang Tan），上海交大与创智学院博士生。AI for Biology、蛋白质语言模型、VenusX/VenusREM 与中医大模型资源。"
 keywords:
   - 谭扬
   - Yang Tan
   - AI for Biology
+  - 蛋白质语言模型
   - 中医大模型
+  - VenusX
   - 上海交通大学
 author_profile: true
 ---
@@ -28,10 +31,10 @@ author_profile: true
 
 # 🔥 新闻
 - *2026.07*：&nbsp;🎉 [MatwingsVenus（晓鹜）](https://matvenus.com/) 获 **WAIC 2026 镇馆之宝**，见 [报道](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A)。
-- *2026.04*：&nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
-- *2026.01*：&nbsp;🎉 [VenusX](https://github.com/ai4protein/VenusX) 被 [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG) 接收，榜单见 [VenusX Leaderboard](https://ai4protein.github.io/venusx/)。
-- *2025.10*：&nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 汇总中医大模型新闻与开源资源，与 [中医大模型门户]({{ '/tcm/' | relative_url }}) 同源同步更新。
-- *2025.04*：&nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) 在 [ProteinGym Substitution](https://proteingym.org/benchmarks) 与 [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) 取得第一。
+- *2026.04*：&nbsp;🎉 [VenusFactory2]({{ '/zh/projects/venusfactory2/' | relative_url }}) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
+- *2026.01*：&nbsp;🎉 [VenusX]({{ '/zh/projects/venusx/' | relative_url }}) 被 [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG) 接收，榜单见 [VenusX Leaderboard]({{ '/projects/venusx/leaderboard/' | relative_url }})。
+- *2025.10*：&nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 汇总中医大模型新闻与开源资源，见 [开源项目 · 中医大模型]({{ '/zh/projects/tcm/' | relative_url }})。
+- *2025.04*：&nbsp;🏆 [VenusREM]({{ '/zh/projects/venusrem/' | relative_url }}) 在 [ProteinGym Substitution](https://proteingym.org/benchmarks) 与 [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) 取得第一。
 
 <span class='anchor' id='-selected-publications'></span>
 

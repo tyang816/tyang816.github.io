@@ -1,22 +1,30 @@
 ---
 permalink: /timeline/
 title: "Life Timeline"
+seo_title: "Life Timeline | Yang Tan"
 lang: en
 alt_url: /zh/timeline/
 layout: default
 author_profile: true
 description: "Personal life timeline of Yang Tan — travel, research milestones, and camera moments."
+seo_description: "Life timeline of Yang Tan — travel, research milestones, and camera moments."
+keywords:
+  - Yang Tan
+  - life timeline
+  - travel
 ---
 
 <span class='anchor' id='timeline'></span>
 
-# 🌍 Life Timeline
-
-<div class="timeline-filters">
-  <button class="filter-btn active" data-category="all">All</button>
-  <button class="filter-btn" data-category="travel">Travel World</button>
-  <button class="filter-btn" data-category="person">Camera Moment</button>
+<div class="hub-title-row">
+  <h1>Life Timeline</h1>
 </div>
+
+<nav class="project-cat-nav" aria-label="Timeline categories">
+  <button type="button" class="filter-btn is-active" data-category="all">All</button>
+  <button type="button" class="filter-btn" data-category="travel">Travel World</button>
+  <button type="button" class="filter-btn" data-category="person">Camera Moment</button>
+</nav>
 
 <div class="timeline-container">
   <div class="timeline">
@@ -132,37 +140,6 @@ description: "Personal life timeline of Yang Tan — travel, research milestones
 </div>
 
 <style>
-.timeline-filters {
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-
-.filter-btn {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  color: #495057;
-  padding: 8px 16px;
-  margin: 0 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.filter-btn:hover {
-  background: #007acc;
-  border-color: #007acc;
-  color: white;
-}
-
-.filter-btn.active {
-  background: #007acc;
-  border-color: #007acc;
-  color: white;
-}
-
 .timeline-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -510,8 +487,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const category = this.getAttribute('data-category');
       
       // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      filterButtons.forEach(btn => btn.classList.remove('is-active'));
+      this.classList.add('is-active');
       
       // Filter timeline items
       timelineItems.forEach(item => {

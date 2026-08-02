@@ -1,0 +1,19 @@
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign label_top = site.data.i18n.zh.scroll_top | default: "到顶" %}
+  {% assign label_bottom = site.data.i18n.zh.scroll_bottom | default: "到底" %}
+{% else %}
+  {% assign label_top = site.data.i18n.en.scroll_top | default: "Top" %}
+  {% assign label_bottom = site.data.i18n.en.scroll_bottom | default: "Bottom" %}
+{% endif %}
+
+<div class="site-scroll-float" data-scroll-float hidden>
+  <button type="button" class="site-scroll-float__btn" data-scroll="top" aria-label="{{ label_top }}" title="{{ label_top }}">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <button type="button" class="site-scroll-float__btn" data-scroll="bottom" aria-label="{{ label_bottom }}" title="{{ label_bottom }}">
+    <span aria-hidden="true">↓</span>
+  </button>
+</div>

@@ -1,0 +1,42 @@
+# Display order for /notes/ category nav (aligned with project hub UX)
+- id: BI
+  name: Biology
+  name_zh: 生物信息
+  blurb: Protein models, molecular design, and biomedical AI
+  blurb_zh: 蛋白质模型、分子设计与生物医学 AI
+
+- id: CL
+  name: NLP / Agents
+  name_zh: 语言与智能体
+  blurb: LLMs, scientific agents, and language-model tooling
+  blurb_zh: 大语言模型、科学智能体与语言工具
+
+- id: CV
+  name: Vision
+  name_zh: 计算机视觉
+  blurb: Video understanding, multimodal vision-language models
+  blurb_zh: 视频理解与多模态视觉语言模型
+
+- id: ML
+  name: ML
+  name_zh: 机器学习
+  blurb: Representation learning, graphs, and general ML methods
+  blurb_zh: 表征学习、图学习与通用机器学习
+
+- id: SE
+  name: Software
+  name_zh: 软件工程
+  blurb: Code models, summarization, and program analysis
+  blurb_zh: 代码模型、摘要与程序分析
+
+- id: IR
+  name: Retrieval
+  name_zh: 信息检索
+  blurb: Search, recommendation, and neural indexing
+  blurb_zh: 搜索、推荐与神经索引
+
+- id: OS
+  name: Systems
+  name_zh: 系统
+  blurb: Distributed systems and systems for ML
+  blurb_zh: 分布式系统与机器学习系统

@@ -1,0 +1,59 @@
+{% comment %}
+  Back-to-parent control for non-home pages.
+  Override with page.parent_url / page.back_label, or hide with page.hide_back: true.
+{% endcomment %}
+{% if page.hide_back %}
+{% else %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign home_url = "/zh/" %}
+  {% assign back_default = site.data.i18n.zh.back | default: "返回上级" %}
+  {% assign back_home = site.data.i18n.zh.back_home | default: "返回首页" %}
+{% else %}
+  {% assign home_url = "/" %}
+  {% assign back_default = site.data.i18n.en.back | default: "Back" %}
+  {% assign back_home = site.data.i18n.en.back_home | default: "Back to Home" %}
+{% endif %}
+
+{% assign page_url = page.url | default: page.permalink | default: "" %}
+{% assign segs = page_url | split: "/" | where_exp: "item", "item != ''" %}
+
+{% assign is_home = false %}
+{% if segs.size == 0 %}{% assign is_home = true %}{% endif %}
+{% if segs.size == 1 and segs[0] == "zh" %}{% assign is_home = true %}{% endif %}
+{% if page_url == "/" or page_url == "/zh/" %}{% assign is_home = true %}{% endif %}
+
+{% unless is_home %}
+  {% if page.parent_url %}
+    {% assign back_url = page.parent_url %}
+  {% elsif segs.size == 1 %}
+    {% assign back_url = "/" %}
+  {% elsif segs.size == 2 and segs[0] == "zh" %}
+    {% assign back_url = "/zh/" %}
+  {% else %}
+    {% assign back_url = "/" %}
+    {% for seg in segs %}
+      {% unless forloop.last %}
+        {% assign back_url = back_url | append: seg | append: "/" %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+
+  {% if page.back_label %}
+    {% assign back_text = page.back_label %}
+  {% elsif back_url == "/" or back_url == "/zh/" %}
+    {% assign back_text = back_home %}
+  {% else %}
+    {% assign back_text = back_default %}
+  {% endif %}
+
+  <nav class="site-back" aria-label="{{ back_text }}">
+    <a class="site-back__link" href="{{ back_url | relative_url }}">
+      <span class="site-back__icon" aria-hidden="true">←</span>
+      <span class="site-back__text">{{ back_text }}</span>
+    </a>
+  </nav>
+{% endunless %}
+{% endif %}

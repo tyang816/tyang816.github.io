@@ -1,22 +1,30 @@
 ---
 permalink: /zh/timeline/
 title: "人生时间线"
+seo_title: "人生时间线 | 谭扬"
 lang: zh-CN
 alt_url: /timeline/
 layout: default
 author_profile: true
 description: "谭扬的人生时间线：旅行、科研节点与影像瞬间。"
+seo_description: "谭扬的人生时间线：旅行、科研节点与影像瞬间。"
+keywords:
+  - 谭扬
+  - 人生时间线
+  - 旅行
 ---
 
 <span class='anchor' id='timeline'></span>
 
-# 🌍 人生时间线
-
-<div class="timeline-filters">
-  <button class="filter-btn active" data-category="all">全部</button>
-  <button class="filter-btn" data-category="travel">环球旅行</button>
-  <button class="filter-btn" data-category="person">影像瞬间</button>
+<div class="hub-title-row">
+  <h1>人生时间线</h1>
 </div>
+
+<nav class="project-cat-nav" aria-label="时间线分类">
+  <button type="button" class="filter-btn is-active" data-category="all">全部</button>
+  <button type="button" class="filter-btn" data-category="travel">环球旅行</button>
+  <button type="button" class="filter-btn" data-category="person">影像瞬间</button>
+</nav>
 
 <div class="timeline-container">
   <div class="timeline">
@@ -135,37 +143,6 @@ description: "谭扬的人生时间线：旅行、科研节点与影像瞬间。
 </div>
 
 <style>
-.timeline-filters {
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-
-.filter-btn {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  color: #495057;
-  padding: 8px 16px;
-  margin: 0 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.filter-btn:hover {
-  background: #007acc;
-  border-color: #007acc;
-  color: white;
-}
-
-.filter-btn.active {
-  background: #007acc;
-  border-color: #007acc;
-  color: white;
-}
-
 .timeline-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -513,8 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const category = this.getAttribute('data-category');
       
       // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      filterButtons.forEach(btn => btn.classList.remove('is-active'));
+      this.classList.add('is-active');
       
       // Filter timeline items
       timelineItems.forEach(item => {

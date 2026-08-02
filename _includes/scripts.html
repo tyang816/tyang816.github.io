@@ -1,4 +1,11 @@
 <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/site-chrome.js' | relative_url }}"></script>
+{% if page.project or page.permalink == '/projects/' or page.permalink == '/zh/projects/' %}
+<script src="{{ '/assets/js/project-tabs.js' | relative_url }}"></script>
+{% endif %}
+{% if page.permalink == '/projects/' or page.permalink == '/zh/projects/' %}
+<script src="{{ '/assets/js/project-hub.js' | relative_url }}"></script>
+{% endif %}
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}

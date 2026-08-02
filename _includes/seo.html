@@ -18,9 +18,39 @@
   {% assign is_post = true %}
 {% endif %}
 
+{% comment %} Resolve Open Projects metadata from _data/projects.yml {% endcomment %}
+{% assign seo_project = false %}
+{% if page.project %}
+  {% for p in site.data.projects %}
+    {% if p.slug == page.project %}
+      {% assign seo_project = p %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {% assign raw_title = page.title | strip %}
 {% if page.seo_title %}
   {% assign seo_title = page.seo_title %}
+{% elsif seo_project %}
+  {% if is_zh_page %}
+    {% assign _pname = seo_project.name_zh | default: seo_project.name %}
+    {% assign _ptag = seo_project.tagline_zh | default: seo_project.tagline %}
+    {% assign _pvenue = seo_project.venue_zh | default: seo_project.venue %}
+    {% if page.section == "leaderboard" %}
+      {% assign seo_title = _pname | append: " 榜单：" | append: _ptag | append: "（" | append: _pvenue | append: "）| 谭扬" %}
+    {% else %}
+      {% assign seo_title = _pname | append: "：" | append: _ptag | append: "（" | append: _pvenue | append: "）| 谭扬" %}
+    {% endif %}
+  {% else %}
+    {% assign _pname = seo_project.name %}
+    {% assign _ptag = seo_project.tagline %}
+    {% assign _pvenue = seo_project.venue %}
+    {% if page.section == "leaderboard" %}
+      {% assign seo_title = _pname | append: " Leaderboard: " | append: _ptag | append: " (" | append: _pvenue | append: ") | Yang Tan" %}
+    {% else %}
+      {% assign seo_title = _pname | append: ": " | append: _ptag | append: " (" | append: _pvenue | append: ") | Yang Tan" %}
+    {% endif %}
+  {% endif %}
 {% elsif page_path == "/zh/" %}
   {% assign seo_title = site.seo_title_zh | default: "谭扬 | AI for Biology 与中医大模型" %}
 {% elsif page_path == "/" or raw_title == "" %}
@@ -30,6 +60,15 @@
 {% endif %}
 
 {% assign seo_description = page.description | default: page.seo_description %}
+{% unless seo_description %}
+  {% if seo_project %}
+    {% if is_zh_page %}
+      {% assign seo_description = seo_project.summary_zh | default: seo_project.summary %}
+    {% else %}
+      {% assign seo_description = seo_project.summary %}
+    {% endif %}
+  {% endif %}
+{% endunless %}
 {% unless seo_description %}
   {% assign excerpt_plain = page.excerpt | default: "" | markdownify | strip_html | strip_newlines | strip %}
   {% assign excerpt_is_linkdump = false %}
@@ -67,6 +106,29 @@
 {% endif %}
 
 {% assign seo_keywords = page.keywords | default: site.keywords %}
+{% unless page.keywords %}
+  {% if seo_project %}
+    {% capture _kw %}{{ seo_project.name }}, {{ seo_project.tagline }}, {{ seo_project.venue }}, protein AI, Yang Tan{% endcapture %}
+    {% assign seo_keywords = _kw %}
+  {% endif %}
+{% endunless %}
+
+{% assign og_image = "" %}
+{% assign has_project_image = false %}
+{% if page.image %}
+  {% assign og_image = page.image | absolute_url %}
+  {% assign has_project_image = true %}
+{% elsif seo_project and seo_project.image %}
+  {% assign og_image = seo_project.image | absolute_url %}
+  {% assign has_project_image = true %}
+{% elsif site.author.avatar %}
+  {% assign og_image = site.author.avatar | absolute_url %}
+{% endif %}
+{% if has_project_image %}
+  {% assign twitter_card = "summary_large_image" %}
+{% else %}
+  {% assign twitter_card = "summary" %}
+{% endif %}
 
 <title>{{ seo_title | escape }}</title>
 
@@ -90,8 +152,8 @@
 {% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
-{% if site.author.avatar %}
-  <meta property="og:image" content="{{ site.author.avatar | absolute_url }}">
+{% if og_image %}
+  <meta property="og:image" content="{{ og_image }}">
 {% endif %}
 {% if is_post and page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
@@ -100,30 +162,22 @@
 <link rel="canonical" href="{{ canonical_url }}">
 
 {% comment %}
-  Emit hreflang only for true language pairs. /tcm/ and /tcm-en/ are not equivalent
-  (full catalog vs stub), so keep alt_url for UI switching but skip hreflang.
+  Emit hreflang for true language pairs via page.alt_url.
 {% endcomment %}
-{% assign emit_hreflang = false %}
 {% if page.alt_url %}
-  {% unless page_path == "/tcm/" or page_path == "/tcm-en/" %}
-    {% assign emit_hreflang = true %}
-  {% endunless %}
-{% endif %}
-{% if emit_hreflang %}
   {% assign alt_abs = page.alt_url | absolute_url %}
   {% if is_zh_page %}
     <link rel="alternate" hreflang="zh-CN" href="{{ canonical_url }}">
     <link rel="alternate" hreflang="en" href="{{ alt_abs }}">
-    {% assign x_default_url = alt_abs %}
+    <link rel="alternate" hreflang="x-default" href="{{ alt_abs }}">
   {% else %}
     <link rel="alternate" hreflang="en" href="{{ canonical_url }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ alt_abs }}">
-    {% assign x_default_url = canonical_url %}
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
   {% endif %}
-  <link rel="alternate" hreflang="x-default" href="{{ x_default_url }}">
 {% endif %}
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{{ twitter_card }}">
 {% if site.author.twitter %}
   <meta name="twitter:site" content="@{{ site.author.twitter | replace: '@', '' }}">
   <meta name="twitter:creator" content="@{{ site.author.twitter | replace: '@', '' }}">
@@ -133,6 +187,9 @@
   <meta name="twitter:description" content="{{ seo_description }}">
 {% endif %}
 <meta name="twitter:url" content="{{ canonical_url }}">
+{% if og_image %}
+  <meta name="twitter:image" content="{{ og_image }}">
+{% endif %}
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />

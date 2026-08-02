@@ -1,0 +1,100 @@
+{% assign is_zh = false %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign all_label = "全部" %}
+  {% assign cat_aria = "项目分类" %}
+  {% assign label_year = "年份筛选" %}
+  {% assign all_years = "全部年份" %}
+  {% assign hub_title = "开源项目" %}
+  {% assign search_ph = "搜索项目…" %}
+  {% assign all_blurb_title = "全部项目" %}
+  {% assign all_blurb = "一作/共一开源项目，按分类与年份筛选。" %}
+{% else %}
+  {% assign all_label = "All" %}
+  {% assign cat_aria = "Project categories" %}
+  {% assign label_year = "Filter by year" %}
+  {% assign all_years = "All years" %}
+  {% assign hub_title = "Open Projects" %}
+  {% assign search_ph = "Search projects…" %}
+  {% assign all_blurb_title = "All projects" %}
+  {% assign all_blurb = "First-author / co-first open projects — filter by category and year." %}
+{% endif %}
+{% assign sorted_projects = site.data.projects | sort: "date" | reverse %}
+
+{% assign project_years = "" | split: "" %}
+{% for p in sorted_projects %}
+  {% if p.date %}
+    {% assign y = p.date | slice: 0, 4 %}
+    {% assign project_years = project_years | push: y %}
+  {% endif %}
+{% endfor %}
+{% assign project_years = project_years | uniq | sort | reverse %}
+
+<div class="project-hub" data-project-hub data-locale="{% if is_zh %}zh{% else %}en{% endif %}">
+  <div class="hub-title-row">
+    <h1>{{ hub_title }}</h1>
+    <input id="projects-search" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-projects-search>
+  </div>
+
+  <nav class="project-cat-nav" aria-label="{{ cat_aria }}" data-cat-nav>
+    <button type="button" class="is-active" data-cat-link="all" data-hash="#cat-all" data-blurb-title="{{ all_blurb_title | escape }}" data-blurb="{{ all_blurb | escape }}">{{ all_label }}</button>
+    {% for cat in site.data.project_categories %}
+      {% if is_zh %}
+        {% assign cat_name = cat.name_zh | default: cat.name %}
+        {% assign cat_blurb = cat.blurb_zh | default: cat.blurb %}
+      {% else %}
+        {% assign cat_name = cat.name %}
+        {% assign cat_blurb = cat.blurb %}
+      {% endif %}
+      <button type="button" data-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}" data-blurb-title="{{ cat_name | escape }}" data-blurb="{{ cat_blurb | escape }}">{{ cat_name }}</button>
+    {% endfor %}
+  </nav>
+
+  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_year }}" data-year-nav>
+    <button type="button" class="is-active" data-year-link="all">{{ all_years }}</button>
+    {% for y in project_years %}
+      <button type="button" data-year-link="{{ y }}">{{ y }}</button>
+    {% endfor %}
+  </nav>
+
+  <header class="project-cat-head" data-cat-blurb>
+    <h2 data-cat-blurb-title>{{ all_blurb_title }}</h2>
+    <p data-cat-blurb-text>{{ all_blurb }}</p>
+  </header>
+
+  <div class="project-hub-results">
+    <div class="project-grid" data-projects-grid>
+      {% for p in sorted_projects %}
+        {% assign p_year = p.date | slice: 0, 4 %}
+        {% if is_zh %}
+          {% assign p_url = p.url_zh | default: p.url %}
+          {% assign p_name = p.name_zh | default: p.name %}
+          {% assign p_summary = p.summary_zh | default: p.summary %}
+          {% assign p_venue = p.venue_zh | default: p.venue %}
+          {% assign cat_label = "" %}
+          {% for cat in site.data.project_categories %}
+            {% if cat.id == p.category %}{% assign cat_label = cat.name_zh | default: cat.name %}{% endif %}
+          {% endfor %}
+        {% else %}
+          {% assign p_url = p.url %}
+          {% assign p_name = p.name %}
+          {% assign p_summary = p.summary %}
+          {% assign p_venue = p.venue %}
+          {% assign cat_label = p.category | upcase %}
+        {% endif %}
+        {% capture p_search %}{{ p_name }} {{ p_summary }} {{ p_venue }}{% endcapture %}
+        <a class="project-card-link" href="{{ p_url | relative_url }}" data-cat="{{ p.category }}" data-year="{{ p_year }}" data-search="{{ p_search | strip_newlines | strip | escape }}">
+          <div class="venue">{{ p_venue }} · {{ cat_label }} · {{ p_year }}</div>
+          <h2>{{ p_name }}</h2>
+          <p>{{ p_summary }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="hub-pager-row" data-projects-pager-row hidden>
+    <p class="notes-stats" data-projects-stats></p>
+    <nav class="notes-pagination" data-projects-pagination aria-label="Pagination"></nav>
+  </div>
+</div>

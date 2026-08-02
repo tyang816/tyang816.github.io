@@ -1,0 +1,672 @@
+/* ==========================================================================
+   Project / pub pages — ProteinGym-LLM inspired long-form scientific UI
+   ========================================================================== */
+
+$project-ink: #1a2332;
+$project-muted: #5a6578;
+$project-line: rgba(26, 35, 50, 0.12);
+$project-max: 100%;
+$project-wide: 100%;
+
+/* Embedded in default layout (masthead + sidebar), like timeline */
+
+.project-hero {
+  padding: 0.5rem 0 1.5rem;
+  animation: project-fade-up 0.7s ease both;
+
+  .project-kicker {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0f6e56;
+    margin-bottom: 0.85rem;
+  }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 650;
+    font-size: clamp(2.1rem, 5vw, 3.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+    color: $project-ink;
+  }
+
+  .project-lede {
+    font-size: 1.2rem;
+    color: $project-muted;
+    max-width: 38rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .project-authors {
+    font-size: 0.98rem;
+    color: $project-muted;
+    margin: 0 0 1.5rem;
+  }
+
+  .project-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 0.35rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--primary {
+    background: $project-ink;
+    color: #fff;
+
+    &:hover {
+      background: #0d1520;
+      color: #fff;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $project-ink;
+    border-color: rgba(26, 35, 50, 0.22);
+
+    &:hover {
+      background: rgba(26, 35, 50, 0.04);
+      color: $project-ink;
+    }
+  }
+}
+
+.project-section {
+  padding: 1.75rem 0 0.5rem;
+  animation: project-fade-up 0.8s ease both;
+  animation-delay: 0.08s;
+
+  + .project-section {
+    border-top: 1px solid $project-line;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 650;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 650;
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  p, li {
+    color: mix(#000, $project-ink, 8%);
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  ul, ol {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+
+  a {
+    color: #0f6e56;
+    font-weight: 600;
+  }
+
+  code {
+    font-size: 0.9em;
+    background: rgba(26, 35, 50, 0.06);
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+  }
+}
+
+.project-figure {
+  margin: 1.25rem 0 1.5rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    border: 1px solid $project-line;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: $project-muted;
+  }
+}
+
+.project-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid $project-line;
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0;
+
+  th, td {
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid $project-line;
+    white-space: nowrap;
+  }
+
+  th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $project-muted;
+    background: rgba(26, 35, 50, 0.03);
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tr.is-highlight td {
+    background: rgba(15, 110, 86, 0.08);
+    font-weight: 700;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 1rem;
+
+  button {
+    appearance: none;
+    border: 1px solid $project-line;
+    background: rgba(255, 255, 255, 0.5);
+    color: $project-muted;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    &.is-active,
+    &:hover {
+      color: $project-ink;
+      border-color: rgba(26, 35, 50, 0.35);
+      background: #fff;
+    }
+  }
+}
+
+.project-panel {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.project-callout {
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid #0f6e56;
+  background: rgba(15, 110, 86, 0.06);
+
+  p {
+    margin: 0;
+  }
+}
+
+.project-cite {
+  font-size: 0.92rem;
+  background: rgba(26, 35, 50, 0.04);
+  border: 1px solid $project-line;
+  border-radius: 0.35rem;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+
+  pre, code {
+    margin: 0;
+    background: transparent;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+}
+
+.project-hub {
+  max-width: $project-wide;
+  margin: 0;
+  padding: 0.25rem 0 1rem;
+
+  .project-kicker {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0f6e56;
+    margin: 0 0 0.85rem;
+  }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin: 0 0 0.75rem;
+  }
+
+  .project-lede {
+    max-width: 40rem;
+    color: $project-muted;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Shared chip control for category / year / pagination filters */
+%hub-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid $project-line;
+  border-radius: 0.3rem;
+  color: $project-muted;
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:hover,
+  &.is-active {
+    color: #fff;
+    background: $project-ink;
+    border-color: $project-ink;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      color: $project-muted;
+      background: rgba(255, 255, 255, 0.55);
+      border-color: $project-line;
+    }
+  }
+}
+
+.project-cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fff;
+
+  a,
+  button {
+    @extend %hub-chip;
+  }
+
+  &--secondary {
+    position: static;
+    z-index: auto;
+    background: transparent;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.project-hub,
+.notes-hub {
+  /* Prevent browser scroll-anchoring from yanking the page when filters toggle. */
+  overflow-anchor: none;
+}
+
+.project-cat-block {
+  margin-bottom: 2.5rem;
+
+  &[hidden],
+  &.is-filtered-out {
+    display: none !important;
+  }
+}
+
+.project-hub-results {
+  /* Reserve space for ~3 rows (PAGE_SIZE=6, 2 columns) so ALL↔category
+     height changes don't clamp scroll and drag the author sidebar. */
+  min-height: 28rem;
+}
+
+.project-cat-head {
+  margin-bottom: 1rem;
+  min-height: 4.25rem;
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    margin: 0 0 0.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: $project-muted;
+    font-size: 0.98rem;
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.25rem 1.3rem;
+  border: 1px solid $project-line;
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.55);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  animation: project-fade-up 0.65s ease both;
+
+  &.is-static {
+    animation: none;
+  }
+
+  &[hidden],
+  &.is-filtered-out {
+    display: none !important;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(26, 35, 50, 0.28);
+    background: #fff;
+  }
+
+  .venue {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0f6e56;
+    margin-bottom: 0.45rem;
+  }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    margin: 0 0 0.45rem;
+  }
+
+  p {
+    margin: 0;
+    color: $project-muted;
+    font-size: 0.98rem;
+  }
+}
+
+.project-footer {
+  border-top: 1px solid $project-line;
+  margin-top: 2rem;
+
+  &__inner {
+    max-width: $project-wide;
+    margin: 0 auto;
+    padding: 1.4rem 1.25rem 2.5rem;
+    color: $project-muted;
+    font-size: 0.92rem;
+
+    a {
+      color: $project-ink;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.lb-note {
+  font-size: 0.92rem;
+  color: $project-muted;
+  margin-bottom: 1rem;
+}
+
+@keyframes project-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title + search on one row (Notes / Projects) */
+.hub-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1.25rem;
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: $project-ink;
+    line-height: 1.15;
+  }
+
+  input[type="search"] {
+    flex: 1 1 12rem;
+    width: auto;
+    min-width: 10rem;
+    max-width: 20rem;
+    margin: 0;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid $project-line;
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.98rem;
+    color: $project-ink;
+
+    &:focus {
+      outline: 2px solid rgba(26, 35, 50, 0.2);
+      outline-offset: 1px;
+      border-color: rgba(26, 35, 50, 0.35);
+    }
+  }
+}
+
+.notes-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  &__row {
+    display: flex;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: $project-muted;
+    white-space: nowrap;
+  }
+
+  select,
+  input[type="date"] {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid $project-line;
+    border-radius: 0.3rem;
+    background: rgba(255, 255, 255, 0.75);
+    color: $project-ink;
+    font-size: 0.9rem;
+  }
+}
+
+.notes-year-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem 0;
+
+  &__label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $project-muted;
+    margin-right: 0.15rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+.notes-year-btn,
+.notes-page-btn {
+  @extend %hub-chip;
+}
+
+.hub-pager-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem 1rem;
+  margin: 1.25rem 0 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid $project-line;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.notes-stats {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $project-muted;
+  white-space: nowrap;
+}
+
+.notes-cat-blurb {
+  margin-bottom: 1.25rem;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.notes-year-block {
+  margin-bottom: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.notes-year-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 650;
+  margin: 0 0 0.85rem;
+  color: $project-ink;
+}
+
+.notes-hub-empty {
+  color: $project-muted;
+}
+
+.notes-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin: 0;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.notes-page-ellipsis {
+  font-size: 0.88rem;
+  color: $project-muted;
+  padding: 0 0.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-hero,
+  .project-section,
+  .project-card-link {
+    animation: none;
+  }
+}

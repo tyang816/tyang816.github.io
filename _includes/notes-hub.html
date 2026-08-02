@@ -1,0 +1,92 @@
+{% assign is_zh = false %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% if is_zh %}
+  {% assign all_label = "全部" %}
+  {% assign cat_aria = "笔记分类" %}
+  {% assign search_ph = "搜索笔记…" %}
+  {% assign hub_title = "论文笔记" %}
+  {% assign locale_js = "zh" %}
+  {% assign label_proc = "期刊/会议" %}
+  {% assign label_year = "年份跳转" %}
+{% else %}
+  {% assign all_label = "All" %}
+  {% assign cat_aria = "Note categories" %}
+  {% assign search_ph = "Search notes…" %}
+  {% assign hub_title = "Paper Notes" %}
+  {% assign locale_js = "en" %}
+  {% assign label_proc = "Proceedings" %}
+  {% assign label_year = "Jump to year" %}
+{% endif %}
+
+{% capture cat_meta_json %}{
+{%- for cat in site.data.note_categories -%}
+  {{ cat.id | jsonify }}: {"name": {{ cat.name | jsonify }}, "name_zh": {{ cat.name_zh | jsonify }}}{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+}{% endcapture %}
+
+<div class="project-hub notes-hub" id="notes-hub" data-index="{{ '/search.json' | relative_url }}">
+  <script type="application/json" id="notes-cat-meta">{{ cat_meta_json }}</script>
+
+  <div class="hub-title-row">
+    <h1>{{ hub_title }}</h1>
+    <input id="notes-search" type="search" placeholder="{{ search_ph }}" autocomplete="off">
+  </div>
+
+  <nav class="project-cat-nav" aria-label="{{ cat_aria }}" id="notes-cat-nav">
+    <button type="button" class="is-active" data-notes-cat-link="all" data-hash="#cat-all">{{ all_label }}</button>
+    {% for cat in site.data.note_categories %}
+      {% if is_zh %}
+        {% assign cat_name = cat.name_zh | default: cat.name %}
+      {% else %}
+        {% assign cat_name = cat.name %}
+      {% endif %}
+      <button type="button" data-notes-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}">{{ cat_name }}</button>
+    {% endfor %}
+  </nav>
+
+  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_proc }}" id="notes-proc-links"></nav>
+  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_year }}" id="notes-year-links"></nav>
+
+  {% for cat in site.data.note_categories %}
+    {% if is_zh %}
+      {% assign cat_blurb = cat.blurb_zh | default: cat.blurb %}
+      {% assign cat_name = cat.name_zh | default: cat.name %}
+    {% else %}
+      {% assign cat_blurb = cat.blurb %}
+      {% assign cat_name = cat.name %}
+    {% endif %}
+    <header class="project-cat-head notes-cat-blurb" data-notes-blurb="{{ cat.id }}" hidden>
+      <h2>{{ cat_name }}</h2>
+      <p>{{ cat_blurb }}</p>
+    </header>
+  {% endfor %}
+
+  <div id="notes-results" class="notes-results"></div>
+  <div class="hub-pager-row" id="notes-pager-row" hidden>
+    <p id="notes-stats" class="notes-stats"></p>
+    <nav id="notes-pagination" class="notes-pagination" aria-label="Pagination"></nav>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="{{ '/assets/js/notes-hub.js' | relative_url }}"></script>
+<script>
+(function () {
+  var blurbs = document.querySelectorAll('[data-notes-blurb]');
+  var links = document.querySelectorAll('[data-notes-cat-link]');
+  function syncBlurb(id) {
+    blurbs.forEach(function (el) {
+      el.hidden = el.getAttribute('data-notes-blurb') !== id;
+    });
+  }
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      syncBlurb(a.getAttribute('data-notes-cat-link') === 'all' ? '' : a.getAttribute('data-notes-cat-link'));
+    });
+  });
+  var hash = (location.hash || '#cat-all').replace('#cat-', '');
+  syncBlurb(hash === 'all' || !hash ? '' : hash);
+  NotesHub.boot({{ locale_js | jsonify }});
+})();
+</script>

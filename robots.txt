@@ -1,5 +1,10 @@
+# https://tyang816.github.io
 User-agent: *
 Allow: /
+
+# Primary index targets (also listed in sitemaps):
+#   /  /zh/  /projects/  /zh/projects/  /notes/  /zh/notes/
+#   /timeline/  /zh/timeline/  /projects/*/  /zh/projects/*/
 
 Sitemap: https://tyang816.github.io/sitemap.xml
 Sitemap: https://tyang816.github.io/sitemap_i18n.xml

@@ -1,14 +1,72 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar sticky">
-  {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
-  {% if page.sidebar %}
-    {% for s in page.sidebar %}
-      {% if s.image %}
-        <img src="{{ s.image | relative_url }}" alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
-      {% endif %}
-      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
-      {% if s.text %}{{ s.text | markdownify }}{% endif %}
-    {% endfor %}
+  {% comment %}
+    Hub pages (projects/notes filters) change main-column height often.
+    Stickyfill then rebuilds and the author sidebar visibly jumps — keep it static there.
+    Notes / projects pages collapse the author profile by default for cleaner reading.
+  {% endcomment %}
+  {% assign page_lang = page.lang | default: site.lang | default: "en" %}
+  {% assign is_zh = false %}
+  {% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+  {% if is_zh %}
+    {% assign profile_expand = site.data.i18n.zh.profile_expand | default: "展开简介" %}
+    {% assign profile_collapse = site.data.i18n.zh.profile_collapse | default: "收起简介" %}
+  {% else %}
+    {% assign profile_expand = site.data.i18n.en.profile_expand | default: "Show profile" %}
+    {% assign profile_collapse = site.data.i18n.en.profile_collapse | default: "Hide profile" %}
   {% endif %}
+  {% if page.author and site.data.authors[page.author] %}
+    {% assign sidebar_author = site.data.authors[page.author] %}
+  {% else %}
+    {% assign sidebar_author = site.author %}
+  {% endif %}
+  {% if is_zh %}
+    {% assign sidebar_author_name = sidebar_author.name_zh | default: sidebar_author.name %}
+  {% else %}
+    {% assign sidebar_author_name = sidebar_author.name %}
+  {% endif %}
+
+  {% assign page_url = page.url | default: page.permalink | default: "" %}
+  {% assign collapse_profile = page.sidebar_collapsed %}
+  {% if page_url contains "/projects/" or page_url contains "/notes/" %}
+    {% assign collapse_profile = true %}
+  {% endif %}
+  {% if page.sidebar_collapsed == false %}
+    {% assign collapse_profile = false %}
+  {% endif %}
+  {% assign sticky_off = false %}
+  {% if page.sidebar_sticky == false or collapse_profile %}{% assign sticky_off = true %}{% endif %}
+
+  <div class="sidebar{% unless sticky_off %} sticky{% endunless %}{% if collapse_profile %} sidebar--collapsible{% endif %}"{% if collapse_profile %} data-sidebar-collapse data-label-expand="{{ profile_expand | escape }}" data-label-collapse="{{ profile_collapse | escape }}"{% endif %}>
+    {% if collapse_profile %}
+    <button type="button" class="sidebar-profile-toggle" data-sidebar-toggle aria-expanded="false" aria-controls="sidebar-profile-panel">
+      <img class="sidebar-profile-toggle__avatar" src="{{ sidebar_author.avatar | relative_url }}" alt="">
+      <span class="sidebar-profile-toggle__name">{{ sidebar_author_name }}</span>
+      <span class="sidebar-profile-toggle__hint" data-sidebar-toggle-label>{{ profile_expand }}</span>
+    </button>
+    <div class="sidebar-profile-panel" id="sidebar-profile-panel" hidden>
+      {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+      {% if page.sidebar %}
+        {% for s in page.sidebar %}
+          {% if s.image %}
+            <img src="{{ s.image | relative_url }}" alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+          {% endif %}
+          {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+          {% if s.text %}{{ s.text | markdownify }}{% endif %}
+        {% endfor %}
+      {% endif %}
+      <button type="button" class="sidebar-profile-collapse" data-sidebar-toggle aria-expanded="false">{{ profile_collapse }}</button>
+    </div>
+    {% else %}
+      {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+      {% if page.sidebar %}
+        {% for s in page.sidebar %}
+          {% if s.image %}
+            <img src="{{ s.image | relative_url }}" alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+          {% endif %}
+          {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+          {% if s.text %}{{ s.text | markdownify }}{% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
   </div>
 {% endif %}

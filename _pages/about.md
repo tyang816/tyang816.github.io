@@ -3,12 +3,15 @@ permalink: /
 title: ""
 lang: en
 alt_url: /zh/
-description: "Yang Tan (谭扬) — PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI4Science."
-seo_description: "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI4Science."
+description: "Yang Tan (谭扬) — PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI for Biology, protein language models, and TCM LLMs."
+seo_description: "Yang Tan (谭扬) — PhD student at SJTU & SII. Research on AI for Biology, protein language models, fitness prediction, and TCM LLMs."
 keywords:
   - Yang Tan
   - 谭扬
-  - AI4Science
+  - AI for Biology
+  - protein language model
+  - TCM LLM
+  - VenusX
   - Shanghai Jiao Tong University
   - Shanghai Innovation Institute
 author_profile: true
@@ -36,10 +39,10 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 # 🔥 News
 - *2026.07*: &nbsp;🎉 [MatwingsVenus (晓鹜)](https://matvenus.com/) wins the **WAIC 2026 National Treasure** and is featured at the [WAIC 2026](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A).
-- *2026.04*: &nbsp;🎉 [VenusFactory2](https://github.com/ai4protein/VenusFactory2) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
-- *2026.01*: &nbsp;🎉 [VenusX](https://github.com/ai4protein/VenusX) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here](https://ai4protein.github.io/venusx/).
-- *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine — browse at [/tcm-en/]({{ '/tcm-en/' | relative_url }}).
-- *2025.04*: &nbsp;🏆 [VenusREM](https://github.com/ai4protein/VenusREM) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
+- *2026.04*: &nbsp;🎉 [VenusFactory2]({{ '/projects/venusfactory2/' | relative_url }}) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
+- *2026.01*: &nbsp;🎉 [VenusX]({{ '/projects/venusx/' | relative_url }}) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here]({{ '/projects/venusx/leaderboard/' | relative_url }}).
+- *2025.10*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) collects the news and open-source LLMs for Traditional Chinese Medicine — browse at [/projects/tcm/]({{ '/projects/tcm/' | relative_url }}).
+- *2025.04*: &nbsp;🏆 [VenusREM]({{ '/projects/venusrem/' | relative_url }}) achieves **1st place** in [ProteinGym Substitution](https://proteingym.org/benchmarks) and [VenusMutHub](https://lianglab.sjtu.edu.cn/muthub/) mutation prediction Leaderboard.
 
 <span class='anchor' id='-selected-publications'></span>
 

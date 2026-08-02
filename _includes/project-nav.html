@@ -1,0 +1,29 @@
+{% assign project = page.project %}
+{% assign projects = site.data.projects %}
+{% assign current = nil %}
+{% for p in projects %}
+  {% if p.slug == project %}{% assign current = p %}{% endif %}
+{% endfor %}
+{% assign section = page.section | default: 'overview' %}
+
+<header class="project-nav">
+  <div class="project-nav__inner">
+    <a class="project-nav__brand" href="{{ '/projects/' | relative_url }}">
+      <span class="project-nav__mark">pub</span>
+      <span class="project-nav__title">{% if current %}{{ current.name }}{% else %}Open Projects{% endif %}</span>
+    </a>
+
+    {% if current %}
+    <nav class="project-nav__links" aria-label="Project sections">
+      <a href="{{ current.url | relative_url }}"{% if section == 'overview' %} class="is-active"{% endif %}>Overview</a>
+      {% if current.leaderboard %}
+        <a href="{{ current.leaderboard | relative_url }}"{% if section == 'leaderboard' %} class="is-active"{% endif %}>Leaderboard</a>
+      {% endif %}
+      {% if current.paper %}<a href="{{ current.paper }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
+      {% if current.code %}<a href="{{ current.code }}" target="_blank" rel="noopener noreferrer">Code</a>{% endif %}
+      {% if current.demo %}<a href="{{ current.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>{% endif %}
+      {% if current.catalog %}<a href="{{ current.catalog | relative_url }}">Catalog</a>{% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</header>

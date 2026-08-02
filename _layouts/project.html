@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}" class="no-js project-site">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body class="layout--project{% if page.project %} project--{{ page.project }}{% endif %}">
+    {% include browser-upgrade.html %}
+
+    <main id="main" class="project-main" role="main">
+      <article class="project-article" itemscope itemtype="http://schema.org/CreativeWork">
+        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        {% include back-link.html %}
+        {{ content }}
+      </article>
+    </main>
+
+    {% include scroll-float.html %}
+    {% include project-footer.html %}
+    {% include scripts.html %}
+  </body>
+</html>

@@ -1,0 +1,242 @@
+# First-author / equal-contribution projects for /projects/ and /zh/projects/
+# category: llm | plm | agents | fitness | benchmark | platform
+# date: YYYY-MM (used for newest-first sorting on the hub)
+
+- name: VenusFactory2
+  name_zh: VenusFactory2
+  slug: venusfactory2
+  category: platform
+  venue: arXiv 2026
+  venue_zh: arXiv 2026
+  tagline: Self-evolving agents for protein discovery
+  tagline_zh: 面向蛋白发现的自演进智能体平台
+  summary: Free web platform with AI agents for protein discovery and directed evolution — integrating Venus / Prot* models
+    in the browser.
+  summary_zh: 免费 Web 平台，以智能体编排蛋白发现与定向进化，浏览器内集成 Venus / Prot* 模型。
+  url: /projects/venusfactory2/
+  url_zh: /zh/projects/venusfactory2/
+  paper: https://arxiv.org/abs/2603.27303
+  code: https://github.com/ai4protein/VenusFactory2
+  demo: https://venusfactory.bio
+  date: 2026-04
+- name: VenusRAR
+  name_zh: VenusRAR
+  slug: venusrar
+  category: agents
+  venue: arXiv 2026
+  venue_zh: arXiv 2026
+  tagline: Rank-and-Reason multi-agent mutation selection
+  tagline_zh: Rank-and-Reason 多智能体突变筛选
+  summary: Two-stage agentic framework that ensembles PLMs then audits candidates with biophysical chain-of-thought reasoning.
+  summary_zh: 两阶段智能体框架：先集成 PLM 排序，再用生物物理链式推理审核候选突变。
+  url: /projects/venusrar/
+  url_zh: /zh/projects/venusrar/
+  paper: https://arxiv.org/abs/2602.00197
+  code: https://github.com/ai4protein/VenusRAR
+  date: 2026-02
+- name: VenusX
+  name_zh: VenusX
+  slug: venusx
+  category: benchmark
+  venue: ICLR 2026
+  venue_zh: ICLR 2026
+  tagline: Unlocking fine-grained functional understanding of proteins
+  tagline_zh: 解锁蛋白质细粒度功能理解
+  summary: A large-scale benchmark for residue-, fragment-, and domain-level protein functional annotation and pairing.
+  summary_zh: 面向残基、片段与结构域级功能注释与配对的大规模基准。
+  url: /projects/venusx/
+  url_zh: /zh/projects/venusx/
+  leaderboard: /projects/venusx/leaderboard/
+  leaderboard_zh: /projects/venusx/leaderboard/
+  paper: https://openreview.net/forum?id=zcmL592XRG
+  code: https://github.com/ai4protein/VenusX
+  dataset: https://huggingface.co/collections/AI4Protein/venusx-dataset
+  image: /images/papers/venusx.png
+  date: 2026-01
+- name: TCM AI
+  name_zh: 中医大模型
+  slug: tcm
+  category: llm
+  venue: Resource hub
+  venue_zh: 资源导航
+  tagline: Curated Traditional Chinese Medicine LLM resources
+  tagline_zh: 中医大模型开源资源导航
+  summary: Open catalog of TCM LLM papers, models, benchmarks, datasets, and industry news — synced with Awesome-TCM-LLM.
+  summary_zh: 汇总中医大模型论文、开源权重、评测、数据集与行业动态，与 Awesome-TCM-LLM 同源维护。
+  url: /projects/tcm/
+  url_zh: /zh/projects/tcm/
+  code: https://github.com/tyang816/Awesome-TCM-LLM
+  catalog: /projects/tcm/
+  catalog_zh: /zh/projects/tcm/
+  date: 2025-10
+- name: VenusREM
+  name_zh: VenusREM
+  slug: venusrem
+  category: fitness
+  venue: ISMB/ECCB 2025
+  venue_zh: ISMB/ECCB 2025
+  tagline: Retrieval-enhanced mutation effect prediction
+  tagline_zh: 检索增强的突变效应预测
+  summary: From high-throughput evaluation to wet-lab studies — advancing fitness prediction with MSA-aware retrieval.
+  summary_zh: 从高通量评估到湿实验：用 MSA 检索增强适应度预测。
+  url: /projects/venusrem/
+  url_zh: /zh/projects/venusrem/
+  leaderboard: /projects/venusrem/leaderboard/
+  leaderboard_zh: /projects/venusrem/leaderboard/
+  paper: https://academic.oup.com/bioinformatics/article/41/Supplement_1/i401/8199374
+  code: https://github.com/ai4protein/VenusREM
+  dataset: https://huggingface.co/datasets/AI4Protein/VenusREM
+  image: /images/papers/venusrem.png
+  date: 2025-07
+- name: VenusFactory
+  name_zh: VenusFactory
+  slug: venusfactory
+  category: platform
+  venue: ACL Demo 2025
+  venue_zh: ACL Demo 2025
+  tagline: An integrated system for protein engineering
+  tagline_zh: 蛋白工程一体化系统
+  summary: Data retrieval and language-model fine-tuning in one open toolkit for protein engineering workflows.
+  summary_zh: 将数据检索与语言模型微调整合为开放工具箱，服务蛋白工程流程。
+  url: /projects/venusfactory/
+  url_zh: /zh/projects/venusfactory/
+  paper: https://aclanthology.org/2025.acl-demo.23/
+  code: https://github.com/ai4protein/VenusFactory
+  demo: https://venusfactory.bio
+  image: /images/papers/venusfactory.png
+  date: 2025-07
+- name: ProtSSN
+  name_zh: ProtSSN
+  slug: protssn
+  category: plm
+  venue: eLife 2025
+  venue_zh: eLife 2025
+  tagline: Sequence–structure fusion for zero-shot protein engineering
+  tagline_zh: 序列–结构融合的零样本蛋白工程模型
+  summary: Semantical and geometrical protein encoding toward enhanced bioactivity and thermostability — no MSA required.
+  summary_zh: 语义与几何联合编码，提升生物活性与热稳定性预测；推理无需 MSA。
+  url: /projects/protssn/
+  url_zh: /zh/projects/protssn/
+  leaderboard: /projects/protssn/leaderboard/
+  leaderboard_zh: /projects/protssn/leaderboard/
+  paper: https://elifesciences.org/articles/98033
+  code: https://github.com/ai4protein/ProtSSN
+  model: https://huggingface.co/tyang816/ProtSSN
+  image: /images/papers/protssn.png
+  date: 2025-05
+- name: VenusVaccine
+  name_zh: VenusVaccine
+  slug: venusvaccine
+  category: fitness
+  venue: ICLR 2025
+  venue_zh: ICLR 2025
+  tagline: Immunogenicity prediction for vaccine target selection
+  tagline_zh: 面向疫苗靶点筛选的免疫原性预测
+  summary: Dual-attention multimodal antigen encoding to classify protective vs non-protective antigens.
+  summary_zh: 双注意力多模态抗原编码，区分保护性与非保护性抗原。
+  url: /projects/venusvaccine/
+  url_zh: /zh/projects/venusvaccine/
+  paper: https://openreview.net/forum?id=hWmwL9gizZ
+  code: https://github.com/ai4protein/VenusVaccine
+  image: /images/papers/venusvaccine.png
+  date: 2025-04
+- name: ProSST
+  name_zh: ProSST
+  slug: prosst
+  category: plm
+  venue: NeurIPS 2024
+  venue_zh: NeurIPS 2024
+  tagline: Quantized structure meets disentangled attention
+  tagline_zh: 结构量化与解耦注意力的蛋白质语言模型
+  summary: A pretrained protein sequence–structure Transformer with structure tokenization and disentangled attention.
+  summary_zh: 预训练序列–结构 Transformer，将局部结构量化为离散 token，并以解耦注意力融合序列与结构。
+  url: /projects/prosst/
+  url_zh: /zh/projects/prosst/
+  leaderboard: /projects/prosst/leaderboard/
+  leaderboard_zh: /projects/prosst/leaderboard/
+  paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/3ed57b293db0aab7cc30c44f45262348-Paper-Conference.pdf
+  code: https://github.com/ai4protein/ProSST
+  model: https://huggingface.co/AI4Protein/ProSST-2048
+  image: /images/papers/prosst.png
+  date: 2024-12
+- name: ProtLOCA
+  name_zh: ProtLOCA
+  slug: protloca
+  category: plm
+  venue: IEEE BIBM 2024
+  venue_zh: IEEE BIBM 2024
+  tagline: Structure-only local geometry alignment
+  tagline_zh: 仅用结构的局部几何对齐
+  summary: Homology detection and local structure matching without amino-acid sequence embeddings.
+  summary_zh: 不依赖氨基酸类型嵌入，仅用结构信息进行同源检测与局部结构匹配。
+  url: /projects/protloca/
+  url_zh: /zh/projects/protloca/
+  paper: https://doi.org/10.1109/BIBM62325.2024.10822035
+  code: https://github.com/tyang816/ProtLOCA
+  date: 2024-12
+- name: ProtSolM
+  name_zh: ProtSolM
+  slug: protsolm
+  category: fitness
+  venue: IEEE BIBM 2024
+  venue_zh: IEEE BIBM 2024
+  tagline: Multimodal protein solubility prediction
+  tagline_zh: 多模态蛋白质溶解度预测
+  summary: Fusion of sequence, structure, and physicochemical features for solubility prediction.
+  summary_zh: 融合序列、结构与理化特征进行溶解度预测。
+  url: /projects/protsolm/
+  url_zh: /zh/projects/protsolm/
+  paper: https://ieeexplore.ieee.org/document/10822310
+  code: https://github.com/tyang816/ProtSolM
+  dataset: https://huggingface.co/datasets/tyang816/ProtSolM_ESMFold_PDB
+  date: 2024-12
+- name: SES-Adapter
+  name_zh: SES-Adapter
+  slug: ses-adapter
+  category: fitness
+  venue: J. Chem. Inf. Model. 2024
+  venue_zh: JCIM 2024
+  tagline: Structure-aware adapters for fitness prediction
+  tagline_zh: 结构感知适配器增强适应度预测
+  summary: Simple, efficient, scalable structure serialization + cross-modal attention for stronger PLM fine-tuning on fitness tasks.
+  summary_zh: 简单高效可扩展：结构序列化 + 跨模态注意力，提升蛋白质语言模型在适应度相关下游任务上的表现。
+  url: /projects/ses-adapter/
+  url_zh: /zh/projects/ses-adapter/
+  paper: https://pubs.acs.org/doi/10.1021/acs.jcim.4c00689
+  code: https://github.com/tyang816/SES-Adapter
+  image: /images/papers/ses-adapter.png
+  date: 2024-07
+- name: PETA
+  name_zh: PETA
+  slug: peta
+  category: benchmark
+  venue: J. Cheminformatics 2024
+  venue_zh: J. Cheminformatics 2024
+  tagline: Sub-word tokenization for protein transfer learning
+  tagline_zh: 子词分词对蛋白迁移学习的影响评测
+  summary: Evaluating how sub-word tokenization shapes protein pretraining and downstream transfer.
+  summary_zh: 系统评估子词分词如何影响蛋白质预训练与下游迁移表现。
+  url: /projects/peta/
+  url_zh: /zh/projects/peta/
+  paper: https://link.springer.com/article/10.1186/s13321-024-00884-3
+  code: https://github.com/mingchen-li/ProteinPretraining
+  image: /images/papers/peta.png
+  date: 2024-06
+- name: MedChatZH
+  name_zh: MedChatZH
+  slug: medchatzh
+  category: llm
+  venue: Comput. Biol. Med. 2024
+  venue_zh: 计算机生物学与医学 2024
+  tagline: A TCM-capable Chinese medical consultation LLM
+  tagline_zh: 面向中医问诊的中文医疗大模型
+  summary: Baichuan-7B tuned on TCM books and medical instruction dialogues for Chinese clinical Q&A.
+  summary_zh: 基于百川-7B，在中医典籍与医疗指令对话上微调，支持中文临床与中医问答。
+  url: /projects/medchatzh/
+  url_zh: /zh/projects/medchatzh/
+  paper: https://doi.org/10.1016/j.compbiomed.2024.108290
+  code: https://github.com/tyang816/MedChatZH
+  model: https://huggingface.co/tyang816/MedChatZH
+  dataset: https://huggingface.co/datasets/tyang816/MedChatZH
+  image: /images/papers/medchatzh.png
+  date: 2024-03

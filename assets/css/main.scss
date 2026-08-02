@@ -39,6 +39,8 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+@import "project";
+@import "site-chrome";
 
 .paper-box {
     display: flex;
@@ -88,13 +90,15 @@
 }
 
 $scroll_offset : 2em;
-h1:before, .anchor:before { 
-    content: ''; 
-    display: block; 
-    position: relative; 
-    width: 0; 
-    height: $scroll_offset; 
+h1:before, .anchor:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: $scroll_offset;
     margin-top: -$scroll_offset;
+    /* Negative margin overlaps content above (e.g. Back link) — don't steal clicks. */
+    pointer-events: none;
 }
 
 .badge {

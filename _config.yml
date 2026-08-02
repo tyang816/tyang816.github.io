@@ -9,7 +9,7 @@
 title                    : "Yang Tan"
 seo_title                : "Yang Tan | AI for Biology & TCM LLMs"
 seo_title_zh             : "谭扬 | AI for Biology 与中医大模型"
-description              : "Yang Tan (谭扬) — PhD student at SJTU & SII."
+description              : "Yang Tan (谭扬) — PhD student at SJTU & SII. AI for Biology, protein language models, and TCM LLMs."
 description_zh           : "谭扬（Yang Tan），上海交通大学与上海创智学院博士生。研究方向：AI for Biology、蛋白质语言模型、中医大模型资源与评测。"
 lang                     : "en"
 url                      : "https://tyang816.github.io"
@@ -160,18 +160,42 @@ defaults:
     values:
       layout: default
       author_profile: true
+  # Project / pub pages: embed in main site chrome (like timeline)
+  - scope:
+      path: "_pages/project"
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+      lang: en
+  # Projects + notes hubs/detail: collapse author profile for cleaner reading
+  - scope:
+      path: "_pages/projects"
+      type: pages
+    values:
+      sidebar_collapsed: true
+      sidebar_sticky: false
+  - scope:
+      path: "_pages/zh/projects"
+      type: pages
+    values:
+      sidebar_collapsed: true
+      sidebar_sticky: false
   # Keep Google HTML verification out of sitemap.xml
   - scope:
       path: "googlec0aed3ddfe20902d.html"
     values:
       sitemap: false
-  # Posts stay English by default (site.lang)
+  # Posts stay English by default (site.lang).
+  # Keep individual notes out of sitemap.xml so crawl budget favors hubs/projects;
+  # notes remain linked from /notes/ and are still crawlable.
   - scope:
       path: ""
       type: posts
     values:
       lang: en
       author_profile: true
+      sitemap: false
 
 
 # Sass/SCSS
@@ -198,6 +222,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
 
