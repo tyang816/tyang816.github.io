@@ -6,8 +6,8 @@ tags: [NLP, GNN]
 proceedings: ICLR
 date: 2018-09-28
 lang: zh-CN
-alt_url: /cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
-permalink: /zh/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
+alt_url: /notes/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
+permalink: /zh/notes/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
 ---
 
 

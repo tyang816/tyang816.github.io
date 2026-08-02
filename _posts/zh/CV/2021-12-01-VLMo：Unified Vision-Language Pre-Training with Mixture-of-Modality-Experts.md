@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning, transformer]
 proceedings: NeurIPS
 date: 2021-12-01
 lang: zh-CN
-alt_url: /cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
-permalink: /zh/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
+alt_url: /notes/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
+permalink: /zh/notes/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
 ---
 
 > 论文地址：[VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts](https://openreview.net/forum?id=bydKs84JEyw)

@@ -6,8 +6,8 @@ tags: [protein, evolution, PLM, generative]
 proceedings: Science
 date: 2025-01-16
 lang: zh-CN
-alt_url: /bi/Simulating-500-million-years-of-evolution-with-a-language-model/
-permalink: /zh/bi/Simulating-500-million-years-of-evolution-with-a-language-model/
+alt_url: /notes/bi/Simulating-500-million-years-of-evolution-with-a-language-model/
+permalink: /zh/notes/bi/Simulating-500-million-years-of-evolution-with-a-language-model/
 ---
 
 > 论文地址：[Simulating 500 million years of evolution with a language model](https://www.science.org/doi/10.1126/science.ads0018)

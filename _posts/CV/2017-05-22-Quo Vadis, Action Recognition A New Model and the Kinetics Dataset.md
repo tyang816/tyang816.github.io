@@ -6,8 +6,8 @@ tags: [vision-language, video, action-recognition]
 proceedings: CVPR
 date: 2017-05-22
 lang: en
-alt_url: /zh/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
-permalink: /cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+alt_url: /zh/notes/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+permalink: /notes/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
 ---
 
 > Paper: [Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset](http://ieeexplore.ieee.org/document/8099985/)

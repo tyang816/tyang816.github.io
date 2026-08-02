@@ -6,8 +6,8 @@ tags: [code-summarization, transformer, contrastive-learning]
 proceedings: NAACL
 date: 2022-05-04
 lang: zh-CN
-alt_url: /se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
-permalink: /zh/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
+alt_url: /notes/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
+permalink: /zh/notes/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
 ---
 
 > 论文地址：[CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training](http://arxiv.org/abs/2205.02029)

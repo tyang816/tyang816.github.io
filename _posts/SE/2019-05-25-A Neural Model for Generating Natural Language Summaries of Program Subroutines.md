@@ -6,8 +6,8 @@ tags: [code-summarization]
 proceedings: ICSE
 date: 2019-05-25
 lang: en
-alt_url: /zh/se/A-Neural-Model-for-Generating-Natural-Language-Summaries-of-Program-Subroutines/
-permalink: /se/A-Neural-Model-for-Generating-Natural-Language-Summaries-of-Program-Subroutines/
+alt_url: /zh/notes/se/A-Neural-Model-for-Generating-Natural-Language-Summaries-of-Program-Subroutines/
+permalink: /notes/se/A-Neural-Model-for-Generating-Natural-Language-Summaries-of-Program-Subroutines/
 ---
 
 > Paper: [A Neural Model for Generating Natural Language Summaries of Program Subroutines](https://dl.acm.org/doi/10.1109/ICSE.2019.00087)

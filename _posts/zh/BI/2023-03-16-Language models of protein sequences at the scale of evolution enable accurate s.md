@@ -6,8 +6,8 @@ tags: [protein, PLM, structure prediction]
 proceedings: Science
 date: 2023-03-16
 lang: zh-CN
-alt_url: /bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
-permalink: /zh/bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
+alt_url: /notes/bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
+permalink: /zh/notes/bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
 ---
 
 > 论文地址：[Evolutionary-scale prediction of atomic-level protein structure with a language model](https://www.science.org/doi/10.1126/science.ade2574)

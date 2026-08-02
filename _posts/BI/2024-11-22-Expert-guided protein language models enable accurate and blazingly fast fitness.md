@@ -6,8 +6,8 @@ tags: [protein, fitness-prediction, PLM]
 proceedings: Bioinformatics
 date: 2024-11-22
 lang: en
-alt_url: /zh/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
-permalink: /bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
+alt_url: /zh/notes/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
+permalink: /notes/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
 ---
 
 > Paper: [Expert-guided protein language models enable accurate and blazingly fast fitness prediction](https://academic.oup.com/bioinformatics/article/40/11/btae621/7907184)

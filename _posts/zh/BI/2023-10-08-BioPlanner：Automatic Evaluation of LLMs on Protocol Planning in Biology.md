@@ -6,8 +6,8 @@ tags: [Agent，LLM]
 proceedings: EMNLP
 date: 2023-10-08
 lang: zh-CN
-alt_url: /bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
-permalink: /zh/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
+alt_url: /notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
+permalink: /zh/notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
 ---
 
 > 论文地址：[BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology](https://openreview.net/forum?id=pMCRGmB7Rv)

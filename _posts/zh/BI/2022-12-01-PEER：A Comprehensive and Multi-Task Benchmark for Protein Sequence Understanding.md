@@ -6,8 +6,8 @@ tags: [protein, benchmark, PLM]
 proceedings: NeurIPS
 date: 2022-12-01
 lang: zh-CN
-alt_url: /bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
-permalink: /zh/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
+alt_url: /notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
+permalink: /zh/notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
 ---
 
 > 论文地址：[PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding](https://proceedings.neurips.cc/paper_files/paper/2022/file/e467582d42d9c13fa9603df16f31de6d-Paper-Datasets_and_Benchmarks.pdf)

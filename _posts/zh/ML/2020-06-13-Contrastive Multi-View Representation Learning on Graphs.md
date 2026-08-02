@@ -6,8 +6,8 @@ tags: [contrastive-learning, GNN]
 proceedings: ICML
 date: 2020-06-13
 lang: zh-CN
-alt_url: /ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
-permalink: /zh/ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
+alt_url: /notes/ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
+permalink: /zh/notes/ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
 ---
 
 > 论文地址：[Contrastive Multi-View Representation Learning on Graphs](https://proceedings.mlr.press/v119/hassani20a.html)

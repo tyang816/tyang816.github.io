@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: OpenAI
 date: 2022-04-13
 lang: zh-CN
-alt_url: /cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/
-permalink: /zh/cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/
+alt_url: /notes/cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/
+permalink: /zh/notes/cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/
 ---
 
 > 论文地址：[Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/pdf/2204.06125.pdf)

@@ -212,7 +212,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /notes/:categories/:title/
 timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 

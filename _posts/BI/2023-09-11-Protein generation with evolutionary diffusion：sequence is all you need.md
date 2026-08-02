@@ -6,8 +6,8 @@ tags: [protein, PLM, protein-design]
 proceedings: bioRxiv
 date: 2023-09-11
 lang: en
-alt_url: /zh/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
-permalink: /bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
+alt_url: /zh/notes/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
+permalink: /notes/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
 ---
 
 > Paper: [Protein generation with evolutionary diffusion：sequence is all you need](http://biorxiv.org/lookup/doi/10.1101/2023.09.11.556673)

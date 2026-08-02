@@ -6,8 +6,8 @@ tags: [protein, GNN, inverse folding]
 proceedings: ICLR
 date: 2021-01-13
 lang: en
-alt_url: /zh/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
-permalink: /bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
+alt_url: /zh/notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
+permalink: /notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
 ---
 
 > Paper: [Learning from Protein Structure with Geometric Vector Perceptrons](https://openreview.net/forum?id=1YLJDvSx6J4)

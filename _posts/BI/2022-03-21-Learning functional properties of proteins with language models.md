@@ -6,8 +6,8 @@ tags: [protein, PLM, functional prediction]
 proceedings: Nature Machine Intelligence
 date: 2022-03-21
 lang: en
-alt_url: /zh/bi/Learning-functional-properties-of-proteins-with-language-models/
-permalink: /bi/Learning-functional-properties-of-proteins-with-language-models/
+alt_url: /zh/notes/bi/Learning-functional-properties-of-proteins-with-language-models/
+permalink: /notes/bi/Learning-functional-properties-of-proteins-with-language-models/
 ---
 
 > Paper: [Learning functional properties of proteins with language models](https://www.nature.com/articles/s42256-022-00457-9)

@@ -6,8 +6,8 @@ tags: [protein, homology, PLM]
 proceedings: eLife
 date: 2024-03-15
 lang: en
-alt_url: /zh/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
-permalink: /bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+alt_url: /zh/notes/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+permalink: /notes/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
 ---
 
 > Paper: [Sensitive remote homology search by local alignment of small positional embeddings from protein language models](https://elifesciences.org/articles/91415)

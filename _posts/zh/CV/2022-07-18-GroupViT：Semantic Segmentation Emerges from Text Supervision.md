@@ -6,8 +6,8 @@ tags: [video, vision-language]
 proceedings: CVPR
 date: 2022-07-18
 lang: zh-CN
-alt_url: /cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
-permalink: /zh/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
+alt_url: /notes/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
+permalink: /zh/notes/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
 ---
 
 > 论文地址：[GroupViT：Semantic Segmentation Emerges from Text Supervision](https://openaccess.thecvf.com/content/CVPR2022/papers/Xu_GroupViT_Semantic_Segmentation_Emerges_From_Text_Supervision_CVPR_2022_paper.pdf)

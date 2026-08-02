@@ -6,8 +6,8 @@ tags: [protein, PLM, transformer, self-supervised]
 proceedings: IEEE Transactions on Pattern Analysis and Machine Intelligence
 date: 2021-07-01
 lang: zh-CN
-alt_url: /bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
-permalink: /zh/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
+alt_url: /notes/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
+permalink: /zh/notes/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
 ---
 
 > 论文地址：[ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised Learning](https://ieeexplore.ieee.org/document/9477085/)

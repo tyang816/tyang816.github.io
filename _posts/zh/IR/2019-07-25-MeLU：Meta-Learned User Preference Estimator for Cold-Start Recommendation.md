@@ -6,8 +6,8 @@ tags: [meta-learning, recommendation-system]
 proceedings: KDD
 date: 2019-07-25
 lang: zh-CN
-alt_url: /ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
-permalink: /zh/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
+alt_url: /notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
+permalink: /zh/notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
 ---
 
 > 论文地址：[MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation](https://dl.acm.org/doi/10.1145/3292500.3330859)

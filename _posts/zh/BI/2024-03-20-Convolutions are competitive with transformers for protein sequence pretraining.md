@@ -6,8 +6,8 @@ tags: [protein, PLM, CNN, transformer]
 proceedings: Cell Systems
 date: 2024-03-20
 lang: zh-CN
-alt_url: /bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
-permalink: /zh/bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
+alt_url: /notes/bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
+permalink: /zh/notes/bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
 ---
 
 > 论文地址：[Convolutions are competitive with transformers for protein sequence pretraining](https://www.cell.com/cell-systems/fulltext/S2405-4712(24)00029-2)

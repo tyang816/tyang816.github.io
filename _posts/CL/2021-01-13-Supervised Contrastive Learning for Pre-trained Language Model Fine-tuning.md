@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: ICLR
 date: 2021-01-13
 lang: en
-alt_url: /zh/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
-permalink: /cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
+alt_url: /zh/notes/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
+permalink: /notes/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
 ---
 
 > Paper: [Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning](https://openreview.net/forum?id=cu7IUiOhujH)

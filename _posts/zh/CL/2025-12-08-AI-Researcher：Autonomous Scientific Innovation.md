@@ -6,8 +6,8 @@ tags: [Agent, NLP, LLM]
 proceedings: NeurIPS
 date: 2025-12-08
 lang: zh-CN
-alt_url: /cl/AI-Researcher：Autonomous-Scientific-Innovation/
-permalink: /zh/cl/AI-Researcher：Autonomous-Scientific-Innovation/
+alt_url: /notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
+permalink: /zh/notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
 ---
 
 > 论文地址：[AI-Researcher：Autonomous Scientific Innovation](https://openreview.net/pdf/a1c63cdd0495de94664b1513f7d95a3aedcb483a.pdf)

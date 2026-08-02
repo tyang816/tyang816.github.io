@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: ACL
 date: 2019-08-01
 lang: en
-alt_url: /zh/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
-permalink: /cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
+alt_url: /zh/notes/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
+permalink: /notes/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
 ---
 
 > Paper: [Improving Robustness of Neural Machine Translation with Multi-task Learning](https://aclanthology.org/W19-5368)

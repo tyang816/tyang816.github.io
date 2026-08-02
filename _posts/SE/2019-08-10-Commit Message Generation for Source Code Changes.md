@@ -6,8 +6,8 @@ tags: [code-understanding]
 proceedings: IJCAI
 date: 2019-08-10
 lang: en
-alt_url: /zh/se/Commit-Message-Generation-for-Source-Code-Changes/
-permalink: /se/Commit-Message-Generation-for-Source-Code-Changes/
+alt_url: /zh/notes/se/Commit-Message-Generation-for-Source-Code-Changes/
+permalink: /notes/se/Commit-Message-Generation-for-Source-Code-Changes/
 ---
 
 > Paper: [Commit Message Generation for Source Code Changes](https://www.ijcai.org/proceedings/2019/0552.pdf)

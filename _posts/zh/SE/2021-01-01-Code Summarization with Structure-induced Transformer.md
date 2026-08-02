@@ -6,8 +6,8 @@ tags: [code-summarization, transformer]
 proceedings: ACL
 date: 2021-01-01
 lang: zh-CN
-alt_url: /se/Code-Summarization-with-Structure-induced-Transformer/
-permalink: /zh/se/Code-Summarization-with-Structure-induced-Transformer/
+alt_url: /notes/se/Code-Summarization-with-Structure-induced-Transformer/
+permalink: /zh/notes/se/Code-Summarization-with-Structure-induced-Transformer/
 ---
 
 > 论文地址：[Code Summarization with Structure-induced Transformer](https://aclanthology.org/2021.findings-acl.93)

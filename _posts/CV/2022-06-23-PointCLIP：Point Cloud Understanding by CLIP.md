@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: CVPR
 date: 2022-06-23
 lang: en
-alt_url: /zh/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
-permalink: /cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
+alt_url: /zh/notes/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
+permalink: /notes/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
 ---
 
 > Paper: [PointCLIP：Point Cloud Understanding by CLIP](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_PointCLIP_Point_Cloud_Understanding_by_CLIP_CVPR_2022_paper.pdf)

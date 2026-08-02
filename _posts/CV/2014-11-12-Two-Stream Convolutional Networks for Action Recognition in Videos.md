@@ -6,8 +6,8 @@ tags: [video, action-recognition]
 proceedings: NeurIPS
 date: 2014-11-12
 lang: en
-alt_url: /zh/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
-permalink: /cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+alt_url: /zh/notes/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+permalink: /notes/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
 ---
 
 > Paper: [Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)

@@ -6,8 +6,8 @@ tags: [vision-language]
 proceedings: ICCV
 date: 2021-04-05
 lang: zh-CN
-alt_url: /cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
-permalink: /zh/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
+alt_url: /notes/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
+permalink: /zh/notes/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
 ---
 
 > 论文地址：[An Empirical Study of Training Self-Supervised Vision Transformers](http://arxiv.org/abs/2104.02057)

@@ -6,8 +6,8 @@ tags: [protein]
 proceedings: arXiv
 date: 2026-03-17
 lang: en
-alt_url: /zh/bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
-permalink: /bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
+alt_url: /zh/notes/bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
+permalink: /notes/bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
 ---
 
 > Paper: [evedesign accessible biosequence design with a unified framework](https://doi.org/10.64898/2026.03.17.712115)

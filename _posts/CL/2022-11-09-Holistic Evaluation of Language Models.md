@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: arXiv
 date: 2022-11-09
 lang: en
-alt_url: /zh/cl/Holistic-Evaluation-of-Language-Models/
-permalink: /cl/Holistic-Evaluation-of-Language-Models/
+alt_url: /zh/notes/cl/Holistic-Evaluation-of-Language-Models/
+permalink: /notes/cl/Holistic-Evaluation-of-Language-Models/
 ---
 
 > Paper: [Holistic Evaluation of Language Models](http://arxiv.org/abs/2211.09110)

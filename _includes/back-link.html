@@ -1,6 +1,9 @@
 {% comment %}
   Back-to-parent control for non-home pages.
   Override with page.parent_url / page.back_label, or hide with page.hide_back: true.
+  The computed parent URL is validated against real pages: ancestors that
+  don't exist (e.g. /notes/bi/) are skipped, falling back to the nearest
+  existing ancestor and finally to the language home.
 {% endcomment %}
 {% if page.hide_back %}
 {% else %}
@@ -26,19 +29,28 @@
 {% if page_url == "/" or page_url == "/zh/" %}{% assign is_home = true %}{% endif %}
 
 {% unless is_home %}
+  {% assign valid_urls = site.pages | map: "url" %}
+
   {% if page.parent_url %}
     {% assign back_url = page.parent_url %}
-  {% elsif segs.size == 1 %}
-    {% assign back_url = "/" %}
-  {% elsif segs.size == 2 and segs[0] == "zh" %}
-    {% assign back_url = "/zh/" %}
   {% else %}
-    {% assign back_url = "/" %}
-    {% for seg in segs %}
-      {% unless forloop.last %}
-        {% assign back_url = back_url | append: seg | append: "/" %}
+    {% comment %} Walk ancestors from nearest to furthest; pick the first that exists. {% endcomment %}
+    {% assign back_url = home_url %}
+    {% assign found = false %}
+    {% assign last_parent = segs.size | minus: 1 %}
+    {% for depth in (1..last_parent) reversed %}
+      {% unless found %}
+        {% assign prefix = segs | slice: 0, depth | join: "/" %}
+        {% assign candidate = "/" | append: prefix | append: "/" %}
+        {% if candidate == "/" or candidate == home_url or valid_urls contains candidate %}
+          {% assign back_url = candidate %}
+          {% assign found = true %}
+        {% endif %}
       {% endunless %}
     {% endfor %}
+    {% comment %} A zh page must never fall back to the English home and vice versa. {% endcomment %}
+    {% if segs[0] == "zh" and back_url == "/" %}{% assign back_url = "/zh/" %}{% endif %}
+    {% if segs[0] != "zh" and back_url == "/zh/" %}{% assign back_url = "/" %}{% endif %}
   {% endif %}
 
   {% if page.back_label %}

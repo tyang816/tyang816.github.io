@@ -6,8 +6,8 @@ tags: [vision-language, transformer, contrastive-learning]
 proceedings: ICML
 date: 2022-01-24
 lang: zh-CN
-alt_url: /cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
-permalink: /zh/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
+alt_url: /notes/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
+permalink: /zh/notes/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
 ---
 
 > 论文地址：[BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation](http://arxiv.org/abs/2201.12086)

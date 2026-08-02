@@ -6,8 +6,8 @@ tags: [LLM, NLP, transformer]
 proceedings: OpenAI
 date: 2022-03-16
 lang: zh-CN
-alt_url: /cl/Training-language-models-to-follow-instructions-with-human-feedback/
-permalink: /zh/cl/Training-language-models-to-follow-instructions-with-human-feedback/
+alt_url: /notes/cl/Training-language-models-to-follow-instructions-with-human-feedback/
+permalink: /zh/notes/cl/Training-language-models-to-follow-instructions-with-human-feedback/
 ---
 
 > 论文地址：[Training language models to follow instructions with human feedback](http://arxiv.org/abs/2203.02155)

@@ -6,8 +6,8 @@ tags: [protein, structure search]
 proceedings: Journal of Chemical Information and Modeling
 date: 2024-01-25
 lang: en
-alt_url: /zh/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
-permalink: /bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
+alt_url: /zh/notes/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
+permalink: /notes/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
 ---
 
 > Paper: [TM-search：An Efficient and Effective Tool for Protein Structure Database Search](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01455)

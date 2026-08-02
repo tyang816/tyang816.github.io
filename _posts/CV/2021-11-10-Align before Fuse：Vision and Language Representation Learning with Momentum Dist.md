@@ -6,8 +6,8 @@ tags: [vision-language]
 proceedings: NeurIPS
 date: 2021-11-10
 lang: en
-alt_url: /zh/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
-permalink: /cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
+alt_url: /zh/notes/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
+permalink: /notes/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
 ---
 
 > Paper: [Align before Fuse：Vision and Language Representation Learning with Momentum Distillation](https://openreview.net/forum?id=OJLaKwiXSbx)

@@ -6,8 +6,8 @@ tags: [code-generation]
 proceedings: DeepMind
 date: 2022-03-07
 lang: en
-alt_url: /zh/se/Competition-Level-Code-Generation-with-AlphaCode/
-permalink: /se/Competition-Level-Code-Generation-with-AlphaCode/
+alt_url: /zh/notes/se/Competition-Level-Code-Generation-with-AlphaCode/
+permalink: /notes/se/Competition-Level-Code-Generation-with-AlphaCode/
 ---
 
 > Paper: [Competition-Level Code Generation with AlphaCode](http://arxiv.org/abs/2203.07814)

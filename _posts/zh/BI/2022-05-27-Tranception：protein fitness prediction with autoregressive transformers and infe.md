@@ -6,8 +6,8 @@ tags: [protein, PLM, fitness-prediction]
 proceedings: ICML
 date: 2022-05-27
 lang: zh-CN
-alt_url: /bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
-permalink: /zh/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
+alt_url: /notes/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
+permalink: /zh/notes/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
 ---
 
 > 论文地址：[Tranception：protein fitness prediction with autoregressive transformers and inference-time retrieval](http://arxiv.org/abs/2205.13760)

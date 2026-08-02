@@ -6,8 +6,8 @@ tags: [LLM, code-generation]
 proceedings: OpenAI
 date: 2021-07-14
 lang: zh-CN
-alt_url: /se/Evaluating-Large-Language-Models-Trained-on-Code/
-permalink: /zh/se/Evaluating-Large-Language-Models-Trained-on-Code/
+alt_url: /notes/se/Evaluating-Large-Language-Models-Trained-on-Code/
+permalink: /zh/notes/se/Evaluating-Large-Language-Models-Trained-on-Code/
 ---
 
 > 论文地址：[Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374)

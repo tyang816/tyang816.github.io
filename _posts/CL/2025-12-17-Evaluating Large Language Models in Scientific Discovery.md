@@ -6,8 +6,8 @@ tags: [Agent, LLM, NLP]
 proceedings: arXiv
 date: 2025-12-17
 lang: en
-alt_url: /zh/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
-permalink: /cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
+alt_url: /zh/notes/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
+permalink: /notes/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
 ---
 
 > Paper: [Evaluating Large Language Models in Scientific Discovery](https://)

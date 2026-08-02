@@ -6,8 +6,8 @@ tags: [video, vision-language, transformer]
 proceedings: ICML
 date: 2021-01-09
 lang: en
-alt_url: /zh/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
-permalink: /cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
+alt_url: /zh/notes/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
+permalink: /notes/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
 ---
 
 > Paper: [Is Space-Time Attention All You Need for Video Understanding](http://proceedings.mlr.press/v139/bertasius21a/bertasius21a-supp.pdf)

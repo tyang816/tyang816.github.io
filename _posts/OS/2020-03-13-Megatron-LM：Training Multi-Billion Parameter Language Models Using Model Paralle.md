@@ -6,8 +6,8 @@ tags: [model-parallelism]
 proceedings: GTC
 date: 2020-03-13
 lang: en
-alt_url: /zh/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
-permalink: /os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
+alt_url: /zh/notes/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
+permalink: /notes/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
 ---
 
 > Paper: [Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053)

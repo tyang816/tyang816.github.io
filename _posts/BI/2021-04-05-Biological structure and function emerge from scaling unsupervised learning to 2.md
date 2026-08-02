@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: Proceedings of the National Academy of Sciences
 date: 2021-04-05
 lang: en
-alt_url: /zh/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
-permalink: /bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
+alt_url: /zh/notes/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
+permalink: /notes/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
 ---
 
 > Paper: [Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences](https://www.pnas.org/doi/10.1073/pnas.2016239118)

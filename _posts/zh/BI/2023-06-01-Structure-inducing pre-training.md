@@ -6,8 +6,8 @@ tags: [pre-training, PLM]
 proceedings: Nature Machine Intelligence
 date: 2023-06-01
 lang: zh-CN
-alt_url: /bi/Structure-inducing-pre-training/
-permalink: /zh/bi/Structure-inducing-pre-training/
+alt_url: /notes/bi/Structure-inducing-pre-training/
+permalink: /zh/notes/bi/Structure-inducing-pre-training/
 ---
 
 > 论文地址：[Structure-inducing pre-training](https://www.nature.com/articles/s42256-023-00647-z)

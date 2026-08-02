@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: ICML
 date: 2021-02-13
 lang: en
-alt_url: /zh/bi/MSA-Transformer/
-permalink: /bi/MSA-Transformer/
+alt_url: /zh/notes/bi/MSA-Transformer/
+permalink: /notes/bi/MSA-Transformer/
 ---
 
 > Paper: [MSA Transformer](https://proceedings.mlr.press/v139/rao21a.html)

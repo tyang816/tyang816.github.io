@@ -6,8 +6,8 @@ tags: [other]
 proceedings: Stanford
 date: 2022-03-02
 lang: zh-CN
-alt_url: /ml/AI-Index-Report/
-permalink: /zh/ml/AI-Index-Report/
+alt_url: /notes/ml/AI-Index-Report/
+permalink: /zh/notes/ml/AI-Index-Report/
 ---
 
 > 报告地址：[AI Index Report](https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf)，数据大多来源于paper with code

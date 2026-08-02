@@ -6,8 +6,8 @@ tags: [code-summarization]
 proceedings: MSR
 date: 2020-11-18
 lang: en
-alt_url: /zh/se/Improved-Automatic-Summarization-of-Subroutines-via-Attention-to-File-Context/
-permalink: /se/Improved-Automatic-Summarization-of-Subroutines-via-Attention-to-File-Context/
+alt_url: /zh/notes/se/Improved-Automatic-Summarization-of-Subroutines-via-Attention-to-File-Context/
+permalink: /notes/se/Improved-Automatic-Summarization-of-Subroutines-via-Attention-to-File-Context/
 ---
 
 > Paper: [Improved Automatic Summarization of Subroutines via Attention to File Context](https://dl.acm.org/doi/10.1145/3379597.3387449)

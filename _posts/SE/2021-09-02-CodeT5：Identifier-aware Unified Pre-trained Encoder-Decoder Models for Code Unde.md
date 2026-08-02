@@ -6,8 +6,8 @@ tags: [code-understanding, transformer]
 proceedings: EMNLP
 date: 2021-09-02
 lang: en
-alt_url: /zh/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
-permalink: /se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+alt_url: /zh/notes/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+permalink: /notes/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
 ---
 
 > Paper: [CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation](https://aclanthology.org/2021.emnlp-main.685)

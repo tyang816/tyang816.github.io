@@ -6,8 +6,8 @@ tags: [protein, PLM, alignment]
 proceedings: Bioinformatics
 date: 2024-01-04
 lang: zh-CN
-alt_url: /bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
-permalink: /zh/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
+alt_url: /notes/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
+permalink: /zh/notes/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
 ---
 
 > 论文地址：[Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone](https://academic.oup.com/bioinformatics/article/doi/10.1093/bioinformatics/btad786/7510842)

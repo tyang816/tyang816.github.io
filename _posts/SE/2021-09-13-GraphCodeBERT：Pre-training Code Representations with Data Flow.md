@@ -6,8 +6,8 @@ tags: [code-understanding, transformer, GNN]
 proceedings: ICLR
 date: 2021-09-13
 lang: en
-alt_url: /zh/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
-permalink: /se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
+alt_url: /zh/notes/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
+permalink: /notes/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
 ---
 
 > Paper: [GraphCodeBERT: Pre-training Code Representations with Data Flow](http://arxiv.org/abs/2009.08366)

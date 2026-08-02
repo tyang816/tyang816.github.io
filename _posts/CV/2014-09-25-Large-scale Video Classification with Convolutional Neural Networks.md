@@ -6,8 +6,8 @@ tags: [video]
 proceedings: CVPR
 date: 2014-09-25
 lang: en
-alt_url: /zh/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
-permalink: /cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
+alt_url: /zh/notes/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
+permalink: /notes/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
 ---
 
 

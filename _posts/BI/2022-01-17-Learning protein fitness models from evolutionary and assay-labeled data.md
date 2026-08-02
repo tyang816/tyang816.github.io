@@ -6,8 +6,8 @@ tags: [protein, PLM, fitness-prediction]
 proceedings: Nature Biotechnology
 date: 2022-01-17
 lang: en
-alt_url: /zh/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
-permalink: /bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
+alt_url: /zh/notes/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
+permalink: /notes/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
 ---
 
 > Paper: [Learning protein fitness models from evolutionary and assay-labeled data](https://www.nature.com/articles/s41587-021-01146-5)

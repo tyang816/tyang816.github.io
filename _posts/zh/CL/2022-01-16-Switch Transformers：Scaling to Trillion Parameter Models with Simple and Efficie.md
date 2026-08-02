@@ -6,8 +6,8 @@ tags: [LLM, NLP, transformer]
 proceedings: Journal of Machine Learning Research
 date: 2022-01-16
 lang: zh-CN
-alt_url: /cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
-permalink: /zh/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
+alt_url: /notes/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
+permalink: /zh/notes/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
 ---
 
 > 论文地址：[Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://jmlr.org/papers/volume23/21-0998/21-0998.pdf)

@@ -6,8 +6,8 @@ tags: [LLM, NLP, transformer]
 proceedings: arXiv
 date: 2019-05-08
 lang: zh-CN
-alt_url: /cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
-permalink: /zh/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
+alt_url: /notes/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
+permalink: /zh/notes/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
 ---
 
 > 论文地址：[Unified Language Model Pre-training for Natural Language Understanding and Generation](http://arxiv.org/abs/1905.03197)

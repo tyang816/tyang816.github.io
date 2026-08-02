@@ -6,8 +6,8 @@ tags: [program-repair, GNN]
 proceedings: ICML
 date: 2020-07-13
 lang: zh-CN
-alt_url: /se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
-permalink: /zh/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
+alt_url: /notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
+permalink: /zh/notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
 ---
 
 > 论文地址：[Graph-based, Self-Supervised Program Repair from Diagnostic Feedback](https://dl.acm.org/doi/10.5555/3524938.3525939)

@@ -6,8 +6,8 @@ tags: [meta-learning]
 proceedings: ICML
 date: 2017-07-18
 lang: en
-alt_url: /zh/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
-permalink: /ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
+alt_url: /zh/notes/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
+permalink: /notes/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
 ---
 
 > Paper: [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](http://arxiv.org/abs/1703.03400)

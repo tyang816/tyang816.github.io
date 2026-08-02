@@ -6,8 +6,8 @@ tags: [protein, PLM, fitness-prediction]
 proceedings: Human Genetics
 date: 2021-12-30
 lang: en
-alt_url: /zh/bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
-permalink: /bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
+alt_url: /zh/notes/bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
+permalink: /notes/bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
 ---
 
 > Paper: [Embeddings from protein language models predict conservation and variant effects](https://link.springer.com/10.1007/s00439-021-02411-y)

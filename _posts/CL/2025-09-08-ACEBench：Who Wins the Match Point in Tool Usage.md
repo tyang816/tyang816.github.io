@@ -6,8 +6,8 @@ tags: [Agent, LLM, NLP]
 proceedings: arXiv
 date: 2025-09-08
 lang: en
-alt_url: /zh/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
-permalink: /cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
+alt_url: /zh/notes/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
+permalink: /notes/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
 ---
 
 > Paper: [ACEBench：Who Wins the Match Point in Tool Usage](https://arxiv.org/abs/2501.12851)

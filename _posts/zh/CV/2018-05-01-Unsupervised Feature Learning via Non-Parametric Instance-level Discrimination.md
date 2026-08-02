@@ -6,8 +6,8 @@ tags: [unsupervised-learning, contrastive-learning]
 proceedings: CVPR
 date: 2018-05-01
 lang: zh-CN
-alt_url: /cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
-permalink: /zh/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
+alt_url: /notes/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
+permalink: /zh/notes/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
 ---
 
 > 论文地址：[Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination](http://arxiv.org/abs/1805.01978)

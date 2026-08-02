@@ -6,8 +6,8 @@ tags: [vision-language, data-augmentation]
 proceedings: WACV
 date: 2023-01-09
 lang: en
-alt_url: /zh/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
-permalink: /cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
+alt_url: /zh/notes/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
+permalink: /notes/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
 ---
 
 > Paper: [MixGen：A New Multi-Modal Data Augmentation](https://openaccess.thecvf.com/content/WACV2023W/Pretrain/papers/Hao_MixGen_A_New_Multi-Modal_Data_Augmentation_WACVW_2023_paper.pdf)

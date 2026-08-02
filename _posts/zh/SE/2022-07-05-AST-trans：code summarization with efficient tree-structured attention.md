@@ -6,8 +6,8 @@ tags: [code-summarization]
 proceedings: ICSE
 date: 2022-07-05
 lang: zh-CN
-alt_url: /se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
-permalink: /zh/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
+alt_url: /notes/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
+permalink: /zh/notes/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
 ---
 
 > 论文地址：[AST-trans：code summarization with efficient tree-structured attention](https://dl.acm.org/doi/10.1145/3510003.3510224)

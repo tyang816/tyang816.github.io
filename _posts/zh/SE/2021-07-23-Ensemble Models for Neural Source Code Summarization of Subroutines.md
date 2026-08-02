@@ -6,8 +6,8 @@ tags: [code-summarization]
 proceedings: ICSME
 date: 2021-07-23
 lang: zh-CN
-alt_url: /se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
-permalink: /zh/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
+alt_url: /notes/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
+permalink: /zh/notes/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
 ---
 
 > 论文地址：[Ensemble Models for Neural Source Code Summarization of Subroutines](http://arxiv.org/abs/2107.11423)

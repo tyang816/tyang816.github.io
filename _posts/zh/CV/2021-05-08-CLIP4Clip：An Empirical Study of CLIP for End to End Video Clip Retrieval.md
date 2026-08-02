@@ -6,8 +6,8 @@ tags: [Video, Contrastive Learning]
 proceedings: arXiv
 date: 2021-05-08
 lang: zh-CN
-alt_url: /cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
-permalink: /zh/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
+alt_url: /notes/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
+permalink: /zh/notes/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
 ---
 
 > 论文地址：[CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval](http://arxiv.org/abs/2104.08860)

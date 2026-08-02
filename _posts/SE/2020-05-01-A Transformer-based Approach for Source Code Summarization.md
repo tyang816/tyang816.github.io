@@ -6,8 +6,8 @@ tags: [code-summarization, transformer]
 proceedings: ACL
 date: 2020-05-01
 lang: en
-alt_url: /zh/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
-permalink: /se/A-Transformer-based-Approach-for-Source-Code-Summarization/
+alt_url: /zh/notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
+permalink: /notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
 ---
 
 > Paper: [A Transformer-based Approach for Source Code Summarization](https://aclanthology.org/2020.acl-main.449.pdf)

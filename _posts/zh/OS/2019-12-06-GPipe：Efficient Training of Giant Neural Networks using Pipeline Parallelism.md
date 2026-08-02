@@ -6,8 +6,8 @@ tags: [pipeline-parallelism]
 proceedings: NeurIPS
 date: 2019-12-06
 lang: zh-CN
-alt_url: /os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
-permalink: /zh/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
+alt_url: /notes/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
+permalink: /zh/notes/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
 ---
 
 > 论文地址：[GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism](https://proceedings.neurips.cc/paper/2019/hash/093f65e080a295f8076b1c5722a46aa2-Abstract.html)

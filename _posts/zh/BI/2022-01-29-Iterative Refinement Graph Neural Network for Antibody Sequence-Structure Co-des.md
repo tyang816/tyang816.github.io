@@ -6,8 +6,8 @@ tags: [protein, antibody, GNN]
 proceedings: ICLR
 date: 2022-01-29
 lang: zh-CN
-alt_url: /bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
-permalink: /zh/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
+alt_url: /notes/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
+permalink: /zh/notes/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
 ---
 
 > 论文地址：[Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design](https://openreview.net/pdf?id=LI2bhrE_2A)

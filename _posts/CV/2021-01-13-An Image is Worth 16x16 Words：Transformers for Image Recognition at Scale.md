@@ -6,8 +6,8 @@ tags: [vision-language, transformer]
 proceedings: ICLR
 date: 2021-01-13
 lang: en
-alt_url: /zh/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
-permalink: /cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
+alt_url: /zh/notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
+permalink: /notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
 ---
 
 > Paper: [An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy)

@@ -6,8 +6,8 @@ tags: [LLM, NLP, transformer]
 proceedings: arXiv
 date: 2022-04-16
 lang: zh-CN
-alt_url: /cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
-permalink: /zh/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
+alt_url: /notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
+permalink: /zh/notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
 ---
 
 > 论文地址：[Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/pdf/2204.05862.pdf)

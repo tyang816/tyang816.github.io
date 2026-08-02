@@ -6,8 +6,8 @@ tags: [contrastive-learning]
 proceedings: ECCV
 date: 2022-07-12
 lang: zh-CN
-alt_url: /cv/Contrastive-Deep-Supervision/
-permalink: /zh/cv/Contrastive-Deep-Supervision/
+alt_url: /notes/cv/Contrastive-Deep-Supervision/
+permalink: /zh/notes/cv/Contrastive-Deep-Supervision/
 ---
 
 > 论文地址：[Contrastive Deep Supervision](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136860001.pdf)

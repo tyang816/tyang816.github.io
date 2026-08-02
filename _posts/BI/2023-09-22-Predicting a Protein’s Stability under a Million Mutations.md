@@ -6,8 +6,8 @@ tags: [protein, fitness-prediction]
 proceedings: NeurIPS
 date: 2023-09-22
 lang: en
-alt_url: /zh/bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
-permalink: /bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
+alt_url: /zh/notes/bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
+permalink: /notes/bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
 ---
 
 > Paper: [Predicting a Protein’s Stability under a Million Mutations](https://openreview.net/forum?id=YWSOpYjyG4&referrer=%5Bthe%20profile%20of%20Adam%20Klivans%5D(%2Fprofile%3Fid%3D~Adam_Klivans1))

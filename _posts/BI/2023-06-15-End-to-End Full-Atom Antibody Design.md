@@ -6,8 +6,8 @@ tags: [protein, antibody, GNN]
 proceedings: ICML
 date: 2023-06-15
 lang: en
-alt_url: /zh/bi/End-to-End-Full-Atom-Antibody-Design/
-permalink: /bi/End-to-End-Full-Atom-Antibody-Design/
+alt_url: /zh/notes/bi/End-to-End-Full-Atom-Antibody-Design/
+permalink: /notes/bi/End-to-End-Full-Atom-Antibody-Design/
 ---
 
 > Paper: [End-to-End Full-Atom Antibody Design](https://proceedings.mlr.press/v202/kong23c.html)

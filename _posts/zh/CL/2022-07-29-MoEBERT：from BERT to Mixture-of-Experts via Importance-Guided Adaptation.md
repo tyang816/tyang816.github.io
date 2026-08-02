@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: NAACL
 date: 2022-07-29
 lang: zh-CN
-alt_url: /cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
-permalink: /zh/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
+alt_url: /notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
+permalink: /zh/notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
 ---
 
 > 论文地址：[MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation](https://aclanthology.org/2022.naacl-main.116/)

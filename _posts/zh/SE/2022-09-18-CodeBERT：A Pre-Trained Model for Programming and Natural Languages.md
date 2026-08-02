@@ -6,8 +6,8 @@ tags: [code-understanding, transformer]
 proceedings: EMNLP
 date: 2022-09-18
 lang: zh-CN
-alt_url: /se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
-permalink: /zh/se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
+alt_url: /notes/se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
+permalink: /zh/notes/se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
 ---
 
 > 论文地址：[CodeBERT: A Pre-Trained Model for Programming and Natural Languages](http://arxiv.org/abs/2002.08155)

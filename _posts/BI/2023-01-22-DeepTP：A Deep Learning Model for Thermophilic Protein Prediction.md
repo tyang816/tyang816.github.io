@@ -6,8 +6,8 @@ tags: [protein]
 proceedings: International Journal of Molecular Sciences
 date: 2023-01-22
 lang: en
-alt_url: /zh/bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
-permalink: /bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
+alt_url: /zh/notes/bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
+permalink: /notes/bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
 ---
 
 > Paper: [DeepTP：A Deep Learning Model for Thermophilic Protein Prediction](https://doi.org/10.3390/ijms24032217)

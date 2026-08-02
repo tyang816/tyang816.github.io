@@ -6,8 +6,8 @@ tags: [video]
 proceedings: ICCV
 date: 2015-09-25
 lang: zh-CN
-alt_url: /cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
-permalink: /zh/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
+alt_url: /notes/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
+permalink: /zh/notes/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
 ---
 
 > 论文地址：[Learning Spatiotemporal Features with 3D Convolutional Networks](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf)

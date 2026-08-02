@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning, transformer]
 proceedings: ICML
 date: 2021-02-05
 lang: zh-CN
-alt_url: /cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
-permalink: /zh/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+alt_url: /notes/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+permalink: /zh/notes/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
 ---
 
 > 论文地址：[ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision](https://proceedings.mlr.press/v139/kim21k.html)

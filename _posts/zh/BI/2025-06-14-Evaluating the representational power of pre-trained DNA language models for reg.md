@@ -6,8 +6,8 @@ tags: [DNA, genomics, PLM]
 proceedings: Genome Biology
 date: 2025-06-14
 lang: zh-CN
-alt_url: /bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
-permalink: /zh/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
+alt_url: /notes/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
+permalink: /zh/notes/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
 ---
 
 > 论文地址：[Evaluating the representational power of pre-trained DNA language models for regulatory genomics](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03674-8)

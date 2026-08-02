@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: KDD
 date: 2021-12-07
 lang: zh-CN
-alt_url: /bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
-permalink: /zh/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
+alt_url: /notes/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
+permalink: /zh/notes/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
 ---
 
 > 论文地址：[Modeling Protein Using Large-scale Pretrain Language Model](http://arxiv.org/abs/2108.07435)

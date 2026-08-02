@@ -6,8 +6,8 @@ tags: [code-summarization, GNN]
 proceedings: AAAI
 date: 2022-06-28
 lang: en
-alt_url: /zh/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
-permalink: /se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
+alt_url: /zh/notes/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
+permalink: /notes/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
 ---
 
 > Paper: [Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization](https://www.aaai.org/AAAI22Papers/AAAI-6812.SongZ.pdf)

@@ -6,8 +6,8 @@ tags: [contrastive-learning, GNN]
 proceedings: NeurIPS
 date: 2020-07-13
 lang: en
-alt_url: /zh/ml/Deep-Graph-Contrastive-Representation-Learning/
-permalink: /ml/Deep-Graph-Contrastive-Representation-Learning/
+alt_url: /zh/notes/ml/Deep-Graph-Contrastive-Representation-Learning/
+permalink: /notes/ml/Deep-Graph-Contrastive-Representation-Learning/
 ---
 
 > Paper: [Deep Graph Contrastive Representation Learning](http://arxiv.org/abs/2006.04131)

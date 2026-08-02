@@ -6,8 +6,8 @@ tags: [GNN, protein, protein-design]
 proceedings: arXiv
 date: 2025-04-06
 lang: en
-alt_url: /zh/bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
-permalink: /bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
+alt_url: /zh/notes/bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
+permalink: /notes/bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
 ---
 
 > Paper: [Prot42: a Novel Family of Protein Language Models for Target-aware Protein Binder Generation](https://arxiv.org/abs/2504.04453)

@@ -6,8 +6,8 @@ tags: [distributed-dataflow]
 proceedings: SC
 date: 2020-11-09
 lang: zh-CN
-alt_url: /os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
-permalink: /zh/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
+alt_url: /notes/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
+permalink: /zh/notes/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
 ---
 
 > 论文地址：[ZeRO：Memory Optimizations Toward Training Trillion Parameter Models](https://dl.acm.org/doi/10.5555/3433701.3433727)

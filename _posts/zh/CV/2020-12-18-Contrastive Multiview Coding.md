@@ -6,8 +6,8 @@ tags: [contrastive-learning]
 proceedings: ECCV
 date: 2020-12-18
 lang: zh-CN
-alt_url: /cv/Contrastive-Multiview-Coding/
-permalink: /zh/cv/Contrastive-Multiview-Coding/
+alt_url: /notes/cv/Contrastive-Multiview-Coding/
+permalink: /zh/notes/cv/Contrastive-Multiview-Coding/
 ---
 
 > 论文地址：[Contrastive Multiview Coding](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560749.pdf)

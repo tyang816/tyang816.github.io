@@ -6,8 +6,8 @@ tags: [protein, localization, PLM]
 proceedings: Bioinformatics Advances
 date: 2021-11-09
 lang: en
-alt_url: /zh/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
-permalink: /bi/Light-attention-predicts-protein-location-from-the-language-of-life/
+alt_url: /zh/notes/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
+permalink: /notes/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
 ---
 
 > Paper: [Light attention predicts protein location from the language of life](https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbab035/6432029)

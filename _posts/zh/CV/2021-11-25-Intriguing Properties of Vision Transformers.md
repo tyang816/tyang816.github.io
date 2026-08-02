@@ -6,8 +6,8 @@ tags: [vision-language, transformer]
 proceedings: NeurIPS
 date: 2021-11-25
 lang: zh-CN
-alt_url: /cv/Intriguing-Properties-of-Vision-Transformers/
-permalink: /zh/cv/Intriguing-Properties-of-Vision-Transformers/
+alt_url: /notes/cv/Intriguing-Properties-of-Vision-Transformers/
+permalink: /zh/notes/cv/Intriguing-Properties-of-Vision-Transformers/
 ---
 
 > 论文地址：[Intriguing Properties of Vision Transformers](https://proceedings.neurips.cc/paper/2021/file/c404a5adbf90e09631678b13b05d9d7a-Paper.pdf)

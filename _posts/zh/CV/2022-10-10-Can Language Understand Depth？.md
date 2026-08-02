@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: MM
 date: 2022-10-10
 lang: zh-CN
-alt_url: /cv/Can-Language-Understand-Depth？/
-permalink: /zh/cv/Can-Language-Understand-Depth？/
+alt_url: /notes/cv/Can-Language-Understand-Depth？/
+permalink: /zh/notes/cv/Can-Language-Understand-Depth？/
 ---
 
 > 论文地址：[Can Language Understand Depth？](https://dl.acm.org/doi/10.1145/3503161.3549201)

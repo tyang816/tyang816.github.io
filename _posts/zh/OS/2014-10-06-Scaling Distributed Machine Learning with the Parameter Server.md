@@ -6,8 +6,8 @@ tags: [distributed-dataflow]
 proceedings: OSDI
 date: 2014-10-06
 lang: zh-CN
-alt_url: /os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
-permalink: /zh/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
+alt_url: /notes/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
+permalink: /zh/notes/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
 ---
 
 > 论文地址：[Scaling Distributed Machine Learning with the Parameter Server](http://dl.acm.org/citation.cfm?doid=2640087.2644155)

@@ -6,8 +6,8 @@ tags: [DNA, genomics, PLM]
 proceedings: Bioinformatics
 date: 2021-02-04
 lang: en
-alt_url: /zh/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
-permalink: /bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
+alt_url: /zh/notes/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
+permalink: /notes/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
 ---
 
 > Paper: [DNABERT：pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)

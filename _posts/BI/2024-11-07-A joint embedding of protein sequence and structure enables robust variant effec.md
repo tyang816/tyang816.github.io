@@ -6,8 +6,8 @@ tags: [protein, fitness-prediction, PLM]
 proceedings: Nature Communications
 date: 2024-11-07
 lang: en
-alt_url: /zh/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
-permalink: /bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
+alt_url: /zh/notes/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
+permalink: /notes/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
 ---
 
 > Paper: [A joint embedding of protein sequence and structure enables robust variant effect predictions](https://www.nature.com/articles/s41467-024-53982-z)

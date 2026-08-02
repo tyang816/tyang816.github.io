@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: CVPR
 date: 2020-03-23
 lang: en
-alt_url: /zh/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
-permalink: /cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
+alt_url: /zh/notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
+permalink: /notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
 ---
 
 > Paper: [Momentum Contrast for Unsupervised Visual Representation Learning](https://ieeexplore.ieee.org/document/9157636/)

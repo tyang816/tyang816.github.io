@@ -6,8 +6,8 @@ tags: [protein, PLM, alignment]
 proceedings: Nature Communications
 date: 2024-03-30
 lang: en
-alt_url: /zh/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
-permalink: /bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
+alt_url: /zh/notes/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
+permalink: /notes/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
 ---
 
 > Paper: [PLMSearch: Protein language model powers accurate and fast sequence search for remote homology](https://www.nature.com/articles/s41467-024-46808-5)

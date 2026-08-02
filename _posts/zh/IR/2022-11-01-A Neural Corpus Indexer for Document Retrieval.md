@@ -6,8 +6,8 @@ tags: [document-retrieval]
 proceedings: NeurIPS
 date: 2022-11-01
 lang: zh-CN
-alt_url: /ir/A-Neural-Corpus-Indexer-for-Document-Retrieval/
-permalink: /zh/ir/A-Neural-Corpus-Indexer-for-Document-Retrieval/
+alt_url: /notes/ir/A-Neural-Corpus-Indexer-for-Document-Retrieval/
+permalink: /zh/notes/ir/A-Neural-Corpus-Indexer-for-Document-Retrieval/
 ---
 
 > 论文地址：[A Neural Corpus Indexer for Document Retrieval](https://proceedings.neurips.cc/paper_files/paper/2022/file/a46156bd3579c3b268108ea6aca71d13-Paper-Conference.pdf)

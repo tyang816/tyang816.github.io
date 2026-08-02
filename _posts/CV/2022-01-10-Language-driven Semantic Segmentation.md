@@ -6,8 +6,8 @@ tags: [LLM, NLP, vision-language]
 proceedings: ICLR
 date: 2022-01-10
 lang: en
-alt_url: /zh/cv/Language-driven-Semantic-Segmentation/
-permalink: /cv/Language-driven-Semantic-Segmentation/
+alt_url: /zh/notes/cv/Language-driven-Semantic-Segmentation/
+permalink: /notes/cv/Language-driven-Semantic-Segmentation/
 ---
 
 > Paper: [Language-driven Semantic Segmentation](http://arxiv.org/abs/2201.03546)

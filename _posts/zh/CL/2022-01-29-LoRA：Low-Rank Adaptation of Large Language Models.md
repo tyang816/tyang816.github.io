@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: ICLR
 date: 2022-01-29
 lang: zh-CN
-alt_url: /cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
-permalink: /zh/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
+alt_url: /notes/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
+permalink: /zh/notes/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
 ---
 
 > 论文地址：[LoRA：Low-Rank Adaptation of Large Language Models](https://openreview.net/forum?id=nZeVKeeFYf9)

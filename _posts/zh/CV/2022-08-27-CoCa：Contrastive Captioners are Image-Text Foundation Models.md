@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: NeurIPS
 date: 2022-08-27
 lang: zh-CN
-alt_url: /cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
-permalink: /zh/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
+alt_url: /notes/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
+permalink: /zh/notes/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
 ---
 
 

@@ -6,8 +6,8 @@ tags: [contrastive-learning, GNN]
 proceedings: ICPC
 date: 2022-10-20
 lang: zh-CN
-alt_url: /se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
-permalink: /zh/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
+alt_url: /notes/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
+permalink: /zh/notes/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
 ---
 
 > 论文地址：[HELoC：Hierarchical Contrastive Learning of Source Code Representation](https://dl.acm.org/doi/10.1145/3524610.3527896)

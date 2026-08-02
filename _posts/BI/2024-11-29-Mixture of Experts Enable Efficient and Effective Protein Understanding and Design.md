@@ -6,8 +6,8 @@ tags: [protein, language-model]
 proceedings: bioRxiv
 date: 2024-11-29
 lang: en
-alt_url: /zh/bi/Mixture-of-Experts-Enable-Efficient-and-Effective-Protein-Understanding-and-Design/
-permalink: /bi/Mixture-of-Experts-Enable-Efficient-and-Effective-Protein-Understanding-and-Design/
+alt_url: /zh/notes/bi/Mixture-of-Experts-Enable-Efficient-and-Effective-Protein-Understanding-and-Design/
+permalink: /notes/bi/Mixture-of-Experts-Enable-Efficient-and-Effective-Protein-Understanding-and-Design/
 ---
 
 > Paper: [Mixture of Experts Enable Efficient and Effective Protein Understanding and Design](http://biorxiv.org/lookup/doi/10.1101/2024.11.29.625425)

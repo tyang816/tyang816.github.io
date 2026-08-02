@@ -6,8 +6,8 @@ tags: [vision-language, transformer]
 proceedings: ICCV
 date: 2021-08-17
 lang: en
-alt_url: /zh/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
-permalink: /cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
+alt_url: /zh/notes/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
+permalink: /notes/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
 ---
 
 > Paper: [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.pdf)

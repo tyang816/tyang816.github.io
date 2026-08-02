@@ -6,8 +6,8 @@ tags: [Transformer, GNN]
 proceedings: ACL
 date: 2021-08-10
 lang: en
-alt_url: /zh/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
-permalink: /se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+alt_url: /zh/notes/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+permalink: /notes/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
 ---
 
 > Paper: [Learning Sequential and Structural Information for Source Code Summarization](https://aclanthology.org/2021.findings-acl.251)

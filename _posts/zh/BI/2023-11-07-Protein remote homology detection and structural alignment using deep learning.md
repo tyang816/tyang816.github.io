@@ -6,8 +6,8 @@ tags: [protein, homology]
 proceedings: Nature Biotechnology
 date: 2023-11-07
 lang: zh-CN
-alt_url: /bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
-permalink: /zh/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
+alt_url: /notes/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
+permalink: /zh/notes/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
 ---
 
 > 论文地址：[Protein remote homology detection and structural alignment using deep learning](https://www.nature.com/articles/s41587-023-01917-2)

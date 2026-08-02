@@ -6,8 +6,8 @@ tags: [vision-language, diffusion]
 proceedings: AAAI
 date: 2024-02-20
 lang: en
-alt_url: /zh/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
-permalink: /cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
+alt_url: /zh/notes/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
+permalink: /notes/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
 ---
 
 > Paper: [T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models](https://dl.acm.org/doi/10.1609/aaai.v38i5.28226)

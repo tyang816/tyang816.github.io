@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: EMNLP
 date: 2021-11-01
 lang: en
-alt_url: /zh/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
-permalink: /cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
+alt_url: /zh/notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
+permalink: /notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
 ---
 
 

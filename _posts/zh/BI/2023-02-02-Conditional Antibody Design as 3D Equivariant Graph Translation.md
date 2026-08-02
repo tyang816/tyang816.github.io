@@ -6,8 +6,8 @@ tags: [protein, antibody, GNN]
 proceedings: ICLR
 date: 2023-02-02
 lang: zh-CN
-alt_url: /bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
-permalink: /zh/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
+alt_url: /notes/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
+permalink: /zh/notes/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
 ---
 
 > 论文地址：[Conditional Antibody Design as 3D Equivariant Graph Translation](https://openreview.net/forum?id=LFHFQbjxIiP)

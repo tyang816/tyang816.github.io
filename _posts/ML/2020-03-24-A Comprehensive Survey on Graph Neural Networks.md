@@ -6,8 +6,8 @@ tags: [GNN]
 proceedings: Transactions on Neural Networks and Learning Systems
 date: 2020-03-24
 lang: en
-alt_url: /zh/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
-permalink: /ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+alt_url: /zh/notes/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+permalink: /notes/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
 ---
 
 > Paper: [A Comprehensive Survey on Graph Neural Networks](https://ieeexplore.ieee.org/document/9046288)

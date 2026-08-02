@@ -6,8 +6,8 @@ tags: [vision-language, transformer, contrastive-learning]
 proceedings: arXiv
 date: 2020-10-20
 lang: en
-alt_url: /zh/cv/BYOL-works-even-without-batch-statistics/
-permalink: /cv/BYOL-works-even-without-batch-statistics/
+alt_url: /zh/notes/cv/BYOL-works-even-without-batch-statistics/
+permalink: /notes/cv/BYOL-works-even-without-batch-statistics/
 ---
 
 > Paper: [BYOL works even without batch statistics](http://arxiv.org/abs/2010.10241)

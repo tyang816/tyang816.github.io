@@ -6,8 +6,8 @@ tags: [protein, inverse folding, PLM, GNN]
 proceedings: ICML
 date: 2021-02-02
 lang: zh-CN
-alt_url: /bi/Learning-inverse-folding-from-millions-of-predicted-structures/
-permalink: /zh/bi/Learning-inverse-folding-from-millions-of-predicted-structures/
+alt_url: /notes/bi/Learning-inverse-folding-from-millions-of-predicted-structures/
+permalink: /zh/notes/bi/Learning-inverse-folding-from-millions-of-predicted-structures/
 ---
 
 > 论文地址：[Learning inverse folding from millions of predicted structures](https://proceedings.mlr.press/v162/hsu22a.html)

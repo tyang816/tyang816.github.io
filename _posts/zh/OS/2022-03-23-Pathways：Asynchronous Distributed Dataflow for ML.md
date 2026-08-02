@@ -6,8 +6,8 @@ tags: [distributed-dataflow]
 proceedings: MLSys
 date: 2022-03-23
 lang: zh-CN
-alt_url: /os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
-permalink: /zh/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
+alt_url: /notes/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
+permalink: /zh/notes/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
 ---
 
 > 论文地址：[Pathways：Asynchronous Distributed Dataflow for ML](https://proceedings.mlsys.org/paper_files/paper/2022/file/37385144cac01dff38247ab11c119e3c-Paper.pdf)

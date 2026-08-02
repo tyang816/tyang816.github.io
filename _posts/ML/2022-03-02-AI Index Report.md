@@ -6,8 +6,8 @@ tags: [other]
 proceedings: Stanford
 date: 2022-03-02
 lang: en
-alt_url: /zh/ml/AI-Index-Report/
-permalink: /ml/AI-Index-Report/
+alt_url: /zh/notes/ml/AI-Index-Report/
+permalink: /notes/ml/AI-Index-Report/
 ---
 
 > Report: [AI Index Report](https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf). Most statistics are drawn from Papers with Code.

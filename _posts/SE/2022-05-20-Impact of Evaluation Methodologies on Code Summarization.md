@@ -6,8 +6,8 @@ tags: [code-summarization]
 proceedings: ACL
 date: 2022-05-20
 lang: en
-alt_url: /zh/se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/
-permalink: /se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/
+alt_url: /zh/notes/se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/
+permalink: /notes/se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/
 ---
 
 > Paper: [Impact of Evaluation Methodologies on Code Summarization](https://aclanthology.org/2022.acl-long.339)

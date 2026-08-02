@@ -6,8 +6,8 @@ tags: [transformer]
 proceedings: NeurIPS
 date: 2022-11-28
 lang: en
-alt_url: /zh/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
-permalink: /ir/Transformer-Memory-as-a-Differentiable-Search-Index/
+alt_url: /zh/notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
+permalink: /notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
 ---
 
 > Paper: [Transformer Memory as a Differentiable Search Index](https://openreview.net/pdf?id=Vu-B0clPfq)

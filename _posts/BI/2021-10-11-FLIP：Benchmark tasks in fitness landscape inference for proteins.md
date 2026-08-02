@@ -6,8 +6,8 @@ tags: [protein, benchmark]
 proceedings: NeurIPS
 date: 2021-10-11
 lang: en
-alt_url: /zh/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
-permalink: /bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
+alt_url: /zh/notes/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
+permalink: /notes/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
 ---
 
 > Paper: [FLIP：Benchmark tasks in fitness landscape inference for proteins](https://openreview.net/forum?id=p2dMLEwL8tF)

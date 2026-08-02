@@ -6,8 +6,8 @@ tags: [vision-language]
 proceedings: CVPR
 date: 2023-01-15
 lang: zh-CN
-alt_url: /cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
-permalink: /zh/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
+alt_url: /notes/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
+permalink: /zh/notes/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
 ---
 
 > 论文地址：[Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Image_as_a_Foreign_Language_BEiT_Pretraining_for_Vision_and_CVPR_2023_paper.pdf)

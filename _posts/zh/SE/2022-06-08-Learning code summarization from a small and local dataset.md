@@ -6,8 +6,8 @@ tags: [Transformer, GNN]
 proceedings: arXiv
 date: 2022-06-08
 lang: zh-CN
-alt_url: /se/Learning-code-summarization-from-a-small-and-local-dataset/
-permalink: /zh/se/Learning-code-summarization-from-a-small-and-local-dataset/
+alt_url: /notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
+permalink: /zh/notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
 ---
 
 > 论文地址：[Learning code summarization from a small and local dataset](http://arxiv.org/abs/2206.00804)

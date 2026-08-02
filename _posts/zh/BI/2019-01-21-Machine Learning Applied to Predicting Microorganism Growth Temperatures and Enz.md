@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: ACS Synthetic Biology
 date: 2019-01-21
 lang: zh-CN
-alt_url: /bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
-permalink: /zh/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
+alt_url: /notes/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
+permalink: /zh/notes/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
 ---
 
 > 论文地址：[Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enzyme Catalytic Optima](https://pubs.acs.org/doi/abs/10.1021/acssynbio.9b00099)

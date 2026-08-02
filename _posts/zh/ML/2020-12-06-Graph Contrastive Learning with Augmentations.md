@@ -6,8 +6,8 @@ tags: [contrastive-learning, GNN]
 proceedings: NeurIPS
 date: 2020-12-06
 lang: zh-CN
-alt_url: /ml/Graph-Contrastive-Learning-with-Augmentations/
-permalink: /zh/ml/Graph-Contrastive-Learning-with-Augmentations/
+alt_url: /notes/ml/Graph-Contrastive-Learning-with-Augmentations/
+permalink: /zh/notes/ml/Graph-Contrastive-Learning-with-Augmentations/
 ---
 
 > 论文地址：[Graph Contrastive Learning with Augmentations](https://proceedings.neurips.cc/paper/2020/hash/3fe230348e9a12c13120749e3f9fa4cd-Abstract.html)

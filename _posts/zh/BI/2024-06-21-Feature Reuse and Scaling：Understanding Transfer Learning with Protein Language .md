@@ -6,8 +6,8 @@ tags: [protein, PLM, transfer learning]
 proceedings: ICML
 date: 2024-06-21
 lang: zh-CN
-alt_url: /bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
-permalink: /zh/bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
+alt_url: /notes/bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
+permalink: /zh/notes/bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
 ---
 
 > 论文地址：[Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models](https://dl.acm.org/doi/10.5555/3692070.3693161)

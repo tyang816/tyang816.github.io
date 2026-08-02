@@ -6,8 +6,8 @@ tags: [Agent, LLM]
 proceedings: Nature Computational Science
 date: 2025-01-24
 lang: zh-CN
-alt_url: /bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
-permalink: /zh/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
+alt_url: /notes/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
+permalink: /zh/notes/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
 ---
 
 > 论文地址：[SciToolAgent：A Knowledge Graph-Driven Scientific Agent for Multi-Tool Integration](https://www.nature.com/articles/s43588-025-00849-y)

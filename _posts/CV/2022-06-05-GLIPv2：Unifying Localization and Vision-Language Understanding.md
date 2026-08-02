@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning, object-detection]
 proceedings: arXiv
 date: 2022-06-05
 lang: en
-alt_url: /zh/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
-permalink: /cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+alt_url: /zh/notes/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+permalink: /notes/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
 ---
 
 > Paper: [GLIPv2：Unifying Localization and Vision-Language Understanding](http://arxiv.org/abs/2206.05836)

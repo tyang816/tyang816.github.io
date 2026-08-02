@@ -6,8 +6,8 @@ tags: [protein, PLM, benchmark]
 proceedings: NeurIPS
 date: 2023-09-30
 lang: zh-CN
-alt_url: /bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
-permalink: /zh/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
+alt_url: /notes/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
+permalink: /zh/notes/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
 ---
 
 > 论文地址：[ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction](https://openreview.net/forum?id=URoZHqAohf&noteId=PLTsEAiyz5)

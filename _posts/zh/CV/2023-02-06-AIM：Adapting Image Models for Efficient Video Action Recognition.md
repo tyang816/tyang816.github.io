@@ -6,8 +6,8 @@ tags: [video, action-recognition]
 proceedings: ICLR
 date: 2023-02-06
 lang: zh-CN
-alt_url: /cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
-permalink: /zh/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
+alt_url: /notes/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
+permalink: /zh/notes/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
 ---
 
 > 论文地址：[AIM：Adapting Image Models for Efficient Video Action Recognition](http://arxiv.org/abs/2302.03024)

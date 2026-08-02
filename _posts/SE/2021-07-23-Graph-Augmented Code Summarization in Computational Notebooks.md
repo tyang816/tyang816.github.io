@@ -6,8 +6,8 @@ tags: [code-summarization, GNN]
 proceedings: IJCAI
 date: 2021-07-23
 lang: en
-alt_url: /zh/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
-permalink: /se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+alt_url: /zh/notes/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+permalink: /notes/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
 ---
 
 > Paper: [Graph-Augmented Code Summarization in Computational Notebooks](https://www.ijcai.org/proceedings/2021/717)

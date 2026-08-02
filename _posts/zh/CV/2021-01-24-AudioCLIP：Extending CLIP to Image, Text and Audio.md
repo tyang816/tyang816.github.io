@@ -6,8 +6,8 @@ tags: [vision-language, transformer, contrastive-learning]
 proceedings: GCPR
 date: 2021-01-24
 lang: zh-CN
-alt_url: /cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
-permalink: /zh/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
+alt_url: /notes/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
+permalink: /zh/notes/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
 ---
 
 > 论文地址：[AudioCLIP：Extending CLIP to Image, Text and Audio](http://arxiv.org/abs/2106.13043)

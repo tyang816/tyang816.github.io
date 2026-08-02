@@ -6,8 +6,8 @@ tags: [video, vision-language, transformer]
 proceedings: CVPR
 date: 2015-04-17
 lang: zh-CN
-alt_url: /cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
-permalink: /zh/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
+alt_url: /notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
+permalink: /zh/notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
 ---
 
 > 论文地址：[Beyond Short Snippets：Deep Networks for Video Classification](http://ieeexplore.ieee.org/document/7299101/)

@@ -6,8 +6,8 @@ tags: [PLM, GNN]
 proceedings: ICLRw
 date: 2023-03-06
 lang: zh-CN
-alt_url: /bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
-permalink: /zh/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
+alt_url: /notes/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
+permalink: /zh/notes/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
 ---
 
 > 论文地址：[Enhancing Protein Language Models with Structure-based Encoder and Pre-training](https://openreview.net/forum?id=AAML7ivghpY)

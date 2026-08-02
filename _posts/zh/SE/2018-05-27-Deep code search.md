@@ -6,8 +6,8 @@ tags: [code-search]
 proceedings: ICSE
 date: 2018-05-27
 lang: zh-CN
-alt_url: /se/Deep-code-search/
-permalink: /zh/se/Deep-code-search/
+alt_url: /notes/se/Deep-code-search/
+permalink: /zh/notes/se/Deep-code-search/
 ---
 
 > 论文地址：[Deep code search](https://dl.acm.org/doi/10.1145/3180155.3180167)

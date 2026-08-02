@@ -6,8 +6,8 @@ tags: [contrastive-learning]
 proceedings: SIGGRAPH
 date: 2022-07-22
 lang: en
-alt_url: /zh/cv/CLIPasso：Semantically-Aware-Object-Sketching/
-permalink: /cv/CLIPasso：Semantically-Aware-Object-Sketching/
+alt_url: /zh/notes/cv/CLIPasso：Semantically-Aware-Object-Sketching/
+permalink: /notes/cv/CLIPasso：Semantically-Aware-Object-Sketching/
 ---
 
 > Paper: [CLIPasso：Semantically-Aware Object Sketching](https://dl.acm.org/doi/10.1145/3528223.3530068)

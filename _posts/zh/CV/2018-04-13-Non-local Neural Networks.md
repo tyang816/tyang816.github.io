@@ -6,8 +6,8 @@ tags: [convolutional-neural-network]
 proceedings: CVPR
 date: 2018-04-13
 lang: zh-CN
-alt_url: /cv/Non-local-Neural-Networks/
-permalink: /zh/cv/Non-local-Neural-Networks/
+alt_url: /notes/cv/Non-local-Neural-Networks/
+permalink: /zh/notes/cv/Non-local-Neural-Networks/
 ---
 
 > 论文地址：[Non-local Neural Networks](https://openaccess.thecvf.com/content_cvpr_2018/papers/Wang_Non-Local_Neural_Networks_CVPR_2018_paper.pdf)

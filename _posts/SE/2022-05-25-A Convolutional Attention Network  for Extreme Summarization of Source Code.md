@@ -6,8 +6,8 @@ tags: [convolutional-neural-network, code-summarization]
 proceedings: ICML
 date: 2022-05-25
 lang: en
-alt_url: /zh/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
-permalink: /se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
+alt_url: /zh/notes/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
+permalink: /notes/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
 ---
 
 > Paper: [A Convolutional Attention Network  for Extreme Summarization of Source Code](http://proceedings.mlr.press/v48/allamanis16.html)

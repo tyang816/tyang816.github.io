@@ -6,8 +6,8 @@ tags: [LLM, NLP, Agent]
 proceedings: ICLR
 date: 2025-01-23
 lang: en
-alt_url: /zh/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
-permalink: /cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
+alt_url: /zh/notes/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
+permalink: /notes/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
 ---
 
 > Paper: [ToolACE：Winning the Points of LLM Function Calling](https://openreview.net/forum?id=8EB8k6DdCU)

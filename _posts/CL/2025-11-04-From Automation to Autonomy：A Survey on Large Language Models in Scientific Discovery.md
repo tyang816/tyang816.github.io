@@ -6,8 +6,8 @@ tags: [Agent, NLP, LLM]
 proceedings: EMNLP
 date: 2025-11-04
 lang: en
-alt_url: /zh/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
-permalink: /cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
+alt_url: /zh/notes/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
+permalink: /notes/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
 ---
 
 > Paper: [From Automation to Autonomy：A Survey on Large Language Models in Scientific Discovery](https://aclanthology.org/2025.emnlp-main.895/)

@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: OpenAI
 date: 2018-11-21
 lang: zh-CN
-alt_url: /cl/Improving-Language-Understanding-by-Generative-Pre-Training/
-permalink: /zh/cl/Improving-Language-Understanding-by-Generative-Pre-Training/
+alt_url: /notes/cl/Improving-Language-Understanding-by-Generative-Pre-Training/
+permalink: /zh/notes/cl/Improving-Language-Understanding-by-Generative-Pre-Training/
 ---
 
 > 论文地址：[Improving Language Understanding by Generative Pre-Training](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)

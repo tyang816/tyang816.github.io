@@ -6,8 +6,8 @@ tags: [protein, PLM, benchmark]
 proceedings: NeurIPS
 date: 2019-01-19
 lang: zh-CN
-alt_url: /bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
-permalink: /zh/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
+alt_url: /notes/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
+permalink: /zh/notes/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
 ---
 
 > 论文地址：[Evaluating Protein Transfer Learning with TAPE](https://papers.nips.cc/paper_files/paper/2019/hash/37f65c068b7723cd7809ee2d31d7861c-Abstract.html)

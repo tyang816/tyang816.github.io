@@ -6,8 +6,8 @@ tags: [code-generation, code-documentation]
 proceedings: IJCNLP
 date: 2017-11-02
 lang: en
-alt_url: /zh/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
-permalink: /se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+alt_url: /zh/notes/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+permalink: /notes/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
 ---
 
 > Paper: [A parallel corpus of Python functions and documentation strings for automated code documentation and code generation](https://aclanthology.org/I17-2053/)

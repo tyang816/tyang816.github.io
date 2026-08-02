@@ -6,8 +6,8 @@ tags: [GNN, protein, fitness-prediction]
 proceedings: Nature Computational Science
 date: 2024-10-03
 lang: en
-alt_url: /zh/bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
-permalink: /bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
+alt_url: /zh/notes/bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
+permalink: /notes/bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
 ---
 
 > Paper: [Improving the prediction of protein stability  changes upon mutations by geometric  learning and a pre-training strategy](https://www.nature.com/articles/s43588-024-00716-2)

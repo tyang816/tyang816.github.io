@@ -6,8 +6,8 @@ tags: [code-comment]
 proceedings: ICPC
 date: 2018-05-28
 lang: zh-CN
-alt_url: /se/Deep-code-comment-generation/
-permalink: /zh/se/Deep-code-comment-generation/
+alt_url: /notes/se/Deep-code-comment-generation/
+permalink: /zh/notes/se/Deep-code-comment-generation/
 ---
 
 > 论文地址：[Deep code comment generation](https://ieeexplore.ieee.org/abstract/document/8973050)

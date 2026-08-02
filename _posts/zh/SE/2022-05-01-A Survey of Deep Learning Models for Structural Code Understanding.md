@@ -6,8 +6,8 @@ tags: [code-understanding]
 proceedings: arXiv
 date: 2022-05-01
 lang: zh-CN
-alt_url: /se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
-permalink: /zh/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
+alt_url: /notes/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
+permalink: /zh/notes/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
 ---
 
 > 论文地址：[A Survey of Deep Learning Models for Structural Code Understanding](http://arxiv.org/abs/2205.01293)

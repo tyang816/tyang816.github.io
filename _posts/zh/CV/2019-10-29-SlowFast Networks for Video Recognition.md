@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: ICCV
 date: 2019-10-29
 lang: zh-CN
-alt_url: /cv/SlowFast-Networks-for-Video-Recognition/
-permalink: /zh/cv/SlowFast-Networks-for-Video-Recognition/
+alt_url: /notes/cv/SlowFast-Networks-for-Video-Recognition/
+permalink: /zh/notes/cv/SlowFast-Networks-for-Video-Recognition/
 ---
 
 > 论文地址：[SlowFast Networks for Video Recognition](https://ieeexplore.ieee.org/document/9008780/)

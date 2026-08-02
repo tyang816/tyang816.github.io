@@ -6,8 +6,8 @@ tags: [video, action-recognition]
 proceedings: ECCV
 date: 2016-11-17
 lang: zh-CN
-alt_url: /cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
-permalink: /zh/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
+alt_url: /notes/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
+permalink: /zh/notes/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
 ---
 
 > 论文地址：[Temporal Segment Networks：Towards Good Practices for Deep Action Recognition](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_2)

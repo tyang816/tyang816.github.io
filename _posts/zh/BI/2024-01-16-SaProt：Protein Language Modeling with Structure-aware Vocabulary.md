@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: ICLR
 date: 2024-01-16
 lang: zh-CN
-alt_url: /bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
-permalink: /zh/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
+alt_url: /notes/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
+permalink: /zh/notes/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
 ---
 
 > 论文地址：[SaProt：Protein Language Modeling with Structure-aware Vocabulary](https://openreview.net/forum?id=6MRm3G4NiU)

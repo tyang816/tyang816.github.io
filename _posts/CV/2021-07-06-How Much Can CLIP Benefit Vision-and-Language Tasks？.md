@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: arXiv
 date: 2021-07-06
 lang: en
-alt_url: /zh/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
-permalink: /cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
+alt_url: /zh/notes/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
+permalink: /notes/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
 ---
 
 > Paper: [How Much Can CLIP Benefit Vision-and-Language Tasks？](http://arxiv.org/abs/2107.06383)

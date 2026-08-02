@@ -6,8 +6,8 @@ tags: [protein, PLM, fitness-prediction]
 proceedings: NeurIPS
 date: 2023-11-01
 lang: zh-CN
-alt_url: /bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
-permalink: /zh/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
+alt_url: /notes/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
+permalink: /zh/notes/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
 ---
 
 > 论文地址：[PoET：A generative model of protein families as sequences-of-sequences](https://proceedings.neurips.cc/paper_files/paper/2023/file/f4366126eba252699b280e8f93c0ab2f-Paper-Conference.pdf)

@@ -6,8 +6,8 @@ tags: [unsupervised-learning, contrastive-learning]
 proceedings: NeurIPS
 date: 2020-12-01
 lang: zh-CN
-alt_url: /cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
-permalink: /zh/cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
+alt_url: /notes/cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
+permalink: /zh/notes/cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
 ---
 
 > 论文地址：[Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://papers.neurips.cc/paper_files/paper/2020/file/70feb62b69f16e0238f741fab228fec2-Paper.pdf)

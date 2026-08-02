@@ -6,8 +6,8 @@ tags: [protein]
 proceedings: Frontiers in Microbiology
 date: 2022-02-22
 lang: zh-CN
-alt_url: /bi/iThermo：A-Sequence-Based-Model-for-Identifying-Thermophilic-Proteins-Using-a-Mul/
-permalink: /zh/bi/iThermo：A-Sequence-Based-Model-for-Identifying-Thermophilic-Proteins-Using-a-Mul/
+alt_url: /notes/bi/iThermo：A-Sequence-Based-Model-for-Identifying-Thermophilic-Proteins-Using-a-Mul/
+permalink: /zh/notes/bi/iThermo：A-Sequence-Based-Model-for-Identifying-Thermophilic-Proteins-Using-a-Mul/
 ---
 
 > 论文地址：[iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Multi-Feature Fusion Strategy](https://www.frontiersin.org/articles/10.3389/fmicb.2022.790063/full)

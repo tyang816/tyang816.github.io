@@ -6,8 +6,8 @@ tags: [vision-language]
 proceedings: CVPR
 date: 2023-03-09
 lang: zh-CN
-alt_url: /cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
-permalink: /zh/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
+alt_url: /notes/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
+permalink: /zh/notes/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
 ---
 
 > 论文地址：[Improved Baselines with Momentum Contrastive Learning](http://arxiv.org/abs/2003.04297)

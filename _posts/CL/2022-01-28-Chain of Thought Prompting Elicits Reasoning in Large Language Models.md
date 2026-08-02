@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: NeurIPS
 date: 2022-01-28
 lang: en
-alt_url: /zh/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
-permalink: /cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
+alt_url: /zh/notes/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
+permalink: /notes/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
 ---
 
 > Paper: [Chain of Thought Prompting Elicits Reasoning in Large Language Models](https://openreview.net/pdf?id=_VjQlMeSB_J)

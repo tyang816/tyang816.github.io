@@ -6,8 +6,8 @@ tags: [protein, PLM, fitness-prediction]
 proceedings: bioRxiv
 date: 2021-09-01
 lang: en
-alt_url: /zh/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
-permalink: /bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
+alt_url: /zh/notes/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
+permalink: /notes/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
 ---
 
 > Paper: [Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure](http://biorxiv.org/lookup/doi/10.1101/2021.09.01.458592)

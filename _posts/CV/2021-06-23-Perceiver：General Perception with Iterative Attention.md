@@ -6,8 +6,8 @@ tags: [vision-language]
 proceedings: ICML
 date: 2021-06-23
 lang: en
-alt_url: /zh/cv/Perceiver：General-Perception-with-Iterative-Attention/
-permalink: /cv/Perceiver：General-Perception-with-Iterative-Attention/
+alt_url: /zh/notes/cv/Perceiver：General-Perception-with-Iterative-Attention/
+permalink: /notes/cv/Perceiver：General-Perception-with-Iterative-Attention/
 ---
 
 > Paper: [Perceiver: General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html)

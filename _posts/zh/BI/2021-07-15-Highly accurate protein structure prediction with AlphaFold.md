@@ -6,8 +6,8 @@ tags: [protein, PLM, structure prediction]
 proceedings: Nature
 date: 2021-07-15
 lang: zh-CN
-alt_url: /bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
-permalink: /zh/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
+alt_url: /notes/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
+permalink: /zh/notes/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
 ---
 
 > 论文地址：[Highly accurate protein structure prediction with AlphaFold](https://www.nature.com/articles/s41586-021-03819-2)

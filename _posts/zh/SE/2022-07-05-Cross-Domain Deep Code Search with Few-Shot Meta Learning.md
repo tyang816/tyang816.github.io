@@ -6,8 +6,8 @@ tags: [code-search, meta-learning]
 proceedings: ICSE
 date: 2022-07-05
 lang: zh-CN
-alt_url: /se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
-permalink: /zh/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
+alt_url: /notes/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
+permalink: /zh/notes/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
 ---
 
 > 论文地址：[Cross-Domain Deep Code Search with Few-Shot Meta Learning](https://dl.acm.org/doi/10.1145/3510003.3510125)

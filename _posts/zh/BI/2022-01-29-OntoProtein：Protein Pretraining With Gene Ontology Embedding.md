@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: ICLR
 date: 2022-01-29
 lang: zh-CN
-alt_url: /bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
-permalink: /zh/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
+alt_url: /notes/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
+permalink: /zh/notes/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
 ---
 
 > 论文地址：[OntoProtein：Protein Pretraining With Gene Ontology Embedding](https://openreview.net/forum?id=yfe1VMYAXa4)

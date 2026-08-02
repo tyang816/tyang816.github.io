@@ -6,8 +6,8 @@ tags: [transformer, object-detection]
 proceedings: ECCV
 date: 2020-05-28
 lang: en
-alt_url: /zh/cv/End-to-End-Object-Detection-with-Transformers/
-permalink: /cv/End-to-End-Object-Detection-with-Transformers/
+alt_url: /zh/notes/cv/End-to-End-Object-Detection-with-Transformers/
+permalink: /notes/cv/End-to-End-Object-Detection-with-Transformers/
 ---
 
 > Paper: [End-to-End Object Detection with Transformers](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460205.pdf)

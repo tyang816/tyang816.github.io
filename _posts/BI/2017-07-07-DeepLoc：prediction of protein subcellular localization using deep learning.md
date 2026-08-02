@@ -6,8 +6,8 @@ tags: [protein, subcellular localization]
 proceedings: Bioinformatics
 date: 2017-07-07
 lang: en
-alt_url: /zh/bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
-permalink: /bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
+alt_url: /zh/notes/bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
+permalink: /notes/bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
 ---
 
 > Paper: [DeepLoc：prediction of protein subcellular localization using deep learning](https://academic.oup.com/bioinformatics/article/33/21/3387/3931857)

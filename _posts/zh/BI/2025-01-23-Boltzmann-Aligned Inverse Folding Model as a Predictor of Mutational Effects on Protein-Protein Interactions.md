@@ -6,8 +6,8 @@ tags: [protein, fitness-prediction, PPI]
 proceedings: ICLR
 date: 2025-01-23
 lang: zh-CN
-alt_url: /bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
-permalink: /zh/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
+alt_url: /notes/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
+permalink: /zh/notes/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
 ---
 
 > 论文地址：[Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions](https://openreview.net/forum?id=lzdFImKK8w)

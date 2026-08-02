@@ -6,8 +6,8 @@ tags: [protein, Agent]
 proceedings: COLING
 date: 2025-01-24
 lang: zh-CN
-alt_url: /bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
-permalink: /zh/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
+alt_url: /notes/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
+permalink: /zh/notes/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
 ---
 
 > 论文地址：[AutoProteinEngine：A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering](https://aclanthology.org/2025.coling-industry.36/)

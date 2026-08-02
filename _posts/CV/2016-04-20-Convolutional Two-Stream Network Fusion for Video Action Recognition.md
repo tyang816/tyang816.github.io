@@ -6,8 +6,8 @@ tags: [video, action-recognition]
 proceedings: CVPR
 date: 2016-04-20
 lang: en
-alt_url: /zh/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
-permalink: /cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
+alt_url: /zh/notes/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
+permalink: /notes/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
 ---
 
 

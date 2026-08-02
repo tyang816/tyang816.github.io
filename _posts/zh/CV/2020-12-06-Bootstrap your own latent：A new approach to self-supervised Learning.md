@@ -6,8 +6,8 @@ tags: [self-supervised learning]
 proceedings: NeurIPS
 date: 2020-12-06
 lang: zh-CN
-alt_url: /cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
-permalink: /zh/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
+alt_url: /notes/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
+permalink: /zh/notes/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
 ---
 
 > 论文地址：[Bootstrap your own latent: A new approach to self-supervised Learning](https://papers.nips.cc/paper_files/paper/2020/file/f3ada80d5c4ee70142b17b8192b2958e-Paper.pdf)

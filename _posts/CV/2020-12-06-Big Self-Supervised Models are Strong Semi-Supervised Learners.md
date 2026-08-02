@@ -6,8 +6,8 @@ tags: [semi-supervised learning]
 proceedings: NeurIPS
 date: 2020-12-06
 lang: en
-alt_url: /zh/cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
-permalink: /cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
+alt_url: /zh/notes/cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
+permalink: /notes/cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
 ---
 
 > Paper: [Big Self-Supervised Models are Strong Semi-Supervised Learners](https://dl.acm.org/doi/abs/10.5555/3495724.3497589)

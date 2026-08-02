@@ -6,8 +6,8 @@ tags: [GNN]
 proceedings: arXiv
 date: 2020-07-03
 lang: zh-CN
-alt_url: /ml/Neural-Subgraph-Matching/
-permalink: /zh/ml/Neural-Subgraph-Matching/
+alt_url: /notes/ml/Neural-Subgraph-Matching/
+permalink: /zh/notes/ml/Neural-Subgraph-Matching/
 ---
 
 > 论文地址：[Neural Subgraph Matching](http://arxiv.org/abs/2007.03092)

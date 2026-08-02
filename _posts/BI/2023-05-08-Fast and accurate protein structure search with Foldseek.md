@@ -6,8 +6,8 @@ tags: [protein, alignment]
 proceedings: Nature Biotechnology
 date: 2023-05-08
 lang: en
-alt_url: /zh/bi/Fast-and-accurate-protein-structure-search-with-Foldseek/
-permalink: /bi/Fast-and-accurate-protein-structure-search-with-Foldseek/
+alt_url: /zh/notes/bi/Fast-and-accurate-protein-structure-search-with-Foldseek/
+permalink: /notes/bi/Fast-and-accurate-protein-structure-search-with-Foldseek/
 ---
 
 > Paper: [Fast and accurate protein structure search with Foldseek](https://www.nature.com/articles/s41587-023-01773-0)

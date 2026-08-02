@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: OpenAI
 date: 2019-07-06
 lang: en
-alt_url: /zh/cl/Language-Models-are-Unsupervised-Multitask-Learners/
-permalink: /cl/Language-Models-are-Unsupervised-Multitask-Learners/
+alt_url: /zh/notes/cl/Language-Models-are-Unsupervised-Multitask-Learners/
+permalink: /notes/cl/Language-Models-are-Unsupervised-Multitask-Learners/
 ---
 
 > Paper: [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)

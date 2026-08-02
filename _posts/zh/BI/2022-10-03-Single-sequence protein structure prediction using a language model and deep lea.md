@@ -6,8 +6,8 @@ tags: [protein, PLM, structure prediction]
 proceedings: Nature Biotechnology
 date: 2022-10-03
 lang: zh-CN
-alt_url: /bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
-permalink: /zh/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
+alt_url: /notes/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
+permalink: /zh/notes/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
 ---
 
 > 论文地址：[Single-sequence protein structure prediction using a language model and deep learning](https://www.nature.com/articles/s41587-022-01432-w)

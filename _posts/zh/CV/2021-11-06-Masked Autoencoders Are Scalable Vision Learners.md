@@ -6,8 +6,8 @@ tags: [vision-language, Transformer]
 proceedings: CVPR
 date: 2021-11-06
 lang: zh-CN
-alt_url: /cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
-permalink: /zh/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
+alt_url: /notes/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
+permalink: /zh/notes/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
 ---
 
 > 论文地址：[Masked Autoencoders Are Scalable Vision Learners](http://arxiv.org/abs/2111.06377)

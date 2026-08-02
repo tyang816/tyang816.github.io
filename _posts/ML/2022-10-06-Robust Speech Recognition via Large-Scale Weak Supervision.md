@@ -6,8 +6,8 @@ tags: [speech-recognition, transformer]
 proceedings: NeurIPS
 date: 2022-10-06
 lang: en
-alt_url: /zh/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
-permalink: /ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
+alt_url: /zh/notes/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
+permalink: /notes/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
 ---
 
 > Paper: [Robust Speech Recognition via Large-Scale Weak Supervision](https://cdn.openai.com/papers/whisper.pdf)

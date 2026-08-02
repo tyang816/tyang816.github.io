@@ -6,8 +6,8 @@ tags: [noisy label, semi-supervised, GMM, MixMatch]
 proceedings: ICLR
 date: 2020-04-26
 lang: en
-alt_url: /zh/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
-permalink: /cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
+alt_url: /zh/notes/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
+permalink: /notes/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
 ---
 
 > Paper: [DivideMix：Learning with Noisy Labels as Semi-supervised Learning](https://openreview.net/pdf?id=HJgExaVtwr)

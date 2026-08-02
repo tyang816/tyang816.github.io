@@ -6,8 +6,8 @@ tags: [protein, PLM]
 proceedings: PEDS
 date: 2022-10-26
 lang: en
-alt_url: /zh/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
-permalink: /bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
+alt_url: /zh/notes/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
+permalink: /notes/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
 ---
 
 > Paper: [Masked inverse folding with sequence transfer for protein representation learning](https://academic.oup.com/peds/article-abstract/doi/10.1093/protein/gzad015/7330543?redirectedFrom=fulltext)

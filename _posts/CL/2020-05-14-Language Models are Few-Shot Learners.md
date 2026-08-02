@@ -6,8 +6,8 @@ tags: [LLM, NLP]
 proceedings: OpenAI
 date: 2020-05-14
 lang: en
-alt_url: /zh/cl/Language-Models-are-Few-Shot-Learners/
-permalink: /cl/Language-Models-are-Few-Shot-Learners/
+alt_url: /zh/notes/cl/Language-Models-are-Few-Shot-Learners/
+permalink: /notes/cl/Language-Models-are-Few-Shot-Learners/
 ---
 
 > Paper: [Language Models are Few-Shot Learners](http://arxiv.org/abs/2005.14165)

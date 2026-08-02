@@ -6,8 +6,8 @@ tags: [meta-learning, recommendation-system]
 proceedings: SIGIR
 date: 2020-07-25
 lang: en
-alt_url: /zh/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
-permalink: /ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
+alt_url: /zh/notes/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
+permalink: /notes/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
 ---
 
 > Paper: [How to Retrain Recommender System？A Sequential Meta-Learning Method](https://dl.acm.org/doi/10.1145/3397271.3401167)

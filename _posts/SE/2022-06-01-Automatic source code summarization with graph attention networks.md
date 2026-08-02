@@ -6,8 +6,8 @@ tags: [code-summarization, GNN]
 proceedings: Journal of Systems and Software
 date: 2022-06-01
 lang: en
-alt_url: /zh/se/Automatic-source-code-summarization-with-graph-attention-networks/
-permalink: /se/Automatic-source-code-summarization-with-graph-attention-networks/
+alt_url: /zh/notes/se/Automatic-source-code-summarization-with-graph-attention-networks/
+permalink: /notes/se/Automatic-source-code-summarization-with-graph-attention-networks/
 ---
 
 > Paper: [Automatic source code summarization with graph attention networks](https://linkinghub.elsevier.com/retrieve/pii/S0164121222000279)

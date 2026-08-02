@@ -6,8 +6,8 @@ tags: [protein, PLM, function, MOE]
 proceedings: bioRxiv
 date: 2023-11-26
 lang: en
-alt_url: /zh/bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
-permalink: /bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
+alt_url: /zh/notes/bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
+permalink: /notes/bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
 ---
 
 > Paper: [Learning sequence, structure, and function representations of proteins with language models](http://biorxiv.org/lookup/doi/10.1101/2023.11.26.568742)

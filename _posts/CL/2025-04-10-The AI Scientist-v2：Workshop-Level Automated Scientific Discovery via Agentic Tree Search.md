@@ -6,8 +6,8 @@ tags: [Agent, LLM, NLP]
 proceedings: arXiv
 date: 2025-04-10
 lang: en
-alt_url: /zh/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
-permalink: /cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+alt_url: /zh/notes/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+permalink: /notes/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
 ---
 
 > Paper: [The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search](https://)

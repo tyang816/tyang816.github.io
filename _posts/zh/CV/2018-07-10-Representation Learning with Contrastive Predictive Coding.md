@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning]
 proceedings: DeepMind
 date: 2018-07-10
 lang: zh-CN
-alt_url: /cv/Representation-Learning-with-Contrastive-Predictive-Coding/
-permalink: /zh/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
+alt_url: /notes/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
+permalink: /zh/notes/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
 ---
 
 > 论文地址：[Representation Learning with Contrastive Predictive Coding](http://arxiv.org/abs/1807.03748)

@@ -6,8 +6,8 @@ tags: [video-generation]
 proceedings: arXiv
 date: 2024-10-24
 lang: en
-alt_url: /zh/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
-permalink: /cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
+alt_url: /zh/notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
+permalink: /notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
 ---
 
 > Paper: [Movie Gen：A Cast of Media Foundation Models](https://arxiv.org/abs/2410.13720)

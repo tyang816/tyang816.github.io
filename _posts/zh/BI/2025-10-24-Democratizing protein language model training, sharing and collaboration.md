@@ -6,8 +6,8 @@ tags: [protein]
 proceedings: Nature Biotechnology
 date: 2025-10-24
 lang: zh-CN
-alt_url: /bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
-permalink: /zh/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
+alt_url: /notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
+permalink: /zh/notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
 ---
 
 > 论文地址：[Democratizing protein language model training, sharing and collaboration](https://www.nature.com/articles/s41587-025-02859-7)

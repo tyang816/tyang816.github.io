@@ -6,8 +6,8 @@ tags: [vision-language, contrastive-learning, object-detection]
 proceedings: ICLR
 date: 2022-01-29
 lang: zh-CN
-alt_url: /cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
-permalink: /zh/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
+alt_url: /notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
+permalink: /zh/notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
 ---
 
 > 论文地址：[Open-vocabulary Object Detection via Vision and Language Knowledge Distillation](https://openreview.net/forum?id=lL3lnMbR4WU)

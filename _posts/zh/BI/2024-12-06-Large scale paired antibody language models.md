@@ -6,8 +6,8 @@ tags: [protein, antibody, PLM]
 proceedings: PLOS Computational Biology
 date: 2024-12-06
 lang: zh-CN
-alt_url: /bi/Large-scale-paired-antibody-language-models/
-permalink: /zh/bi/Large-scale-paired-antibody-language-models/
+alt_url: /notes/bi/Large-scale-paired-antibody-language-models/
+permalink: /zh/notes/bi/Large-scale-paired-antibody-language-models/
 ---
 
 > 论文地址：[Large scale paired antibody language models](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012646)

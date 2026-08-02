@@ -6,8 +6,8 @@ tags: [GNN, code-summarization]
 proceedings: ICSE
 date: 2019-05-25
 lang: en
-alt_url: /zh/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
-permalink: /se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
+alt_url: /zh/notes/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
+permalink: /notes/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
 ---
 
 > Paper: [A Novel Neural Source Code Representation Based on Abstract Syntax Tree](https://ieeexplore.ieee.org/document/8812062/)

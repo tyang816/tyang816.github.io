@@ -6,8 +6,8 @@ tags: [video, action-recognition, contrastive-learning]
 proceedings: arXiv
 date: 2021-09-17
 lang: en
-alt_url: /zh/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
-permalink: /cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
+alt_url: /zh/notes/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
+permalink: /notes/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
 ---
 
 > Paper: [ActionCLIP：A New Paradigm for Video Action Recognition](https://arxiv.org/pdf/2109.08472.pdf)

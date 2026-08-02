@@ -6,8 +6,8 @@ tags: [GNN, protein, fitness-prediction]
 proceedings: NeurIPS
 date: 2024-09-26
 lang: en
-alt_url: /zh/bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
-permalink: /bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
+alt_url: /zh/notes/bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
+permalink: /notes/bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
 ---
 
 > Paper: [Multi-Scale Representation Learning for Protein Fitness Prediction](https://openreview.net/forum?id=kWMVzIdCEn&referrer=%5Bthe%20profile%20of%20Jian%20Tang%5D(%2Fprofile%3Fid%3D~Jian_Tang1))

@@ -6,8 +6,8 @@ tags: [protein, PLM, protein-design]
 proceedings: ICML
 date: 2023-02-09
 lang: zh-CN
-alt_url: /bi/Structure-informed-Language-Models-Are-Protein-Designers/
-permalink: /zh/bi/Structure-informed-Language-Models-Are-Protein-Designers/
+alt_url: /notes/bi/Structure-informed-Language-Models-Are-Protein-Designers/
+permalink: /zh/notes/bi/Structure-informed-Language-Models-Are-Protein-Designers/
 ---
 
 > 论文地址：[Structure-informed Language Models Are Protein Designers](https://proceedings.mlr.press/v202/zheng23a/zheng23a.pdf)

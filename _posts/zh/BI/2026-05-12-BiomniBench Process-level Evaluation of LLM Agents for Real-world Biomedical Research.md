@@ -6,8 +6,8 @@ tags: [protein, agent]
 proceedings: arXiv
 date: 2026-05-12
 lang: zh-CN
-alt_url: /bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
-permalink: /zh/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
+alt_url: /notes/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
+permalink: /zh/notes/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
 ---
 
 > 论文地址：[BiomniBench：Process-level Evaluation of LLM Agents for Real-world Biomedical Research](https://www.biorxiv.org/content/10.64898/2026.05.12.724604v1)

@@ -6,8 +6,8 @@ tags: [unsupervised-learning]
 proceedings: CVPR
 date: 2019-04-03
 lang: zh-CN
-alt_url: /cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
-permalink: /zh/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
+alt_url: /notes/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
+permalink: /zh/notes/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
 ---
 
 

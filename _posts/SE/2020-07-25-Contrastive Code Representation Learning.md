@@ -6,8 +6,8 @@ tags: [code-understanding, contrastive-learning]
 proceedings: ACL
 date: 2020-07-25
 lang: en
-alt_url: /zh/se/Contrastive-Code-Representation-Learning/
-permalink: /se/Contrastive-Code-Representation-Learning/
+alt_url: /zh/notes/se/Contrastive-Code-Representation-Learning/
+permalink: /notes/se/Contrastive-Code-Representation-Learning/
 ---
 
 > Paper: [Contrastive Code Representation Learning](http://arxiv.org/abs/2007.04973)

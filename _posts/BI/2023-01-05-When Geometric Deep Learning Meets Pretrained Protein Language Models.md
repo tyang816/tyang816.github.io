@@ -6,8 +6,8 @@ tags: [protein, PLM, GNN]
 proceedings: bioRxiv
 date: 2023-01-05
 lang: en
-alt_url: /zh/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
-permalink: /bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+alt_url: /zh/notes/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+permalink: /notes/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
 ---
 
 > Paper: [When Geometric Deep Learning Meets Pretrained Protein Language Models](http://biorxiv.org/lookup/doi/10.1101/2023.01.05.522958)

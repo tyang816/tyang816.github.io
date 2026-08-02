@@ -6,8 +6,8 @@ tags: [GNN, antibody]
 proceedings: ICLR
 date: 2025-01-23
 lang: en
-alt_url: /zh/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
-permalink: /bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
+alt_url: /zh/notes/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
+permalink: /notes/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
 ---
 
 > Paper: [Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization](https://openreview.net/forum?id=a6U41REOa5)

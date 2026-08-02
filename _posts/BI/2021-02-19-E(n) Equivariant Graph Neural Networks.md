@@ -6,8 +6,8 @@ tags: [GNN]
 proceedings: ICML
 date: 2021-02-19
 lang: en
-alt_url: /zh/bi/E(n)-Equivariant-Graph-Neural-Networks/
-permalink: /bi/E(n)-Equivariant-Graph-Neural-Networks/
+alt_url: /zh/notes/bi/E(n)-Equivariant-Graph-Neural-Networks/
+permalink: /notes/bi/E(n)-Equivariant-Graph-Neural-Networks/
 ---
 
 > Paper: [E(n) Equivariant Graph Neural Networks](http://proceedings.mlr.press/v139/satorras21a/satorras21a.pdf)

@@ -6,8 +6,8 @@ tags: [protein, PLM, alignment]
 proceedings: bioRxiv
 date: 2022-11-28
 lang: zh-CN
-alt_url: /bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
-permalink: /zh/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
+alt_url: /notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
+permalink: /zh/notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
 ---
 
 > 论文地址：[Fast protein structure searching using structure graph embeddings](https://www.biorxiv.org/content/10.1101/2022.11.28.518224v2)

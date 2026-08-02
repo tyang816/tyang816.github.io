@@ -6,8 +6,8 @@ tags: [LLM, NLP, vision-language]
 proceedings: CVPR
 date: 2022-01-17
 lang: zh-CN
-alt_url: /cv/Grounded-Language-Image-Pre-training/
-permalink: /zh/cv/Grounded-Language-Image-Pre-training/
+alt_url: /notes/cv/Grounded-Language-Image-Pre-training/
+permalink: /zh/notes/cv/Grounded-Language-Image-Pre-training/
 ---
 
 > 论文地址：[Grounded Language-Image Pre-trainin](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_paper.pdf)

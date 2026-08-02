@@ -6,8 +6,8 @@ tags: [NLP]
 proceedings: ACL
 date: 2018-10-23
 lang: zh-CN
-alt_url: /cl/Improving-Abstraction-in-Text-Summarization/
-permalink: /zh/cl/Improving-Abstraction-in-Text-Summarization/
+alt_url: /notes/cl/Improving-Abstraction-in-Text-Summarization/
+permalink: /zh/notes/cl/Improving-Abstraction-in-Text-Summarization/
 ---
 
 > 论文地址：[Improving Abstraction in Text Summarization](http://arxiv.org/abs/1808.07913)
