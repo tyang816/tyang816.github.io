@@ -5,35 +5,38 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: ICCV
 date: 2019-10-29
+lang: en
+alt_url: /zh/cv/SlowFast-Networks-for-Video-Recognition/
+permalink: /cv/SlowFast-Networks-for-Video-Recognition/
 ---
 
-> 论文地址：[SlowFast Networks for Video Recognition](https://ieeexplore.ieee.org/document/9008780/)
+> Paper: [SlowFast Networks for Video Recognition](https://ieeexplore.ieee.org/document/9008780/)
 
-## SlowFast：快慢分支视频理解
+## SlowFast: Slow and Fast Pathways for Video Recognition
 
 ### Abstract
 
-研究动机来源于人的视觉系统有两种细胞，一个叫p细胞占了80%处理静态图像，一个叫m细胞处理运动信息，发现跟双流有点像，于是也提出了这种一支slow，一支fast这样的网络
+The motivation draws on the human visual system, which has two cell types: P-cells (~80%) process static imagery, while M-cells process motion—reminiscent of two-stream designs. The authors propose a network with one **slow** pathway and one **fast** pathway.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-慢分支：先用很低的帧率，比如每隔16帧取一帧，这种叫慢分支，学习静态图像，场景信息。因为p细胞占了大部分的数量，而且建模场景信息比较难，所以作者也把大部分参数给了慢分支。简单来说慢分支就是一个大的I3D网络，但是因为帧数不多，所以复杂度也不是很高
+**Slow pathway:** Use a very low frame rate (e.g., sample one frame every 16 frames) to learn static appearance and scene context. Because P-cells dominate in number and scene modeling is relatively difficult, most of the model capacity is allocated to the slow branch. In short, the slow pathway is essentially a large I3D-style network; with fewer frames, overall complexity remains moderate.
 
-快分支：比如4帧取一帧，输入快分支。让这个网络尽可能小，去描述运动信息
+**Fast pathway:** Sample more densely (e.g., one frame every 4 frames) and feed the fast branch. This pathway is kept as small as possible to encode motion.
 
-later connection：网络间结合起来，互相交互学习时空特征
+**Lateral connections:** The two pathways are fused so they interact and jointly learn spatiotemporal features.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/table1.png" alt="avatar" style="zoom:60%;" /></div>
 
-整个前向过程和网络结构如上
+The full forward pass and network structure are summarized above.
 
 ### Experiment
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SlowFast/table2.png" alt="avatar" style="zoom:60%;" /></div>
 
-slowfast使用帧数增多，加上non local block后性能也一直在增长
+SlowFast accuracy keeps improving as the number of input frames increases and non-local blocks are added.
 
 <HR align=left color=#987cb9 SIZE=1>
 

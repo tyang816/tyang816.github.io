@@ -5,27 +5,30 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: CVPR
 date: 2022-06-23
+lang: en
+alt_url: /zh/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
+permalink: /cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
 ---
 
-> 论文地址：[PointCLIP：Point Cloud Understanding by CLIP](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_PointCLIP_Point_Cloud_Understanding_by_CLIP_CVPR_2022_paper.pdf)
+> Paper: [PointCLIP：Point Cloud Understanding by CLIP](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_PointCLIP_Point_Cloud_Understanding_by_CLIP_CVPR_2022_paper.pdf)
 >
-> 论文实现：<https://github.com/ZrrSkywalker/PointCLIP>
+> Code: <https://github.com/ZrrSkywalker/PointCLIP>
 
-## PointCLIP：3D用CLIP预训练编码
+## PointCLIP: CLIP pre-trained encoding for 3D
 
 ### Abstract
 
-将CLIP学习到的2D表征迁移到3D领域来，在CLIP编码的点云和3D类别文本之间进行对齐
+Transfer representations learned by CLIP in 2D to the 3D domain by aligning CLIP-encoded point clouds with text descriptions of 3D object categories.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PointCLIP/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-关键就是找一个桥梁把3D和2D连接起来就行，把3D点云做了投射到2D平面上变成深度图，这个图像丢给CLIP视觉编码器得到表征
+The core idea is to bridge 3D and 2D: project a 3D point cloud onto a 2D plane to form a depth map, then pass the resulting image through CLIP’s visual encoder to obtain representations.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PointCLIP/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-迁移到3D领域时融合的领域知识的trick
+Tricks for injecting domain knowledge when adapting to 3D.
 
 ### Experiments
 

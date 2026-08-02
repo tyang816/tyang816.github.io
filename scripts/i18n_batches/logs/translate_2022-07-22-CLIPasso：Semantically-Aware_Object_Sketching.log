@@ -1,0 +1,7 @@
+**DONE**
+
+已写入 [`_posts/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md`](_posts/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md)：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/CLIPasso：Semantically-Aware-Object-Sketching/`；无 `permalink`；其余字段与中文版一致。
+- **正文**：学术英文笔记；图片块、链接、数学公式（含 $L_s$、$L_g$、笔画参数）均保留；文首引用为 Paper / Project page。
+- **勘误**：原文 “CLLIP” 按论文名写为 **CLIP**。

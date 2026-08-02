@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-07-01-ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised L.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文版一致（含 Discussion 五点） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 图片、链接、GitHub/IEEE URL 一致 | 通过 |
+| 数值与模型名（Q3/Q10/Q2、ProtT5、NEW364 等）一致 | 通过 |
+
+英文版在 Results 标题上已修正中文原文的 “Resluts” 拼写，Software 段 “mixed precision” 等表述合理，无需改动。

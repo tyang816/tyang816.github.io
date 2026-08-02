@@ -1,0 +1,16 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文两篇 PEER 笔记。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文完整、结构与中文一致 | ✓（Abstract / Introduction / Benchmark Tasks / Methods / Experiments + 4 图 + HR） |
+| 正文无中文 | ✓ |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | ✓ |
+| 链接、GitHub、图片 URL 一致 | ✓ |
+| 章节对齐 | ✓ |
+| 学术英文、17 项任务、五类预测任务、ImageNet/GLUE 等 | ✓ |
+
+英文版已是完整翻译，frontmatter 与资源均符合规范，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-12-01-PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding.md`

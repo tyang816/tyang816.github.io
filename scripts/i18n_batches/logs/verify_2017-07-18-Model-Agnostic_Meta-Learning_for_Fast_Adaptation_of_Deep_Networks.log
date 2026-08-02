@@ -1,0 +1,8 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**结果：** `OK path=/home/tanyang/workspace/tyang816.github.io/_posts/ML/2017-07-18-Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks.md`
+
+- 结构与中文一致（Abstract → Introduction → MAML 两小节 → Experiment），结尾 HR 完整  
+- 正文无中文；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致，无英文 `permalink`  
+- 链接、5 张图、公式与中文一致  
+- 英文表述通顺，实验三点与「教练/学生 vs 预训练」类比已覆盖

@@ -1,0 +1,11 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文版一致，无需修改。
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构完整 | Abstract → Introduction → Background → EGNN → Related Work → Experiments，与中文一致 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url: /zh/bi/E(n)-Equivariant-Graph-Neural-Networks/` 与中文 `permalink` 一致；无 `permalink` |
+| 图链、公式 | 与中文相同 |
+| 术语与数字 | QM9、SE(3)/E(3)、方程编号、$C=\frac{1}{M-1}$ 等一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-02-19-E(n) Equivariant Graph Neural Networks.md`

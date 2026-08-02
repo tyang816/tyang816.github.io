@@ -5,14 +5,17 @@ categories: [CV]
 tags: [vision-language, Transformer]
 proceedings: CVPR
 date: 2021-11-06
+lang: en
+alt_url: /zh/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
+permalink: /cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
 ---
 
-> 论文地址：[Masked Autoencoders Are Scalable Vision Learners](http://arxiv.org/abs/2111.06377)
+> Paper: [Masked Autoencoders Are Scalable Vision Learners](http://arxiv.org/abs/2111.06377)
 
-## 利用ViT来做跟BERT一样的自监督学习，生成式任务
+## Self-supervised, generative pre-training with ViT in the spirit of BERT
 
-1. 需要遮住更多的块，使得剩下的块与块之间冗余度没那么高，使任务变得复杂，迫使模型去学习一些更健壮的特征
-2. 编码时只处理没遮住的，加速了训练，使用Transformer架构的解码器，直接还原像素的原始信息，使得流程更简单
-3. 加上ViT工作之后的各种技术使训练更加鲁棒
+1. Mask a larger fraction of patches so that the visible patches are less redundant, which makes the pretext task harder and pushes the model toward more robust representations.
+2. The encoder processes only unmasked tokens, which speeds up training; a transformer decoder reconstructs the raw pixel values directly, keeping the overall pipeline simple.
+3. Techniques introduced in the ViT line of work further stabilize and strengthen training.
 
 <HR align=left color=#987cb9 SIZE=1>

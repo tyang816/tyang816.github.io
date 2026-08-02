@@ -1,37 +1,40 @@
----\
+---
 layout: post
 title: IJCNLP-2017 A parallel corpus of Python functions and documentation strings for automated code documentation and code generation
 categories: [SE]
 tags: [code-generation, code-documentation]
 proceedings: IJCNLP
 date: 2017-11-02
+lang: en
+alt_url: /zh/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+permalink: /se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
 ---
 
-> 论文地址：[A parallel corpus of Python functions and documentation strings for automated code documentation and code generation](https://aclanthology.org/I17-2053/)
+> Paper: [A parallel corpus of Python functions and documentation strings for automated code documentation and code generation](https://aclanthology.org/I17-2053/)
 >
-> 论文实现：<https://github.com/EdinburghNLP/code-docstring-corpus>
+> Code: <https://github.com/EdinburghNLP/code-docstring-corpus>
 
-## code-docstring-corpus：python代码注释生成数据集
+## code-docstring-corpus: a Python code–docstring generation dataset
 
 ### Abstract
 
-作者提出了一个大的多样的Python函数与注释文本的平行语料库，以及实验了一些数据增强方法来增加训练数据量
+The authors present a large, diverse parallel corpus of Python functions and documentation strings, and experiment with data augmentation methods to increase the volume of training data.
 
 ### Introduction
 
 #### Existing corpora
 
-一些现有的语料库，如 DJANGO 数据集和 Project Euler 数据集已经由人注释，可以产生高精度的样本，但导致成本高且小（从几百到不到20000个例子）和同质数据集
+Some existing corpora—such as the DJANGO dataset and the Project Euler dataset—are human annotated and yield high-precision examples, but at the cost of expensive annotation and small (from hundreds to fewer than 20,000 examples), homogeneous datasets.
 
-其他语料库是由用户生成的描述与从公共网站挖掘的代码片段匹配的，如 StackOverflow 或 IFTTT。这些数据集可以很大（>10万），但通常非常嘈杂
+Other corpora match user-generated descriptions with code snippets mined from public websites such as StackOverflow or IFTTT. These datasets can be very large (>100k) but are typically highly noisy.
 
-其他的方法是适用于特定领域的
+Still other resources are tailored to specific domains.
 
-这些语料库都存在一定的问题，比如 DJANGO 和 Project Euler 语料库使用伪代码而不是真正的自然语言作为代码描述，这导致代码片段和描述相似，易于对齐。The Magic the Gathering 和 Hearthstone 代码片段是重复的，例子中的大多数代码要么是样板，要么以有限的方式对应于描述中的特定关键字
+Each of these corpora has limitations. For example, the DJANGO and Project Euler corpora use pseudocode rather than genuine natural language as code descriptions, which makes code snippets and descriptions structurally similar and easy to align. In the Magic the Gathering and Hearthstone corpora, code snippets are duplicated, and most examples are either boilerplate or align with specific keywords in the description in only a limited way.
 
 #### Our proposal
 
-因此作者提出了包含了一条“docstring”的代码语料库，只提取最高层次的函数，添加了元信息（仓库所有者，仓库名等）可以重建上下文关系图
+The authors therefore propose a code corpus in which each example includes a docstring; they extract only top-level functions and attach metadata (repository owner, repository name, etc.) so that contextual relationship graphs can be reconstructed.
 
 ### Dataset
 
@@ -45,4 +48,3 @@ date: 2017-11-02
 
 
 <HR align=left color=#987cb9 SIZE=1>
-

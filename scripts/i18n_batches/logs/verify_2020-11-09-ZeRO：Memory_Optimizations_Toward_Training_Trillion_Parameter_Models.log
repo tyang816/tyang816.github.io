@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/OS/2020-11-09-ZeRO：Memory Optimizations Toward Training Trillion Parameter Models.md`
+
+对照 `scripts/i18n_verify_brief.md` 核对结果：
+
+1. **完整性**：英文与中文章节一致（Abstract → Concluding Remarks + HR），无截断。  
+2. **正文语言**：无中文正文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/`）一致；英文无 `permalink`；其余字段一致。  
+4. **资源**：论文链接、知乎参考链接、三张图 + tab1/fig2/fig3、`$\Phi$` / `$P_{os}$` 等与中文一致（含 `zoom:860%` 等原文样式）。  
+5. **结构**：各级标题与中文对应；英文主标题为合理译法（「数据切片减少额外的内存开销」→ sharding / redundant memory）。  
+6. **表述**：学术英语通顺；「Megartron」→ Megatron、Temporary Buffffers → buffers 等属合理修正，未改事实。  
+7. **数字与名称**：100B、400 GPU、13B、1.4B、24 GB、26%/13%/1.7% 等均保留。
+
+无需修改英文文件。

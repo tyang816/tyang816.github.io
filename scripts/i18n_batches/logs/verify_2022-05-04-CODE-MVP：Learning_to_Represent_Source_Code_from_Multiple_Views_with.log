@@ -1,0 +1,15 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-05-04-CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive .md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 结构与中文一致、无截断 | 通过（Abstract → Introduction → Multiple Views → Code-MVP 子节 → Experiment → HR） |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` = 中文 `permalink`，无英文 `permalink` | 通过 |
+| 图片、链接、公式 | 与中文版一致 |
+| 章节标题对齐 | 通过 |
+| 英文表述与术语 | 可读、学术语气正常 |
+| 数字、模型名、视图组合 | 未改义 |
+
+英文稿已完整翻译，无需修改。

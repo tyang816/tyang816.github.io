@@ -1,0 +1,10 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/SE/2021-07-14-Evaluating Large Language Models Trained on Code.md`
+
+要点：
+- Frontmatter：`lang: en`，`alt_url: /zh/se/Evaluating-Large-Language-Models-Trained-on-Code/`，无 `permalink`
+- 保留全部图片块、数学公式、链接与结构
+- 正文无残留中文

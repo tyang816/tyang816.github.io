@@ -5,25 +5,28 @@ categories: [BI]
 tags: [protein, homology, PLM]
 proceedings: eLife
 date: 2024-03-15
+lang: en
+alt_url: /zh/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+permalink: /bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
 ---
 
-> 论文地址：[Sensitive remote homology search by local alignment of small positional embeddings from protein language models](https://elifesciences.org/articles/91415)
+> Paper: [Sensitive remote homology search by local alignment of small positional embeddings from protein language models](https://elifesciences.org/articles/91415)
 >
-> 论文实现：<https://github.com/seanrjohnson/hmmer3di> and <https://github.com/seanrjohnson/esmologs>
+> Code: <https://github.com/seanrjohnson/hmmer3di> and <https://github.com/seanrjohnson/esmologs>
 
-## ESM-3B-3Di：ESM2+1D CNN预测3Di做同源检测
+## ESM-3B-3Di: ESM2 + 1D CNN predicts 3Di for homology search
 
 ### Abstract
 
-基于profile和结构的方法在扩展到twilight zone of sequence相似度的时候需要很慢的预处理步骤，近年来使用深度学习方法用整个蛋白质和按位编码展现出了捕获长距离同源性的能力。本文展示了使用低维的位置嵌入能够直接实现速度优化的local search algorithms，使用ESM 3B将一级结构序列转化为3Di词表，并将这作为优化的Foldseek，HMMER3和HH-suite search algorithms的输入
+Profile- and structure-based methods require slow preprocessing when extended into the twilight zone of sequence similarity. In recent years, deep learning approaches using whole-protein and per-residue encodings have shown the ability to capture long-range homology. This paper shows that low-dimensional positional embeddings can directly enable speed-optimized local search algorithms: ESM 3B converts primary-structure sequences into the 3Di vocabulary, which serves as input to optimized Foldseek, HMMER3, and HH-suite search algorithms.
 
 ### Introduction
 
-给一个没有实验的蛋白分配一个假设功能往往是通过找到在序列、结构或者进化上有关系的实验蛋白，将这个注释迁移过去，常见的方法有BLASTP，PSI-BLAST，HMMER3，HH-suite3和MMseqs2
+Assigning a putative function to a protein without experimental characterization is often done by finding experimentally characterized proteins related in sequence, structure, or evolution and transferring that annotation. Common methods include BLASTP, PSI-BLAST, HMMER3, HH-suite3, and MMseqs2.
 
-sequence profiles来源于MSA，并且通过用hidden Markov models (HMMs)建模，比如HMMER和HH-suite，建模每个氨基酸上的概率和其插入或删除的概率，因为这种方法依赖于数据库建立，检索预处理所以开销较大
+Sequence profiles are derived from MSAs and modeled with hidden Markov models (HMMs), as in HMMER and HH-suite, which encode amino-acid probabilities and insertion/deletion probabilities at each position. Because these methods depend on database construction and retrieval preprocessing, the overhead is substantial.
 
-结构检索方法比序列检索更加的敏感，随着AlphaFold2和ESMFold等方法的进步与蛋白结构数据库的增长，一些快速的结构检索方法开发出来了，比如Foldseek，RUPEE，Dali
+Structure-based retrieval is more sensitive than sequence-based retrieval. With advances such as AlphaFold2 and ESMFold and growth of protein structure databases, fast structure search methods have been developed, including Foldseek, RUPEE, and Dali.
 
 ### Results
 
@@ -31,19 +34,19 @@ sequence profiles来源于MSA，并且通过用hidden Markov models (HMMs)建模
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-3B-3Di/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-如figure 1A里面，生成概率给HMM tools；训练了一个额外的两层的1D CNN把ESM2 3B输入氨基酸序列转化为3Di，如figure 1B
+As in Figure 1A, probabilities are generated for HMM tools; an additional two-layer 1D CNN was trained to convert ESM2 3B input amino acid sequences into 3Di, as in Figure 1B.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-3B-3Di/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-figure 2是用HMM做比对的一个例子
+Figure 2 shows an example of alignment with HMMs.
 
 #### Comparison of newly developed embedding methods
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-3B-3Di/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 
-从Pfam 32 splits里生成predicted profiles和3Di sequence，然后转化为不同搜索工具的格式。Pfam中每个family划分的测试集保证了与训练集不超过25%的序列相似度
+Predicted profiles and 3Di sequences were generated from Pfam 32 splits and converted into formats for different search tools. For each Pfam family, the held-out test set was constrained to at most 25% sequence similarity to the training set.
 
-Foldseek搜索由ESM-2 3B 3Di figure 3 C,D在所有测试的新方法中表现最好
+Foldseek search using ESM-2 3B 3Di (Figures 3C,D) performed best among all newly tested methods.
 
 #### Benchmarking of ESM-2 3B 3Di against emerging and established search methods
 
@@ -51,24 +54,24 @@ Foldseek搜索由ESM-2 3B 3Di figure 3 C,D在所有测试的新方法中表现�
 
 ### Discussion
 
-比PLM-BLAST好，但是跟ProtsT5差不多
+Better than PLM-BLAST, but roughly comparable to ProtT5.
 
 ### Methods
 
 #### Alignments
 
-MSA使用MAFFT (v7.505)：--anysymbol --maxiterate 1000 --globalpair，BLOSUM62 substitution matrix， 3Di substitution matrix from Foldseek
+MSA with MAFFT (v7.505): --anysymbol --maxiterate 1000 --globalpair, BLOSUM62 substitution matrix, 3Di substitution matrix from Foldseek
 
 #### Fine-tuning ESM-2 3B to convert amino acid sequences into 3Di sequences
 
-训练集是Foldseek AlphaFold UniProt50 dataset 数据集划分(9:0.5:0.5)
+Training set: Foldseek AlphaFold UniProt50 dataset split (9:0.5:0.5)
 
 #### Predicting profiles to generate HH-suite hhm files and HMMER3 hmm files from single sequences
 
-1. 因为ESM2预测第一个token倾向于预测M，但是pfam里面并不是，所以丢掉第一个
-2. mask第1、8...位置
-3. 得到每个mask的logits
-4. 把mask往右移一位
-5. 重复六次存下每个位置的logits
+1. Because ESM2 tends to predict M for the first token, which is not typical in Pfam, the first token is discarded.
+2. Mask positions 1, 8, ...
+3. Obtain logits for each mask.
+4. Shift the mask one position to the right.
+5. Repeat six times and store logits at each position.
 
 <HR align=left color=#987cb9 SIZE=1>

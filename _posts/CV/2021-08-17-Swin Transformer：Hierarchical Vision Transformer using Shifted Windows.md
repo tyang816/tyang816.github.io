@@ -5,24 +5,27 @@ categories: [CV]
 tags: [vision-language, transformer]
 proceedings: ICCV
 date: 2021-08-17
+lang: en
+alt_url: /zh/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
+permalink: /cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
 ---
 
-> 论文地址：[Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.pdf)
+> Paper: [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.pdf)
 
-## Swin Transformer：层级式的Transformer，使用了Patch Merging和移动窗口
+## Swin Transformer: a hierarchical Transformer with Patch Merging and shifted windows
 
-1. ViT通过打patch，全局的自注意力操作来达到全局建模能力，但对多尺寸的把握会减少。在CV的下游任务中，多尺度特征很重要。Swin通过window来做local attention，滑动窗口来变相实现对全局建模，使得窗口和窗口可以交互。既省内存，效果又好
-2. 在CV和NLP模型大一统方面，ViT做得更好，因为它不需要先验知识，不用加内容即可在两个领域效果都不错。而Swin利用了更多的先验知识，类似于CNN的滑动窗口
-3. Patch Merging：类似于卷积的操作
+1. ViT patches images and applies global self-attention for global modeling, but this comes at the cost of weaker multi-scale representation. Multi-scale features matter for downstream CV tasks. Swin performs local attention within windows and uses shifted windows to enable cross-window interaction, approximating global modeling while saving memory and achieving strong performance.
+2. Toward a unified CV–NLP modeling paradigm, ViT is more general: it relies on little inductive bias and performs well in both domains without extra structure. Swin incorporates more prior knowledge, analogous to the sliding-window design in CNNs.
+3. Patch Merging: an operation similar to strided convolution for downsampling feature maps.
 
    ![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img1.png)
-4. 移动窗口：基于窗口和移动窗口的自注意力机制，可以减少计算量的同时增加模型全局能力
-5. 提高移动窗口计算效率：采用masking掩码方式；没有用绝对位置编码，而是相对位置编码
+4. Shifted windows: window-based self-attention together with shifted-window self-attention reduces computation while improving global receptive field.
+5. Efficiency of shifted-window attention: masked attention; relative positional encoding instead of absolute positional encoding.
 
-   5.1 因为移动窗口后可能会增加patch数，形状不一的patch没法直接丢进去，但直接Pad 0无形中也是增加了不必要的计算量
+   5.1 After window shifting, the number of patches can increase; patches of inconsistent spatial layout cannot be batched directly, whereas zero-padding implicitly adds unnecessary computation.
    ![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img2.png)
 
-   5.2 于是分割填补，同时部署于同一区域的patch不做自注意力计算，即采用masked MSA，然后还原图片，避免图片一直位移
+   5.2 The method partitions and pads regions, applies masked MSA so patches assigned to the same partition do not attend across partition boundaries, then reverses the cyclic shift—avoiding unbounded spatial drift of the feature map.
 
    ![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Swin/swin-img3.png)
 

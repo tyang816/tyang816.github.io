@@ -1,21 +1,24 @@
 ---
 layout: post
-title: ECCV-2020 CMC：Contrastive Multiview Coding
+title: "ECCV-2020 CMC: Contrastive Multiview Coding"
 categories: [CV]
 tags: [contrastive-learning]
 proceedings: ECCV
 date: 2020-12-18
+lang: en
+alt_url: /zh/cv/Contrastive-Multiview-Coding/
+permalink: /cv/Contrastive-Multiview-Coding/
 ---
 
-> 论文地址：[Contrastive Multiview Coding](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560749.pdf)
+> Paper: [Contrastive Multiview Coding](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560749.pdf)
 
-## CMC：增大视角间的互信息，代理任务是多视角（多模态）
+## CMC: Maximize mutual information across views; the pretext task is multiview (multimodal)
 
-1. 摘要写得很精彩：无论是看到了狗，还是听到了狗叫，都能判断出狗，引出要学习视角的不变性
-2. 正样本：虽然输入来自不同传感器（模态），对应的其实仍然是一个图片，特征空间应该接近；
+1. The abstract is compelling: whether you see a dog or hear it bark, you can recognize it as a dog—motivating learning invariance across views.
+2. Positive pairs: although inputs come from different sensors (modalities), they still correspond to the same underlying image; their representations should be close in feature space.
 
-   负样本：从其他图片来的视角；
-3. 多视角下输入的不同可能需要多个编码器，可能几个视角需要几个编码器，计算代价变高，transformer可能可以同时处理多模态，不需要做特有的改进
+   Negative pairs: views drawn from other images.
+3. Different inputs across views may require multiple encoders—potentially one encoder per view—which increases computational cost; transformers may process multiple modalities jointly without modality-specific architectural changes.
 
 Comment: Code: http://github.com/HobbitLong/CMC/
 

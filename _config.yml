@@ -186,7 +186,7 @@ defaults:
       path: "googlec0aed3ddfe20902d.html"
     values:
       sitemap: false
-  # Posts stay English by default (site.lang).
+  # Posts: English at _posts/{CAT}/ (default URLs); Chinese at _posts/zh/{CAT}/.
   # Keep individual notes out of sitemap.xml so crawl budget favors hubs/projects;
   # notes remain linked from /notes/ and are still crawlable.
   - scope:
@@ -194,6 +194,13 @@ defaults:
       type: posts
     values:
       lang: en
+      author_profile: true
+      sitemap: false
+  - scope:
+      path: "_posts/zh"
+      type: posts
+    values:
+      lang: zh-CN
       author_profile: true
       sitemap: false
 

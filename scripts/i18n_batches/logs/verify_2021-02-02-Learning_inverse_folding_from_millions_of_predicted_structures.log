@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-02-02-Learning inverse folding from millions of predicted structures.md` issues=`span-masking: aligned EN with ZH (30-aa spans, 15% backbone)`
+
+其余项均通过：正文完整、无中文残留、`lang: en`、`alt_url` 与中文 `permalink` 一致且无英文 `permalink`、图链与数学一致、章节与中文对齐、术语与数字（51%、72%、12M、16,153/1,457/1,797 等）一致。仅 **Span masking** 段原先未体现中文里的「30 个氨基酸」，已补译。

@@ -1,0 +1,9 @@
+**FIXED** path=`/_posts/BI/2025-04-15-Scaling unlocks broader generation and deeper functional understanding of proteins.md` issues=`four sampling strategies had only three proportional weights (Unmodified missing)`
+
+**核对摘要**
+- 正文完整，章节与中文版一致；无中文残留。
+- Frontmatter：`lang: en`，`alt_url` 指向中文 `permalink`，无英文 `permalink`。
+- 图片、链接、公式与数值（46B、1.5T、ρ 等）一致。
+
+**已改一处**
+- §2.2 四种聚类采样策略：原先用 “respectively” 只对应 1、√n、n/(1+log n)，与四种策略名不符；已改为三种显式权重 + **Unmodified** 保留原始分布，与中文表述一致。

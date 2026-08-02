@@ -5,89 +5,92 @@ categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: arXiv
 date: 2022-04-16
+lang: en
+alt_url: /zh/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
+permalink: /cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
 ---
 
-> 论文地址：[Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/pdf/2204.05862.pdf)
+> Paper: [Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/pdf/2204.05862.pdf)
 >
-> 论文实现：<https://github.com/anthropics/hh-rlhf>
+> Code: <https://github.com/anthropics/hh-rlhf>
 
-## hh-rlhf：偏好模型+人类反馈微调
+## hh-rlhf: preference models + human-feedback fine-tuning
 
 ### Abstract
 
-用RLHF来对语言模型做微调很有帮助，并且发现和人类行为的对齐训练（alignment training）可以提升几乎所有自然语言的评估性能，特别是像python coding或做summarization。还做了迭代的在线训练，每个星期会用新的人类反馈来更新模型和RL策略，这能提升数据和模型质量。RL reward调过的模型和KL散度的平方根大致有一个线性关系
+Fine-tuning language models with RLHF is very effective. Alignment training against human behavior improves performance on nearly all natural-language evaluations, especially tasks such as Python coding and summarization. The authors also run iterative online training: each week they refresh the model and RL policy with new human feedback, which improves data and model quality. Models tuned with an RL reward show an approximately linear relationship with the square root of KL divergence.
 
 ### Introduction
 
-训练的模型需要有帮助，输出真实，输出无害等
+The trained model should be helpful, truthful, and harmless.
 
-分别做了有效性和无害性的任务，都标注数据。对有效性对标注工去问模型一些纯文本的任务，比如问答，写作或改文档，讨论方案等。对无害性让标注工引诱模型讲违背规则的话，比如抢银行，骂人等。当然因为任务可能带有刺激人的心理或压力，所以两个任务交替来平复标注工的心情，主要让标注工给两种回答：better or worse
+They run separate helpfulness and harmlessness tasks, both with labeled data. For helpfulness, annotators ask the model plain-text tasks such as Q&A, writing, document editing, and brainstorming. For harmlessness, annotators try to elicit rule-breaking outputs (e.g., robbing a bank, insults). Because these tasks can be psychologically stressful, the two tasks alternate to ease annotator burden. Annotators mainly choose which of two responses is better or worse.
 
-有效性和无害性往往有冲突，比如馊主意有效但有害，平庸的方案无害但无用。但实际上发现两个数据集放一起训练问题也不大
+Helpfulness and harmlessness often conflict: a clever but harmful suggestion is “helpful” yet toxic; a bland safe reply is harmless but useless. In practice, training on both datasets together still works reasonably well.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-图1可以看出在线模型提升性能很大，需要显式的建模模型不作恶
+Figure 1 shows large gains from online training; explicitly modeling “do no harm” matters.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 
-在小模型上做对齐后再其他的任务上performance会下降，但参数量更大后反而更好一些
+Aligning smaller models hurts performance on other tasks; at larger scale, alignment helps more than it hurts.
 
 #### Contribution
 
-- 收集了一个多轮对话数据集
-- 小模型有严重的对齐税，对齐后别的性能下降了；有用性和无害性有一定的冲突
+- Collected a multi-turn dialogue dataset.
+- Small models pay a heavy alignment tax—other capabilities drop after alignment; helpfulness and harmlessness partially conflict.
 
 #### Related Work
 
-LaMDA标了一些数据微调了一下
+LaMDA labeled some data and fine-tuned.
 
-InstructGPT有一个有监督学习的步骤，用人标注的数据来微调一下。但是本文直接使用了RL技术（用了一个context distillation，更多像一个prompt技术），增加了一个无害性的指标，奖励模型是6B，比较关键的就是做了在线
+InstructGPT includes a supervised step with human-labeled data. This work uses RL directly (plus context distillation, closer to a prompting technique), adds a harmlessness objective, uses a 6B reward model, and crucially runs online training.
 
 ### Data Collection
 
-人类有很复杂的容易表达的直觉，但是很难用公式化呈现（有效性和有害性很难用公式呈现出来），所以要用人类反馈的自然语言对话来表达人类的逻辑
+Humans have rich intuitions that are easy to express in language but hard to formalize (helpfulness and harm are hard to write as formulas), so human feedback in natural dialogue captures those preferences.
 
 #### Task Specification and Crowdworkers
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig6.png" alt="avatar" style="zoom:100%;" /></div>
 
-随机查标注工的问题写的好不好，更好的问题能和AI有更好的互动，而不是看标签质量高不高，这样更加简单也更加直观（请了给标注人员标注的标注人员）
+They randomly audit whether annotators write good prompts. Better prompts yield better interaction with the AI, rather than judging label quality alone—simpler and more intuitive (meta-annotators review annotator prompts).
 
-要求标注人员有有效性和无害性，但没做更多的限制，这样可以保证数据的多样性
+Annotators cover both helpfulness and harmlessness without extra constraints, preserving diversity.
 
-具体做法：
+Concrete setup:
 
-- 至少是美国硕士文凭的标注人员
-- 表现最好的20个标了80%的数据，按数据量计费
-- 把最好的worker之间建立交流频道，不断的反馈沟通
-- 还在Upwork上找标注工，按小时计费，可以对话做的比较长
+- Annotators hold at least a U.S. master’s degree.
+- The top 20 performers produced ~80% of the data, paid by volume.
+- Top workers share a channel for ongoing feedback.
+- Additional workers on Upwork, paid hourly, enabling longer dialogues.
 
-标注工也不是持续的，为了节省成本也没有让标注工检查模型输出是不是对的，在模型的真实性上有一定降低
+Annotators are not permanent; to save cost they do not verify factual correctness of model outputs, which somewhat weakens truthfulness.
 
 #### Helpfulness and Harmlessness (Red Teaming) Datasets
 
-两边同时训练容易导致分裂，未来可能解决
+Joint training on both objectives can encourage conflicting behaviors; future work may address this.
 
 #### Models Deployed to the Feedback Interface and Associated Data Distributions
 
--  HHH Context-Distilled 52B Language Model：上下文蒸馏出来的一个模型，最开始的模型
--  Rejection Smapling (RS)：在上面模型基础输出的样本上训练一个一个52B的偏好模型（奖励函数）判断生成答案的质量，取k个答案出来比如k=16，再用判断好坏
--  RLHF-Finetuned Models：继续标注继续微调
+- HHH Context-Distilled 52B Language Model: context-distilled baseline, the initial deployed model.
+- Rejection Sampling (RS): on samples from the above model, train a 52B preference model (reward) to score generations; draw k candidates (e.g., k=16) and pick the best.
+- RLHF-Finetuned Models: continue labeling and fine-tuning.
 
-最后阶段主要就是用之前微调好的模型不断微调，也可能多个模型同时部署，因为微调后不见得比没微调更好
+The final stage mostly iterates fine-tuning on already tuned models; multiple models may deploy in parallel because fine-tuning does not always beat the pre-RL checkpoint.
 
-根据三种模型把数据也分成下面三块：
+Data split by deployment stage:
 
-- 最原始的数据，42k有效性对话，42k有害性对话
-- 通过Reject sampling做出52k个有效对话和2k有害对话
-- 在线数据有效性22k，没有有害性的
+- Raw data: 42k helpful dialogues, 42k harmfulness dialogues.
+- After rejection sampling: 52k helpful and 2k harmlessness dialogues.
+- Online data: 22k helpful; no new harmlessness collection in that bucket.
 
 #### Comparing Models with Elo Scores
 
-比较两个模型好坏的Elo分数，A模型打败B模型的赢率是多少，A模型的输出有多少比B模型好，越高越好
+Elo compares two models: win rate when A beats B, or how often A’s output is preferred over B’s—higher is better.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm2.1.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -95,92 +98,92 @@ InstructGPT有一个有监督学习的步骤，用人标注的数据来微调一
 
 #### Models and Training Setup
 
-从13M到52B都训练了喜好模型（PM），主要是三个阶段：
+Preference models (PM) are trained from 13M to 52B parameters in three stages:
 
-- 所有文本预训练
-- 喜好模型预训练（PMP）
-  - 学习率1e-3，在StackExchange，Reddit和wikipedia上构造对比数据，上下文窗口1024
-- 人类反馈上做微调
-  - 学习率1e-5，窗口2048
+- General text pretraining.
+- Preference model pretraining (PMP)
+  - LR 1e-3; contrastive data from StackExchange, Reddit, and Wikipedia; context 1024.
+- Fine-tuning on human feedback
+  - LR 1e-5; window 2048.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig7.png" alt="avatar" style="zoom:100%;" /></div>
 
-数据指数提升性能线性提升，同样的数据参数越大越好；有用性更加多样一点
+Performance scales roughly linearly with data on a log scale; larger models win at the same data size; helpfulness data is more diverse.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig8.png" alt="avatar" style="zoom:100%;" /></div>
 
-对话轮数的数据集，轮数变多了性能变低
+On multi-turn dialogues, more turns correlate with lower PM accuracy.
 
 #### Calibration of Preference Models and Implications for RL
 
-模型是否被校验过，预测分数和真实的赢率是不是一致性的关系
+Calibration asks whether predicted scores match true win rates.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig9.png" alt="avatar" style="zoom:100%;" /></div>
 
-给一堆数据算喜好模型的分数差，代入Δ算出概率，模型线和黑色的线吻合就说明预测值和真实分数赢率（标注决定的）有映射关系的；有效性估计是比较准的
+Score differences on a batch map through Δ to probabilities; agreement with the black reference line means predicted preferences align with human win rates. Helpfulness estimates are relatively accurate.
 
-这个PM分数很重要因为这个会作为强化学习的信号，越准训练肯定更好
+PM scores matter because they are the RL signal—better calibration means better training.
 
-当样本都很好的时候人类打分，模型打分都变得困难，所以还是要做这种在线学习，重新训练使得分数区分更加准确
+When both samples are strong, human and model scores compress; online retraining helps separate high-quality responses again.
 
 ### Reinforcement Learning from Human Feedback
 
 #### Training Setup
 
-- 先用对比的数据把喜好模型训练出来
-- 训练RL policy生成喜好模型觉得分数比较高的结果
+- Train the preference model on pairwise comparisons first.
+- Train an RL policy to generate outputs the PM scores highly.
 
-使用PPO算法，优化模型使得PM给的分数是最高的，同时也不能和原本的模型离太远
+They use PPO to maximize PM reward while staying close to the initial policy.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.1.png" alt="avatar" style="zoom:60%;" /></div>
 
-这里使用 $\lambda_{KL}=0.001$ 用大了就训练不出来了，D_KL也是<100的，后面这块可能就很小，可能就没有太大的必要
+Here $\lambda_{KL}=0.001$; larger values destabilize training. $D_{KL}$ stays &lt;100, so the KL term may shrink and matter less later.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/frm4.2.png" alt="avatar" style="zoom:60%;" /></div>
 
-两个答案A和B算出A比B好的概率，用这个分数做奖励因为之前大家都这么用的
+For answers A and B, they use the probability that A beats B as reward, following prior RLHF practice.
 
-训练用的对话可以用之前的数据也可以生成，使用few-shot learning，已知10个比较高质量的queries让最大的模型去生成更多的东西。137k个标注的，369k个生成的
+Training dialogues come from existing labels or generation via few-shot prompting: ten high-quality seed queries from the largest model to expand the set. 137k labeled, 369k generated.
 
 #### Robustness Experiments
 
-主要是喜好模型的稳健性，应该和人对齐，但随着数据不一样也可能会评估不准，特别是两个答案都比较好的情况下
+Focus on PM robustness: scores should track humans, but distribution shift hurts, especially when both answers are good.
 
-把标注的数据分为两块，每一块训练一个模型，一个叫train PM一个test PM，用train PM来指导模型再回过头看在test PM上也会更高，如果这样说明是比较稳健的，反之过度优化模型而没有提升
+Split labels in half; train train-PM and test-PM. If RL guided by train-PM also rises on test-PM, the PM generalizes; if not, the policy overfits the trainer.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig4.png" alt="avatar" style="zoom:100%;" /></div>
 
-PM分数过了一个点后在测试上增加也不高，有点过拟合了
+After a point, higher train PM scores barely lift test PM—signs of overfitting.
 
 #### An Approximately Linear Relation Between $\sqrt{D_{KL}}$ and Reward
 
-更新不远的时候模型效果和KL三度开根号有线性效果，有这个关系可以估计出多少的数据可以在多大的模型上更新出多好的效果
+When updates stay small, reward relates linearly to $\sqrt{D_{KL}}$, useful for estimating how much data and model scale are needed for a given quality gain.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig13.png" alt="avatar" style="zoom:100%;" /></div>
 
-数据变多测试PM上的分数也是在提升的
+More data improves test-PM scores as well.
 
 #### Tension Between Helpfulness and Harmlessness in RLHF Training
 
-比如生病了问模型，模型会尽量给出“不知道”，有点过度优化了无害性而弱化了有用性
+On medical questions, the model may over-refuse (“I don’t know”), over-optimizing harmlessness at the expense of helpfulness.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig14.png" alt="avatar" style="zoom:100%;" /></div>
 
-两个数据集的分布相差比较大，没有更好的办法就多采样有效性数据
+The two datasets differ in distribution; without a better fix, oversample helpfulness data.
 
 #### Iterated Online RLHF
 
-PM在高分数的地方校验性鲁棒性会变差，要重新更新喜好模型，迭代式的online RLHF：
+PM calibration and robustness degrade in high-score regions; refresh the preference model with iterated online RLHF:
 
-- 找到最好的RLHF策略，从标注工收集数据，然后重新训练，在高分数答案上分布更准确
-- 新数据和老数据混合一起重新训练一个PM
+- Find the best RLHF policy, collect new labels, retrain so the PM is accurate on high-scoring outputs.
+- Mix new and old data to retrain the PM.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig15.png" alt="avatar" style="zoom:100%;" /></div>
 
-整个模型在分数上确实有提升
+Overall PM scores improve across iterations.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/hh-rlhf/fig16.png" alt="avatar" style="zoom:100%;" /></div>
 
-用在线和老数据混合情况下模型得到的答案会更准一些
+Mixing online and legacy data yields somewhat more accurate model answers.
 
 <HR align=left color=#987cb9 SIZE=1>

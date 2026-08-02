@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文并写入：
+
+`_posts/SE/2021-01-01-Code Summarization with Structure-induced Transformer.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/Code-Summarization-with-Structure-induced-Transformer/`；无 `permalink`；其余字段与中文版一致。
+- **正文**：区块引用改为 `Paper:`；图片、链接、公式与章节结构保留；小节标题 “Stucture” 在英文版中规范为 “Structure-based”。
+- 正文中无残留中文。

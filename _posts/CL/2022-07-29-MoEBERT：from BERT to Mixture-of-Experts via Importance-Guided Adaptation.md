@@ -5,58 +5,61 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: NAACL
 date: 2022-07-29
+lang: en
+alt_url: /zh/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
+permalink: /cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
 ---
 
-> 论文地址：[MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation](https://aclanthology.org/2022.naacl-main.116/)
+> Paper: [MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation](https://aclanthology.org/2022.naacl-main.116/)
 >
-> 论文实现：<https://github.com/SimiaoZuo/MoEBERT>
+> Code: <https://github.com/SimiaoZuo/MoEBERT>
 
-## MoEBERT：MoE+distillation
+## MoEBERT: MoE + distillation
 
 ### Abstract
 
-目前训练小的压缩的模型是通过知识蒸馏，但性能下降厉害，因此提出用MoE-BERT来提升模型性能和推理速度。初始化MoE-BERT通过把FFN适应到多个专家里，同时还提出了layer-wise distillation方法来训练MoE-BERT
+Small compressed models are typically trained via knowledge distillation, but performance often drops substantially. This work proposes MoE-BERT to improve both model quality and inference speed. MoE-BERT is initialized by adapting the FFN into multiple experts, and a layer-wise distillation method is introduced to train MoE-BERT.
 
 ### Introduction
 
-蒸馏方法分为任务无关和任务特定两种
+Distillation methods fall into two categories: task-agnostic and task-specific.
 
-- task-agnostic：预训练student然后在下游任务微调
-- task-specific：从预训练好的模型初始化然后微调
+- **Task-agnostic:** pre-train the student, then fine-tune on downstream tasks.
+- **Task-specific:** initialize from a pre-trained model and fine-tune.
 
-本工作主要关注任务特定的蒸馏
+This work focuses mainly on task-specific distillation.
 
-但是MoE模型从零开始训练很难而且参数量大，所以采用MoE架构在预训练模型中用于微调，提升推理速度的同时保持表征性能
+Training MoE models from scratch is difficult and parameter-heavy, so the authors adopt a MoE architecture on top of a pre-trained model for fine-tuning, improving inference speed while preserving representation quality.
 
-比如BERT-base的FFN维度是3072，换成4个expert，每个768
+For example, BERT-base has FFN hidden size 3072; replacing it with 4 experts yields 768 dimensions per expert.
 
-为了把FFN适配到experts里，提出了一种基于重要性的方法，根据经验，FFN里面有些神经元对模型性能的贡献比其他大，移除这些神经元会有巨大的性能损失，这种性质可以用importance score来定量。因此在experts中共享重要的神经元，其他的均匀分布
+To adapt the FFN into experts, they propose an importance-based method. Empirically, some FFN neurons contribute more to performance than others; removing them causes large performance drops. This property can be quantified with importance scores. Important neurons are shared across experts; the remaining neurons are distributed evenly.
 
 ### Background
 
 #### Backbone: Transformer
 
-FFN定义，两层全连接一个激活函数
+The FFN consists of two fully connected layers and an activation function.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm1.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### Mixture-of-Experts Models
 
-$a_t$ 是attention output A的第t行，l是层数
+$a_t$ is the $t$-th row of the attention output $A$; $l$ is the layer index.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm2.png" alt="avatar" style="zoom:60%;" /></div>
 
-计算 $p_i$ 的方法很多，比如用全连接矩阵
+There are many ways to compute $p_i$, e.g., with a fully connected routing matrix.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm3.png" alt="avatar" style="zoom:60%;" /></div>
 
-但是这个方法当所有输入都被路由到同一个expert的时候就坍塌了
+This approach collapses when all inputs are routed to the same expert.
 
-为了解决这个问题有的方法启发式的，如加高斯噪声，限制到某专家的最大路由数，引入负载平衡损失，使用线性赋值等
+To mitigate this, prior work uses heuristics such as adding Gaussian noise, capping the maximum number of tokens routed to an expert, introducing load-balancing losses, or using linear assignment.
 
-与之对应的工作是完全删除了gate，使用哈希函数预先分配标记给专家，这样 $p_i=1/K$ 
+Related work removes the gate entirely and uses a hash function to assign tokens to experts in advance, so $p_i = 1/K$.
 
-一个token只激活K个专家，通常K<<N
+Each token activates only $K$ experts, typically with $K \ll N$.
 
 ### Method
 
@@ -64,37 +67,37 @@ $a_t$ 是attention output A的第t行，l是层数
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/fig1.png" alt="avatar" style="zoom:80%;" /></div>
 
-把FFN随机转移到experts里面效果很差，因此引入重要度分数（最开始是在模型剪枝里面用到的），对于一个数据集D，样本对 $\{(x,y)\}$ ，分数定义如下：
+Randomly splitting the FFN across experts works poorly, so they adopt importance scores (originally used in model pruning). For a dataset $D$ with sample pairs $\{(x,y)\}$, the score is defined as follows:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm4.1.png" alt="avatar" style="zoom:60%;" /></div>
 
-其中 $w_j^1\in \mathbb{R}^d$ 是 $W_1$ 的第j列， $w_j^2\in \mathbb{R}^d$ 是 $W_2$ 的第j行
+Here $w_j^1 \in \mathbb{R}^d$ is the $j$-th column of $W_1$, and $w_j^2 \in \mathbb{R}^d$ is the $j$-th row of $W_2$.
 
-公式4的重要度分数表示如果移除神经元的损失变化
+The importance score in Eq. (4) reflects the change in loss if neuron $j$ were removed.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm4.2.png" alt="avatar" style="zoom:60%;" /></div>
 
-这里的近似是基于 $L_w$ 在w=0的一阶泰勒展开式
+The approximation is based on a first-order Taylor expansion of $L_w$ at $w = 0$.
 
-计算完了所有列的 $I_j$ 后排序，选出top-s，这样每个expert的列是 $\{w_{(1)^1},···,w_{s}^1,w_{(s+e)}^1,w_{(s+e+N)}^1,···\}$
+After computing $I_j$ for all columns, they are sorted and the top-$s$ are selected. Each expert then receives columns $\{w_{(1)}^1, \ldots, w_{s}^1, w_{(s+e)}^1, w_{(s+e+N)}^1, \ldots\}$.
 
 #### Layer-wise Distillation
 
-transformer layer distillation loss：
+Transformer layer distillation loss:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm5.png" alt="avatar" style="zoom:60%;" /></div>
 
-prediction layer distialltion loss：
+Prediction layer distillation loss:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm6.png" alt="avatar" style="zoom:60%;" /></div>
 
-layer-wise distillation loss：
+Layer-wise distillation loss:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm7.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### Model Training
 
-使用随机哈希策略训练experts，每个token预先分配给一个随机的expert，在训练和推理的时候这个分配关系不改变，这种分配策略和其他的路由策略进行了比较
+Experts are trained with a random hashing strategy: each token is pre-assigned to a random expert, and this assignment is fixed during training and inference. This routing scheme is compared against other routing strategies.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/frm8.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -102,11 +105,11 @@ layer-wise distillation loss：
 
 #### Datasets
 
-GULE、Question Answering
+GLUE and question answering.
 
 #### Implementation Details
 
-用BERT-base当student和teacher，先把预训练好的迁移到MoE模型，然后再做layer-wise task specific知识蒸馏。专家数量是4，维度768，选的是top-512
+BERT-base serves as both student and teacher. The pre-trained weights are transferred to the MoE model first, then layer-wise task-specific knowledge distillation is applied. There are 4 experts with hidden size 768; top-512 neurons are selected for sharing.
 
 #### Main Results
 
@@ -116,7 +119,7 @@ GULE、Question Answering
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MoEBERT/tab2-fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-共享的维度太多了可能也有问题，缺乏专家的多样性
+Sharing too many dimensions can also hurt performance by reducing expert diversity.
 
 #### Analysis
 

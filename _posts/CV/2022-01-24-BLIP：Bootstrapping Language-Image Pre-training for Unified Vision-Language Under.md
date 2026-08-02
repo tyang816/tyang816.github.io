@@ -5,47 +5,50 @@ categories: [CV]
 tags: [vision-language, transformer, contrastive-learning]
 proceedings: ICML
 date: 2022-01-24
+lang: en
+alt_url: /zh/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
+permalink: /cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
 ---
 
-> 论文地址：[BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation](http://arxiv.org/abs/2201.12086)
+> Paper: [BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation](http://arxiv.org/abs/2201.12086)
 >
 
-## BLIP：ALBEF+VLMO+captioner+filter
+## BLIP: ALBEF + VLMO + Captioner + Filter
 
 ### Abstract
 
-BLIP通过引导字幕来有效地利用有噪声的网络数据，其中captioner生成合成字幕，filter去除有噪声的字幕，用更干净的数据训练出模型
+BLIP makes effective use of noisy web data by bootstrapping captions: a captioner generates synthetic captions, a filter removes noisy ones, and the model is trained on cleaner data.
 
 ### Introduction
 
-现存的方法主要有两个局限性：
+Existing approaches face two main limitations:
 
-- 模型角度：现有方法用transformer encoder，或是encoder-decoder结构。这个encoder only的模型没法直接应用到文本生成的任务；而encoder-decoder的模型没有统一的框架不能直接做image text retrieval任务
-- 数据角度：都是大规模的网上爬下来的image-text对，把数据集变大是有好处但不是最优解，所以提出了一个captioner和filter
+- **Model perspective:** Prior work uses either a transformer encoder or an encoder–decoder architecture. Encoder-only models cannot be applied directly to text generation; encoder–decoder models lack a unified framework and cannot perform image–text retrieval in a straightforward way.
+- **Data perspective:** Training relies on large-scale web-scraped image–text pairs. Scaling the dataset helps but is not the best solution alone, so the authors propose a captioner and a filter.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BLIP/fig1.png" alt="avatar" style="zoom:70%;" /></div>
 
-爬下来的网络数据有大量噪声，一个captioner module生成字幕，filter选择用哪个文本数据进行训练
+Web-scraped data is highly noisy. A captioner module generates captions, and a filter decides which text to use for training.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BLIP/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-图像一个VIT编码器，文本三个模型算三个目标函数，把编码器解码器混在一起叫MED模型，其中同样的颜色同样的参数
+Images are encoded with one ViT encoder; text is handled by three model variants tied to three objectives. Encoder and decoder components are combined into the MED model, with shared parameters indicated by matching colors in the figure.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BLIP/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 
-数据集D有网上爬下来的 $\{(I_w,T_w)\}$ 和手工标注的 $\{(I_h,T_h)\}$ ，最大的问题是爬下来的数据集有图片文本不匹配的，用红色表示，绿色就是匹配
+The dataset $D$ consists of web-scraped pairs $\{(I_w,T_w)\}$ and manually annotated pairs $\{(I_h,T_h)\}$. The main issue with scraped data is image–text mismatch (shown in red); matched pairs are shown in green.
 
-把已经训练好的MED模型部分拿出来在干净的数据集上微调，ITC&ITM微调得到Filter，LM微调得到Captioner，captioner合成的数据再丢给filter得到干净数据集；最终的数据集就是过滤的，合成的和现实有的
+Parts of the trained MED model are fine-tuned on clean data: ITC and ITM fine-tuning yield the filter; LM fine-tuning yields the captioner. Synthetic data from the captioner is passed through the filter to obtain a cleaner set. The final training set combines filtered, synthetic, and existing real annotations.
 
 ### Experiments and Discussions
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BLIP/tab1-tab3.png" alt="avatar" style="zoom:100%;" /></div>
 
-表1看到模型变大或数据大都能够得到更好的结果，用了captioner和filter效果很不错，而且用captioner和filter不一定模型是base就用base设置，也可以用large的模型来做captioner和filter，是一个比较通用的工具
+Table 1 shows that larger models and more data both improve results. Using the captioner and filter works well; the captioner and filter need not match the downstream model size (e.g., a base model for training can use large models for captioning and filtering)—they act as a fairly general tool.
 
-生成的数据有好有坏，但是过滤比较强大，能够挑出更匹配的
+Generated captions vary in quality, but filtering is strong enough to retain better-matched image–text pairs.
 
 
 <HR align=left color=#987cb9 SIZE=1>

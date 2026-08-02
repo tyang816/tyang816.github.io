@@ -5,27 +5,30 @@ categories: [CL]
 tags: [NLP, GNN]
 proceedings: ICLR
 date: 2018-09-28
+lang: en
+alt_url: /zh/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
+permalink: /cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
 ---
 
 
-> 论文地址：[Graph2Seq：Graph to Sequence Learning with Attention-based Neural Networks](https://openreview.net/forum?id=SkeXehR9t7)
+> Paper: [Graph2Seq：Graph to Sequence Learning with Attention-based Neural Networks](https://openreview.net/forum?id=SkeXehR9t7)
 
-## Graph2Seq：采用了双向的结点embedding聚合策略
+## Graph2Seq: bidirectional node embedding aggregation
 
-在自然语言处理任务中，将序列与图建立关系的应用可以分为两大类：一种是序列生成图，另一种是图生成序列，本文旨在针对后一种问题。传统的方法是：首先将图通过某种方式变换为一个序列，然后再基于Seq2Seq框架来生成序列。这种方法存在的问题非常明显：**在将图变换为序列的过程中会丢失大量的结构信息。**
+In NLP, applications that relate sequences and graphs fall into two broad categories: sequence-to-graph generation and graph-to-sequence generation; this paper focuses on the latter. The conventional approach linearizes a graph into a sequence and then generates output under a Seq2Seq framework. That design has an obvious drawback: **a large amount of structural information is lost when the graph is converted into a sequence.**
 
-因此，本文提出直接由图得到序列的端到端模型，Graph2Seq
+Accordingly, the authors propose Graph2Seq, an end-to-end model that maps graphs directly to sequences.
 
 <img src="https://pic1.zhimg.com/v2-2f6adeb035a92b39c51214aac5feb2d0_b.jpg" alt="avatar" style="zoom: 80%;" />
 
-1. 图的信息比seq更多，可以强化表达能力，减少传递中的信息损失
-2. 结点embedding：由前向邻居和后向邻居concat起来输入全连接层、激活函数并不断重复该过程
-3. 聚合结构：平均、池化、LSTM
-4. 图embedding：
+1. Graphs encode more information than plain sequences, which can strengthen expressiveness and reduce information loss during propagation.
+2. Node embeddings: concatenate representations from forward and backward neighbors, pass them through fully connected layers and nonlinearities, and iterate this procedure.
+3. Aggregation structures: mean, pooling, and LSTM.
+4. Graph-level embedding:
 
-   4.1 基于池化：将结点embedding全连接后，采用max/min/average，区别不大
+   4.1 Pooling-based: apply fully connected layers to node embeddings, then max/min/average pooling—the variants behave similarly.
 
-   4.2 基于结点：增加super node，其他结点都指向它，再用上面的计算结点embedding算法让他获取全图信息
-5. 注意力机制decoder：计算加权的输入与语义空间中结点相似度
+   4.2 Node-based: introduce a super node with incoming edges from all other nodes, then run the node-embedding procedure above so it aggregates global graph information.
+5. Attention-based decoder: compute weighted inputs and measure similarity to nodes in the semantic space.
 
 <HR align=left color=#987cb9 SIZE=1>

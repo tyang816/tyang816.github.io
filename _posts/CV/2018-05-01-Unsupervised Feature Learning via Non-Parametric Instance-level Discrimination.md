@@ -5,13 +5,16 @@ categories: [CV]
 tags: [unsupervised-learning, contrastive-learning]
 proceedings: CVPR
 date: 2018-05-01
+lang: en
+alt_url: /zh/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
+permalink: /cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
 ---
 
-> 论文地址：[Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination](http://arxiv.org/abs/1805.01978)
+> Paper: [Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination](http://arxiv.org/abs/1805.01978)
 
-## InstDisc：个体判别代理任务+NCE loss对比表征学习+bank memory数据结构
+## InstDisc: Instance-discrimination proxy task + NCE loss for contrastive representation learning + memory bank
 
-1. 正样本256，负样本从Memory bank随机选取，可以是4096或更大
-2. 提出了新的存储数据结构Memory bank，以及动量更新方法也影响了moco
+1. 256 positives; negatives are drawn at random from the memory bank (4096 entries or more).
+2. Introduces the memory bank storage structure; the momentum update scheme later influenced MoCo.
 
 <HR align=left color=#987cb9 SIZE=1>

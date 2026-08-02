@@ -1,0 +1,7 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入英文笔记：[`_posts/CV/2023-02-06-AIM：Adapting Image Models for Efficient Video Action Recognition.md`](_posts/CV/2023-02-06-AIM：Adapting Image Models for Efficient Video Action Recognition.md)
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/`；无 `permalink`；已去掉 `lang: zh-CN`
+- **正文：** 学术英文；图块、链接与 `<HR>` 原样保留；顶部引用为 Paper / Project page
+- **校验：** 正文中无残留中文

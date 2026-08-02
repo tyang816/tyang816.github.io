@@ -1,0 +1,5 @@
+**FIXED** path=`_posts/BI/2025-05-01-ProteinCrow：A Language Model Agent That Can Design Proteins.md`
+
+issues=Structural Constrains→Constraints; MHC class I binders→binding peptides (netMHCpan); restored $\Delta\Delta G$ math; 5.1 heading grammar
+
+其余检查项均通过：结构完整、无中文正文、`lang: en` 且 `alt_url` 与中文 `permalink` 一致、无英文 `permalink`、图片/链接一致。

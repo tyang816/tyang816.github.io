@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 完整性 | 与中文一致：摘要、Introduction、GLIPv2、Experiment 及结尾 `<HR>` 均在 |
+| 正文无中文 | 除 GLIPv2/GLIP/VQA 等专名外无中文段落 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文对齐 |
+| 资源 | arXiv、GitHub 与 fig1/fig2/tab1/tab2 链接一致 |
+| 结构 | 标题层级与中文对应（英文为 “Abstract”，中文 frontmatter 小节为 “Abstratc” 拼写） |
+| 术语与数字 | GLIP、GLIPv2、VQA、image captioning 等未改 |
+
+英文已是完整、可用的译文，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-06-05-GLIPv2：Unifying Localization and Vision-Language Understanding.md`

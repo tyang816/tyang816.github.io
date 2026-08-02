@@ -5,47 +5,50 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: ICLR
 date: 2022-01-29
+lang: en
+alt_url: /zh/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
+permalink: /cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
 ---
 
-> 论文地址：[LoRA：Low-Rank Adaptation of Large Language Models](https://openreview.net/forum?id=nZeVKeeFYf9)
+> Paper: [LoRA：Low-Rank Adaptation of Large Language Models](https://openreview.net/forum?id=nZeVKeeFYf9)
 >
-> 论文实现：<https://github.com/microsoft/LoRA>
+> Code: <https://github.com/microsoft/LoRA>
 > 
 
-## LoRA：秩分解矩阵低成本微调
+## LoRA: Low-cost fine-tuning with rank-decomposed matrices
 
 ### Abstract
 
-自然语言处理的一个重要范例包括对一般领域数据进行大规模的预训练和对特定任务或领域的适应。本文提出Low-Rank Adaptation or LoRA，冻住原本预训练模型的参数，注入可训练的秩分解矩阵。与使用Adam进行微调的GPT-3 175B相比，LoRA可以减少可训练参数的数量10000倍，GPU内存需求减少3倍。LoRA在RoBERTa、DeBERTa、GPT-2和GPT-3上的性能相当或更好，尽管它具有更少的可训练参数、更高的训练吞吐量，而且与适配器不同的是，没有额外的推理延迟
+A dominant paradigm in natural language processing is large-scale pretraining on general-domain data followed by adaptation to specific tasks or domains. This paper proposes Low-Rank Adaptation, or LoRA, which freezes pretrained model parameters and injects trainable rank-decomposed matrices. Compared to fine-tuning GPT-3 175B with Adam, LoRA can reduce the number of trainable parameters by 10,000× and GPU memory requirements by 3×. LoRA matches or exceeds the performance of full fine-tuning on RoBERTa, DeBERTa, GPT-2, and GPT-3, despite having far fewer trainable parameters, higher training throughput, and—unlike adapters—no additional inference latency.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-微调需要调整整个模型参数，这带来了很大不便性
+Full fine-tuning requires updating all model parameters, which is costly and inconvenient.
 
-现存的一些方法寻求使用一些参数或扩展模块来适应新任务，但是往往会因为加深了模型带来新的推理延迟，或是减少了模型可用的序列长度，更重要的是这些方法往往是性能和效率的一个trade off
+Existing approaches adapt to new tasks using extra parameters or extension modules, but they often add inference latency by deepening the model, reduce usable sequence length, and more generally embody a trade-off between performance and efficiency.
 
-现有研究表明在微调阶段学习到的过度参数化模型实际上存在于一个较低的内在维度上，因此我们假设模型权重的改变事实上是一种low "intrinsic rank"。LoRA允许我们通过优化适应过程中密集层变化的秩分解矩阵来间接训练神经网络中的一些密集层，同时保持预先训练的权值冻结，如图1所示。以GPT-3 175B为例，证明了即使完整的秩（即d）高达12288，一个非常低的秩（即图1中的r可以是1或2）就足够了，这使得LoRA都具有存储和计算效率
+Prior work shows that over-parameterized models learned during fine-tuning effectively lie in a low intrinsic dimension; we therefore hypothesize that changes to model weights during adaptation have low “intrinsic rank.” LoRA lets us indirectly train some dense layers in a neural network by optimizing rank-decomposed matrices of the changes to dense layers during adaptation while keeping pretrained weights frozen, as in Figure 1. On GPT-3 175B, even when the full rank (i.e., $d$) is as large as 12,288, a very low rank (i.e., $r$ in Figure 1 can be 1 or 2) suffices, which makes LoRA efficient in both storage and computation.
 
-LoRA主要有以下的贡献：
+LoRA’s main contributions are:
 
-- 一个预先训练过的模型可以被共享，并用于为不同的任务构建许多小型的LoRA模块。我们可以通过替换图1中的矩阵A和矩阵B来冻结共享模型并有效地切换任务，从而显著地减少了存储需求和任务切换开销
-- 高效，降低硬件要求
-- 简单的线性设计可以把可学习的矩阵和冻结的权重在推理部署的时候合并起来
-- 可以和别的现有方法正交结合的
+- A pretrained model can be shared and reused to build many small LoRA modules for different tasks. By replacing matrices $A$ and $B$ in Figure 1, we can freeze the shared model and switch tasks efficiently, greatly reducing storage and task-switching overhead.
+- Efficiency: lower hardware requirements.
+- A simple linear design allows merging learnable matrices with frozen weights at inference deployment time.
+- Orthogonal combination with other existing methods.
 
 **Terminologies and Conventions**
 
-Transformer的input和output维度是 $d_{model}$ ，$W_q,W_k...$ 等是query/key...等的投影矩阵，$W$ 和 $W_0$ 表示预训练的权重矩阵和累计梯度更新的 $\Delta W$ ，用 $r$ 表示LoRA模块的rank
+The Transformer input and output dimension is $d_{model}$; $W_q, W_k, \ldots$ are projection matrices for query, key, and so on; $W_0$ and $\Delta W$ denote the pretrained weight matrix and the accumulated gradient update, respectively; $r$ denotes the rank of a LoRA module.
 
 ### Problem Statement
 
-对于GPT这样的full fintune而言，目标如下
+For full fine-tuning of models such as GPT, the objective is as follows:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/frm1.png" alt="avatar" style="zoom:60%;" /></div>
 
-而使用LoRA后可训练参数小于原本的0.01%
+With LoRA, trainable parameters are less than 0.01% of the original count.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/frm2.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -53,7 +56,7 @@ Transformer的input和output维度是 $d_{model}$ ，$W_q,W_k...$ 等是query/ke
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 
-以语言建模为例，在有效的适应方面，有两种突出的策略：添加adapter layer或优化某些形式的输入层激活
+Taking language modeling as an example, two prominent strategies for effective adaptation are adding adapter layers or optimizing some form of input-layer activations.
 
 - **Adapter Layers Introduce Inference Latency**
 - **Directly Optimizing the Prompt is Hard**
@@ -62,27 +65,27 @@ Transformer的input和output维度是 $d_{model}$ ，$W_q,W_k...$ 等是query/ke
 
 #### Low-Rank-Parameterized Update Matrices
 
-假设权重的更新在适应过程中也有一个较低的“intrinsic rank”，对于预训练的权重矩阵 $W_0 \in \mathbb{R}^{d\times k}$ ，我们约束更新分解为 $W_0 + \Delta W=W_0+BA$ ，这里 $B\in \mathbb{R}^{d\times r}, A\in \mathbb{R}^{r\times k}$ ，rank $r<< min(d,k)$  ，其中 $W_0$ 是冻住不接受梯度更新的
+Assume that weight updates during adaptation also have a low “intrinsic rank.” For a pretrained weight matrix $W_0 \in \mathbb{R}^{d\times k}$, we constrain the update as $W_0 + \Delta W = W_0 + BA$, where $B \in \mathbb{R}^{d\times r}, A \in \mathbb{R}^{r\times k}$, rank $r \ll \min(d,k)$, and $W_0$ is frozen and does not receive gradient updates.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LoRA/frm3.png" alt="avatar" style="zoom:60%;" /></div>
 
-对于A用高斯初始化，对B用0做初始化。用 $\frac{\alpha}{r}$ 来scale $\Delta Wx$ ，在Adam优化的时候，调整 $\alpha$ 和调整学习率是粗略等价的效果
+$A$ is initialized with a Gaussian distribution and $B$ with zeros. $\Delta Wx$ is scaled by $\frac{\alpha}{r}$; when optimizing with Adam, tuning $\alpha$ is roughly equivalent to tuning the learning rate.
 
 **A Generalization of Full Fine-tuning**
 
-LoRA不需要更新的权重矩阵在adapt的过程中具有满秩
+LoRA does not require the updated weight matrix to be full rank during adaptation.
 
 **No Additional Inference Latency**
 
-切换下游任务时只需要合并一个新的BA矩阵就行
+When switching downstream tasks, only a new $BA$ matrix needs to be merged.
 
 #### Applying LoRA to Transformer
 
-为了简单性和参数效率，将研究限制在只调整下游任务的注意力权重（attention weights），并冻结MLP模块
+For simplicity and parameter efficiency, the study restricts adaptation to attention weights on downstream tasks and freezes MLP modules.
 
-**Practical Benefifits and Limitations**
+**Practical Benefits and Limitations**
 
-最大的好处是减少了计算和内存开销
+The main benefit is reduced computation and memory overhead.
 
 ### Empirical Experiments
 

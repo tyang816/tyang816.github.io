@@ -1,0 +1,10 @@
+_posts/zh/CV/2018-04-13-Non-local Neural Networks.md
+_posts/zh/CV/2018-05-01-Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination.md
+_posts/zh/CV/2018-07-10-Representation Learning with Contrastive Predictive Coding.md
+_posts/zh/CV/2019-04-03-Unsupervised Embedding Learning via Invariant and Spreading Instance Feature.md
+_posts/zh/CV/2019-10-29-SlowFast Networks for Video Recognition.md
+_posts/zh/CV/2020-03-23-Momentum Contrast for Unsupervised Visual Representation Learning.md
+_posts/zh/CV/2020-04-26-DivideMix：Learning with Noisy Labels as Semi-supervised Learning.md
+_posts/zh/CV/2020-05-28-End-to-End Object Detection with Transformers.md
+_posts/zh/CV/2020-07-01-A Simple Framework for Contrastive Learning of Visual Representations.md
+_posts/zh/CV/2020-10-20-BYOL works even without batch statistics.md

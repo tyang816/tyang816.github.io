@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/CV/2022-04-13-Hierarchical Text-Conditional Image Generation with CLIP Latents.md`
+
+- Frontmatter：`lang: en`，`alt_url: /zh/cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/`，无 `permalink`
+- 正文：学术英语译文；图片、链接与 HTML 块保留；blockquote 标签为 Paper / Overview
+- 无残留中文正文

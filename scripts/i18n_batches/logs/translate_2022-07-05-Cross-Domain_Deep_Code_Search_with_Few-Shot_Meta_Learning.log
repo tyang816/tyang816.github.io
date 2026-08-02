@@ -1,0 +1,10 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 完成翻译并写入：
+
+`_posts/SE/2022-07-05-Cross-Domain Deep Code Search with Few-Shot Meta Learning.md`
+
+要点：
+- `lang: en`；`alt_url: /zh/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/`；无 `permalink`
+- 顶部引用：`Paper` / `Code`；图片、链接、数学与 HTML 块均保留
+- 正文为学术英文，无残留中文

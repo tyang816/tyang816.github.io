@@ -1,0 +1,10 @@
+_posts/zh/BI/2024-11-22-Expert-guided protein language models enable accurate and blazingly fast fitness.md
+_posts/zh/BI/2024-11-29-Mixture of Experts Enable Efficient and Effective Protein Understanding and Design.md
+_posts/zh/BI/2024-12-06-Large scale paired antibody language models.md
+_posts/zh/BI/2025-01-16-Simulating 500 million years of evolution with a language model.md
+_posts/zh/BI/2025-01-23-Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions.md
+_posts/zh/BI/2025-01-23-Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization.md
+_posts/zh/BI/2025-01-24-AutoProteinEngine：A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering.md
+_posts/zh/BI/2025-01-24-SciToolAgent：A Knowledge Graph-Driven Scientific Agent for Multi-Tool Integration.md
+_posts/zh/BI/2025-04-06-Prot42：a Novel Family of Protein Language Models for Target-aware Protein Binder Generation.md
+_posts/zh/BI/2025-04-15-Scaling unlocks broader generation and deeper functional understanding of proteins.md

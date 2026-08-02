@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 完成翻译并写入：
+
+`_posts/CV/2021-06-23-Perceiver：General Perception with Iterative Attention.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Perceiver：General-Perception-with-Iterative-Attention/`；无 `permalink`；已去掉 `lang: zh-CN`
+- **正文**：学术英文；保留全部图片块、链接与结构；文首引用为 Paper / Code
+- **校验**：目标文件存在，正文中无残留中文

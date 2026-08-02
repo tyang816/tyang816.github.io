@@ -5,30 +5,33 @@ categories: [SE]
 tags: [code-summarization]
 proceedings: Automated Software Engineering
 date: 2021-01-27
+lang: en
+alt_url: /zh/se/Automating-just-in-time-comment-updating/
+permalink: /se/Automating-just-in-time-comment-updating/
 ---
 
-> 论文地址：[Automating just-in-time comment updating](https://dl.acm.org/doi/10.1145/3324884.3416581)
+> Paper: [Automating just-in-time comment updating](https://dl.acm.org/doi/10.1145/3324884.3416581)
 
-## CUP：新的分词器和单独编码器
+## CUP: A New Tokenizer and Separate Encoders
 
 ### Abstract
 
-帮助开发者提交变更文本的任务称为“Just in Time(JIT) Comment Updating)”，并提出了CUP方法
+The task of helping developers update comment text when code changes is termed **Just-in-Time (JIT) Comment Updating**; the authors propose **CUP** for this setting.
 
-做了几种定制的增强：特殊的分词器和联合注意力机制
+They introduce several tailored enhancements: a specialized tokenizer and a joint attention mechanism.
 
-比之前最好的baseline好7倍
+The method outperforms the previous best baseline by 7×.
 
 ### Introduction
 
-- 坏的变更注释文本容易误导且没用
-- 这种方法不是从零开始更新代码注释的，所以需要注意两点：① 保持新旧注释的一致性；② 旧注释是更新的基石，需要端到端模型去学习代码的修改和旧代码表示
+- Poorly updated comment text can mislead developers and is often useless.
+- This approach does not regenerate comments from scratch, so two aspects matter: (1) maintain consistency between old and new comments; (2) the old comment is the basis for the update, so an end-to-end model must learn both the code edit and a representation of the prior code.
 
-  - 新的tokenizer和copy机制
-  - 对代码变更和旧注释分别用两个编码器
-  - 构建代码和注释联合词库，使用预训练的fastText模型获取词嵌入
-  - 增加联合注意力机制
-- 数据：1496个GitHub的Java项目，构建了108K个代码注释和修改的样本
+  - A new tokenizer and copy mechanism
+  - Two encoders—one for the code change and one for the old comment
+  - A joint code–comment vocabulary with word embeddings from a pretrained fastText model
+  - A joint attention mechanism
+- **Data:** 1,496 Java projects on GitHub, yielding 108K samples pairing code comments with their modifications
 
 ### Model
 
@@ -36,27 +39,27 @@ date: 2021-01-27
 
 #### Data Flattening
 
-- 分词
+- **Tokenization**
 
-  - 移除空格，标点保留，复合词拆分，如果两个邻接的词没有用空格分开，就插入一个 `<con>` 符号
-  - 主流的分词有三种：不改变复合词，直接拆分，添加特殊符号 `</t>` ，比如 `“inputBufer” -> “inputBufer</t>”`，第一种不能消除 OOV单词，第二种丢失了格式，第三种不能处理当复合词的子词元被视作独立词元预测的情况
-- 代码更新表示
+  - Remove spaces, retain punctuation, and split compound identifiers; when two adjacent tokens are not separated by whitespace, insert a `<con>` marker.
+  - Three common tokenization strategies: leave compound words intact; split them directly; or append a special symbol `</t>` (e.g., `"inputBufer" -> "inputBufer</t>"`). The first fails to remove OOV words, the second loses formatting, and the third cannot handle cases where sub-tokens of a compound word are predicted as independent tokens.
+- **Code-change representation**
 
-  - 一个edit由三块组成
+  - Each edit comprises three segments.
   - <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CUP/CUP-img2.png" alt="avatar" style="zoom:50%;" /></div>
 
 #### Seq2Seq Model
 
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CUP/CUP-img3.png" alt="avatar" style="zoom:50%;" /></div>
 
-- 每个编码器有四层：嵌入层，上下文嵌入层，联合主力一层，模型层
-  - 嵌入层：用统一的词库，fastText模型预训练
+- Each encoder stacks four layers: embedding, contextual embedding, joint attention, and model layers.
+  - **Embedding layer:** shared vocabulary; embeddings initialized from fastText pretraining.
 
 ### Data
 
-- 收集了1496个至少500次提交的仓库
-- 修改的方法提取：使用GumTree来计算在两次修改中的方法分布
-- 数据处理太长了，实现的时候再看原文
+- 1,496 repositories with at least 500 commits each.
+- **Method-level edits:** GumTree is used to derive method-level change structure between two revisions.
+- Data-processing details are lengthy; consult the original paper when implementing.
 
 ### Experiment
 

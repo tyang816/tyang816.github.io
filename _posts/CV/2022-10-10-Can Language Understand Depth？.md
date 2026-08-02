@@ -5,23 +5,26 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: MM
 date: 2022-10-10
+lang: en
+alt_url: /zh/cv/Can-Language-Understand-Depth？/
+permalink: /cv/Can-Language-Understand-Depth？/
 ---
 
-> 论文地址：[Can Language Understand Depth？](https://dl.acm.org/doi/10.1145/3503161.3549201)
+> Paper: [Can Language Understand Depth?](https://dl.acm.org/doi/10.1145/3503161.3549201)
 >
-> 论文实现：<https://github.com/Adonis-galaxy/DepthCLIP>
+> Code: <https://github.com/Adonis-galaxy/DepthCLIP>
 
-## DepthCLIP：深度估计回归变分类用CLIP
+## DepthCLIP: reframing depth estimation from regression to classification with CLIP
 
 ### Abstract
 
-将从CLIP中学习到的语义知识转移到更复杂的量化目标任务中，如利用几何信息进行深度估计，仍然是很难的任务。本文提出应用CLIP于zero-shot深度估计，即DepthCLIP
+Transferring semantic knowledge learned from CLIP to more complex quantitative target tasks—such as depth estimation that relies on geometric cues—remains difficult. This work applies CLIP to zero-shot depth estimation, termed DepthCLIP.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DepthCLIP/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-把深度估计从回归问题变成一个分类问题，强制把深度距离分成几个大类，用图2上面那些单词来描述远近，并对应数值，文本特征乘以视觉特征得到相似度矩阵
+Depth estimation is cast from regression to classification: depth is partitioned into coarse bins, described with the near/far language prompts in Figure 2 and tied to numeric values; similarity is obtained from the product of text and visual features.
 
 ### Experiment
 

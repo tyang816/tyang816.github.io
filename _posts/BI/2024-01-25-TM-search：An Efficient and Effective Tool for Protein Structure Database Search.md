@@ -5,28 +5,31 @@ categories: [BI]
 tags: [protein, structure search]
 proceedings: Journal of Chemical Information and Modeling
 date: 2024-01-25
+lang: en
+alt_url: /zh/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
+permalink: /bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
 ---
 
-> 论文地址：[TM-search：An Efficient and Effective Tool for Protein Structure Database Search](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01455)
+> Paper: [TM-search：An Efficient and Effective Tool for Protein Structure Database Search](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01455)
 >
-> 论文实现：<https://zhanggroup.org/TM-search/>
+> Code: <https://zhanggroup.org/TM-search/>
 
-## TM-search：快速结构比对
+## TM-search: fast structural alignment
 
 ### Abstract
 
-目前的蛋白质结构搜索算法都需要大量的计算开销，本文设计了TM-search，是基于TM-align的一个新的迭代聚类算法的程序，benchmark显示能比TM-score快27倍同时保持90%的命中率，比其他的现有算法快2-10倍，如foldseek、Dali和PSI-BLAST
+Existing protein structure search algorithms incur substantial computational cost. This work introduces TM-search, a program built on TM-align with a new iterative clustering algorithm. Benchmarks show it runs about 27× faster than TM-score while retaining ~90% hit rate, and 2–10× faster than other current tools such as Foldseek, Dali, and PSI-BLAST.
 
 ### Introduction
 
-截至2020年有178,000个结构，~400,000个蛋白质链，这对于TM-align来说计算量太大了，其计算一个蛋白质对需要平均0.5s
+By 2020 the PDB contained roughly 178,000 structures and ~400,000 protein chains—too large for exhaustive TM-align search, which averages ~0.5 s per protein pair.
 
-现在有两种主流的方法来加速结构数据库检索：
+Two mainstream strategies accelerate structure database retrieval:
 
-- 将3D结构映射到1D的结构标识符，比如Foldseek等。但这丢失了大量的结构关键信息，也可能导致了其对远端同源检测不敏感
-- 通过聚类方法来减少不必要的计算量，成对的结构对齐只在query和representative structures进行计算，像是MMseq2或CD-HIT方法只能减少序列相似度进行聚类，而不能通过结构
+- Map 3D structures to 1D structural identifiers (e.g., Foldseek). This discards much structurally critical information and can reduce sensitivity to remote homolog detection.
+- Use clustering to cut redundant computation, performing pairwise alignment only between the query and representative structures. Methods such as MMseq2 or CD-HIT cluster by sequence similarity rather than structure.
 
-TM-search使用基于结构相似度矩阵的层次聚类数据库
+TM-search builds a hierarchical database from a structure-similarity matrix.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TM-search/fig1.png" alt="avatar" style="zoom:70%;" /></div>
 
@@ -36,23 +39,23 @@ TM-search使用基于结构相似度矩阵的层次聚类数据库
 
 #### Preparation of the TM-search Database
 
-创建一个层次结构数据库。
+Build a hierarchical structure database.
 
-- 每个数据库里的结构拆分成多个domain，如果这个蛋白的domain在SCOPe里面已经定义过了，那么就用这个定义拆分；如果没有，使用Protein Dmomain Parser进行拆分
-- 排除了少于30个氨基酸的结构后，获得了~470,000个结构作为初始数据库（PDBall）
-- 使用CD-HIT对序列相似度进行70%聚类，每个cluster里面最大的结构作为represent，一共生成了71,115个非冗余数据（PDB70）
+- Split each structure in the database into domains; use SCOPe domain definitions when available, otherwise Protein Domain Parser.
+- After excluding structures shorter than 30 amino acids, ~470,000 structures form the initial database (PDBall).
+- CD-HIT clusters at 70% sequence identity; the largest structure in each cluster serves as the representative, yielding 71,115 non-redundant entries (PDB70).
 
-接下来针对PDB70进行两两计算TM-score
+Next, compute pairwise TM-scores for PDB70.
 
-选择聚类代表是影响算法精度和速度的关键，使用了三种不同的策略来选择聚类代表
+Choosing cluster representatives is key to accuracy and speed; three strategies are used:
 
-- type-α：聚类代表是和聚类中TM-score>0.5最多的结构
-- type-αβ：跟α差不多，但是如果最后又多个蛋白有相同数量的最大邻居，那么选最长的
-- type-β：不属于现存的聚类的最长蛋白作为代表
+- type-α: the representative is the structure with the most neighbors in the cluster with TM-score > 0.5.
+- type-αβ: same as type-α, but if several proteins tie for the largest neighbor count, pick the longest.
+- type-β: the longest protein not already assigned to an existing cluster becomes the representative.
 
 ### Evaluation Metric
 
-AUROC、F-score、recall、precision
+AUROC, F-score, recall, precision
 
 #### Algorithm for Database Search
 

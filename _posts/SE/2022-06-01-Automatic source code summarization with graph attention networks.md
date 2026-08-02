@@ -5,23 +5,26 @@ categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: Journal of Systems and Software
 date: 2022-06-01
+lang: en
+alt_url: /zh/se/Automatic-source-code-summarization-with-graph-attention-networks/
+permalink: /se/Automatic-source-code-summarization-with-graph-attention-networks/
 ---
 
-> 论文地址：[Automatic source code summarization with graph attention networks](https://linkinghub.elsevier.com/retrieve/pii/S0164121222000279)
+> Paper: [Automatic source code summarization with graph attention networks](https://linkinghub.elsevier.com/retrieve/pii/S0164121222000279)
 >
-> 论文实现：<https://github.com/sjj0403/GSCS>
+> Code: <https://github.com/sjj0403/GSCS>
 
-## GSCS：语义和结构两个encoder融合
+## GSCS: fusing semantic and structural encoders
 
 ### Abstract
 
-本文提出了GSCS利用了代码块的语义和结构信息，GAT处理AST，使用了多头注意力；还使用了RNN模型来获取语义特征
+This paper proposes GSCS, which exploits both semantic and structural information of code blocks. Graph attention networks (GAT) operate on the AST with multi-head attention; an RNN is also used to obtain semantic features.
 
 ### Introduction
 
-源代码有复杂的嵌套结构，不能视作朴素文本；现有模型也不能很好的处理结构信息，比如SBT引入了大量的括号造成不必要的冗余，Tree-LSTM和ConvGNN没有考虑到AST节点的上下文，换句话说每个节点在AST里面都是有局部属性的，但上述两种方法是不考虑的（a+b和b+a是同等对待）
+Source code has intricate nested structure and cannot be treated as plain text. Existing models also struggle to leverage structural information effectively. For example, structure-based traversal (SBT) introduces many parentheses and unnecessary redundancy; Tree-LSTM and ConvGNN do not account for the context of AST nodes—in other words, each node in an AST has local attributes, but the two approaches above treat them without that distinction (e.g., `a+b` and `b+a` are handled equivalently).
 
-作者认为使用GAT能自动学习并分配权重给邻居，是比Tree-LSTM和ConvGNN更好的选择
+The authors argue that GAT can automatically learn and assign weights to neighbors, making it a better choice than Tree-LSTM and ConvGNN.
 
 ### Approach
 

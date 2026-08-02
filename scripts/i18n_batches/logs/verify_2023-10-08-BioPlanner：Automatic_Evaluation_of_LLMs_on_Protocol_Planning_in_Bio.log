@@ -1,0 +1,14 @@
+**OK**  
+path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-10-08-BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+1. 英文稿完整，章节与中文一致（含 Abstract、1 Introduction、3–5 及全部子节），结尾 `<hr>` 一致。  
+2. 正文无中文。  
+3. Frontmatter：`lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段合理。  
+4. 图片 URL、OpenReview/GitHub 链接、公式图块均保留。  
+5. 标题层级与中文对齐。  
+6. 英文表述与术语正常（如 pseudocode、pseudofunctions、Levenshtein、SciBERTScore 等）。  
+7. 数字（100 协议、59 无需编辑、12.5 步、9000+）、模型名（GPT-3/3.5/4、`text-embedding-ada-002`）与中文/论文一致。
+
+无需修改。

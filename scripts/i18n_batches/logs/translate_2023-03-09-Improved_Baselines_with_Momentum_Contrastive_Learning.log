@@ -1,0 +1,6 @@
+**DONE**
+
+已写入 `_posts/CV/2023-03-09-Improved Baselines with Momentum Contrastive Learning.md`：
+
+- **Frontmatter**：`lang: en`，`alt_url: /zh/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/`，无 `permalink`；其余字段与中文版一致。
+- **正文**：`论文地址` → `Paper`；小节与两条要点译为学术英文；保留 arXiv 链接与 `<HR>`；原文 “none-linear” 按 MoCo v2 含义译为 non-linear projection head。

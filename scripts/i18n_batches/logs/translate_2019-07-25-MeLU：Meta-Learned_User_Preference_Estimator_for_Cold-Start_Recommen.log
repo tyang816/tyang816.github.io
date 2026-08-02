@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 生成英文笔记：
+
+**路径：** [`_posts/IR/2019-07-25-MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation.md`](file:///home/tanyang/workspace/tyang816.github.io/_posts/IR/2019-07-25-MeLU%EF%BC%9AMeta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation.md)
+
+**Frontmatter：** `lang: en`；`alt_url: /zh/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/`（对应中文 `permalink`）；无 `permalink`；已去掉 `lang: zh-CN`。
+
+**正文：** 学术英文全文翻译；图片、链接、数学与 HTML 块保留；文内无残留中文（原文「F1 范数」按上下文译为 Frobenius norm）。

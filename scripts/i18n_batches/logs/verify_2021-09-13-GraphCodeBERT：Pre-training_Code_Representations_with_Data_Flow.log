@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2021-09-13-GraphCodeBERT：Pre-training Code Representations with Data Flow.md` issues=`code clone detection: 准确率 mistranslated as precision → accuracy`
+
+其余项均通过：结构完整、无中文正文、`lang: en` 且 `alt_url` 与中文 `permalink` 一致、无英文 `permalink`、图片/链接/公式一致、章节对齐。

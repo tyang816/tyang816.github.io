@@ -5,28 +5,31 @@ categories: [SE]
 tags: [transformer, code-summarization]
 proceedings: ICPC
 date: 2021-03-12
+lang: en
+alt_url: /zh/se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
+permalink: /se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
 ---
 
-> 论文地址：[A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract](https://www.computer.org/csdl/proceedings-article/icpc/2021/140300a001/1tB7vPlB8wo)
+> Paper: [A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract](https://www.computer.org/csdl/proceedings-article/icpc/2021/140300a001/1tB7vPlB8wo)
 >
-> 论文数据：<https://zenodo.org/record/4587089#.YEog9-gzYuV>
+> Data: <https://zenodo.org/record/4587089#.YEog9-gzYuV>
 >
-> 论文实现：<https://github.com/yz1019117968/ICPC-21-MMTrans>
+> Code: <https://github.com/yz1019117968/ICPC-21-MMTrans>
 
-## MMTrans：SBT+图+联合解码器生成智能合约注释
+## MMTrans: SBT, graph, and joint decoder for smart contract comment generation
 
 ### Abstract
 
-将代码摘要生成应用到区块链运行的程序的智能合约（Smart Contracts）上，SBT序列提供AST全局信息，图卷积提供局部信息，然后使用一个联合解码器生成注释，编码器和解码器都采用了transformer的多头注意力机制来获取长距离依赖
+The work applies code summarization to smart contracts—the programs executed on blockchains. An SBT sequence encodes global AST structure, graph convolution captures local structure, and a joint decoder generates comments. Both the encoder and decoder rely on Transformer multi-head attention to model long-range dependencies.
 
 ### Introduction
 
-目前自动代码摘要生成在智能合约上面还没有很多的关注，主要因为1. 大多代码注释不能用，导致开发者的理解和学习困难；2. 代码克隆和重复现象比其他软件更常见。因此要生成高质量代码注释有以下困难
+Automatic code summarization for smart contracts has received relatively little attention, largely for two reasons: (1) many in-code comments are unusable, which hampers developers’ understanding and learning; and (2) code cloning and duplication are more prevalent than in conventional software. Producing high-quality comments therefore raises two core challenges:
 
-- 怎么抓取源码的语义信息：AST可以表示为多种模态，如SBT序列和图，每个模式都关注于语义信息的一个不同方面
-- 怎么获取代码词元的长距离依赖：SBT序列提供AST全局信息，图卷积提供局部信息，使用transformer多头注意力
+- How to extract semantic information from source code: an AST can be represented in multiple modalities—e.g., SBT sequences and graphs—each emphasizing a different facet of semantics.
+- How to capture long-range dependencies among code tokens: SBT sequences supply global AST context, graph convolution supplies local context, and Transformer multi-head attention models dependencies across tokens.
 
-收集了来自Etherscan.io上的40,932份智能合约，347,410个*<*method, comment*>* 对
+The authors collect 40,932 smart contracts from Etherscan.io, yielding 347,410 method–comment pairs.
 
 ### Approach
 

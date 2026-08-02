@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-12-06-Large scale paired antibody language models.md`
+
+已按 `scripts/i18n_verify_brief.md` 对照中文版全文核对，未改文件。
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与完整性 | 章节与中文版一致，结尾含 Perplexity 与 `<hr>` |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 为 `/zh/bi/Large-scale-paired-antibody-language-models/`（与中文 `permalink` 一致）；无英文 `permalink`；其余字段一致 |
+| 图片 / 链接 / 数学 | 与中文版一致；IgT5 学习率在英文中为 `$5 \times 10^{-5}$`（中文该行有乱码） |
+| 数字与专名 | OAS 规模、聚类数、训练步数、批量等与中文版一致 |
+
+英文版在术语与表述上已对齐中文内容，无需修改。

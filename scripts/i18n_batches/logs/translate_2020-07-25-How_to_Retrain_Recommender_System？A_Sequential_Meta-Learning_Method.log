@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/IR/2020-07-25-How to Retrain Recommender System？A Sequential Meta-Learning Method.md`
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/`（对应中文 `permalink`）；无英文 `permalink`；已去掉 `lang: zh-CN`。
+- **正文：** 结构、图片 URL、公式与 GitHub/ACM 链接均保留；文首引用为 Paper / Code。
+- **校验：** 目标路径文件已存在，正文中无中文叙述。

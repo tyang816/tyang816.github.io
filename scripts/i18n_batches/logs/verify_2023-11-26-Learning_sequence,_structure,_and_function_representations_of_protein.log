@@ -1,0 +1,3 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-11-26-Learning sequence, structure, and function representations of proteins with lang.md`
+
+对照 `i18n_verify_brief.md` 核对结果：英文稿完整（含 Abstract 至 dataset generation 及结尾 `<HR>`），正文无中文；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致，且无英文 `permalink`；图片、链接与章节结构与中文版一致；术语与数值（40%、25%、99%/92%/83%、450M、0.65/0.25 等）均保留。无需修改。

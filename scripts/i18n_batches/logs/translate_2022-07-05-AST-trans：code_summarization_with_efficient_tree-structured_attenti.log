@@ -1,0 +1,8 @@
+**DONE**
+
+已将中文笔记译为学术英文并写入：
+
+`_posts/SE/2022-07-05-AST-trans：code summarization with efficient tree-structured attention.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/`（对应中文 `permalink`）；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：blockquote 为 Paper / Code；章节、图片、公式与链接均保留；正文无残留中文。

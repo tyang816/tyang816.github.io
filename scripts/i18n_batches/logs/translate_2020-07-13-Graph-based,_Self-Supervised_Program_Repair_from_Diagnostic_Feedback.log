@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `i18n_translate_brief.md` 写入：
+
+`_posts/SE/2020-07-13-Graph-based, Self-Supervised Program Repair from Diagnostic Feedback.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/`；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：学术英文译文；图片、链接与 HTML 块原样保留；文首引用为 Paper / Code。
+- **校验**：目标路径存在，正文中无中文。

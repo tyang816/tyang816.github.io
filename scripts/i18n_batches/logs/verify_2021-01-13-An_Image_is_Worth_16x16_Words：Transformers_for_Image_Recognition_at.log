@@ -1,0 +1,15 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-01-13-An Image is Worth 16x16 Words：Transformers for Image Recognition at Scale.md`
+
+按 `scripts/i18n_verify_brief.md` 逐项核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | 与中文一致：摘要块、二级标题、两点、Comment、`<HR>` |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无 `permalink`；其余字段与中文对齐 |
+| 链接与 URL | OpenReview 与 GitHub 链接一致 |
+| 章节对齐 | 对应 |
+| 英文表述 | 术语与语气正常（如 patch/token、global features、performance ceiling） |
+| 数字与专名 | 16×16、ViT、ICLR、CLS/GAP、Figure 5、Table 6 等未改义 |
+
+英文文件无需修改。

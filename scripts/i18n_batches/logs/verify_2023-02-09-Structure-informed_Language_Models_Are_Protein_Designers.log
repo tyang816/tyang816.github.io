@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-02-09-Structure-informed Language Models Are Protein Designers.md`
+
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果：
+
+1. **完整性**：与中文版章节一致（Abstract、Introduction、Reprogramming / Training / Inference、Experiments、分隔线），无截断。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/bi/Structure-informed-Language-Models-Are-Protein-Designers/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文一致。
+4. **资源**：PDF、GitHub 链接及全部图片 URL/HTML 与中文一致。
+5. **结构**：标题层级与中文对齐。
+6. **译文**：术语（PLM、CMLM、structural adapter、residue identity 等）与中文含义一致，表述自然。
+7. **数字与引用**：T 步、20 个氨基酸、ICML 等未改动。
+
+未修改英文文件。

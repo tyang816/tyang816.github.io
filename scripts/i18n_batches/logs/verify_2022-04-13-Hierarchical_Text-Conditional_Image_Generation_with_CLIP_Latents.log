@@ -1,0 +1,10 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. 结构完整：与中文一致（摘要、Introduction、Method/Decoder/Prior、Experiment、Limitation 及全部图片与结尾 `<HR>`）。
+2. 正文无中文叙述。
+3. Frontmatter：`lang: en`；`alt_url: /zh/cv/Hierarchical-Text-Conditional-Image-Generation-with-CLIP-Latents/` 与中文 `permalink` 一致；无 `permalink`；其余字段与中文对齐。
+4. 链接、图片 URL、10%/50% 等数值与模型名均保留。
+5. 章节对齐；英文表述自然（含 attribute binding、classifier-free guidance、interpolation 等术语）。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-04-13-Hierarchical Text-Conditional Image Generation with CLIP Latents.md`

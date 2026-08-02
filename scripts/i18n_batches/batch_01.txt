@@ -1,0 +1,10 @@
+_posts/zh/BI/2021-07-15-Highly accurate protein structure prediction with AlphaFold.md
+_posts/zh/BI/2021-09-01-Toward More General Embeddings for Protein Design：Harnessing Joint Representatio.md
+_posts/zh/BI/2021-10-11-FLIP：Benchmark tasks in fitness landscape inference for proteins.md
+_posts/zh/BI/2021-11-09-Light attention predicts protein location from the language of life.md
+_posts/zh/BI/2021-11-10-Language models enable zero-shot prediction of the effects of mutations on prote.md
+_posts/zh/BI/2021-12-07-Modeling Protein Using Large-scale Pretrain Language Model.md
+_posts/zh/BI/2021-12-30-Embeddings from protein language models predict conservation and variant effects.md
+_posts/zh/BI/2022-01-17-Learning protein fitness models from evolutionary and assay-labeled data.md
+_posts/zh/BI/2022-01-29-Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-des.md
+_posts/zh/BI/2022-01-29-OntoProtein：Protein Pretraining With Gene Ontology Embedding.md

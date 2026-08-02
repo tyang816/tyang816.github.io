@@ -5,63 +5,66 @@ categories: [SE]
 tags: [Transformer, GNN]
 proceedings: arXiv
 date: 2022-06-08
+lang: en
+alt_url: /zh/se/Learning-code-summarization-from-a-small-and-local-dataset/
+permalink: /se/Learning-code-summarization-from-a-small-and-local-dataset/
 ---
 
-> 论文地址：[Learning code summarization from a small and local dataset](http://arxiv.org/abs/2206.00804)
+> Paper: [Learning code summarization from a small and local dataset](http://arxiv.org/abs/2206.00804)
 >
-> 论文实现：https://zenodo.org/record/6529627#.YrcRDHZByUk
+> Code: https://zenodo.org/record/6529627#.YrcRDHZByUk
 
-## GCB-hybrid：数据增强去噪解码器+时序分割同项目微调
+## GCB-hybrid: data-augmentation denoising decoder + temporal split, same-project fine-tuning
 
 ### Abstract
 
-像CodeBERT，GraphCodeBERT，CodeT5这类模型用了数十亿的词元来进行有监督的预训练，但是软件其实是非常项目相关的，不同项目环境可能大不相同，所以在项目专有数据上进行训练，在同一项目上进行测试是有希望的，在时序设置上进行评估可以防止训练-测试数据泄露
+Models such as CodeBERT, GraphCodeBERT, and CodeT5 use billions of tokens for supervised pre-training, yet software is highly project-specific: environments differ widely across projects. Training on project-local data and testing within the same project is therefore promising, and evaluating under a temporal setup helps prevent train–test leakage.
 
-本文比较了多种模型和训练方法，包括同项目训练，跨项目训练，训练了一个特别为样本有效性设计的模型（在有限样本相同项目设置中学习），以及提出一种最大化混和方法，在很多语言微调后在同一项目训练
+This paper compares multiple models and training regimes—including same-project training, cross-project training, a model designed for sample efficiency under limited same-project data, and a maximalist hybrid approach—fine-tuning on many languages first and then training within a single project.
 
 ### Introduction
 
-数据可用性有限制：
+Data availability is constrained in several ways:
 
-- 一些不热门的语言（Ruby），高质量数据就少
-- 一种语言的项目可能偏向于特定应用领域（javasript在web），因此模型训练出来可能不均匀
-- 一个奇怪而独特的问题：项目特殊性
+- Less popular languages (e.g., Ruby) have fewer high-quality examples.
+- Projects in a given language may skew toward particular application domains (e.g., JavaScript on the web), so models trained on pooled data can be uneven.
+- A distinctive issue is **project specificity**.
 
-对于开发者而言，不同的项目表现不同，跨项目的模型在缺陷任务上表现不如项目内模型，早期的文献也表明了application-specific甚至是project-specific，file-specific影响
+For developers, different projects behave differently; cross-project models often underperform project-local models on defect-related tasks. Early work also shows that application-specific, project-specific, and even file-specific factors matter.
 
-这些现象引出了一个问题：项目特定训练数据真的能提升效果吗？
+These observations raise a question: can project-specific training data actually improve results?
 
-- 从好的方面讲，词汇表，代码风格都是明现特定于项目的，同一项目应该会提高性能
-- 但也有一些问题
-  - 必须小心划分训练集和测试集
-  - 项目内训练需要从较少的样本中学习很好的模型
+- On the positive side, vocabulary and coding style are clearly project-specific, so training within one project should help.
+- Challenges remain:
+  - Train and test splits must be constructed carefully.
+  - Project-local training must learn a strong model from relatively few samples.
 
-因此研究提高基础模型训练微调阶段提升**样本有效性**的方法是有必要的，模型A跟模型B表现差不多，但是A用的数据更少，拿肯定说明A是一个样本高效的模型
+It is therefore worthwhile to improve **sample efficiency** during fine-tuning of foundation models: if model A matches model B but uses less data, A is the more sample-efficient model.
 
-本文用了多语言模型PolyGlot（在CodeXGlue榜单上登顶了一段时间）来看看同项目训练是否提供了一定提升，作者想了解即使这种经过广泛调整的良好模型是否在同项目中微调也能得到改进，实际上也确实改进了
+The authors use the multilingual PolyGlot model (which topped the CodeXGLUE leaderboard for a period) to study whether same-project training yields gains. They ask whether even a well-tuned, broadly trained model can still improve with same-project fine-tuning—and find that it can.
 
-主要贡献：
+Main contributions:
 
-- 使用项目内训练，时间序列场景，过去数据上训练，未来数据评估
-- 提高了GraphCodeBERT在代码摘要的样本效率，成为GCB-hybrid
-- 对PolyGlot增加了project-specific微调打败了CodeT5
-- 同项目设置确实最强，而且最大的项目也只用了跨项目训练不到2.5%的时间
+- Same-project training under a temporal setting: train on past data, evaluate on future data.
+- Improved sample efficiency of GraphCodeBERT for code summarization, yielding **GCB-hybrid**.
+- Project-specific fine-tuning of PolyGlot that outperforms CodeT5.
+- Same-project settings are strongest overall; even the largest project uses less than 2.5% of the compute time of cross-project training.
 
 ### Background & Motivation
 
 #### PMQ 1
 
-同一项目中的不同样本是否比随机项目抽样的样本共享更多的标识符？
+Do samples from the same project share more identifiers than samples drawn at random across projects?
 
-取了5个项目，每个项目大概200条样本，分2组计算相似度发现的确同项目更高
+The authors take five projects with roughly 200 samples each, split into two groups, and compute similarity; same-project pairs score higher.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GCB-hybrid/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### PMQ 2
 
-高容量的预训练模型的样本效率高吗？
+Are high-capacity pre-trained models sample-efficient?
 
-预先训练好的模型可以适应于微调样本效率，这种模型在代码摘要任务中有最好的竞争力
+Pre-trained models can be adapted with sample-efficient fine-tuning; such models are among the most competitive on code summarization.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GCB-hybrid/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -69,39 +72,39 @@ date: 2022-06-08
 
 #### Dataset Preparation
 
-在CodeXGLUE上准备了同项目数据集，按8：2时间分割训练集，验证集和测试集
+Same-project datasets are built on CodeXGLUE with an 80:20 temporal split for train, validation, and test.
 
 ##### Assigning creation date for functions
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GCB-hybrid/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-用 `git blame -ignore-rev` 获取特定行的第一次提交时间，从函数第一句扫描到最后一句，最早时间视作创建函数的时间，比如图1的第一句话是2018年提交的，但是剩下的都是2015年，所以这个函数初始时间被定为2015年
+They use `git blame -ignore-rev` to obtain the first commit time for each line. Scanning from the first statement of a function to the last, the earliest timestamp is taken as the function’s creation time. In Figure 1, the first line was committed in 2018, but the rest date to 2015, so the function’s initial time is set to 2015.
 
-那如果所有句子都被改过了，导致找不到初始时间咋办，作者说这种情况不可能
+If every line were rewritten so no initial time could be found, the authors argue that this case does not arise in practice.
 
-还有一个问题是这种方法不能跟踪代码在本地修改的情况，作者说没关系，我们相信这样还是能给出公平的时间分割的实例
+This method cannot track purely local edits that never hit the remote repository; the authors accept that limitation and still believe it yields a fair temporal split.
 
 ##### Prepared datasets for different instance ranges
 
-创建同项目数据集的时候只用了CodeXGLUE的测试集，因为训练集在预训练模型中用过了会数据泄露，不用验证集因为预训练模型是在上面评估的，效果肯定好
+When building same-project data, only the CodeXGLUE **test** split is used: the training split already appeared in pre-training and would leak information. The validation split is excluded because pre-trained models were evaluated on it and would look artificially strong.
 
-主要使用python和java两种语言，按训练样本数分为三类：150+，100-150，100-
+They focus on Python and Java and bucket projects by training size: 150+, 100–150, and under 100 samples.
 
 ### Foundation Models
 
-作者提出的GCB_hybrid模型将GraphCodeBERT连上了一个特殊的decoder来对自然语言注释降噪
+The proposed **GCB_hybrid** attaches a specialized decoder to GraphCodeBERT for denoising natural-language comments.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GCB-hybrid/tab4.png" alt="avatar" style="zoom:60%;" /></div>
 
-对每个样本使用了两种不同的噪音模式进行增强：
+Each sample is augmented with several noise strategies:
 
-- commnet permutation：取一个时间刻的注释随机打乱token
-- comment rotation：随机选个token放开头，有利于建模注释初始选择
-- token deletion：选15%注释丢了，建模生成能力
-- token masking：选15%注释屏蔽，要解码器恢复
-- token infilling：从 $\lambda=3$ 的泊松分布中随机选跨度，用`<mask>`替代这个跨度的句子
+- **Comment permutation**: shuffle tokens in a comment at a given timestep.
+- **Comment rotation**: move a randomly chosen token to the front, to model how comments often start.
+- **Token deletion**: drop 15% of comment tokens, encouraging generation.
+- **Token masking**: mask 15% of comment tokens for the decoder to reconstruct.
+- **Token infilling**: sample span lengths from a Poisson distribution with $\lambda=3$ and replace each span with `<mask>`.
 
-为了加速训练，GraphCodeBERT用CodeBERT初始化，CodeBERT用RoBERTa的权重
+To speed training, GraphCodeBERT is initialized from CodeBERT, and CodeBERT from RoBERTa weights.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GCB-hybrid/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 

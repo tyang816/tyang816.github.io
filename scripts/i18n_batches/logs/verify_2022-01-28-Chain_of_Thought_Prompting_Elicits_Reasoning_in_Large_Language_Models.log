@@ -1,0 +1,13 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与篇幅 | 与中文一致（摘要块、各节标题、5 张图、`<hr>` 结尾） |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 为 `/zh/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/`（与中文 `permalink` 一致）；无英文 `permalink`；其余字段与中文对齐 |
+| 链接与资源 | OpenReview、GitHub、CoT 图 URL 一致 |
+| 术语与数字 | 100B、System 1/2、8 个 few-shot、6–10 岁等保留合理 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2022-01-28-Chain of Thought Prompting Elicits Reasoning in Large Language Models.md`

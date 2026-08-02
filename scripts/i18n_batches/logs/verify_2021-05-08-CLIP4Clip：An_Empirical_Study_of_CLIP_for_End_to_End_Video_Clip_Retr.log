@@ -1,0 +1,3 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿已满足全部检查项：结构完整（Abstract → Conclusion + HR）、正文无中文、`lang: en` 且 `alt_url` 与中文 `permalink` 一致、无英文 `permalink`、图片与链接一致、章节对齐、表述为学术英语且与中文含义一致（含 domain gap、sequential-type similarity 等）。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md`

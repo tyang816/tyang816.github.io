@@ -1,0 +1,10 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2025-01-16-Simulating 500 million years of evolution with a language model.md`
+
+核对摘要：
+1. **完整性**：章节与中文一致（含 Appendix）；中文 ESM3 段落在「(图」处截断，英文已补全为「(Fig. 1).」。
+2. **正文**：无中文叙述残留。
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/Simulating-500-million-years-of-evolution-with-a-language-model/`）；英文无 `permalink`；其余字段一致。
+4. **资源**：论文 DOI、GitHub 链接与全部图片 URL 一致。
+5. **结构与术语**：标题层级对齐；数值（2.78B、771B、98B、36%/58%/57%、cRMSD、pTM 等）与模型名一致；英文表述符合学术笔记风格（含对中文笔误「0.9d0.97」的合理修正为 scTM mean 0.97）。

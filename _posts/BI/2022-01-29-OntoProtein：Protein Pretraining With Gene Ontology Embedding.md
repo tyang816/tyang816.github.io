@@ -5,33 +5,36 @@ categories: [BI]
 tags: [protein, PLM]
 proceedings: ICLR
 date: 2022-01-29
+lang: en
+alt_url: /zh/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
+permalink: /bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
 ---
 
-> 论文地址：[OntoProtein：Protein Pretraining With Gene Ontology Embedding](https://openreview.net/forum?id=yfe1VMYAXa4)
+> Paper: [OntoProtein：Protein Pretraining With Gene Ontology Embedding](https://openreview.net/forum?id=yfe1VMYAXa4)
 >
-> 论文实现：<https://github.com/zjunlp/OntoProtein>
+> Code: <https://github.com/zjunlp/OntoProtein>
 
-## OntoProtein：知识图谱+对比学习+预训练微调
+## OntoProtein: Knowledge Graph + Contrastive Learning + Pre-training and Fine-tuning
 
 ### Abstract
 
-目前预训练数百万序列的蛋白质语言模型可以将参数规模从百万级提高到十亿级，但先前的工作很少考虑知识图谱（KG），作者认为增加知识图谱可以增强蛋白质表征。本文提出OntoProtein，第一个使用GO（Gene Ontology）结构到蛋白质预训练模型中。构建了一个新的大规模的包含GO和相关蛋白质的知识图谱，提出了一种新的知识感知负抽样的对比学习，在训练前联合优化知识图和蛋白质嵌入
+Pre-trained protein language models trained on millions of sequences can scale parameters from millions to billions, yet prior work rarely incorporates knowledge graphs (KGs). The authors argue that adding a KG can strengthen protein representations. This paper proposes OntoProtein, the first protein pre-training model that injects Gene Ontology (GO) structure. They construct a large-scale KG linking GO and associated proteins, introduce knowledge-aware negative sampling for contrastive learning, and jointly optimize the knowledge graph and protein embeddings before downstream fine-tuning.
 
 ### Introduction
 
-目前的蛋白质预训练模型不能充分捕捉生物学上的factual knowledge，所以作者采用了来自基因本体论的知识图。由于蛋白质的形状决定了其功能，因此模型更容易利用具有相似形状的蛋白质功能的先验知识来识别蛋白质的功能
+Existing protein pre-training models do not fully capture biologically factual knowledge, so the authors turn to knowledge graphs derived from Gene Ontology. Because protein structure largely determines function, models can more readily leverage prior knowledge about functions of similarly shaped proteins to infer function.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/fig1.png" alt="avatar" style /></div>
 
-但是蛋白质序列和基因本体论数据类型不同，序列是氨基酸，但基因本体论是文本描述的知识图谱，因此，结构化知识编码和异构信息融合的严重问题仍然存在
+Protein sequences and Gene Ontology data are heterogeneous—sequences are amino-acid chains whereas GO is a text-described knowledge graph—so challenges remain in structured knowledge encoding and fusing heterogeneous information.
 
-通过访问公开的基因本体知识图谱“Gene Ontology（Go）”，并将其和来自Swiss-Prot数据库的蛋白质序列对齐，来构建用于预训练的知识图谱ProteinKG25，该知识图谱包含4,990,097个三元组, 其中4,879,951个蛋白质-Go的三元组，110,146 个Go-Go三元组
+By accessing the public Gene Ontology KG and aligning it with protein sequences from Swiss-Prot, they build ProteinKG25 for pre-training: 4,990,097 triples in total, including 4,879,951 protein–GO triples and 110,146 GO–GO triples.
 
-主要贡献：
+Main contributions:
 
-*   提出了第一个知识增强的蛋白质模型OntoProtein
-*   通过对比学习与知识感知采样，共同优化知识和蛋白质嵌入
-*   构建了ProteinKG25数据集
+*   The first knowledge-enhanced protein model, OntoProtein
+*   Joint optimization of knowledge and protein embeddings via contrastive learning with knowledge-aware sampling
+*   The ProteinKG25 dataset
 
 ### Methodologies
 
@@ -39,41 +42,41 @@ date: 2022-01-29
 
 #### Hybrid Encoder
 
-对蛋白质序列采用已有的蛋白质预训练模型ProtBert进行编码
+Protein sequences are encoded with the existing pre-trained model ProtBert.
 
-对文本序列（GO encoder）采用BERT进行编码，也是用的预训练好的模型
+Text sequences (GO encoder) are encoded with BERT, likewise using a pre-trained checkpoint.
 
 #### Knowledge Embedding
 
-使用Knowledge Embedding objective来获取知识图谱的表征
+A knowledge embedding objective learns representations of the knowledge graph.
 
-知识图谱由一堆元组组成，可以定义为(h, r, t)，h 和 t 是 head 和 tail 实体，r 是关系类型
+The KG consists of tuples $(h, r, t)$, where $h$ and $t$ are head and tail entities and $r$ is the relation type.
 
-这里有两种不同的节点， `$e_{GO}$` 和 `$e_{protein}$` ，前者是图里的注释文本，后者是蛋白质序列，整个知识图谱可以定义为两组 `$triple_{GO2GO}$` 和 `$triple_{Protein2GO}$`
+There are two node types, $e_{GO}$ and $e_{protein}$: the former corresponds to annotation text in the graph, the latter to protein sequences. The full KG decomposes into $triple_{GO2GO}$ and $triple_{Protein2GO}$.
 
 #### Contrastive Learning With Knowledge-Aware Negative Sampling
 
-KE是学习实体和关系的低维表征，对比估计是一种可扩展的、推理连接模式的有效方法
+Knowledge embedding learns low-dimensional representations of entities and relations; contrastive estimation is a scalable way to score link patterns.
 
-对比学习是把分布损坏来得到负样本，迫使模型去学习更有区别性的特征和关键特点，但先前的方法都太简单了，本文提出知识感应的负样本采样方法，KE目标如下：
+Contrastive learning corrupts the data distribution to obtain negatives, pushing the model toward more discriminative features. Prior negative sampling was overly simplistic; this work proposes knowledge-aware negative sampling. The KE objective is:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm1.png" alt="avatar" style /></div>
 
-其中 `$(h_t',t_i')$` 是负样本，head和tail实体是损坏的元组里随机采样的，n是负样本数，γ是范围值，d是打分函数，为了简单使用TransE
+Here $(h_t', t_i')$ are negatives whose head and tail are sampled by corrupting tuples; $n$ is the number of negatives, $\gamma$ a margin, and $d$ a scoring function—for simplicity TransE is used.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm2.png" alt="avatar" style /></div>
 
-定义元组集和实体集分别为T和E，GO里的实体属于MFO（Molecular Function），CCO（Cellular Component）和BPO（Biological Process），对于 `$T_{GO-GO}$` 元组，采样元组替换实体的时候用同一个方面的（MFO, CCO, BPO），最后定义负样本元组集 `$T'$` ，采样如下：
+Let tuple and entity sets be $T$ and $E$. GO entities belong to MFO (Molecular Function), CCO (Cellular Component), and BPO (Biological Process). For $T_{GO-GO}$ tuples, when replacing entities during corruption, replacements are drawn from the same aspect (MFO, CCO, or BPO). The negative tuple set $T'$ is sampled as:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm3.png" alt="avatar" style /></div>
 
-这里 `$E'\in \{E_{MFO},E_{CCO},E_{BPO}\}$`，对 `$T_{Protein-GO}$` 只替换了tail实体
+Here $E' \in \{E_{MFO}, E_{CCO}, E_{BPO}\}$. For $T_{Protein-GO}$, only the tail entity is replaced.
 
 #### Pre-training Objective
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/frm4.png" alt="avatar" style /></div>
 
-α是超参，整个方法可以嵌入到现有的微调场景中
+$\alpha$ is a hyperparameter; the overall method plugs into standard fine-tuning pipelines.
 
 ### Experiment
 
@@ -81,25 +84,24 @@ KE是学习实体和关系的低维表征，对比估计是一种可扩展的、
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab1.png" alt="avatar" style /></div>
 
-在token level上没有用MSA可以取得有竞争力的结果，但在sequence level上效果不好，怀疑是缺少了sequence level的目标函数，留待后续工作
+Without MSA at the token level, results are competitive, but sequence-level performance is weaker—possibly due to the lack of a sequence-level objective; left for future work.
 
-#### Protein-Portein Interaction
+#### Protein–Protein Interaction
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab2.png" alt="avatar" style /></div>
 
-数据小效果好，数据大只能说有竞争力
+Strong on small data; on large data, performance is only competitive.
 
 #### Protein Function Prediction
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab3.png" alt="avatar" style /></div>
 
-数据集中可能存在严重的长尾问题，知识注入可能会影响head的表示学习，但会削弱tail的表示，从而导致性能下降，留待后续工作
+Datasets may suffer from severe long-tail effects: injecting knowledge can help head-class representation learning but hurt tail classes, leading to overall drops—also noted as future work.
 
 #### Analysis
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/OntoProtein/tab4-fig4.png" alt="avatar" style /></div>
 
-在contact prediction的不同设置下都有不小的提升
+Substantial gains under various contact-prediction settings.
 
 <hr align="left" color="#987cb9" size="1">
-

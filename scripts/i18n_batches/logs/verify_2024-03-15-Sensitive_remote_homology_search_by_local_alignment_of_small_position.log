@@ -1,0 +1,15 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文结构一致，无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文完整（Abstract → Methods，含 fig1–4 与 HR 结尾） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = 中文 `permalink`（`/zh/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/`）；无 `permalink` | 通过 |
+| 论文链接、GitHub、图片 URL 一致 | 通过 |
+| 标题层级与中文一致 | 通过 |
+| 术语与语气（twilight zone、HMM、Foldseek 等）合理；Discussion 中 ProtT5 拼写正确 | 通过 |
+| 数字、MAFFT 参数、9:0.5:0.5、方法步骤 1–5 一致 | 通过 |
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-03-15-Sensitive remote homology search by local alignment of small positional embeddin.md

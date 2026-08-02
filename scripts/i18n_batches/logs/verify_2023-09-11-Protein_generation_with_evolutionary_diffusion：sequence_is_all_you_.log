@@ -1,0 +1,11 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-09-11-Protein generation with evolutionary diffusion：sequence is all you need.md`
+
+核对结果（按 `i18n_verify_brief.md`）：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction 及全部 `####` 小节 → Discussion），结尾 `<HR>` 齐全，无截断。
+2. **正文语言**：英文正文无中文 prose。
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/`）一致；英文无 `permalink`；其余字段与中文对应。
+4. **资源**：论文 DOI 链接、GitHub、fig1–fig6 图片 URL 一致。
+5. **结构与术语**：小节标题对齐；数字（42M、200K、512、64、250、17、30%、40%）、模型名（EvoDiff-OADM/D3PM、CARP、ESM-2、RFdiffusion 等）与中文笔记一致；表述为正常学术英文，未发现需改动的明显 Chinglish 或漏译。
+
+未对 EN 文件做修改。

@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-11-10-Align before Fuse：Vision and Language Representation Learning with Momentum Dist.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | 与中文版章节一致，含全部图片与结尾 `<HR>` |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无 `permalink`；其余字段一致 |
+| 链接/图片/公式 | OpenReview、GitHub 与 8 张图一致；ITC/MLM 等处数学符号保留 |
+| 术语与数字 | ALBEF、ITC/ITM/MLM、MoCo、EMA、五个 loss 等与原文一致 |
+
+英文版已是完整、规范的译文，无需修改。

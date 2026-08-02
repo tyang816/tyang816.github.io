@@ -1,0 +1,14 @@
+已按 `scripts/i18n_verify_brief.md` 对照中英文两篇 BLIP 笔记逐项核对。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与章节（Abstract / Introduction / Method / Experiments） | 与中文一致，结尾完整 |
+| 正文无中文 | 通过 |
+| Frontmatter：`lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 图片 URL、arXiv 链接、公式 $D$、$\{(I_w,T_w)\}$ 等 | 一致 |
+| 术语与数字（ViT、MED、ITC、ITM、LM、Table 1 等） | 一致 |
+| 英文表述 | 通顺，无需要改的明显 Chinglish |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-01-24-BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Under.md`

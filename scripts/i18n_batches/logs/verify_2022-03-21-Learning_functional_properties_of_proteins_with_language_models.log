@@ -1,0 +1,10 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-03-21-Learning functional properties of proteins with language models.md` issues=`CAFA benchmark wording (single test split vs misleading "one test sample"); binding-affinity regression grammar`
+
+**核对摘要**
+- 结构与中文版一致（Abstract → Introduction → Results 四节 → Discussion → Methods 四节），结尾 `<HR>` 完整。
+- 正文无中文；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致，无英文 `permalink`。
+- 链接与 12 张图 URL 与中文版一致；模型名/数字（ProtT5-XL、2,950 SKEMPI 等）正确。
+
+**本次修改**
+1. Ontology-based PFP：将 “only one test sample” 改为 “a single test split rather than the full CAFA test set”，避免被理解成仅一个样本。
+2. PIPR 对比段：将 “binding affinity values are trained” 改为 “binding affinities are then predicted with simple supervised regression on those representations”。

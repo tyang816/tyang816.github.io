@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-04-05-Biological structure and function emerge from scaling unsupervised learning to 2.md`
+
+按 `scripts/i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 完整性 | 与中文版章节一致，含结尾 `<HR>` |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 为中文版 `permalink`；无英文 `permalink` |
+| 图片/链接 | 与 ZH 一致（PNAS、GitHub、CSDN Transformer、全部 COS 图） |
+| 结构 | 标题层级与 ZH 对齐 |
+| 数字与专名 | 250M 序列、86B 氨基酸、650M/33 层、UR50/S、UR50/D、8.46、ESM-1b、MLM、SCOPe 等均一致 |
+
+英文版已正确翻译中文版要点（含 MLM 代理任务、多尺度表征、t-SNE、二级/三级结构预测）；中文版「七年级」明显为笔误，英文已按「序列其他位置」表述，无需改动 EN 文件。

@@ -1,0 +1,15 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（Abstract → Analysis，含全部图片与 `<HR>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致（`/zh/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/`） | 通过 |
+| 链接、图片 URL、数学符号一致 | 通过 |
+| 术语与数字（BERT-base、3072、4 experts、768、top-512 等） | 通过 |
+
+英文在 Datasets 处将中文笔误「GULE」写为 **GLUE**，与基准名称一致，属于合理修正，未改模型名或实验数字。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2022-07-29-MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation.md`

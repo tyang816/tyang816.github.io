@@ -5,23 +5,26 @@ categories: [BI]
 tags: [protein, PLM, benchmark]
 proceedings: NeurIPS
 date: 2023-09-30
+lang: en
+alt_url: /zh/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
+permalink: /bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
 ---
 
-> 论文地址：[ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction](https://openreview.net/forum?id=URoZHqAohf&noteId=PLTsEAiyz5)
+> Paper: [ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction](https://openreview.net/forum?id=URoZHqAohf&noteId=PLTsEAiyz5)
 >
-> 论文实现：<https://github.com/OATML-Markslab/ProteinGym/tree/main>
+> Code: <https://github.com/OATML-Markslab/ProteinGym/tree/main>
 
-## ProteinGym v1：蛋白质fitness benchmark
+## ProteinGym v1: A protein fitness benchmark
 
 ### Abstract
 
-提出了ProteinGym v1.0的fitness benchmark。同时设计了一个完整的evaluation framework，评估了超过40个模型
+This work introduces the ProteinGym v1.0 fitness benchmark and a complete evaluation framework, and benchmarks more than 40 models.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinGym v1/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-学习蛋白质序列或结构到最终性质的预测称为fitness landscape，而这些benchmark制作的越准确就越能帮助评估机器学习方法的有效性。收集了超过250个DMS合计3.5M个突变序列，囊括超过200个protein famliy
+Learning to predict protein sequence or structure and map them to downstream phenotypes is often framed as modeling the fitness landscape; more accurate benchmarks better assess whether machine learning methods are effective. The authors aggregate over 250 deep mutational scanning (DMS) assays totaling 3.5M mutant sequences, spanning more than 200 protein families.
 
 ### ProteinGym benchmarks
 
@@ -33,29 +36,29 @@ date: 2023-09-30
 
 ##### DMS assays
 
-因为蛋白质功能和fitness的非线性，spearman's rank correlation coefficient是有效评估的
+Because protein function and fitness are nonlinear, Spearman's rank correlation coefficient is a useful metric.
 
-同时有的DMS存在双峰情况，相关系数不一定是一个好的选择，所以还使用Area Under the ROC Curve (AUC) 和Matthews Coreelation Coefficient (MCC)，使用binarized experimental measurements
+Some DMS assays exhibit bimodal fitness distributions, so correlation alone may be insufficient; the authors also report Area Under the ROC Curve (AUC) and Matthews Correlation Coefficient (MCC) on binarized experimental measurements.
 
-更重要的是模型需要捕获性质更强的蛋白质而不是数据的分布，还使用了Normalized Discounted Cumulative Gains (NDCG)
+Because models should rank higher-fitness variants rather than match the data distribution, they additionally use Normalized Discounted Cumulative Gain (NDCG).
 
-同时还计算了Top K Recall，K是DMS的前10%
+They also compute Top-K recall, with K set to the top 10% of variants in each DMS assay.
 
 ##### Clinical datasets
 
-计算AUC和precision-recall curves
+They report AUC and precision–recall curves.
 
 #### Supervised benchmark
 
 ##### DMS assays
 
-使用了三种不同的交叉验证方案：
+Three cross-validation schemes are used:
 
-- Random scheme：每个突变是随机分配的五折中的一块
-- Contiguous scheme：把序列拆分五块
-- Modulo scheme：使用模算子为每个折叠分配位置，以获得总共5次折叠，position number和折数的模
+- Random scheme: each mutation is assigned randomly to one of five folds.
+- Contiguous scheme: the sequence is split into five contiguous blocks.
+- Modulo scheme: positions are assigned to folds by position index modulo the number of folds, yielding five folds in total.
 
-评估Spearman's coreelation和Mean Squared Error (MSE)
+Evaluation uses Spearman's correlation and Mean Squared Error (MSE).
 
 ### Results
 

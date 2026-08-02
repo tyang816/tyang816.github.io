@@ -1,0 +1,3 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文版在结构、frontmatter、图片/链接/公式及 5.92%、MeLU-1/MeLU-5 等数值与模型名上均一致；`lang: en`、`alt_url` 指向中文 `permalink`、无英文 `permalink`，正文无残留中文，篇幅完整。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/IR/2019-07-25-MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation.md`

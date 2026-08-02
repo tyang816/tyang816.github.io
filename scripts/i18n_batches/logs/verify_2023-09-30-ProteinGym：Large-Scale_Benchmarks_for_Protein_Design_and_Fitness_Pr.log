@@ -1,0 +1,5 @@
+已按 `i18n_verify_brief.md` 逐项核对中英文稿。
+
+**结论：** 英文稿结构完整（与中文相同的章节与 6 张图 + 结尾 `<HR>`），正文无中文，`lang: en`，无 `permalink`，`alt_url` 与中文 `permalink`（`/zh/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/`）一致，链接与图片 URL 一致，术语与数字（40+ 模型、250 DMS、3.5M、200 families、Top 10%、五折等）与中文对应，英文表述通顺，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-09-30-ProteinGym：Large-Scale Benchmarks for Protein Design and Fitness Prediction.md`

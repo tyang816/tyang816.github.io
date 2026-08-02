@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/CV/2024-02-20-T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-I.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/`（与中文 `permalink` 一致）；无 `permalink`；已去掉 `lang: zh-CN`
+- **正文**：结构、图片、链接与 HR 均保留；blockquote 为 Paper / Code
+- **校验**：正文中无剩余中文

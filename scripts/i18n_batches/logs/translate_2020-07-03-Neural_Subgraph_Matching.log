@@ -1,0 +1,7 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入 [`_posts/ML/2020-07-03-Neural Subgraph Matching.md`](_posts/ML/2020-07-03-Neural Subgraph Matching.md)：
+
+- **Frontmatter**：`lang: en`，`alt_url: /zh/ml/Neural-Subgraph-Matching/`（对应中文 `permalink`），无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：学术英文；顶部 blockquote 为 Paper / Code；图片、链接与章节结构均保留；符号用 \(G_T\)、\(G_Q\) 等（原文无 `$...$`，为可读性做了 LaTeX 化）。
+- 中文原文「∈跳邻域」按语义译为 **k-hop neighborhood**。

@@ -1,0 +1,6 @@
+**DONE**
+
+已将 `_posts/zh/SE/2021-07-23-Graph-Augmented Code Summarization in Computational Notebooks.md` 译为学术英文并写入 `_posts/SE/2021-07-23-Graph-Augmented Code Summarization in Computational Notebooks.md`。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：`论文地址` → `Paper`；Themisto 三节要点已译；链接（IJCAI、LeClair et al. arXiv）与 `<HR>` 原样保留。

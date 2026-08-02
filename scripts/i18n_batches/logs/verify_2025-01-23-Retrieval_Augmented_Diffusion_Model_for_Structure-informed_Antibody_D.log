@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文完整（Abstract → 5.3 Analysis，含 `<hr>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink` | 通过 |
+| 12 张 RADAb 图、OpenReview/GitHub 链接、公式与符号（如 `$s_i$`、`$R$`、`$k$`）与中文版一致 | 通过 |
+| 标题层级与中文一致（含跳过的 §2，与原文相同） | 通过 |
+| 术语与数字（8.08% AAR、7 cal/mol ∆∆G、37.3%、68%、k=15 等） | 通过 |
+
+英文版已完整翻译，frontmatter 正确，未发现需改动的遗漏或错误。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2025-01-23-Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization.md`

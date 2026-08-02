@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-01-17-Grounded Language-Image Pre-training.md`
+
+对照 `i18n_verify_brief.md` 逐项核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 完整性 | 与中文一致：Abstract → Introduction → Grounded Language Image Pre-training（含 Unified Formulation 下三小节）→ Experiment，结尾 `<HR>` 一致 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url: /zh/cv/Grounded-Language-Image-Pre-training/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文对齐 |
+| 图/链/公式 | PDF、GitHub、全部图片 URL 及 $W$、$S_{ground}$、$T$、Eq. 2/3 等均保留 |
+| 结构 | 章节对应；英文将中文标题笔误 “Unifified” 正确写为 “Unified” |
+| 用语 | 学术英文通顺，无明显 Chinglish |
+
+未修改文件；中英文标题均为 “Pre-trainin”（与原文一致，未擅自改正）。

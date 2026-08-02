@@ -1,0 +1,15 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-01-05-When Geometric Deep Learning Meets Pretrained Protein Language Models.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（至 Sequence Recovery / Results and Analysis） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 图片、链接、数据 URL 一致 | 通过 |
+| 章节对齐 | 通过 |
+| 英文表述与术语合理 | 通过 |
+| 数值与模型名（~20%、ESM-2、1280、1% 等）一致 | 通过 |
+
+英文稿已完整翻译，frontmatter 符合规范，无需修改。

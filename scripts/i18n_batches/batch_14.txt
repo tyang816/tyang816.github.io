@@ -1,0 +1,10 @@
+_posts/zh/CV/2022-01-17-Grounded Language-Image Pre-training.md
+_posts/zh/CV/2022-01-24-BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Under.md
+_posts/zh/CV/2022-01-29-Open-vocabulary Object Detection via Vision and Language Knowledge Distillation.md
+_posts/zh/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md
+_posts/zh/CV/2022-04-13-Hierarchical Text-Conditional Image Generation with CLIP Latents.md
+_posts/zh/CV/2022-06-05-GLIPv2：Unifying Localization and Vision-Language Understanding.md
+_posts/zh/CV/2022-06-23-PointCLIP：Point Cloud Understanding by CLIP.md
+_posts/zh/CV/2022-07-12-Contrastive Deep Supervision.md
+_posts/zh/CV/2022-07-18-GroupViT：Semantic Segmentation Emerges from Text Supervision.md
+_posts/zh/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md

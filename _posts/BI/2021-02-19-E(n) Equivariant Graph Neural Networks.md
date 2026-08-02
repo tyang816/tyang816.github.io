@@ -5,62 +5,65 @@ categories: [BI]
 tags: [GNN]
 proceedings: ICML
 date: 2021-02-19
+lang: en
+alt_url: /zh/bi/E(n)-Equivariant-Graph-Neural-Networks/
+permalink: /bi/E(n)-Equivariant-Graph-Neural-Networks/
 ---
 
-> 论文地址：[E(n) Equivariant Graph Neural Networks](http://proceedings.mlr.press/v139/satorras21a/satorras21a.pdf)
+> Paper: [E(n) Equivariant Graph Neural Networks](http://proceedings.mlr.press/v139/satorras21a/satorras21a.pdf)
 >
-> 论文实现：<https://github.com/lucidrains/egnn-pytorch>
+> Code: <https://github.com/lucidrains/egnn-pytorch>
 >
-> 博客参考：<https://zhuanlan.zhihu.com/p/665216670>
+> Reference blog: <https://zhuanlan.zhihu.com/p/665216670>
 
-## EGNN：等变图神经网络
+## EGNN: Equivariant Graph Neural Networks
 
 ### Abstract
 
-EGNN不需要再中间层计算high-order表示仍然有很好的效果，现有的方法大多限制在三维空间中等变，而本文的方法可以扩展到更高维
+EGNN achieves strong performance without computing high-order representations in intermediate layers. Most existing methods are restricted to equivariance in three-dimensional space, whereas the approach in this paper extends to higher dimensions.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EGNN/fig1.png" alt="avatar" style="zoom:80%;" /></div>
 
-虽然深度学习已经在很大程度上取代了手工制作的特征，但许多进展都严重依赖于深度神经网络中的归纳偏差
+Although deep learning has largely replaced hand-crafted features, much progress still relies heavily on inductive biases in deep neural networks.
 
-许多问题表现出三维平移和旋转对称性，例如点云（point clouds）、三维分子结构（3D molecular structures）和N体粒子模拟（N-body particle simulations）。与这些对称性对应的群被称为欧几里德群：SE(3)，当包括反射时为E(3)。通常希望在这些任务上的预测是关于E(3)变换等变的或不变的。
+Many problems exhibit three-dimensional translation and rotation symmetries, for example point clouds, 3D molecular structures, and N-body particle simulations. The group corresponding to these symmetries is the Euclidean group: SE(3), or E(3) when reflections are included. Predictions on such tasks are typically desired to be equivariant or invariant under E(3) transformations.
 
-许多工作在研究中间网络层的高阶表示类型方面取得了创新。然而，这些高阶表示的变换需要花费大量代价计算系数或近似值。
+Much work has innovated on types of higher-order representations in intermediate network layers. However, transforming these higher-order representations requires substantial cost to compute coefficients or approximations.
 
-于是，本文提出了一种新的体系结构，它是平移、旋转和反射等变的E(n)，并且对于输入点集是排列等变的。同时模型比以前的方法更简单，并且模型中的等变性不仅限于三维空间，可以扩展到更大维度的空间而没有显著增加计算量
+This paper proposes a new architecture that is equivariant to translations, rotations, and reflections in E(n), and permutation-equivariant with respect to the input point set. The model is simpler than prior methods, and its equivariance is not limited to three-dimensional space—it can be extended to higher-dimensional spaces without a significant increase in computation.
 
-文章采用QM9数据集。QM9数据集由表示为原子集合的小分子组成（每个分子最多有29个原子），每个原子具有与之关联的三维位置和描述原子类型的五维独热编码节点嵌入(one-hot node embedding)（H，C，N，O，F）。数据集标签是每个分子的多种化学性质，通过回归进行估算。这些性质对于原子位置上的平移、旋转和反射是不变的。因此，对于这个任务来说，E(3)不变的模型非常适合。
+The paper uses the QM9 dataset. QM9 consists of small molecules represented as sets of atoms (up to 29 atoms per molecule); each atom has an associated 3D position and a five-dimensional one-hot node embedding describing atom type (H, C, N, O, F). Dataset labels are various chemical properties of each molecule, estimated via regression. These properties are invariant to translation, rotation, and reflection of atomic positions. Therefore, E(3)-invariant models are well suited to this task.
 
 ### Background
 
 #### Equivariance
 
-三种等变性质，$y=\phi(x)$
+Three types of equivariance, $y=\phi(x)$
 
-- 平移等变性
-  - 将输入集合平移 $g\in R^n$ 会导致等效平移的输出。记 $x+g$ 为 $(x_1+g,...,x_M+g)$ 。然后 $y+g=\phi(x+g)$ 
-- 旋转（和反射）等变性
-  - 对于任意的正交矩阵 $Q\in R^{n\times n}$ ，记 $Qx$ 为 $(Qx_1,...,Qx_M)$。那么旋转输入将导致输出的等效旋转 $Qy=\phi(Qx)$
-- 排列等变性
-  - 对于输入进行排列将导致输出的相同排列 $P(y)=\phi(P(x))$，其中P是一个再行索引上进行的排列
+- Translation equivariance
+  - Translating the input set by $g\in R^n$ yields an equivalently translated output. Write $x+g$ for $(x_1+g,...,x_M+g)$. Then $y+g=\phi(x+g)$
+- Rotation (and reflection) equivariance
+  - For any orthogonal matrix $Q\in R^{n\times n}$, write $Qx$ for $(Qx_1,...,Qx_M)$. Rotating the input yields an equivalently rotated output: $Qy=\phi(Qx)$
+- Permutation equivariance
+  - Permuting the input yields the same permutation of the output: $P(y)=\phi(P(x))$, where P is a permutation over row indices
 
 #### Graph Neural Networks
 
-图神经网络是对图结构数据进行操作的置换等变网络，给定一个图 $G=(V,E)$，其中节点 $v_i\in V$，边 $e_{ij}\in E$
+Graph neural networks are permutation-equivariant networks operating on graph-structured data. Given a graph $G=(V,E)$ with nodes $v_i\in V$ and edges $e_{ij}\in E$
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EGNN/frm2.png" alt="avatar" style="zoom:80%;" /></div>
 
-其中 $h_i^l\in R^{nf}$ 表示层 $l$ 中节点 $v_i$ 的 $nf$ 维嵌入，$a_{ij}$ 是边属性，$N(i)$ 表示节点 $v_i$ 的邻居集合。最后，$\phi_e$ 和 $\phi_h$ 分别是常用的多层感知机（MLP）近似的边和节点操作
+where $h_i^l\in R^{nf}$ denotes the $nf$-dimensional embedding of node $v_i$ at layer $l$, $a_{ij}$ are edge attributes, and $N(i)$ is the neighbor set of node $v_i$. Finally, $\phi_e$ and $\phi_h$ are commonly used multilayer perceptron (MLP) approximations for edge and node operations, respectively.
 
 ### Equivariant Graph Neural Networks
 
-给定一个图 $G=(V,E)$，其中节点 $v_i\in V$，边 $e_{ij}\in E$。除了节点特征嵌入 $h_i^l\in R^{nf}$，同时考虑与每个图节点相关的n维坐标 $x_i\in R^n$ 。模型将保持对这组坐标 $x_i$ 的旋转和平移的等变性，并且它将像GNN一样保持对节点集合V的排列的等变性
+Given a graph $G=(V,E)$ with nodes $v_i\in V$ and edges $e_{ij}\in E$. In addition to node feature embeddings $h_i^l\in R^{nf}$, the model also considers $n$-dimensional coordinates $x_i\in R^n$ associated with each graph node. The model preserves equivariance to rotation and translation of the coordinate set $x_i$, and preserves permutation equivariance over the node set V as in a GNN.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EGNN/frm3-frm6.png" alt="avatar" style="zoom:80%;" /></div>
 
-上述提出的方法与方程2中的原始图神经网络的主要区别可以在方程3和4中找到。C为 $\frac{1}{M-1}$ 
+The main difference between the proposed method and the original graph neural network in Equation 2 can be found in Equations 3 and 4. C is $\frac{1}{M-1}$
 
 ### Related Work
 

@@ -1,0 +1,14 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文两篇笔记：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文稿完整（与中文同节：摘要、2.1–2.3、公式、`<hr>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = 中文 `permalink`（`/zh/cl/Generative-Adversarial-Network-for-Abstractive-Text-Summarization/`）；无英文 `permalink` | 通过 |
+| 论文链接与两处 `math` 块一致 | 通过 |
+| 标题层级与中文对应 | 通过 |
+| 术语与表述（exposure bias、MLE、GAN 等）合理 | 通过 |
+
+英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2018-02-02-Generative Adversarial Network for Abstractive Text Summarization.md`

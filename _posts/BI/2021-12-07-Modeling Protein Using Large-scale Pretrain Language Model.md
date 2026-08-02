@@ -5,41 +5,44 @@ categories: [BI]
 tags: [protein, PLM]
 proceedings: KDD
 date: 2021-12-07
+lang: en
+alt_url: /zh/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
+permalink: /bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
 ---
 
-> 论文地址：[Modeling Protein Using Large-scale Pretrain Language Model](http://arxiv.org/abs/2108.07435)
+> Paper: [Modeling Protein Using Large-scale Pretrain Language Model](http://arxiv.org/abs/2108.07435)
 >
-> 论文实现：<https://github.com/THUDM/ProteinLM>
+> Code: <https://github.com/THUDM/ProteinLM>
 
-## ProteinLM：悟道·文溯的30亿参数蛋白预训练模型
+## ProteinLM: A 3-billion-parameter protein pre-trained model from WuDao·WenSu
 
 ### Abstract
 
-使用30亿参数的语言模型对进化规模的蛋白质序列进行预训练建模，将蛋白质生物学信息进行编码表示。模型在5个标识符级和序列级的下游任务中都获得了明显的改进，表明本文的大规模模型能够准确地从进化规模的单个序列预训练中捕捉到进化信息
+A 3-billion-parameter language model is pre-trained on evolution-scale protein sequences to encode protein biological information in its representations. The model yields clear gains on five token-level and sequence-level downstream tasks, indicating that this large-scale model can accurately capture evolutionary information from single-sequence pre-training at evolution scale.
 
 ### Introduction
 
-传统蛋白质实验分为两部分：实验和分析，实验包括纯化，晶体化和X光晶体学等；分析包括序列比对，分子动力学模拟；难以处理大规模的蛋白质数据
+Traditional protein research is often split into experimentation and analysis. Experiments include purification, crystallization, and X-ray crystallography; analysis includes sequence alignment and molecular dynamics simulation. These approaches struggle with large-scale protein data.
 
-在PFAM数据集上训练，有30亿参数，超过了TAPE的性能
+The model is trained on the PFAM dataset with 3 billion parameters and surpasses TAPE in performance.
 
 ### Methodology
 
 #### Training Objective
 
-用的BERT的MLM和NSP
+Training uses BERT-style MLM and NSP.
 
-#### Downstream Classification Task
+#### Downstream Classification Tasks
 
-三个分类任务，对应词元，序列和词元对分类
+Three classification tasks correspond to token, sequence, and token-pair classification.
 
-##### secondary structure
+##### Secondary structure
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-这是一个token-level任务，输入蛋白质序列，输出等长的Label序列，表示相应氨基酸的二级结构位置
+This is a token-level task: given a protein sequence, the model outputs a label sequence of the same length indicating the secondary-structure state of each amino acid.
 
-数据集是CB513
+The dataset is CB513.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/loss1.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -47,7 +50,7 @@ date: 2021-12-07
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-是一个sequence-level任务，检测相关输入的结构相似性，总共有1195个类别
+This is a sequence-level task that detects structural similarity among related inputs; there are 1,195 classes in total.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/loss2.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -55,33 +58,33 @@ date: 2021-12-07
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-是指预测折叠结构中的氨基酸对是否处于“接触”状态，in contact是指折叠结构的距离在8angstroms内
+This task predicts whether pairs of amino acids in the folded structure are in contact; “in contact” means the distance in the folded structure is within 8 angstroms.
 
-数据集来源于ProteinNet
+The dataset is from ProteinNet.
 
-#### Downstream Regression Task
+#### Downstream Regression Tasks
 
 ##### Fluorescence
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig4.png" alt="avatar" style="zoom:60%;" /></div>
 
-区分具有不同突变的蛋白质序列可能是困难的，因为计算成本随着突变的数量𝑚呈指数增长，荧光预测任务可以评估模型区分非常相似的蛋白质序列的能力，以及它推广到看不见的突变组合的能力
+Distinguishing protein sequences with different mutations can be difficult because computational cost grows exponentially with the number of mutations \(m\). The fluorescence prediction task evaluates the model’s ability to separate very similar protein sequences and to generalize to unseen mutation combinations.
 
 ##### Stability
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/fig5.png" alt="avatar" style="zoom:60%;" /></div>
 
-蛋白质可以保持其原始折叠结构的浓度上限，输入是氨基酸序列，而输出是一个连续的值，预测蛋白质在多大程度上可以保持其折叠结构
+This concerns the upper concentration limit at which a protein retains its native fold. The input is an amino acid sequence and the output is a continuous value predicting how well the protein maintains its folded structure.
 
 ### Result
 
 #### Training
 
-480块v100的服务集群训练两种模型3个星期，用的megatron-lm
+Two model variants were trained for three weeks on a cluster of 480 V100 GPUs using Megatron-LM.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-#### Evalution
+#### Evaluation
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/tab2-tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ProteinLM/tab4-tab6.png" alt="avatar" style="zoom:50%;" /></div>
 

@@ -5,20 +5,23 @@ categories: [CV]
 tags: [unsupervised-learning, contrastive-learning]
 proceedings: NeurIPS
 date: 2020-12-01
+lang: en
+alt_url: /zh/cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
+permalink: /cv/Unsupervised-Learning-of-Visual-Features-by-Contrasting-Cluster-Assignments/
 ---
 
-> 论文地址：[Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://papers.neurips.cc/paper_files/paper/2020/file/70feb62b69f16e0238f741fab228fec2-Paper.pdf)
+> Paper: [Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://papers.neurips.cc/paper_files/paper/2020/file/70feb62b69f16e0238f741fab228fec2-Paper.pdf)
 
-## SwAV：对比学习+聚类，借助先验不和大量负样本比，跟聚类中心比
+## SwAV: contrastive learning + clustering — use priors and compare to cluster prototypes instead of many negatives
 
-1.  聚类的相关工作有：deep cluster等，留待看
-2.  相较于上万的负样本，与3000个聚类中心比更小
+1. Related clustering work includes DeepCluster and others; revisit later.
+2. Compared with tens of thousands of negative samples, comparing against ~3000 cluster centers is more compact.
 
-    2.1 前向过程    `$x_1$` 数据增强得到 `$x_1,x_2$`；通过编码器得到 `$z_1,z_2$`；`$z$` 和聚类中心 `$c$` 通过clustering方法生成目标 `$q_1,q_2$` ；`$z_1,z_2$` 相似，按道理可以互相作预测，即 `$z_1 \cdot c$` 可以去预测 `$q_2$` ，反之亦然
-3.  聚类中心有明确的语义含义，而先前抽取的有的负样本还可能是正样本，也可能类别不均衡不够有效
-4.  新的正样本提取方法(Multi-crop)，增加view的情况下尽可能减少计算量
+    2.1 Forward pass: from `$x_1$`, data augmentation yields `$x_1,x_2$`; an encoder produces `$z_1,z_2$`; `$z$` and cluster centers `$c$` are mapped via a clustering method to targets `$q_1,q_2$`; `$z_1,z_2$` are similar, so in principle they can predict each other—e.g. `$z_1 \cdot c$` can predict `$q_2$`, and vice versa.
+3. Cluster centers have clearer semantic meaning; previously sampled negatives may actually be positives, and class imbalance can make negatives less effective.
+4. A new positive-view strategy (Multi-crop): add views while limiting compute.
 
-    4.1 方法    原本是从256x256的图片裁剪出2张224x224的图片，改为裁剪出2x160+4x96合计6张图片。因为原本的裁剪方法更多是关注于整体特征，这样可以关注整体+局部特征，效果更好，提点明显，也比较通用
+    4.1 Method: instead of cropping two 224×224 patches from a 256×256 image, crop 2×160 + 4×96 (six patches total). The original cropping focuses mainly on global structure; this scheme captures global and local features, improves results noticeably, and transfers well.
 
 <hr align="left" color="#987cb9" size="1">
 

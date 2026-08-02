@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-03-16-Language models of protein sequences at the scale of evolution enable accurate s.md` issues=`grammar: "As ESM-2 scale increases" → "As the scale of ESM-2 increases"`
+
+其余项已通过：章节与中文版一致（含仅含 fig3 的 metagenomic 小节）；正文无中文；`lang: en`、`alt_url` 与中文 `permalink` 一致且无英文 `permalink`；图片/DOI/GitHub 链接及 88.3、84.7、82.0 等数值未改。

@@ -1,0 +1,10 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-04-10-The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search.md`
+
+已按 `scripts/i18n_verify_brief.md` 对照中文版逐项核对，英文稿无需修改：
+
+1. **完整性**：15 个标题层级一致，7 张图片 URL 一致，结尾 `<hr>` 与中文版对应。  
+2. **正文语言**：无中文正文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段与中文一致。  
+4. **链接与公式**：论文链接 `(https://)`、GitHub、图片及 `$6.33$` 等与中文一致保留。  
+5. **结构与语气**：章节与中文版对齐，表述为正常学术英文。  
+6. **数字与专名**：6.33、57%、ICBINB、Lu et al. 2024 等与中文一致（含中文内部 4.1「6、6、7」与 4.2「6、7、6」的同样表述，英文未擅自统一）。

@@ -1,0 +1,16 @@
+已按 `i18n_verify_brief.md` 逐项对照中英文稿。
+
+**结论**
+
+| 检查项 | 状态 |
+|--------|------|
+| 英文稿完整（含 Limitation 与结尾 HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url: /zh/cl/Language-Models-are-Few-Shot-Learners/` 与中文 `permalink` 一致；无英文 `permalink` | 通过 |
+| 8 张图、arXiv、GPT-3 Demo 链接一致 | 通过 |
+| 章节与中文一致 | 通过 |
+| 术语与数字（175B、10×、10–100、LSH、Beam Search 等） | 通过 |
+
+英文版已覆盖中文要点（含 in-context learning、Common Crawl 过滤、scaling/loss 关系及七条 limitation）；中文里的「DPT-2」在英文中已正确写为 GPT-2。无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2020-05-14-Language Models are Few-Shot Learners.md`

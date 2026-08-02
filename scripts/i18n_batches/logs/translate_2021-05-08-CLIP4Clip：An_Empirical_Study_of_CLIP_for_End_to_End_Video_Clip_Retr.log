@@ -1,0 +1,6 @@
+**DONE**
+
+已将学术英文译文写入 [`_posts/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md`](_posts/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md)。
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文：** 区块引用为 Paper / Code；图片、链接与 `<HR>` 均保留；正文无中文。

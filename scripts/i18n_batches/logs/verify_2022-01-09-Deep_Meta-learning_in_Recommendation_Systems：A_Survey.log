@@ -1,0 +1,11 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/IR/2022-01-09-Deep Meta-learning in Recommendation Systems：A Survey.md`
+
+按 `scripts/i18n_verify_brief.md` 核对结果：
+
+1. **完整性**：与中文版节结构一致（Abstract → Introduction → Foundations → Taxonomy → Task construction → Methods），结尾均为 Cold-start / Online 两节及 `<HR>`，无截断。
+2. **正文语言**：英文正文无残留中文。
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/ir/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/` 与中文 `permalink` 一致；无英文 `permalink`；其余字段与中文对齐。
+4. **资源**：论文链接、全部 fig/tab 图片 URL 与中文版一致。
+5. **结构与表述**：标题层级对应；术语（CTR、POI、few-shot、support/query set 等）与中文含义一致，学术英语可读，无需修改。
+
+未对 EN 文件做任何改动。

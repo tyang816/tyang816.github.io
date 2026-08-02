@@ -5,34 +5,37 @@ categories: [CV]
 tags: [video]
 proceedings: ICCV
 date: 2015-09-25
+lang: en
+alt_url: /zh/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
+permalink: /cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
 ---
 
-> 论文地址：[Learning Spatiotemporal Features with 3D Convolutional Networks](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf)
+> Paper: [Learning Spatiotemporal Features with 3D Convolutional Networks](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf)
 >
-> 抽取光流的方法不适合实时处理，因为每换一个数据集，就要重新处理光流，而且抽取光流时间还很长，此外在做推理的时候也需要抽取光流，这就导致了实时性非常差。如果有方法可以不单独对时间信息进行建模，直接从数据中学习到时序信息那自然是更好的了
+> Pipelines built on extracted optical flow are a poor fit for real-time use: each new dataset requires recomputing flow, extraction is slow, and inference still needs flow—so latency suffers badly. A method that learns temporal structure directly from data, without modeling time in a separate stage, would be preferable.
 
-## C3D：3D网络抽特征
+## C3D: Feature Extraction with 3D Networks
 
 ### Abstract
 
-用了一个更深的3D卷积网络在一个更大的数据集（sports 1M）上，设计比较简单直观
+The authors train a deeper 3D convolutional network on a larger dataset (Sports-1M); the design is relatively simple and intuitive.
 
 ### Model
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/img3.png" alt="avatar" style="zoom:60%;" /></div>
 
-相当于把VGG网络里面每一个block减少了一层conv，再把所有的conv kernel从3x3变成3x3x3
+Roughly, they drop one conv layer from each VGG block and change all conv kernels from 3×3 to 3×3×3.
 
-作者每次都从最后4096里面**抽取特征**，拿出来训练一个SVM分类器去做分类任务，效果快又好
+They **extract features** from the final 4096-dimensional layer, train an SVM classifier on them for classification, and obtain strong results with low overhead.
 
 ### Experiment
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/table2.png" alt="avatar" style="zoom:60%;" /></div>
 
-从头到尾都是在做时空学习的操作，所以作者认为3D网络比2D网络更适合视频理解的任务
+Because the pipeline performs spatiotemporal learning end to end, the authors argue that 3D networks are better suited to video understanding than 2D networks.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/C3D/table3.png" alt="avatar" style="zoom:60%;" /></div>
 
-UCF101数据集上表现和其他工作比一般，ensemble起来都还是并不突出。但这篇工作训练时间很长，在facebook都得训练一个月，所以这种工作fine-tune是不友好的，最好还是抽特征，所以作者提供了python还有matlab接口，给一个视频然后返回一个4096的特征去做其他下游任务
+On UCF101, performance relative to other work is only average; even with ensembling it is not standout. Training is very long (about a month even at Facebook), so fine-tuning is unfriendly—the authors recommend feature extraction instead and provide Python and MATLAB interfaces that take a video and return a 4096-dimensional feature for downstream tasks.
 
 <HR align=left color=#987cb9 SIZE=1>

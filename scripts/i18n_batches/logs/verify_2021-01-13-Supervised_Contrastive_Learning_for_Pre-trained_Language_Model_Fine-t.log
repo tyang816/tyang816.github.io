@@ -1,0 +1,11 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿，结论如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与完整性 | 章节、图片、结尾 `<HR>` 与中文一致 |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 为 `/zh/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/`（与中文 `permalink` 一致）；无 `permalink`；其余字段一致 |
+| 链接/公式/图片 | OpenReview 链接、公式与 COS 图片 URL 一致 |
+| 术语与数字 | RoBERTa-Large、GLUE、10.7/7 分、Table 2/3/7、InfoNCE 等均保留 |
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/CL/2021-01-13-Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning.md

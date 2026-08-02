@@ -1,0 +1,7 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/OS/2019-12-06-GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism.md`
+
+- 结构与中文一致（摘要、Introduction、GPipe Library 子节、Performance Analyses、Conclusion、`<hr>` 均齐全）
+- 正文无中文叙述；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致，且无英文 `permalink`
+- 图片 URL、论文链接、30%、4K、8 卡约 3× 等数字与要点均保留；英文表述通顺，并合理补全了中文里「模型并行 vs 数据并行通信量」等略含糊处（如 all-reduce 对比）

@@ -1,0 +1,10 @@
+_posts/zh/ML/2022-03-02-AI Index Report.md
+_posts/zh/ML/2022-10-06-Robust Speech Recognition via Large-Scale Weak Supervision.md
+_posts/zh/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md
+_posts/zh/OS/2019-12-06-GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism.md
+_posts/zh/OS/2020-03-13-Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Paralle.md
+_posts/zh/OS/2020-11-09-ZeRO：Memory Optimizations Toward Training Trillion Parameter Models.md
+_posts/zh/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md
+_posts/zh/SE/2017-11-02-A parallel corpus of Python functions and documentation strings for automated co.md
+_posts/zh/SE/2018-05-27-Deep code search.md
+_posts/zh/SE/2018-05-28-Deep code comment generation.md

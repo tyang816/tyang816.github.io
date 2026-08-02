@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 逐项对照后，英文稿无需修改。
+
+| 检查项 | 结果 |
+|--------|------|
+| 完整性 | 与中文一致：Abstract → Background → Dataset → Task 1–5 → Model and Experimental Setup，含三张图与 `<HR>` |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url: /zh/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/` 与中文 `permalink` 一致；无 `permalink`；其余字段一致 |
+| 图片/链接/数学 | 与中文相同；英文侧数学格式更规范 |
+| 结构 | 标题层级一致；Task 2 中文误写 “Contract”，英文已为 “Contact” |
+| 术语与数字 | Pfam 31M、8k–50k、1195 folds、模型与 baseline 命名一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2019-01-19-Evaluating Protein Transfer Learning with TAPE.md`

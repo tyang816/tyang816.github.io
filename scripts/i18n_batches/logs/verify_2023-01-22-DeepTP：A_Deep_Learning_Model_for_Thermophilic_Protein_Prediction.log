@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 状态 |
+|--------|------|
+| 英文完整、结构与中文一致 | 通过（Abstract → Introduction → Results → Discussion → Materials and Methods → HR） |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无 `permalink`；其余字段一致 |
+| 图片 / 链接 / URL | 与中文一致 |
+| 章节标题对齐 | 通过 |
+| 术语与数字 | 中文误写「LightBGM」→ 英文为 LightGBM；第三组特征中文重复 DPC，英文为 CTD（composition-transition distribution），与 AAC/DPC/QSO 等并列更合理 |
+
+英文译文完整、frontmatter 正确，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-01-22-DeepTP：A Deep Learning Model for Thermophilic Protein Prediction.md`

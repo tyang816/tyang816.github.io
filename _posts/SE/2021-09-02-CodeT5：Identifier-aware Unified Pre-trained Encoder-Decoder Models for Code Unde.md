@@ -5,27 +5,30 @@ categories: [SE]
 tags: [code-understanding, transformer]
 proceedings: EMNLP
 date: 2021-09-02
+lang: en
+alt_url: /zh/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+permalink: /se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
 ---
 
-> 论文地址：[CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation](https://aclanthology.org/2021.emnlp-main.685)
+> Paper: [CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation](https://aclanthology.org/2021.emnlp-main.685)
 >
-> 论文实现：<https://github.com/salesforce/CodeT5>
+> Code: <https://github.com/salesforce/CodeT5>
 
-## CodeT5：完整transformer+标识符+双模态
+## CodeT5: full Transformer, identifiers, and bimodal learning
 
 ### Abstract
 
-目前的预训练方法大多是只有编码器或解码器，本文提出统一的编码器-解码器的transformer模型CodeT5，可以支持代码理解和生成任务，此外还提出了一个标识符感知的预训练任务
+Most existing pre-training methods use encoder-only or decoder-only architectures. This work proposes CodeT5, a unified encoder–decoder Transformer that supports both code understanding and generation, together with an identifier-aware pre-training objective.
 
 ### Introduction
 
-预训练模型在语言任务上取得了很大的成功，但是大多数要么依赖于只有编码器像BERT，要么只有解码器像GPT，这对于生成理解任务而言不是最优的，比如CodeBERT在代码摘要生成上需要额外得到解码器，这个解码器还不能从预训练当中获益
+Pre-trained models have succeeded widely on language tasks, yet most are either encoder-only (e.g., BERT) or decoder-only (e.g., GPT), which is suboptimal when both understanding and generation are required. For instance, CodeBERT needs an extra decoder for code summarization, and that decoder cannot leverage the pre-training stage.
 
-此外目前传统的NLP方法把原代码视作像自然语言一样的token序列。很大程度上忽视了代码的丰富的结构化语义信息
+Conventional NLP-style pipelines also treat source code as a token sequence much like natural language, largely overlooking the rich structured semantics of code.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CodeT5/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-CodeT5使用降噪seq2seq预训练方法，同时利用了开发者赋值的标识符，利用代码和注释来学习更好的NL-PL对齐，使用CodeSearchNet数据集
+CodeT5 uses denoising seq2seq pre-training, exploits developer-assigned identifiers, learns stronger natural-language–programming-language (NL–PL) alignment from code and comments, and is pre-trained on CodeSearchNet.
 
 ### CodeT5
 
@@ -33,18 +36,18 @@ CodeT5使用降噪seq2seq预训练方法，同时利用了开发者赋值的标�
 
 #### Pre-training Tasks
 
-##### Identififier-aware Denoising Pre-training
+##### Identifier-aware Denoising Pre-training
 
-首先用一些噪声函数破坏源序列，然后需要解码器恢复原始文本，就是MSP
+The source sequence is first corrupted with noise functions; the decoder then reconstructs the original text—this is masked span prediction (MSP).
 
-为了将更多特定于代码的结构信息(AST中的标识符节点类型)融合到模型中，提出了两个额外的任务：标识符标记(IT)和屏蔽标识符预测(MIP)来补充去噪预训练
+To incorporate more code-specific structure (identifier node types in the AST), two auxiliary tasks complement denoising pre-training: Identifier Tagging (IT) and Masked Identifier Prediction (MIP).
 
-- **Identififier Tagging (IT)** ：告知模型这个词元是否是标识符
-- **Masked Identififier Prediction (MIP)** ：与遮蔽一段不同，MIP遮蔽代码片段中所有标识符
+- **Identifier Tagging (IT)**: indicates whether a token is an identifier.
+- **Masked Identifier Prediction (MIP)**: unlike masking a contiguous span, MIP masks all identifiers in a code fragment.
 
 ##### Bimodal Dual Generation
 
-将NL→PL生成和PL→NL生成视为两项任务，对每对NL-PL双模态数据，构造两个方向相反的训练实例
+NL→PL and PL→NL generation are treated as two tasks; for each NL–PL pair, two training instances with opposite directions are constructed.
 
 ### Experiment
 

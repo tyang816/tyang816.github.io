@@ -1,0 +1,10 @@
+_posts/zh/CV/2022-08-27-CoCa：Contrastive Captioners are Image-Text Foundation Models.md
+_posts/zh/CV/2022-10-10-Can Language Understand Depth？.md
+_posts/zh/CV/2023-01-09-MixGen：A New Multi-Modal Data Augmentation.md
+_posts/zh/CV/2023-01-15-Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language .md
+_posts/zh/CV/2023-02-06-AIM：Adapting Image Models for Efficient Video Action Recognition.md
+_posts/zh/CV/2023-03-09-Improved Baselines with Momentum Contrastive Learning.md
+_posts/zh/CV/2024-02-20-T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-I.md
+_posts/zh/CV/2024-10-24-Movie Gen：A Cast of Media Foundation Models.md
+_posts/zh/IR/2019-07-25-MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation.md
+_posts/zh/IR/2020-07-25-How to Retrain Recommender System？A Sequential Meta-Learning Method.md

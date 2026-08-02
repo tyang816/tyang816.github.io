@@ -1,0 +1,12 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-01-29-OntoProtein：Protein Pretraining With Gene Ontology Embedding.md`
+
+按 `i18n_verify_brief.md` 核对结果：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction → Methodologies → Experiment → Analysis），结尾 `<hr>` 齐全。  
+2. **正文语言**：无中文叙述。  
+3. **Frontmatter**：`lang: en`；`alt_url` 为中文版 `permalink`（`/zh/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/`）；无英文 `permalink`；其余字段与中文版一致。  
+4. **资源**：论文链接、GitHub、全部图片 URL 与公式/符号均保留。  
+5. **结构**：标题层级与中文版对齐（英文将中文笔误「Protein-Portein」改为「Protein–Protein Interaction」，合理）。  
+6. **术语与数字**：ProtBert、ProteinKG25、三元组数量等与原文一致。
+
+未修改文件。

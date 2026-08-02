@@ -1,0 +1,100 @@
+START verify _posts/zh/BI/2019-01-19-Evaluating Protein Transfer Learning with TAPE.md
+START verify _posts/zh/BI/2017-07-07-DeepLoc：prediction of protein subcellular localization using deep learning.md
+START verify _posts/zh/BI/2019-01-21-Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enz.md
+START verify _posts/zh/BI/2021-01-13-Learning from Protein Structure with Geometric Vector Perceptrons.md
+OK verify _posts/zh/BI/2019-01-21-Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enz.md
+START verify _posts/zh/BI/2021-02-02-Learning inverse folding from millions of predicted structures.md
+OK verify _posts/zh/BI/2019-01-19-Evaluating Protein Transfer Learning with TAPE.md
+START verify _posts/zh/BI/2021-02-04-DNABERT：pre-trained Bidirectional Encoder Representations from Transformers mode.md
+OK verify _posts/zh/BI/2017-07-07-DeepLoc：prediction of protein subcellular localization using deep learning.md
+START verify _posts/zh/BI/2021-02-13-MSA Transformer.md
+OK verify _posts/zh/BI/2021-01-13-Learning from Protein Structure with Geometric Vector Perceptrons.md
+START verify _posts/zh/BI/2021-02-19-E(n) Equivariant Graph Neural Networks.md
+OK verify _posts/zh/BI/2021-02-04-DNABERT：pre-trained Bidirectional Encoder Representations from Transformers mode.md
+START verify _posts/zh/BI/2021-04-05-Biological structure and function emerge from scaling unsupervised learning to 2.md
+OK verify _posts/zh/BI/2021-02-19-E(n) Equivariant Graph Neural Networks.md
+START verify _posts/zh/BI/2021-07-01-ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised L.md
+OK verify _posts/zh/BI/2021-02-13-MSA Transformer.md
+START verify _posts/zh/BI/2021-07-15-Highly accurate protein structure prediction with AlphaFold.md
+OK verify _posts/zh/BI/2021-02-02-Learning inverse folding from millions of predicted structures.md
+START verify _posts/zh/BI/2021-09-01-Toward More General Embeddings for Protein Design：Harnessing Joint Representatio.md
+OK verify _posts/zh/BI/2021-04-05-Biological structure and function emerge from scaling unsupervised learning to 2.md
+START verify _posts/zh/BI/2021-10-11-FLIP：Benchmark tasks in fitness landscape inference for proteins.md
+OK verify _posts/zh/BI/2021-07-01-ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised L.md
+START verify _posts/zh/BI/2021-11-09-Light attention predicts protein location from the language of life.md
+OK verify _posts/zh/BI/2021-07-15-Highly accurate protein structure prediction with AlphaFold.md
+START verify _posts/zh/BI/2021-11-10-Language models enable zero-shot prediction of the effects of mutations on prote.md
+OK verify _posts/zh/BI/2021-10-11-FLIP：Benchmark tasks in fitness landscape inference for proteins.md
+START verify _posts/zh/BI/2021-12-07-Modeling Protein Using Large-scale Pretrain Language Model.md
+OK verify _posts/zh/BI/2021-09-01-Toward More General Embeddings for Protein Design：Harnessing Joint Representatio.md
+START verify _posts/zh/BI/2021-12-30-Embeddings from protein language models predict conservation and variant effects.md
+OK verify _posts/zh/BI/2021-11-09-Light attention predicts protein location from the language of life.md
+START verify _posts/zh/BI/2022-01-17-Learning protein fitness models from evolutionary and assay-labeled data.md
+OK verify _posts/zh/BI/2021-11-10-Language models enable zero-shot prediction of the effects of mutations on prote.md
+START verify _posts/zh/BI/2022-01-29-Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-des.md
+OK verify _posts/zh/BI/2021-12-30-Embeddings from protein language models predict conservation and variant effects.md
+START verify _posts/zh/BI/2022-01-29-OntoProtein：Protein Pretraining With Gene Ontology Embedding.md
+OK verify _posts/zh/BI/2021-12-07-Modeling Protein Using Large-scale Pretrain Language Model.md
+START verify _posts/zh/BI/2022-02-22-iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Mul.md
+OK verify _posts/zh/BI/2022-01-17-Learning protein fitness models from evolutionary and assay-labeled data.md
+START verify _posts/zh/BI/2022-03-21-Learning functional properties of proteins with language models.md
+OK verify _posts/zh/BI/2022-01-29-Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-des.md
+START verify _posts/zh/BI/2022-04-30-DeepLoc 2.0：multi-label subcellular localization prediction using protein langua.md
+OK verify _posts/zh/BI/2022-01-29-OntoProtein：Protein Pretraining With Gene Ontology Embedding.md
+START verify _posts/zh/BI/2022-05-27-Tranception：protein fitness prediction with autoregressive transformers and infe.md
+OK verify _posts/zh/BI/2022-02-22-iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Mul.md
+START verify _posts/zh/BI/2022-10-03-Single-sequence protein structure prediction using a language model and deep lea.md
+OK verify _posts/zh/BI/2022-04-30-DeepLoc 2.0：multi-label subcellular localization prediction using protein langua.md
+START verify _posts/zh/BI/2022-10-26-Masked inverse folding with sequence transfer for protein representation learnin.md
+OK verify _posts/zh/BI/2022-03-21-Learning functional properties of proteins with language models.md
+START verify _posts/zh/BI/2022-11-01-Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative.md
+OK verify _posts/zh/BI/2022-05-27-Tranception：protein fitness prediction with autoregressive transformers and infe.md
+START verify _posts/zh/BI/2022-11-28-Fast protein structure searching using structure graph embeddings.md
+OK verify _posts/zh/BI/2022-10-03-Single-sequence protein structure prediction using a language model and deep lea.md
+START verify _posts/zh/BI/2022-12-01-PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding.md
+OK verify _posts/zh/BI/2022-10-26-Masked inverse folding with sequence transfer for protein representation learnin.md
+START verify _posts/zh/BI/2023-01-05-When Geometric Deep Learning Meets Pretrained Protein Language Models.md
+OK verify _posts/zh/BI/2022-11-28-Fast protein structure searching using structure graph embeddings.md
+START verify _posts/zh/BI/2023-01-16-Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling.md
+OK verify _posts/zh/BI/2022-11-01-Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative.md
+START verify _posts/zh/BI/2023-01-22-DeepTP：A Deep Learning Model for Thermophilic Protein Prediction.md
+OK verify _posts/zh/BI/2022-12-01-PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding.md
+START verify _posts/zh/BI/2023-02-02-Conditional Antibody Design as 3D Equivariant Graph Translation.md
+OK verify _posts/zh/BI/2023-01-05-When Geometric Deep Learning Meets Pretrained Protein Language Models.md
+START verify _posts/zh/BI/2023-02-09-Structure-informed Language Models Are Protein Designers.md
+OK verify _posts/zh/BI/2023-01-16-Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling.md
+START verify _posts/zh/BI/2023-03-06-Enhancing Protein Language Models with Structure-based Encoder and Pre-training.md
+OK verify _posts/zh/BI/2023-01-22-DeepTP：A Deep Learning Model for Thermophilic Protein Prediction.md
+START verify _posts/zh/BI/2023-03-14-Accurate and efﬁcient protein sequence design through learning concise local env.md
+OK verify _posts/zh/BI/2023-02-02-Conditional Antibody Design as 3D Equivariant Graph Translation.md
+START verify _posts/zh/BI/2023-03-16-Language models of protein sequences at the scale of evolution enable accurate s.md
+OK verify _posts/zh/BI/2023-02-09-Structure-informed Language Models Are Protein Designers.md
+START verify _posts/zh/BI/2023-05-08-Fast and accurate protein structure search with Foldseek.md
+OK verify _posts/zh/BI/2023-03-06-Enhancing Protein Language Models with Structure-based Encoder and Pre-training.md
+START verify _posts/zh/BI/2023-06-01-Structure-inducing pre-training.md
+OK verify _posts/zh/BI/2023-03-14-Accurate and efﬁcient protein sequence design through learning concise local env.md
+START verify _posts/zh/BI/2023-06-15-End-to-End Full-Atom Antibody Design.md
+OK verify _posts/zh/BI/2023-03-16-Language models of protein sequences at the scale of evolution enable accurate s.md
+START verify _posts/zh/BI/2023-08-04-Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design.md
+OK verify _posts/zh/BI/2023-05-08-Fast and accurate protein structure search with Foldseek.md
+START verify _posts/zh/BI/2023-09-11-Protein generation with evolutionary diffusion：sequence is all you need.md
+OK verify _posts/zh/BI/2023-06-01-Structure-inducing pre-training.md
+START verify _posts/zh/BI/2023-09-22-Predicting a Protein’s Stability under a Million Mutations.md
+OK verify _posts/zh/BI/2023-08-04-Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design.md
+START verify _posts/zh/BI/2023-09-30-ProteinGym：Large-Scale Benchmarks for Protein Design and Fitness Prediction.md
+OK verify _posts/zh/BI/2023-09-11-Protein generation with evolutionary diffusion：sequence is all you need.md
+START verify _posts/zh/BI/2023-10-08-BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology.md
+OK verify _posts/zh/BI/2023-06-15-End-to-End Full-Atom Antibody Design.md
+START verify _posts/zh/BI/2023-11-01-PoET：A generative model of protein families as sequences-of-sequences.md
+OK verify _posts/zh/BI/2023-09-30-ProteinGym：Large-Scale Benchmarks for Protein Design and Fitness Prediction.md
+START verify _posts/zh/BI/2023-11-07-Protein remote homology detection and structural alignment using deep learning.md
+OK verify _posts/zh/BI/2023-09-22-Predicting a Protein’s Stability under a Million Mutations.md
+START verify _posts/zh/BI/2023-11-26-Learning sequence, structure, and function representations of proteins with lang.md
+OK verify _posts/zh/BI/2023-10-08-BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology.md
+START verify _posts/zh/BI/2023-12-08-IgDesign：In vitro validated antibody design against multiple therapeutic antigen (1).md
+OK verify _posts/zh/BI/2023-11-01-PoET：A generative model of protein families as sequences-of-sequences.md
+START verify _posts/zh/BI/2024-01-04-Embedding-based alignment：combining protein language models with dynamic program.md
+OK verify _posts/zh/BI/2023-12-08-IgDesign：In vitro validated antibody design against multiple therapeutic antigen (1).md
+OK verify _posts/zh/BI/2023-11-26-Learning sequence, structure, and function representations of proteins with lang.md
+OK verify _posts/zh/BI/2024-01-04-Embedding-based alignment：combining protein language models with dynamic program.md
+OK verify _posts/zh/BI/2023-11-07-Protein remote homology detection and structural alignment using deep learning.md

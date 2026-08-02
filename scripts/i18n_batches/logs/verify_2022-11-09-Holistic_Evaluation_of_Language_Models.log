@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2022-11-09-Holistic Evaluation of Language Models.md` issues=`Toxicity detecttion → Toxicity detection (heading typo)`
+
+其余项已通过核对：英文全文完整、无中文正文、`lang: en`、`alt_url` 与中文 `permalink` 一致且无英文 `permalink`；图片/链接/arXiv 与章节结构对齐；摘要与要点（InstructGPT、30/42/96%、七维指标等）与中文版一致。

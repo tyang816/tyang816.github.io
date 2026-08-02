@@ -5,42 +5,45 @@ categories: [ML]
 tags: [contrastive-learning, GNN]
 proceedings: NeurIPS
 date: 2020-12-06
+lang: en
+alt_url: /zh/ml/Graph-Contrastive-Learning-with-Augmentations/
+permalink: /ml/Graph-Contrastive-Learning-with-Augmentations/
 ---
 
-> 论文地址：[Graph Contrastive Learning with Augmentations](https://proceedings.neurips.cc/paper/2020/hash/3fe230348e9a12c13120749e3f9fa4cd-Abstract.html)
+> Paper: [Graph Contrastive Learning with Augmentations](https://proceedings.neurips.cc/paper/2020/hash/3fe230348e9a12c13120749e3f9fa4cd-Abstract.html)
 >
-> 论文实现：<https://github.com/Shen-Lab/GraphCL>
+> Code: <https://github.com/Shen-Lab/GraphCL>
 
-## GraphCL：图增强对比学习及其分析
+## GraphCL: Graph Contrastive Learning with Augmentations and Analysis
 
 ### Abstract
 
-作者设计了四种图增强方法来融合不同的先验知识，系统性研究了不同组合的图增强技术在不同数据集下的效果，在四种不同的设定下：半监督，无监督，迁移学习和对抗攻击。结果表示即使不调优增强的范围也不用复杂的GNN架构，GraphCL框架依旧能生成堪比SOTA的方法的很好的图表示
+The authors design four graph augmentation schemes to inject different prior knowledge, and systematically study how various combinations of augmentations perform across datasets under four settings: semi-supervised learning, unsupervised learning, transfer learning, and adversarial attacks. Results show that, even without tuning augmentation strength or using elaborate GNN architectures, the GraphCL framework yields graph representations that compare favorably with state-of-the-art methods.
 
 ### Introduction
 
-相比于CNN在图像上的应用，GNN预训练策略对图结构的设计有独特的困难，因为他有丰富的上下文结构化信息，比如分子原子的键，社交网络的交互等等，这就导致了很难设计一个对下游任务很泛化有效的预训练策略
+Unlike CNNs on images, pre-training strategies for GNNs face distinct design challenges on graph structure because graphs encode rich contextual structure—e.g., atomic bonds in molecules and interactions in social networks—making it hard to devise a pre-training objective that generalizes broadly to downstream tasks.
 
-主要贡献：
+Main contributions:
 
-- 设计了四种类型的图形数据增强，每一种都对图形数据施加了一定的先验，并对其范围和模式进行了参数化
-- 提出了一种新的图对比学习框架(GraphCL)用于GNN的预训练，从而可以为不同的图结构数据学习对特定扰动不变的表示，并且证明了GraphCL可以被重写为一个图数据上的通用框架
-- 评估了在不同类型的数据集上对比不同增强的性能，揭示了性能的基本原理，并为采用特定数据集的框架提供了指导
+- Four types of graph data augmentation, each encoding a specific prior on graph data with parameterized scope and pattern
+- A graph contrastive learning framework (GraphCL) for GNN pre-training that learns representations invariant to chosen perturbations on diverse graph-structured data, together with a reformulation of GraphCL as a general framework on graph data
+- Empirical comparison of augmentations on datasets of different types, analysis of what drives performance, and practical guidance for choosing augmentations on a given dataset
 
 ### Methodology
 
 #### Data Augmentation for Graphs
 
-数据增强的目的是通过应用某些转换，在不影响语义标签的情况下创建新的、现实合理的数据，在图领域还没有得到很好的探索
+Data augmentation aims to create new, plausible instances via transformations that preserve semantic labels; this direction remains under-explored for graphs.
 
-我们主要关注三类：生化分子（如化学化合物、蛋白质）、社会网络和图像超像素图
+We focus on three domains: biochemical graphs (e.g., compounds and proteins), social networks, and image superpixel graphs.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCL/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-- 结点丢弃：节点丢弃将随机丢弃顶点的某些顶点及其连接，缺少部分顶点并不影响g的语义意义。每个节点的丢弃概率遵循默认的i.i.d.均匀分布
-- 边缘扰动：通过随机添加或删除一定比例的边来干扰G中的连接性，说明G的语义意义对边缘连接模式方差具有一定的鲁棒性。遵循i.i.d.均匀分布，以进行每条边的增减
-- 属性屏蔽：属性屏蔽提示模型使用它们的上下文信息来恢复被屏蔽的顶点属性。基本的假设是，缺少部分顶点属性对模型预测没有太大影响
-- 子图：使用随机游走从G中抽取一个子图，假设G的语义可以大大保留在其（部分）局部结构中
+- **Node dropping:** Randomly removes vertices and their incident edges; omitting some vertices does not change the semantic label of graph g. Drop probabilities are i.i.d. uniform by default.
+- **Edge perturbation:** Randomly adds or deletes a fraction of edges, reflecting robustness of semantics to variation in connectivity. Each edge is perturbed under an i.i.d. uniform rule (add or remove).
+- **Attribute masking:** Masks vertex attributes so the model must infer them from context; the assumption is that missing some attributes has limited impact on prediction.
+- **Subgraph:** Samples a subgraph via random walk, under the assumption that semantics are largely preserved in (partial) local structure.
 
 #### Graph Contrastive Learning
 
@@ -48,33 +51,33 @@ date: 2020-12-06
 
 ### The Role of Data Augmentation in Graph Contrastive Learning
 
-#### Data Augmentations are Crucial. Composing Augmentations Benefifits
+#### Data Augmentations are Crucial. Composing Augmentations Benefits
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GraphCL/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
 **Obs. 1. Data augmentations are crucial in graph contrastive learning**
 
-从最上面行或最右列可以看出单一数据增强也带来了一定的提升，应用适当的增强时，在数据分布上注入相应的先验，通过最大化图及其增强之间的一致性来强制模型学习对期望扰动不变的表示
+From the top row or rightmost column, a single augmentation already helps: with an appropriate prior injected into the data distribution, maximizing agreement between a graph and its augmentation encourages invariance to the intended perturbation.
 
-**Obs. 2. Composing different augmentations benefifits more**
+**Obs. 2. Composing different augmentations benefits more**
 
-同时组合多种数据增强可以带来更好的效果，可能是因为组合不同类型的增强对确实对应于一个“更难”的对比预测任务
+Combining multiple augmentations often works better, plausibly because the contrastive task becomes harder when several perturbation types must be handled jointly.
 
 #### The Types, the Extent, and the Patterns of Effective Graph Augmentations
 
-**Obs. 3. Edge perturbation benefifits social networks but hurts some biochemical molecules**
+**Obs. 3. Edge perturbation benefits social networks but hurts some biochemical molecules**
 
-与社交网络的情况相比，一些生物分子数据的“语义项”对单个边缘更为敏感，改了分子的边可能意义就完全变了，但是社交网络的边影响不大
+For some biomolecular graphs, semantics depend more sharply on individual edges than in social networks: altering a bond can change chemical meaning entirely, whereas extra or missing social ties often matter less.
 
 **Obs. 4. Applying attribute masking achieves better performance in denser graphs**
 
-掩蔽模式也很重要，而掩蔽有更多度的枢纽节点有利于更密集的图，因为gnn不能根据信息传递机制重建孤立节点中的缺失信息
+Masking pattern matters; masking higher-degree hub nodes helps more on denser graphs, since message passing cannot recover masked features on poorly connected nodes.
 
-**Obs. 5. Node dropping and subgraph are generally benefificial across datasets**
+**Obs. 5. Node dropping and subgraph are generally beneficial across datasets**
 
-对于节点删除，强调缺少某些顶点（例如化合物中的一些氢原子或社交网络中的边缘用户）不会改变语义信息的先验，直观上符合我们的认知
+Node dropping encodes the prior that omitting certain vertices—e.g., some hydrogens in compounds or peripheral users in social graphs—does not change semantics, which aligns with intuition.
 
-子图和全局信息一致性有助于表示学习，这解释了观察结果，比如化合物的子图可以表示结构或功能
+Subgraph views and consistency with global structure aid representation learning, consistent with subgraphs of compounds capturing structural or functional motifs.
 
 ### Comparison with the State-of-the-art Methods
 

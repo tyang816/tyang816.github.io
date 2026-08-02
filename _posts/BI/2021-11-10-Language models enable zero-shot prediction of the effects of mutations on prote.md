@@ -5,47 +5,49 @@ categories: [BI]
 tags: [protein, PLM, fitness-prediction]
 proceedings: NeurIPS
 date: 2021-11-10
+lang: en
+alt_url: /zh/bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
+permalink: /bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
 ---
 
-> 论文地址：[Language models enable zero-shot prediction of the effects of mutations on protein function](https://proceedings.neurips.cc/paper/2021/hash/f51338d736f95dd42427296047067694-Abstract.html)
+> Paper: [Language models enable zero-shot prediction of the effects of mutations on protein function](https://proceedings.neurips.cc/paper/2021/hash/f51338d736f95dd42427296047067694-Abstract.html)
 >
-> 论文实现：<https://github.com/facebookresearch/esm>
+> Code: <https://github.com/facebookresearch/esm>
 >
 
-## ESM-1v：zero-shot做蛋白质突变
+## ESM-1v: Zero-Shot Prediction of Protein Mutations
 
 ### Abstract
 
-进化信息已经编码在了蛋白质序列里面，无监督模型可以从序列种学习到变体的影响。目前的方法都是来拟合一个家族的序列，这对每个预测任务都要做新模型，非常局限，所以本文提出了一个zero-shot模型
+Evolutionary information is encoded in protein sequences, and unsupervised models can learn the impact of variants from sequence data alone. Existing approaches fit models to sequences from individual families, which requires training a new model for each prediction task and is highly limiting. This work proposes a zero-shot model instead.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-1v/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-序列变异的功能效应可以通过深度突变扫描（deep mutational scanning）实验来测量
+The functional effects of sequence variants can be measured with deep mutational scanning experiments.
 
-提出无监督模型esm1v
+The authors introduce the unsupervised model ESM-1v.
 
-### Zero-shot transfer
+### Zero-Shot Transfer
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-1v/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-zero-shot要求模型在预训练阶段就学习到之后的具体任务所需的一切信息。本文中使蛋白质语言模型具有zero-shot预测能力的机制是，采用含有海量进化信息的蛋白数据库进行预训练。当所用数据库涵盖的序列足够多、足够多样(large and diverse)，那么模型就有可能从数据库中学到横跨整个进化树的序列模式，那么该模型也就很可能会在预训练阶段学习到它将要应用的家族的序列模式，迁移应用时也就无需再额外训练
+Zero-shot learning requires that the model acquire during pretraining all information needed for downstream tasks. Here, the mechanism that enables zero-shot prediction is pretraining protein language models on large databases rich in evolutionary signal. When the database is sufficiently large and diverse, the model can learn sequence patterns spanning the entire tree of life and, in pretraining, capture patterns characteristic of the protein families to which it will be applied—so no additional training is needed at transfer time.
 
 ### Method
 
-用氨基酸的保守性衡量变异的影响力，若某位置与野生型相比其他氨基酸出现的概率很低，说明蛋白序列在该位点很保守，变异可能性很低，也就说明该位点的氨基酸可能对蛋白的结构和功能有重要影响
+Amino-acid conservation at a site gauges how strongly a variant may matter: if, relative to the wild type, other amino acids have very low probability at that position, the sequence is conserved there and substitution is unlikely, suggesting that the residue is important for structure and function.
 
-预测序列变异对蛋白功能的影响的方法：为每个变异对功能的影响打分来衡量其影响，比较某个被遮盖位置(masked)变异成某个氨基酸的概率和该位置变异成野生型蛋白的概率，求它们的log-odds，即求它们概率的比值再取对数
+To score how a variant affects protein function, the authors compare, at each masked position, the probability of the mutant amino acid versus the wild-type amino acid and take their log-odds (the log ratio of the two probabilities).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-1v/frm1.png" alt="avatar" style="zoom:60%;" /></div>
 
-ESM-1v模型采用与ESM-1b相同的结构
+ESM-1v uses the same architecture as ESM-1b.
 
-- 训练方法：masked training
+- Training: masked language modeling
 
-
-- 训练数据：UR90数据库，含有98million条多样的蛋白序列，数据量和数据多样性都远远大于ESM-1b和MSA Transformer训练所用的UR50数据库，因此训练出的模型迁移能力更强
+- Training data: UR90, with 98 million diverse protein sequences—substantially greater in scale and diversity than UR50 used for ESM-1b and MSA Transformer—yielding stronger transfer performance
 
 ### Result
 

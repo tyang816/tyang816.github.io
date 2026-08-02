@@ -1,0 +1,14 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿，结论如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构完整（含 Limitation、HR 结尾） | 与中文一致 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` = 中文 `permalink` | 通过 |
+| 图片 / 链接 / 公式 | 与中文一致 |
+| 章节层级 | 对齐 |
+| 术语与数字（NQ、TriviaQA、V100、~320k 等） | 合理 |
+
+英文版在语气与结构上已覆盖中文要点（含 PAWA decoder、consistency regularization、beam 合法前缀等），无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/IR/2022-11-01-A Neural Corpus Indexer for Document Retrieval.md`

@@ -1,0 +1,14 @@
+已按 `i18n_verify_brief.md` 逐项对照中英两篇笔记。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文完整、结构与中文一致 | ✓ |
+| 正文无中文 | ✓ |
+| `lang: en`，`alt_url` = 中文 `permalink`，英文无 `permalink` | ✓ |
+| 链接/URL 一致 | ✓ |
+| 标题与三条要点对应 | ✓ |
+| 术语与语气（Transformer、pre-training 等） | ✓ |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2020-11-18-Improved Automatic Summarization of Subroutines via Attention to File Context.md`

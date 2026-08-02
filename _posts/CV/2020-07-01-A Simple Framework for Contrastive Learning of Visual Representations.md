@@ -5,20 +5,23 @@ categories: [CV]
 tags: [contrastive-learning]
 proceedings: ICML
 date: 2020-07-01
+lang: en
+alt_url: /zh/cv/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/
+permalink: /cv/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/
 ---
 
-> 论文地址：[A Simple Framework for Contrastive Learning of Visual Representations](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf)
+> Paper: [A Simple Framework for Contrastive Learning of Visual Representations](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf)
 >
-> 代码：<https://github.com/google-research/simclr>
+> Code: <https://github.com/google-research/simclr>
 
-## SimCLR：缝合了很多技术，在特征提取后添加MLP层和激活函数，用更多的数据增强策略，大batch_size
+## SimCLR: Combining several ideas—MLP and nonlinearity on top of representations, stronger augmentations, and large batch sizes
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Simple Framework for Contrastive Learning of Visual Representations/img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-1. 同一图片衍生得到的两个图片是正样本，一个mini batch中抽样N，那么正样本N；负样本是其他样本以及数据增强后的样本，即2(N-1)；编码器共享权重
-2. simCLR一个重要贡献是在通过h函数提取特征得到z后增加了一个g函数，一层MLP和激活函数，让分类任务提点近10个点。g函数旨在训练的时候用，做下游任务时不用，还是只用特征z就行。同时发现用none-linear(一层MLP和激活函数)提点最大，特征z的维度区别不大，所以可以选择较低的维度(128)
-3. 对比学习需要更多的数据增强技术，裁剪/旋转/改变色彩/高斯噪声/高斯模糊/...，以及做了数据增强的消融实验，最有效的是随即裁剪和色彩变换
-4. batch size比较大，训练更久，网络特征会比较好，用lars优化器在大batch size下优化
+1. Two augmented views of the same image form a positive pair. With batch size N, there are N positive pairs; negatives are all other samples and their augmented views, i.e. 2(N−1). The encoder weights are shared across views.
+2. A key SimCLR design is a projection head g—a single MLP layer plus nonlinearity—applied after the encoder h produces representation z. This head improves linear evaluation by roughly ten percentage points. g is used only during pretraining; downstream tasks use z alone. A one-layer nonlinear MLP works best; the dimension of z matters little, so a smaller dimension (e.g. 128) is sufficient.
+3. Contrastive learning benefits from a rich set of augmentations: random crop, rotation, color jitter, Gaussian noise, Gaussian blur, and others. Ablations show random cropping and color transformations are the most effective.
+4. Larger batch sizes and longer training yield better representations; LARS is used to stabilize optimization at large batch size.
 
 <HR align=left color=#987cb9 SIZE=1>
 

@@ -1,0 +1,7 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-06-08-Learning code summarization from a small and local dataset.md` issues=`maximalist hybrid terminology (Abstract); augmentation intro vs five listed strategies`
+
+**核对摘要：** 正文完整、无中文、frontmatter（`lang: en`、`alt_url` 指向中文 `permalink`、无英文 `permalink`）正确；图片/链接/数学与中文一致；章节结构对齐。
+
+**已改两处：**
+1. Abstract：「hybrid maximization」→ 与 arXiv/中文「最大化混合」一致的 **maximalist hybrid**，并写明先多语言微调再同项目训练。
+2. Methodology：原「two noise patterns」与下列 5 条增强矛盾 → **several noise strategies**。

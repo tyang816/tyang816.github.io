@@ -1,0 +1,10 @@
+_posts/zh/BI/2025-05-01-ProteinCrow：A Language Model Agent That Can Design Proteins.md
+_posts/zh/BI/2025-06-14-Evaluating the representational power of pre-trained DNA language models for reg.md
+_posts/zh/BI/2025-10-24-Democratizing protein language model training, sharing and collaboration.md
+_posts/zh/BI/2026-03-17-evedesign accessible biosequence design with a unified framework.md
+_posts/zh/BI/2026-05-12-BiomniBench Process-level Evaluation of LLM Agents for Real-world Biomedical Research.md
+_posts/zh/CL/2017-02-04-SeqGAN：Sequence Generative Adversarial Nets with Policy Gradient.md
+_posts/zh/CL/2018-02-02-Generative Adversarial Network for Abstractive Text Summarization.md
+_posts/zh/CL/2018-09-28-Graph2Seq：Graph to Sequence Learning with Attention-based Neural Networks.md
+_posts/zh/CL/2018-10-23-Improving Abstraction in Text Summarization.md
+_posts/zh/CL/2018-11-21-Improving Language Understanding by Generative Pre-Training.md

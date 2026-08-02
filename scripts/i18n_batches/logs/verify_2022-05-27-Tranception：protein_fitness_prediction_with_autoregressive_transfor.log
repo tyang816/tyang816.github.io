@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 核对结果如下：
+
+| 项 | 结果 |
+|---|---|
+| 英文全文与中文章节一致（至 Results + HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink` | 通过 |
+| 图片、链接、公式块一致 | 通过 |
+| 标题层级与中文一致 | 通过 |
+| 英文表述与术语（含 UniRef100 相对中文笔误 UniRed100） | 通过 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-05-27-Tranception：protein fitness prediction with autoregressive transformers and infe.md`

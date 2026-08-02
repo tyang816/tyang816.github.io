@@ -5,51 +5,54 @@ categories: [BI]
 tags: [protein, PLM, alignment]
 proceedings: Bioinformatics
 date: 2024-01-04
+lang: en
+alt_url: /zh/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
+permalink: /bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
 ---
 
-> 论文地址：[Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone](https://academic.oup.com/bioinformatics/article/doi/10.1093/bioinformatics/btad786/7510842)
+> Paper: [Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone](https://academic.oup.com/bioinformatics/article/doi/10.1093/bioinformatics/btad786/7510842)
 >
-> 论文实现：<https://git.scicore.unibas.ch/schwede/EBA> and <https://git.scicore.unibas.ch/schwede/eba_benchmark>
+> Code: <https://git.scicore.unibas.ch/schwede/EBA> and <https://git.scicore.unibas.ch/schwede/eba_benchmark>
 
-## EBA：PLM embedding相似度相似度矩阵作为NW和SW的输入
+## EBA: PLM embedding similarity matrix as input to NW and SW
 
 ### Abstract
 
 #### Motivation
 
-蛋白质语言模型能够生成per-residue的高维表征，也就是蛋白质序列的语义信息，可以用于下游任务，也可以用于找到蛋白质之间的同源关系
+Protein language models produce high-dimensional per-residue representations that encode semantic information about protein sequences. These embeddings support downstream tasks and can help identify homologous relationships between proteins.
 
 #### Results
 
-提出了 embedding-based protein sequence alignments (EBA)，甚至可以在twilight zone捕获到结构相似性
+The authors propose embedding-based protein sequence alignments (EBA), which can capture structural similarity even in the twilight zone.
 
 ### Introduction
 
-标准的比对方法当进入twilight zone的时候，这种成对信号就会变得模糊，但PLMs建立序列之间的同源关系超越了简单的序列比较，可以揭示更多信息
+In the twilight zone, pairwise signals from standard alignment methods become ambiguous, whereas PLMs establish homology between sequences beyond simple sequence comparison and can reveal additional information.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EBA/fig1.png" alt="avatar" style /></div>
 
-把表征做平均会丢失很多顺序信息，比如图1里面结构、序列完全不一样的蛋白他们的平均表征计算得到的欧几里得距离是一样的
+Averaging representations discards much positional information; for example, in Figure 1, proteins with completely different structures and sequences can yield the same Euclidean distance between their averaged embeddings.
 
-这种问题可以通过增加计算复杂度、显式建模对齐来解决，由于残基水平的嵌入并不总是具有可比性，还包括了一个步骤，使用比较蛋白质的残基嵌入距离的分布来增强相似矩阵的信号
+This issue can be addressed by increasing computational complexity and explicitly modeling alignment. Because residue-level embeddings are not always directly comparable, an additional step uses the distribution of pairwise residue-embedding distances between the proteins being compared to strengthen the signal in the similarity matrix.
 
 ### Materials and Methods
 
-benchmark包含了三种预训练模型，ProstT5、ProtT5和ESM-1B
+The benchmark uses three pretrained models: ProstT5, ProtT5, and ESM-1B.
 
 #### Average distance
 
-把向量平均（AD）算相似度
+Similarity is computed from averaged vectors (AD).
 
 #### Embedding-based alignment
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EBA/frm1.png" alt="avatar" style /></div>
 
-d是欧几里得距离，`$r_i$` 和 `$r_j$` 分别是两个蛋白质的对应点位的embedding
+Here `$d$` is the Euclidean distance; `$r_i$` and `$r_j$` are the embeddings at corresponding positions in the two proteins.
 
 #### Signal enhancement
 
-对于给定的一对氨基酸 (i, j) 和相似度分数 `$SM_{i,j}$` ，计算同一行或同一列的Z-score
+For a given amino-acid pair (i, j) with similarity score `$SM_{i,j}$`, Z-scores are computed along the same row or column.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EBA/frm2-frm3.png" alt="avatar" style /></div>
 
@@ -59,7 +62,7 @@ d是欧几里得距离，`$r_i$` 和 `$r_j$` 分别是两个蛋白质的对应�
 
 #### Global and local dynamic alignment
 
-使用 `$SM_{enh}$` 作为打分矩阵，Needleman-Wunsch (NW) 和 Smith-Waterman (SW)方法进行比对，gap penality对于NW是0，对于SW是2。对于NW global alignment，EBA similarity socre用下面的方法正则化：
+Needleman-Wunsch (NW) and Smith-Waterman (SW) alignments use `$SM_{enh}$` as the scoring matrix. Gap penalties are 0 for NW and 2 for SW. For NW global alignment, the EBA similarity score is normalized as follows:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/EBA/frm6.png" alt="avatar" style /></div>
 
@@ -67,19 +70,19 @@ d是欧几里得距离，`$r_i$` 和 `$r_j$` 分别是两个蛋白质的对应�
 
 #### Structural similarity analysis
 
-使用PISCES，序列相似度小于30%，最长链小于75，用和tm score的spearman相关系数表示
+PISCES is used with sequence identity below 30% and maximum chain length below 75; performance is reported as Spearman correlation with TM-score.
 
 #### CATH annotation transfer analysis
 
-66K CATH 结构域，219个测试集，用准确率表示
+66K CATH domains and 219 test sets; evaluation uses accuracy.
 
 #### SCOP annotation transfer analysis
 
-SCOPe 2.01中的蛋白结构域聚类在40%的序列同源性，得到12,211个非冗余结构域，数据来源 <https://github.com/steineggerlab/foldseek-analysis>
+Protein domain clusters from SCOPe 2.01 at 40% sequence homology yield 12,211 non-redundant domains; data from <https://github.com/steineggerlab/foldseek-analysis>.
 
 #### HOMSTRAD alignment quality
 
-HOMSTRAD 包含了1032个蛋白家族中的同源蛋白的专业策划的结构比对，数据来源 <https://github.com/steineggerlab/foldseek-analysis>
+HOMSTRAD provides expert-curated structural alignments of homologous proteins from 1,032 families; data from <https://github.com/steineggerlab/foldseek-analysis>.
 
 ### Results
 

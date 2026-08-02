@@ -1,0 +1,12 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-10-26-Masked inverse folding with sequence transfer for protein representation learnin.md`
+
+对照 `i18n_verify_brief.md` 检查结果：
+
+1. **完整性**：英文与中文章节一致（Abstract → Introduction → MIF/MIF-ST → Downstream tasks → Conclusions/Limitations/Future work），无截断。  
+2. **正文语言**：英文正文中无中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/`）；英文无 `permalink`；其余字段与中文对齐。  
+4. **资源**：论文链接、GitHub、DOI、全部图片与公式块与中文版一致。  
+5. **结构与表述**：标题层级一致；英文已是规范学术表述，无需修改。  
+6. **数字与命名**：42M、190k、k=30、CATH4.2、CARP-640M、MIF-ST 等均保留正确。
+
+未对英文文件做任何修改。

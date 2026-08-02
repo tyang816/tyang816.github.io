@@ -5,34 +5,37 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: ACL
 date: 2019-08-01
+lang: en
+alt_url: /zh/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
+permalink: /cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
 ---
 
-> 论文地址：[Improving Robustness of Neural Machine Translation with Multi-task Learning](https://aclanthology.org/W19-5368)
+> Paper: [Improving Robustness of Neural Machine Translation with Multi-task Learning](https://aclanthology.org/W19-5368)
 
-## Multi-task Transformer：噪音编码器和干净、目标解码器
+## Multi-task Transformer: noisy encoder and clean, target decoders
 
 ### Abstract
 
-神经机器翻译在干净的领域文本里面表现很好，但是当文本充斥大量语法错误、打字错误或其他错误的时候效果锐减，所以作者提出了基于transformer的多任务学习算法来抵抗噪音
+Neural machine translation performs well on clean in-domain text, but its quality drops sharply when text is full of grammatical errors, typos, or other noise. The authors propose a Transformer-based multi-task learning method to improve robustness to noise.
 
 ### Introduction
 
-现实世界的数据，特别是在社交媒体领域，通常包含噪音，如拼写错误、语法错误或词汇变化等，但对人而言识别出来没什么难度，对神经机器翻译就很难了，所以有必要建立一个健壮的NMT系统
+Real-world data—especially in social media—often contains noise such as spelling errors, grammatical mistakes, or lexical variation. People can recognize such noise with little difficulty, but neural machine translation struggles. Building a robust NMT system is therefore important.
 
-本文用了两个解码器，每个解码器都有不同的学习目标
+This work uses two decoders, each with a different learning objective:
 
-*   第一个解码器：
-    *   读入编码器的输出
-    *   去噪解码器，将噪音语句生成对应的干净语句
+*   First decoder:
+    *   Reads the encoder output
+    *   Denoising decoder: maps a noisy sentence to the corresponding clean sentence
 
-*   第二个解码器：
-    *   读入编码器和第一个解码器的输出
-    *   翻译解码器，给定噪音语句和干净语句生成翻译的目标语句
+*   Second decoder:
+    *   Reads the encoder output and the first decoder’s output
+    *   Translation decoder: given the noisy sentence and the clean sentence, generates the target translation
 
-这种框架应该会从两个角度受益
+This framework should benefit in two ways:
 
-*   由于该模型是用有噪声的文本训练的，它应该更好地**推广到有噪声的文本**
-*   翻译译码器可以潜在地利用恢复的干净句子，同时通过引用原来的噪声句子**保持特定种类的噪声**（例如表情符号）
+*   Because the model is trained on noisy text, it should **generalize better to noisy text**
+*   The translation decoder can use the recovered clean sentence while **preserving certain kinds of noise** (e.g., emojis) by also conditioning on the original noisy sentence
 
 ### Multi-task Transformer
 
@@ -40,9 +43,9 @@ date: 2019-08-01
 
 #### Detailed Architecture
 
-数据集是三元组：`$T=\{t_n,t_c,t_t\}$`，其中 `$t_n$` 是噪音语句， `$t_c$` 是干净语句， `$t_t$` 是目标翻译
+The data are triplets `$T=\{t_n,t_c,t_t\}$`, where `$t_n$` is the noisy sentence, `$t_c$` is the clean sentence, and `$t_t$` is the target translation.
 
-收到编码器注意力分数和降噪解码器注意力分数后得到最后的注意力上下文为
+Given encoder attention scores and denoising-decoder attention scores, the final attention context is
 
 ```math
 A_t=W[A_n:A_c]+b
@@ -50,11 +53,11 @@ A_t=W[A_n:A_c]+b
 
 #### Two Phase Beam Search
 
-用了两个阶段分别的束搜索过程来解码最终的翻译
+Decoding uses a two-stage beam search to obtain the final translation.
 
-给一个语句 `$t_n$` ，降噪解码器产生一个 `$N_{beam}$` 的输出每个输出由一个降噪假设 `$\hat{t}_c$`，假设概率 `$P(\hat{t}_c|x_n;\theta)$` 和对应的隐藏矩阵 `$M_c$`，对于从第一个解码器产生的每个假设，第二个解码器也产生了 `$N_{beam}$` 元组，每个元组包括一个翻译假设 `$\hat{t}_c$` 和它的概率 `$P(\hat{t}_t|t_n,\hat{t}_c;\theta)$`
+For an input sentence `$t_n$`, the denoising decoder produces `$N_{beam}$` outputs. Each output consists of a denoising hypothesis `$\hat{t}_c$`, its probability `$P(\hat{t}_c|x_n;\theta)$`, and the corresponding hidden matrix `$M_c$`. For each hypothesis from the first decoder, the second decoder also produces `$N_{beam}$` tuples; each tuple includes a translation hypothesis `$\hat{t}_t$` and its probability `$P(\hat{t}_t|t_n,\hat{t}_c;\theta)$`.
 
-在第二阶段结束时，会有 `$N_{beam}\times N_{beam}$` 的翻译假设，根据下述公式定义的分数对假设排序
+At the end of the second stage, there are `$N_{beam}\times N_{beam}$` translation hypotheses, ranked by the score defined below:
 
 ```math
 \mathcal{L}(\theta)=\lambda \log P(t_c|t_n;\theta)+(1-\lambda)\log P(t_t|t_n,t_c;\theta)
@@ -64,19 +67,19 @@ A_t=W[A_n:A_c]+b
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Multi-task Transformer/img2.png" alt="avatar" style /></div>
 
-这种训练需要的三元组数据很少，可用的数据量不足以支持训练这种大参数模型，所以用反向翻译策略来合成三元组，作者提出的这种方法只有三元组里面有一个存在就行，作者主要关注的是从法语到英语的翻译，现在语料库最缺的就是有噪音的文本
+Training requires triplets, but such data are scarce and insufficient to train a large model. The authors use back-translation to synthesize triplets. Their procedure only requires one of the three components to be available. They focus on French-to-English translation; the scarcest resource in the corpus is noisy text.
 
 ##### Clean fr & Clean en
 
-这是最常见的并行语料库，通过TED和MTNT训练数据训练的NMT模型来生成噪音文本。在每个句子的开头添加一个MTNT标签，并将它们输入到这个NMT模型中。理想情况下，除了不完全翻译所产生的固有噪声外，翻译后的法语句子也可以具有与MTNT相似的噪声分布。
+This is the most common type of parallel corpus. An NMT model trained on TED and MTNT is used to generate noisy text. An MTNT tag is prepended to each sentence before feeding it into this NMT model. Ideally, besides noise from incomplete translation, the translated French sentences should exhibit a noise distribution similar to MTNT.
 
 ##### Noisy fr & Clean en
 
-这种并行文本可以在MTNT训练数据中找到。即使手动翻译的英语句子包含某种程度的“噪音”（例如表情符号），也将它们视为干净的英语文本。
+Such parallel text appears in the MTNT training data. Even when manually translated English contains some “noise” (e.g., emojis), it is treated as clean English.
 
 ##### Clean fr
 
-设计了一个管道来利用单语数据来使反向翻译策略更适用。先将这些句子翻译成英语，然后再翻译回法语。如我们上面所述，这两个NMT模型都是用TED和MTNT数据进行训练的。在这两个方向上，在句子的开头添加了MTNT标签。也可以使用现成的NMT模型来生成干净的英语文本。
+A pipeline uses monolingual data to make back-translation more practical. Sentences are first translated into English and then back into French. As above, both NMT models are trained on TED and MTNT data, with an MTNT tag added at the start of each sentence in both directions. Off-the-shelf NMT models can also be used to generate clean English text.
 
 ### Experiments
 

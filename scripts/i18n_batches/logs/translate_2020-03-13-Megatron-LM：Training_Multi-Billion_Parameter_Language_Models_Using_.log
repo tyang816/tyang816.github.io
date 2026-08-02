@@ -1,0 +1,6 @@
+**DONE**
+
+已在 `_posts/OS/2020-03-13-Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Paralle.md` 写入英文学术译文。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/`（对应中文 `permalink`）；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：blockquote 已译为 Paper / Code；章节、图片块、链接与 `<HR>` 均保留；正文无中文。

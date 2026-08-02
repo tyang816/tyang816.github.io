@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文完整、结构与中文一致（摘要块、二级标题、2 条列表、`<HR>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = `/zh/cv/Representation-Learning-with-Contrastive-Predictive-Coding/`（与中文 `permalink` 一致）；无 `permalink`；其余 frontmatter 一致 | 通过 |
+| arXiv 链接 `http://arxiv.org/abs/1807.03748` 保留 | 通过 |
+| 章节与中文对齐 | 通过 |
+| 术语与表述（CPC、*c_t*、*pre*、query、contrastive learning、RNN/LSTM）准确 | 通过 |
+
+英文译文与中文要点一致，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2018-07-10-Representation Learning with Contrastive Predictive Coding.md`

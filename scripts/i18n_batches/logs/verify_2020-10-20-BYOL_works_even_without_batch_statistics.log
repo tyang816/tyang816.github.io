@@ -1,0 +1,15 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文完整（blockquote、标题、2 条要点、`<HR>`） | 与中文结构一致 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url: /zh/cv/BYOL-works-even-without-batch-statistics/` 与中文 `permalink` 一致；英文无 `permalink`；其余 frontmatter 一致 | 通过 |
+| 链接 `http://arxiv.org/abs/2010.10241` 保留 | 通过 |
+| 章节与中文对应 | 通过 |
+| 学术英文表述 | 通过 |
+| BYOL、SimCLR、batch norm 等名称与论点一致 | 通过 |
+
+未修改英文文件。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2020-10-20-BYOL works even without batch statistics.md`

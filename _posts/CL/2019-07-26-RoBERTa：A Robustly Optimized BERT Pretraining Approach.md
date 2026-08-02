@@ -5,26 +5,29 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: arXiv
 date: 2019-07-26
+lang: en
+alt_url: /zh/cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
+permalink: /cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
 ---
 
-> 论文地址：[RoBERTa：A Robustly Optimized BERT Pretraining Approach](http://arxiv.org/abs/1907.11692)
+> Paper: [RoBERTa: A Robustly Optimized BERT Pretraining Approach](http://arxiv.org/abs/1907.11692)
 >
-> 论文实现：<https://github.com/pytorch/fairseq>
+> Code: <https://github.com/pytorch/fairseq>
 
-## RoBERTa：BERT升级版
+## RoBERTa: An Improved BERT
 
 ### Abstract
 
-BERT训练昂贵并且大多在不同大小的私有数据集上训练，超参数的选择对最后的结果有很大的影响。本文展示了一个BERT的重复性实验研究，衡量了不同关键参数和训练数据大小的影响，可以发现BERT是明显训练不足的，性能还能提升
+BERT pretraining is expensive and is often carried out on private datasets of varying size; hyperparameter choices strongly affect final results. This paper presents a replication study of BERT, measuring the impact of key hyperparameters and training data scale, and shows that BERT is substantially undertrained and that performance can still be improved.
 
-### Introdcution
+### Introduction
 
-作者发现BERT明显训练不足，并提出了一个训练BERT模型的改进配方，称之为RoBERTa，可以匹及或超越所有的BERT模型，主要包含以下修改：
+The authors find that BERT is clearly undertrained and propose an improved recipe for training BERT-style models, called RoBERTa, which matches or exceeds all published BERT models. The main changes include:
 
-*   训练模型更长的时间，更长的批次，超过更多的数据
-*   去除下一个句子预测目标
-*   对更长的序列进行训练
-*   动态地改变应用于训练数据的掩蔽模式
+*   Training longer, with larger batches, over more data
+*   Removing the next sentence prediction (NSP) objective
+*   Training on longer sequences
+*   Dynamically changing the masking pattern applied to training data
 
 ### Training Procedure Analysis
 
@@ -32,34 +35,34 @@ BERT训练昂贵并且大多在不同大小的私有数据集上训练，超参�
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RoBERTa/tab1.png" alt="avatar" style /></div>
 
-*   原始静态mask：
+*   Original static masking:
 
-    *   BERT中是准备训练数据时，每个样本只会进行一次随机mask（因此每个epoch都是重复），后续的每个训练步都采用相同的mask，这是原始静态mask，即单个静态mask，这是原始 BERT 的做法
-*   修改版静态mask：
+    *   In BERT, each training example is masked once when the data is prepared (so the same masks repeat every epoch); every subsequent training step uses the same mask. This is the original static masking—a single fixed mask per example, as in the original BERT setup.
+*   Modified static masking:
 
-    *   在预处理的时候将数据集拷贝 10 次，每次拷贝采用不同的 mask（总共40 epochs，所以每一个mask对应的数据被训练4个epoch）。这等价于原始的数据集采用10种静态 mask 来训练 40个 epoch
-*   动态mask：
+    *   During preprocessing, the dataset is duplicated 10 times, each copy with a different mask (40 epochs total, so each mask pattern is seen for 4 epochs). This is equivalent to training the original corpus for 40 epochs with 10 distinct static masks.
+*   Dynamic masking:
 
-    *   并没有在预处理的时候执行 mask，而是在每次向模型提供输入时动态生成 mask，所以是时刻变化的
+    *   Masking is not applied at preprocessing time; masks are generated dynamically whenever input is fed to the model, so the mask changes from step to step.
 
 #### Model Input Format and NSP
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RoBERTa/tab2.png" alt="avatar" style /></div>
 
-与原始BERT相比，去掉NSP损失能够使得下游任务的表现持平或略微升高。所以原始 BERT 实现采用仅仅是去掉NSP的损失项，但是仍然保持 SEGMENT-PARI的输入形式的训练方式是可能的
+Compared with original BERT, removing the NSP loss keeps downstream performance the same or slightly better. Thus it is possible to train as in the original BERT implementation—dropping only the NSP loss term while still using the SEGMENT-PAIR input format.
 
-*   SEGMENT-PAIR + NSP：
+*   SEGMENT-PAIR + NSP:
 
-    *   输入包含两部分，每个部分是来自同一文档或者不同文档的 segment （segment 是连续的多个句子），这两个segment 的token总数少于 512 。预训练包含 MLM 任务和 NSP 任务。这是原始 BERT 的做法。
-*   SENTENCE-PAIR + NSP：
+    *   The input has two segments, each a contiguous span of sentences from the same or different documents; the total number of tokens in both segments is at most 512. Pretraining includes MLM and NSP. This is the original BERT setup.
+*   SENTENCE-PAIR + NSP:
 
-    *   输入也是包含两部分，每个部分是来自同一个文档或者不同文档的单个句子，这两个句子的token 总数少于 512 。由于这些输入明显少于512 个tokens，因此增加batch size的大小，以使 tokens 总数保持与SEGMENT-PAIR + NSP 相似。预训练包含 MLM 任务和 NSP 任务。
-*   FULL-SENTENCES：
+    *   The input also has two parts, each a single sentence from the same or a different document; the two sentences contain fewer than 512 tokens in total. Because these inputs are much shorter than 512 tokens, batch size is increased so that the total number of tokens per step stays similar to SEGMENT-PAIR + NSP. Pretraining includes MLM and NSP.
+*   FULL-SENTENCES:
 
-    *   输入只有一部分（而不是两部分），来自同一个文档或者不同文档的连续多个句子，token 总数不超过 512 。输入可能跨越文档边界，如果跨文档，则在上一个文档末尾添加文档边界token 。预训练不包含 NSP 任务。
-*   DOC-SENTENCES：
+    *   The input is a single span (not two segments)—contiguous sentences from one or more documents, with at most 512 tokens. Inputs may cross document boundaries; when they do, a document-boundary token is inserted at the end of the preceding document. Pretraining does not include NSP.
+*   DOC-SENTENCES:
 
-    *   输入只有一部分（而不是两部分），输入的构造类似于FULL-SENTENCES，只是不需要跨越文档边界，其输入来自同一个文档的连续句子，token 总数不超过 512 。在文档末尾附近采样的输入可以短于 512个tokens， 因此在这些情况下动态增加batch size大小以达到与 FULL-SENTENCES 相同的tokens总数。预训练不包含 NSP 任务。
+    *   The input is a single span, constructed like FULL-SENTENCES but without crossing document boundaries: contiguous sentences from a single document, at most 512 tokens. Samples taken near the end of a document can be shorter than 512 tokens; in those cases batch size is increased dynamically so total tokens per step match FULL-SENTENCES. Pretraining does not include NSP.
 
 #### Training with large batches
 
@@ -67,12 +70,12 @@ BERT训练昂贵并且大多在不同大小的私有数据集上训练，超参�
 
 #### Text Encoding
 
-*   基于 char-level ：原始 BERT 的方式，它通过对输入文本进行启发式的词干化之后处理得到。
-*   基于 bytes-level：与 char-level 的区别在于bytes-level 使用 bytes 而不是 unicode 字符作为 sub-word 的基本单位，因此可以编码任何输入文本而不会引入 UNKOWN 标记
+*   Char-level: the original BERT approach, obtained by heuristic stemming over the input text.
+*   Bytes-level: unlike char-level, bytes-level uses bytes rather than Unicode characters as the basic subword units, so any input text can be encoded without introducing UNK tokens.
 
 ### RoBERTa
 
-RoBERTa使用dynamic masking，FULL-SENTENCES without NSP loss，larger mini-batches和larger byte-level BPE（这个文本编码方法GPT-2也用过，BERT之前用的是character粒度的）进行训练。除此之外还包括一些细节，包括：更大的预训练数据、更多的训练步数
+RoBERTa is trained with dynamic masking, FULL-SENTENCES without NSP loss, larger mini-batches, and larger byte-level BPE (the same text encoding used in GPT-2; BERT previously used character-level units). Additional details include a larger pretraining corpus and more training steps.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RoBERTa/tab4.png" alt="avatar" style /></div>
 

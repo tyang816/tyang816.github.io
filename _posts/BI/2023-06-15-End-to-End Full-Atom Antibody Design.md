@@ -5,199 +5,201 @@ categories: [BI]
 tags: [protein, antibody, GNN]
 proceedings: ICML
 date: 2023-06-15
+lang: en
+alt_url: /zh/bi/End-to-End-Full-Atom-Antibody-Design/
+permalink: /bi/End-to-End-Full-Atom-Antibody-Design/
 ---
 
-> 论文地址：[End-to-End Full-Atom Antibody Design](https://proceedings.mlr.press/v202/kong23c.html)
+> Paper: [End-to-End Full-Atom Antibody Design](https://proceedings.mlr.press/v202/kong23c.html)
 >
-> 论文实现：<https://github.com/THUNLP-MT/dyMEAN>
+> Code: <https://github.com/THUNLP-MT/dyMEAN>
 
-## DyMEAN：端到端影子互补桥接抗体抗原
+## DyMEAN: End-to-end shadow paratope for bridging antibody–antigen design
 
 ### Abstract
 
-介绍了一种名为 **dynamic Multi-channel Equivariant grAph Network (dyMEAN)** 的新模型，它是一个 **端到端（end-to-end）** 的 **全原子（full-atom）** 抗体设计方法。该方法的主要目标是改进现有的 **基于学习的抗体设计** 方法，解决以下两个主要问题：
+This work introduces **dynamic Multi-channel Equivariant grAph Network (dyMEAN)**, an **end-to-end**, **full-atom** antibody design method. The main goal is to improve **learning-based antibody design** by addressing two central limitations:
 
-1.  **现有方法的局限性**：
-    *   现有的学习方法通常仅关注抗体设计流程的某个子任务，使得整体方案次优或资源消耗过大。
-    *   这些方法要么忽略抗体的**框架区（framework regions）**，要么忽略**侧链（side chains）**，无法完整捕捉抗体的**全原子几何信息**。
-2.  **dyMEAN 的解决方案**：
-    *   **端到端建模**：dyMEAN 可直接处理 **仅提供抗原表位（epitope）和部分抗体序列（incomplete sequence）** 的问题，而无需多阶段流水线。
-    *   **结构初始化**：使用结构知识进行**初始结构猜测**（structural initialization）。
-    *   **影子互补位（shadow paratope）**：提出影子互补位来桥接抗原-抗体的交互信息。
-    *   **多通道等变编码器（adaptive multi-channel equivariant encoder）**：该编码器可以在全原子建模时，适应不同残基的**原子数目**变化，同时更新 **1D 序列和 3D 结构**。
-    *   **最终对接（docking）**：通过对齐影子互补位，完成抗原-抗体的结合结构预测。
-3.  **实验验证**：
-    *   通过在 **CDR-H3 设计（epitope-binding CDR-H3 design）**、**复合结构预测（complex structure prediction）** 和 **亲和力优化（affinity optimization）** 三个任务上的实验，验证了 dyMEAN 在 **端到端框架和全原子建模** 方面的优越性。
+1.  **Limitations of prior methods**:
+    *   Existing learning approaches often focus on isolated subtasks in the design pipeline, yielding suboptimal overall solutions or excessive resource use.
+    *   Many methods either ignore antibody **framework regions** or **side chains**, and thus fail to capture complete **full-atom geometric** information.
+2.  **dyMEAN’s approach**:
+    *   **End-to-end modeling**: dyMEAN directly handles inputs with only an **antigen epitope** and an **incomplete antibody sequence**, without a multi-stage pipeline.
+    *   **Structural initialization**: structure knowledge is used for an initial structural guess.
+    *   **Shadow paratope**: a shadow paratope bridges antigen–antibody interaction information.
+    *   **Adaptive multi-channel equivariant encoder**: during full-atom modeling, this encoder adapts to varying **atom counts** across residues while jointly updating **1D sequence and 3D structure**.
+    *   **Final docking**: antigen–antibody binding structure is predicted by aligning the shadow paratope.
+3.  **Experimental validation**:
+    *   Experiments on **epitope-binding CDR-H3 design**, **complex structure prediction**, and **affinity optimization** show the benefits of dyMEAN’s **end-to-end framework and full-atom modeling**.
 
 ### Introduction
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig1.png" alt="avatar" style /></div>
 
-本文研究的是 **抗体设计（antibody design）**，其在 **治疗学（therapeutics）** 和 **生物学（biology）** 领域具有重要应用。然而，抗体设计仍然是一个极具挑战性的任务，主要原因包括 **互补决定区（CDRs）** 的高变异性以及抗原-抗体相互作用规律的复杂性。
+This paper studies **antibody design**, which is important in **therapeutics** and **biology**. Antibody design remains highly challenging because of the high variability of **complementarity-determining regions (CDRs)** and the complexity of antigen–antibody interaction rules.
 
-近年来，虽然计算方法在抗体设计方面取得了一些进展，但仍然存在两大核心问题：
+Although computational methods have made progress, two core issues persist:
 
-1.  **现有方法多采用多阶段流水线（pipeline-based approach），结构预测、docking、CDR生成、side-chain packing，缺乏整体优化，导致结果次优或计算开销大。**
-2.  **缺乏全原子级别的建模（full-atom modeling），导致对抗原-抗体复合物结构的描述不够精确。**
+1.  **Many pipelines are multi-stage** (structure prediction, docking, CDR generation, side-chain packing), lacking global optimization and leading to suboptimal results or high compute cost.
+2.  **Full-atom modeling is often missing**, so antigen–antibody complex structures are described imprecisely.
 
-本文提出了一种新的 **端到端全原子抗体设计模型**——**dyMEAN（dynamic Multi-channel Equivariant grAph Network）**，以克服上述问题。该模型直接从 **抗原表位（epitope）** 和 **不完整抗体序列（incomplete antibody sequence）** 生成完整的 **1D 序列和 3D 结构**，并通过 **影子互补位（shadow paratope）** 机制以及 **E(3)-等变（E(3)-equivariance）** 编码器提高抗体设计的准确性和对接（docking）精度
+The authors propose **dyMEAN (dynamic Multi-channel Equivariant grAph Network)**, an **end-to-end full-atom antibody design model**, to address these issues. From an **antigen epitope** and an **incomplete antibody sequence**, the model generates a complete **1D sequence and 3D structure**, and improves design accuracy and **docking** via a **shadow paratope** mechanism and an **E(3)-equivariant** encoder.
 
-**现有计算方法的不足**
+**Limitations of existing computational approaches**
 
-1.  基于能量优化的方法采用统计能量函数（如 Rosetta）优化抗体结构，但能量函数的表达能力有限，难以准确建模抗体-抗原相互作用。
-2.  训练 **语言模型（Language Models, LMs）** 仅使用抗体的 **1D 序列** 进行优化，由于缺乏 **结构信息（3D Geometry）**，序列生成效果受限。
-3.  基于深度生成模型的序列-结构联合设计可以**同时生成 CDR 序列和 3D 结构** 有上下文建模不完整等问题
+1.  Energy-based methods (e.g., Rosetta) optimize antibody structures with statistical energy functions, but expressiveness is limited and antigen–antibody interactions are hard to model accurately.
+2.  **Language models (LMs)** trained on antibody **1D sequence** alone lack **3D geometry**, which restricts sequence generation quality.
+3.  Deep generative joint sequence–structure design can generate **CDR sequence and 3D structure** together, but still suffers from incomplete contextual modeling.
 
-为了克服上述问题，本文提出 **dyMEAN（dynamic Multi-channel Equivariant grAph Network）**，其特点如下：
+To overcome these issues, **dyMEAN** is designed with the following properties:
 
-1.  直接从 **抗原表位（epitope）** 和 **不完整抗体序列** 生成 **完整的抗体序列和 3D 结构**，**不依赖多阶段流水线**，避免误差累积，减少计算资源消耗。
+1.  It generates the **full antibody sequence and 3D structure** directly from an **antigen epitope** and **incomplete antibody sequence**, **without a multi-stage pipeline**, reducing error accumulation and compute.
 
-2.  通过 **保守残基（conserved residues）** 生成 **抗体框架区（framework regions）的初始结构**。
+2.  It builds an **initial structure for framework regions** using **conserved residues**.
 
-3.  在抗原表位附近创建**影子互补位**（shadow paratope），它：
+3.  A **shadow paratope** is created near the epitope such that it:
 
-    *   **共享** 真实 CDR-H3 的 **隐藏状态**。
-    *   **独立优化坐标**，保证 **抗体-抗原相互作用不依赖抗体初始位置**
+    *   **Shares** the **hidden states** of the true CDR-H3.
+    *   **Optimizes coordinates independently**, so **antibody–antigen interactions do not depend on the initial antibody pose**.
 
-4.  自适应多通道等变编码器
+4.  Adaptive multi-channel equivariant encoder
 
-    *   采用 **E(3)-等变（E(3)-equivariant）** 机制，同时更新 **1D 序列和 3D 结构**。
+    *   Uses **E(3)-equivariant** updates for **1D sequence and 3D structure** jointly.
 
-    *   处理 **不同残基的可变原子数**，支持 **全原子建模（Full-Atom Modeling）**。
+    *   Handles **variable atom counts per residue** for **full-atom modeling**.
 
-5.  通过影子互补位 **对齐真实 CDR-H3**，实现抗体对接，生成最终的抗原-抗体复合物
+5.  **Docking** is performed by aligning the real CDR-H3 to the shadow paratope, yielding the final antigen–antibody complex.
 
 ### Notations and Definitions
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig2.png" alt="avatar" style /></div>
 
-抗体（Antibody）是一种 **Y 形对称蛋白质**，由两个相同的链组成，每条链包括：
+An **antibody** is a **Y-shaped symmetric protein** built from two identical chains, each comprising:
 
-*   **重链（Heavy Chain, VH）**
-*   **轻链（Light Chain, VL）**
+*   **Heavy chain (VH)**
+*   **Light chain (VL)**
 
-每条链由 **多个恒定域（Constant Domains）** 和 **一个可变域（Variable Domain）** 组成：
+Each chain contains **multiple constant domains** and **one variable domain**:
 
-*   **恒定域（Constant Domains）** 在不同抗体中保持不变。
-*   **可变域（Variable Domains）** 负责 **特异性结合不同的抗原**，是抗体设计的核心关注点。
+*   **Constant domains** are conserved across antibodies.
+*   **Variable domains** mediate **antigen-specific binding** and are the main focus of design.
 
-本文中，我们使用 `$V_H$` 和 `$V_L$`  分别表示 **重链（VH）和轻链（VL）的可变域**。可变域由 **四个框架区（Framework Regions, FRs）** 和 **三个互补决定区（Complementarity Determining Regions, CDRs）** 交替排列构成
+We denote the **variable domains of the heavy (VH) and light (VL) chains** as `$V_H$` and `$V_L$`. Each variable domain alternates **four framework regions (FRs)** and **three complementarity-determining regions (CDRs)**.
 
-**抗体的结合区域称为互补位（Paratope）**，而**抗原的结合区域称为表位（Epitope）**，本文中，**互补位专指 CDR-H3**，因为它在抗原结合中起着主导作用
+The antibody binding site is the **paratope**; the antigen binding site is the **epitope**. Here, **paratope** refers specifically to **CDR-H3**, which dominates antigen binding.
 
-1.  抗体和抗原的图表示
+1.  Graph representations of antibody and antigen
 
-    1.  **抗原表位图（Epitope Graph）**：`$G_E(V_E,E_E)$`
-    2.  **抗体图（Antibody Graph）**：`$G_A(V_A,E_A)$`
+    1.  **Epitope graph**: `$G_E(V_E,E_E)$`
+    2.  **Antibody graph**: `$G_A(V_A,E_A)$`
 
-2.  残基的特征表示
+2.  Residue features
 
-    1.  氨基酸类型 `$s_i$`：残基的氨基酸种类（如 Ala、Ser、Glu）。
-    2.  多通道3D坐标矩阵 `$X_i\in \mathbb{R}^{3\times c_i}$`
-        1.  `$c_i$` 代表该残基得原子数（包括主链和侧链）
-        2.  由于不同氨基酸的侧链结构不同，`$c_i$` 不固定
-        3.  为了兼容不同残基的原子数，dyMEAN 采用 **多通道表示**
+    1.  Amino acid type `$s_i$`: the residue identity (e.g., Ala, Ser, Glu).
+    2.  Multi-channel 3D coordinate matrix `$X_i\in \mathbb{R}^{3\times c_i}$`
+        1.  `$c_i$` is the number of atoms in the residue (backbone and side chain).
+        2.  Because side chains differ, `$c_i$` is not fixed across amino acids.
+        3.  dyMEAN uses a **multi-channel representation** to handle variable atom counts.
 
-3.  图的边构造
+3.  Graph edge construction
 
-    1.  dyMEAN 采用 **k-近邻（kNN）** 机制来构造图的边，计算两个残基 `$v_i$` 和 `$v_j$` 之间的最小成对原子距离：
+    1.  dyMEAN builds edges with **k-nearest neighbors (kNN)** using the minimum pairwise atom distance between residues `$v_i$` and `$v_j$`:
 
         <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm1.png" alt="avatar" style /></div>
 
-        其中：p和q表示原子坐标
+        where *p* and *q* index atom coordinates.
 
-4.  此外还在重链、轻链和抗原表位上增加了三个全局节点
+4.  Three global nodes are added on the heavy chain, light chain, and antigen epitope.
 
 #### Task Definition
 
-输入 **抗原表位 + 部分抗体序列**，预测 **完整的 CDR-H3 序列和 3D 结构**，预测结果应能 **正确对接到抗原表位**。
+Given **antigen epitope + partial antibody sequence**, predict the **full CDR-H3 sequence and 3D structure** such that the result **docks correctly** to the epitope.
 
 ### Our Method: dyMEAN
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig3.png" alt="avatar" style /></div>
 
-**每个顶点**（来自抗原表位图 `$G_E$` ，抗体图 `$G_A$` 以及互补位子图 `$G_P$` ）被赋予：
+**Each vertex** (from epitope graph `$G_E$`, antibody graph `$G_A$`, and paratope subgraph `$G_P$`) carries:
 
-*   一个 **不变向量（invariant vector）** `$h_i\in\mathbb{R}^d$`
-*   一个 **等变坐标矩阵（equivariant coordinate matrix）** `$X_i\in\mathbb{R}^{3\times c_i}$`
+*   An **invariant vector** `$h_i\in\mathbb{R}^d$`
+*   An **equivariant coordinate matrix** `$X_i\in\mathbb{R}^{3\times c_i}$`
 
-总体流程可以表示为：
+The overall pipeline is:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm2-6.png" alt="avatar" style /></div>
 
-其中：
+where:
 
-*   **SI（Structural Initialization，结构初始化）**：
-    *   通过已知的 **不完整抗体序列** 预测 **初始坐标** `$X_i^{(0)}$` 和隐藏状态 `$h_i^{(0)}$`
-*   **SP（Shadow Paratope，影子互补位）**：
-    *   在 **抗原表位** 和 **互补位** 之间引入 **影子互补位** `$G_S$`，该影子互补位共享 CDR-H3 的隐藏状态，连接抗原和抗体，为 docking 提供锚点。
-*   **AME（Adaptive Multi-channel Encoder，自适应多通道编码器）**：
-    *   迭代更新所有顶点的 **隐藏状态** `$h_i$` 和坐标 `$X_i$`
-*   **预测模块（Prediction）**：
-    *   计算 \*\*CDR-H3 氨基酸分布 \*\* `$p_i$`
-*   **对接模块（Docking）**：
-    *   通过 **对齐影子互补位** `$G_S$` 完成抗体-抗原结合。
+*   **SI (Structural Initialization)**:
+    *   From the known **incomplete antibody sequence**, predict initial coordinates `$X_i^{(0)}$` and hidden states `$h_i^{(0)}$`.
+*   **SP (Shadow Paratope)**:
+    *   Insert a **shadow paratope** `$G_S$` between **epitope** and **paratope**; it shares CDR-H3 hidden states, connects antigen and antibody, and anchors docking.
+*   **AME (Adaptive Multi-channel Encoder)**:
+    *   Iteratively update **hidden states** `$h_i$` and coordinates `$X_i$` for all vertices.
+*   **Prediction**:
+    *   Compute the **CDR-H3 amino acid distribution** `$p_i$`.
+*   **Docking**:
+    *   Complete antibody–antigen binding by **aligning the shadow paratope** `$G_S$`.
 
 #### Structural Initialization with Conserved Residues
 
-在输入数据中，抗体序列 `$\{s_i\}_{i\in V_A,i\notin V_P}$`  **缺失了 CDR-H3 信息**，同时 **3D 结构未知**。因此，dyMEAN 需要初始化 **抗体隐藏状态** `$h_i^{(0)}$` 和3D坐标 `$X_i^{(0)}$`
+In the input, antibody sequence `$\{s_i\}_{i\in V_A,i\notin V_P}$` **lacks CDR-H3** and **3D structure is unknown**. dyMEAN must initialize **antibody hidden states** `$h_i^{(0)}$` and **3D coordinates** `$X_i^{(0)}$`.
 
-**隐藏状态初始化** `$h_i^{(0)}$`
+**Hidden state initialization** `$h_i^{(0)}$`
 
-每个残疾的隐藏状态是氨基酸类型+位置编码得到，`$h_i^{(0)}=f(s_i,r_i)=f_{s_i}+f_{r_i}$`，对于缺失的 CDR 区域，dyMEAN 会用一个特殊类型 **\[MASK]** 来表示这些残基。
+Each residue hidden state combines amino acid type and position encoding: `$h_i^{(0)}=f(s_i,r_i)=f_{s_i}+f_{r_i}$`. Missing CDR positions use a special **[MASK]** token.
 
-**初始化 3D 坐标** `$X_i^{(0)}$`
+**3D coordinate initialization** `$X_i^{(0)}$`
 
-框架区（FRs）通常是保守的，因此，dyMEAN 使用 **已知抗体结构中框架区的坐标** 来初始化抗体的 **3D 坐标** (`$X_i^{(0)}$`)，具体步骤如下：
+Framework regions (FRs) are typically conserved. dyMEAN initializes **3D coordinates** (`$X_i^{(0)}$`) from **framework coordinates in known antibody structures** as follows:
 
-1.  **对齐保守残基**：
-    *   通过对比 **抗体序列** 和 **结构数据库中的抗体序列**，识别出在多个抗体中都保持一致的残基，这些被认为是保守的残基。
-    *   **通过抗体编号系统（如 IMGT 编号系统）** 对抗体序列进行比对，找到 **在超过 95% 的抗体中类型一致的残基**。
-2.  **Kabsch 对齐算法**：
-    *   使用 **Kabsch 算法** 将 **框架区的保守残基** 的 **主链原子（backbone atoms）** 进行对齐，从而得到这些保守残基的平均 **3D 坐标**。
-    *   得到的坐标将用于初始化 **框架区的 3D 坐标**。
-3.  **插值和扩展**：
-    *   对于框架区中的非保守残基，dyMEAN 通过 **线性插值** 将其坐标值插入到保守残基之间。对于位于链两端的残基，通过从最近的保守残基开始，进行 **向外的线性插值**。
+1.  **Align conserved residues**:
+    *   Compare the **input antibody sequence** to sequences in a structure database and identify residues conserved across many antibodies.
+    *   **Antibody numbering (e.g., IMGT)** is used to find residues with **consistent type in more than 95%** of antibodies.
+2.  **Kabsch alignment**:
+    *   **Kabsch algorithm** aligns **backbone atoms** of conserved framework residues to obtain average **3D coordinates** for initialization.
+3.  **Interpolation and extension**:
+    *   Non-conserved framework residues get coordinates by **linear interpolation** between conserved ones; terminal residues use **outward linear extrapolation** from the nearest conserved residue.
 
-**坐标的标准化**
+**Coordinate normalization**
 
-完成坐标初始化后，dyMEAN 会对 **坐标进行标准化**：
+After initialization, dyMEAN **normalizes coordinates**:
 
-*   对所有抗体的坐标进行 **3D 平移**，确保它们的 **均值为 0**。
-*   **1D 方差标准化**：对所有抗体的坐标进行 **1D 方差标准化**，确保不同抗体之间的尺度一致。
+*   **3D translation** so coordinates have **zero mean**.
+*   **Per-dimension variance scaling** for consistent scale across antibodies.
 
-通过这种方式，dyMEAN 使用保守残基的结构信息为 **框架区** 提供了一个 **合理的初始结构猜测**。这为后续的 **影子互补位（shadow paratope）** 建立和 **多通道消息传递（multi-channel message passing）** 打下了基础
+This yields a **reasonable initial guess** for **framework regions**, supporting subsequent **shadow paratope** construction and **multi-channel message passing**.
 
 #### E(3)-Invariant Attachment of Shadow Paratope
 
-在 dyMEAN 方法中，为了增强抗体与抗原之间的信息交换，研究者提出了**Shadow Paratope**（影子互补位点）的概念。它是一种在抗原的表位（epitope）附近附加的伪互补位点副本，主要具有两个关键作用：
+To strengthen antigen–antibody information exchange, dyMEAN attaches a **Shadow Paratope** near the epitope—a pseudo paratope copy with two roles:
 
-1.  **传递 E(3)-不变（E(3)-invariant）信息**：影子互补位点与原始互补位点共享相同的隐藏状态 `$h_i$` 和拓扑结构，从而在抗原与抗体之间进行信息交换，而不依赖于抗体的初始位置。
-2.  **作为关键对接点**：影子互补位点将在抗体与抗原的对接过程中（详见 §4.4）发挥关键作用。
+1.  **E(3)-invariant information transfer**: the shadow paratope shares hidden states `$h_i$` and topology with the true paratope, enabling exchange without relying on the antibody’s initial pose.
+2.  **Docking anchor**: the shadow paratope is central to docking (see §4.4).
 
-值得注意的是，由于影子互补位点**仅交换 E(3)-不变的信息（即隐藏状态 `$h_i$`），而不是坐标 `$X_i$`**，因此其 3D 坐标和最终对接结构不会受到抗体初始位置的影响。这种特性确保了 dyMEAN 方法的通用性和鲁棒性。
+Because only **E(3)-invariant information (hidden states `$h_i$`) is shared—not coordinates `$X_i$`**—3D coordinates and final docked structures are insensitive to initial antibody placement, improving robustness.
 
-**影子互补位点的构造**
+**Constructing the shadow paratope**
 
-影子互补位点由一个子图 `$G_s=(V_S,E_S)$` 表示，其中“
+The shadow paratope is a subgraph `$G_s=(V_S,E_S)$` where:
 
-*   顶点集 `$V_S$` 包含影子互补位点的残基
-*   边集 `$E_S$` 分为两部分：
-    *   **内部边**：直接复制自原始互补位点之间的连接。
-    *   **外部边**：用于连接影子互补位点和抗原表位（epitope）。
+*   `$V_S$` contains shadow paratope residues.
+*   `$E_S$` has two parts:
+    *   **Internal edges**: copied from the original paratope.
+    *   **External edges**: connect shadow paratope to the epitope.
 
-对任意表位残基 `$v_i \in V_E$` 和影子互补位点 `$v_j \in V_S$`，其外部边根据**k 近邻（kNN）距离**构造：
+For epitope residue `$v_i \in V_E$` and shadow paratope vertex `$v_j \in V_S$`, external edges use **kNN distance**:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm7.png" alt="avatar" style /></div>
 
-其中，`$\varphi_e$` 是一个**多层感知机（MLP, Multi-Layer Perceptron）**，用于学习特定的距离表示。
+where `$\varphi_e$` is an **MLP (Multi-Layer Perceptron)** that learns distance features.
 
-**影子互补位点的初始化**
+**Initializing the shadow paratope**
 
-*   影子互补位点的**隐藏向量** `$h_i$` 是从原始互补位点复制而来，以保证一致性。
-*   影子互补位点的**坐标** `$X_i$` **按照标准高斯分布 `$N(0, I)$` 在表位中心附近初始化**，确保在训练初期的随机性，同时不会破坏最终的 E(3)-不变性。
+*   **Hidden vectors** `$h_i$` are copied from the true paratope.
+*   **Coordinates** `$X_i$` are drawn from a **standard Gaussian `$N(0, I)$` near the epitope center**, adding early-training randomness without breaking E(3) invariance.
 
-最终，影子互补位点子图 `$G_S$` 被**合并**到表位图 `$G_E$` 中，从而构建一个新的图结构 `$G_E \cup G_S$`，用于后续的消息传递和抗体对接
+Finally, `$G_S$` is **merged** into `$G_E$` as `$G_E \cup G_S$` for message passing and docking.
 
 #### Adaptive Multi-Channel Equivariant Encoder
 
@@ -205,257 +207,250 @@ date: 2023-06-15
 
 **Geometric Relation Extractor** *`$T_R$`*
 
-1.  计算通道级别的欧几里得距离，给定 `$X_i\in\mathbb{R}^{3\times c_i}$` 和 `$X_j\in\mathbb{R}^{3\times c_j}$` ，对于每个通道（每个原子）都计算 `$D_{ij}(p, q) = ||X_i(:, p) - X_j(:, q)||_2$`
+1.  Channel-wise Euclidean distances: for `$X_i\in\mathbb{R}^{3\times c_i}$` and `$X_j\in\mathbb{R}^{3\times c_j}$`, each channel (atom) uses `$D_{ij}(p, q) = ||X_i(:, p) - X_j(:, q)||_2$`.
 
-2.  计算加权相关性
+2.  Weighted correlation:
 
     <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm12.png" alt="avatar" style /></div>
 
-    其中 `$w_{i}\in\mathbb{R}^{c_i\times 1}$` 和 `$w_{j}\in\mathbb{R}^{c_j\times 1}$` ， `$A_{i}\in\mathbb{R}^{c_i\times d}$`  和 `$A_{j}\in\mathbb{R}^{c_j\times d}$`
+    with `$w_{i}\in\mathbb{R}^{c_i\times 1}$`, `$w_{j}\in\mathbb{R}^{c_j\times 1}$`, `$A_{i}\in\mathbb{R}^{c_i\times d}$`, and `$A_{j}\in\mathbb{R}^{c_j\times d}$`.
 
-    最后的 `$R_{i,j}\in\mathbb{R}^{d\times d}$` 保持固定维度，确保输入的维度一致
+    The output `$R_{i,j}\in\mathbb{R}^{d\times d}$` has fixed dimension for consistent inputs.
 
 **Geometric Message Scaler**, `$T_S$`
 
-`$T_S$` 负责 **调整几何信息的尺度**，确保不同残基的坐标信息能有效地传递和融合，坐标 `$X\in\mathbb{R}^{3\times c}$` ，非几何信息 `$s=\phi_x(m_{ij})\in\mathbb{R}^C$`，其中C是通道数的上界大小，`$T_S(X,s)$` 如下计算：
+`$T_S$` **scales geometric information** so coordinates from different residues fuse effectively. For coordinates `$X\in\mathbb{R}^{3\times c}$` and non-geometric `$s=\phi_x(m_{ij})\in\mathbb{R}^C$` (C is an upper bound on channel count), `$T_S(X,s)$` is:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm13.png" alt="avatar" style /></div>
 
-其中 `$s'\in\mathbb{R}^c$` 是 s的平均池化，window size C-c+1，stride=1，diag(·)是矩阵的对角元素
+where `$s'\in\mathbb{R}^c$` is mean-pooled *s*, window size C−c+1, stride 1, and diag(·) takes matrix diagonals.
 
-**Information Exchanging between `$G_E$` and `$G_A$`**
+**Information exchange between `$G_E$` and `$G_A$`**
 
-**抗原表位图 `$G_E$`** 和 **抗体图 `$G_A$`** **是初始状态下不直接连接的**，但模型需要在二者之间进行有效的信息交换，以优化 **抗体-抗原结合（docking）**。为了解决这个问题，dyMEAN **通过影子互补位（Shadow Paratope, `$G_S$`）** 进行信息传递
+**Epitope graph `$G_E$`** and **antibody graph `$G_A$`** are **not directly connected initially**, yet the model must exchange information for **antibody–antigen docking**. dyMEAN routes messages through the **shadow paratope (`$G_S$`)**.
 
-1.  **第一阶段（Antibody Graph `$G_A$` 处理）**
-    *   先在 **抗体图 `$G_A$`** 上运行 **1 层 AME（1-layer AME）**。
-    *   **将计算得到的隐藏向量 `$h_i$` 从抗体互补位（Paratope `$G_P$`）复制到影子互补位（Shadow Paratope GSG\_SGS）**，使得 GSG\_SGS 具有抗体互补位的关键信息。
-2.  **第二阶段（Epitope Graph `$G_E$` 与 Shadow Paratope `$G_S$` 处理）**
-    *   在 **联合图 `$G_E \cup G_S$`** 上运行 **1 层 AME**，交换抗原表位和影子互补位之间的信息。
-    *   **将影子互补位 `$G_S$` 的隐藏向量 `$h_i$` 反向复制回抗体互补位 `$G_P$`**，使抗体获得抗原表位的信息。
-3.  **重复交替计算**
-    *   上述两步 **交替执行 LLL 层**，在抗原和抗体之间反复交换信息，确保二者的交互信息逐渐收敛。
-    *   之后，在 **抗体图 `$G_A$` 上额外执行 1 层 AME**，以将更新的信息传播到整个抗体结构中。
+1.  **Stage 1 (Antibody graph `$G_A$`)**
+    *   Run **one layer of AME** on **`$G_A$`**.
+    *   **Copy hidden vectors `$h_i$` from paratope `$G_P$` to shadow paratope `$G_S$`**, so `$G_S$` carries paratope information.
+2.  **Stage 2 (Epitope graph `$G_E$` and shadow paratope `$G_S$`)**
+    *   Run **one layer of AME** on **`$G_E \cup G_S$`** to exchange epitope and shadow paratope information.
+    *   **Copy hidden vectors from `$G_S$` back to paratope `$G_P$`**, injecting epitope context into the antibody.
+3.  **Alternating iterations**
+    *   Repeat the two stages for **L layers**, gradually converging cross-molecule information.
+    *   Then run **one extra AME layer on `$G_A$`** to propagate updates through the full antibody.
 
-dyMEAN 采用的 **几何关系提取器（Geometric Relation Extractor, TR）** 和 **几何消息缩放器（Geometric Message Scaler, TS）** 具有以下等变性属性：
+The **Geometric Relation Extractor (TR)** and **Geometric Message Scaler (TS)** satisfy:
 
-*   **TR 是 `$E(3)$`-不变（E(3)-Invariant）**：保证了计算的几何关系在旋转、平移、反射下保持不变。
-*   **TS 是 `$O(3)$`-等变（O(3)-Equivariant）**：确保在任何旋转下，消息传递保持等变性。
-*   **信息交换过程 `$G_E ↔ G_A$` 通过 `$G_S$` 进行，并且是 `$E(3)$`-不变的**。
+*   **TR is `$E(3)$`-invariant**: geometric relations are unchanged under rotation, translation, and reflection.
+*   **TS is `$O(3)$`-equivariant**: message passing respects rotations.
+*   **Exchange `$G_E ↔ G_A$` via `$G_S$` is `$E(3)$`-invariant**.
 
 #### Prediction, Docking and Training Losses
 
 **Prediction**
 
-dyMEAN 采用 **逐步全镜头解码策略（progressive full-shot decoding strategy）** 进行 **CDR-H3 1D 氨基酸序列** 和 **3D 结构** 预测，并在 T 轮迭代中逐步优化：
+dyMEAN uses **progressive full-shot decoding** to predict **CDR-H3 1D sequence** and **3D structure**, refined over T iterations:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm14.png" alt="avatar" style /></div>
 
-dyMEAN 使用 **多层感知机（MLP, Multi-Layer Perceptron）** 进行 CDR-H3 的氨基酸预测：
+An **MLP** predicts CDR-H3 amino acids:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm15.png" alt="avatar" style /></div>
 
-隐藏状态 `$h_i^{(t)}$` 在每轮迭代后都会更新：
+Hidden states `$h_i^{(t)}$` update each round:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm16.png" alt="avatar" style /></div>
 
-其中 `$f(s_i,r_i)=f_{s_i}+f_{r_i}$` 是抗体序列的嵌入，`$p_i^{(t)}(j)$`   表示 CDR-H3 位置 i 处的氨基酸 j 的概率，`$\phi_d(h_i^{(t)})$` 是memory term
+where `$f(s_i,r_i)=f_{s_i}+f_{r_i}$` embeds sequence position, `$p_i^{(t)}(j)$` is the probability of amino acid *j* at CDR-H3 position *i*, and `$\phi_d(h_i^{(t)})$` is a memory term.
 
-每次迭代后，dyMEAN 重新计算 **抗体图 `$G_A$` 和抗原表位图 `$G_E$` 之间的边**，以更新其拓扑结构
+After each iteration, dyMEAN **recomputes edges** between **`$G_A$` and `$G_E$`** to refresh topology.
 
 **Docking**
 
-**最终迭代** 结束后，dyMEAN 采用 **Kabsch 算法（Kabsch, 1976）** 进行抗体-抗原对接：
+After the **final iteration**, dyMEAN docks with the **Kabsch algorithm (Kabsch, 1976)**:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm17-18.png" alt="avatar" style /></div>
 
-*   影子互补位 GSG\_SGS 提供 **抗体 CDR-H3 预测结构的参考对接点**。
+*   Shadow paratope `$G_S$` provides a **reference pose for predicted CDR-H3**.
 
-*   **Kabsch 对齐的目标** 是将 CDR-H3（`$V_P$`）调整到影子互补位（`$V_S$`）的位置，以优化抗原-抗体的对接关系。
+*   **Kabsch alignment** moves CDR-H3 (`$V_P$`) onto shadow paratope (`$V_S$`) to optimize the complex.
 
-**Loss Function**
+**Loss function**
 
-使用 **交叉熵损失（Cross-Entropy Loss）** 监督 CDR-H3 氨基酸预测：
+**Cross-entropy** supervises CDR-H3 sequence prediction:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm19.png" alt="avatar" style /></div>
 
-**Huber 损失（Huber Loss）** 用于训练 **最终 3D 坐标**：
+**Huber loss** trains **final 3D coordinates**:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm20.png" alt="avatar" style /></div>
 
-此外，还添加了 **化学键长监督损失**：
+A **chemical bond-length** term is added:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm21.png" alt="avatar" style /></div>
 
-最终的结构损失是两者相加
+Total structure loss is the sum of coordinate and bond terms.
 
-为了优化 **抗体-抗原对接质量**，dyMEAN 采用 **两个额外损失**：
-
-\*\*影子互补位坐标损失 \*\*和 **外部距离损失**
+For **docking quality**, dyMEAN adds **shadow paratope coordinate loss** and **external distance loss**:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/frm22-23.png" alt="avatar" style /></div>
 
-最终的dock损失是两者相加
+Final docking loss is the sum of both.
 
 ### Experiments
 
-dyMEAN 在 **SAbDab 数据集** 上训练，并使用 **PyTorch 分布式计算框架** 进行加速。
+dyMEAN is trained on **SAbDab** with **PyTorch distributed** training.
 
-### **2.1. 训练超参数**
+### **2.1. Training hyperparameters**
 
-**训练细节**
+**Training details**
 
-*   **优化器**：Adam
-*   **初始学习率**：`$1 \times 10^{-3}$`，**指数衰减** 到 `$1 \times 10^{-4}$`。
-*   **批量大小（Batch Size）**：16
-*   训练轮数（Epochs）：
-    *   **CDR-H3 设计 & 亲和力优化**：200 轮
-    *   **复合物结构预测**：250 轮
-*   梯度更新策略：**采用余弦调度（cosine schedule）降低学习率**，以 **防止模型过拟合**。
+*   **Optimizer**: Adam
+*   **Initial learning rate**: `$1 \times 10^{-3}$`, **exponential decay** to `$1 \times 10^{-4}$`.
+*   **Batch size**: 16
+*   **Epochs**:
+    *   **CDR-H3 design & affinity optimization**: 200
+    *   **Complex structure prediction**: 250
+*   **Learning rate**: cosine schedule to **reduce overfitting**.
 
-**Masking 机制**
+**Masking**
 
-由于 CDR-H3 是主要变异区域，研究者采用 **动态 Masking 训练策略**：
+Because CDR-H3 is the main variable region, training uses **dynamic masking**:
 
-*   **初始阶段**：保留 **90%** 互补位（paratope）残基 **不被 Mask**。
-*   **随着训练进行**，逐步减少 Mask 率，使最终阶段 **所有互补位残基均被 Mask**，确保 **模型可以在未知残基下生成合适序列**。
+*   **Early training**: **90%** of paratope residues remain **unmasked**.
+*   **Later training**: masking increases until **all paratope residues are masked**, so the model can generate sequences under missing residues.
 
-**数据集与实验设定**
+**Dataset and baselines**
 
-*   研究者**提取了距离抗体最近的 48 个残基** 作为抗原表位（epitope），这足以覆盖所有结合残基。
+*   The **48 epitope residues closest to the antibody** are extracted, sufficient to cover binding residues.
 
-*   由于之前没有
+*   Because prior **end-to-end full-atom antibody design** methods were scarce, the authors compare to:
 
-    端到端全原子抗体设计（end-to-end full-atom antibody design）**的方法，研究者使用了一系列**现有的竞争性方法
-
-    作为基线：
-
-    *   **IgFold** (Ruffolo & Gray, 2022)：专门用于抗体结构预测的 AlphaFold 变体。
-    *   **HDock** (Yan et al., 2020)：基于知识评分函数的 docking 方法。
-    *   **RosettaAb** (Adolf-Bryfogle et al., 2018)：基于统计能量函数优化抗体序列和结构。
-    *   **MEAN** (Kong et al., 2022)：基于等变注意力图网络（equivariant attention graph networks）的 CDR-H3 生成方法。
-    *   **Diffab** (Luo et al., 2022)：基于扩散模型（diffusion model）的 CDR 生成方法，并考虑了侧链方向。
-    *   **HERN** (Jin et al., 2022)：一个不需要结构预测、docking 和侧链优化的端到端抗体设计方法，但未考虑框架区建模（framework region modeling）。
+    *   **IgFold** (Ruffolo & Gray, 2022): AlphaFold-style antibody structure prediction.
+    *   **HDock** (Yan et al., 2020): knowledge-based docking scores.
+    *   **RosettaAb** (Adolf-Bryfogle et al., 2018): statistical energy optimization of sequence and structure.
+    *   **MEAN** (Kong et al., 2022): equivariant attention graph networks for CDR-H3 generation.
+    *   **Diffab** (Luo et al., 2022): diffusion-based CDR generation with side-chain orientation.
+    *   **HERN** (Jin et al., 2022): end-to-end design without separate structure prediction, docking, or side-chain packing, but without framework modeling.
 
 #### Epitope-binding CDR-H3 Generation
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab1.png" alt="avatar" style /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/fig4.png" alt="avatar" style /></div>
 
-**目标**：CDR-H3 是抗体中**变异性最高** 的区域，决定了抗体的**结合特异性和亲和力**（Raybould et al., 2019）。本实验的目标是**预测 CDR-H3 的 1D 序列和 3D 结构**。
+**Goal**: CDR-H3 is the **most variable** region and sets **binding specificity and affinity** (Raybould et al., 2019). The task is to predict **CDR-H3 1D sequence and 3D structure**.
 
-**评估指标**
+**Metrics**
 
-*   **Amino Acid Recovery (AAR)**：生成的序列与真实序列的**重叠比例**。
-*   **Contact AAR (CAAR)**：仅计算与抗原表位距离小于 6.6Å 的 CDR-H3 残基的 AAR（Ramaraj et al., 2012）。
-*   **TM-score**：衡量生成的 CDR-H3 结构与真实结构的全局相似性（Zhang & Skolnick, 2004）。
-*   **Local Distance Difference Test (lDDT)**：基于**原子间距离矩阵** 评估生成结构与真实结构的相似性（Mariani et al., 2013）。
-*   **RMSD（Root Mean Square Deviation）**：计算 CDR-H3 绝对坐标的均方根偏差（未进行 Kabsch 对齐）。
-*   **DockQ**：综合衡量 docking 质量的指标（Basu & Wallner, 2016）。
+*   **Amino Acid Recovery (AAR)**: overlap between generated and native sequence.
+*   **Contact AAR (CAAR)**: AAR for CDR-H3 residues within 6.6Å of the epitope (Ramaraj et al., 2012).
+*   **TM-score**: global similarity of predicted vs. native CDR-H3 structure (Zhang & Skolnick, 2004).
+*   **Local Distance Difference Test (lDDT)**: similarity from **inter-atomic distance matrices** (Mariani et al., 2013).
+*   **RMSD**: root-mean-square deviation of CDR-H3 coordinates **without Kabsch alignment**.
+*   **DockQ**: composite docking quality (Basu & Wallner, 2016).
 
-📌 **实验结果：**
+**Results**
 
-**Table 1**（CDR-H3 设计结果）：dyMEAN 的 **AAR = 43.65%**，**TM-score = 0.9726**，**lDDT = 0.8454**，**DockQ = 0.409**，在所有指标上均优于基线。
+**Table 1** (CDR-H3 design): dyMEAN achieves **AAR = 43.65%**, **TM-score = 0.9726**, **lDDT = 0.8454**, **DockQ = 0.409**, outperforming baselines on all reported metrics.
 
 #### Complex Structure Prediction
 
-**目标**：在**给定 CDR-H3 序列**的情况下，预测 **整个抗体-抗原复合物的 3D 结构**。
+**Goal**: given **CDR-H3 sequence**, predict the **3D structure of the full antibody–antigen complex**.
 
-**评估方法**
+**Comparison**
 
-研究者比较了 dyMEAN 与多个基线方法，包括：
+Baselines include:
 
-*   **IgFold⇒HDock**（基于 IgFold 预测骨架，再用 HDock 进行 docking）
-*   **IgFold⇒HERN**（HERN 进行 docking，再用 Rosetta 预测侧链）
-*   **GT⇒HERN**（HERN 直接使用真实结构进行 docking）
-*   **dyMEAN**（端到端全原子结构预测）
+*   **IgFold⇒HDock** (IgFold backbone, then HDock)
+*   **IgFold⇒HERN** (HERN docking, Rosetta side chains)
+*   **GT⇒HERN** (HERN with ground-truth structure)
+*   **dyMEAN** (end-to-end full-atom prediction)
 
-📌 **实验结果（Table 2）**
+**Results (Table 2)**
 
-**dyMEAN 在所有评估指标上超过基线方法**
+**dyMEAN exceeds baselines on all metrics.**
 
-**即使 HERN 使用真实抗体结构（GT⇒HERN），dyMEAN 仍然表现更优**，表明其能 **有效建模抗体-抗原的相互作用**
+**Even when HERN uses ground-truth antibody structure (GT⇒HERN), dyMEAN remains stronger**, suggesting effective **modeling of antibody–antigen interactions**.
 
 #### Affinity Optimization
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab3.png" alt="avatar" style /></div>
 
-**目标**：优化抗体的序列，以 **最大化与抗原的结合亲和力（binding affinity）**。亲和力由 **ΔΔG（结合自由能变化）** 评估，**较低 ΔΔG 代表更好的结合能力**。
+**Goal**: optimize sequence to **maximize binding affinity**, measured by **ΔΔG** (lower is better binding).
 
-**实验方法**
+**Protocol**
 
-*   **使用 GNN-based predictor 计算 ΔΔG（Shan et al., 2022）**。
-*   **采用 FoldX 作为亲和力打分工具**。
-*   **衡量 ΔL（突变残基的数量）**，以确保优化不会造成过度突变。
+*   **GNN-based ΔΔG predictor** (Shan et al., 2022).
+*   **FoldX** as an affinity scoring tool.
+*   **ΔL** (number of mutated residues) to avoid excessive mutation.
 
-📌 **实验结果（Table 3）**
+**Results (Table 3)**
 
-**dyMEAN 在 ΔΔG 下降幅度上优于 MEAN 和 DiffAb**，同时保持较低的 ΔL
+**dyMEAN achieves larger ΔΔG improvements than MEAN and DiffAb** with **lower ΔL**.
 
-**相比 MEAN（ΔΔG = -5.84，ΔL = 5.09）和 DiffAb，dyMEAN 的亲和力优化能力更强**
+Compared to **MEAN (ΔΔG = −5.84, ΔL = 5.09)** and DiffAb, dyMEAN shows **stronger affinity optimization**.
 
 ### Analysis
 
-**Ablation Study**
+**Ablation study**
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab4.png" alt="avatar" style /></div>
 
-研究者对 dyMEAN 进行了消融实验，以分析各组件的贡献。
+Ablations quantify component contributions.
 
-📌 **实验结果（Table 4）**
+**Results (Table 4)**
 
-*   **T 主要影响 docking 性能，T=3 是最优选择**。
-*   **移除全原子建模后，整体性能大幅下降**，表明 **侧链构象在建模中至关重要**。
-*   **移除影子互补位共享后，所有指标（除了 CAAR）均明显下降**，表明该机制对结构生成和 docking 至关重要。
-*   **去除可学习通道权重后，模型表现下降**，表明通道权重类似于注意力机制（attention），对不同通道信息赋予不同的重要性。
-*   **记忆机制对 CDR-H3 设计有帮助，但对复合物结构预测影响较小**，因为 CDR-H3 生成时，隐状态受记忆机制影响较大，而 **3D 坐标则直接传播**。
-*   **`$L_{dist}$` 对 docking 任务至关重要**，研究者推测仅靠坐标无法在早期迭代正确恢复影子互补位的结构
+*   **T mainly affects docking; T = 3 is best**.
+*   **Removing full-atom modeling sharply hurts performance**—**side-chain conformations matter**.
+*   **Removing shadow paratope sharing drops most metrics (except CAAR)**, showing its importance for structure and docking.
+*   **Removing learnable channel weights degrades performance**—channel weights act like **attention** over atoms.
+*   **Memory helps CDR-H3 design more than complex prediction**: sequence hidden states use memory strongly; **3D coordinates propagate directly**.
+*   **`$L_{dist}$` is critical for docking**; coordinates alone may not recover shadow paratope structure early in decoding.
 
-**Multiple CDRs Design and Full Antibody Design**
+**Multiple CDRs design and full antibody design**
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DyMEAN/tab5.png" alt="avatar" style /></div>
 
-**多个 CDR 设计（Multiple CDRs Design）**：在 CDR-H1、H2、H3 和 L1、L2、L3 **全部 masked** 的情况下进行生成。
+**Multiple CDRs design**: generate with CDR-H1, H2, H3 and L1, L2, L3 **all masked**.
 
-**完整抗体设计（Full Antibody Design）**：生成 **包括框架区（Framework Regions, FRs）在内的完整抗体**。
+**Full antibody design**: generate the **entire antibody including framework regions (FRs)**.
 
 ### Limitations
 
-**Data Diversity and Evaluation Metrics**
+**Data diversity and evaluation metrics**
 
-目前，深度生成模型在抗体设计任务中仍然面临挑战，其中 **抗原-抗体数据的多样性不足** 是主要问题之一。
+Deep generative antibody design still struggles partly because **antigen–antibody data lack diversity**.
 
-研究者分析了训练集中 CDR-H3 每个位置最常见的单字母氨基酸模式，并对其从 **两端向中间匹配**，发现了一个 高频模式 "ARDG\*\*\*DY"，其中大部分 "\*" 位置都是 Y。
+Analyzing the most frequent single-letter patterns at each CDR-H3 position (matched from **ends toward the center**) reveals a dominant motif **"ARDG\*\*\*DY"**, with many "*" positions as Y.
 
-*   使用该单字母模式在测试集中计算 AAR，得到：**AAR = 39.61%**，**CAAR = 26.57%**
+*   Applying this unigram pattern on the test set yields **AAR = 39.61%**, **CAAR = 26.57%**.
 
-*   这表明：**无意义的 unigram 模式在训练集和测试集中占据主导地位，可能会影响模型学习抗原-抗体相互作用的能力**。
+*   **Meaningless unigram patterns dominate train and test**, which may **limit learning of true antigen–antibody interactions**.
 
-*   **去除 CDR-H3 的前 4 个和后 2 个残基后**，dyMEAN 的 AAR 下降至 **31.76%**，这表明 **高频 unigram 模式影响了抗体序列预测的评估标准**。
+*   **After removing the first 4 and last 2 CDR-H3 residues**, dyMEAN’s AAR drops to **31.76%**, showing **frequent unigrams inflate sequence metrics**.
 
-这些现象表明：
+Implications:
 
-1.  **现有数据集可能需要增强**（例如，通过实验室数据扩增，或者从更广泛的蛋白复合物中提取类似界面）。
-2.  现有的评估指标可能需要改进，例如：
-    *   **排除可以通过 unigram 预测正确的残基，以减少数据偏差的影响**。
-    *   **引入更复杂的评估方法，以更准确衡量抗体-抗原相互作用的合理性**。
+1.  **Datasets may need enrichment** (lab data, or interfaces from broader protein complexes).
+2.  **Metrics may need refinement**, e.g.:
+    *   **Exclude residues predictable from unigrams** to reduce bias.
+    *   **Use richer criteria** for plausible antigen–antibody interactions.
 
-**Reliability of Computational Energy Functions**
+**Reliability of computational energy functions**
 
-最终，**抗体的结合亲和力（binding affinity）决定了生成的候选抗体是否具有实际价值**。本研究中，dyMEAN 采用 **深度学习预测器计算 ΔΔG（结合自由能变化）** 作为亲和力的度量方式。然而，研究者指出当前计算能量函数仍存在以下问题：
+Ultimately, **binding affinity** determines whether designed candidates are useful. This work uses a **deep learning ΔΔG predictor**. Computational energy methods remain uncertain:
 
-基于统计的能量计算方法：FoldX (Schymkowitz et al., 2005)，Rosetta (Alford et al., 2017)，Docking 软件中的打分函数（Goodsell et al., 1996）
+Statistical energy tools include FoldX (Schymkowitz et al., 2005), Rosetta (Alford et al., 2017), and docking score functions (Goodsell et al., 1996).
 
-**问题与挑战**
+**Issues**
 
-*   这些计算能量函数的 **可靠性仍然存在不确定性**，其中一些方法已知与实验结果的相关性较低（Ramírez & Caballero, 2016, 2018）。
-*   研究者提出了两个关键问题：
-    1.  **这些能量函数是否能够区分结合能力较弱的复合物？**
-    2.  **这些能量函数（通常基于天然复合物数据训练）是否能够推广到深度学习生成的复合物？**（即，深度学习模型可能会生成具有不同统计分布的复合物，而计算能量函数未必适用）
+*   **Reliability is still uncertain**; several correlate poorly with experiment (Ramírez & Caballero, 2016, 2018).
+*   Open questions:
+    1.  **Can these scores separate weak binders?**
+    2.  **Do functions trained on native complexes generalize to deep-learning-generated structures** with different statistics?
 
-**结论**
+**Conclusion**
 
-*   **如果没有可靠的计算能量函数，抗体设计仍然需要湿实验评估（wet-lab evaluation）**，然而这会 **增加成本和时间开销**。
-*   **未来的研究需要开发更具泛化性的亲和力预测器，以提高深度学习驱动的抗体设计的可靠**
+*   **Without reliable computational affinity scores, wet-lab validation remains necessary**, at higher cost and time.
+*   **Future work should build more generalizable affinity predictors** to improve reliability of learning-based antibody design.
 
 <hr align="left" color="#987cb9" size="1"> 
-

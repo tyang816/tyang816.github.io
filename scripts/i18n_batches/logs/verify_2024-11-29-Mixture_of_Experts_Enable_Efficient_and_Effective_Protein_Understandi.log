@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文完整，结构与中文一致（Abstract → §1 → §3 → §4 及子节） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` 与中文 `permalink` 一致，英文无 `permalink` | 通过 |
+| 图片、DOI、Hugging Face 链接一致 | 通过 |
+| 章节对齐 | 通过 |
+| 术语与数字（16B、4.5B、283 任务、58.26% 等）一致 | 通过 |
+
+英文稿质量良好（如将中文可能的 pIDDT 笔误写为正确的 **pLDDT**；「蛋白质开发」译为 **Protein engineering** 符合 xTrimoPGLM 任务命名）。无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-11-29-Mixture of Experts Enable Efficient and Effective Protein Understanding and Design.md`

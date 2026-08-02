@@ -1,0 +1,12 @@
+对照 `scripts/i18n_verify_brief.md` 已完成核对：
+
+| 项 | 结果 |
+|---|---|
+| 英文全文与中文章节结构一致 | 通过（至 `<HR>`，含 Abstract → Experiments） |
+| 正文无中文 | 通过 |
+| Frontmatter：`lang: en`，`alt_url: /zh/ml/Neural-Subgraph-Matching/`，无 `permalink` | 通过 |
+| 图片、链接、公式 | 与中文版一致 |
+| 标题层级对齐 | 通过（英文已修正中文标题拼写 “Predition” → “Prediction”） |
+| 学术英文与数字/引用 | 通过（100×、18%、模型名等一致） |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/ML/2020-07-03-Neural Subgraph Matching.md`

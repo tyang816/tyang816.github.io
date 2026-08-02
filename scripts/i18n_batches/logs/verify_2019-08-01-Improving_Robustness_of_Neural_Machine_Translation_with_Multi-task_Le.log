@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2019-08-01-Improving Robustness of Neural Machine Translation with Multi-task Learning.md` issues=`Two Phase Beam Search 段中翻译假设符号由 \hat{t}_c 改为 \hat{t}_t，与同句 P(\hat{t}_t|...) 一致（中文原文此处亦为笔误）`
+
+其余项均通过：结构完整、无中文正文、`lang: en` 与 `alt_url` 正确、无英文 `permalink`、图片/链接/公式保留、章节对齐。

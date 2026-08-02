@@ -5,17 +5,20 @@ categories: [CV]
 tags: [vision-language]
 proceedings: NeurIPS
 date: 2021-11-10
+lang: en
+alt_url: /zh/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
+permalink: /cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
 ---
 
-> 论文地址：[Align before Fuse：Vision and Language Representation Learning with Momentum Distillation](https://openreview.net/forum?id=OJLaKwiXSbx)
+> Paper: [Align before Fuse：Vision and Language Representation Learning with Momentum Distillation](https://openreview.net/forum?id=OJLaKwiXSbx)
 >
-> 论文实现：<https://github.com/salesforce/ALBEF>
+> Code: <https://github.com/salesforce/ALBEF>
 
-## ALBEF：多模态融合前先做动量对比学习
+## ALBEF: Contrastive Alignment Before Multimodal Fusion
 
 ### Abstract
 
-最近大规模的视觉-语言表征学习进步很大，大部分方法都是用一个transformer的模型当作多模态的编码器，同时编码视觉的token和文本的token。用了预训练的目标检测器之后，视觉特征和文本特征其实不是align的(目标检测器是提前训练好的，导致视觉特征和文本特征可能隔很远)。为了在经过multimodal encoder之前（fusion之前）把图像和文本align起来，用了对比学习loss。为了更好的从有噪声的网络数据学习，用了一个momentum distillation自训练方式，打伪标签
+Large-scale vision–language representation learning has advanced rapidly. Most methods use a single transformer as a multimodal encoder that jointly encodes visual and textual tokens. When a pretrained object detector supplies visual features, those features are often **not aligned** with text (the detector is fixed or pretrained separately, so image and text embeddings can lie far apart in representation space). To align images and text **before** the multimodal encoder (before fusion), the authors add a contrastive learning objective. To learn more robustly from noisy web data, they further use **momentum distillation** for self-training with pseudo-labels.
 
 ### ALBEF Pre-training
 
@@ -23,82 +26,76 @@ date: 2021-11-10
 
 #### Pre-training Objectives
 
-图像特征和文本特征丢到多模态encoder之前先尽可能拉近，这里的ITC loss完全按照moco里面来的
+Image and text features are pulled as close as possible **before** entering the multimodal encoder. The image–text contrastive (ITC) loss follows MoCo.
 
-ITM loss这个对正样本还可能比较困难，但是对负样本来说还是非常简单的，这样训练再长时间其实也没有多少意义，所以在训练的时候需要加一些限制，去选择那些难的负样本（最接近正样本的负样本）。负样本是通过在前面的ITC loss里面算了cos sim然后拿出除了自己之外相似度最高的文本，其实文本和图片已经非常相似了，但是硬说这个是负样本（hard negative）
+Image–text matching (ITM) on true pairs can be difficult, but on random negatives it is often trivial—so training for a long time on easy negatives adds little. The recipe therefore selects **hard negatives** (negatives most similar to the positive). Hard negatives are mined from the ITC step: after computing cosine similarity, for each image one takes the text (other than its own) with highest similarity. That text may already describe the image well, yet it is still treated as a negative (hard negative).
 
-最后一个loss就是MLM，把缺失的文本和图像经过ALBEF模型，最后把完整文本预测出来，借助了图像这边的信息
+The third loss is MLM: given masked text and the image, ALBEF predicts the full text, using visual context.
 
-因此每个训练的iteration其实做了两次模型的forward，一次用的原始的I和T，一次用的原始的I和mask后的T‘
+Each training iteration thus runs the model **twice**: once on original image $I$ and text $T$, and once on $I$ and masked text $T'$.
 
 #### Momentum Distillation
 
-网上爬下来的图像文本对经常是weakly correlated，文本的很多单词图像没有，或图像的很多物体文本没有。这样在算对比学习loss就有偏差，比如负样本可能也描述了很多这个图片里的内容，可能不是爬下来当作ground truth的结果，但可能这个已经很好描述了。这时候非要把他当负样本，其实对ITC学习问题很大
+Web-scraped image–text pairs are often **weakly correlated**: many words in the caption may not appear in the image, or many objects in the image may be missing from the text. Contrastive losses then become biased—for example, a “negative” caption may still describe much of the image content; it is not a reliable one-hot ground truth, yet forcing it to be a hard negative hurts ITC.
 
-对MLM来说，完形填空的空可能存在比ground truth更好的结果
+For MLM, the fill-in-the-blank target may have **alternatives better than the annotated token**.
 
-因此用网上爬下来的one-hot label对这两个loss是不好的，因此找到额外的监督信号，不是One-hot而是Multi-hot，或者是额外模型的输出就行了，就是self-training，用一个动量模型来生成pseudo-targets（一个softmax score，不是One-hot label）
+Using one-hot labels from the web for ITC and MLM is therefore suboptimal. The method adds supervision that is **multi-hot** or comes from another model—self-training via a **momentum model** that produces pseudo-targets (softmax scores rather than one-hot labels).
 
-具体方法就是在已有的模型上做exponential-moving-average（EMA），训练的时候不仅和one-hot ground truth尽可能接近，和动量模型出来的pseudo-targets也尽可能match，达到一个不错的折中点
+Concretely, an exponential moving average (EMA) copy of the model generates targets during training. The student is trained to match both the one-hot ground truth and the momentum model’s pseudo-targets, yielding a practical compromise.
 
-对ITC来说
+For ITC:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm1.png" alt="avatar" style="zoom:70%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm6.png" alt="avatar" style="zoom:70%;" /></div>
 
-因为q是一个softmax socre，而不是one-hot label，所以用的KL散度而不是交叉熵
+Because $q$ is a softmax distribution rather than a one-hot label, the distillation term uses **KL divergence** instead of cross-entropy.
 
-对MLM来说
+For MLM:
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/frm7.png" alt="avatar" style="zoom:70%;" /></div>
 
-所以对ALBEF的训练loss来说有五个，两个ITC，两个MLM和一个ITM。因为ITM本身就是基于ground truth的，需要知道这是不是一个pair，就是一个二分类任务，又做了hard negative，这和momentum model有冲突
+Overall, ALBEF’s pre-training combines **five** loss terms: two for ITC, two for MLM, and one for ITM. ITM itself is a binary ground-truth pairing task with hard negatives, which does not use the momentum model (in tension with soft pseudo-targets for the other objectives).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/fig2.png" alt="avatar" style="zoom:90%;" /></div>
 
-可以看出确实有很多的选择比ground truth要好，使用pseudo-targets确实有好处
+Many candidate tokens score higher than the single ground-truth label, illustrating the benefit of pseudo-targets.
 
 #### Pre-training Datasets
 
-两个web数据集 Conceptual Captions， SBU Captions；两个domain数据集 COCO and Visual Genome
+Two web datasets: Conceptual Captions and SBU Captions; two in-domain datasets: COCO and Visual Genome.
 
 ### Downstream V+L Tasks
 
 ##### Image-Text Retrieval
 
-图像文本，图像到图像的检索等，商用价值高
-
-给定一个数据库怎么搜到ground truth的图像文本对，一般用recall，R1，R5，R10，检索回来的几个sample里有没有ground truth sample
+Image-to-text and text-to-image retrieval are commercially important. Given a gallery, the goal is to retrieve the ground-truth paired item; metrics are typically recall at $R@1$, $R@5$, and $R@10$—whether the true sample appears in the top-$k$ results.
 
 ##### Visual Entailment
 
-给一个假设前提，能不能推理出这个前提，推理出来的就是蕴含，推不出来就是矛盾，不然就是中立
-
-三分类问题，用分类准确度
+Given a textual hypothesis and an image, the model decides whether the image **entails**, **contradicts**, or is **neutral** toward the hypothesis—a three-way classification task evaluated by accuracy.
 
 ##### Visual Question Answering
 
-视觉问答，给定问题，给定图片，能否回答问题
+Given an image and a question, the model produces an answer. Two setups:
 
-两种设置
-
-- answer是固定的，固定的set，从里面选，变成了一个多分类问题，这就是闭集VQA
-- 另一种是开集VQA，生成文本，需要transformer decoder去生成，任务难度就大了很多
+- **Closed-set VQA**: answers come from a fixed set; the task reduces to multi-class classification.
+- **Open-set VQA**: answers are generated as free text, usually with a transformer decoder—substantially harder.
 
 ##### Natural Language for Visual Reasoning
 
-预测一个文本能不能同时描述一对图片，二分类问题，衡量指标是准确度
+Decide whether a single sentence describes **both** images in a pair—a binary classification task measured by accuracy.
 
 ### Experiments
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab1.png" alt="avatar" style="zoom:80%;" /></div>
 
-加了ITC之后提点很明显，用了hard negative之后效果也有提升，但对于换更大的数据集而言这些trick都无关紧要
+Adding ITC yields clear gains; hard negatives also help, though these tricks matter less when scaling to larger pre-training data.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab2-tab3.png" alt="avatar" style="zoom:80%;" /></div>
 
-图文检索，数据集已经被刷爆了
+On image–text retrieval benchmarks, scores are already highly saturated.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ALBEF/tab4.png" alt="avatar" style="zoom:80%;" /></div>
 

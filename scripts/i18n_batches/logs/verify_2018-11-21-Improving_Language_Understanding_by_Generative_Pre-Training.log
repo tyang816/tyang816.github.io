@@ -1,0 +1,14 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2018-11-21-Improving Language Understanding by Generative Pre-Training.md`
+
+按 `i18n_verify_brief.md` 逐项核对：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构完整（引言块 → GPT → Abstract / Introduction / Model / Experiment → `<HR>`） | 与中文版一致 |
+| 正文无中文 | 通过 |
+| Frontmatter：`lang: en`；`alt_url` = `/zh/cl/Improving-Language-Understanding-by-Generative-Pre-Training/`（对应中文 `permalink`）；无英文 `permalink` | 通过 |
+| 论文 PDF 链接、两张图、全部公式（含 `transormerBlock` 拼写） | 一致 |
+| 章节对应 | 通过（英文将中文标题笔误 “Experiemnt” 写为 “Experiment”，可接受） |
+| 学术英语与术语（GPT/BERT、decoder/encoder、\(L_1\)–\(L_3\)、12 层 / 768 维） | 通顺且与中文含义一致 |
+
+英文稿无需修改。

@@ -1,0 +1,13 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文结构一致，无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 完整性 | Abstract → Experiment 各节与图片、结尾 `<HR>` 均与中文一致 |
+| 正文语言 | 无中文叙述 |
+| Frontmatter | `lang: en`；`alt_url` 为 `/zh/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/`（与中文 `permalink` 一致）；无 `permalink`；其余字段与中文对应 |
+| 链接与资源 | 论文 DOI、GitHub、全部 COS 图片 URL 一致 |
+| 结构与术语 | 标题层级对齐；AST-trans、POT/SBT/PD、五种实现（Mask/Loop/Sparse/GC/GDC）及公式符号一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-07-05-AST-trans：code summarization with efficient tree-structured attention.md`

@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文完整 | 与中文一致：Abstract → 1 Introduction → 3 Preliminary → 4 Methodology → 5 Results（5.1–5.6）及结尾 `<hr>`，无截断 |
+| 正文无中文 | 未发现中文段落 |
+| Frontmatter | `lang: en`；`alt_url: /zh/bi/Predicting-a-Protein's-Stability-under-a-Million-Mutations/` 与中文 `permalink` 一致；无 `permalink`；其余字段与中文对齐 |
+| 图链 / URL / 公式 | OpenReview、GitHub、COS 图片路径及 $μ$、$z(μ)$ 等与中文一致 |
+| 章节结构 | 标题层级一致（含跳过 §2） |
+| 术语与数字 | ProTherm PTMul 0.53/0.50、S669 0.56/0.53、ProteinGym 0.48→0.49、cDNA2、DetPr、nDCG 等与中文一致 |
+
+英文表述通顺，未发现需改动的明显 Chinglish 或漏译；未修改文件。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-09-22-Predicting a Protein’s Stability under a Million Mutations.md`

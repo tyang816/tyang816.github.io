@@ -1,0 +1,3 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文结构一致，frontmatter 正确（`lang: en`，`alt_url: /zh/cv/Can-Language-Understand-Depth？/`，无 `permalink`），链接与三张图一致，Abstract / Method / Experiment 内容对应且无残留中文，术语与模型名（CLIP、DepthCLIP、zero-shot）正确。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-10-10-Can Language Understand Depth？.md`

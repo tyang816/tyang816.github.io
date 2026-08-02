@@ -5,15 +5,18 @@ categories: [CV]
 tags: [video, action-recognition]
 proceedings: ECCV
 date: 2016-11-17
+lang: en
+alt_url: /zh/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
+permalink: /cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
 ---
 
-> 论文地址：[Temporal Segment Networks：Towards Good Practices for Deep Action Recognition](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_2)
+> Paper: [Temporal Segment Networks：Towards Good Practices for Deep Action Recognition](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_2)
 
-## TSN+Practices：时空分割网络和视频学习的技巧
+## TSN + Practices: Temporal Segment Networks and Tips for Video Learning
 
 ### Abstract
 
-提出了结合稀疏时间采样策略和视频级别的监督学习的TSN框架，在时空分割网络帮助下的一系列对于视频理解的技巧，包括数据增强、初始化、防止过拟合等等
+Introduces the TSN framework, which combines sparse temporal sampling with video-level supervision, together with a set of practices for video understanding built around Temporal Segment Networks—including data augmentation, initialization, and strategies against overfitting.
 
 ### Model
 
@@ -21,37 +24,38 @@ date: 2016-11-17
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/TSN/img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-模型其实还是比较简单，主要就是**视频分段+Segmental Consensus**，但是效果非常好，也是非常有新意的一种体现。其实做很长的视频也是一样的道理，即使语义不同，就大不了不加Segmental Consensus（不做语义融合），加一个LSTM去学习也是一个想法
+The model is relatively simple: mainly **video segmentation plus Segmental Consensus**, yet it works very well and is a notably fresh design. The same idea extends to very long videos: even when semantics differ across segments, one can simply omit Segmental Consensus (no semantic fusion) and use an LSTM instead—another reasonable option.
 
-- 如果有一个原始的双流网络，每次能覆盖的图像最多也就是10帧，不到半秒
+- With a standard two-stream network, each forward pass covers at most about ten frames—less than half a second.
 
-- TSN想覆盖更长的时间就把视频分割成几段，比如上图的三段，每一段随机抽取一帧当作RGB图像，然后以这一帧为起点选几帧算光流图像，通过双流网络，最后生成两个logits，其他段同理
+- To cover longer temporal context, TSN splits the video into several segments (e.g., three in the figure above). From each segment it randomly samples one frame as the RGB input, then selects a few frames starting from that frame to compute optical flow; both streams pass through the two-stream network and produce two logits, and the other segments are handled the same way.
 
-- TSN的意思指即使抽出来的帧表面上看起来不一样，但高层的语义信息应该表示的是一个意思，然后把空间和时间上的语义做Segmental Consensus融合特征，最后做一个late fusion
+- “TSN” here means that although sampled frames may look different on the surface, their high-level semantics should correspond to the same action; spatial and temporal semantics are fused via Segmental Consensus, followed by late fusion for the final prediction.
 
 #### Learning Temporal Segment Networks
 
 ##### Cross Modality Pre-training
 
-这里的多模态就是**图像和光流**
+The modalities here are **RGB frames and optical flow**.
 
-图像这边可以用imageNet的预训练来微调，但是光流这边如果用小数据从头训练的话可能效果不太好，所以作者表示把imageNet预训练好的直接给光流用效果也非常好
+RGB streams can be fine-tuned from ImageNet pre-training. Training the flow stream from scratch on small datasets often works poorly; the authors report that reusing ImageNet-pretrained weights for the flow branch also works very well.
 
-但这里主要的问题是imageNet输入是RGB通道的图像，光流的输入是10张光流图，和x，y两个位移的channel，作者就把**RGB模型的第一层卷积的权重拿出来平均**，这下三个通道变一个通道了，然后把这个通道**复制20遍**，这种初始化方式是非常有用的
+The main issue is that ImageNet expects three RGB channels, whereas the flow input consists of ten flow images with x and y displacement channels. The authors **average the first-layer convolution weights of the RGB model** so three channels become one, then **replicate that channel twenty times**. This initialization is very effective.
 
 ##### Regularization Techniques
 
-Batch Normalization虽然能让训练加速，但是也带来了过拟合问题，于是就提出了partial BN
+Batch Normalization speeds training but can worsen overfitting, which motivates partial BN.
 
-- 本来的动机是说如果BN层可以微调的话，因为数据集比较小，**一调就过拟合了**，所以其实是不想调，最好是**冻**起来。但是如果**全冻起来迁移学习的效果就不太好**，毕竟之前的数据集是图像的不是视频动作识别了
-- partial BN就是把**第一层BN打开，其他冻住**，因为输入变了，所以第一层必须学一学才适应新的数据集，但是后面就不用开了，不然容易过拟合
+- The original motivation is that fine-tuning BN layers on a small dataset **overfits quickly**, so the ideal would be to **freeze** them. **Freezing all BN layers**, however, hurts transfer because the pre-training domain (images) differs from video action recognition.
+
+- Partial BN **unfreezes only the first BN layer and keeps the rest frozen**. Because inputs change, the first layer must adapt to the new data; deeper BN layers stay fixed to limit overfitting.
 
 ##### Data Augmentation
 
-- corner cropping：
-  - 作者发现如果做random cropping经常是图像正中间或中间附近，很难裁剪到边边角角，作者就强制让能裁剪到边角
-- scale-jittering：
-  - 改变图片长宽比，先把图片缩放到256x340，然后从{256，224，192，168}中选长宽组合做裁剪
+- Corner cropping:
+  - Random cropping often lands near the image center and rarely reaches corners; the authors force crops that can include edge and corner regions.
+- Scale-jittering:
+  - Vary aspect ratio by resizing to 256×340, then choosing width–height pairs from {256, 224, 192, 168} for cropping.
 
 #### Experiment
 

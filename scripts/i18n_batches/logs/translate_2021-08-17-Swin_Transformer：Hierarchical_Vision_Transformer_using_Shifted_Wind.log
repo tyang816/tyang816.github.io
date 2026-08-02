@@ -1,0 +1,7 @@
+**DONE**
+
+已写入 [`_posts/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md`](_posts/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md)：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/`（对应中文 `permalink`）；无英文 `permalink`；已去掉 `lang: zh-CN`
+- **正文**：学术英文笔记；顶部链接触标签为 Paper；三张图 URL 与 `<HR>` 保留
+- **校验**：目标路径存在，正文无中文残留

@@ -1,0 +1,5 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2026-05-12-BiomniBench Process-level Evaluation of LLM Agents for Real-world Biomedical Research.md` issues=`closed systems→closed-source systems (Introduction §1, Discussion §4)`
+
+**核对摘要：** 英文稿结构完整（Abstract → §4 + `<hr>`），正文无中文叙述；frontmatter 为 `lang: en`、`alt_url` 与中文 `permalink` 一致且无英文 `permalink`；图片、链接、公式与数值/模型名均与中文版一致。
+
+**已改：** 两处将易被理解成「封闭系统」的 *closed systems / closed and open* 改为 *closed-source*，与中文「闭源」及摘要用语一致。

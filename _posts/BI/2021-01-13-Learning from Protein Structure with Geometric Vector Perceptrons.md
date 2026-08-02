@@ -5,92 +5,95 @@ categories: [BI]
 tags: [protein, GNN, inverse folding]
 proceedings: ICLR
 date: 2021-01-13
+lang: en
+alt_url: /zh/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
+permalink: /bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
 ---
 
-> 论文地址：[Learning from Protein Structure with Geometric Vector Perceptrons](https://openreview.net/forum?id=1YLJDvSx6J4)
+> Paper: [Learning from Protein Structure with Geometric Vector Perceptrons](https://openreview.net/forum?id=1YLJDvSx6J4)
 >
-> 论文实现：<https://github.com/drorlab/gvp-pytorch>
+> Code: <https://github.com/drorlab/gvp-pytorch>
 
-## GVP：集合向量感知机执行几何和关系推理
+## GVP: Geometric vector perceptrons for geometric and relational reasoning
 
 ### Abstract
 
-我们提出了geometric vector perceptrons，扩展了标准的稠密层来操作欧几里得向量，配备了这种层的图神经网络能够对大分子的有效表示执行几何和关系推理。在model quality assessment和computaional protein design进行评估
+We propose geometric vector perceptrons, which extend standard dense layers to operate on Euclidean vectors. Graph neural networks equipped with such layers can perform geometric and relational reasoning over effective representations of large molecules. The approach is evaluated on model quality assessment and computational protein design.
 
 ### Introduction
 
-深度学习技术往往利用了领域的问题结构，比如CNN于CV，attention于NLP
+Deep learning methods often exploit domain-specific problem structure—for example, CNNs for computer vision and attention for natural language processing.
 
-一方面有氨基酸残基在空间上的排列和取向，它控制着分子的动力学和功能；另一方面，蛋白质在其氨基酸序列和介导上述蛋白质性质的残基-残基相互作用方面也具有关系结构；把这些分别称为geometric and relational aspect
+On one hand, amino acid residues have spatial arrangement and orientation, which govern molecular dynamics and function; on the other, proteins also exhibit relational structure in their amino acid sequences and in residue–residue interactions that mediate the properties above. These are referred to as the geometric and relational aspects, respectively.
 
-最近使用结构信息的方法主要两方面：用GNN的关系推理或CNN直接操作空间结构
+Recent methods that use structural information fall mainly into two lines: relational reasoning with GNNs, or CNNs that operate directly on spatial structure.
 
-提出了GVP可以同时处理标量和几何特征，可以应用于输入域是单个大分子或分子相互结合的结构的任何问题；本次工作主要关注于两个蛋白质结构相关的问题：computional protein design and model quality assessment
+We propose GVP, which can jointly handle scalar and geometric features, and can be applied to any problem whose input domain is a single large molecule or structures of molecules in complex. This work focuses on two protein-structure-related tasks: computational protein design and model quality assessment.
 
 ### Methods
 
-提出的架构集合CNN和GNN的学习生物分子的结构的方法
+The proposed architecture combines ideas from CNN- and GNN-based approaches to learning from biomolecular structure.
 
-前一节中描述的GNN通过按照旋转不变量标量编码向量特征（如节点方向和边方向），通常通过在每个节点定义局部坐标系，对蛋白质的3D几何结构进行编码。本文建议将这些特征直接表示为3D几何向量特征，这些特征在图传播的所有步骤中，在空间坐标的变化下进行适当的变换
+GNNs as described in the preceding section encode the 3D geometry of proteins by encoding vector features (such as node directions and edge directions) as rotation-invariant scalars, typically by defining a local coordinate system at each node. This paper proposes representing these features directly as 3D geometric vector features that transform appropriately under changes of spatial coordinates at every step of graph propagation.
 
-有两个好处：
+This yields two benefits:
 
-*   输入特征更加方便，用每个节点的绝对位置编码来替代该节点与其他所有邻居的相对位置编码
-*   标准化了整个结构的全局坐标系，允许几何特征直接传播，无需局部坐标之间的转换
+*   Input features are more convenient: absolute position encodings at each node replace relative position encodings between that node and all of its neighbors.
+*   A single global coordinate frame for the entire structure is used, allowing geometric features to propagate directly without conversion between local frames.
 
-#### Geometric vector preceptrons
+#### Geometric vector perceptrons
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/fig1.png" alt="avatar" style /></div>
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/alg1.png" alt="avatar" style /></div>
 
-给定一个元组 `$(s,V)$`，其中标量特征 `$s\in \mathbb{R}^n$`，向量特征 `$V\in \mathbb{R}^{v\times 3}$` ，计算得到新的特征 `$(s',V')\in \mathbb{R}^m\times \mathbb{R}^{u\times 3}$`
+Given a tuple `$(s,V)$`, with scalar features `$s\in \mathbb{R}^n$` and vector features `$V\in \mathbb{R}^{v\times 3}$`, we compute new features `$(s',V')\in \mathbb{R}^m\times \mathbb{R}^{u\times 3}$`.
 
-有两个分开的线性变换矩阵分别对应标量和向量，后面是非线性激活，L2 norm
+Two separate linear transformation matrices act on scalars and vectors, respectively, followed by a nonlinear activation and an L2 norm.
 
-这是因为对向量值输入的唯一操作是标量乘法、线性组合和L2范数。作者在附录A中提供了正式证明。下面的截图是作者在论证GVP体系结构可以逼近V \mathbf{V}V的任何连续旋转和反射不变标量值函数
+The only operations applicable to vector-valued inputs are scalar multiplication, linear combination, and the L2 norm. The authors provide a formal proof in Appendix A. The screenshot below illustrates their argument that the GVP architecture can approximate any continuous rotation- and reflection-invariant scalar-valued function of `$V$`.
 
 #### Representations of Proteins
 
-作者的体系结构的主要经验验证是它在两个实际任务上的性能：计算蛋白质设计(CPD)和模型质量评估(MQA)。这些任务，如图1b 所示，并在第4节详细描述，是互补的，其中一个(CPD)预测每个氨基酸的属性，而另一个(MQA)预测全局属性
+The main empirical validation of the authors’ architecture is its performance on two practical tasks: computational protein design (CPD) and model quality assessment (MQA). As shown in Fig. 1b and described in detail in Section 4, these tasks are complementary: CPD predicts per-amino-acid properties, whereas MQA predicts global properties.
 
-将一个蛋白质结构输入表示为一个邻接图，带有最少数量的标量和向量特征，以指定分子的三维结构。蛋白质结构是一个氨基酸序列，其中每个氨基酸由四个主干原子和一组位于三维欧氏空间的侧链原子组成。只表示主干，因为侧链在CPD中是未知的，并且MQA基准只对应于主干结构的评估
+A protein structure is represented as an adjacency graph with a minimal set of scalar and vector features that specify the three-dimensional structure. A protein structure is an amino acid sequence in which each amino acid comprises four backbone atoms and a set of side-chain atoms in three-dimensional Euclidean space. Only the backbone is represented, because side chains are unknown in CPD and the MQA benchmark evaluates backbone structures only.
 
-蛋白质的主干部门表示成一个图 `$G=(\nu, \varepsilon)$`，每个点 `$\nu_i$` 对应一个氨基酸，并且有一个embedding `$\mathbf{h}_\mathbf{\nu}^{(i)}$`，该embedding具有如下特征：
+The protein backbone is represented as a graph `$G=(\nu, \varepsilon)$`. Each node `$\nu_i$` corresponds to an amino acid and has an embedding `$\mathbf{h}_\mathbf{\nu}^{(i)}$` with the following features:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/img1.png" alt="avatar" style /></div>
 
-边选择30个最近邻，每个边 `$h_e^{(j\rightarrow i)}$` 特征如下：
+Edges connect the 30 nearest neighbors; each edge `$h_e^{(j\rightarrow i)}$` has the following features:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/img2.png" alt="avatar" style /></div>
 
 #### Network Architecture
 
-图传播步骤如下：
+Graph propagation proceeds as follows:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/frm3-frm4.png" alt="avatar" style /></div>
 
-其中，g是三个GVPs的叠加函数
+Here, g denotes a stack of three GVPs:
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GVP/frm5.png" alt="avatar" style /></div>
 
 *
 
-其中，g是两个GVPs的叠加函数。这些图传播和前馈步骤除了更新每个节点的标量特征之外，还更新了其向量特征
+Here, g denotes a stack of two GVPs. These graph-propagation and feedforward steps update both the scalar and vector features at each node.
 
 ### Evaluation metrics and datasets
 
 #### Protein design
 
-计算蛋白质设计（CPD）是蛋白质结构预测的概念反转，旨在推断将折叠成给定结构的氨基酸序列
+Computational protein design (CPD) is the conceptual inverse of protein structure prediction: it aims to infer the amino acid sequence that will fold into a given structure.
 
-使用数据集是CATH4.2，以及评估了TS50，一个由50个原生结构组成的较旧测试集
+The dataset used is CATH4.2; the authors also evaluate on TS50, an older test set of 50 native structures.
 
 #### Model quality assessment
 
-模型质量评估（MQA）旨在从大量候选结构中选择蛋白质的最佳结构模型
+Model quality assessment (MQA) aims to select the best structural model for a protein from a large pool of candidate structures.
 
-使用CASP数据集
+The CASP dataset is used.
 
 ### Experiments
 

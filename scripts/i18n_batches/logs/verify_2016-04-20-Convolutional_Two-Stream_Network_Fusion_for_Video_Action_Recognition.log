@@ -1,0 +1,13 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 项 | 结果 |
+|---|---|
+| 英文完整、结构与中文一致 | 各节（Abstract → Evaluation）与结尾 `<HR>` 均对应 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无 `permalink`；其余字段一致 |
+| 图片/链接 | IEEE 链接与 img2/img3/table5 三图 URL 一致 |
+| 术语与数字 | Conv4、HMDB51、2D/3D pooling 等未改 |
+
+英文表述与中文笔记含义一致（含 Early fusion、五种 spatial fusion、两处 fuse 策略等），无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2016-04-20-Convolutional Two-Stream Network Fusion for Video Action Recognition.md`

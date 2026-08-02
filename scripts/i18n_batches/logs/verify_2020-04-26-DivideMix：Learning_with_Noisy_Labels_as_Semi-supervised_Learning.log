@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2020-04-26-DivideMix：Learning with Noisy Labels as Semi-supervised Learning.md` issues=`co-refinement bullet wrongly attributed label refinement to GMM (ZH garbled “使用GMM对其他网络…”；method uses the other network’s predictions)`
+
+其余项均通过：结构完整、frontmatter（`lang: en`、`alt_url` 对应中文 `permalink`、无 `permalink`）、链接与图片一致、无中文正文、术语与 DivideMix 方法描述一致。

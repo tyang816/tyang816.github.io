@@ -1,0 +1,11 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-10-20-HELoC：Hierarchical Contrastive Learning of Source Code Representation.md`
+
+核对结果：
+
+1. **完整性**：与中文版章节一一对应（Abstract → Experiments / 消融），结尾 `<HR>` 一致。  
+2. **正文语言**：无中文叙述。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/`）一致；英文无 `permalink`；其余字段与中文一致。  
+4. **资源**：论文链接、GitHub、全部图片 URL 与中文版相同。  
+5. **结构与语气**：标题层级对齐；英文表述通顺，术语（RSGNN、NEP、NRO、ContraCode 等）合理。
+
+未改文件。

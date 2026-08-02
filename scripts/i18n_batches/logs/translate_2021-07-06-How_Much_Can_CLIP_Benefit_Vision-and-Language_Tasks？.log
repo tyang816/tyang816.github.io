@@ -1,0 +1,6 @@
+**DONE**
+
+已将 `_posts/CV/2021-07-06-How Much Can CLIP Benefit Vision-and-Language Tasks？.md` 写好，要点如下：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/`（对应中文 `permalink`）；未设置英文 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：blockquote 中「论文地址 / 论文实现」译为 Paper / Code；摘要、引言与贡献已译为学术英文；图片块、链接与 `<HR>` 原样保留。

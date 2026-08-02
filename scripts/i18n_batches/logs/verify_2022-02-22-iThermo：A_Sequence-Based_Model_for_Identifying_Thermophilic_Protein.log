@@ -1,0 +1,4 @@
+**FIXED** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-02-22-iThermo：A Sequence-Based Model for Identifying Thermophilic Proteins Using a Mul.md`  
+**issues=** Feature Selection 中 `$s^2_b$` / `$s^2_w$` 误译为 “between-feature / within-sample”，已改为与上文 F-value 一致的 between-class / within-class。
+
+其余项均通过：结构完整、正文无中文、`lang: en`、`alt_url` 与中文 `permalink` 一致、无英文 `permalink`、链接/图片/公式一致、章节对齐；Abstract 与 Dataset 的数字差异与中文版一致（未改）。

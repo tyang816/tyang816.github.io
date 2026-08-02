@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/IR/2022-01-09-Deep Meta-learning in Recommendation Systems：A Survey.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ir/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/`（对应中文 `permalink`）；无英文 `permalink`；其余字段与中文版一致。
+- **正文**：区块引用中「论文地址」改为 **Paper**；结构与图片/链接 URL 均保留；全文无中文正文。

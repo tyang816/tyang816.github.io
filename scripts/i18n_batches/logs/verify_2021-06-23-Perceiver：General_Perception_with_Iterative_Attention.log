@@ -1,0 +1,3 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-06-23-Perceiver：General Perception with Iterative Attention.md`
+
+对照 `i18n_verify_brief.md` 核对结果：英文稿完整（Abstract / Introduction / Methods 子节 / Experiments 与中文一致）；正文无中文；frontmatter 为 `lang: en`、`alt_url` 与中文 `permalink` 一致、无英文 `permalink`；图片与链接一致；结构与术语（含 GPT-2、维度符号）合理。无需修改。

@@ -1,0 +1,14 @@
+已按 `i18n_verify_brief.md` 逐项对照中英文两篇笔记。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文完整、结构与中文一致 | Abstract / Introduction / Results（4 个小节）/ Methods（3 个小节）及结尾 `<HR>` 均对应 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink`；其余字段一致 |
+| 图、链接、DOI、GitHub | 与中文一致 |
+| 数字与名称 | 0.48、0.93、204、6.5M、4447、zenodo 链接等一致 |
+| 英文表述 | 术语与语气正常，Methods 中阈值指标已正确英文化 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2019-01-21-Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enz.md`

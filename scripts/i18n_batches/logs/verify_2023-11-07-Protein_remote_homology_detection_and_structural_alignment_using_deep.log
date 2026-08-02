@@ -1,0 +1,10 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-11-07-Protein remote homology detection and structural alignment using deep learning.md` issues=`grammar(219 domains); Chinglish bacteriocins comparison sentence`
+
+**核对摘要：**
+- 结构与中文版一致，图片/链接/公式/数值均保留
+- Frontmatter：`lang: en`，`alt_url` 指向中文 `permalink`，无英文 `permalink`
+- 正文无中文
+
+**已改 2 处：**
+1. 「Because 219 domains is…」→ 「Because only 219 domains are available…」
+2. bacteriocins 段改为更贴中文「比较对象是…预测结构」的英文表述

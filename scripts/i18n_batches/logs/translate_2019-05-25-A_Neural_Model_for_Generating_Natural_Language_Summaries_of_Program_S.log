@@ -1,0 +1,6 @@
+**DONE**
+
+已按 `i18n_translate_brief.md` 写入英文笔记：`_posts/SE/2019-05-25-A Neural Model for Generating Natural Language Summaries of Program Subroutines.md`。
+
+- Frontmatter：`lang: en`，`alt_url` 指向中文页 `/zh/se/A-Neural-Model-for-Generating-Natural-Language-Summaries-of-Program-Subroutines/`，无 `permalink`
+- 正文：学术英文，保留图片、链接与 `<HR>` 结构；块引用标签为 `Paper:`

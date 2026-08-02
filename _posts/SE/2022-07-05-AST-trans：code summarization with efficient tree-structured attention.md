@@ -5,32 +5,35 @@ categories: [SE]
 tags: [code-summarization]
 proceedings: ICSE
 date: 2022-07-05
+lang: en
+alt_url: /zh/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
+permalink: /se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
 ---
 
-> 论文地址：[AST-trans：code summarization with efficient tree-structured attention](https://dl.acm.org/doi/10.1145/3510003.3510224)
+> Paper: [AST-trans：code summarization with efficient tree-structured attention](https://dl.acm.org/doi/10.1145/3510003.3510224)
 >
-> 论文实现：<https://github.com/zetang94/ICSE2022_AST_Trans>
+> Code: <https://github.com/zetang94/ICSE2022_AST_Trans>
 
-## AST-trans：父子和兄弟结点做树注意力
+## AST-trans: Tree attention on parent–child and sibling nodes
 
 ### Abstract
 
-AST包含了结构信息但是比对应的原代码长很多，目前方法忽略了长度限制简单粗暴的把整个AST丢进编码器，这种方法难以有效利用关系依赖而且引起巨大的计算开销。本文提出AST-trans利用两种结点关系，祖先后代和兄弟关系，使用树结构注意力对相关和不想关结点分配权重，进一步提出了一个有效的实现来支持快速并行计算的树结构注意
+Abstract syntax trees (ASTs) carry structural information but are often much longer than the corresponding source code. Existing approaches ignore length limits and feed entire ASTs into encoders, which makes it hard to exploit relational dependencies effectively and leads to large computational cost. This work proposes AST-trans, which uses two node relations—ancestor–descendant and sibling—and tree-structured attention to weight relevant and irrelevant nodes. It further gives an efficient implementation that supports fast parallel computation of tree-structured attention.
 
 ### Introduction
 
-线性化的AST比对应的原代码长很多，一些线性算法甚至增加长度，比如线性化SBT使得扩大了数倍，这使得模型很难准确探测出有用的依赖关系。此外也带来了巨大的计算负担，比如基于transformer的SOTA方法的注意力操作随着序列长度增加也在增加
+Linearized ASTs are much longer than the corresponding source code; some linearization schemes increase length further—for example, linearized SBT can expand the sequence by several times—so models struggle to recover useful dependencies. This also imposes heavy computation: in transformer-based state-of-the-art methods, attention cost grows with sequence length.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-本文假设AST结点状态最受两点影响：1. 祖先-后代结点，表达了不同层次的跨block关系；2. 兄弟结点，表达了一个block内的时间关系。需要祖先-后代结点来理解高层次语义，兄弟关系理解低层次语义，这俩已经够生成注释和建模整个结点需要的注意力
+The paper assumes each AST node’s state is shaped mainly by two factors: (1) ancestor–descendant links, which capture cross-block relations at different hierarchy levels; (2) sibling links, which capture sequential relations within a block. Ancestor–descendant structure supports high-level semantics; sibling structure supports low-level semantics. Together they are sufficient for comment generation and for the attention each node needs over the tree.
 
-主要贡献：
+Main contributions:
 
-- AST-trans线性复杂度比标准的transformer二次复杂度编码长AST更高效
-- 利用理论和经验证据，对不同实现的计算复杂度进行了全面的分析
-- 在Java和python数据集上显示了AST-trans能达到SOTA
-- 比较了AST编码的代表性方法，并讨论了它们的优缺点
+- AST-trans has linear complexity and encodes long ASTs more efficiently than a standard transformer’s quadratic cost
+- A full analysis of computational complexity for alternative implementations, supported by theory and experiments
+- State-of-the-art results on Java and Python summarization datasets
+- A comparison of representative AST encoding methods and discussion of their trade-offs
 
 ### AST-TRANS
 
@@ -38,13 +41,13 @@ AST包含了结构信息但是比对应的原代码长很多，目前方法忽�
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-先序遍历（POT），基于结构遍历（SBT），路径分解（PD）
+Pre-order traversal (POT), structure-based traversal (SBT), and path decomposition (PD).
 
 #### Relationship Matrices
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-祖先-后代用A矩阵表示，兄弟关系用S矩阵表示，A矩阵的值是计算的最短路径距离，S矩阵的值是AST中水平兄弟距离，P是相对距离门槛
+Ancestor–descendant relations use matrix **A**; sibling relations use matrix **S**. Entries in **A** are shortest-path distances; entries in **S** are horizontal sibling distances in the AST. **P** is the relative-distance threshold.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm1.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -56,7 +59,7 @@ AST包含了结构信息但是比对应的原代码长很多，目前方法忽�
 
 **Relative position embedding**
 
-公式2没有位置信息，初始的transformer用的绝对位置嵌入，本文这里用相对位置编码（在代码摘要任务更有效），相对位置 $\delta(i,j)$ 反映了 $n_i$ 和 $n_j$ 之间的成对距离
+Equation (2) has no explicit position terms. The original transformer used absolute position embeddings; here the model uses relative position encoding (more effective for code summarization). Relative position $\delta(i,j)$ is the pairwise distance between nodes $n_i$ and $n_j$.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm3.png" alt="avatar" style="zoom:60%;" /></div>
 
@@ -68,69 +71,69 @@ AST包含了结构信息但是比对应的原代码长很多，目前方法忽�
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm5.png" alt="avatar" style="zoom:60%;" /></div>
 
-我们的方法本质上用 $\delta_R(i,j)$ 代替了线性关系下定义的相对距离，其中𝑅代表树结构中的祖先-后代关系𝐴或兄弟关系𝑆
+The method replaces the relative distance defined on a linear sequence with $\delta_R(i,j)$, where $R$ is either ancestor–descendant relation **A** or sibling relation **S** in the tree.
 
-这里有两种关系，每种关系对应一个头，这样在顶层的transformer上就不会增加额外参数
+There are two relation types; each maps to one attention head, so the top-level transformer adds no extra parameters.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm6.png" alt="avatar" style="zoom:60%;" /></div>
 
-$V^P$ 表示相对距离的值投影矩阵，$V^P_{R_{ij}}$是 $V^P$ 的第𝑅𝑖𝑗行。这里可以看到计算出来的 $\delta_R(i,j)$ 是大于0的，是为了减少了自注意力时的时间和空间复杂性
+$V^P$ is the value projection matrix for relative distances; $V^P_{R_{ij}}$ is row $R_{ij}$ of $V^P$. Restricting computation to $\delta_R(i,j) > 0$ reduces the time and space cost of self-attention.
 
 ### Efficient Implementation
 
-标准的transformer随序列增加开销增加，AST-Trans可以通过只计算 $\delta_R(i,j)>0$ 的部分来减轻开销，类似于滑动窗口的想法将注意力计算限制在一个固定距离
+A standard transformer’s cost grows with sequence length. AST-Trans can lower cost by computing attention only where $\delta_R(i,j) > 0$, in the spirit of a sliding window that limits attention to a fixed distance.
 
-通过滑动窗口，可以将序列数据中的节点对规划成线性分布（通过忽略 $\delta(i,j)=0$ 或 2P−1 的节点对），并与矩阵划分并行计算。但是这种技术并不适用，因为相关节点的位置分布随着每个树状结构的变化而变化
+With a sliding window, node pairs in a sequence can be laid out linearly (dropping pairs with $\delta(i,j) = 0$ or $2P - 1$) and computed in parallel via matrix tiling. That trick does not transfer directly here, because the positions of related nodes change from tree to tree.
 
-介绍以下5个AST-Trans的备选实现，并讨论其优缺点：
+The paper describes five implementation options for AST-Trans and their trade-offs:
 
 **Mask**
 
-在计算所有节点之间的全部注意力后，屏蔽 $\delta_R(i,j)=0$ 的注意力得分，它具有与标准transformer相同的二次时间和空间复杂度
+Compute full attention over all node pairs, then zero out scores where $\delta_R(i,j) = 0$. Time and space remain quadratic, as in a standard transformer.
 
 **Loop**
 
-循环 $\delta_R(i,j)>0$ 的节点对 ，并计算注意力分数，有效率但不支持并行处理
+Iterate over pairs with $\delta_R(i,j) > 0$ and compute attention scores. This is efficient in terms of work but does not parallelize well.
 
 **Sparse**
 
-把 $\delta_R$ 存储为稀疏矩阵 $ST(\delta_R)$ ，用pytorch这样的框架会自动跳过0元素。对于content-to-position和position-to-content可以用，对content-to-content就用不了，还是得用mask或loop方法
+Store $\delta_R$ as a sparse matrix $ST(\delta_R)$; frameworks such as PyTorch skip zero entries automatically. This works for content-to-position and position-to-content terms, but not for content-to-content, which still requires mask or loop.
 
 **Gather with COO (GC)**
 
-基于Sparse的方法，content-to-content方法可以通过额外的聚集操作优化。GC的核心思想是将需要计算出来的查询-键对放成一对一的对应关系，并将它们存储为密集的矩阵
+Building on the sparse view, content-to-content attention can be optimized with extra gather operations. The idea is to list each query–key pair that must be scored in a one-to-one layout and materialize them as dense matrices.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm4.1.png" alt="avatar" style="zoom:60%;" /></div>
 
-计算中所进行的聚集操作总数是 $\delta_R$ 中非零元素的4倍；2倍用于聚集内容，2倍用于聚集位置
+The total number of gathers is four times the number of nonzeros in $\delta_R$: two for content and two for position.
 
 **Gather with decomposed COO (GDC)**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-为了减少GC中的聚集操作，使用了矩阵分解操作，把原本的 $\delta_R$ 对应的矩阵分解为三个子矩阵，然后聚集content的嵌入如下
+To cut gathers in GC, the matrix for $\delta_R$ is decomposed into three submatrices; content embeddings are gathered as follows.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm4.2.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm4.3.png" alt="avatar" style="zoom:60%;" /></div>
 
-最后把所有的 $\alpha_{coo}$ 加起来
+Finally, all $\alpha_{\mathrm{coo}}$ terms are summed.
 
-这样做有三个好处：
+This yields three benefits:
 
-- $K^P$ 和 $Q^P$ 可以被重用，因为每个 $Q_{row_s}$ 和 $K_{row_s}$ 都有相同的相对距离s，s的位置嵌入可以直接添加到content中，而无需聚集操作
-- 只需要四分之一的聚集操作
-- 只需要一次点积，后面那次点积可以重用
+- $K^P$ and $Q^P$ can be reused: each $Q_{\mathrm{row}_s}$ and $K_{\mathrm{row}_s}$ shares the same relative distance $s$, so the position embedding for $s$ can be fused into content without a gather
+- Only one quarter as many gather operations
+- Only one dot product is needed; the second can be reused
 
 ### Complexity Analysis
 
-这一节主要讨论上述五种方法最好，最差和平均的复杂度
+This section summarizes best-, worst-, and average-case complexity for the five implementations above.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/frm7.png" alt="avatar" style="zoom:60%;" /></div>
 
-A和B是[N, m]矩阵，A[C; :]表示用C作为索引聚集A，|C|是C的元素个数
+**A** and **B** are $[N, m]$ matrices; $\mathbf{A}[C; :]$ denotes gathering rows of **A** indexed by $C$, and $|C|$ is the size of $C$.
 
-具体的计算复杂度看原文，比较硬核
+Detailed complexity is in the paper; the analysis is fairly involved.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AST-trans/fig4-fig5.png" alt="avatar" style="zoom:60%;" /></div>
 

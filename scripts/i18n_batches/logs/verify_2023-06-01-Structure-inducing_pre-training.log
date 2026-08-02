@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-06-01-Structure-inducing pre-training.md` issues=`inline math delimiters \(…\) → $…$ to match ZH and repo convention`
+
+其余核对项均通过：结构与中文一致、正文无中文、`lang: en` 且 `alt_url: /zh/bi/Structure-inducing-pre-training/`、无英文 `permalink`、图链与 URL 一致、章节对齐、术语与数字（90+ 方法、KEPLER/CK-GNN 等）无误。

@@ -1,0 +1,10 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿，结论如下。
+
+**1. 完整性** — 英文稿含引言、主标题、Abstract / Approach / Result、全部 4 张图与文末 `<HR>`，与中文结构一致。  
+**2. 中文残留** — 正文无中文。  
+**3. Frontmatter** — `lang: en`；`alt_url` 与中文 `permalink` 均为 `/zh/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/`；英文无 `permalink`；其余字段与中文一致。  
+**4. 资源** — IEEE 链接与图片 URL 一致。  
+**5. 章节** — 与中文对应（英文小节标题为 “Approach”，对应中文 “Apporach” 的笔误修正，属合理术语/拼写处理）。  
+**6–7. 内容与专名** — 语义对齐；中文 “Sorts-1M” 在英文中写为 **Sports-1M**（标准数据集名），属合理修正，其余数字与 UCF-101、ConvPooling、五层 LSTM 等一致。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2015-04-17-Beyond Short Snippets：Deep Networks for Video Classification.md`

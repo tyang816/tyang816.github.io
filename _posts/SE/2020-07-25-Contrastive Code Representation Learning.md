@@ -5,51 +5,54 @@ categories: [SE]
 tags: [code-understanding, contrastive-learning]
 proceedings: ACL
 date: 2020-07-25
+lang: en
+alt_url: /zh/se/Contrastive-Code-Representation-Learning/
+permalink: /se/Contrastive-Code-Representation-Learning/
 ---
 
-> 论文地址：[Contrastive Code Representation Learning](http://arxiv.org/abs/2007.04973)
+> Paper: [Contrastive Code Representation Learning](http://arxiv.org/abs/2007.04973)
 >
-> 论文代码：<https://github.com/parasj/contracode>
+> Code: <https://github.com/parasj/contracode>
 
-## ContraCode：基于MoCo的代码对比学习
+## ContraCode: MoCo-based contrastive learning for code
 
 ### Abstract
 
-作者指出RoBERTa模型对于源代码的修改太敏感了，即使这种修改是保留了语义的，所以提出了ContraCode，是基于预训练的方法能够识别相似的变种。
+The authors observe that RoBERTa is overly sensitive to edits of source code even when those edits preserve semantics. They propose ContraCode, a pretraining method that learns to recognize semantically similar variants.
 
 ### Introduction
 
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-在不改变语义的对抗性修改下，RoBERTa表现甚至比随机分类还差。
+Under semantics-preserving adversarial modifications, RoBERTa performs worse than random classification.
 
-作者采用一些源到源的基于编译器的转换技术，比如删除”死“代码：移除不改变代码输出结果的操作
+The authors apply source-to-source, compiler-based transformation techniques—for example, deleting “dead” code by removing operations that do not change the program’s output.
 
 ### Model
 
-代码转换技术主要分为三类：
+Code transformation techniques fall into three categories:
 
-- 代码压缩：改变代码的语法结构，并执行修正构造转换，如预计算常数表达式
-- 标识符识别：随机替代方法和变量名
-- 正则化变换：通过减少具有高文本重叠的平凡正对的数量来改进模型的泛化
+- Code minimization: alter syntactic structure and apply corrective constructive transforms, such as precomputing constant expressions
+- Identifier renaming: randomly substitute method and variable names
+- Normalization transforms: improve generalization by reducing trivial positive pairs with high textual overlap
 
-通过转换丢弃算法保证多样性，主要是为了保证变换后的代码是修改过的。作者发现再经过20个随机的序列转换方法后有89%的方法有不止一个替代产生。
+A transformation discard algorithm enforces diversity, mainly to ensure that transformed code is actually modified. After 20 random sequential transformations, the authors find that 89% of methods yield more than one distinct alternative.
 
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img2.png" alt="avatar" style="zoom:60%;" /></div>
 
-预训练对比学习：
+Contrastive pretraining:
 
-- 扩展了MoCo，从同一程序中生成正样本对，从不同程序中生成负样本
-- 一样采用了队列来存储负样本
-- 大负样本集，超过10万
+- Extends MoCo by forming positive pairs from the same program and negative pairs from different programs
+- Uses a queue to store negative samples, as in MoCo
+- A large negative set of more than 100k examples
 
-ContraCode对于编码器架构是无所谓的，作者试验了双层双向LSTM和六层Transformer
+ContraCode is agnostic to the encoder architecture; the authors evaluate a two-layer bidirectional LSTM and a six-layer Transformer.
 
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img3.png" alt="avatar" style="zoom:60%;" /></div>
 
 ### Evaluation
 
-作者做了三个角度的实验，zero-shot推理的克隆检测，基于微调的类型推断。简略代码总结生成
+Experiments cover three settings: zero-shot clone detection, fine-tuned type inference, and extreme code summarization.
 
 #### zero-shot Code Clone Detection
 
@@ -69,22 +72,22 @@ ContraCode对于编码器架构是无所谓的，作者试验了双层双向LSTM
 
 <div align="center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ContraCode/ContraCode-img9.png" alt="avatar" style="zoom:60%;" /></div>
 
-#### Understanding augumentation importance
+#### Understanding augmentation importance
 
-对于序列到序列的总结，使用了以下增强技术
+For sequence-to-sequence summarization, the following augmentation techniques are used:
 
-- Line subsampling（LS）：随机从方法中采用部分行（P=0.9），这种方法没有保留语义，属于正则的一种
-- Subword regularization（SW）：将文本分词成不同形式，单个词或subtoken
-- Variable renaming（VR），identifier managling（IM）：改变量名，改标识符
-- Dead-code insertion（DCI）：插入空指令或log指令
+- Line subsampling (LS): randomly sample a subset of lines from a method (P=0.9); this does not preserve semantics and acts as a regularizer
+- Subword regularization (SW): tokenize text into varying forms—whole words or subtokens
+- Variable renaming (VR), identifier mangling (IM): rename variables and identifiers
+- Dead-code insertion (DCI): insert no-op or log statements
 
-对于类型推断，使用了 LS和SW
+For type inference, LS and SW are used.
 
-还有一些代码增强技术：
+Additional code augmentation techniques:
 
-- Dead-code elimination（DCE）：删除无用代码
-- Type upconversion（T）：把 `&` 换成 `and` 或把 `true` 换成 `1`之类的
-- Constant folding（CF）：预计算变量结果，比如把 `(2+3) * 4` 换成 `20`
+- Dead-code elimination (DCE): remove useless code
+- Type upconversion (T): e.g., replace `&` with `and` or `true` with `1`
+- Constant folding (CF): precompute expressions, e.g., replace `(2+3) * 4` with `20`
 
 <HR align=left color=#987cb9 SIZE=1>
 

@@ -5,33 +5,36 @@ categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: arXiv
 date: 2019-05-08
+lang: en
+alt_url: /zh/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
+permalink: /cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
 ---
 
-> 论文地址：[Unified Language Model Pre-training for Natural Language Understanding and Generation](http://arxiv.org/abs/1905.03197)
+> Paper: [Unified Language Model Pre-training for Natural Language Understanding and Generation](http://arxiv.org/abs/1905.03197)
 >
-> 论文实现：<https://github.com/microsoft/unilm>
+> Code: <https://github.com/microsoft/unilm>
 
-## UNILM：三种预训练任务的统一语言模型
+## UNILM: A Unified Language Model with Three Pre-training Objectives
 
 ### Abstract
 
-本文提出了一个新的预训练模型UNILM可以做语言理解和生成任务，使用三种语言模型任务建模：单项的语言模型、双向的语言模型，序列生成任务。通过共享transformer 网络和自注意力掩码实现控制上下文的条件
+This paper proposes UNILM, a new pre-trained model for both natural language understanding and generation. It is trained with three language modeling formulations: unidirectional language modeling, bidirectional language modeling, and sequence-to-sequence generation. A shared Transformer network and self-attention masks control how context conditions each objective.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/UNILM/tab1.png" alt="avatar" style="zoom:80%;" /></div>
 
-不同的训练任务和目标对应不同的预训练语言模型
+Different training objectives and loss targets correspond to different pre-trained language models.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/UNILM/tab2.png" alt="avatar" style="zoom:80%;" /></div>
 
-UNILM是一个多层的transformer网络，应用大量的语料联合优化三种类型的无监督语言模型
+UNILM is a multi-layer Transformer network jointly optimized on large corpora under three types of unsupervised language modeling objectives.
 
-三个好处：
+Three benefits:
 
-- 因为不同类型的语言模型采用共享的参数和结构，所以UNLM预训练过程是一个单个的transformer 语言模型，避免了多个语言模型训练过程的分离
-- 参数共享使得学习的文本表示更加通用，因为它们是针对不同的语言建模目标联合优化的，以不同的方式使用上下文，从而减少了对任何单个LM任务的过拟合
-- 除了应用于NLU任务，UNILM可以作为seq-to-seq LM模型，也可以应用于NLG任务，例如摘要生成，问题生成
+- Because the different language model types share parameters and architecture, UNILM pre-training is a single Transformer language model, avoiding separate training pipelines for multiple LMs.
+- Parameter sharing yields more general text representations, since they are jointly optimized under different language modeling objectives and use context in different ways, which reduces overfitting to any one LM task.
+- Beyond NLU, UNILM can act as a seq-to-seq language model and be applied to NLG tasks such as abstractive summarization and question generation.
 
 ### Unified Language Model Pre-training
 
@@ -41,19 +44,19 @@ UNILM是一个多层的transformer网络，应用大量的语料联合优化三�
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/UNILM/frm1-frm3.png" alt="avatar" style="zoom:80%;" /></div>
 
-先前transformer network的输出，通过不同的W参数被映射为queries、keys和values向量，另外，mask matrix M决定了token能否互相关注
+The output of the preceding Transformer layer is projected into query, key, and value vectors via distinct weight matrices W; the mask matrix M further determines which tokens may attend to one another.
 
 #### Pre-training Objectives
 
-Unidirectional LM、Bidirectional LM、Sequence-to-Sequence LM，对Bidirectional LM还设计了Next Sentence Prediction
+Unidirectional LM, bidirectional LM, and sequence-to-sequence LM; for the bidirectional LM, Next Sentence Prediction is also used.
 
 #### Pre-training Setup
 
-训练目标为三种不同的LM目标的综合。尤其，训练过程中每个batch，1/3的时间训练双向的LM，1/3的时间训练seq-to-seqLM，left-to-right and right-to-left LM各1/6的采样速率
+The overall training objective combines the three LM losses. During training, each batch allocates one third of the time to bidirectional LM, one third to seq-to-seq LM, and left-to-right and right-to-left unidirectional LMs each at a sampling rate of one sixth.
 
-模型使用24层的Transformer结构，隐层维度：1024，注意力头：16，包含340M的参数，词表28996，最大输入序列长度512，mask概率15%（这和BERT一样）
+The model uses a 24-layer Transformer with hidden size 1024, 16 attention heads, 340M parameters, vocabulary size 28996, maximum input length 512, and a 15% masking probability (same as BERT).
 
-Adam优化器 $\beta_1=0.9,\beta_2=0.999$，学习率3e-5，linear warmup前40000个step，dropout=0.1，weight_decay=0.01，batch_size=330，770000steps，10000个steps在8张V100训练7小时
+Adam with $\beta_1=0.9,\beta_2=0.999$, learning rate 3e-5, linear warmup for the first 40000 steps, dropout=0.1, weight_decay=0.01, batch_size=330, 770000 steps; 10000 steps take about 7 hours on eight V100 GPUs.
 
 ### Experiment
 

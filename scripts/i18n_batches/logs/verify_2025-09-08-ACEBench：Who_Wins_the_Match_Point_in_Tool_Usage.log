@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-09-08-ACEBench：Who Wins the Match Point in Tool Usage.md`
+
+| 检查项 | 结果 |
+|--------|------|
+| 完整性 | 与中文同结构（Abstract → §1 → §3 → §4），结尾 `<hr>` 一致，无截断 |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink`（`/zh/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/`）一致；无英文 `permalink`；其余字段与中文对齐 |
+| 资源 | arXiv/GitHub 链接、全部图片 URL、$1=$/$0=$ 与 $\frac{n}{m}$ 均保留 |
+| 结构 | 标题层级与中文一致（同样无 §2） |
+| 数字与模型名 | 2,000 / 8 / 68 / 4,538、各模型名（含 gpt-4o、xLAM-7B-r 等）与中文一致 |

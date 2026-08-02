@@ -1,0 +1,10 @@
+_posts/zh/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md
+_posts/zh/CV/2021-06-23-Perceiver：General Perception with Iterative Attention.md
+_posts/zh/CV/2021-07-06-How Much Can CLIP Benefit Vision-and-Language Tasks？.md
+_posts/zh/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md
+_posts/zh/CV/2021-09-17-ActionCLIP：A New Paradigm for Video Action Recognition.md
+_posts/zh/CV/2021-11-06-Masked Autoencoders Are Scalable Vision Learners.md
+_posts/zh/CV/2021-11-10-Align before Fuse：Vision and Language Representation Learning with Momentum Dist.md
+_posts/zh/CV/2021-11-25-Intriguing Properties of Vision Transformers.md
+_posts/zh/CV/2021-12-01-VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts.md
+_posts/zh/CV/2022-01-10-Language-driven Semantic Segmentation.md

@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与中文一致（Abstract → Evaluation，含图片与 `<HR>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` 与中文 `permalink` 一致，英文无 `permalink` | 通过 |
+| 链接、图片 URL、LR/LDA、$10^9$–$10^{12}$ 等 | 一致 |
+| 章节与中文对齐（英文标题为 Architecture，对应中文 Architectrue 笔误） | 通过 |
+| 术语与表述 | 可接受的学术笔记英文 |
+
+英文稿完整且与中文对应，无需修改。

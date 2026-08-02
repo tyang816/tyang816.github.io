@@ -1,0 +1,12 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-03-06-Enhancing Protein Language Models with Structure-based Encoder and Pre-training.md`
+
+核对结果：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction → Methods → Experiments → Results），图片与结尾 `<hr>` 齐全。  
+2. **正文**：无残留中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/`）；无 `permalink`；其余字段一致。  
+4. **资源**：OpenReview、GitHub 链接及三张 fig、三张 tab 图 URL 一致。  
+5. **结构**：标题层级对齐（英文 Methods 小节标题已修正中文里的 “Enhanceing” 拼写）。  
+6. **表述与数据**：术语与数字（365K/440K、50/15%/0.07/256/2e-4、50/200 epochs 等）与原文一致。
+
+未对 EN 文件做修改。

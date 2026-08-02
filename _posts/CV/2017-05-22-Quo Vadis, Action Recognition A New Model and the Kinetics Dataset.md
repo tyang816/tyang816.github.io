@@ -5,104 +5,107 @@ categories: [CV]
 tags: [vision-language, video, action-recognition]
 proceedings: CVPR
 date: 2017-05-22
+lang: en
+alt_url: /zh/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+permalink: /cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
 ---
 
-> 论文地址：[Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset](http://ieeexplore.ieee.org/document/8099985/)
+> Paper: [Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset](http://ieeexplore.ieee.org/document/8099985/)
 >
-> 从论文图1来看很难识别出他们到底要干什么，是要亲过还是没亲过，以及接下来的走向通过单一的视频帧都很难预测，只有理解上下文后才能很好的预测。
+> From Figure 1 in the paper, it is hard to tell what is actually happening—whether a kiss occurred or not—and what happens next is difficult to predict from a single video frame; only with context can one predict well.
 >
-> 但是现在即使是Kinetics数据集也是存在这样的缺陷的，它的数据集预测中间的某一帧仍然能达到很好的效果，这就使得模型或许不要很好的时序建模信息就能进行预测。
+> Even the Kinetics dataset suffers from this limitation: predicting a frame in the middle of a clip can still work very well, which suggests models may not need strong temporal modeling to perform well.
 >
-> 所以到现在大家也没能想到一个很好的方式去构建一个能让模型学习时序信息的数据集，去处理长时间复杂的信息，从而拓展到各个方面
+> To this day, there is still no widely accepted way to build a dataset that forces models to learn temporal structure for long, complex videos and generalize across tasks.
 
-## Kinetics和I3D：视频理解的新数据和新模型
+## Kinetics and I3D: New Data and a New Model for Video Understanding
 
 ### Abstract
 
-视频领域缺少好的数据集，导致大家很难很好的理解和识别出更好的框架。所以本文提出了一个又大又好的Kinetics数据集，又提出了一个叫I3D的模型，在HMDB-51达到80.2%和UCF-101达到了98%，基本把这个两个数据集给做没了
+The video community lacked strong datasets, making it hard to understand and identify better architectures. This paper introduces the large-scale Kinetics dataset and the I3D model, reaching 80.2% on HMDB-51 and 98% on UCF-101—essentially saturating both benchmarks.
 
-I3D的重点还是在于这个I，也就是**Inflate**的操作，作者是坚信一个好的预训练参数能带来很大提升，但是前面的方法都是2D网络，重点就变成了**把2D扩充成3D而不改变网络整体结构**
+The key in I3D is the **I**, i.e., the **Inflate** operation. The authors argue that good pretrained weights matter a lot; prior work relied on 2D networks, so the focus became **expanding 2D into 3D without changing the overall network design**.
 
 ### Introduction
 
-ImgaNet带来的好处不止于可以训练深度神经网络，最主要的好处是我们可以直接从网络里抽取特征。
+ImageNet’s impact is not only enabling deep network training; critically, it allows direct feature extraction from pretrained networks.
 
-深度学习方法已经逐渐在分割、预测、动作评估，分类等等领域都取得了很好的效果，但在视频领域这种大规模训练再在小规模数据上迁移的方法还没有很好的展示出来，主要是因为没有很好的大规模数据集
+Deep learning has succeeded in segmentation, prediction, action assessment, classification, and more, but the recipe of large-scale pretraining followed by transfer to small video datasets had not been demonstrated as clearly—largely because no large video dataset existed.
 
-构建一个新数据集之后第一步一般就是把之前的最好用最常见的方法拿来benchmark一下，这样可以
+After building a new dataset, a common first step is to benchmark prior state-of-the-art methods. That serves two purposes:
 
-- 一是可以看一下之前的那些方法有哪些优点缺点
-- 二是也可以验证一下新数据集的有效性。因为收集的新数据可能有自带的bias导致它过于简单或者过于难，使得没有人去用这个数据集
+- Inspect strengths and weaknesses of earlier approaches.
+- Validate the new dataset. Newly collected data may carry bias that makes it too easy or too hard, discouraging adoption.
 
-另外是作者是将双流和卷积结合一起，且已经不和传统方式做比较了
+The authors combine two-stream and convolutional designs and no longer compare against purely traditional pipelines.
 
 ### Model & Related Work
 
-视频领域里从2017年到现在都没有一个定论，是使用2D，3D还是transformer，都没有固定的结论
+From 2017 onward, video understanding had no consensus on whether 2D, 3D, or Transformers were best.
 
-当时有几种选择：
+Main options at the time:
 
-- 2D网络+一些操作（LSTM）等
-- +光流
-- 3D网络
+- 2D networks plus temporal modules (e.g., LSTM)
+- Plus optical flow
+- 3D networks
 
-经过大量对比作者就提出了自己的Two-stream Inflated 3D convNets(I3D)
+After extensive comparisons, the authors propose Two-Stream Inflated 3D ConvNets (I3D):
 
-- 用Two-stream的主要原因是发现加上了之后效果会好很多
-- 用Inflated的主要原因是之前的3D网络的参数太大了，而且可以直接启用一些比较深的，好的2D网络，比如VGG，Inception，ResNet等，而且还不用很多的视频数据去训练了
+- Two-stream is used because it clearly improves accuracy.
+- Inflation is used because earlier 3D nets had too many parameters; inflation lets one reuse deep, strong 2D backbones (VGG, Inception, ResNet, etc.) without requiring huge amounts of video data for training from scratch.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img1.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img2.png" alt="avatar" style="zoom:60%;" /></div>
 
-a）LSTM：
+a) LSTM:
 
-- 一张张抽特征，然后经过LSTM模拟时序信息，糅合起来用最后一个结果做分类
-- 虽然听起来很合理，但实际上效果很一般
+- Extract features frame by frame, run an LSTM for temporal modeling, and classify from the final state.
+- Intuitive in theory, but performance is typically modest.
 
-b）3D-ConvNet：
+b) 3D-ConvNet:
 
-- 切割视频段，整个扔到网络里强行时空学习，用三维的卷积核，比如3\*3\*3。经过一些3D conv，3D pooling等然后返回一个特征，最后在这个特征上操作
-- 作者表示数据量上来了效果还不错
+- Clip a video segment and feed it end-to-end for joint spatiotemporal learning with 3D kernels (e.g., 3×3×3). Stack 3D conv and 3D pooling, then operate on the resulting representation.
+- With enough data, results can be strong.
 
-c）Two-Stream：
+c) Two-Stream:
 
-- 提前把光流抽取好，蕴含了很好的视频时序信息表示，去学习到动作和光流的映射，而卷积网络本身就不需要进行时序建模
-- 具体就是两个2D的卷积，左边是空间流，输入是一帧或者多帧，主要负责学习场景信息，右边是时间流，输入是光流图像，学习物体运动信息，最终根据特征给出结果
+- Precompute optical flow, which encodes temporal motion; learn the mapping between actions and flow while the CNN itself does little explicit temporal modeling.
+- Two 2D streams: spatial (one or more RGB frames, scene context) and temporal (flow images, motion); fuse features for prediction.
 
-d）3D-Fused Two-Stream：
+d) 3D-Fused Two-Stream:
 
-- 融合了b和c的工作，把双流的加权平均换成了3D ConvNet
+- Combines (b) and (c), replacing two-stream averaging with a 3D ConvNet.
 
-e）Two-Stream 3D-ConvNet：
+e) Two-Stream 3D-ConvNet:
 
-- 双流3D卷积网络，最后加权平均
+- Two-stream 3D conv nets with late fusion by weighted averaging.
 
 #### The New Two-Stream 3D-ConvNet
 
 ##### Inflating 2D ConvNets into 3D
 
-把2D网络很**暴力**的换成了3D网络，遇到一个**2D**的卷积核就**变成3D**，遇到2D的池化层就变成3D。这样就不用设计网络了
+**Brutally** convert a 2D network to 3D: each **2D** conv becomes **3D**, each 2D pooling layer becomes 3D. No custom 3D architecture design is required.
 
 ##### Bootsrapping 3D filters from 3D Filters
 
-如何在2D的预训练好的参数弄到3D里面？
+How to transfer 2D pretrained weights into 3D?
 
-验证预训练好的模型来初始化我们自己的模型的时候，我们可以给定同样的输入，在原来的模型和初始化的模型上都来一遍。作者就把同一个图片反复复制粘贴N次变成一个视频，丢到3D模型里面让他们输出一致，保证3D模型输出一致需要除以N
+When validating initialization, one can feed the same input to the original and inflated models. The authors replicate the same image **N** times along time to form a pseudo-video. Matching outputs requires scaling the 3D model’s response by **1/N**.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img3.png" alt="avatar" style="zoom:60%;" /></div>
 
-作者发现在**时间维度**上其实最好**不要做下采样**，就是本来3\*3的卷积核按道理应该变成3\*3\*3的，但实际上作者是变成了1\*3\*3，stride也是从2\*2变成1\*2\*2，这个意思就是输入是多少帧，输出也还是多少帧。只是在后面几个块做了下采样
+The authors find it works best **not to downsample along time**: although a 3×3 conv might naively become 3×3×3, they use **1×3×3** kernels and change stride from 2×2 to **1×2×2**, so temporal length is preserved at the output. Temporal downsampling is applied only in later blocks.
 
 ### Experiment
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img4.png" alt="avatar" style="zoom:60%;" /></div>
 
-无论时间流空间流的效果是好还是坏，结合起来效果都能得到大幅提升
+Whether the temporal or spatial stream is weaker or stronger, fusion consistently yields large gains.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img5.png" alt="avatar" style="zoom:60%;" /></div>
 
-整体微调的效果一般更好
+End-to-end fine-tuning usually performs better.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/I3D/I3D-img6.png" alt="avatar" style="zoom:60%;" /></div>
 

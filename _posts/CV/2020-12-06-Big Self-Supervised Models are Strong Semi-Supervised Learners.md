@@ -5,18 +5,21 @@ categories: [CV]
 tags: [semi-supervised learning]
 proceedings: NeurIPS
 date: 2020-12-06
+lang: en
+alt_url: /zh/cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
+permalink: /cv/Big-Self-Supervised-Models-are-Strong-Semi-Supervised-Learners/
 ---
 
-> 论文地址：[Big Self-Supervised Models are Strong Semi-Supervised Learners](https://dl.acm.org/doi/abs/10.5555/3495724.3497589)
+> Paper: [Big Self-Supervised Models are Strong Semi-Supervised Learners](https://dl.acm.org/doi/abs/10.5555/3495724.3497589)
 >
-> 代码：<https://github.com/google-research/simclr>
+> Code: <https://github.com/google-research/simclr>
 
-## SimCLR v2+半监督学习
+## SimCLR v2 and semi-supervised learning
 
-1. 在对SimCLR的改进上采用更大模型，加深了projection head，发现两层其实就够用了，引用了动量编码器
-2. 还有半监督学习的部分，通过自监督的对比学习学一个好的模型出来，通过一小部分有标签的数据做一下有监督的微调，微调结束了就相当于有一个teacher模型，用teacher模型生成伪标签，这样可以在更多无标签的数据上做自学习，受启发于google 19年的noisy student
+1. For improvements over SimCLR, the work uses larger models and a deeper projection head; empirically two layers suffice, and it references a momentum encoder.
+2. The semi-supervised pipeline first learns a strong representation via self-supervised contrastive learning, then fine-tunes on a small labeled set. After fine-tuning, that model acts as a teacher to generate pseudo-labels so self-training can use more unlabeled data—following the spirit of Google’s 2019 Noisy Student.
 
-   2.1 noisy student是在imgaeNet上训练了一个teacher模型，然后生成伪标签，然后生成student模型
+   2.1 Noisy Student trains a teacher on ImageNet, generates pseudo-labels, and uses them to train a student model.
 
 <HR align=left color=#987cb9 SIZE=1>
 

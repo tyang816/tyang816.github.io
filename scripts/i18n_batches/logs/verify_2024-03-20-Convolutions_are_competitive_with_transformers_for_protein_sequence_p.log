@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-03-20-Convolutions are competitive with transformers for protein sequence pretraining.md`
+
+按 `i18n_verify_brief.md` 逐项核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 完整性 | 与中文版章节一致（Abstract、Introduction、CARP/MLM、Downstream Tasks 及四个子节、结尾 `<hr>`） |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 为 `/zh/bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/`（与中文 `permalink` 一致）；无英文 `permalink`；其余字段与中文一致 |
+| 资源 | 论文链接、GitHub、全部 CARP 图片 URL 一致 |
+| 结构与术语 | 与中文对应；英文已修正中文里的 backgroud / Seuqence / gylcoprotein 等笔误，数字与名称（15%/80%/10%、1022、42M、1.1M、2.6%、ESM、UniRef50、CARP 等）一致 |
+
+英文版无需修改。

@@ -5,54 +5,57 @@ categories: [CV]
 tags: [Video, Contrastive Learning]
 proceedings: arXiv
 date: 2021-05-08
+lang: en
+alt_url: /zh/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
+permalink: /cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
 ---
 
-> 论文地址：[CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval](http://arxiv.org/abs/2104.08860)
+> Paper: [CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval](http://arxiv.org/abs/2104.08860)
 >
-> 论文实现：<https://github.com/ArrowLuo/CLIP4Clip>
+> Code: <https://github.com/ArrowLuo/CLIP4Clip>
 
-## CLIP4Clip：实验不同多帧图片融合方法做视频文本检索
+## CLIP4Clip: An empirical study of multi-frame fusion for video–text retrieval
 
 ### Abstract
 
-提出了一个CLIP4Clip模型，以端到端的方式将CLIP模型的知识转移到视频语言检索中，并调查了一些问题：1. 图像特征对视频-文本检索是否够用？2. 在基于CLIP的大规模视频文本数据集上进行后预训练如何影响性能？3. 视频帧之间的时间依赖性的实际机制是什么？4. 模型在视频文本检索任务中的超参数敏感性
+The authors propose CLIP4Clip to transfer CLIP to video–language retrieval in an end-to-end manner and examine several questions: (1) Are image-level features sufficient for video–text retrieval? (2) How does post-pretraining on large-scale video–text data built on CLIP affect performance? (3) What mechanism best captures temporal dependencies among video frames in practice? (4) How sensitive is the model to hyperparameters on video–text retrieval?
 
 ### Introduction
 
-CLIP本身是双塔结构，图像文本编码器是分开的，只需要点乘就能得到相似度，还可以提前抽特征，非常适合做搜索和检索，在视频领域多一个时间维度
+CLIP uses a dual-tower design with separate image and text encoders; similarity reduces to a dot product, and features can be precomputed offline—making it well suited to search and retrieval. Video adds a temporal dimension on top of this setup.
 
 ### Framework
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP4Clip/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-**视频多时间维度**，假设10帧打成patch后经过vit就会得到10个CLS token，10个图片的global的整体表征，原本是一个文本特征对应一个图片特征直接算点乘就好，现在是一个文本特征对应10个图像特征
+**Temporal structure in video.** Suppose 10 frames are patchified and passed through a ViT, yielding 10 CLS tokens—global representations of 10 frames. In the image setting, one text embedding is matched to one image embedding via a dot product; here, one text embedding is matched against 10 frame-level embeddings.
 
-作者尝试了上图三种方法：
+The authors evaluate the three strategies illustrated above:
 
-- 不学，10个图片直接平均，不考虑时序特性，比如人在坐下的过程，这是学不到的
-- 时序建模，10个特征丢给LSTM或transformer
-- 做early fusion，文本和图像帧一起丢给transformer学习，通过MLP得到相似度
+- **No temporal modeling:** average the 10 frame embeddings directly, ignoring order (e.g., the progression of someone sitting down cannot be captured).
+- **Sequential modeling:** feed the 10 embeddings into an LSTM or Transformer.
+- **Early fusion:** concatenate or jointly encode text and frames in a Transformer and predict similarity through an MLP.
 
 ### Experiments
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP4Clip/tab1.png" alt="avatar" style="zoom:90%;" /></div>
 
-召回率提升了一大截，但是更多助力来源于CLIP，迁移性很好，直接做zero-shot都能秒杀前面的方法
+Recall improves substantially, but much of the gain comes from CLIP itself—transfer is strong, and zero-shot already outperforms prior methods by a wide margin.
 
-少量数据的时候直接取平均是最好的，数据量大的时候带参的效果会更好一些，但也就比mean pooling好一点点
+With limited data, simple averaging works best; with more data, parameterized fusion helps somewhat but only marginally over mean pooling.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP4Clip/tab2-tab5.png" alt="avatar" style="zoom:90%;" /></div>
 
-**mean pooling效果经常是最好的**，虽然理论上不能建模时序信息，但是现实中已经工作的很好了，有时候sequenial会好一点点，可能是下游任务数据不够造成的
+**Mean pooling is often the strongest baseline.** Although it cannot model temporal order in principle, it works remarkably well in practice; sequential variants occasionally win slightly, possibly because downstream video–text data remain limited.
 
 ### Conclusion
 
-- 图像特性也可以促进视频文本检索
+- Image-level representations can still substantially help video–text retrieval.
 
-- CLIP训练完后在视频数据集再训练一次可以进一步提高性能，因为有domin gap
+- Further fine-tuning on video datasets after CLIP pretraining can improve performance further, owing to a domain gap.
 
-- 3D patch linear projection和sequential type simlarity会好一些
+- 3D patch linear projection and sequential-type similarity tend to perform somewhat better.
 
-- CLIP用于视频文本检索是学习率非常敏感的
+- CLIP-based video–text retrieval is highly sensitive to the learning rate.
 
 <HR align=left color=#987cb9 SIZE=1>

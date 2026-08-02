@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-12-01-VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts.md`
+
+按 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与章节 | Abstract / Introduction / Methods / Experiments / Conclusion 与中文一致，图片与 `<HR>` 齐全 |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 链接与资源 | OpenReview、aka.ms/vlmo、全部 COS 图片 URL 保留 |
+| 术语与数字 | ITC / ITM / MLM、CLIP、BEiT-3、ViT-G、VL-BEiT、WavLM、LayoutLMv3、MetaLM 等与原文对应 |
+
+英文版已是完整、结构对齐的学术笔记，无需修改。

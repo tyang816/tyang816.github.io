@@ -5,23 +5,26 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: arXiv
 date: 2022-11-09
+lang: en
+alt_url: /zh/cl/Holistic-Evaluation-of-Language-Models/
+permalink: /cl/Holistic-Evaluation-of-Language-Models/
 ---
 
-> 论文地址：[Holistic Evaluation of Language Models](http://arxiv.org/abs/2211.09110)
+> Paper: [Holistic Evaluation of Language Models](http://arxiv.org/abs/2211.09110)
 >
 
-## HELM：全面语言模型评测
+## HELM: Holistic Evaluation of Language Models
 
 ### Summary
 
-- instructGPT整体表现是最好的
-- 开源模型比闭源模型还是有一定差距的
-- 模型通常来说是越大越好，在500亿以上才能在一个领域做得比较好
-- 现在模型对prompt是有好处的，但是对prompt怎么设计非常敏感
+- InstructGPT performs best overall.
+- Open-source models still lag behind closed-source models to a noticeable degree.
+- Larger models are generally better; only above roughly 50B parameters can a model perform well in a given domain.
+- Prompting helps current models, but performance is highly sensitive to prompt design.
 
 ### Abstract
 
-语言模型已经成为目前主要的模型的基石，但是目前对于能力，局限性和风险的评估还不够多。首先对潜在的应用场景和评估标准进行了分类；评估了7个标准（精度，校准，稳健性，公平性，偏见，有毒性和效率）；评估了30个语言模型，42个应用场景；做到了96%的场景
+Language models have become the foundation of modern NLP systems, yet evaluation of their capabilities, limitations, and risks remains insufficient. The work first taxonomizes potential application scenarios and evaluation criteria; evaluates seven dimensions (accuracy, calibration, robustness, fairness, bias, toxicity, and efficiency); benchmarks 30 language models across 42 application scenarios; and covers 96% of the scenario space.
 
 ### Introduction
 
@@ -35,115 +38,115 @@ date: 2022-11-09
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig8.png" alt="avatar" style="zoom:100%;" /></div>
 
-什么任务，数据是什么领域，谁构建的，时间是什么等
+For each setting: what task, what domain the data comes from, who constructed it, when it was collected, and so on.
 
 #### Taxonomy
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 
-很多任务在学术会议里其实也没有标注完，有大量的比较小众的任务
+Many tasks are not fully labeled even in academic benchmarks; there are many relatively niche tasks.
 
-语言主要是英文和中文
+Languages are mainly English and Chinese.
 
 #### Question answering
 
-一种是开放式问题，一种是封闭式问题（给答案列表选出来）
+One form is open-ended QA; another is closed-set QA (choose from a given list of answers).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig11.png" alt="avatar" style="zoom:100%;" /></div>
 
-具体数据集看原文
+See the paper for specific datasets.
 
 #### Information retrieval
 
-一个查询q，文本集C，返回top_k，实际上是个排序问题
+Given a query q and a corpus C, return top-k documents—essentially a ranking problem.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig12.png" alt="avatar" style="zoom:100%;" /></div>
 
-用point-wise方法排序，把段落c和查询q放一起，表示这段话里有问题的答案的概率，最终看模型输出yes的概率
+Ranking uses a point-wise approach: concatenate passage c with query q and score the probability that the passage contains an answer to the query; the model’s probability of outputting “yes” is used as the score.
 
 #### Summarization
 
-序列到序列生成的模型
+Sequence-to-sequence generation.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig13.png" alt="avatar" style="zoom:100%;" /></div>
 
-考验的是模型的抽象能力而不是抽取式能力，但是这也会导致模型评估变得困难
+The focus is abstractive ability rather than extractive copying, which also makes evaluation harder.
 
-抽象与抽取是一定程度上互斥的，抽取得更少会导致模型的真实性降低，要尽量保证模型说的是对的
+Abstraction and extraction are partly in tension: less extraction can hurt factual faithfulness; the goal is to keep generated content as correct as possible.
 
 #### Sentiment analysis
 
-用户对产品的评价
+User reviews of products.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig14.png" alt="avatar" style="zoom:100%;" /></div>
 
-#### Toxicity detecttion
+#### Toxicity detection
 
-某些语句在某些文化下是可以的，但其他情况可能不行，判断语句是否有毒
+Some utterances are acceptable in one cultural context but not in another; the task is to judge whether text is toxic.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig15.png" alt="avatar" style="zoom:100%;" /></div>
 
 #### Miscellaneous text classification
 
-多种杂的文本分类
+Various heterogeneous text classification tasks.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig16.png" alt="avatar" style="zoom:100%;" /></div>
 
 ### General Metrics
 
-指标应该不是跟某个特定场景相关的，所以主要采用基于扰动的方法
+Metrics should not be tied to a single scenario, so the framework mainly uses perturbation-based evaluation.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/tab2-tab3.png" alt="avatar" style="zoom:100%;" /></div>
 
 #### Accuracy
 
-**General**：exact match，Quasi-exact math，F1
+**General**: exact match, quasi-exact match, F1
 
-**Information Retrieval**：RR@K，NDCG@K
+**Information Retrieval**: RR@K, NDCG@K
 
-**summarization**：ROUGE-2
+**summarization**: ROUGE-2
 
-**Language**：BPB
+**Language**: BPB
 
-**Reasoning**：F1，Exact match
+**Reasoning**: F1, exact match
 
 #### Calibration and uncertainty
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig17.png" alt="avatar" style="zoom:100%;" /></div>
 
-模型对预测的概率有一定的校准意义
+Predicted probabilities should be meaningfully calibrated.
 
-选择出来精度再进行评估
+Select by accuracy and then evaluate calibration.
 
 #### Robustness
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig18.png" alt="avatar" style="zoom:100%;" /></div>
 
-对输入做变换后输出保持正确，比如局部鲁棒性，在现代英语里训练用在古代英语环境下；对抗鲁棒性，通过对抗网络的样本误导模型
+Outputs should stay correct under input transformations—for example, local robustness (models trained on modern English applied to archaic English), and adversarial robustness (adversarial examples designed to mislead the model).
 
 #### Fairness
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig19.png" alt="avatar" style="zoom:100%;" /></div>
 
-把发声者或其他变成种族或性别模型等方式输出是否公平
+Vary attributes of the speaker or subject (e.g., race or gender) and check whether model outputs remain fair.
 
 #### Bias and stereotypes
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig20.png" alt="avatar" style="zoom:100%;" /></div>
 
-是否会消除或过度偏向某些群体
+Whether the model erases or over-emphasizes certain groups.
 
 #### Toxicity
 
-使用的perspective API检测
+Evaluated with the Perspective API.
 
 #### Efficiency
 
-耗电，碳排放
+Power consumption and carbon emissions.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/HELM/fig22.png" alt="avatar" style="zoom:100%;" /></div>
 
-预测的有效性
+Validity of predictions (in the efficiency sense used in HELM).
 
 ### Models
 

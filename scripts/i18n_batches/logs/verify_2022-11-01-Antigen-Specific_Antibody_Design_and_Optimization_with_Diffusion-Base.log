@@ -1,0 +1,11 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-11-01-Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative.md`
+
+已按 `scripts/i18n_verify_brief.md` 逐项核对：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction → Methods → Experiments 及全部子节），结尾 `***` 一致。  
+2. **正文语言**：英文正文无中文残留。  
+3. **Frontmatter**：`lang: en`；`alt_url` 为中文版 `permalink`（`/zh/bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/`）；无 `permalink`；其余字段与中文版一致。  
+4. **资源**：22 处图片 URL、论文与代码链接、数学公式与中文版一致。  
+5. **结构与表述**：标题层级对齐；英文为正常学术笔记语气。
+
+无需修改。

@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（Abstract → Results 四小节 → Discussion → Methods 四小节 → HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；无 `permalink`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/`）；其余 frontmatter 一致 | 通过 |
+| 图片 URL、DOI 链接、Adam 超参数值保留 | 通过 |
+| 标题层级与中文对应；英文已修正中文小节标题里的 “fitness-prediction” 笔误 | 通过 |
+| 术语与表述（ESM-1b、SE(3)、ProTherm 8:2、126/1042 等）与原文一致 | 通过 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-09-01-Toward More General Embeddings for Protein Design：Harnessing Joint Representatio.md`

@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/CV/2022-01-29-Open-vocabulary Object Detection via Vision and Language Knowledge Distillation.md`
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文：** 学术英文；图链、HTML 图片块与 URL 原样保留；文首链为 Paper / Code。
+- **校验：** 目标路径存在，正文中无残留中文。

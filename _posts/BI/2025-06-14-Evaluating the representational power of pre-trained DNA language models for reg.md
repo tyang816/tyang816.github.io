@@ -5,69 +5,72 @@ categories: [BI]
 tags: [DNA, genomics, PLM]
 proceedings: Genome Biology
 date: 2025-06-14
+lang: en
+alt_url: /zh/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
+permalink: /bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
 ---
 
-> 论文地址：[Evaluating the representational power of pre-trained DNA language models for regulatory genomics](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03674-8)
+> Paper: [Evaluating the representational power of pre-trained DNA language models for regulatory genomics](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03674-8)
 >
-> 论文实现：<https://github.com/amberT15/LLM_eval>
+> Code: <https://github.com/amberT15/LLM_eval>
 
-## gLM-eval：评估glm在各种zero-shot下游任务表现
+## gLM-eval: Evaluating gLMs on diverse zero-shot downstream tasks
 
 ### Abstract
 
-genomic language models (gLMs)的涌现提供了一个无监督的方法来学习非编码基因组中的顺式调控模式。先前的评估已经展现了预训练的gLMs可以提高调节基因组任务的预测能力，尽管这样的微调效果很好，但确定gLM表征是否体现了对顺式调节生物学的基本理解仍然是一个悬而未决的问题。这里我们用预训练模型来解释跨越DNA和RNA调控的细胞类型特异性功能基因组学数据。研究结果表明，与使用单热编码序列的传统机器学习方法相比，目前的glm并没有提供实质性的优势。这项工作强调了当前glm的一个主要局限性，提出了非编码基因组的传统预训练策略的潜在问题
+The rise of genomic language models (gLMs) offers an unsupervised route to learning cis-regulatory patterns in the non-coding genome. Prior benchmarks have shown that pretrained gLMs can improve prediction on regulatory genomics tasks, but even when fine-tuning works well, it remains open whether gLM representations reflect a fundamental grasp of cis-regulatory biology. Here the authors use pretrained models to interpret cell-type-specific functional genomics data spanning DNA and RNA regulation. The results indicate that current gLMs do not provide substantial gains over conventional machine learning with one-hot encoded sequences. The work highlights a major limitation of present gLMs and raises concerns about standard pretraining strategies for the non-coding genome.
 
 ### Introduction
 
-预训练蛋白质模型的表征用途很多，可以预测蛋白质结构、非同义突变效应，设计新的蛋白质序列，研究蛋白质进化关系
+Representations from pretrained protein models support many applications: predicting protein structure, nonsynonymous mutation effects, designing new protein sequences, and studying protein evolutionary relationships.
 
-而对基因组DNA序列进行预训练的模型加速了对非编码基因组中的功能元素理解，gLMs原则上可以帮助理解转录因子（TFs）控制顺式调节元件（CREs）活性的复杂协调
+Models pretrained on genomic DNA sequences accelerate understanding of functional elements in the non-coding genome; in principle, gLMs can help dissect how transcription factors (TFs) coordinately control activity at cis-regulatory elements (CREs).
 
-输入是DNA序列，分词方法有单核苷酸和k-mer两种，基础架构有transformer，多头注意力或者一些变体，或是残差连接的卷积网络；数据比较丰富，比如有单个物种的基因组，多个物种的基因组或是基因组的特定区域，比如未翻译区域（UTRs）、pre-mRNA、启动子、编码区、非编码RNA或是保守位点
+Inputs are DNA sequences; tokenization uses single-nucleotide or k-mer schemes; backbone architectures include transformers, multi-head attention or variants, or convolutional networks with residual connections. Training data are diverse—single-species genomes, multi-species genomes, or genomic regions such as untranslated regions (UTRs), pre-mRNA, promoters, coding sequences, non-coding RNA, or conserved sites.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig1.png "avatar")​
 
-这里作者评估了六种主要的功能基因组预测任务，涵盖了在DNA和RNA水平上的顺式调控复杂性，结果显示目前的预训练gLMs并没有比传统的one-hot表示+深度学习强多少。同时，对功能的基因组数据进行监督学习的foundation models可以更好的迁移到其他功能基因组数据上。还有结果显示，当前的gLM的预训练方案难以理解细胞类型特定功能元素，还不能实现真正的基础模型的效果
+The authors evaluate six major functional genomics prediction tasks that capture cis-regulatory complexity at DNA and RNA levels. Current pretrained gLMs perform only marginally better than traditional one-hot representations plus deep learning. Supervised foundation models trained on functional genomics data transfer more effectively to other functional genomics tasks. Results also suggest that current gLM pretraining schemes struggle to capture cell-type-specific functional elements and have not yet achieved true foundation-model behavior.
 
 ### Results
 
 #### Task 1: Predicting cell-type specific regulatory activity from lentiMPRA data
 
-通过考虑两种细胞类型，即HepG2和K562，我们可以评估预训练的gLM表示是否捕获了细胞类型特异性的CRE活性，输入DNA序列，预测一个CRE的标量
+Considering two cell types, HepG2 and K562, allows assessment of whether pretrained gLM representations capture cell-type-specific CRE activity: given input DNA sequence, predict a scalar activity for each CRE.
 
-使用CLS token或是mean embedding，使用CNN作为Baseline，用倒数第二层的full embedding和one-hot序列做比较，还是用了一个有监督的foundation model Sei，使用one-hot sequence的ResNet model，以做到全面而公平的比较
+The setup uses CLS token or mean embedding, a CNN baseline, comparison of penultimate-layer full embeddings against one-hot sequences, and the supervised foundation model Sei—a ResNet on one-hot sequences—for a broad and fair comparison.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig2.png "avatar")​
 
-fig2 b可以看到很多情况下，embedding方法甚至不如one-hot
+Fig. 2b shows that in many settings embedding-based methods underperform one-hot encoding.
 
 #### Task 2: Predicting TF binding sites from ChIP-seq data
 
-TF binding是一个细胞类型特异性的现象，而标准的语言建模方法是没有做到cell-type感知的，一个可能的原因是lentiMPRA预测任务在训练时丢失了关键motif
+TF binding is cell-type specific, whereas standard language modeling is not cell-type aware; one possible explanation is that the lentiMPRA prediction task loses critical motifs during training.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig3.png "avatar")​
 
 #### Task 3: Zero-shot variant effect prediction with MPRA data
 
-预测非编码突变
+Predicting effects of non-coding variants.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/tab1.png "avatar")​
 
-使用gLM嵌入在lentiMPRA数据上训练的cnn相对于预先训练的同行产生了明显更好的性能
+CNNs trained on lentiMPRA data with gLM embeddings achieve markedly better performance than their pretrained counterparts alone.
 
 #### Task 4: Predicting alternative splicing from RNA-seq data
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig4.png "avatar")​
 
-先前的研究表明，Nucleotide-Transformer和GPN已经学习了与基因定义和剪接位点相关的特性，使用ASCOT数据集测试
+Prior work suggests that Nucleotide Transformer and GPN learn features related to gene definition and splice sites; the authors test on the ASCOT dataset.
 
 #### Task 5: Predicting RNA pol II elongation potential from INSERT-seq data
 
-以nt RNA序列作为输入，并预测RNA pol II的延伸，使用INSERT-seq dataset，从fig4可以看到预训练模型并不一定能取得更好的效果
+Using nucleotide-level RNA sequence as input, the task predicts RNA pol II elongation on the INSERT-seq dataset; Fig. 4 shows that pretrained models do not necessarily improve performance.
 
 #### Task 6: Predicting RNA-binding protein binding with eCLIP-seq data
 
-RBP对于不同的RNA加工阶段都是必不可少的，使用eCLIP-seq（增强染色质免疫沉淀测序）数据集检测了gLMs预测RBP结合位点的能力
+RNA-binding proteins (RBPs) are essential across RNA processing stages; the authors use eCLIP-seq (enhanced crosslinking and immunoprecipitation sequencing) data to assess gLMs’ ability to predict RBP binding sites.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/glm-eval/fig5.png "avatar")​
 
@@ -77,13 +80,11 @@ RBP对于不同的RNA加工阶段都是必不可少的，使用eCLIP-seq（增�
 
 ### Discussion
 
-与标准的one-hot序列相比，gLM表示几乎没有提供任何优势
+Compared with standard one-hot sequences, gLM representations offer little advantage.
 
-选择不对每个下游任务上的gLM的权重进行微调，虽然gLM的性能可能会通过微调而提高，但本研究的范围是严格衡量在训练前所学到的顺式调节生物学知识
+The authors deliberately avoid fine-tuning gLM weights on each downstream task; fine-tuning could improve gLM performance, but the scope of this study is to strictly measure cis-regulatory biology learned before task-specific training.
 
-将当前的预训练的任务MLM扩展到整个基因组，难以捕获非编码基因组中有意义的表征，目前尚不清楚使用标准语言建模目标（即MLM或CLM）预训练的glm的持续缩放是否会最终会涌现s
-
-​
+Extending the current MLM pretraining objective across the whole genome makes it difficult to capture meaningful representations in the non-coding genome; it remains unclear whether continued scaling of gLMs pretrained with standard language modeling objectives (MLM or CLM) will eventually yield emergent capabilities.
 
 ***
 

@@ -1,0 +1,14 @@
+根据 `i18n_verify_brief.md` 逐项核对后，英文稿与中文稿一致，无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构完整（引言块、同一 H2、3 条编号、`<HR>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = 中文 `permalink`（`/zh/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/`）；无 `permalink` | 通过 |
+| IEEE 链接与 HTML 一致 | 通过 |
+| 三节内容与中文对应（写作结构、大字典+一致性、encoder/动量/队列） | 通过 |
+| 英文表述自然，术语正确 | 通过 |
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2020-03-23-Momentum Contrast for Unsupervised Visual Representation Learning.md

@@ -5,13 +5,17 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: DeepMind
 date: 2018-07-10
+lang: en
+alt_url: /zh/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
+permalink: /cv/Representation-Learning-with-Contrastive-Predictive-Coding/
 ---
 
-> 论文地址：[Representation Learning with Contrastive Predictive Coding](http://arxiv.org/abs/1807.03748)
 
-## CPC：预测代理任务，模型可泛用到文本、音频、图片等
+> Paper: [Representation Learning with Contrastive Predictive Coding](http://arxiv.org/abs/1807.03748)
 
-1. 通过t时刻前的输入编码器z，经过自回归（RNN/LSTM等）后得到足够好的上下文c_t，可以做预测为pre
-2. 正样本就是t时刻后的输入编码器后得到的z，这时候pre就等于query，t时刻后的z就是类似于正样本，就可以做对比学习了
+## CPC: Predictive proxy tasks; models generalize to text, audio, images, and more
+
+1. An encoder maps inputs up to time *t* to representations *z*; an autoregressive model (RNN/LSTM, etc.) aggregates them into a context *c_t* that is sufficiently informative to support prediction (denoted *pre*).
+2. Positive samples are the encoded representations *z* from inputs after time *t*; *pre* acts as the query and the future *z* plays the role of the positive sample, enabling contrastive learning.
 
 <HR align=left color=#987cb9 SIZE=1>

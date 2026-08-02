@@ -1,0 +1,7 @@
+**DONE**
+
+已写入 `_posts/CV/2022-01-10-Language-driven Semantic Segmentation.md`：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Language-driven-Semantic-Segmentation/`；无 `permalink`；其余字段与中文版一致。
+- **正文**：学术英文译文；保留全部图片块、链接与结构；文首引用为 Paper / Code。
+- **校验**：目标路径存在，正文中无残留中文。

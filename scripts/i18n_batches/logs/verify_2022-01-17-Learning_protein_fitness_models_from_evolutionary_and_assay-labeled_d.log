@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-01-17-Learning protein fitness models from evolutionary and assay-labeled data.md`
+
+对照 `i18n_verify_brief.md` 逐项核对结果：
+
+| 检查项 | 状态 |
+|--------|------|
+| 英文完整、结构与中文一致 | 通过（Abstract / Introduction / Results 及子节、fig1–fig6、结尾 HR 均对应） |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 图片、链接 | 论文与 GitHub URL、各 fig URL 一致 |
+| 术语与数字 | 13 种方法、19 个数据集、16 个单点突变、20% 测试集；HMM、EVmutation、DeepSequence、ESM-1b、UniRef50、NDCG 等保留 |
+
+英文版已是完整、规范的学术译文，无需修改。

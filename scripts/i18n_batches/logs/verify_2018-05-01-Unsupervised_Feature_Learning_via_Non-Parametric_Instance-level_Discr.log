@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与篇幅 | 与中文一致：摘要链接、同一 H2、两条编号、`<HR>` |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink`；其余字段一致 |
+| 链接 | arXiv URL 一致 |
+| 术语与数字 | 256、4096、NCE、InstDisc、MoCo 均保留 |
+| 英文表述 | 语气与术语合理（中文标题里的 “bank memory” 在英文中正确写为 memory bank） |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2018-05-01-Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination.md`

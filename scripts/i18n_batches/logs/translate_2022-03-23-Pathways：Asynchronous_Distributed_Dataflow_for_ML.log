@@ -1,0 +1,7 @@
+**DONE**
+
+已写入 [`_posts/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md`](_posts/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md)：
+
+- `lang: en`；`alt_url: /zh/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/`（对应中文 `permalink`）；无英文 `permalink`
+- 保留 layout、title、categories、tags、proceedings、date；图片块、PDF 链接与 `<HR>` 未改
+- 正文为学术英文，无残留中文（专有名词如 Pathways、JAX、SPMD 等保留）

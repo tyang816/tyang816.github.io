@@ -1,0 +1,10 @@
+_posts/zh/BI/2024-01-16-SaProt：Protein Language Modeling with Structure-aware Vocabulary.md
+_posts/zh/BI/2024-01-25-TM-search：An Efficient and Effective Tool for Protein Structure Database Search.md
+_posts/zh/BI/2024-03-15-Sensitive remote homology search by local alignment of small positional embeddin.md
+_posts/zh/BI/2024-03-20-Convolutions are competitive with transformers for protein sequence pretraining.md
+_posts/zh/BI/2024-03-30-PLMSearch：Protein language model powers accurate and fast sequence search for re.md
+_posts/zh/BI/2024-06-21-Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language .md
+_posts/zh/BI/2024-09-25-Multistate and functional protein design using RoseTTAFold sequence space diffus.md
+_posts/zh/BI/2024-09-26-Multi-Scale Representation Learning for Protein Fitness Prediction.md
+_posts/zh/BI/2024-10-03-Improving the prediction of protein stability  changes upon mutations by geometric  learning and a pre-training strategy.md
+_posts/zh/BI/2024-11-07-A joint embedding of protein sequence and structure enables robust variant effec.md

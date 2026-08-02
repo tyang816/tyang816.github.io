@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 生成英文笔记：  
+[`_posts/SE/2022-05-01-A Survey of Deep Learning Models for Structural Code Understanding.md`](file:///home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-05-01-A%20Survey%20of%20Deep%20Learning%20Models%20for%20Structural%20Code%20Understanding.md)
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/`（对应中文 `permalink`）；无 `permalink`；其余字段与中文版一致。
+- **正文：** 学术英文译文；图片链接、arXiv 链接与 HTML 结构保留；顶栏引用为 `Paper:`。
+- **校验：** 正文中无残留中文。

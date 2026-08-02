@@ -5,277 +5,279 @@ categories: [ML]
 tags: [other]
 proceedings: Stanford
 date: 2022-03-02
+lang: en
+alt_url: /zh/ml/AI-Index-Report/
+permalink: /ml/AI-Index-Report/
 ---
 
-> 报告地址：[AI Index Report](https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf)，数据大多来源于paper with code
+> Report: [AI Index Report](https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf). Most statistics are drawn from Papers with Code.
 >
-> 因为涉及图片太多了，这里就不一一截取了
+> Because the report contains a large number of figures, individual screenshots are not included here.
 
-### Top Takeways
+### Top Takeaways
 
-*   在2021年时，私人公司投资比2020年时翻倍了，变成了93.5亿美元。在2020年时这里有4次融资是五亿美元以上的，而2021年有15次
-*   美国和中国科学家合作发论文是最多的，比第二名中国和英国科学家发表要多2.7倍
-*   模型的能力越来越强，但也带有偏见了。比如GPT的参数从1.17亿提升到2.8亿时偏见多了29%
-*   模型的伦理问题，公平性问题更加常见
-*   AI变得更加便宜，效果越来越好
-*   报告中10个测试数据集上有9个最好的方法用了额外的数据
-*   全球关于AI的立法越来越多
-*   机械臂的成本降低，2020年是42000美元，2021年是22600美元
+*   In 2021, private-sector investment roughly doubled relative to 2020, reaching $9.35 billion. There were four funding rounds above $500 million in 2020 versus fifteen in 2021.
+*   U.S.–China collaborations produced the largest volume of co-authored papers—about 2.7× that of the second-ranked pairing (China–U.K.).
+*   Models are becoming more capable but also more biased; for example, bias increased by 29% when GPT’s parameter count rose from 117M to 280M.
+*   Ethics and fairness issues around models are increasingly salient.
+*   AI is becoming cheaper while performance continues to improve.
+*   On ten benchmark datasets highlighted in the report, nine state-of-the-art methods used additional training data.
+*   AI-related legislation is expanding worldwide.
+*   Robotic-arm costs fell from $42,000 in 2020 to $22,600 in 2021.
 
 ### CHAPTER 1: Research and Development
 
-#### 1.1 PUBILICATIONS
+#### 1.1 PUBLICATIONS
 
-如图1.1.1，2021年发表了达33.4万篇AI方向的论文，说明这个方向存在大量的无意义文章，很多是类似于研究者练手的作业。实际有重大影响力的文章在50篇左右的样子
+As in Figure 1.1.1, roughly 334,000 AI papers were published in 2021, suggesting substantial volume—including many low-impact or practice-oriented works; only on the order of ~50 papers are typically regarded as highly influential.
 
-如图1.1.2，杂志的文章增加非常快，而且很多。其次是会议，然后是arixv。arixv其实同行认可较低，因为没有经过同行评审，不能算作是科研成果，而发论文压力大促使了各种杂志出现
+As in Figure 1.1.2, journal articles grew rapidly in number. Conferences rank second, then arXiv. arXiv preprints carry lower peer recognition because they bypass formal peer review and are not always counted as formal research outputs; publication pressure has also fueled proliferation of journals.
 
-如图1.1.3，模式识别数量很多，机器学习增长很快。模式识别讲究一个任务，机器学习是一种技术
+As in Figure 1.1.3, pattern recognition accounts for a large share of publications, while machine learning is growing quickly. Pattern recognition is often organized around tasks; machine learning is better viewed as a methodological toolkit.
 
-如图1.1.4，论文60%来自教育机构，5%来自公司，3%来自政府，11%来自非盈利机构。公司的投入是有所上升的
+As in Figure 1.1.4, about 60% of papers come from academia, 5% from industry, 3% from government, and 11% from nonprofits. Industry’s share of output is rising.
 
-如图1.1.5，中国论文发表比第二多1.5倍，但引用仅比第二高6个点，杂志很多，会议很多。
+As in Figure 1.1.5, China publishes about 1.5× as many papers as the second-ranked country, but citations exceed the runner-up by only six percentage points; both journal and conference output are high.
 
-如图1.1.10，平均一篇中国文章比美国文章引用数少4倍，但引用较少不代表文章质量低，引用多还可能来自于研究院影响力，英文写作能力等等
+As in Figure 1.1.10, the average Chinese paper receives roughly four times fewer citations than the average U.S. paper; lower citation counts do not necessarily imply lower quality—citations also reflect institutional visibility, English writing, and other factors.
 
-如图1.1.24，中国专利投稿多，但接收少
+As in Figure 1.1.24, China submits many patents but has a lower acceptance rate.
 
 #### 1.2 CONFERENCES
 
-如图1.2.2，1.2.3，ICML参会人员变得越来越多
+As in Figures 1.2.2 and 1.2.3, ICML attendance has grown steadily.
 
-### CHAPTER 2: Technical Perfomance
+### CHAPTER 2: Technical Performance
 
-#### 2.1 COMPUTER VISION-IMAGE
+#### 2.1 COMPUTER VISION—IMAGES
 
 ##### IMAGE CLASSIFICATION
 
-*   Image-Net数据集：如图2.1.2，2.1.3，top1用额外数据集的精度到了90%，容易上升，top5达到了99%，人类的精度在95左右
+*   ImageNet: As in Figures 2.1.2 and 2.1.3, top-1 accuracy with extra training data reaches about 90% and is still improving; top-5 reaches about 99%, whereas human performance is around 95%.
 
 ##### IMAGE GENERATION
 
-图片生成的任务
+Image synthesis benchmarks.
 
-在GAN上面调整，用FID分数来验证生成的图片质量，主要就是把两个图片丢到一个inception v3里面，将里面的中间表示拿出来作为一个高斯随机变量，做对比得到分数，如图2.1.5可以看到两张图片的距离是在不断缩小的
+Methods build on GANs; FID scores assess generated image quality by passing real and generated images through Inception v3, treating intermediate activations as Gaussian random variables, and comparing their distributions. As in Figure 2.1.5, the gap between distributions is shrinking over time.
 
 ##### DEEPFAKE DETECTION
 
-替换人脸的。这个应用被大量广告，成人应用。
+Face-swapping and related manipulations are widely used in advertising and adult content.
 
-*   FaceForensics++数据集：里面有1000个原始的视频去判断这是生成的还是真实的，如图2.1.7可以看到效果还是不错，基本可以达到99%
-*   Celeb-DF数据集：采集了名人的数据，如图2.1.8效果一般
+*   FaceForensics++: ~1,000 original videos for real-vs-fake classification. As in Figure 2.1.7, performance is strong—near 99%.
+*   Celeb-DF: Celebrity-focused deepfakes. As in Figure 2.1.8, results are more modest.
 
 ##### HUMAN POSE ESTIMATION
 
-找出人的关键点，分析运动员动作，监控，虚拟人物设计，手语识别等
+Keypoint detection supports sports analytics, surveillance, virtual avatars, sign-language recognition, and related applications.
 
-*   PCK数据集：在Flickr上采集了2000张运动员姿势图片，判断14个不同关节的位置，如图2.1.10，效果很好
-*   Human3.6M数据集：3D姿势识别，有17种不同姿势去判断关节点位置和真实位置的误差，如2.1.11判断误差在2cm左右，已经较少了
+*   PCK: ~2,000 athlete poses from Flickr; 14 joint locations. As in Figure 2.1.10, performance is strong.
+*   Human3.6M: 3D pose with 17 action categories; joint error vs. ground truth. As in Figure 2.1.11, error is on the order of ~2 cm—already relatively low.
 
 ##### SEMANTIC SEGMENTATION
 
-像素分割，主要应用在无人车，图片分析（前景后景，背景模糊），医疗诊断
+Pixel-level labeling for autonomous driving, scene analysis (foreground/background, background blur), and medical diagnosis.
 
-*   Cityscapes数据集：50个城市里面开车录的视频做分割，用IOU评测标准，如图2.1.13效果还是不错
+*   Cityscapes: Driving videos from 50 cities; IoU metric. As in Figure 2.1.13, performance is solid.
 
 ##### MEDICAL IMAGE SEGMENTATION
 
-医疗语义分割，判断像素署于哪个器官
+Semantic segmentation in medicine assigns each pixel to an organ or tissue class.
 
-如图2.1.15精度提升很快，但离实际的使用可能还有一定距离。因为如果AI将健康的人判定为有病问题不大，但是如果漏诊可能就会错过病人最佳治疗时期
+As in Figure 2.1.15, accuracy is improving quickly but may still fall short of clinical deployment. False positives on healthy patients may be tolerable in some settings; missed diagnoses can delay optimal treatment.
 
 ##### FACE DETECTION AND RECOGNITION
 
-如图2.1.16，人脸识别非常精确了
+As in Figure 2.1.16, face recognition is already highly accurate.
 
 ##### FACE DETECTION: EFFECTS OF MASK-WEARING
 
-口罩人脸识别，如图2.1.17，戴了口罩误差率还是多了7倍
+Masked face recognition: As in Figure 2.1.17, error rates remain roughly seven times higher with masks.
 
 ##### VISUAL REASONING
 
-*   VQA Challenge数据集：给图片问问题，比如问下图哪个人带了口罩之类。如图2.1.22在2021年在该数据集上达到了和人差不多的精度，但实际应用还有一定距离
+*   VQA Challenge: Visual question answering (e.g., which person wears a mask). As in Figure 2.1.22, 2021 benchmark scores approach human-level accuracy, though real-world robustness still lags.
 
-#### 2.2 COMPUTER VISION-VIEDO
+#### 2.2 COMPUTER VISION—VIDEO
 
 ##### ACTIVITY RECOGNITION
 
-给一段视频，判断里面的物体在干什么，比如判断人在走路等等
+Given a clip, classify what entities are doing (e.g., walking).
 
-*   Kinetics数据集：视频分到不同种类进行判断。如图2.2.2达到了不错的精度
-*   ActivityNet数据集：700个小时的视频，200个不同的行为，需要找出什么时候到什么时候是一个行为和位置，如图2.2.3发现还有很多空间可以进步
+*   Kinetics: Video classification across activity categories. As in Figure 2.2.2, accuracy is strong.
+*   ActivityNet: ~700 hours, 200 activity classes; temporal localization of actions. As in Figure 2.2.3, substantial headroom remains.
 
 ##### OBJECT DETECTION
 
-*   COCO数据集：做得早，数据量很大，如图2.2.5发现进展很好
+*   COCO: Early, large-scale benchmark. As in Figure 2.2.5, progress has been rapid.
 
-##### VISUAL COMMONSENSE REASONING（VCR）
+##### VISUAL COMMONSENSE REASONING (VCR)
 
-比如问答中从答案中选出正确的，如图2.2.8发现这个方向比较小众，进展并不迅速
+Multiple-choice reasoning over images and text. As in Figure 2.2.8, the area is relatively niche and progress has been slower.
 
 #### 2.3 LANGUAGE
 
 ##### ENGLISH LANGUAGE UNDERSTANDING
 
-*   SuperGLUE数据集：有很多子数据集，比如BoolQ，给一段文字回答yes或no；CB，提出猜想表示文字能否支持猜想；COPA，提出前置回答问题。如图2.3.2，2.3.4表示模型很大的时候已经超过了人类的水平
+*   SuperGLUE: Multiple subtasks—e.g., BoolQ (yes/no reading comprehension), CB (whether text supports a hypothesis), COPA (causal choice). As in Figures 2.3.2 and 2.3.4, very large models exceed human baselines on several tasks.
 
 ##### TEXT SUMMARIZATION
 
-*   arXiv数据集：把论文爬下来，根据正文来预测摘要，用ROUGE评估真实和生成的重合片段。如图2.3.7发现这一块还是做得一般，还有很多空间可以去做
+*   arXiv: Predict abstracts from paper bodies; ROUGE measures overlap with reference summaries. As in Figure 2.3.7, performance is still moderate with room to improve.
 
 ##### NATURAL LANGUAGE INFERENCE
 
-判断上下文是冲突，还是增强，还是没关系的三分类问题，如图2.3.10发现在这个三分类任务上进度是93%还是不错的
+Three-way classification: contradiction, entailment, or neutral. As in Figure 2.3.10, ~93% accuracy reflects solid progress on this benchmark.
 
-*   ANLI数据集：一个比较难的任务，拓展推理，根据上文能拓展出其他的结论。如图2.3.12发现模型进展也比较好，接近人类进度
+*   ANLI: Harder adversarial NLI requiring extended reasoning. As in Figure 2.3.12, models approach human performance.
 
 ##### SENTIMENT ANALYSIS
 
-判断商品，未来好坏等等，如图2.3.14发现精度还是不错的，在一个可接受的范围
+Sentiment toward products, forecasts, etc. As in Figure 2.3.14, accuracy is in an acceptable range.
 
 ##### MACHINE TRANSLATION (MT)
 
-这个领域有很好的商业模式，如图2.3.16现在没多少开源的，更多是商业的
+Strong commercial incentives; as in Figure 2.3.16, open systems are scarce relative to proprietary products.
 
-*   WMT 2014数据集：ACL引用的数据集，英语翻译德语，英语翻译法语等，用BLEU分数评估。如图2.3.15发现近几年有一定提升
+*   WMT 2014: Standard ACL-era sets (e.g., En–De, En–Fr); BLEU evaluation. As in Figure 2.3.15, scores have improved gradually in recent years.
 
 #### 2.4 SPEECH
 
 ##### SPEECH RECOGNITION
 
-*   LibriSpeech数据集：提供了1000个小时有声读物，提供了两个版本，一个干净的一个有噪音的。如图2.4.1发现干净数据集下还是比较好，离真实很近的，而噪音数据集下也勉强能用
+*   LibriSpeech: ~1,000 hours of audiobooks in clean and noisy splits. As in Figure 2.4.1, clean-set performance is near human-like; noisy conditions are usable but harder.
 
 #### 2.5 RECOMMENDATION
 
 ##### COMMERCIAL RECOMMENDATION
 
-*   MovieLens数据集：如图2.5.1发现2018年-2019年提升很迅速但过去几年提升一般，但这个数据集不是很具有代表性，推荐系统跟业务关系比较大，需要数据量很大，是大厂的游戏
+*   MovieLens: As in Figure 2.5.1, gains were sharp in 2018–2019 but flatter afterward; the benchmark is not fully representative—recommendation is business-specific and data-hungry, dominated by large platforms.
 
 ##### CLICK-THROUGH RATE PREDICTION
 
-*   Criteo数据集：如图2.5.2发现AUC增长较一般，但是一个道理，这还是大厂的游戏
+*   Criteo: As in Figure 2.5.2, AUC gains are modest—again, this is largely a big-tech domain.
 
 #### 2.6 REINFORCEMENT LEARNING
 
 ##### REINFORCEMENT LEARNING ENVIRONMENTS
 
-环境就可以视作数据集了，环境根据当前行为进行奖励或者惩罚
+Environments function as benchmarks: agents receive rewards or penalties based on actions.
 
-*   Atari数据集：包含了57个游戏，包括吃豆人等，模型控制游戏机去玩游戏，根据环境反馈不断调整算法。如图2.6.1发现在2017年时有一个很快的发展
+*   Atari: 57 games (including Pac-Man); agents learn control policies from environment feedback. As in Figure 2.6.1, rapid progress appeared around 2017.
 
 ##### HUMAN GAMES
 
-比如下国际象棋，如图2.6.4发现80年代就开始发现，在2016年超越了最好的人类选手
+Chess and similar domains: As in Figure 2.6.4, interest dates to the 1980s; superhuman play was achieved by 2016.
 
 #### 2.7 HARDWARE
 
-##### MLPerf：Training Time
+##### MLPerf: Training Time
 
-一个工业界的评测级来评测各个不同的硬件系统和软件系统在不同模型上达到特定精度所花的时间
+Industry benchmark measuring time for diverse hardware/software stacks to reach target accuracy on standard models.
 
-如图2.7.1，y轴是log，实际是一个指数下降
+As in Figure 2.7.1, the y-axis is logarithmic—training time drops exponentially in practice.
 
-如图2.7.3发现2020年的时候最多用了4000多张卡
+As in Figure 2.7.3, some 2020 runs used more than 4,000 accelerators.
 
 ##### IMAGENET: Training Cost
 
-如图2.7.4在Image-Net上训练到93%精度成本在不断下降
+As in Figure 2.7.4, the cost to train ImageNet models to ~93% accuracy continues to fall.
 
 #### 2.8 ROBOTICS
 
 ##### Price Trends in Robotic Arms
 
-如图2.8.1价格在过去五年降了一倍
+As in Figure 2.8.1, prices roughly halved over the prior five years.
 
 ##### AI Skills Employed by Robotics Professors
 
-如图2.8.3发现做机器人的教授们在AI方面主要用的是深度学习技术，其次是强化学习
+As in Figure 2.8.3, robotics faculty most often use deep learning, followed by reinforcement learning.
 
 ### CHAPTER 3: Technical AI Ethics
 
-最主要关心的是一个模型可能对人类造成的伤害，比如可能有种族歧视，年龄歧视，区分经济地位等等，造成社会分裂的加速，提升公平性降低偏见
+The focus is harm models may cause—e.g., bias by race, age, or socioeconomic status—that can exacerbate social division; improving fairness and reducing bias is central.
 
 #### 3.1 META-ANALYSIS OF FAIRNESS AND BIAS METRICS
 
-公平性是指比如把一个简历适合这个岗位，把性别，年龄，种族修改后不影响结果。但因为这个领域比较新，而且认可度还有待考究所以待定
+Fairness might require that swapping protected attributes (gender, age, race) on an otherwise qualified résumé not change a hiring decision. The field is young and metrics remain contested, so conclusions are provisional.
 
-如图3.1.1表示了模型公平性的一些指标个数
+As in Figure 3.1.1, the report tallies various fairness metrics.
 
-如图3.1.2表示了一些用来测试公平、偏见的数据集和一些诊断的指标
+As in Figure 3.1.2, it lists datasets and diagnostic measures for fairness and bias.
 
 #### 3.2 NATURAL LANGUAGE PROCESSING BIAS METRICS
 
-在NLP里面的一些具体的偏见指标
+Concrete bias measures in NLP.
 
 ##### TOXICITY: REALTOXICITYPROMPTS AND THE PERSPECTIVE API
 
-毒性就是指文本不文明不礼貌
+Toxicity captures rude or harmful text.
 
-如图3.2.2表示生成有毒文本的概率是多少，可以看到用不同数据训练出来的模型是很不同的
+As in Figure 3.2.2, toxic-generation rates differ sharply across training corpora.
 
-如图3.2.3表示不同大小的模型对毒性的敏感度，给一些引导符容易出现有毒性文字的概率等，发现大模型更容易收到危害
+As in Figure 3.2.3, larger models can be more sensitive to prompts that elicit toxic continuations.
 
-如图3.2.4表示用了三种不同的消毒方法模型性能都有下降
+As in Figure 3.2.4, three mitigation (“detoxification”) methods all reduce task performance to some degree.
 
 ##### STEREOSET
 
-对性别，种族和宗教有一些特定的偏见
+Stereotypes along gender, race, and religion.
 
-如图3.2.5表示模型越大的时候刻板印象是增加的
+As in Figure 3.2.5, stereotypical associations tend to increase with model scale.
 
 ##### WINOGENDER AND WINOBIAS
 
-把性别代名词去掉让语言模型填回来，如图3.2.8表示大模型确实还原度更高一点
+Gender pronouns are masked for infilling. As in Figure 3.2.8, larger LMs achieve higher fill accuracy.
 
 #### 3.4 FACTUALITY AND TRUTHFULNESS
 
 ##### FACT-CHECKING WITH AI
 
-用AI来判定虚假消息
+Automated misinformation detection.
 
-如图3.3.2表示过去这几年增长很显著
+As in Figure 3.3.2, activity in this area has grown markedly in recent years.
 
 ### CHAPTER 4: The Economy and Education
 
 #### 4.1 JOBS
 
-如图4.1.1表示在LinkedIn上不同地区要求有AI相关技能的百分比，但是因为大厂有自己的招聘信息等所以这个结果不是很准确
+As in Figure 4.1.1, LinkedIn shows regional demand for AI skills as a share of postings; large firms’ private job boards limit completeness.
 
-如图4.1.3表示和AI相关的工作在哪些地区，发现新加坡占的比例蛮高
+As in Figure 4.1.3, geographic distribution of AI-related employment—Singapore’s share is notable.
 
-如图4.1.4表示AI相关技能
+As in Figure 4.1.4, breakdown of in-demand AI skills.
 
-如图4.1.5表示哪些行业在招AI相关人员
+As in Figure 4.1.5, industries hiring AI talent.
 
-如图4.1.6表示AI需求人数
+As in Figure 4.1.6, AI hiring demand over time.
 
-如图4.1.8表示哪些人把AI相关集能写在自己的介绍
+As in Figure 4.1.8, who lists AI skills on profiles.
 
 #### 4.2 INVESTMENT
 
-如图4.2.1和4.2.2表示投资情况
+As in Figures 4.2.1 and 4.2.2, investment trends.
 
-如图4.2.3表示新成立的AI公司
+As in Figure 4.2.3, newly founded AI companies.
 
-如图4.2.10和4.2.11表示AI公司的领域，主要是云、医疗健康、金融、自动驾驶。历史上最好的是医疗和健康、云等
+As in Figures 4.2.10 and 4.2.11, AI company sectors—cloud, health, finance, autonomous driving; historically strong returns in health and cloud.
 
-#### 4.3 CORPORARE ACTIVITY
+#### 4.3 CORPORATE ACTIVITY
 
-如图4.3.4表示工业界对AI的风险的担心，主要是安全、法规、可解释性、隐私，反而劳动力问题在下降
+As in Figure 4.3.4, industry concerns about AI risk emphasize safety, regulation, interpretability, and privacy; labor-displacement worries have declined relatively.
 
 #### 4.4 AI EDUCATION
 
-如图4.4.1表示毕业生增长很快
+As in Figure 4.4.1, graduates in AI-related fields are increasing rapidly.
 
-如图4.4.3表示有21%的应届博士是毕业于AI或机器学习的
+As in Figure 4.4.3, about 21% of new PhDs specialize in AI or machine learning.
 
 ### CHAPTER 5: AI Policy and Governance
 
 #### 5.1 AI AND POLICYMAKING
 
-如图5.1.1表示法律法规的通过基本还是线性增长
+As in Figure 5.1.1, passed AI-related laws grow roughly linearly over time.
 
-通过的法案很多都是促进的法案
+Many enacted bills are pro-innovation or enabling in nature.
 
 <hr align="left" color="#987cb9" size="1">
-

@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-06-28-Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarizatio.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（Abstract / Introduction / Methodology / Experiment） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 论文链接与全部 SynapSum 图片 URL 一致 | 通过 |
+| 学术英文表述、6 个数据集、SynapSum、AST 等术语 | 通过 |
+
+英文稿已完整对应中文内容，无需修改。

@@ -1,0 +1,3 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-01-16-Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling.md` issues=removed meta phrase “(as reported in the note)”; “surveying” → “assessing” (中文「审视」误写为「民意调查」)
+
+其余项已通过：结构/frontmatter（`lang: en`，`alt_url` 对齐中文 `permalink`，无英文 `permalink`）、图片与链接、无中文正文、术语与数字一致。标题拼写 `Results Interpertation` 与中文版一致，未改。

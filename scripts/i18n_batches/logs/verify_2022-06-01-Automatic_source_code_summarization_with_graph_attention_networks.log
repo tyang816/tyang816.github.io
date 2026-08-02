@@ -1,0 +1,14 @@
+按 `i18n_verify_brief.md` 核对结果如下：
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | EN 与 ZH 一致（Abstract / Introduction / Approach / Evaluation + 图片 + 结尾 HR） |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与 ZH `permalink` 一致；EN 无 `permalink`；其余字段一致 |
+| 图片与链接 | 与 ZH 相同 |
+| 章节标题 | 对齐 |
+| 术语与模型名 | GSCS、GAT、AST、SBT、Tree-LSTM、ConvGNN 等一致 |
+
+英文译文完整、语气合适，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-06-01-Automatic source code summarization with graph attention networks.md`

@@ -5,52 +5,55 @@ categories: [CL]
 tags: [LLM, NLP, transformer]
 proceedings: OpenAI
 date: 2022-03-16
+lang: en
+alt_url: /zh/cl/Training-language-models-to-follow-instructions-with-human-feedback/
+permalink: /cl/Training-language-models-to-follow-instructions-with-human-feedback/
 ---
 
-> 论文地址：[Training language models to follow instructions with human feedback](http://arxiv.org/abs/2203.02155)
+> Paper: [Training language models to follow instructions with human feedback](http://arxiv.org/abs/2203.02155)
 
-## InstructGPT：GPT-3+RLHF
+## InstructGPT: GPT-3 + RLHF
 
 ### Abstract
 
-把语言模型变大并不意味着模型会更好的按照用户意图执行，容易生成不真实的，有毒的或没有帮助的答案，模型和用户没有align在一起。所以要把人类意图和模型做align，具体做法就是用人类反馈来做微调，先用一堆标注写好的prompt和提交到OpenAI的API上的prompt及其人工得到答案构成数据集，对GPT-3做微调。还收集了一个模型输出排序的数据集，用强化学习继续微调训练最终得到模型InstructGPT。这样1.3B的InstructGPT模型比175B的GPT-3更好，能够显著降低有毒的，不真实的情况，在公开数据集上没有变差
+Scaling up language models does not automatically make them better at following user intent. They can still produce untruthful, toxic, or unhelpful responses—the model is not aligned with users. The remedy is to align the model with human intent via fine-tuning with human feedback. The authors build a dataset from labeler-written prompts and prompts submitted through the OpenAI API together with human-written demonstrations, and fine-tune GPT-3 on it. They also collect a dataset of ranked model outputs and further fine-tune with reinforcement learning to obtain InstructGPT. A 1.3B-parameter InstructGPT model is preferred over 175B GPT-3, with substantial reductions in toxicity and untruthfulness, without regressing on public NLP benchmarks.
 
 ### Introduction
 
-大模型能够提供prompt方法把提示作为输入，但也可能生成一些不想要的行为比如捏造事实，生成有毒文本，或是根本没有按用户要求。这可能主要是因为训练的目标函数不太对，比如用的预测下一个token的方法和我们需要的要模型按人的指示来生成有帮助的安全的答案是不一样的，这就是语言模型的目标函数misaligned
+Large models support prompting, but they can still exhibit unwanted behavior: hallucinating facts, generating toxic text, or failing to follow user instructions. A likely cause is a mismatch in the training objective—next-token prediction is not the same as producing helpful, safe answers that follow human instructions. This is objective misalignment for language models.
 
-最终需要的目标是让语言模型更加对解决问题有帮助，不要捏造事实的真诚，也不要有害
+The desired behavior is for language models to be more helpful for solving tasks, truthful rather than fabricating facts, and harmless.
 
-具体用的是人类反馈的强化学习（RLHF）
+The approach is reinforcement learning from human feedback (RLHF).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InstructGPT/fig2.png" alt="avatar" style="zoom:80%;" /></div>
 
-- 第一步：采样选择一些提示，标注工给出期望答案，用有监督方法来微调GPT-3，但生成式标注很贵
-- 第二步：采样提示生成答案，人标注答案打分，训练一个奖惩模型
-- 第三步：根据RM模型打分结果继续优化SFT模型
+- Step 1: Sample prompts; labelers write desired outputs; fine-tune GPT-3 with supervised learning. Generative labeling is expensive.
+- Step 2: Sample prompts, generate answers, have humans rank them, and train a reward model.
+- Step 3: Optimize the SFT model further using scores from the RM.
 
-主要发现如下：
+Main findings:
 
-- 标注工认为InstructGPT比GPT-3输出更好
-- InstructGPT比GPT-3更真实
-- InstructGPT比GPT-3有毒文本更少
-- 把原本目标函数还是用在了InstructGPT，避免在特定QA上微调后在其他任务上性能下降
-- 标注数据有主观性，找了一些held-out的标注人员，没有参与标注数据，只是对结果进行评估，仍然认为InstructGPT比GPT-3更好
-- 在共有数据上微调发现还是自己数据好，微调对数据还是比较敏感的
-- 不可能把所有问题标注出来，但模型还是表现出一定的泛化性
-- InstructGPT还是会犯一些简单的错误
+- Labelers prefer InstructGPT outputs over GPT-3.
+- InstructGPT is more truthful than GPT-3.
+- InstructGPT produces less toxic text than GPT-3.
+- The original pretraining objective is still used for InstructGPT, avoiding the usual drop in performance on other tasks after narrow QA fine-tuning.
+- Annotations are subjective; held-out labelers who did not contribute training data still prefer InstructGPT over GPT-3.
+- Fine-tuning on public data still favors the authors’ own data—fine-tuning is sensitive to the dataset.
+- Not every question can be labeled, yet the model still shows some generalization.
+- InstructGPT still makes simple mistakes.
 
 ### Methods and experimental details
 
 #### Dataset
 
-标注工写了很多提示，包括plain：随便写任何问题，few-shot：带有指令的及其后续查询/回答对的，user-based：有很多OpenAI API里面的应用的用例。用这些数据训练了第一个instruct模型，然后放到一个playeground让大家用，采集反馈的问题，再做一些限制比如每个用户采200个prompt，按照用户来划分训练，测试，验证集，这样得到了更多的prompt
+Labelers wrote many prompts, including: **plain**—arbitrary questions; **few-shot**—instructions with follow-up query/answer pairs; **user-based**—use cases resembling OpenAI API applications. The first Instruct model was trained on this data, deployed in a playground for user feedback, and further prompts were collected with constraints (e.g., 200 prompts per user), splitting train/validation/test by user.
 
-基于这些prompt构建了三个数据集：
+Three datasets were built from these prompts:
 
-- 标注工直接写答案训练SFT模型，13k训练样本
-- 训练RM的数据集，33k训练样本
-- 训练强化微调模型的PPO数据集，31k
+- Labeler-written answers for SFT: 13k training examples.
+- Rankings for RM training: 33k training examples.
+- Prompts for RL fine-tuning with PPO: 31k.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InstructGPT/tab1-tab2.png" alt="avatar" style="zoom:100%;" /></div>
 
@@ -58,33 +61,33 @@ date: 2022-03-16
 
 ##### Supervised fine-tuning (SFT)
 
-在GPT-3上做微调16个epoch，其实一遍就过拟合了，但因为这个是作为后面模型的初始化，所以过拟合也没关系
+GPT-3 is fine-tuned for 16 epochs; one epoch already overfits, but overfitting is acceptable here because this model initializes later stages.
 
 ##### Reward modeling (RM)
 
-把SFT模型后面的unembedding layer去除，不用softmax而是在后面加一个线性层来投影到一个值上（输出为1的线性层）
+Remove the unembedding layer after the SFT model; instead of softmax, add a linear layer projecting to a scalar (linear layer with output dimension 1).
 
-使用的是6B的RM，175B会训练不稳定loss炸掉
+They use a 6B RM; 175B was unstable and the loss diverged.
 
-把排序换成值用的pair-wise ranking loss
+Rankings are converted to scalar values with a pairwise ranking loss.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InstructGPT/frm1.png" alt="avatar" style="zoom:80%;" /></div>
 
-其中 $r_{\theta}(x,y)$ 是reward model的输出，前者比后者奖励分数高，这里k=9，也就有 $C_9^2=36$ 项组合，但只用算9次前向或反向，所以k越大省计算开销越多
+Here $r_{\theta}(x,y)$ is the reward model output; the first response receives a higher reward than the second. With $k=9$, there are $C_9^2=36$ pairs, but only 9 forward/backward passes are needed, so larger $k$ saves compute.
 
-##### Reinforcemnet learning (RL)
+##### Reinforcement learning (RL)
 
-强化学习环境用的PPO
+The RL environment uses PPO.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/InstructGPT/frm2.png" alt="avatar" style="zoom:80%;" /></div>
 
-策略或是当前的状态是模型，要做一些action
+The policy / current state is the model; actions are token generations.
 
-$\pi_{\phi}^{RL}$ 是要学习的模型，$\phi$ 是学到的超参，$\pi^{SFT}$ 是有监督训练得到的模型，最开始用来初始化要学习的模型 $D_{pretrain}$ 是预训练的数据分布。x是不变的，采样到的y随着模型的更新会不同，数据分布随着模型更新发生变化，$r_{\theta}$ 就是学习一个人的排序来得到一个实时反馈
+$\pi_{\phi}^{RL}$ is the model being learned; $\phi$ are the learned parameters; $\pi^{SFT}$ is the supervised model used for initialization. $D_{pretrain}$ is the pretraining data distribution. $x$ is fixed; sampled $y$ changes as the model updates, so the data distribution shifts with the policy. $r_{\theta}$ learns from human rankings to provide online feedback.
 
-第二项是正则化项，不希望模型更新变化过大，加一个KL散度，$\beta$ 控制KL散度的惩罚
+The second term is a regularizer: a KL penalty with coefficient $\beta$ to limit deviation from the reference policy.
 
-第三项是语言模型原本的目标函数，$\gamma$ 控制是否偏向原始数据，前两项在新的数据集上做拟合，但原始数据也不要丢，$\gamma$ 不等于0就是PPO-ptx
+The third term is the original language-model objective; $\gamma$ controls how much to stay close to pretraining data. The first two terms fit the new dataset, but pretraining data should not be discarded; $\gamma \neq 0$ yields PPO-ptx.
 
 ### Results
 
@@ -96,11 +99,11 @@ $\pi_{\phi}^{RL}$ 是要学习的模型，$\phi$ 是学到的超参，$\pi^{SFT}
 
 #### Implications for alignment research
 
-model alignment相对于预训练的代价是比较低的，因为样本少
+Model alignment costs relatively little compared to pretraining because the sample count is small.
 
 #### Limitations
 
-标注数据是40个合同工，以及90%数据都是英语，模型上面也不是完全安全，以及到底该align到什么程度
+Training data comes from 40 contract labelers; about 90% is English. The model is not fully safe, and the appropriate degree of alignment remains open.
 
 
 <HR align=left color=#987cb9 SIZE=1>

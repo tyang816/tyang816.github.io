@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 逐项对照后结论如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与完整性 | Abstract / Method / Experiment、三张图、分隔线均与中文一致 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url: /zh/cv/SlowFast-Networks-for-Video-Recognition/` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 链接与图片 | IEEE 链接与 COS 图片 URL 一致 |
+| 术语与数字 | 16/4 帧、I3D、non-local；中文笔误 “later connection” 在英文中已写为 “Lateral connections” |
+| 学术英文 | 表述自然，无需修改 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2019-10-29-SlowFast Networks for Video Recognition.md`

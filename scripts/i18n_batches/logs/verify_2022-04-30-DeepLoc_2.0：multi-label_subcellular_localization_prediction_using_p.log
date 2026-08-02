@@ -1,0 +1,15 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文与中文章节一致（均以 DeepLoc 2.0 Overview + 图片结束） | 通过 |
+| 正文无中文叙述 | 通过 |
+| `lang: en`；无 `permalink`；`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 图片、链接、URL 一致 | 通过 |
+| 标题层级与中文一致 | 通过 |
+| 学术英文表述（含 nuclear-encoded、ECO:0000269、十个定位等） | 通过 |
+| 数字、模型名、引用未改 | 通过 |
+
+英文版已是完整翻译，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-04-30-DeepLoc 2.0：multi-label subcellular localization prediction using protein langua.md`

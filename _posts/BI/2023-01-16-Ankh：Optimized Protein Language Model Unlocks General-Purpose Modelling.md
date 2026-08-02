@@ -5,28 +5,31 @@ categories: [BI]
 tags: [protein, PLM, language-model]
 proceedings: bioRxiv
 date: 2023-01-16
+lang: en
+alt_url: /zh/bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
+permalink: /bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
 ---
 
-> 论文地址：[Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling](http://biorxiv.org/lookup/doi/10.1101/2023.01.16.524265)
+> Paper: [Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling](http://biorxiv.org/lookup/doi/10.1101/2023.01.16.524265)
 >
-> 论文实现：<https://github.com/agemagician/Ankh>
+> Code: <https://github.com/agemagician/Ankh>
 >
 
-## Ankh：蛋白质语言模型调参
+## Ankh: tuning a protein language model
 
 ### Abstract
 
-随着蛋白质语言模型的进步，寻求针对蛋白质特性的优化方法来提高性能。虽然语言模型的规模和表征的丰富已经得到了验证，但还是在寻求一种数据高效，开销减少，知识驱动的优化方法，通过从msaking，架构，预训练数据设计了超过20个实验，从protein-specific的实验来融入Insight，构建解释语言模型。提出了Ankh，一个通用目的的PLM，在谷歌TPU-v4上训练，以更少的参数取得了SOTA（<10%预训练，<7%推理，<30%嵌入维度）。在机构和功能的Benchmark上进行了测试，进一步在high-N和OneN输入数据尺度上提供了蛋白质变异生成分析，其中Ankh成功地学习了蛋白质的进化保守-突变趋势，并引入了功能多样性，同时保留了关键的结构-功能特征
+As protein language models advance, researchers seek protein-aware optimizations to improve performance. Although scaling models and richer representations have been validated, there is still demand for data-efficient, lower-cost, knowledge-driven optimization. The authors designed more than 20 experiments spanning masking, architecture, and pre-training data, incorporating insights from protein-specific studies to build and interpret the language model. They present Ankh, a general-purpose PLM trained on Google TPU v4 that achieves state-of-the-art results with fewer parameters (<10% pre-training compute, <7% inference compute, <30% embedding dimension). They evaluate on structure and function benchmarks, and further analyze protein variant generation at high-N and one-shot input scales; Ankh learns evolutionary conservation–mutation trends, introduces functional diversity, and preserves key structure–function features.
 
 ### Introduction
 
-通常情况下，人们倾向于认为模型的大小（参数量）与其学习的表示能力和性能之间存在正相关关系，即模型越大，其学习的表示越丰富。然而，这种观点被指出是具有误导性的。其中一个误导源自对大规模参数的语言模型进行观察。这些模型经过大量的参数训练和训练步骤，但仍然表现出明显的学习梯度，被认为是欠拟合
+People often assume a positive link between model size (parameter count) and representational capacity or downstream performance—that larger models learn richer representations. This view can be misleading. One source of confusion comes from observing large language models that, despite vast parameter counts and long training, still show clear learning gradients and are treated as underfitting.
 
-这种情况下，观察到的模型尽管具有大量的参数，但其表现并不如预期的那样良好。这可能表明模型的规模不是决定其学习能力和表示丰富性的唯一因素。其他因素，例如数据质量、训练方法、学习率等，都可能对模型的性能和拟合程度产生影响
+In such cases, models with many parameters underperform relative to expectations, suggesting that scale alone does not determine learning quality or representation richness. Data quality, training recipe, learning rate, and related choices also strongly affect fit and performance.
 
-大模型好，但是也增加了研究创新的门槛和限制了可扩展性，然而追求大也不是唯一的方向，比如大的数据集其实比不上一个小的高质量数据集
+Large models help but raise the barrier to research innovation and limit scalability; pursuing scale is not the only path—for example, a small, high-quality dataset can outperform a much larger but weaker one.
 
-Ankn在两类实验上验证，一个是在结构和功能的benchmark上取得了SOTA，以及在hign-N（family based）和One-N（single sequence-based）的蛋白质工程上进行了分析；其次是民意调查模型性能，优化模型设计，开发和部署等
+Ankh is validated in two lines of work: state-of-the-art results on structure and function benchmarks, and analysis of protein engineering under high-N (family-based) and one-shot (single-sequence) settings; second, assessing model performance, optimizing design, and supporting development and deployment.
 
 ### Results
 
@@ -42,52 +45,52 @@ Ankn在两类实验上验证，一个是在结构和功能的benchmark上取得�
 
 #### Auto-Regressive Fine-Tuning for High-N Generation
 
-用超参数t来控制生成结果的多样性，高的t会给不同候选回复都有较高的概率，低的t会给最可能的回复较高的概率
+Temperature hyperparameter *t* controls diversity of generations: higher *t* spreads probability across many candidates; lower *t* concentrates mass on the most likely continuations.
 
-用MDH天然蛋白上进行微调，设置了三种t生成每组500条序列，用香农熵的变化来报告微调数据的MSA和三种温度设置的关联，香农熵的低熵值反映了控制保留功能的保守区域，而高熵值反映了突变率较低的保守区域
+They fine-tune on natural MDH proteins, generate 500 sequences per group under three temperature settings, and relate Shannon entropy of the fine-tuning MSA to the three temperatures. Low entropy marks conserved regions that preserve function; high entropy marks regions with lower mutational constraint.
 
 #### Masked Language Modeling (MLM) for One-N Generation
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 
-使用colabfold的2个模型和3个周期来预测生成的变体的三维结构，希望使用MLM生成的序列得到的预测结构，和实验的3D结构有较低的序列相似性和RMSD
+ColabFold with two models and three recycling cycles predicts 3D structures of generated variants. The goal is for MLM-generated sequences to yield predicted structures with low sequence identity to the experimental 3D structure yet low RMSD.
 
-在两种情况下，该模型都能够生成RMSD低于1.5 A的序列，且序列一致性均低至80%
+In both settings, the model can produce sequences with RMSD below 1.5 Å while sequence identity falls to about 80%.
 
 #### Knowledge-Guided Optimization in Action
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/fig4.png" alt="avatar" style="zoom:100%;" /></div>
 
-把knowledge-guided experimentation定义为针对蛋白质特定任务进行探索，同时保持单一的独立变量，即遮蔽策略和概率、模型架构以及预训练数据集
+Knowledge-guided experimentation is defined as exploring protein-specific tasks while varying one independent factor at a time among masking strategy and probability, model architecture, and pre-training dataset.
 
-- 蛋白质特定实验：这些实验是为了针对蛋白质相关任务进行优化和调整。蛋白质是复杂的生物分子，具有独特的结构和功能特性，因此需要专门的实验来针对其特定需求进行设计。在这种情况下，实验可能涉及不同的遮蔽策略和概率、模型架构以及预训练数据集的选择，以满足蛋白质任务的要求
-- 单一独立变量：在进行实验时，通过保持单一独立变量的变化，可以更好地理解不同因素对模型性能的影响。在这里，遮蔽策略和概率、模型架构以及预训练数据集被视为独立变量，通过对它们进行变化和控制，来评估它们对计算效率和下游性能的影响
+- **Protein-specific experiments**: Experiments tune the model for protein-related tasks. Proteins are complex biomolecules with distinct structure and function, so designs target those requirements—varying masking strategy and probability, architecture, and pre-training data as needed.
+- **Single independent variable**: Holding other factors fixed while changing one variable clarifies its effect on performance. Here, masking strategy and probability, architecture, and pre-training dataset are treated as independent knobs to assess impact on compute efficiency and downstream metrics.
 
 ### Discussion
 
 #### Results Interpertation
 
-在应用序列上下文嵌入时，需根据任务特定的需求来选择和设计适当的架构和层，以获得更好的性能和效果
+When applying sequence-context embeddings, choose and design architecture and layers according to task-specific needs for better performance.
 
 #### Results Implications
 
-提出了基于蛋白质知识的优化方法，该方法通过在模型生命周期中对软件和硬件组件进行优化，以提高模型性能，通过这种知识引导的优化方法，可以在显著减少计算资源的情况下达到卓越的性能
+The work proposes protein-knowledge-guided optimization that tunes software and hardware across the model lifecycle to improve performance, achieving strong results with markedly fewer compute resources.
 
-通常人们倾向于认为提高模型性能需要更大的模型和更多的数据，但这种相关性并非绝对，其实可以通过有效的优化方法来提高模型的性能，而不是盲目地依赖更大的模型规模或数据规模
+Performance is often assumed to require larger models and more data, but that link is not absolute; effective optimization can improve models without blindly scaling parameters or datasets.
 
 #### Results Limitation
 
-这个工作里汇报了几个局限性，测试改变激活函数，维度观察对优化的影响
+The paper reports several limitations, including tests of activation functions and dimension changes on optimization.
 
-因为没有一个单独的模型是在所有任务数值上都SOTA，所以在每个任务上选了表现最好的模型这个版本传递给下一个任务
+Because no single model is state of the art on every task metric, the best model per task is carried forward to the next task in their pipeline.
 
 #### Recommendations
 
-预训练数据集的选择与后续任务测试数据集的协调性，使用UniRef50进行预训练比使用UniRef90、UniRef100和BFD更优的结果，这是由于UniRef50具有较低的冗余性。冗余性的具体定义与应用领域相关（例如，使用所有可用的人类蛋白质在考虑人类蛋白质长度分布时具有较低的冗余性，但在尝试预测这些蛋白质的结合位点时则具有较高的冗余性）
+Align pre-training data with downstream evaluation sets. Pre-training on UniRef50 outperforms UniRef90, UniRef100, and BFD, attributed to lower redundancy in UniRef50. Redundancy is domain-dependent (e.g., using all available human proteins yields low redundancy for length distributions but high redundancy when predicting binding sites).
 
 #### Future Work
 
-Ankh作为优化通用蛋白质语言模型的初始版本。该版本旨在作为预训练基础，将在未来的工作中针对高影响力和高价值的蛋白质建模任务进行专门优化和详细分析（例如，完整的原子分辨率三维结构预测、蛋白质生成等）
+Ankh is an initial optimized general-purpose protein language model, intended as a pre-training foundation for future work targeting high-impact protein modeling tasks with dedicated optimization and analysis (e.g., full atomic-resolution 3D structure prediction, protein generation).
 
 ### Methods
 
@@ -99,7 +102,7 @@ Ankh作为优化通用蛋白质语言模型的初始版本。该版本旨在作�
 
 ##### Pre-trained Model Encoder-Decoder Transformer
 
-选择encoder-decoder的架构不仅是性能做好，而且和实验自变量兼容比如mask和architecture
+An encoder–decoder architecture was chosen not only for performance but also for compatibility with experimental factors such as masking and architecture.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab11.png" alt="avatar" style="zoom:100%;" /></div>
 
@@ -113,47 +116,47 @@ Ankh作为优化通用蛋白质语言模型的初始版本。该版本旨在作�
 
 ##### Protein Function Prediction
 
-- **Fluorescence Prediction (FluP)**：回归任务评估绿色荧光蛋白的荧光强度
-- **Solubility Prediction (SolP)**：分类任务评估一组不同的蛋白质的二进制标签是否具有可溶性
-- **GB1 Fitness Prediction (GB1)**：回归任务评估在FLIP基准中管理的4个特定位置的突变后GB1结合的适应度
+- **Fluorescence Prediction (FluP)**: Regression task predicting green fluorescent protein fluorescence intensity.
+- **Solubility Prediction (SolP)**: Binary classification of solubility across diverse proteins.
+- **GB1 Fitness Prediction (GB1)**: Regression of GB1 binding fitness after mutations at four positions in the FLIP benchmark.
 
 ##### Protein Structure Prediction
 
-- **Contact Prediction (CP)**：二分类任务，即预测蛋白质中的残基对是否在其三维结构中相互接触（通常使用8Å的距离阈值进行定义）
-- **Fold Prediction (FolP)**：分类任务，将完整的蛋白质序列分类到1194种可能的蛋白质折叠结构中
-- **Secondary Structure Prediction (SSP)**：分类任务，蛋白质中的每个氨基酸残基被分类到其二级结构折叠中，有两个难度级别：3类和8类。二级结构包含有关功能域的重要信息，并且通常被用于通过多序列比对来捕捉进化信息
--  **Embedding-based Annotation Transfer (EAT)**：传统上，蛋白质注释的转移是通过基于同源性的推断（Homology-based inference，HBI）在序列空间中进行的，从已标记（实验注释）的蛋白质向未标记的蛋白质进行转移。现在可以做基于嵌入的注释转移方法
+- **Contact Prediction (CP)**: Binary prediction of whether residue pairs contact in 3D structure (typically 8 Å threshold).
+- **Fold Prediction (FolP)**: Classification of full sequences into 1,194 fold categories.
+- **Secondary Structure Prediction (SSP)**: Per-residue classification into secondary structure classes at 3-class and 8-class difficulty; secondary structure carries domain information and is often used with MSAs for evolutionary signal.
+- **Embedding-based Annotation Transfer (EAT)**: Annotation transfer traditionally uses homology-based inference (HBI) in sequence space from labeled to unlabeled proteins; embedding-based transfer is now feasible.
 
 ##### Protein Localization Prediction
 
-- **Sub-cellular localization prediction (LocP)**：分类任务评估一个蛋白质的定位为10个亚细胞类
+- **Sub-cellular localization prediction (LocP)**: Ten-class subcellular localization.
 
 ##### Generation of Novel Protein Sequences
 
-- **High-N (Family-Based Variant Generation)**：选择 malate dehydrogenase (MDH)
-- **One-Shot (Single Sequence Variant Generation)**：单链SARS-Cov-2纳米抗体（nanobody），该纳米抗体在2022年6月之后被添加到CoV-AbDab数据集中。这样做是为了确保生成的序列是模型在无监督训练中没有见过的新序列。研究进行了七个独立的虚拟生成实验，使用了七个不同的纳米抗体（Nb-007、F6、Nb 1-23、Nb 1-25、Nb 2-62、Nb 2-65和Nb 2-67）。所有选定的纳米抗体都具有经过实验证实的结构，以便将它们与生成的候选纳米抗体的预测结构进行比较
+- **High-N (Family-Based Variant Generation)**: Malate dehydrogenase (MDH).
+- **One-Shot (Single Sequence Variant Generation)**: Single-chain SARS-CoV-2 nanobody added to CoV-AbDab after June 2022 so generated sequences are unseen during unsupervised training. Seven virtual generation runs used seven nanobodies (Nb-007, F6, Nb 1-23, Nb 1-25, Nb 2-62, Nb 2-65, Nb 2-67), all with experimental structures for comparison to predicted candidates.
 
 #### Downstream Model: ConvBERT
 
-最顶层的监督模型有两类：
+Top supervised heads fall into two main types:
 
-- 一类是ProtTrans中所做的实验将cnn作为顶部/下游模型/层，这些模型被证明在与自我注意相结合时表现更好
-- 另一类是linear layers，加上激活函数和softmax
-- 当然还有第三种，但不是所有情况都共享的，只有回归或二分类任务，在有监督的网络前使用一个max pooling
+- CNN top layers as in ProtTrans, which work well combined with self-attention.
+- Linear layers with activation and softmax.
+- A third variant—not shared everywhere—uses max pooling before the supervised head for regression or binary classification.
 
-一般来说，对特定于任务的优化，不同的模型具有不同的超参数和配置集，可以导致更好的下游性能。本文统一了这个最好模型的设置，可以实现更好的广义性能
+Task-specific tuning uses different hyperparameters; this work unifies the best settings across tasks for stronger general performance.
 
 #### Variant Generation Model
 
-对基于家族的auto-regressive微调和单蛋白生成的MLM
+Family-based autoregressive fine-tuning and single-protein MLM generation.
 
-自回归微调的时候冻住了encoder只改变decoder，训练了2个epoch，最大序列长度256，最大prompt长度20，lr3e-4，epsilon value e-8，train batchsize 4，evaluation batchsize 8，beam search 10，temperature value 1,1.5,2。先改变temperature再用beam search采样
+For autoregressive fine-tuning, the encoder is frozen and only the decoder is trained for 2 epochs: max sequence length 256, max prompt length 20, lr 3e-4, epsilon 1e-8, train batch size 4, eval batch size 8, beam search 10, temperatures 1, 1.5, and 2. Sampling applies temperature first, then beam search.
 
-MLM用了两组参数，50%MLM和t=1，40%MLM和t=1.5，beam search 30
+MLM uses two settings: 50% masking with *t* = 1, and 40% masking with *t* = 1.5, beam search 30.
 
 #### Computational Power (Software & Hardware)
 
-Flax & Jax，TPU
+Flax and JAX on TPU.
 
 #### Data & Model Experimentation
 
@@ -162,61 +165,61 @@ Flax & Jax，TPU
 - **Masking Strategy**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab3.png" alt="avatar" style="zoom:100%;" /></div>
   - Exp1
-    - 1-gram mask，每个出现的氨基酸至少被mask一次，比如 “*ABCAAAAAAA....A*”长度是20，按15%掩码，那么mask一个A，一个B和一个C
-    - 有性能提升
+    - 1-gram mask: each distinct amino acid is masked at least once; e.g., for “*ABCAAAAAAA....A*” of length 20 at 15% masking, mask one A, one B, and one C.
+    - Performance improves.
   - Exp2
-    - 3-gram mask，比如“*ABCDEFG*”，如果D选中了，那么CDE都被mask
-    - 所有下游任务都性能下降
+    - 3-gram mask: e.g., “*ABCDEFG*”; if D is selected, C, D, and E are masked.
+    - All downstream tasks degrade.
   - Exp3
-    - 1-gram mask，在msak的地方算loss，比如 “*ABCDEFG*”，选择mask了DF，那么只在DF上算Loss，而不是重建整个input
-    - 所有下游任务性能下降
+    - 1-gram mask with loss only at masked positions; e.g., “*ABCDEFG*” with D and F masked—loss on D and F only, not full-sequence reconstruction.
+    - All downstream tasks degrade.
   - Exp4
-    - 1-Gram Span Partial Demasking/Reconstruction：改变了输入和目标之间的映射方式，如果输入序列是“ABCDEFG”，标记“C”和“G”被掩码，那么输入序列会被表示为“A, B, [MASK0], D, E, F, [MASK1]”，然后被重构为“[MASK0], C, [MASK1], G”
-    - 相较于exp有性能提升
+    - 1-gram span partial demasking/reconstruction: changes input–target mapping; for “ABCDEFG” with C and G masked, input “A, B, [MASK0], D, E, F, [MASK1]” reconstructs “[MASK0], C, [MASK1], G”.
+    - Improves over earlier exps.
   - Exp5
-    - 把exp4用在exp1上面，比如 “*ABCAAAAAAA....A*”长度是20，输入是“[*MASK*0]*,* [*MASK*1]*,* [*MASK*2]*, A, A, A, A, ...., A*”，重构为 “*A, B, C,* [*MASK*0]”，后面这个[MSAK0]是单个token映射到17个输入token
-    - 性能下降
+    - Exp4 on Exp1-style sequences; e.g., length-20 “*ABCAAAAAAA....A*” with partial mapping; single [MASK0] token maps to 17 input tokens.
+    - Performance drops.
   - Exp6
-    - exp4的变体，输入是 “*ABCDEFG*” ，选择CDE做mask，输入 “*A, B,* [*MASK*0]*, F, G*”重建为 “[*MASK*0]*,* [*MASK*1]*,* [*MASK*2]”
-    - 没用
-  - exp4最有用，然后沿用到剩下的实验
+    - Exp4 variant: “*ABCDEFG*” with C, D, E masked → input “*A, B,* [*MASK*0]*, F, G*”, target “[*MASK*0]*,* [*MASK*1]*,* [*MASK*2]”.
+    - Not useful.
+  - Exp4 is most helpful and is used in subsequent experiments.
 - **Masking Probability**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab4.png" alt="avatar" style="zoom:100%;" /></div>
-  - exp7：10%
-  - exp8：20%
-  - exp9：30%
+  - exp7: 10%
+  - exp8: 20%
+  - exp9: 30%
 
 ##### Architecture
 
 - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab5.png" alt="avatar" style="zoom:100%;" /></div>
 - **Number of Encoder-Decoder layers**
-  - 对于Prot-T5而言，使用decoder并没有对下游任务产生显著提升，但是删掉可以减少一半的推理成本，所以做了编码器大于解码器的实验（不对称编码-解码）
-  - exp10：54encoder-18decoder
-  - exp11：48encoder-24decoder
-  - exp12：24encoder-48decoder
+  - For Prot-T5, the decoder did not greatly help downstream tasks, but removing it halves inference cost, so they try encoder-heavy asymmetric stacks.
+  - exp10: 54 encoder / 18 decoder
+  - exp11: 48 encoder / 24 decoder
+  - exp12: 24 encoder / 48 decoder
 
 - **Depth vs. Width Variation layers**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab6.png" alt="avatar" style="zoom:100%;" /></div>
-  - exp13：embedding 768到1024，48encdoer-24decoder到24encoder-12decoder
+  - exp13: embedding 768→1024, 48 encoder / 24 decoder→24 encoder / 12 decoder
 - **Activation Function**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab7.png" alt="avatar" style="zoom:100%;" /></div>
-  - 使用经典的Relu测试了两个组合，先前用的Gated-GELU
+  - Classic ReLU tested in two configs; prior work used Gated-GELU.
   - exp14
-    - 62-layer encoder and 11-layer decoder with an embedding dimension of 768
+    - 62-layer encoder and 11-layer decoder, embedding dimension 768
   - exp15
-    - 48- layer encoder and 24-layer decoder, also with an embedding dimension of 768
+    - 48-layer encoder and 24-layer decoder, embedding dimension 768
 - **Relative Positional Embedding**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab8.png" alt="avatar" style="zoom:100%;" /></div>
-  - 使用了一个简化的相对位置编码
-  - exp16：嵌入维度32，offset 256
-  - exp17：嵌入维度32，offset 64，发现64比默认的128和更大的256都好
-  - exp18：嵌入维度64，offset 64
-  - exp19：嵌入维度16，offset 64
-  - exp20：嵌入维度64，offset 128
-  - exp21：嵌入维度128，offset 256
+  - A simplified relative positional encoding.
+  - exp16: embedding dim 32, offset 256
+  - exp17: embedding dim 32, offset 64—64 beats default 128 and larger 256
+  - exp18: embedding dim 64, offset 64
+  - exp19: embedding dim 16, offset 64
+  - exp20: embedding dim 64, offset 128
+  - exp21: embedding dim 128, offset 256
 - **Weight Typing**
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Ankh/tab9.png" alt="avatar" style="zoom:100%;" /></div>
-  - 是否绑定embedding的权重
+  - Whether to tie embedding weights.
 
 ##### Dataset
 

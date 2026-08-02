@@ -1,0 +1,158 @@
+START translate _posts/zh/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md
+START translate _posts/zh/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md
+START translate _posts/zh/CV/2021-06-23-Perceiver：General Perception with Iterative Attention.md
+START translate _posts/zh/CV/2021-11-06-Masked Autoencoders Are Scalable Vision Learners.md
+START translate _posts/zh/CV/2021-09-17-ActionCLIP：A New Paradigm for Video Action Recognition.md
+START translate _posts/zh/CV/2021-07-06-How Much Can CLIP Benefit Vision-and-Language Tasks？.md
+OK translate _posts/zh/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md
+START translate _posts/zh/CV/2021-11-10-Align before Fuse：Vision and Language Representation Learning with Momentum Dist.md
+OK translate _posts/zh/CV/2021-07-06-How Much Can CLIP Benefit Vision-and-Language Tasks？.md
+START translate _posts/zh/CV/2021-11-25-Intriguing Properties of Vision Transformers.md
+OK translate _posts/zh/CV/2021-11-06-Masked Autoencoders Are Scalable Vision Learners.md
+START translate _posts/zh/CV/2021-12-01-VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts.md
+OK translate _posts/zh/CV/2021-05-08-CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval.md
+START translate _posts/zh/CV/2022-01-10-Language-driven Semantic Segmentation.md
+OK translate _posts/zh/CV/2021-06-23-Perceiver：General Perception with Iterative Attention.md
+START translate _posts/zh/CV/2022-01-17-Grounded Language-Image Pre-training.md
+OK translate _posts/zh/CV/2021-09-17-ActionCLIP：A New Paradigm for Video Action Recognition.md
+START translate _posts/zh/CV/2022-01-24-BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Under.md
+OK translate _posts/zh/CV/2021-11-25-Intriguing Properties of Vision Transformers.md
+START translate _posts/zh/CV/2022-01-29-Open-vocabulary Object Detection via Vision and Language Knowledge Distillation.md
+OK translate _posts/zh/CV/2021-11-10-Align before Fuse：Vision and Language Representation Learning with Momentum Dist.md
+START translate _posts/zh/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md
+OK translate _posts/zh/CV/2022-01-10-Language-driven Semantic Segmentation.md
+START translate _posts/zh/CV/2022-04-13-Hierarchical Text-Conditional Image Generation with CLIP Latents.md
+OK translate _posts/zh/CV/2021-12-01-VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts.md
+START translate _posts/zh/CV/2022-06-05-GLIPv2：Unifying Localization and Vision-Language Understanding.md
+OK translate _posts/zh/CV/2022-01-17-Grounded Language-Image Pre-training.md
+START translate _posts/zh/CV/2022-06-23-PointCLIP：Point Cloud Understanding by CLIP.md
+OK translate _posts/zh/CV/2022-01-24-BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Under.md
+START translate _posts/zh/CV/2022-07-12-Contrastive Deep Supervision.md
+OK translate _posts/zh/CV/2022-01-29-Open-vocabulary Object Detection via Vision and Language Knowledge Distillation.md
+START translate _posts/zh/CV/2022-07-18-GroupViT：Semantic Segmentation Emerges from Text Supervision.md
+OK translate _posts/zh/CV/2022-06-05-GLIPv2：Unifying Localization and Vision-Language Understanding.md
+START translate _posts/zh/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md
+OK translate _posts/zh/CV/2022-06-23-PointCLIP：Point Cloud Understanding by CLIP.md
+START translate _posts/zh/CV/2022-08-27-CoCa：Contrastive Captioners are Image-Text Foundation Models.md
+OK translate _posts/zh/CV/2022-04-13-Hierarchical Text-Conditional Image Generation with CLIP Latents.md
+START translate _posts/zh/CV/2022-10-10-Can Language Understand Depth？.md
+OK translate _posts/zh/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md
+START translate _posts/zh/CV/2023-01-09-MixGen：A New Multi-Modal Data Augmentation.md
+OK translate _posts/zh/CV/2022-07-12-Contrastive Deep Supervision.md
+START translate _posts/zh/CV/2023-01-15-Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language .md
+OK translate _posts/zh/CV/2022-07-18-GroupViT：Semantic Segmentation Emerges from Text Supervision.md
+START translate _posts/zh/CV/2023-02-06-AIM：Adapting Image Models for Efficient Video Action Recognition.md
+OK translate _posts/zh/CV/2022-08-27-CoCa：Contrastive Captioners are Image-Text Foundation Models.md
+START translate _posts/zh/CV/2023-03-09-Improved Baselines with Momentum Contrastive Learning.md
+OK translate _posts/zh/CV/2022-10-10-Can Language Understand Depth？.md
+START translate _posts/zh/CV/2024-02-20-T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-I.md
+OK translate _posts/zh/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md
+START translate _posts/zh/CV/2024-10-24-Movie Gen：A Cast of Media Foundation Models.md
+OK translate _posts/zh/CV/2023-01-09-MixGen：A New Multi-Modal Data Augmentation.md
+START translate _posts/zh/IR/2019-07-25-MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation.md
+OK translate _posts/zh/CV/2023-02-06-AIM：Adapting Image Models for Efficient Video Action Recognition.md
+START translate _posts/zh/IR/2020-07-25-How to Retrain Recommender System？A Sequential Meta-Learning Method.md
+OK translate _posts/zh/CV/2023-01-15-Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language .md
+START translate _posts/zh/IR/2022-01-09-Deep Meta-learning in Recommendation Systems：A Survey.md
+OK translate _posts/zh/CV/2023-03-09-Improved Baselines with Momentum Contrastive Learning.md
+START translate _posts/zh/IR/2022-11-01-A Neural Corpus Indexer for Document Retrieval.md
+OK translate _posts/zh/CV/2024-10-24-Movie Gen：A Cast of Media Foundation Models.md
+START translate _posts/zh/IR/2022-11-28-Transformer Memory as a Differentiable Search Index.md
+OK translate _posts/zh/IR/2019-07-25-MeLU：Meta-Learned User Preference Estimator for Cold-Start Recommendation.md
+START translate _posts/zh/ML/2017-07-18-Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks.md
+OK translate _posts/zh/CV/2024-02-20-T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-I.md
+START translate _posts/zh/ML/2020-03-24-A Comprehensive Survey on Graph Neural Networks.md
+OK translate _posts/zh/IR/2022-01-09-Deep Meta-learning in Recommendation Systems：A Survey.md
+START translate _posts/zh/ML/2020-06-13-Contrastive Multi-View Representation Learning on Graphs.md
+OK translate _posts/zh/IR/2022-11-01-A Neural Corpus Indexer for Document Retrieval.md
+START translate _posts/zh/ML/2020-07-03-Neural Subgraph Matching.md
+OK translate _posts/zh/IR/2020-07-25-How to Retrain Recommender System？A Sequential Meta-Learning Method.md
+START translate _posts/zh/ML/2020-07-13-Deep Graph Contrastive Representation Learning.md
+OK translate _posts/zh/ML/2020-03-24-A Comprehensive Survey on Graph Neural Networks.md
+START translate _posts/zh/ML/2020-08-20-GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training.md
+OK translate _posts/zh/ML/2017-07-18-Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks.md
+START translate _posts/zh/ML/2020-12-06-Graph Contrastive Learning with Augmentations.md
+OK translate _posts/zh/IR/2022-11-28-Transformer Memory as a Differentiable Search Index.md
+START translate _posts/zh/ML/2022-03-02-AI Index Report.md
+OK translate _posts/zh/ML/2020-06-13-Contrastive Multi-View Representation Learning on Graphs.md
+START translate _posts/zh/ML/2022-10-06-Robust Speech Recognition via Large-Scale Weak Supervision.md
+OK translate _posts/zh/ML/2020-07-13-Deep Graph Contrastive Representation Learning.md
+START translate _posts/zh/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md
+OK translate _posts/zh/ML/2020-07-03-Neural Subgraph Matching.md
+START translate _posts/zh/OS/2019-12-06-GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism.md
+OK translate _posts/zh/ML/2020-08-20-GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training.md
+START translate _posts/zh/OS/2020-03-13-Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Paralle.md
+OK translate _posts/zh/ML/2020-12-06-Graph Contrastive Learning with Augmentations.md
+START translate _posts/zh/OS/2020-11-09-ZeRO：Memory Optimizations Toward Training Trillion Parameter Models.md
+OK translate _posts/zh/ML/2022-03-02-AI Index Report.md
+START translate _posts/zh/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md
+OK translate _posts/zh/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md
+START translate _posts/zh/SE/2017-11-02-A parallel corpus of Python functions and documentation strings for automated co.md
+OK translate _posts/zh/ML/2022-10-06-Robust Speech Recognition via Large-Scale Weak Supervision.md
+START translate _posts/zh/SE/2018-05-27-Deep code search.md
+OK translate _posts/zh/OS/2019-12-06-GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism.md
+START translate _posts/zh/SE/2018-05-28-Deep code comment generation.md
+OK translate _posts/zh/OS/2020-11-09-ZeRO：Memory Optimizations Toward Training Trillion Parameter Models.md
+START translate _posts/zh/SE/2019-05-25-A Neural Model for Generating Natural Language Summaries of Program Subroutines.md
+OK translate _posts/zh/OS/2020-03-13-Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Paralle.md
+START translate _posts/zh/SE/2019-05-25-A Novel Neural Source Code Representation Based on Abstract Syntax Tree.md
+OK translate _posts/zh/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md
+START translate _posts/zh/SE/2019-08-10-Commit Message Generation for Source Code Changes.md
+OK translate _posts/zh/SE/2017-11-02-A parallel corpus of Python functions and documentation strings for automated co.md
+START translate _posts/zh/SE/2020-05-01-A Transformer-based Approach for Source Code Summarization.md
+OK translate _posts/zh/SE/2018-05-27-Deep code search.md
+START translate _posts/zh/SE/2020-07-13-Graph-based, Self-Supervised Program Repair from Diagnostic Feedback.md
+OK translate _posts/zh/SE/2018-05-28-Deep code comment generation.md
+START translate _posts/zh/SE/2020-07-25-Contrastive Code Representation Learning.md
+OK translate _posts/zh/SE/2019-05-25-A Neural Model for Generating Natural Language Summaries of Program Subroutines.md
+START translate _posts/zh/SE/2020-11-18-Improved Automatic Summarization of Subroutines via Attention to File Context.md
+OK translate _posts/zh/SE/2019-05-25-A Novel Neural Source Code Representation Based on Abstract Syntax Tree.md
+START translate _posts/zh/SE/2021-01-01-Code Summarization with Structure-induced Transformer.md
+OK translate _posts/zh/SE/2020-05-01-A Transformer-based Approach for Source Code Summarization.md
+START translate _posts/zh/SE/2021-01-27-Automating just-in-time comment updating.md
+OK translate _posts/zh/SE/2019-08-10-Commit Message Generation for Source Code Changes.md
+START translate _posts/zh/SE/2021-03-12-A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts.md
+OK translate _posts/zh/SE/2020-07-13-Graph-based, Self-Supervised Program Repair from Diagnostic Feedback.md
+START translate _posts/zh/SE/2021-07-14-Evaluating Large Language Models Trained on Code.md
+OK translate _posts/zh/SE/2020-07-25-Contrastive Code Representation Learning.md
+START translate _posts/zh/SE/2021-07-23-Ensemble Models for Neural Source Code Summarization of Subroutines.md
+OK translate _posts/zh/SE/2020-11-18-Improved Automatic Summarization of Subroutines via Attention to File Context.md
+START translate _posts/zh/SE/2021-07-23-Graph-Augmented Code Summarization in Computational Notebooks.md
+OK translate _posts/zh/SE/2021-01-27-Automating just-in-time comment updating.md
+START translate _posts/zh/SE/2021-08-10-Learning Sequential and Structural Information for Source Code Summarization.md
+OK translate _posts/zh/SE/2021-07-23-Ensemble Models for Neural Source Code Summarization of Subroutines.md
+START translate _posts/zh/SE/2021-09-02-CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Unde.md
+OK translate _posts/zh/SE/2021-03-12-A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts.md
+START translate _posts/zh/SE/2021-09-13-GraphCodeBERT：Pre-training Code Representations with Data Flow.md
+OK translate _posts/zh/SE/2021-01-01-Code Summarization with Structure-induced Transformer.md
+START translate _posts/zh/SE/2022-03-07-Competition-Level Code Generation with AlphaCode.md
+OK translate _posts/zh/SE/2021-07-14-Evaluating Large Language Models Trained on Code.md
+START translate _posts/zh/SE/2022-05-01-A Survey of Deep Learning Models for Structural Code Understanding.md
+OK translate _posts/zh/SE/2021-07-23-Graph-Augmented Code Summarization in Computational Notebooks.md
+START translate _posts/zh/SE/2022-05-04-CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive .md
+OK translate _posts/zh/SE/2021-08-10-Learning Sequential and Structural Information for Source Code Summarization.md
+START translate _posts/zh/SE/2022-05-20-Impact of Evaluation Methodologies on Code Summarization.md
+OK translate _posts/zh/SE/2021-09-02-CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Unde.md
+START translate _posts/zh/SE/2022-05-25-A Convolutional Attention Network  for Extreme Summarization of Source Code.md
+OK translate _posts/zh/SE/2022-03-07-Competition-Level Code Generation with AlphaCode.md
+START translate _posts/zh/SE/2022-06-01-Automatic source code summarization with graph attention networks.md
+OK translate _posts/zh/SE/2022-05-01-A Survey of Deep Learning Models for Structural Code Understanding.md
+START translate _posts/zh/SE/2022-06-08-Learning code summarization from a small and local dataset.md
+OK translate _posts/zh/SE/2022-05-04-CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive .md
+START translate _posts/zh/SE/2022-06-28-Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarizatio.md
+OK translate _posts/zh/SE/2021-09-13-GraphCodeBERT：Pre-training Code Representations with Data Flow.md
+START translate _posts/zh/SE/2022-07-05-AST-trans：code summarization with efficient tree-structured attention.md
+OK translate _posts/zh/SE/2022-05-20-Impact of Evaluation Methodologies on Code Summarization.md
+START translate _posts/zh/SE/2022-07-05-Cross-Domain Deep Code Search with Few-Shot Meta Learning.md
+OK translate _posts/zh/SE/2022-05-25-A Convolutional Attention Network  for Extreme Summarization of Source Code.md
+START translate _posts/zh/SE/2022-09-18-CodeBERT：A Pre-Trained Model for Programming and Natural Languages.md
+OK translate _posts/zh/SE/2022-06-01-Automatic source code summarization with graph attention networks.md
+START translate _posts/zh/SE/2022-10-20-HELoC：Hierarchical Contrastive Learning of Source Code Representation.md
+OK translate _posts/zh/SE/2022-06-08-Learning code summarization from a small and local dataset.md
+START translate _posts/zh/SE/2022-11-10-HAConvGNN：Hierarchical Attention Based Convolutional Graph Neural Network for Co.md
+OK translate _posts/zh/SE/2022-06-28-Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarizatio.md
+OK translate _posts/zh/SE/2022-09-18-CodeBERT：A Pre-Trained Model for Programming and Natural Languages.md
+OK translate _posts/zh/SE/2022-07-05-Cross-Domain Deep Code Search with Few-Shot Meta Learning.md
+OK translate _posts/zh/SE/2022-10-20-HELoC：Hierarchical Contrastive Learning of Source Code Representation.md
+OK translate _posts/zh/SE/2022-07-05-AST-trans：code summarization with efficient tree-structured attention.md
+OK translate _posts/zh/SE/2022-11-10-HAConvGNN：Hierarchical Attention Based Convolutional Graph Neural Network for Co.md

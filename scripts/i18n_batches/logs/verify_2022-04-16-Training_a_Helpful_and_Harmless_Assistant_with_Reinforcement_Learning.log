@@ -1,0 +1,4 @@
+**FIXED** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CL/2022-04-16-Training a Helpful and Harmless Assistant with Reinforcement Learning from Human.md`  
+**issues=** Red Teaming 小节将 “schismatic behavior” 改为 “conflicting behaviors”（对应中文「两边同时训练容易导致分裂」）
+
+**核对摘要：** 英文全文与中文章节、图片、链接、公式一致；正文无中文；`lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致；其余 frontmatter 与数字/模型名均保留。

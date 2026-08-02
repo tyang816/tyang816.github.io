@@ -1,0 +1,12 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/ML/2020-03-24-A Comprehensive Survey on Graph Neural Networks.md` issues=`§1 subject: “Graphs” → “Graph neural networks” (aligns with Chinese taxonomy of GNN types)`
+
+**核对摘要**
+
+| 项 | 结果 |
+|---|---|
+| 结构与中文版一致（1–4 及 1.1–1.4、链接、`<hr>`） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` = `/zh/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/` | 通过 |
+| IEEE 链接、RecGNNs/ConvGNNs/GAEs/STGNNs 等 | 通过 |
+
+**修改**：第 1 条原写 “Graphs are categorized as … RecGNNs”，主语易误解；已改为 “Graph neural networks are categorized as …”，与中文「循环/卷积/时空/自编码」四类 GNN 划分一致。

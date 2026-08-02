@@ -5,19 +5,22 @@ categories: [SE]
 tags: [Transformer, GNN]
 proceedings: ACL
 date: 2021-08-10
+lang: en
+alt_url: /zh/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+permalink: /se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
 ---
 
-> 论文地址：[Learning Sequential and Structural Information for Source Code Summarization](https://aclanthology.org/2021.findings-acl.251)
+> Paper: [Learning Sequential and Structural Information for Source Code Summarization](https://aclanthology.org/2021.findings-acl.251)
 
-## mAST+GCN编码结构信息，Transformer编码序列信息
+## mAST + GCN for structure, Transformer for sequence
 
 ### Abstract
 
-用mAST+GCN编码结构信息，然后将序列的AST节点经过Transformer编码
+Structural information is encoded with mAST and a GCN; the resulting sequence of AST nodes is then encoded by a Transformer.
 
 ### Introduction
 
-为了更好地表示结构信息，提出了修改AST，同层次间添加了兄弟边来表示相邻的块
+To represent structural information more effectively, the authors modify the AST by adding sibling edges among nodes at the same level to capture adjacent blocks.
 
 ### Model
 
@@ -25,19 +28,19 @@ date: 2021-08-10
 
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img1.png" alt="avatar" style="zoom:50%;" /></div>
 
-对于 Java 代码是添加同层次相邻边
+For Java code, adjacent edges are added between same-level neighbors.
 
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img2.png" alt="avatar" style="zoom:50%;" />
 
 
-对于 Python 代码作者发现函数名太重要了，就增加了“函数名”节点，然后加边
+For Python, the authors find function names especially important and therefore introduce a dedicated function-name node with additional edges.
 
 #### Proposed Model
 
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img3.png" alt="avatar" style="zoom:50%;" />
 
 
-作者指出 mAST 能够捕捉相邻块信息， GCN 能够将结构相邻节点的表示生成得在语义空间中比较相近，transformer 能够捕获长距离相同块中的依赖信息
+The authors argue that mAST captures information from adjacent blocks, GCN brings representations of structurally neighboring nodes closer in semantic space, and the Transformer models long-range dependencies within the same block.
 
 ### Experiment
 
@@ -46,17 +49,17 @@ date: 2021-08-10
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img5.png" alt="avatar" style="zoom:50%;" />
 
 
-消融实验和数据如上
+Ablation results and datasets are shown above.
 
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img6.png" alt="avatar" style="zoom:50%;" />
 
 
-作者还做了实验将 GCN放在 Transformer 编码器前后位置的影响，其实放哪，还是前后都放差距不大，放前面感觉还好一点
+The authors also study where to place the GCN relative to the Transformer encoder (before, after, or both). Performance differs little across placements; placing GCN before the encoder appears slightly preferable.
 
 <div align=center><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/mAST_GCN_Trans/mAST_GCN_Trans-img7.png" alt="avatar" style="zoom:50%;" />
 
 
-以及 GCN 层数的实验
+Experiments on the number of GCN layers are also reported.
 
 <HR align=left color=#987cb9 SIZE=1>
 

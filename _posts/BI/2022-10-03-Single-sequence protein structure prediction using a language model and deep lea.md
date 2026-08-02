@@ -5,45 +5,48 @@ categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Nature Biotechnology
 date: 2022-10-03
+lang: en
+alt_url: /zh/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
+permalink: /bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
 ---
 
-> 论文地址：[Single-sequence protein structure prediction using a language model and deep learning](https://www.nature.com/articles/s41587-022-01432-w)
+> Paper: [Single-sequence protein structure prediction using a language model and deep learning](https://www.nature.com/articles/s41587-022-01432-w)
 >
 
-## RGN2：单条蛋白质直接预测结构
+## RGN2: direct single-sequence protein structure prediction
 
 ### Abstract
 
-AlphaFold2和其相关的一些计算系统预测蛋白结构仍然存在一些挑战：（1）预测不能产生MSA的孤儿蛋白和快速进化的蛋白质；(2)快速探索设计的结构；(3)了解溶液中自发多肽折叠的规则。因此使用可微循环几何网络（RGN）和蛋白质语言模型（AminoBERT），平均而言，RGN2在孤儿蛋白和设计蛋白类别上的性能优于AlphaFold2和RoseTTAFold，同时使计算时间减少了10^6倍
+AlphaFold2 and related computational systems still face challenges for structure prediction: (1) proteins that cannot yield an MSA, including orphan and rapidly evolving proteins; (2) fast exploration of designed structures; (3) understanding the rules of spontaneous peptide folding in solution. The authors combine a recurrent geometric network (RGN) with a protein language model (AminoBERT). On average, RGN2 outperforms AlphaFold2 and RoseTTAFold on orphan and designed protein categories while reducing compute time by six orders of magnitude ($10^6$).
 
 ### Introduction
 
-AlphaFold2（AF2）在最近CASP14预测挑战的部分，折叠蛋白质目标取得了高性能表明，当MSA可用，机器学习方法可以以足够的准确性预测蛋白质结构，能够与x射线晶体学，低温电子显微镜和核磁共振（NMR）等实际手段相比
+High performance of AlphaFold2 (AF2) on folded targets in the recent CASP14 prediction challenge shows that, when an MSA is available, machine learning can predict protein structures accurately enough to compare with experimental methods such as X-ray crystallography, cryo-electron microscopy, and nuclear magnetic resonance (NMR).
 
-但预测单条序列结构仍然是一项挑战：缺少序列同源信息时，在基因组蛋白序列\~20%，在真核生物和病毒蛋白\~11%，蛋白质设计和研究量化序列变体的功能和免疫性的影响仍然需要单序列结构预测
+Predicting structure from a single sequence remains difficult: without homologous sequence information, roughly ~20% of proteins in genomes and ~11% in eukaryotic and viral proteomes lack usable MSAs. Protein design and studies that quantify how sequence variants affect function and immunogenicity still require single-sequence structure prediction.
 
-尽管对于允许使用msa的蛋白质，RGN2的性能不如基于msa的方法，但RGN2的速度却快了6个数量级
+Although RGN2 is less accurate than MSA-based methods for proteins where MSAs are available, it is six orders of magnitude faster.
 
 ### Result
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RGN2/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-RGN2使用基于Frenet–Serret公式的方法，这种研究蛋白质几何结构的方法本质上是翻译和旋转不变的，这是溶液中多肽的一个关键特性，使用基于AF2rank的协议28改进了RGN2预测的结构，该协议推断了主链和侧链原子
+RGN2 uses a Frenet–Serret formulation for protein geometry. This representation is inherently translation- and rotation-invariant—a key property of peptides in solution. An AF2rank-based protocol (ref. 28) refines predicted structures by inferring backbone and side-chain atoms.
 
-- AminoBERT：12层transformer，用从Uniparc sequence database获取的250M蛋白质序列
+- AminoBERT: 12-layer Transformer trained on 250M protein sequences from the UniParc sequence database
 
-  - 在每个序列中，同时有2-8个连续的残基被mask
+  - In each sequence, 2–8 consecutive residues are masked simultaneously
 
-  - chunk permutaion：交换连续的蛋白质片段，鼓励transformer从序列中发现整体信息
+  - Chunk permutation: swaps contiguous protein segments to encourage the Transformer to capture global sequence context
 
-  - AminoBERT是和RGN2分别训练的，不需要微调
+  - AminoBERT is trained separately from RGN2 and does not require fine-tuning
 
-- RNG2：
+- RGN2:
 
-  - local residue geometry是由前一帧与当前帧相关联的单一旋转矩阵描述的，与之前在RGN1中使用的扭转角相比，这种旋转和平移不变参数化的扭转角有两个优势
-    - 它确保了指定一个单一的生物物理参数，即~3.8A的顺序Cα−Cα距离（对应于一个反式构象），只导致物理上可实现的局部几何。这克服了RGN1的一个限制，即对一些扭转角产生了化学上不现实的值
-    - 通过降低了链扩展计算的计算成本的10倍，这通常主导着RGN的训练和推理时间
-  - 训练采用ProteinNet12数据集和一个从ASTRAL SCOPe数据集衍生出的单蛋白质结构域
+  - Local residue geometry is described by a single rotation matrix relating the previous frame to the current one. Compared with torsion angles used in RGN1, this rotation- and translation-invariant parameterization has two advantages:
+    - Specifying a single biophysical parameter—the sequential Cα−Cα distance of ~3.8 Å (trans peptide bond geometry)—yields only physically realizable local geometry. This overcomes an RGN1 limitation where some torsion angles produced chemically unrealistic values
+    - It reduces the cost of chain-extension computations by ~10×, which typically dominates RGN training and inference time
+  - Training uses the ProteinNet12 dataset and single protein domains derived from the ASTRAL SCOPe dataset
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/RGN2/tab1.png" alt="avatar" style="zoom:90%;" /></div>
 

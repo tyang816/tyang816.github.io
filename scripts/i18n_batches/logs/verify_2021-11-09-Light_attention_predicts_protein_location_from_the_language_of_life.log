@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文相同的结构（摘要、Introduction 两小节、Methods/Data/Models、Results 及 6 张图、分隔线），无截断。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/Light-attention-predicts-protein-location-from-the-language-of-life/`）；英文无 `permalink`；其余字段与中文一致。
+4. **链接与资源**：论文链接、GitHub、图片 URL 与 zoom 一致。
+5. **章节标题**：与中文一一对应（含 Introduction 下两个 `####`）。
+6. **表述**：英文为完整学术笔记，已补全中文摘要里省略的「定位注释」等含义；术语（HBI、MSA、DeepLoc、setHARD、Light Attention）合理。
+7. **数字与专名**：未改动。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-11-09-Light attention predicts protein location from the language of life.md`

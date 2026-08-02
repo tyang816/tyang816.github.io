@@ -1,0 +1,10 @@
+_posts/zh/CL/2019-02-02-Parameter-Efficient Transfer Learning for NLP.md
+_posts/zh/CL/2019-05-08-Unified Language Model Pre-training for Natural Language Understanding and Gener.md
+_posts/zh/CL/2019-07-06-Language Models are Unsupervised Multitask Learners.md
+_posts/zh/CL/2019-07-26-RoBERTa：A Robustly Optimized BERT Pretraining Approach.md
+_posts/zh/CL/2019-08-01-Improving Robustness of Neural Machine Translation with Multi-task Learning.md
+_posts/zh/CL/2020-05-14-Language Models are Few-Shot Learners.md
+_posts/zh/CL/2021-01-13-Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning.md
+_posts/zh/CL/2021-11-01-Rethinking Data Augmentation for Low-Resource Neural Machine Translation：A Multi.md
+_posts/zh/CL/2022-01-16-Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficie.md
+_posts/zh/CL/2022-01-28-Chain of Thought Prompting Elicits Reasoning in Large Language Models.md

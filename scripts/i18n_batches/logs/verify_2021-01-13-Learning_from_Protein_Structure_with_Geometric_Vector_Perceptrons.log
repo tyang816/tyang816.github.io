@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文同结构（Abstract → Introduction → Methods 及子节 → Evaluation → Experiments → `<hr>`），无截断。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文一致。
+4. **资源**：论文/Code 链接、7 张图 URL、公式与中文一致。
+5. **结构**：标题层级与中文对齐（含主标题与 “Geometric vector perceptrons” 等）。
+6. **表述**：学术英文通顺；Abstract 中中文笔误 “computaional” 在英文中已为 “computational”。
+7. **专有名词与数据**：CATH4.2、TS50、CASP、CPD、MQA、GVP 等未改。
+
+中英文均保留 Network Architecture 下单独的 `*` 行，属原文笔记格式，非英文漏译。
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-01-13-Learning from Protein Structure with Geometric Vector Perceptrons.md

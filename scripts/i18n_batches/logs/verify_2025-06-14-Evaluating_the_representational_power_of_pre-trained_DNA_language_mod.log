@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2025-06-14-Evaluating the representational power of pre-trained DNA language models for reg.md`
+
+按 `scripts/i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文版一致（Abstract → Introduction → Results 1–6 → Discussion） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` 与中文 `permalink` 一致，英文无 `permalink` | 通过 |
+| 论文链接、GitHub、fig1–6 / tab1 图片 URL 一致 | 通过 |
+| 术语与专名（HepG2、K562、Sei、GPN、ASCOT、eCLIP-seq 等）保留 | 通过 |
+
+英文版完整，且 Discussion 中中文原文截断处（「是否会最终会涌现s」）在英文中已写全；eCLIP 的英文释义（crosslinking and immunoprecipitation）也正确。无需修改。

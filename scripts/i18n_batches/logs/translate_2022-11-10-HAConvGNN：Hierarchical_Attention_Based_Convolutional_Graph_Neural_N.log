@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入英文笔记：  
+`_posts/SE/2022-11-10-HAConvGNN：Hierarchical Attention Based Convolutional Graph Neural Network for Co.md`
+
+- **Frontmatter**：`lang: en`；`alt_url` 指向中文 `permalink`（`/zh/se/HAConvGNN：Hierarchical-Attention-Based-Convolutional-Graph-Neural-Network-for-Co/`）；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：学术英文翻译；保留链接、图片 URL 与 HTML 分隔线；blockquote 标签为 `Paper:`。
+- 正文无残留中文（标题中的全角冒号与文件名一致，与仓库其他 SE 帖相同）。

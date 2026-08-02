@@ -1,0 +1,7 @@
+**DONE**
+
+已将 `_posts/ML/2020-12-06-Graph Contrastive Learning with Augmentations.md` 写好，要点如下：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ml/Graph-Contrastive-Learning-with-Augmentations/`（对应中文 `permalink`）；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：学术英文译文；blockquote 为 Paper / Code；图片链接与 `<HR>` 保留；Obs. 1–5 等结构完整。
+- **校验**：目标路径存在，正文中无中文。

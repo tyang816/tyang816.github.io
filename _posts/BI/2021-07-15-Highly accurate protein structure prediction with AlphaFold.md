@@ -5,30 +5,33 @@ categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Nature
 date: 2021-07-15
+lang: en
+alt_url: /zh/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
+permalink: /bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
 ---
 
-> 论文地址：[Highly accurate protein structure prediction with AlphaFold](https://www.nature.com/articles/s41586-021-03819-2)
+> Paper: [Highly accurate protein structure prediction with AlphaFold](https://www.nature.com/articles/s41586-021-03819-2)
 
-## AlphaFold2：根据氨基酸预测蛋白质结构
+## AlphaFold2: predicting protein structure from amino acid sequence
 
-1. 达到了原子级别的预测，2021年nature的最佳论文
-2. 特征一：多重序列对比，假设输入人的氨基酸片段，从基因库对比拿出比如鱼、鸡等生物相似的氨基酸片段，这样得到不同序列的特征；特征二：同时也可以显示表示每两个氨基酸之间的关系，得到氨基酸之间的特征
+1. Delivers predictions at near-atomic accuracy; widely regarded as a landmark Nature paper in 2021.
+2. **Feature one — multiple sequence alignment (MSA):** Given an input amino-acid segment (e.g., from human sequence), homologous segments from other organisms (fish, chicken, etc.) are retrieved from sequence databases, yielding evolutionary features across aligned sequences. **Feature two — pair representation:** Explicit features for every pair of residues capture relational information between amino acids.
 
-   2.1 同时也在结构蛋白质数据库搜索，解析出氨基酸空间距离的模板。
-3. Evoformer在原始的多头注意力上做了三个改进
+   2.1 The pipeline also queries the PDB for structural templates that encode spatial distance patterns between residues.
+3. **Evoformer** extends standard multi-head attention in three ways:
 
-   3.1 row-wise：在MSA中每次拿出一行做为序列，投影后得到q，k，v
+   3.1 **Row-wise attention:** Each row of the MSA is treated as a sequence; projections yield $q$, $k$, and $v$.
 
-   3.2 gated：通过线性、激活函数后与注意力权重相乘
+   3.2 **Gating:** Attention weights are multiplied by a gate computed via a linear layer and activation.
 
-   3.3 pair bias：计算 $q_i$ 和 $k_j$ 做点乘时，拿出第  个对表示加在这后面
-4. 3D结构表示采用相对位置
-5. 解码器把原点的氨基酸变形为目标形状，输入是编码器输出、对表示模板和3D结构的骨干框架，每次做一部分结构调整
-6. 训练：
+   3.3 **Pair bias:** When forming the dot product between $q_i$ and $k_j$, the corresponding $(i,j)$ pair representation is added to the attention logits.
+4. The 3D structure module uses **relative positional encoding** for residue geometry.
+5. The **structure module (decoder)** iteratively refines coordinates: starting from a backbone frame, it deforms residues toward the target fold using the encoder output, pair features, and the current 3D frame; updates are applied in blocks rather than all at once.
+6. **Training:**
 
-   6.1 使用没有标号的数据，使用噪音学生自蒸馏方法，先用有标号数据训练模型，然后用模型去预测没有标号的大数据集，然后把那些比较置信的标号拿出来，跟之前有标号的数据拼起来形成更大数据重新训练。核心是加噪音进去，不然一个错误的标号可能导致训练错上加错。
+   6.1 **Noisy student self-distillation** on unlabeled structures: train on labeled PDB data first, run the model on a large unlabeled set, keep high-confidence pseudo-labels, and merge them with the original labels for a second training stage. Injecting noise is critical—without it, a single bad pseudo-label can propagate and amplify error.
 
-   6.2 来自bert，把蛋白质序列随机遮住一些氨基酸去预测
+   6.2 **Masked language modeling** (BERT-style): randomly mask residues in the sequence and predict them.
 
 <HR align=left color=#987cb9 SIZE=1>
 

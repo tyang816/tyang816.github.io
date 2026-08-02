@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`/home/tanyang/workspace/tyang816.github.io/_posts/ML/2022-10-06-Robust Speech Recognition via Large-Scale Weak Supervision.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：blockquote 标签为 Paper / Blog / Code；图片 URL、链接与 HTML 块原样保留；无残留中文正文。

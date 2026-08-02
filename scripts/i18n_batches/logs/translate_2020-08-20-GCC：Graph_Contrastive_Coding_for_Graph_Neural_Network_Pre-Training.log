@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/ML/2020-08-20-GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ml/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/`（对应中文 `permalink`）；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：结构、图片块、链接与 HR 均保留；顶栏 `论文地址` → `Paper`；InfoNCE / r-ego / GIN / DGL 等术语未改。
+- **校验**：目标文件存在，正文无中文表述。

@@ -5,29 +5,32 @@ categories: [BI]
 tags: [protein, PLM, CNN, transformer]
 proceedings: Cell Systems
 date: 2024-03-20
+lang: en
+alt_url: /zh/bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
+permalink: /bi/Convolutions-are-competitive-with-transformers-for-protein-sequence-pretraining/
 ---
 
-> 论文地址：[Convolutions are competitive with transformers for protein sequence pretraining](https://www.cell.com/cell-systems/fulltext/S2405-4712(24)00029-2)
+> Paper: [Convolutions are competitive with transformers for protein sequence pretraining](https://www.cell.com/cell-systems/fulltext/S2405-4712(24)00029-2)
 >
-> 论文实现：<https://github.com/microsoft/protein-sequence-models/tree/main>
+> Code: <https://github.com/microsoft/protein-sequence-models/tree/main>
 
-## CARP: 卷积掩码网络预训练蛋白质语言模型
+## CARP: convolutional masked networks for protein language model pre-training
 
 ### Abstract
 
-CNN能和transformer取得具有竞争力的结果，在很多下游任务上比如结构预测，zero-shot突变预测，out-of-domain生成上都取得很好效果
+CNNs can match transformers with competitive performance and strong results on many downstream tasks, including structure prediction, zero-shot mutation effect prediction, and out-of-domain fitness prediction.
 
-### Introduction and backgroud
+### Introduction and background
 
-Transformer的主要问题是计算内存和输入序列成平方关系的复杂度增长，并且在训练的时候有着明显的长度限制，比如ESM最大长度1022，但Uniref50有42M序列，其中有1.1M，即2.6%是超过了1022，并且里面包含了很多人类感兴趣的蛋白，比如SARS-Cov-2 spike gylcoprotein和*Streptococcus pyogenes* CRISPR-associated endonuclease Cas9
+A major limitation of transformers is that compute and memory scale quadratically with input sequence length, which leads to strict length caps during training—for example, ESM’s maximum length is 1022. UniRef50 contains 42M sequences, of which 1.1M (2.6%) exceed 1022, including many proteins of broad interest such as the SARS-CoV-2 spike glycoprotein and *Streptococcus pyogenes* CRISPR-associated endonuclease Cas9.
 
-使用March 2020 release of UniRef50训练了CARP(**C**onvolutional **A**utoencoding **R**epresentations of **P**roteins)
+CARP (**C**onvolutional **A**utoencoding **R**epresentations of **P**roteins) was trained on the March 2020 release of UniRef50.
 
-### Convolutional Protein Seuqence Mask Language Models
+### Convolutional protein sequence masked language models
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CARP/fig1.png" alt="avatar" style /></div>
 
-15%mask，其中80%替换为mask token，10%随机选择氨基酸，10%不变
+15% of tokens are masked: 80% are replaced with a mask token, 10% are replaced with a randomly chosen amino acid, and 10% are left unchanged.
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CARP/fig2.png" alt="avatar" style /></div>
 

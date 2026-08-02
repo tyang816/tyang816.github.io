@@ -5,49 +5,49 @@ categories: [CV]
 tags: [vision-language, contrastive-learning, object-detection]
 proceedings: ICLR
 date: 2022-01-29
+lang: en
+alt_url: /zh/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
+permalink: /cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
 ---
 
-> 论文地址：[Open-vocabulary Object Detection via Vision and Language Knowledge Distillation](https://openreview.net/forum?id=lL3lnMbR4WU)
+> Paper: [Open-vocabulary Object Detection via Vision and Language Knowledge Distillation](https://openreview.net/forum?id=lL3lnMbR4WU)
 >
-> 论文实现：<https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild>
+> Code: <https://github.com/tensorflow/tpu/tree/master/models/official/detection/projects/vild>
 
-## ViLD：CLIP知识蒸馏做开放词库的目标检测
+## ViLD: open-vocabulary object detection via CLIP knowledge distillation
 
 ### Abstract
 
-将从一个预先训练好的open-vocabulary图像分类模型（teacher）中提取的知识提取为一个两阶段的detector（student），用teacher模型编码文本和目标图像区域，训练一个student detector，其被检测到的box的区域嵌入与teacher推理的文本和图像嵌入对齐
+Knowledge from a pretrained open-vocabulary image classification model (teacher) is distilled into a two-stage detector (student). The teacher encodes text and target image regions; the student detector is trained so that embeddings of detected box regions align with the text and image embeddings produced by the teacher at inference time.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-本文主要想做一个open-vocabulary的目标检测，在不增加类别的基础上（base categories）不去额外标注一些黄鸭子，但是能检测出来黄鸭子，也就是模型有检测novel category的能力
+The paper targets open-vocabulary object detection: without collecting extra labels for categories beyond the base set, the model should still detect novel instances (e.g., a yellow rubber duck)—that is, generalize to novel categories at test time.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-- 训练：
-  - ViLD-text：给定图片和基础类，通过RPN得到region proposal，再通过conv得到region embedding，绿色的基础类通过prompt再通过文本编码器，得到绿色的文本编码，再算cross entropy loss
-  - ViLD-imgae：把抽取好的region proposal（骰子，stop sign）通过CLIP得到CLIP的embedding，希望I和R尽可能接近，就做到了知识蒸馏
-- 推理：
-  - 给定图片和基础类+蓝色新类别，图像得到region embedding，文本通过编码做点乘，得到zero-shot的目标检测
+- **Training:**
+  - **ViLD-text:** Given an image and base classes, region proposals come from the RPN; conv layers yield region embeddings. Base-class names are turned into prompts and encoded by the text encoder; cross-entropy is computed against the green (base) text embeddings.
+  - **ViLD-image:** Cached region proposals (e.g., dice, stop sign) are passed through CLIP to obtain CLIP embeddings; the student is trained so image-side and region embeddings (I and R) stay close—image-side knowledge distillation.
+- **Inference:**
+  - Given an image and base plus novel (blue) categories, the image branch produces region embeddings; text is encoded and matched via dot products for zero-shot detection.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-这些baseline都是mask RCNN，第一阶段出region proposal，也就是图里面的N proposals；第二阶段就是根据proposals过一个detection head得到region embedding，再通过分类头得到bonding box的类别
+These baselines are Mask R-CNN–style: stage one outputs region proposals (N proposals in the figure); stage two runs a detection head on each proposal to get a region embedding, then a classification head assigns the bounding-box category. The pipeline is essentially box regression plus classification.
 
-主要就是画box和分类
-
-- a方法是有监督的baseline
-- b方法就是像CLIP一样直接把text加进去通过prompt，embedding之后与图像点乘算相似度，还是有监督学习，类别还是base category，不在基础类的都塞到背景类，这个方法只是把图像和文本连接到一起
+- **(a)** Supervised baseline.
+- **(b)** CLIP-style fusion: text is injected via prompts, embedded, and matched to the image by dot-product similarity—still trained with full supervision on base categories, with anything outside the base set collapsed into a background class. Vision and language are tied together in the head, but because training uses only base categories (CB), zero-shot performance remains limited.
 
   - <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/frm2.png" alt="avatar" style="zoom:60%;" /></div>
-  - 因为只在CB上做训练，所以zero-shot的效果仍然不是很好
-- c方法把图像做知识蒸馏，用CLIP预训练好的模型来训练student网络，这时候监督信号不再是人工标注了，而是CLIP带来的编码，就不受基础类的限制了，这就增强了CLIP的open-vocabulary的能力
+- **(c)** Image-side distillation: a CLIP-pretrained model supervises the student; labels are no longer manual category IDs but CLIP embeddings, so learning is not confined to base classes and open-vocabulary behavior improves.
 
-  - 如果每次都在训练的时候抽N proposals非常慢而且贵，所以作者先用region proposal network抽好了放磁盘里，也通过了CLIP得到了embedding放好了，这样训练就非常快
-- d方法是b和c的合体，N个推理得到的算cross entorpy loss，M个抽好的算L1 loss
+  - Sampling N proposals and running CLIP on the fly each step is slow and costly, so the authors precompute proposals with an RPN, store them on disk, and precompute CLIP embeddings—making training much faster.
+- **(d)** Combines (b) and (c): cross-entropy on N online inference proposals; L1 loss on M precomputed (cached) proposals.
 
 ### Experiment
 
@@ -57,7 +57,7 @@ date: 2022-01-29
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLD/tab5,fig4.png" alt="avatar" style="zoom:60%;" /></div>
 
-直接拓展到其他数据集上的效果
+Results when extending directly to other datasets.
 
 <HR align=left color=#987cb9 SIZE=1>
 

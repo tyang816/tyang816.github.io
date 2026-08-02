@@ -5,39 +5,42 @@ categories: [BI]
 tags: [protein, PLM, transfer learning]
 proceedings: ICML
 date: 2024-06-21
+lang: en
+alt_url: /zh/bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
+permalink: /bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/
 ---
 
-> 论文地址：[Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models](https://dl.acm.org/doi/10.5555/3692070.3693161)
+> Paper: [Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language Models](https://dl.acm.org/doi/10.5555/3692070.3693161)
 >
-> 论文实现：<https://github.com/microsoft/protein-transfer>
+> Code: <https://github.com/microsoft/protein-transfer>
 
-## protein-transfer：探究预训练层数、参数、归纳偏置等对下游任务影响
+## protein-transfer: How pretraining depth, scale, and inductive bias shape downstream performance
 
 ### Abstract
 
-PLM的表征非常强大，但是目前人们对预训练学习到的特征如何与下游任务相关并有用知之甚少。本文执行了370次实验，包括不同的下游任务，架构、模型大小和深度，预训练时间等。虽然与朴素序列表示相比，几乎所有的下游任务都从预训练模型中获益，但大多数任务的性能与预训练无关，而是依赖于在预训练早期学习到的低水平特征。我们的结果表明，当前的PLM预训练范式和这些模型的大多数应用之间的不匹配，这表明需要更好的预训练方法
+Representations from protein language models (PLMs) are highly effective, yet little is understood about how features learned during pretraining relate to and help downstream tasks. This paper reports 370 experiments spanning diverse downstream tasks, architectures, model sizes and depths, and pretraining duration. Although nearly all downstream tasks gain over naive sequence representations when using pretrained models, performance on most tasks is largely insensitive to pretraining itself and instead relies on low-level features acquired early in pretraining. These results highlight a mismatch between current PLM pretraining paradigms and how these models are typically applied, motivating improved pretraining methods.
 
 ### Introduction
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig1.png" alt="avatar" style /></div>
 
-目前对于序列到功能的理解映射还是非常贫瘠，介于数据的稀少限制，采用迁移学习的方法是一个有效的解决方案
+Mapping from sequence to function remains poorly understood, and data scarcity makes transfer learning an attractive remedy.
 
-计算机视觉等其他领域对于迁移学习的研究更加成熟，因此我们综合了一系列可能的假设来解释下游任务的改进，并设计进行了一系列的实验来研究
+Transfer learning is better studied in domains such as computer vision; the authors therefore synthesize plausible hypotheses for downstream gains and design experiments to test them.
 
-**Feature reuse (Fig1. 1c-i)**: 一个流行的假设是，MLM预训练学习蛋白质生物学的一般特征，这些特征可以在任务中重复使用
+**Feature reuse (Fig. 1c-i)**: A common hypothesis is that masked language modeling (MLM) pretraining learns general biological features of proteins that can be reused across tasks.
 
-**Inductive biases and overparameterization (Fig. 1c-ii)**：更大参数的预训练模型可能和一些有用的signal偶然对齐
+**Inductive biases and overparameterization (Fig. 1c-ii)**: Larger pretrained models may align by chance with signals useful for downstream prediction.
 
-**Statistics of pretrained weights (Fig. 1c-iii)**：预训练的主要好处是可以初始化权重到一个合理的scale
+**Statistics of pretrained weights (Fig. 1c-iii)**: A major benefit of pretraining may be initializing weights at a reasonable scale.
 
-**Reuse of low-level features (Fig. 1c-iv)**：只有在预训练早期学习到不复杂的特征才有可能有利于迁移学习
+**Reuse of low-level features (Fig. 1c-iv)**: Only simpler features learned early in pretraining may transfer effectively.
 
-主要贡献：
+Main contributions:
 
-*   370次实验，全面的研究
-*   目前的MLM训练范式不适合生物
-*   系统证据表明，在许多蛋白质属性预测任务上的表现与PLM大小或预训练无关
+*   370 experiments providing a broad empirical study
+*   Evidence that current MLM training paradigms are a poor fit for biology
+*   Systematic evidence that performance on many protein property prediction tasks is largely independent of PLM size or pretraining
 
 ### Datasets and Pretrained Models
 
@@ -45,27 +48,27 @@ PLM的表征非常强大，但是目前人们对预训练学习到的特征如�
 
 #### Transfer Learning with Protein Language Models
 
-在UniRef50上训练的两个模型大小相当的蛋白质mlm家族，ESM和CARP
+Two comparably sized protein MLM families trained on UniRef50: ESM and CARP.
 
 ### Experimental Setup
 
 #### Baseline and ablations
 
-*   One-hot baseline：直接使用氨基酸的one-hot representation
-*   Random init：随机初始化‘
-*   Stat transfer：为了评估迁移学习的效果是否由于权重统计和/或将权值初始化到一个合理的尺度，随机初始化匹配预先训练的权值分布的PLM的权值的影响
+*   One-hot baseline: amino-acid one-hot representations used directly
+*   Random init: randomly initialized weights
+*   Stat transfer: to test whether transfer gains come from weight statistics and/or initializing to a reasonable scale, weights are randomly initialized to match the distribution of pretrained PLM weights
 
 #### Scaling experiments
 
 Model size
 
-⚪是CARP，×ESM
+⚪ denotes CARP; × denotes ESM
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa2.png" alt="avatar" style /></div>
 
 Model depth
 
-\-是CARP，--是ESM
+− denotes CARP; −− denotes ESM
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/figa6.png" alt="avatar" style /></div>
 
@@ -79,19 +82,18 @@ Model checkpoint
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig2.png" alt="avatar" style /></div>
 
-#### Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM pretraining
+#### Structure Prediction Benefits from Transfer Learning Because It Is Well-Aligned with MLM Pretraining
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig3.png" alt="avatar" style /></div>
 
-迁移学习提高二级结构预测性能，改进不是由于模型的归纳偏差或权重统计
+Transfer learning improves secondary structure prediction; the gains are not explained by inductive bias or weight statistics alone.
 
 #### Many Tasks Benefit from Transfer Learning Despite Lack of Alignment with MLM Pretraining
 
 <div style><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/protein-transfer/fig4-fig5.png" alt="avatar" style /></div>
 
-迁移学习提高了基线的表现，即使任务与预训练的任务不是很一致
+Transfer learning improves over baselines even when the downstream task is not closely aligned with the pretraining objective.
 
 #### Some Tasks Do Not Benefit from MLM Pretraining
 
 <hr align="left" color="#987cb9" size="1">
-

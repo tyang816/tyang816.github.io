@@ -5,59 +5,62 @@ categories: [BI]
 tags: [protein, PLM, structure prediction]
 proceedings: Science
 date: 2023-03-16
+lang: en
+alt_url: /zh/bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
+permalink: /bi/Language-models-of-protein-sequences-at-the-scale-of-evolution-enable-accurate-s/
 ---
 
-> 论文地址：[Evolutionary-scale prediction of atomic-level protein structure with a language model](https://www.science.org/doi/10.1126/science.ade2574)
+> Paper: [Evolutionary-scale prediction of atomic-level protein structure with a language model](https://www.science.org/doi/10.1126/science.ade2574)
 >
-> 论文实现：<https://github.com/facebookresearch/esm>
+> Code: <https://github.com/facebookresearch/esm>
 >
-> facebook蛋白质esm系列工作，主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，ESM-2大大提高了参数，虽然精度上提升不明显，但是推理速度比AlphaFold2快了一个数量级
+> Meta’s ESM series for proteins uses protein language models to predict structure and function from sequence. ESM-2 scales parameters substantially; accuracy gains are modest, but inference is roughly an order of magnitude faster than AlphaFold2.
 
-## ESM-2：提高参数量以单序列作为输入提高推理速度
+## ESM-2: scaling parameters and single-sequence input for faster inference
 
 ### Abstract
 
-将模型提高到了15B参数，是目前最大的蛋白质语言模型，随着模型的扩大，它们学习的信息能够在单个原子的分辨率下预测蛋白质的三维结构。ESMFold与AlphaFold2和RoseTTAFold对序列的准确度差不多，但是困惑度更低，推理时间比AlphaFold2快一个数量级
+The model is scaled to 15B parameters—the largest protein language model to date. As models grow, they learn representations that support three-dimensional structure prediction at single-atom resolution. ESMFold matches AlphaFold2 and RoseTTAFold on sequence-level accuracy with lower perplexity, and runs roughly an order of magnitude faster than AlphaFold2.
 
 ### Introduction
 
-AlphaFold2和RoseTTAFold在原子分辨率结构预测问题上取得了突破性的成功，但它们也依赖于使用多序列比对（MSA）和类似的蛋白质结构模板来实现最佳性能
+AlphaFold2 and RoseTTAFold achieved breakthrough success on atomic-resolution structure prediction, but they rely on multiple sequence alignments (MSAs) and structural templates of related proteins for best performance.
 
-相比之下，通过利用语言模型的内部表征，ESMFold只用一个序列作为输入就能生成相应的结构预测，从而大大加快了结构预测的速度
+In contrast, by leveraging internal representations from language models, ESMFold generates structure predictions from a single sequence alone, greatly accelerating structure prediction.
 
-ESMFold可以帮助解决蛋白质序列数据库的快速增长和蛋白质结构和功能数据库的缓慢增长之间的差距
+ESMFold can help close the gap between the rapid growth of protein sequence databases and the slower growth of databases of protein structure and function.
 
 ### Training and evaluating 15B parameter protein language models
 
-ESM-2是一个基于Transformer的语言模型，并使用注意力机制来学习输入序列中成对氨基酸之间的相互作用模式
+ESM-2 is a Transformer-based language model that uses attention to learn interaction patterns between pairs of amino acids in the input sequence.
 
-相对于上一代模型ESM-1b，Meta对模型结构、训练参数进行了改进，并增加了计算资源和数据。同时，相对位置嵌入的加入，使模型能够推广到任意长度的序列
+Relative to the previous ESM-1b, Meta improved model architecture and training setup and added compute and data. Relative positional embeddings also allow the model to generalize to sequences of arbitrary length.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-从结果来看，具有1.5亿个参数的ESM-2模型比具有6.5亿个参数的ESM-1b模型表现得更好
+Results show that a 150M-parameter ESM-2 model outperforms the 650M-parameter ESM-1b.
 
-此外，在结构预测的基准上，ESM-2也超过了其他的蛋白质语言模型。这种性能的提高与大型语言建模领域建立的规律是一致的
+On structure-prediction benchmarks, ESM-2 also surpasses other protein language models. This scaling behavior aligns with trends established in large-scale language modeling.
 
 ### Language models enable more efficient predictions of protein structure
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-随着ESM-2规模的增加，可以观察到语言建模的精度有很大的提高
+As the scale of ESM-2 increases, language modeling accuracy improves substantially.
 
 ### End-to-end single-sequence structure prediction with ESMFold
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-2/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-SMFold和AlphaFold2的一个关键区别是，ESMFold使用语言模型表示，消除了对明确的同源序列（以MSA的形式）作为输入的需要
+A key difference between ESMFold and AlphaFold2 is that ESMFold uses language-model representations, removing the need for explicit homologous sequences (in MSA form) as input.
 
-ESMFold通过用一个处理序列的Transformer模块取代处理MSA的计算昂贵的网络模块，简化了AlphaFold2中的Evoformer。这种简化意味着ESMFold的速度大大提高，远高于基于MSA的模型
+ESMFold simplifies AlphaFold2’s Evoformer by replacing the computationally expensive MSA-processing stack with a Transformer module over the sequence. This simplification yields much higher throughput than MSA-based models.
 
-折叠主干的输出接下来又被一个结构模块处理，它负责输出最终的原子级结构和预测的置信度
+The folding trunk output is then processed by a structure module that produces the final atom-level structure and predicted confidence.
 
-研究人员将ESMFold与AlphaFold2和RoseTTAFold在CAMEO（2022年4月至2022年6月）和CASP14（2020年5月）测试集上进行比较，当只给单一序列输入时，ESMFold的表现要比Alphafold 2好得多
+The authors compared ESMFold with AlphaFold2 and RoseTTAFold on CAMEO (April–June 2022) and CASP14 (May 2020) test sets. With only a single sequence as input, ESMFold substantially outperforms AlphaFold2.
 
-而当使用完整的管道时，AlphaFold2在CAMEO和CASP14上分别达到了88.3和84.7。ESMFold在CAMEO上取得了与RoseTTAfold相当的准确率，其平均TM分数为82.0
+With the full pipeline, AlphaFold2 reaches 88.3 and 84.7 on CAMEO and CASP14, respectively. ESMFold achieves accuracy comparable to RoseTTAFold on CAMEO, with a mean TM-score of 82.0.
 
 ### Exploring metagenomic structural space
 
@@ -65,8 +68,8 @@ ESMFold通过用一个处理序列的Transformer模块取代处理MSA的计算�
 
 ### Conclusions
 
-蛋白质结构预测的非线性曲线是模型规模的函数，并且观察到了语言模型对序列的理解程度与结构预测之间的强烈联系
+Structure-prediction performance follows a nonlinear scaling curve with model size, and there is a strong link between how well language models understand sequences and structure prediction quality.
 
-ESMFold获得了准确的原子分辨率结构预测，推理时间还比AlphaFold2快了一个数量级。在实践中，速度的优势甚至还要更大。因为ESMFold不需要搜索和进化相关的序列来构建MSA，速度的提高将使绘制大型元基因组学序列数据库的结构空间成为可能
+ESMFold delivers accurate atomic-resolution structure predictions with inference roughly an order of magnitude faster than AlphaFold2. In practice, the speed advantage can be even larger because ESMFold does not need to search for evolutionarily related sequences to build an MSA; that speedup makes it feasible to map structural space across large metagenomic sequence databases.
 
 <HR align=left color=#987cb9 SIZE=1>

@@ -1,0 +1,12 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2017-11-02-A parallel corpus of Python functions and documentation strings for automated co.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+1. **完整性**：与中文一致（Abstract → Introduction → Existing corpora / Our proposal → Dataset → Baseline results），图片与结尾 `<HR>` 齐全。  
+2. **正文**：无中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 为 `/zh/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/`（与中文 `permalink` 一致）；英文无 `permalink`；其余字段与中文一致。  
+4. **链接与资源**：ACL Anthology、GitHub 与三张图 URL 一致。  
+5. **结构**：标题层级与中文对齐。  
+6. **用语**：学术英文通顺，术语（docstring、data augmentation、>100k、20,000 等）与原文一致。
+
+未修改英文文件。

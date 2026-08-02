@@ -1,0 +1,10 @@
+_posts/zh/BI/2023-08-04-Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design.md
+_posts/zh/BI/2023-09-11-Protein generation with evolutionary diffusion：sequence is all you need.md
+_posts/zh/BI/2023-09-22-Predicting a Protein’s Stability under a Million Mutations.md
+_posts/zh/BI/2023-09-30-ProteinGym：Large-Scale Benchmarks for Protein Design and Fitness Prediction.md
+_posts/zh/BI/2023-10-08-BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology.md
+_posts/zh/BI/2023-11-01-PoET：A generative model of protein families as sequences-of-sequences.md
+_posts/zh/BI/2023-11-07-Protein remote homology detection and structural alignment using deep learning.md
+_posts/zh/BI/2023-11-26-Learning sequence, structure, and function representations of proteins with lang.md
+_posts/zh/BI/2023-12-08-IgDesign：In vitro validated antibody design against multiple therapeutic antigen (1).md
+_posts/zh/BI/2024-01-04-Embedding-based alignment：combining protein language models with dynamic program.md

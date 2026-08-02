@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与完整性 | 与中文一致：引言、§1–3、5 张图、结尾 `<HR>`；§3 仅配图，无缺失段落 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 图片 / 链接 | IEEE 链接与 5 张 COS 图片 URL 一致 |
+| 章节对齐 | 标题与三级结构对应 |
+| 术语与数字 | 7027/76、15217/192、7 棵子树、ASTNN/PDG/CFG 等与中文一致 |
+
+英文译文完整、结构对齐，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2019-05-25-A Novel Neural Source Code Representation Based on Abstract Syntax Tree.md`

@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入英文笔记：
+
+**路径：** `_posts/OS/2020-11-09-ZeRO：Memory Optimizations Toward Training Trillion Parameter Models.md`
+
+**Frontmatter：** `lang: en`；`alt_url: /zh/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/`（对应中文 `permalink`）；无英文 `permalink`；保留 `layout`、`title`、`categories`、`tags`、`proceedings`、`date`。
+
+**正文：** 学术英文全文翻译；保留图片、链接、数学公式与 HTML 结构；文首引用改为 Paper / Further reading；无残留中文正文。

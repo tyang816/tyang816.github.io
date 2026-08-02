@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文并写入：
+
+`_posts/SE/2021-07-23-Ensemble Models for Neural Source Code Summarization of Subroutines.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/`（对应中文 `permalink`）；无英文 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：结构、图片 URL、链接与 `<HR>` 均保留；文首引用为 `Paper:`；修正原文小节标题拼写为 “Related Work”，并将 “endoer” 译为 “encoders”。

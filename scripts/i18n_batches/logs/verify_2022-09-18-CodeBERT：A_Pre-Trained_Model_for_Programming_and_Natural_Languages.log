@@ -1,0 +1,11 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-09-18-CodeBERT：A Pre-Trained Model for Programming and Natural Languages.md`
+
+对照 `i18n_verify_brief.md` 检查后，英文稿无需修改：
+
+1. **完整性**：Abstract → Experiment 及全部图片/表格与中文一致，结尾 `<HR>` 一致。  
+2. **正文**：无残留中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段与中文对齐。  
+4. **资源**：链接、图片 URL、数学公式与中文一致。  
+5. **结构**：各级标题与段落对应。  
+6. **用语**：学术英文通顺，术语（MLM、RTD、NL–PL 等）正确。  
+7. **数字与专名**：12 层、125M、15%/80%/10% 及模型名未改。

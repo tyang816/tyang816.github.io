@@ -5,25 +5,28 @@ categories: [BI]
 tags: [protein, subcellular localization]
 proceedings: Bioinformatics
 date: 2017-07-07
+lang: en
+alt_url: /zh/bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
+permalink: /bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/
 ---
 
-> 论文地址：[DeepLoc：prediction of protein subcellular localization using deep learning](https://academic.oup.com/bioinformatics/article/33/21/3387/3931857)
+> Paper: [DeepLoc：prediction of protein subcellular localization using deep learning](https://academic.oup.com/bioinformatics/article/33/21/3387/3931857)
 >
-> 论文网站：<http://www.cbs.dtu.dk/services/DeepLoc>
+> Project website: <http://www.cbs.dtu.dk/services/DeepLoc>
 
-## DeepLoc：预测亚细胞定位
+## DeepLoc: Prediction of Subcellular Localization
 
 ## Abstract
 
-真核蛋白亚细胞定位的预测由于其在蛋白质组学研究中的相关性，是生物信息学中一个研究广泛的课题。但大多数预测依赖于从知识数据库中对同源物的注释。对于没有注释同源物存在的新蛋白质，以及为了预测序列变异的影响，希望有仅从序列信息中预测蛋白质特性的方法
+Prediction of eukaryotic protein subcellular localization is a widely studied problem in bioinformatics because of its relevance to proteomics research. However, most predictors depend on annotations of homologs drawn from knowledge databases. For novel proteins lacking annotated homologs, and to predict the effects of sequence variants, it is desirable to have methods that infer protein properties from sequence information alone.
 
-提出了一个预测模型和DeepLoc数据集
+We present a prediction model and the DeepLoc dataset.
 
 ### Introduction
 
-蛋白质在真核细胞的不同隔间中具有广泛多样的功能。蛋白质的功能取决于它所在的隔室或细胞器，因为它为其功能提供了一个生理背景。然而，异常的蛋白质亚细胞定位可以影响蛋白质所表现出的功能，并有助于许多人类疾病的发病机制；如代谢、心血管和神经退行性疾病，以及癌症
+Proteins carry out a broad and diverse range of functions in the distinct compartments of eukaryotic cells. A protein’s function depends on the compartment or organelle in which it resides, because that context provides the physiological setting for its activity. Aberrant subcellular localization can alter the functions a protein displays and contribute to the pathogenesis of many human diseases, including metabolic, cardiovascular, and neurodegenerative disorders, as well as cancer.
 
-之前的工作依赖于注释蛋白活具有注释相近同源物的序列
+Prior work has relied on annotated proteins or on sequences with closely related annotated homologs.
 
 ### Materials and methods
 

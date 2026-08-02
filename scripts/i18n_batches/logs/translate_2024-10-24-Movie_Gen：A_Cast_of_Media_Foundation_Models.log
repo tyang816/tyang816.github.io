@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/CV/2024-10-24-Movie Gen：A Cast of Media Foundation Models.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/`；无 `permalink`；已移除 `lang: zh-CN`
+- **正文**：结构、图片、链接与公式均保留；文首引用改为 Paper / Implementation
+- **校验**：目标文件存在，正文中无残留中文

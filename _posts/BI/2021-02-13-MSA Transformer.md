@@ -5,68 +5,71 @@ categories: [BI]
 tags: [protein, PLM]
 proceedings: ICML
 date: 2021-02-13
+lang: en
+alt_url: /zh/bi/MSA-Transformer/
+permalink: /bi/MSA-Transformer/
 ---
 
-> 论文地址：[MSA Transformer](https://proceedings.mlr.press/v139/rao21a.html)
+> Paper: [MSA Transformer](https://proceedings.mlr.press/v139/rao21a.html)
 >
-> 论文实现：<https://github.com/facebookresearch/esm>
+> Code: <https://github.com/facebookresearch/esm>
 >
-> facebook蛋白质esm系列工作,主线是利用蛋白质语言模型实现从蛋白序列预测蛋白质结构和功能，在ESM-1b的基础上作出改进，将模型的输入从单一蛋白质序列改为MSA矩阵，并在Transformer中加入行、列两种轴向注意力机制，对位点 $x_{mi}$ 分别计算第m个序列和第i个对齐位置的影响，充分利用二维输入的优势
+> This work belongs to Facebook’s ESM protein language model line, which aims to predict protein structure and function from sequence. Building on ESM-1b, the authors replace a single protein sequence with an MSA matrix as model input and add row-wise and column-wise axial attention in the Transformer. For each site $x_{mi}$, they model the influence of sequence index $m$ and alignment column $i$, exploiting the full benefit of two-dimensional input.
 
-## ESM-MSA-1b：轴注意力蛋白质预训练
+## ESM-MSA-1b: Axial-Attention Protein Pre-training
 
 ### Abstract
 
-迄今为止的蛋白质语言模型都是从独立的序列进行推理，而计算生物学长期存在的方法是分别拟合各个家族，从进化相关序列家族中进行推理，本文工作结合了这两种范式，将序列集合以多序列对齐的形式输入，使用行列注意力，跨蛋白质家族的掩码语言模型目标
+Protein language models to date infer from isolated sequences, whereas a long-standing computational biology practice fits each family separately and reasons over evolutionarily related sequence families. This paper combines both paradigms: sequence sets enter as multiple sequence alignments, with row–column attention and a masked language modeling objective across protein families.
 
 ### Introduction
 
-由于进化不能自由地在折叠的三维结构中接触的位点上独立选择氨基酸的身份，因此模式被印在进化选择的序列上，对蛋白质结构的限制可以从相关序列的模式中推断出来
+Because evolution cannot independently choose amino-acid identities at positions that must contact one another in the folded three-dimensional structure, patterns are imprinted on evolutionarily selected sequences, and constraints on protein structure can be inferred from patterns in related sequences.
 
-目前蛋白质语言的新工作都是大规模的网络而不是分别拟合每个家族序列，在推理阶段用单条序列端到端的方法替换多阶段的计算生物学中传统的方法
+Recent protein language modeling uses large-scale networks rather than fitting each family separately, and at inference replaces multi-stage traditional computational biology pipelines with end-to-end prediction from a single sequence.
 
-模型结构使用了轴注意力，掩码语言模型目标函数
+The model uses axial attention and a masked language modeling objective.
 
 ### Methods
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-MSA Transformer的输入为一系列二维MSA矩阵，每个MSA是一组蛋白序列的多序列比对文件
+MSA Transformer takes as input a collection of two-dimensional MSA matrices; each MSA is a multiple sequence alignment for a set of protein sequences.
 
-MSA矩阵存储来自不同物种的同类蛋白序列。矩阵的每一行是一条来自特定物种的蛋白序列；每一列在该类蛋白中处于同一位置，记录不同物种在该位置的氨基酸取值
+An MSA matrix stores homologous protein sequences from different species. Each row is a protein sequence from a particular species; each column corresponds to the same position in the protein family and records the amino acid at that position across species.
 
 #### Token Embedding
 
-将不同氨基酸用整数表示，形成一个整型向量。词库包括20中标准氨基酸、5种非标准氨基酸和4种特殊字符，共29个数字
+Amino acids are mapped to integers, forming an integer vector. The vocabulary includes 20 standard amino acids, 5 non-standard amino acids, and 4 special tokens, for 29 symbols in total.
 
 #### Position Embedding
 
 - sequence embedding
-  - 为序列的每个位置，也就是每一列赋一个序号
+  - Assigns an index to each column (each alignment position).
 
 - position embedding
-  - 为每条序列，也就是每一行赋一个序号
-  - 位置嵌入使得MSA中的行和列有独一无二的序号，每一行或每一列将被识别为不同的。  
+  - Assigns an index to each row (each sequence).
+  - These embeddings give rows and columns in the MSA distinct identifiers so that each row or column is treated as unique.
 
 #### Pre-training
 
-模型使用masked training方法进行训练，直接输出的是每一个masked token处为各种氨基酸的概率。然而本文的主要目标并不是得到这些概率，而是要通过训练后的attention map预测蛋白质二、三级结构
+The model is trained with masked language modeling and outputs, at each masked token, probabilities over amino acids. The primary goal is not these probabilities per se, but using attention maps from the trained model to predict secondary and tertiary protein structure.
 
-- 二级结构预测（second structure prediction）
-  - 训练一个Netsurf模型，基于MSA Transformer的特征表示向量(representation)预测蛋白质的8种蛋白结构，准确率为72.9%
+- Secondary structure prediction
+  - A NetSurf model is trained on MSA Transformer representations to predict eight structural states, reaching 72.9% accuracy.
 
-- 三级结构预测（contact prediction）
-  - 基于MSA Transformer各层、各注意力头的attention map，训练logistic回归模型，对蛋白质三级结构进行预测
+- Tertiary structure prediction (contact prediction)
+  - Logistic regression is trained on attention maps from each layer and head of MSA Transformer to predict tertiary contacts.
 
 #### Axial Attention
 
-针对二维输入数据的特征，提出两种轴向注意力机制：行注意力(row attention)和列注意力(column attention)
+For two-dimensional inputs, two axial attention mechanisms are used: row attention and column attention.
 
-为了降低算法的时间复杂度，轴向注意力将来自二维平面的注意力分解为纵、横两个方向。轴向注意力认为MSA中某位点受到其他位点的影响主要来自于其所在的行和列，而矩阵中其他位置的影响可以忽略不计，对位点只需计算第行和第列对它的attention权重
+To reduce time complexity, attention over the 2D plane is factorized into vertical and horizontal directions. Axial attention assumes that influence on a site comes mainly from its row and column, with other matrix positions neglected; for each site, attention weights are computed only along its row and column.
 
-行注意力计算位点所在行的注意力权重，本质是提取该点所在蛋白序列的信息，计算同一蛋白序列中不同氨基酸之间的相互影响权值，能够反应这些氨基酸在蛋白二、三级结构中的相互作用，进而推测蛋白结构
+Row attention computes weights along the site’s row, effectively aggregating information from the protein sequence containing that site and mutual influences among amino acids in the same sequence—reflecting interactions relevant to secondary and tertiary structure.
 
-列注意力计算位点所在列的注意力权重，本质是提取该位置上氨基酸的共变信息
+Column attention computes weights along the site’s column, capturing co-evolutionary signal at that alignment position.
 
 ### Result
 
@@ -74,16 +77,16 @@ MSA矩阵存储来自不同物种的同类蛋白序列。矩阵的每一行是�
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab2.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/tab3.png" alt="avatar" style="zoom:50%;" /></div>
 
-- 与其他模型对比的表现
-  - 氨基酸的接触模式(contact pattern)能够直接被行注意力头学习，蕴含在行注意力的attention map中
-  - 基于训练发现的接触模式，MSA Transformer能够对蛋白质的接触情况进行预测(contact prediction)，预测准确率显著优于Potts等其他模型（不论输入MSA的深度如何），尤其是在MSA深度较小时，优势更加明显
+- Comparison with other models
+  - Amino-acid contact patterns can be learned directly by row attention heads and are encoded in row attention maps.
+  - From these contact patterns, MSA Transformer predicts residue contacts with accuracy substantially above Potts and other baselines regardless of MSA depth, with the largest gains when the MSA is shallow.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ESM-MSA-1b/fig6.png" alt="avatar" style="zoom:60%;" /></div>
 
-- 探究MSA Transformer预测蛋白结构的机制
-  - 学习协方差（与Potts模型一致）
-    -  随机打乱MSA每一列氨基酸的排列，破坏该列的协方差特性，发现Potts模型预测准确率降到随机预测(random guess)级别，ESM-1b预测结果不受影响，MSA Tansformer预测准确率下降，但仍有有效预测能力。说明MSA Transformer能够学习协方差特性，但不唯一依赖于协方差特性
-  - 学习序列规律（与ESM-1b一致）
-    - 随机打乱MSA中列的排列顺序而保持每一列内部不变，破坏每条序列的规律，发现ESM-1b模型预测准确率降到随机预测(random guess)级别，Potts模型预测结果不受影响，MSA Tansformer预测准确率下降，但仍有有效预测能力。说明MSA Transformer能够学习序列规律，但不唯一依赖于序列规律
+- Mechanistic analysis of structure prediction
+  - Learning co-variation (similar to Potts models)
+    - Randomly permuting amino acids within each MSA column destroys column-wise co-variation: Potts contact prediction drops to random-guess level, ESM-1b is unchanged, and MSA Transformer accuracy decreases but remains above chance. Thus MSA Transformer captures co-variation but does not rely on it exclusively.
+  - Learning sequence regularities (similar to ESM-1b)
+    - Randomly permuting column order while keeping each column’s residues fixed disrupts per-sequence patterns: ESM-1b drops to random guess, Potts is unchanged, and MSA Transformer accuracy decreases but retains useful signal. Thus MSA Transformer captures sequence regularities but does not rely on them exclusively.
 
 <HR align=left color=#987cb9 SIZE=1>

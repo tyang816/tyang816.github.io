@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/OS/2022-03-23-Pathways：Asynchronous Distributed Dataflow for ML.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 完整性 | 与中文一致：Abstract → Introduction → Design Motivation → Programming Model → Architecture，含 4 张图与结尾 `<HR>` |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 链接/图片/数学 | PDF 与 COS 图片 URL 一致；`t`、all-reduce 等与原文对应 |
+| 结构 | 小节与列表 (a)(b)(c) 对齐 |
+| 术语与数字 | SPMD/MPMD、2048、BERT/GPT、`@pw.program`、`jax.pmap` 等保留正确 |
+
+英文表述已符合学术笔记风格，未发现需改动的 Chinglish 或漏译，故未修改文件。

@@ -1,0 +1,7 @@
+**DONE**
+
+已写入 `_posts/SE/2020-05-01-A Transformer-based Approach for Source Code Summarization.md`：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/A-Transformer-based-Approach-for-Source-Code-Summarization/`（对应中文 `permalink`）；无 `permalink`
+- **正文**：顶栏链接标签为 Paper / Code；章节与图片块、链接、`<HR>` 均保留；中文正文已译为学术英文
+- **校验**：目标路径存在，正文中无残留中文

@@ -1,0 +1,17 @@
+已按 `i18n_verify_brief.md` 逐项对照中英文两篇笔记。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文正文完整（与中文同到 Tasks 图 + `<HR>`，无截断） | 通过 |
+| 正文无中文叙述 | 通过 |
+| `lang: en`；无 `permalink`；`alt_url` = 中文 `permalink`（`/zh/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/`） | 通过 |
+| 其余 frontmatter 与中文一致 | 通过 |
+| 图片 URL、arXiv 链接一致（tab1–tab9、fig1、fig4） | 通过 |
+| 标题层级与中文一致（Abstract / Introduction / Preliminary / Tasks 等） | 通过 |
+| 英文表述通顺；NCS/AST/CFG/DFG、type-1–4、SSA/PDG 等术语保留 | 通过 |
+
+英文版已是完整翻译，frontmatter 符合规范，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-05-01-A Survey of Deep Learning Models for Structural Code Understanding.md`

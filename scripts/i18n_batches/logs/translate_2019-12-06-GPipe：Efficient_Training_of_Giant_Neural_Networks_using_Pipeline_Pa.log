@@ -1,0 +1,7 @@
+**DONE**
+
+已将学术英文译文写入 [`_posts/OS/2019-12-06-GPipe：Efficient Training of Giant Neural Networks using Pipeline Parallelism.md`](file:///home/tanyang/workspace/tyang816.github.io/_posts/OS/2019-12-06-GPipe%EF%BC%9AEfficient%20Training%20of%20Giant%20Neural%20Networks%20using%20Pipeline%20Parallelism.md)。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：保留全部图片、链接与结构；文首引用为 Paper + 系统方向评述的英文翻译。
+- **校验**：目标文件存在，正文无残留中文。

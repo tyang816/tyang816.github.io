@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/SE/2021-03-12-A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/`；无 `permalink`；已去掉中文 `lang`/`permalink`。
+- **正文**：学术英文；区块引用为 Paper / Data / Code；图片、链接与 HTML 块原样保留；无残留中文。

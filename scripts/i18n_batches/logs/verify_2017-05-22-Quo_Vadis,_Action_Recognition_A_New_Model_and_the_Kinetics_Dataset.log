@@ -1,0 +1,10 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿与中文结构一致，无需修改。
+
+**核对结果**
+1. **完整性**：引言块、各节（Abstract / Introduction / Model & Related Work / Experiment）、6 张图与 `<HR>` 均对应。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文一致。
+4. **资源**：论文链接、图片 URL、HMDB-51 / UCF-101 的 80.2% / 98% 等均保留。
+5. **结构与语气**：小节层级一致；英文表述自然（如 ImageNet 对应中文笔误 “ImgaNet” 属合理译写）。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2017-05-22-Quo Vadis, Action Recognition A New Model and the Kinetics Dataset.md`

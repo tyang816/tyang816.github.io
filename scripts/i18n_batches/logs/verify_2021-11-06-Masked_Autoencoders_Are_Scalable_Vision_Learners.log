@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-11-06-Masked Autoencoders Are Scalable Vision Learners.md`
+
+对照 `i18n_verify_brief.md` 检查结果：
+
+1. **完整性**：与中文版结构一致（摘要链接、一节标题、三条要点、`<HR>`），无截断。  
+2. **正文语言**：无中文正文。  
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文一致。  
+4. **链接**：arXiv URL 与标题链接一致。  
+5. **结构**：章节与编号列表对齐。  
+6. **译文**：三条要点与标题语义准确，术语（ViT、BERT、Transformer、encoder/decoder、patches）恰当。  
+7. **数字与专名**：未改动。
+
+未修改英文文件。

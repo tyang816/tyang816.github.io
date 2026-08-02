@@ -1,0 +1,15 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-01-25-TM-search：An Efficient and Effective Tool for Protein Structure Database Search.md`
+
+对照 `i18n_verify_brief.md` 检查结果：
+
+| 项 | 状态 |
+|---|---|
+| 英文全文完整，章节与中文一致 | 通过 |
+| 正文无中文（专有名词除外） | 通过 |
+| `lang: en`；`alt_url` = 中文 `permalink`；无英文 `permalink` | 通过 |
+| 图片、链接、URL 一致 | 通过 |
+| 标题层级与中文对齐 | 通过 |
+| 学术英文表述 | 通过 |
+| 数字、方法名、引用一致 | 通过 |
+
+英文版已完整翻译 Introduction、Materials and Methods、Evaluation Metric 等段落；Results and Discussion 与中文一样以图为主，无需改动。frontmatter 与同目录其他 EN 笔记一致。

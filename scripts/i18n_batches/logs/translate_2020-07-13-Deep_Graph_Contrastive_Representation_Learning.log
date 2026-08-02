@@ -1,0 +1,7 @@
+**DONE**
+
+已将 `_posts/ML/2020-07-13-Deep Graph Contrastive Representation Learning.md` 写好，要点如下：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ml/Deep-Graph-Contrastive-Representation-Learning/`（对应中文 `permalink`）；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：学术英文译文，保留全部图片 URL、链接与 LaTeX；文首引用改为 Paper / Code。
+- **结构**：与中文笔记一致（GRACE、Abstract、Introduction、Model、Experiment），修正了原文中的拼写（Abstract、Preliminaries 等），未增删事实或章节。

@@ -5,39 +5,43 @@ categories: [CV]
 tags: [video, vision-language, transformer]
 proceedings: CVPR
 date: 2015-04-17
+lang: en
+alt_url: /zh/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
+permalink: /cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
 ---
 
-> 论文地址：[Beyond Short Snippets：Deep Networks for Video Classification](http://ieeexplore.ieee.org/document/7299101/)
->
-> 来自谷歌的工作
 
-## 稍长的视频处理：池化和LSTM在视频理解的作用
+> Paper: [Beyond Short Snippets：Deep Networks for Video Classification](http://ieeexplore.ieee.org/document/7299101/)
+>
+> Work from Google
+
+## Longer Video Processing: The Role of Pooling and LSTM in Video Understanding
 
 ### Abstract
 
-提出两种方法处理长的视频，一是尝试了不同的池化操作，二是采用LSTM链接CNN的输出
+The paper proposes two ways to handle long videos: exploring different pooling operations, and using an LSTM to connect CNN outputs.
 
-### Apporach
+### Approach
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-如果按照双流网络的思想去做，原始视频就几帧就太短了，如果有特别多的帧怎么办呢？
+Following the two-stream idea, using only a few frames from the raw video is too short; what if there are many more frames?
 
-首先对于所有的帧肯定是要去抽特征，比如原始的手工或卷积神经网络，关键在于抽取到特征之后怎么去做pooling这个操作，可以简单的做一个max或average，这篇文章对这个做了很多的探索，**最终的结论表示都差不多**，ConvPooling最好。以及尝试了用LSTM去做特征融合，但实际上提升有限
+First, features must be extracted from all frames (e.g., hand-crafted descriptors or convolutional networks). The key question is how to pool after extraction—simple max or average pooling, and this paper explores many variants. **The overall conclusion is that they perform similarly**, with ConvPooling working best. They also try LSTM-based feature fusion, but the gain is limited.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/img4.png" alt="avatar" style="zoom:60%;" /></div>
 
-每个视频帧对应一个卷积网络（权值共享）去抽取特征，用了五层LSTM，最后softmax
+Each video frame is passed through a convolutional network (weight sharing) to extract features; a five-layer LSTM is used, followed by softmax.
 
 ### Result
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table5.png" alt="avatar" style="zoom:60%;" /></div>
 
-在Sorts-1M数据集上LSTM没有想象中那么有用，可能是因为LSTM学到的东西比较high-level，**视频即使帧比较多还是比较短**，在这种情况下实际上**语义信息并没有太多改变**，相当于传了一些差不多的内容给LSTM，说实话LSTM可能也学不到什么，最终也就带不来很大的提升。在变化比较剧烈的情况，或者长视频上，LSTM应该还是有一定意义的
+On Sports-1M, the LSTM is not as helpful as expected—perhaps because LSTM captures relatively high-level patterns, and **even with many frames the clip is still fairly short**, so **semantic content does not change much**. The LSTM mostly receives similar inputs and may learn little, so improvements stay small. LSTM should matter more when motion is strong or videos are truly long.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Beyond Short Snippets/table7.png" alt="avatar" style="zoom:60%;" /></div>
 
-在UCF-101效果就都只是好了一点，提升非常有限
+On UCF-101, results improve only slightly; the gain is very limited.
 
 <HR align=left color=#987cb9 SIZE=1>
 

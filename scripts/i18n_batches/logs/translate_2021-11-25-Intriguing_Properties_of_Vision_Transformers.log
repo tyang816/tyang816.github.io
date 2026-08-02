@@ -1,0 +1,6 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入 [`_posts/CV/2021-11-25-Intriguing Properties of Vision Transformers.md`](_posts/CV/2021-11-25-Intriguing Properties of Vision Transformers.md)：
+
+- **Frontmatter**：保留 `layout`、`title`、`categories`、`tags`、`proceedings`、`date`；设 `lang: en`；`alt_url: /zh/cv/Intriguing-Properties-of-Vision-Transformers/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：blockquote 标签译为 `Paper:`；链接与 `<HR>` 原样保留；两条要点译为学术英文；无残留中文正文。

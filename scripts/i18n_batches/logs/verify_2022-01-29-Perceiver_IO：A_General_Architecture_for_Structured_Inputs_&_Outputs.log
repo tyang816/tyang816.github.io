@@ -1,0 +1,12 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md`
+
+已按 `scripts/i18n_verify_brief.md` 对照中文版核对，英文稿无需修改：
+
+1. 章节完整（Abstract → Introduction → Architecture 两小节 → Experiments），结尾与 `<HR>` 一致  
+2. 正文无中文  
+3. Frontmatter：`lang: en`，`alt_url` 与中文 `permalink` 一致，无英文 `permalink`，其余字段一致  
+4. 8 张图、OpenReview/GitHub 链接、尺寸符号（$N \times D$、$O \times E$ 等）均保留  
+5. 标题层级与中文对齐  
+6. 英文表述与术语（Perceiver IO、StarCraft II、masked language modeling 等）正常  
+
+未对文件做任何改动。

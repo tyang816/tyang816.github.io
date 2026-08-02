@@ -1,0 +1,7 @@
+**DONE**
+
+已在 `_posts/CV/2022-06-23-PointCLIP：Point Cloud Understanding by CLIP.md` 写入英文学术笔记：
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/`（对应中文 `permalink`）；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：blockquote 标签为 Paper / Code；Abstract 与 Method 译为学术英文；所有图片块、链接与 `<HR>` 原样保留。
+- **Experiments** 节仍仅含图表，与中文版一致。

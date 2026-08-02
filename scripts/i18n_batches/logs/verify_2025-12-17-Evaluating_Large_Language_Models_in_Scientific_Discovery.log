@@ -1,0 +1,13 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-12-17-Evaluating Large Language Models in Scientific Discovery.md` issues=`TMC reasoning bullet: corrected “outperforms” → “underperforms” (Chinese 优于 was a typo vs paper: gpt-5-chat-latest is suboptimal vs reasoning-enhanced models)`
+
+**核对摘要**
+
+| 项 | 结果 |
+|---|---|
+| 完整性 / 章节结构 | 与中文版一致（Abstract → Methods，含全部图片） |
+| 正文中文 | 无 |
+| Frontmatter | `lang: en`，`alt_url` 指向中文 `permalink`，无英文 `permalink` |
+| 链接 / 图片 / 公式 | 一致 |
+| 数值与模型名 | 未改 |
+
+除上述一处术语/逻辑错误外，英文稿已符合 `i18n_verify_brief.md` 要求。

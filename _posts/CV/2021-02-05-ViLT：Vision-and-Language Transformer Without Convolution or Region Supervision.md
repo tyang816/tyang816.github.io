@@ -5,67 +5,70 @@ categories: [CV]
 tags: [vision-language, contrastive-learning, transformer]
 proceedings: ICML
 date: 2021-02-05
+lang: en
+alt_url: /zh/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+permalink: /cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
 ---
 
-> 论文地址：[ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision](https://proceedings.mlr.press/v139/kim21k.html)
+> Paper: [ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision](https://proceedings.mlr.press/v139/kim21k.html)
 >
-> 论文实现：<https://github.com/dandelin/ViLT>
+> Code: <https://github.com/dandelin/ViLT>
 >
-> 没有使用目标检测的region featrue，简化流程，训练昂贵效果略有下降，但是极大的减少了推理时间
+> Does not use object-detection region features; the pipeline is simplified. Training is expensive and performance drops slightly, but inference time is greatly reduced.
 
-## ViLT：拓展VIT到多模态学习
+## ViLT: Extending ViT to Multimodal Learning
 
 ### Abstract
 
-视觉和语言预训练（VLP）在视觉和语言下游任务上有极大的提升，而往往视觉方面花的时间越多最终效果会更好，所以大部分VLP方法都非常依赖特征抽取过程，或者看作一个目标检测问题加上ResNet卷积架构。有两个主要问题：1. 抽特征比多模态融合花太多时间；2. 表达能力受限于嵌入和预定义好的视觉词表。所以提出了ViLT，极简化的设计
+Vision-and-language pretraining (VLP) brings large gains on downstream vision-and-language tasks. Methods often invest more compute on the visual side for better results, so most VLP approaches rely heavily on feature extraction—or treat the problem as object detection plus a ResNet-style convolutional backbone. Two main issues: (1) feature extraction dominates time compared with multimodal fusion; (2) expressiveness is limited by embeddings and a fixed visual vocabulary. ViLT is proposed as a minimal design.
 
 ### Introduction
 
-多模态的VLP用上预训练再微调策略后发展很快，一般模型都是用图像文本对预训练，用图像文本匹配和MLM做目标函数（基本所有模型都用到了），再在下游任务双模态中微调
+Multimodal VLP has progressed quickly with pretrain-then-fine-tune. Models are typically pretrained on image–text pairs with image–text matching and MLM objectives (nearly universal), then fine-tuned on downstream bimodal tasks.
 
-输入VLP的时候不能把像素扔进去，要把像素和词元一起嵌入成离散的高层语义特征才能做transformer，所以大部分工作都依赖于**目标检测器**（**因为1. 目标检测出来的region就是天然的带有语义的离散表示；2. 下游任务比如VQA，如果物体和任务是高度相关依赖的**），所以覆盖的类别数越多好越好，图像文本才能匹配更好
+Pixels cannot be fed directly into VLP; pixels and tokens must be embedded into discrete high-level semantic features before the transformer. Hence most work depends on **object detectors** (**because (1) detected regions are naturally discrete, semantic representations; (2) in tasks such as VQA, objects are often tightly coupled to the question**). More object categories generally help image–text alignment.
 
-但用目标检测抽特征太贵，所以一部分工作在下降这个成本，比如Pixel-BERT用在ImageNet训练好的ResNet网络抽特征图当作离散序列，这样计算量就只有backbone，没有目标检测的任务
+Object-detection feature extraction is costly, so some work reduces that cost—e.g., Pixel-BERT uses an ImageNet-pretrained ResNet to produce feature maps as a discrete sequence, so compute is only the backbone without a detection head.
 
-但即使这样还是需要一个图像抽取过程，比较耗时，也是受到了VIT的启发，打成patch之后再抽特征
+Even then an image encoding stage remains and is slow; ViT-inspired patchification is one way to extract features.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-之前表现好的都是区域特征的一些模型，抽出物体特征；然后就拿掉目标检测这个过程，使用网格特征；ViLT就类似VIT把backbone换成了一个可学习的线性层，非常快，结果也有竞争力
+Earlier top-performing models used region features (object-centric representations). Grid features drop the detection stage; ViLT is like ViT with the backbone replaced by a learnable linear projection—very fast with competitive results.
 
-主要贡献：
+Main contributions:
 
-- ViLT是迄今为止最简单的架构，带来了显著的时间提升和参数减少
-- 不使用区域特征或残差网络性能损失也小
-- 第一个在VLP使用图像增强
+- ViLT is the simplest architecture to date, with large speedups and fewer parameters
+- Performance drop without region features or ResNet backbones is small
+- First use of image augmentation in VLP
 
 ### Background
 
 #### Taxonomy of Vision-and-Language Models
 
-根据1. 图像和文本表达力度，参数平不平衡；2. 模态怎么融合；分为了四个类
+Four categories by (1) relative capacity for image vs. text and parameter balance; (2) how modalities are fused.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### Modality Interaction Schema
 
-singale-stream：把两个序列concat起来学习交互；dual-stream：先各自处理挖掘信息再融合
+Single-stream: concatenate the two sequences and learn cross-modal interaction. Dual-stream: process each modality first, then fuse.
 
-很多时候dual-steram好一些，但是引入了更多的参数
+Dual-stream often works better but adds more parameters.
 
 #### Visual Embedding Schema
 
 ##### Region Feature
 
-给定一个图像时通过Backbone，NMS和RoI head
+Given an image: backbone, NMS, and RoI head.
 
 ##### Grid Feature
 
-使用便宜，但是相对比较贵而且性能下降厉害
+Cheaper to use, but still relatively costly and performance drops more.
 
 ##### Patch Projection
 
-类似ViT打patch
+Patchify the image as in ViT.
 
 ### Vision-and-Language Transformer
 
@@ -73,29 +76,29 @@ singale-stream：把两个序列concat起来学习交互；dual-stream：先各�
 
 #### Whole Word Masking
 
-比如把giraffe分词成三个词元[gi, ##raf, ##fe]，然mask掉中间的词，模型其实很容易就学习到中间这个词，因为在gi和fe中间的词本身就不多，记住就好，这样就太简单而且也没从图像中学习到有用的信息，不如把整个词都给mask掉，让模型从图像中去重建这个长颈鹿的文本信息
+WordPiece may split “giraffe” into [gi, ##raf, ##fe]. Masking only the middle subword is too easy—the model can guess from gi and fe without using the image. Masking the whole word forces reconstruction from visual context (e.g., “giraffe”).
 
 #### Image Augmentation
 
-之前多模态的那些方法没法用数据增强，因为都是提前抽好特征存硬盘的，做了增强还要重新抽特征
+Prior multimodal methods could not use augmentation because features were precomputed and stored on disk; augmentation would require re-extraction.
 
-作者用了randAugment，但是颜色变换和裁剪没用，因为这个变了文字肯定也变了
+The authors use RandAugment but omit color jitter and cropping, since those changes would alter the semantics of the paired text.
 
 ### Experiment
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab2.png" alt="avatar" style="zoom:50%;" /></div>
 
-用了区域的结果还是比较好的，但是ViLT做了速度和精度的tradeoff
+Region-feature models still score best, but ViLT trades accuracy for speed.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab3-tab4.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ViLT/tab5.png" alt="avatar" style="zoom:60%;" /></div>
 
-作者这里用了图片mask叫做MPP，但是没啥用，后面的文章的trick才证明这个方法有用
+The authors try image masking (MPP) with little benefit here; later work shows tricks that make the idea useful.
 
 ### Conclusion and Future Work
 
-**Scalability**：越大越好；**Masked Modeling for Visual Inputs**：做图像重建；**Augmentation Strategies**：提升很大
+**Scalability**: larger models help; **Masked Modeling for Visual Inputs**: image reconstruction; **Augmentation Strategies**: large gains.
 
 <HR align=left color=#987cb9 SIZE=1>
 

@@ -5,67 +5,70 @@ categories: [OS]
 tags: [model-parallelism]
 proceedings: GTC
 date: 2020-03-13
+lang: en
+alt_url: /zh/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
+permalink: /os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
 ---
 
-> 论文地址：[Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053)
+> Paper: [Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053)
 >
-> 论文实现：<https://github.com/NVIDIA/Megatron-LM>
+> Code: <https://github.com/NVIDIA/Megatron-LM>
 >
-> 作者在里面攻击前面方法的主要点就是需要编译器，需要其他包什么的，很繁琐，这个方法只需要在pytorch里面对代码进行一点小修改就行，但这种方便性带来的局限性也就是只能针对transformer做这种操作，不够通用，而前面的方法是希望有更通用的处理方法，所以优点缺点都是在取舍之间反复横跳的
+> The authors’ main critique of prior work is that those approaches require compilers and extra packages and are cumbersome; this method needs only small changes to PyTorch code. That convenience limits applicability mainly to Transformers rather than offering a general solution, whereas earlier methods target broader generality—so the trade-offs cut both ways.
 
-## Megatron LM：transformer的语言模型的模型(张量)并行
+## Megatron LM: Model (Tensor) Parallelism for Transformer Language Models
 
 ### Abstract
 
-现在的transformer模型越来越大，且内存限制下难以训练，作者提出了一种**层内**的**模型并行**训练方法，这个方法不需要新的编译器或者外部包，和之前的pipline的方法是互补正交的关系，只需要在原生的pytorch里面插入一些通讯的操作就行了
+Transformer models are growing ever larger and are hard to train under memory limits. The authors propose an **intra-layer** **model-parallel** training scheme that needs no new compiler or external packages and is complementary and orthogonal to pipeline-based methods: one only inserts communication ops in native PyTorch.
 
-相较于单卡30%的最高峰值，可以达到76%，主要训练的是GPT-2和BERT
+Compared with a single-GPU peak of about 30%, they reach 76%; training focuses mainly on GPT-2 and BERT.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img1.png" alt="avatar" style="zoom:60%;" /></div>
 
-作者表示拿到了基本上增加显卡就可以有线性的提升，好到不真实
+The authors report that adding GPUs yields essentially linear scaling—almost too good to be true.
 
-主要贡献如下：
+Main contributions:
 
-- 作者实现了一个简单有效的模型并行方法，只需要做一点点现有的pytorch的transformer的修改就可以了
-- 做了比较深度的实验分析，在512个GPU上获得了76%规模的效率
-- 把BERT类似的模型变大了之后需要注意layer normalizaion的位置
-- 对GPT-2和BERT来说模型增大会提高精度
-- 展示了在WikiText103、LAMBADA和RACE效果多好
-- 开源代码：https://github.com/NVIDIA/Megatron-LM
+- A simple, effective model-parallel implementation requiring only minor modifications to existing PyTorch Transformers
+- In-depth experimental analysis, reaching 76% scaling efficiency on 512 GPUs
+- When scaling BERT-like models, care is needed about where layer normalization is placed
+- For GPT-2 and BERT, larger models improve accuracy
+- Strong results on WikiText103, LAMBADA, and RACE
+- Open-source code: https://github.com/NVIDIA/Megatron-LM
 
 ### Model Parallel Transformers
 
-在MLP上假设竖着切一半，开始的X复制到两个GPU上，最后的结果得到的是两个同样的Y，只是各有一半的结果，再做一次allreduce就可以
+For the MLP, assume a vertical split in half: replicate the input $X$ on two GPUs; each side produces half of the same $Y$, then one all-reduce completes the layer.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img.1.png" alt="avatar" style="zoom:60%;" /></div>
 
-在多头attention上，每个头都是独立并行的，有自己的权重，一个简单的方法就是把头分到各个GPU上，假设一半在一个GPU上，另一半在另一个GPU上，算出来跟上面一样，只是一半的结果
+In multi-head attention, each head is independent and has its own weights; a simple approach is to assign heads to GPUs—e.g., half the heads on one GPU and half on another—with the same pattern as above (partial results per device).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img.2.png" alt="avatar" style="zoom:60%;" /></div>
 
-输入层X是batch_size x len，embedding是vocab_size x K，X进去之后变成 bxLxK，一种切法是把embedding切一半，把X复制到两个GPU上，查完了再allreduce
+Input $X$ is batch_size $\times$ seq_len; the embedding matrix is vocab_size $\times$ $K$. After embedding, activations are $B \times L \times K$. One partition splits the embedding in half, replicates $X$ on both GPUs, performs lookup, then all-reduces.
 
-输出层是bxLxK，经过词典后变成了bxLxV，两半各在两个GPU上面，每行是一个样本。一个问题是这个V可能很大，通常有好几万，而K是一万以内的东西，所以每个GPU先算自己的指数，再按行求和
+The output is $B \times L \times K$; after the vocabulary projection it becomes $B \times L \times V$, with each shard on a GPU and each row one sample. $V$ can be very large (often tens of thousands) while $K$ is typically on the order of $10^4$ or less, so each GPU computes its exponentials first, then row-wise sums are combined.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img.3.png" alt="avatar" style="zoom:60%;" /></div>
 
-当然这种切块的方法需要每次计算完就做一次allreduce，切多少次就多多少开销，不能异步进行。每块通信量其实是一个固定的值，每次算完是一个bxLxK的大小，all和reduce是两倍的开销，所以这个开销就是o(bxLxKxN)，N是块数
+This tiling requires an all-reduce after each compute step; more splits mean more overhead, and work cannot overlap asynchronously with communication—it must proceed strictly in order. Per-block traffic is fixed: after each step the tensor size is $B \times L \times K$, and all-reduce doubles the cost, so communication overhead is $O(B \times L \times K \times N)$ where $N$ is the number of partitions.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img.4.png" alt="avatar" style="zoom:60%;" /></div>
 
-模型并行
+Model parallelism:
 
-- 好处：每个GPU只用维护一块模型就行了
-- 坏处：需要GPU数量能被注意力头、层数整除；不能数据计算和数据通信并行，就是不能异步，必须一步步来
+- Benefit: each GPU only maintains a shard of the model
+- Drawback: the GPU count must divide the number of attention heads and layers; compute and communication cannot run in parallel (no asynchrony)—steps must be sequential
 
 ### Experiments
 
-选了1.2b的模型做基线，能放在单卡上
+A 1.2B-parameter model serves as the baseline and fits on a single GPU.
 
-卡多了通信成本也更高了
+More GPUs increase communication cost.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/table1.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Megatron LM/img5.png" alt="avatar" style="zoom:50%;" /></div>
 

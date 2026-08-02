@@ -5,54 +5,57 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: ICLR
 date: 2021-01-13
+lang: en
+alt_url: /zh/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
+permalink: /cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
 ---
 
-> 论文地址：[Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning](https://openreview.net/forum?id=cu7IUiOhujH)
+> Paper: [Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning](https://openreview.net/forum?id=cu7IUiOhujH)
 
-## SCL：有监督对比交叉熵
+## SCL: Supervised Contrastive Cross-Entropy
 
 ### Abstract
 
-受到好的泛化性需要捕捉一类样本里的相似性和区别其他类样本的直觉启发，提出了在微调阶段的有监督对比学习（SCL）目标。与交叉熵相比，提出的SCL可以有效提高RoBERTa-Large在GLUE基准few-shot上的分数，不需要特殊的架构，数据增强，memory banks或额外的无监督数据。对不同级别的噪声具有更强的鲁棒性，能够更好泛化在有限制的标注的相关任务上
+Motivated by the intuition that good generalization requires capturing similarity within a class and distinguishing samples from other classes, the authors propose a supervised contrastive learning (SCL) objective during fine-tuning. Compared with cross-entropy alone, SCL improves RoBERTa-Large scores on GLUE in few-shot settings without special architectures, data augmentation, memory banks, or extra unsupervised data. It is more robust to noise at different levels and generalizes better on related tasks with limited labeled data.
 
 ### Introduction
 
-交叉熵的泛化性能很差，缺乏对噪声标签或对抗样本的鲁棒性
+Cross-entropy often generalizes poorly and lacks robustness to noisy labels or adversarial examples.
 
-在NLP中使用交叉熵微调在不同的运行情况下也趋于不稳定，特别是在有监督数据有限的情况下。实验表明微调的时候使用更多的iteration，重新初始化顶端的一些层可以使微调阶段更稳定
+Fine-tuning NLP models with cross-entropy also tends to be unstable across runs, especially when supervised data are limited. Experiments show that using more iterations during fine-tuning and re-initializing some top layers can stabilize the fine-tuning stage.
 
-作者假设基于相似性的loss能够深入多维度的隐空间表征里重要的维度，这样能够得到更好的在few-shot学习结果，从而在微调的时候更加稳定
+The authors hypothesize that similarity-based losses can emphasize important dimensions in a high-dimensional latent representation space, yielding better few-shot performance and more stable fine-tuning.
 
-是用在有监督训练最后的任务中，不是对比样本的不同增强视角
+SCL is applied in the final supervised task; it is not contrastive learning over different augmented views of the same example.
 
-主要贡献：
+Main contributions:
 
-- 提出了一个新的语言模型微调目标
-- 在few-shot设置（20，100，1000）有10.7个点提升，表2
-- 展示了这个微调目标非常鲁棒，在部分GLUE基准上有7个点提升，表3
-- 在有标注数据非常有限的任务上泛化性也有提升，表7
+- A new fine-tuning objective for language models
+- Gains of 10.7 points in few-shot settings (20, 100, 1000 examples); see Table 2
+- The objective is robust, with gains of about 7 points on parts of GLUE; see Table 3
+- Improved generalization when labeled data are very scarce; see Table 7
 
 ### Approach
 
-这个loss是捕获同类别的样本相似性以及在不同类别的样本做对比
+The loss encourages similarity among samples of the same class and contrast against samples of different classes.
 
-多分类问题有C个类别；一个batch的训练样本是N，$\{x_i,y_i\}_{i=1,...,N}$；$\Phi(·)\in R^d$ 表示编码器；$N_{y_i}$ 是一个Batch里标签都是 $y_i$ 的样本数；$\tau >0$ 是可调节的标量temperature参数控制类的分离；$y_{i,c}$ 是标签，$\hat{y}_{i,c}$ 是模型输出属于第c类的概率；$\lambda$ 是标量权重超参，对每个下游任务和设置进行调整。整个loss如下
+For a C-class problem, a training batch has size N with pairs $\{x_i,y_i\}_{i=1,...,N}$; $\Phi(·)\in R^d$ denotes the encoder; $N_{y_i}$ is the number of samples in the batch with label $y_i$; $\tau >0$ is a tunable temperature scaling separation; $y_{i,c}$ is the label indicator and $\hat{y}_{i,c}$ is the predicted probability of class c; $\lambda$ is a scalar weight hyperparameter tuned per downstream task and setting. The overall loss is as follows.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SCL/frm1-frm3.png" alt="avatar" style="zoom:60%;" /></div>
 
-把交叉熵的Loss叠加上对比学习的loss，这里叠加的对比学习loss是info NCE loss
+Cross-entropy is combined with a contrastive term; the contrastive part is an InfoNCE-style loss.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SCL/fig1.png" alt="avatar" style="zoom:80%;" /></div>
 
-embedding表征通过L2正则化和标量温度参数 $\tau$ 可以提高性能，较低的温度增加了更难分离的例子的影响，产生了更难的负样例
+L2 normalization of embeddings together with temperature $\tau$ improves performance; lower temperature increases the influence of harder-to-separate examples and yields harder negatives.
 
 #### Relationship to Self-Supervised Contrastive Learning
 
-一个Batch大小为N，自监督对比学习的loss如下
+For batch size N, the self-supervised contrastive loss is as follows.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SCL/frm4.png" alt="avatar" style="zoom:60%;" /></div>
 
-分子 $x'_{2_i-1}$ 和 $x'_{2_i}$ 的来源于原始样本 $x_i$ 
+In the numerator, $x'_{2_i-1}$ and $x'_{2_i}$ are derived from the original sample $x_i$.
 
 ### Experiment
 

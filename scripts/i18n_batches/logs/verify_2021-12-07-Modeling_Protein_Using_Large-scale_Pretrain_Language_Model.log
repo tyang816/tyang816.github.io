@@ -1,0 +1,12 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-12-07-Modeling Protein Using Large-scale Pretrain Language Model.md`
+
+核对结果（按 `i18n_verify_brief.md`）：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction → Methodology → Result → Training / Evaluation），结尾 HR 与图片齐全，无截断。
+2. **正文语言**：无中文正文残留。
+3. **Frontmatter**：`lang: en`；`alt_url: /zh/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文对应。
+4. **资源**：论文链接、GitHub、全部图片 URL 与中文版一致；荧光任务处保留 \(m\)。
+5. **结构**：标题层级与中文版对齐（英文将中文 typo「Evalution」写为「Evaluation」，属合理修正）。
+6. **表述**：术语与数字（3B 参数、PFAM、TAPE、CB513、1,195 类、8 Å、ProteinNet、480 V100、Megatron-LM 等）与原文一致，无需改动。
+
+未修改英文文件。

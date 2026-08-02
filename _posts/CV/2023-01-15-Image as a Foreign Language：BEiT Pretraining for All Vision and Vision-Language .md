@@ -5,17 +5,20 @@ categories: [CV]
 tags: [vision-language]
 proceedings: CVPR
 date: 2023-01-15
+lang: en
+alt_url: /zh/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
+permalink: /cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
 ---
 
-> 论文地址：[Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Image_as_a_Foreign_Language_BEiT_Pretraining_for_Vision_and_CVPR_2023_paper.pdf)
+> Paper: [Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Image_as_a_Foreign_Language_BEiT_Pretraining_for_Vision_and_CVPR_2023_paper.pdf)
 >
-> 论文实现：<https://aka.ms/beit-3>
+> Code: <https://aka.ms/beit-3>
 
-## BEIT-3：多模态掩码语言模型
+## BEIT-3: Multimodal Masked Language Model
 
 ### Abstract
 
-提出了multi-way transformers，在图像上做掩码语言模型（Imglish），文本（English），图像文本对（parallel sentences）
+The work introduces multi-way transformers and applies masked language modeling to images (“Imglish”), text (English), and image–text pairs treated as parallel sentences.
 
 ### Introduction: The Big Convergence
 
@@ -23,21 +26,21 @@ date: 2023-01-15
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BEIT-3/tab1.png" alt="avatar" style="zoom:80%;" /></div>
 
-目前出现了语言，视觉和多模态的大一统趋势，这篇文章的主要目的也是把统一框架这种方法往前推进一步，这种融合趋势主要是以下三个方面：
+Language, vision, and multimodal learning are moving toward a unified foundation-model paradigm; this paper aims to advance that unified-framework line further. The convergence is driven mainly by three trends:
 
-- transformer从NLP转移到了CV和多模态，对于vision-language modeling而言，dual-encoder适合做快速retrieval，encoder-decoder网络适合生成任务，fusion-encoder架构很好的做image-text encoding。但是大部分的foundation model需要针对下游任务输入输出形式做一些改进
-- mask modeling已经能够很好的应用到各个模态里，如果用更多的损失函数那么计算就不高效了，而且loss一多，weight怎么调也是一个大问题，有的Loss互补有的loss互斥，比较人工。所以只用了一个目标MLM，这样都可以视作sequence of tokens，图像和文本可以视作parallel sentences，句子1后跟句子2
-- 如何提升模型和数据大小，只有一个capacity很大的模型才能handle更多的任务，所以模型参数扩展到了billion级别，但数据还是使用的public resources
+- Transformers have spread from NLP into CV and multimodal modeling. For vision–language tasks, dual-encoder models suit fast retrieval, encoder–decoder stacks suit generation, and fusion-encoder designs are strong for joint image–text encoding. Even so, most foundation models still need architectural or interface tweaks to match downstream input–output formats.
+- Masked modeling transfers well across modalities. Stacking many auxiliary losses hurts efficiency, and balancing their weights is hard—some objectives complement each other while others compete, which makes tuning largely manual. The authors therefore rely on a single MLM objective: every modality is a sequence of tokens, and an image paired with text can be read as parallel sentences (sentence 1 followed by sentence 2).
+- Scaling model and data capacity: only a sufficiently large model can cover diverse tasks, so parameters are pushed to the billion scale while pretraining still draws on public data resources.
 
 ### BEIT-3: A General-Purpose Multimodal Foundation Model
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BEIT-3/fig2.png" alt="avatar" style="zoom:80%;" /></div>
 
-模型本身就是VLMO，前面的multi-head self-attention是共享权重的，后面的FFN是根据不同的模态进行训练的。有可能是遮住图像，有可能是遮住文本，总之都是完形填空
+Architecturally the model follows VLMO: early multi-head self-attention is shared across modalities, while the feed-forward networks (FFNs) are modality-specific. Pretraining masks either the image or the text—both are cloze-style prediction tasks.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BEIT-3/fig3.png" alt="avatar" style="zoom:80%;" /></div>
 
-转移到下游任务
+Adaptation to downstream tasks.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/BEIT-3/tab2-tab3.png" alt="avatar" style="zoom:80%;" /></div>
 

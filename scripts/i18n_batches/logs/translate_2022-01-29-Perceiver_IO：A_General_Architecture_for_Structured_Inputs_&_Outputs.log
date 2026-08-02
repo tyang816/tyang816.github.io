@@ -1,0 +1,7 @@
+**DONE**
+
+已将 `_posts/zh/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md` 译为学术英文并写入 `_posts/CV/2022-01-29-Perceiver IO：A General Architecture for Structured Inputs & Outputs.md`。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：blockquote 标签为 Paper / Code；图片、链接与结构均保留；坐标处使用 `$(x,y)$`，隐表示维度使用 `$N \times D$`、`$O \times E$`。
+- **校验**：目标文件存在，正文中无中文。

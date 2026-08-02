@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-01-09-Is Space-Time Attention All You Need for Video Understanding.md`
+
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | Abstract / Method / Experiment / Conclusion 与中文一致，结尾 `<HR>` 齐全 |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink`；其余字段一致 |
+| 图片与链接 | 与中文版相同 |
+| 内容与术语 | 五种结构（S / ST / T+S / L+G / T+W+H）、实验与结论四点均对应；英文表述自然 |
+| 数字与名称 | K400、SSV2、SlowFast、ResNet-101、SOTA 等与原文一致 |
+
+未修改英文文件。若你希望全文统一写成 `K400`（第 46 行现为 `Kinetics-400`，第 50 行为 `K400`），可以说一声我帮你改一版。

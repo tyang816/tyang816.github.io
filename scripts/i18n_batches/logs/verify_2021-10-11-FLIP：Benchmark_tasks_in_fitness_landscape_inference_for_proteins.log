@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文相同的章节（Abstract → Results）及结尾 `<HR>`，无截断。
+2. **正文语言**：无中文叙述。
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/`）；英文无 `permalink`；其余字段与中文一致。
+4. **资源**：OpenReview 链接、benchmark URL、全部图片 URL 一致。
+5. **结构**：标题层级与中文对齐。
+6. **表述**：学术英文通顺；已纠正中文里的笔误（如 “fifitness”“interst”）。
+7. **数据与专名**：149,361、160,000、143,539、5,822、2,911、96%、48,000、13 species、CASP/CAFA/TAPE 等与中文一致。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-10-11-FLIP：Benchmark tasks in fitness landscape inference for proteins.md`

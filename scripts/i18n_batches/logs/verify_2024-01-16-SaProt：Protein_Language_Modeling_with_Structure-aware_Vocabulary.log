@@ -1,0 +1,12 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-01-16-SaProt：Protein Language Modeling with Structure-aware Vocabulary.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+1. 英文稿完整，章节与中文一致（Abstract、Introduction、Methods、Experiments 及子节、Analysis 及子节、结尾 HR）。
+2. 正文无中文叙述。
+3. Frontmatter：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/`）；英文无 `permalink`；其余字段与中文对应。
+4. 图片、链接、URL 一致。
+5. 标题层级与中文对齐（中文误写 `Introcution`，英文为正确的 Introduction）。
+6. 英文表述与术语合理；40M / ~40M 结构、650M、64 A100、3 个月、10 个下游任务等与中文一致。
+
+未修改文件。

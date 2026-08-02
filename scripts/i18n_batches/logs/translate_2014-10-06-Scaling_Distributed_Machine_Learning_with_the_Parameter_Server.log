@@ -1,0 +1,7 @@
+**DONE**
+
+已将中文笔记译为学术英文并写入 [`_posts/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md`](_posts/OS/2014-10-06-Scaling Distributed Machine Learning with the Parameter Server.md)。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/`；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文**：结构、图片、链接与 `<HR>` 均保留；顶部引用为 `Paper:`；章节标题 `Architectrue` 译为 **Architecture**。
+- **校验**：目标路径存在，正文中无剩余中文。

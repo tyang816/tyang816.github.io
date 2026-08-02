@@ -1,0 +1,12 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/SE/2021-07-23-Graph-Augmented Code Summarization in Computational Notebooks.md`
+
+| 检查项 | 结果 |
+|--------|------|
+| 完整性 | 与中文一致：摘要链接、Themisto 小节、3 条要点、`<HR>` |
+| 无中文正文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 均为 `/zh/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/`；英文无 `permalink`；其余字段一致 |
+| 链接 | IJCAI 与 LeClair et al. arXiv 链接一致 |
+| 结构 | 标题与三条编号内容对应中文 |
+| 术语与数字 | HAConvGNN、四个相邻代码块、IJCAI-2021 等未改义 |

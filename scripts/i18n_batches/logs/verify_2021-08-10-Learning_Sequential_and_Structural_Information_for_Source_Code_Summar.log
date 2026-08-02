@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文与中文各节对应（含 img1–7 与文末 `<HR>`） | 通过 |
+| 正文无中文叙述 | 通过 |
+| `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink`；其余 frontmatter 一致 | 通过 |
+| 论文链接与 7 张图 URL 一致 | 通过 |
+| 标题层级与中文一致 | 通过 |
+| 术语与表述（mAST、GCN、Transformer、Java/Python 等）合理 | 通过 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2021-08-10-Learning Sequential and Structural Information for Source Code Summarization.md`

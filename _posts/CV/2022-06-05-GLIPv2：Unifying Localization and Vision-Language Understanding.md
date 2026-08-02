@@ -5,23 +5,26 @@ categories: [CV]
 tags: [vision-language, contrastive-learning, object-detection]
 proceedings: arXiv
 date: 2022-06-05
+lang: en
+alt_url: /zh/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+permalink: /cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
 ---
 
-> 论文地址：[GLIPv2：Unifying Localization and Vision-Language Understanding](http://arxiv.org/abs/2206.05836)
+> Paper: [GLIPv2：Unifying Localization and Vision-Language Understanding](http://arxiv.org/abs/2206.05836)
 >
-> 论文实现：<https://github.com/microsoft/GLIP>
+> Code: <https://github.com/microsoft/GLIP>
 
-## GLIPv2：在GLIP上增加了更多任务和数据集
+## GLIPv2: More Tasks and Datasets Built on GLIP
 
-### Abstratc
+### Abstract
 
-基本架构还是GLIP，只是把更多的任务，数据集融合进GLIP，比如分割，检测，VQA，image captioning
+The overall architecture remains GLIP; the extension is to unify more tasks and datasets within the same framework—for example, segmentation, detection, VQA, and image captioning.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/GLIPv2/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-图像还是一个编码器，但是文本就多了很多理解任务，再做deep fusion
+Images are still processed by a single encoder, while the text side supports a broader set of understanding tasks, followed by deep fusion between modalities.
 
 ### GLIPv2: Unifying Localization and VL Understanding
 

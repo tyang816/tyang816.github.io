@@ -5,22 +5,25 @@ categories: [BI]
 tags: [protein, benchmark, PLM]
 proceedings: NeurIPS
 date: 2022-12-01
+lang: en
+alt_url: /zh/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
+permalink: /bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
 ---
 
-> 论文地址：[PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding](https://proceedings.neurips.cc/paper_files/paper/2022/file/e467582d42d9c13fa9603df16f31de6d-Paper-Datasets_and_Benchmarks.pdf)
+> Paper: [PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding](https://proceedings.neurips.cc/paper_files/paper/2022/file/e467582d42d9c13fa9603df16f31de6d-Paper-Datasets_and_Benchmarks.pdf)
 >
-> 论文实现：<https://github.com/DeepGraphLearning/PEER_Benchmark>
+> Code: <https://github.com/DeepGraphLearning/PEER_Benchmark>
 >
 
-## PEER：蛋白质序列表征评估benchmark
+## PEER: A benchmark for evaluating protein sequence representations
 
 ### Abstract
 
-提出蛋白质序列表征评估的benchmark，包括 protein function prediction, protein localization prediction, protein structure prediction, protein-protein interaction prediction, and protein-ligand interaction prediction。此外，还调研了不同方法在多任务学习设置上的性能，实验表明大规模预训练的蛋白质语言模型性能最好
+This work introduces a benchmark for evaluating protein sequence representations, covering protein function prediction, protein localization prediction, protein structure prediction, protein–protein interaction prediction, and protein–ligand interaction prediction. The authors also survey how different methods perform under multi-task learning; experiments indicate that large-scale pretrained protein language models achieve the strongest results.
 
 ### Introduction
 
-受到ImageNet和GLUE的启发，希望构建一个蛋白质的全面基准数据集，包含了17个生物相关的任务覆盖了不同方面的蛋白质理解。测试了CNN，LSTM，Transformers和大规模的预训练模型等
+Inspired by ImageNet and GLUE, the authors seek to build a comprehensive protein benchmark with 17 biologically relevant tasks spanning diverse aspects of protein understanding. They evaluate CNNs, LSTMs, Transformers, and large-scale pretrained models.
 
 ### Benchmark Tasks
 

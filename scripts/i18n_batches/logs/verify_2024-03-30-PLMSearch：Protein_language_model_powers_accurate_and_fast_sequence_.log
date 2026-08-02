@@ -1,0 +1,12 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. 结构与中文一致（Abstract → Introduction → Results 各小节 → Methods 各小节 → `<hr>`），无截断。
+2. 正文无中文（专有名词除外）。
+3. Frontmatter：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/`）一致；无 `permalink`；其余字段与中文对应。
+4. 论文链接、代码链接、图片 URL 与中文一致。
+5. 标题层级与中文对齐（含将中文标题里的 “PLMsearch” 规范为 “PLMSearch”）。
+6. 英文表述通顺，术语合理（如 easy / remote homology pairs、long-tail、SS-predictor 等）。
+7. 数值与名称未改：2,207、4,870,849、430,140、43,014,000、542,317、498,659、ESM-1b、Fig./Table 引用等。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-03-30-PLMSearch：Protein language model powers accurate and fast sequence search for re.md`

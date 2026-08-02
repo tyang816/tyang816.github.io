@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-02-26-Learning Transferable Visual Models From Natural Language Supervision.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与完整性 | 与中文版一致（Abstract and Related Work → Method → Experiment → Limitation），结尾 `<HR>` 齐全 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 图/链/URL | 6 张 CLIP 图及 StyleCLIP、CLIPDraw、检测论文、MLR PDF 链接一致 |
+| 数字与名称 | 4 亿/400M、11.5%、8 模型、4×、80 模板、27 数据集、37 类、~88%、128 亿等一致 |
+| 英文表述 | 术语与语气合理（如 linear probe、prompt engineering/ensemble、12.8B image exposures） |
+
+英文版无需修改。

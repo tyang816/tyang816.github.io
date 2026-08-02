@@ -1,0 +1,10 @@
+_posts/zh/CV/2020-12-01-Unsupervised Learning of Visual Features by Contrasting Cluster Assignments.md
+_posts/zh/CV/2020-12-06-Big Self-Supervised Models are Strong Semi-Supervised Learners.md
+_posts/zh/CV/2020-12-06-Bootstrap your own latent：A new approach to self-supervised Learning.md
+_posts/zh/CV/2020-12-18-Contrastive Multiview Coding.md
+_posts/zh/CV/2021-01-09-Is Space-Time Attention All You Need for Video Understanding.md
+_posts/zh/CV/2021-01-13-An Image is Worth 16x16 Words：Transformers for Image Recognition at Scale.md
+_posts/zh/CV/2021-01-24-AudioCLIP：Extending CLIP to Image, Text and Audio.md
+_posts/zh/CV/2021-02-05-ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision.md
+_posts/zh/CV/2021-02-26-Learning Transferable Visual Models From Natural Language Supervision.md
+_posts/zh/CV/2021-04-05-An Empirical Study of Training Self-Supervised Vision Transformers.md

@@ -5,40 +5,43 @@ categories: [BI]
 tags: [protein, PLM, fitness-prediction]
 proceedings: ICML
 date: 2022-05-27
+lang: en
+alt_url: /zh/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
+permalink: /bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
 ---
 
-> 论文地址：[Tranception：protein fitness prediction with autoregressive transformers and inference-time retrieval](http://arxiv.org/abs/2205.13760)
+> Paper: [Tranception：protein fitness prediction with autoregressive transformers and inference-time retrieval](http://arxiv.org/abs/2205.13760)
 >
-> 论文实现：<https://github.com/OATML-Markslab/Tranception>
+> Code: <https://github.com/OATML-Markslab/Tranception>
 
-## Tranception：卷积多组attention+MSA retrieval
+## Tranception: grouped multi-head attention + MSA retrieval
 
 ### Abstract
 
-在多序列对齐上训练的深度蛋白质生成模型是目前处理蛋白质fitness最成功的方法，但这些方法的表现取决于是否有足够多和深的alignments来训练，这就限制了蛋白质的家族，大规模语言模型就不需要。提出了tranception，是transformer架构，利用了autoregressive prediction和homologous sequences of inference实现了SOTA。同时提出了ProteinGym数据集
+Deep generative protein models trained on multiple sequence alignments (MSAs) are among the most successful approaches to protein fitness prediction, but their performance depends on having sufficiently large and deep alignments for training, which limits the protein families they can cover; large-scale language models do not face this constraint. The authors propose Tranception, a transformer architecture that combines autoregressive prediction with homologous-sequence retrieval at inference time and achieves state-of-the-art results. They also introduce the ProteinGym benchmark.
 
 ### Introduction
 
-目前SOTA方法主要用了MSA，主要两个目的：
+Current state-of-the-art methods rely heavily on MSAs, mainly for two purposes:
 
-- 作为一个数据采集工具，在一个大型的蛋白质数据库中识别与目标相关的序列，然后在一组相关的序列上训练一个模型
-- 他们通过建模插入、删除和替换来对齐序列，从而形成一个坐标系统，使给定位置上的氨基酸能够在整个训练集上进行比较
+- As a data collection tool: identify sequences related to a target in large protein databases, then train a model on that related set
+- By aligning sequences via modeled insertions, deletions, and substitutions, they define a coordinate system so amino acids at a given position can be compared across the training set
 
-局限性：
+Limitations:
 
-- 模型不能对与训练中使用的MSA坐标系不兼容的序列进行预测（例如，插入和删除），从而限制了范围
-- 蛋白质组很大部分区域对应的是不能对齐的
-- 即使比对是可获得的，蛋白质功能可能是分类特异性的，MSA算法可能无法检索到足够大的同源序列集进行模型训练
-- alignment-based模型对训练的MSA比较敏感
-- 单独训练在不同数据子集的模型缺少信息共享
+- Models cannot score sequences incompatible with the MSA coordinate system used in training (e.g., insertions and deletions), which narrows applicability
+- A large fraction of the proteome lies in regions that cannot be aligned
+- Even when alignments exist, protein function can be taxon-specific, and MSA algorithms may fail to retrieve a large enough homolog set for training
+- Alignment-based models are sensitive to the MSAs used for training
+- Models trained separately on different data subsets do not share information
 
-基于MLM的模型不能评估整个序列的likelihood导致了预测突变影响时比较启发式，特别是多点位的时候，而且没法打分indels
+MLM-based models cannot evaluate full-sequence likelihood, which leads to heuristic scoring of mutational effects—especially for multi-site variants—and they cannot score indels.
 
-主要贡献：
+Main contributions:
 
-- 提出了tranception，transformer架构
-- 结合了autoregressive prediction和homologous sequences of inference达到SOTA
-- 提出了proteingym数据集
+- Tranception, a transformer architecture
+- Combining autoregressive prediction with homologous-sequence retrieval at inference to reach SOTA
+- The ProteinGym dataset
 
 ### Tranception
 
@@ -46,48 +49,48 @@ date: 2022-05-27
 
 #### Tranception attention
 
-研究了新的注意力机制，来关注氨基酸token的连续子序列（k-mer），把每一层得注意力头分为4组，每一组应用不同核大小的卷积
+The authors study a new attention mechanism that focuses on contiguous sub-sequences (k-mers) of amino acid tokens: at each layer, attention heads are split into four groups, each applying convolutions with a different kernel size.
 
 #### Grouped ALiBi position encoding
 
-把可学习的位置编码或是sin位置编码换成了ALiBi的一个变体，称为grouped ALiBi
+Learnable or sinusoidal positional encodings are replaced with a variant of ALiBi called grouped ALiBi.
 
 #### Data processing and augmentations
 
-模型参数700M，训练集是UniRed100，有250M的序列
+The model has 700M parameters and is trained on UniRef100 (~250M sequences).
 
-最大序列1024，如果训练时蛋白质超过1024就随机选择连续的片段达到这个最大长度
+Maximum sequence length is 1024; if a protein exceeds 1024 residues during training, a random contiguous segment of that length is sampled.
 
 #### Scoring sequences for fitness prediction
 
-训练目标是自监督的，给定i-1个token预测第i个token
+The training objective is self-supervised: given tokens 1 through i−1, predict token i.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/frm1.png" alt="avatar" style="zoom:70%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/frm2.png" alt="avatar" style="zoom:70%;" /></div>
 
-对于超出最大长度限制的蛋白质，选择可以提供最多突变的序列片段
+For proteins longer than the maximum length, the segment that covers the most mutations is selected for scoring.
 
 ### Inference-time retrieval
 
 #### Multiple sequence alignments
 
-在一个给定的位置上，观察到的MSA序列上的氨基酸分布概括了进化约束：属于MSA的蛋白质序列是保持适应度的变体，并且没有被进化选择淘汰
+At a given position, the amino-acid distribution over MSA sequences summarizes evolutionary constraints: sequences in the MSA are fitness-preserving variants that have not been eliminated by selection.
 
 #### Two modes of inference
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/fig3.png" alt="avatar" style="zoom:70%;" /></div>
 
-第二种模式：retrieval inference
+Second mode: retrieval inference.
 
-第一步在推理阶段要限制检索的MSA：
+Step one at inference restricts the retrieved MSA:
 
-- 替换：检索到的同源序列集对于野生型和突变序列都是共同的：我们每个家族进行一次检索步骤，并对所有要评分的突变序列分摊成本
-- 插入和删除：我们通过删除MSA中与删除位置相对应的列，并在MSA中的突变蛋白插入位置添加零填充列，将检索到的MSA调整为每个突变序列
+- Substitutions: the retrieved homolog set is shared for wild-type and mutant sequences—one retrieval per family, amortized over all mutants to be scored
+- Insertions and deletions: the retrieved MSA is adjusted per mutant by dropping columns corresponding to deletions and zero-padding columns at insertion sites
 
-第二步：
+Step two:
 
-logP_A是自回归的概率，logP_R是检索推理得到的概率，C是正则化常量
+log P_A is the autoregressive probability; log P_R is the probability from retrieval inference; C is a normalization constant.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Tranception/frm3.png" alt="avatar" style="zoom:70%;" /></div>
 

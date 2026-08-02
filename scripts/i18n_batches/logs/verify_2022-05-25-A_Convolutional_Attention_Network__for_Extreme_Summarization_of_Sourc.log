@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 逐项核对后：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文完整、结构与中文一致 | ✓ |
+| 正文无中文 | ✓ |
+| `lang: en`，`alt_url` 与中文 `permalink` 一致，英文无 `permalink` | ✓ |
+| 论文链接与图片 URL 一致 | ✓ |
+| 章节对齐（单节 + 图 + `<hr>`） | ✓ |
+| 学术英文，无明显 Chinglish | ✓ |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-05-25-A Convolutional Attention Network  for Extreme Summarization of Source Code.md`

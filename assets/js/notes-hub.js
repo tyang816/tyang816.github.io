@@ -59,8 +59,12 @@
     return cat;
   }
 
+  function subjectCategories(cats) {
+    return (cats || []).filter(function (c) { return c !== 'zh' && c !== 'en'; });
+  }
+
   function cardHtml(p, locale, catMeta) {
-    var cats = p.categories || [];
+    var cats = subjectCategories(p.categories);
     var primary = cats[0] || '';
     var label = catLabel(primary, locale, catMeta);
     var venue = [p.proceedings, label].filter(Boolean).join(' · ');
@@ -105,6 +109,13 @@
       return;
     }
 
+    var wantLang = locale === 'zh' ? 'zh' : 'en';
+    data = (data || []).filter(function (p) {
+      var lang = p.lang || 'en';
+      if (lang === 'zh-CN') lang = 'zh';
+      return lang === wantLang;
+    });
+
     var fuse = typeof Fuse !== 'undefined'
       ? new Fuse(data, { keys: ['title', 'content', 'excerpt', 'tags', 'categories', 'proceedings'], threshold: 0.35 })
       : null;
@@ -140,7 +151,8 @@
       var base = q && fuse ? fuse.search(q).map(function (r) { return r.item; }) : data.slice();
 
       return base.filter(function (p) {
-        if (activeCat && activeCat !== 'all' && !(p.categories || []).includes(activeCat)) return false;
+        var cats = subjectCategories(p.categories);
+        if (activeCat && activeCat !== 'all' && cats.indexOf(activeCat) === -1) return false;
         if (activeProc && (p.proceedings || '') !== activeProc) return false;
         if (activeYear && yearOf(p, locale) !== activeYear) return false;
         return true;

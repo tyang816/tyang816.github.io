@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/ML/2020-06-13-Contrastive Multi-View Representation Learning on Graphs.md`
+
+| 检查项 | 结果 |
+|--------|------|
+| 完整性 | 与中文一致：Abstract → Introduction → Related Work → Method → Experiments，含 `<HR>` 结尾 |
+| 正文语言 | 无中文残留 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 资源 | 论文链接、5 张图、扩散公式与中文一致 |
+| 结构 | 各级标题与五类对比模式列表对齐 |
+| 术语与数字 | 8/8、4/8、PPR、DiffPool、InfoMax 等保留正确；Related Work 标题已纠正中文 “Mutul” 为 Mutual Information |
+
+英文版在学术表述、Method/Experiments 细节上与中文笔记对应完整，可直接使用。

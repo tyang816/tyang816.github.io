@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 英文完整、结构与中文一致（Abstract / Method / Experiment、结尾 HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = `/zh/cv/A-Closer-Look-at-Spatiotemporal-Convolutions-for-Action-Recognition/`；无 `permalink`；其余 frontmatter 一致 | 通过 |
+| 图片、PDF 链接、表格图 URL 一致 | 通过 |
+| 章节与要点（R2D / MCx / rMCx / R3D / R(2+1)D、消融、K-400、I3D 预训练对比、112×112） | 通过 |
+| 术语与数字（Sports-1M、Kinetics-400、UCF101、HMDB51 等） | 通过 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2018-04-12-A Closer Look at Spatiotemporal Convolutions for Action Recognition.md`

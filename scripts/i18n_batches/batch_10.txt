@@ -1,0 +1,10 @@
+_posts/zh/CL/2025-12-08-AI-Researcher：Autonomous Scientific Innovation.md
+_posts/zh/CL/2025-12-17-Evaluating Large Language Models in Scientific Discovery.md
+_posts/zh/CV/2014-09-25-Large-scale Video Classification with Convolutional Neural Networks.md
+_posts/zh/CV/2014-11-12-Two-Stream Convolutional Networks for Action Recognition in Videos.md
+_posts/zh/CV/2015-04-17-Beyond Short Snippets：Deep Networks for Video Classification.md
+_posts/zh/CV/2015-09-25-Learning Spatiotemporal Features with 3D Convolutional Networks.md
+_posts/zh/CV/2016-04-20-Convolutional Two-Stream Network Fusion for Video Action Recognition.md
+_posts/zh/CV/2016-11-17-Temporal Segment Networks：Towards Good Practices for Deep Action Recognition.md
+_posts/zh/CV/2017-05-22-Quo Vadis, Action Recognition A New Model and the Kinetics Dataset.md
+_posts/zh/CV/2018-04-12-A Closer Look at Spatiotemporal Convolutions for Action Recognition.md

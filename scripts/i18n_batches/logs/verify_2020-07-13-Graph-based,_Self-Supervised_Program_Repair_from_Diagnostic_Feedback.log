@@ -1,0 +1,16 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文两篇笔记。
+
+**核对结果**
+
+| 项 | 结果 |
+|---|---|
+| 英文完整、结构与中文一致 | Abstract / Introduction / Approach / Experiment 及图片、`<HR>` 均对应 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/`）；英文无 `permalink`；其余字段一致 |
+| 图片、链接、URL | 与中文相同 |
+| 术语与数字 | DrRepair、ICML、四类 corruption 等与中文一致 |
+| 英文表述 | 无需要改的明显 Chinglish |
+
+英文版已是完整、准确的译文，未改文件。
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/SE/2020-07-13-Graph-based, Self-Supervised Program Repair from Diagnostic Feedback.md

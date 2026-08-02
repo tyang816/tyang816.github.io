@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 逐项对照后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文相同的章节（Abstract、Introduction、Training Procedure Analysis 及子节、RoBERTa、tab1–7 图、`<hr>`），无截断。
+2. **正文语言**：无中文叙述。
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/`）一致；英文无 `permalink`；其余字段与中文一致。
+4. **资源**：arXiv、GitHub 及全部图片 URL 一致。
+5. **结构**：标题层级与中文对应（中文「Introdcution」拼写错误，英文已用正确 **Introduction**）。
+6. **用语**：学术英文通顺；NSP/MLM、SEGMENT-PAIR 等术语正确；中文「UNKOWN」在英文中写为 **UNK** 合理。
+7. **数字与名称**：10 份拷贝、40 epochs、512 tokens 等均保留。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2019-07-26-RoBERTa：A Robustly Optimized BERT Pretraining Approach.md`

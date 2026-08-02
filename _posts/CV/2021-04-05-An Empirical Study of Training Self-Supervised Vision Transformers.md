@@ -5,16 +5,18 @@ categories: [CV]
 tags: [vision-language]
 proceedings: ICCV
 date: 2021-04-05
+lang: en
+alt_url: /zh/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
+permalink: /cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
 ---
 
-> 论文地址：[An Empirical Study of Training Self-Supervised Vision Transformers](http://arxiv.org/abs/2104.02057)
+> Paper: [An Empirical Study of Training Self-Supervised Vision Transformers](http://arxiv.org/abs/2104.02057)
 >
-> 代码：<https://github.com/facebookresearch/moco-v3>
+> Code: <https://github.com/facebookresearch/moco-v3>
 
-## MoCo v3：冻住patch projection在训练时更加平滑
+## MoCo v3: Freezing the patch projection makes training smoother
 
-1. 自监督训练的ViT不稳定，在大batch的情况下应该会更好，但是训练中发现更差，于是观察每一层梯度回传的情况。发现当训练产生较大loss的时候梯度会有波峰，波峰发生在第一层，即patch projection
-2. 在不想修改transformer本身的情况下，只能修改开头或结尾。于是意识到第一步，即tokenization阶段的重要性，
+1. Self-supervised ViT training is unstable; larger batches ought to help, but in practice training gets worse. They inspect gradient backpropagation layer by layer and find that when training yields a large loss, gradients spike; the spike occurs in the first layer—the patch projection.
+2. Without modifying the transformer itself, only the beginning or the end can be changed. This highlights the importance of the first step—the tokenization stage—
 
 <HR align=left color=#987cb9 SIZE=1>
-

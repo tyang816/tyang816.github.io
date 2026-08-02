@@ -5,30 +5,35 @@ categories: [ML]
 tags: [GNN]
 proceedings: Transactions on Neural Networks and Learning Systems
 date: 2020-03-24
+lang: en
+alt_url: /zh/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+permalink: /ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
 ---
 
-> 论文地址：[A Comprehensive Survey on Graph Neural Networks](https://ieeexplore.ieee.org/document/9046288)
+> Paper: [A Comprehensive Survey on Graph Neural Networks](https://ieeexplore.ieee.org/document/9046288)
 
-## 图神经网络综述
+## Survey of graph neural networks
 
-1.  将图定义为：循环图神经网络、卷积图神经网络、时空图神经网络、图自编码器
+1. Graph neural networks are categorized as recurrent graph neural networks, convolutional graph neural networks, spatiotemporal graph neural networks, and graph autoencoders.
 
-    1.1 循环图神经网络（RecGNNs）大多是图神经网络的开创性作品。RecGNN旨在学习具有循环神经架构的节点表示。它们假设图中的节点不断与其邻居交换信息/消息，直到达到稳定的平衡。它启发了后来对卷积图神经网络的研究，消息传递的思想被基于空间的卷积图神经网络所继承。
+    1.1 Recurrent graph neural networks (RecGNNs) comprise much of the pioneering work on graph neural networks. RecGNNs aim to learn node representations with recurrent neural architectures. They assume that nodes in a graph repeatedly exchange information or messages with their neighbors until a stable equilibrium is reached. This perspective later inspired research on convolutional graph neural networks; the message-passing idea was inherited by spatial-based ConvGNNs.
 
-    1.2 卷积图神经网络（ConvGNNs）将卷积运算从网格数据推广到了图形数据。主要思想是通过聚合节点自身的特征和邻居的特征来生成节点的表示
+    1.2 Convolutional graph neural networks (ConvGNNs) generalize convolution from grid-structured data to graph data. The main idea is to form a node representation by aggregating the node’s own features with those of its neighbors.
 
-    1.3 图自动编码器（GAEs）是无监督的学习框架，可将节点/图编码到潜在的矢量空间中，并通过编码后的信息重建图数据。GAEs用于学习网络嵌入和图生成分布。对于网络嵌入，GAEs通过重建图结构信息（例如图邻接矩阵）来学习潜在节点表示。对于图生成，某些方法逐步生成图的节点和边，而其他方法则一次全部输出图形
+    1.3 Graph autoencoders (GAEs) are unsupervised learning frameworks that encode nodes or entire graphs into a latent vector space and reconstruct graph data from the encoded representation. GAEs are used for network embedding and for learning generative distributions over graphs. For network embedding, GAEs learn latent node representations by reconstructing graph-structural information (e.g., the adjacency matrix). For graph generation, some methods generate nodes and edges step by step, whereas others output the full graph in one shot.
 
-    1.4 时空图神经网络（STGNNs）旨在从时空图中学习隐藏的模式，这种模式在各种应用中变得越来越重要，例如交通速度预测，驾驶员操纵预期和人类动作识别。STGNNs的关键思想是同时考虑空间依赖性和时间依赖性。许多当前的方法将用来捕获空间依赖性的图卷积和用来对时间依赖性进行建模的RNNs或CNNs集成在一起。
-2.  用于图的无监督学习：
+    1.4 Spatiotemporal graph neural networks (STGNNs) aim to learn hidden patterns from spatiotemporal graphs, a setting that has become increasingly important in applications such as traffic speed forecasting, driver maneuver anticipation, and human action recognition. The key idea of STGNNs is to model spatial and temporal dependencies jointly. Many current approaches combine graph convolutions that capture spatial dependencies with RNNs or CNNs that model temporal dependencies.
 
-    当图中没有可用的类标签时，可以在端到端框架中以完全无监督的方式学习图嵌入。这些算法以两种方式利用边级信息。一种简单的方法是采用自动编码器框架，其编码器使用图卷积层将图嵌入到潜在表示中，在其上使用解码器来重构图结构。另一种流行的方法是利用负采样方法，该方法将一部分节点对采样为负对，而图中具有链接的现有节点对为正对。然后应用逻辑回归层来区分正对和负对。
-3.  用于节点级分类的半监督学习
+2. Unsupervised learning on graphs:
 
-    给定带有部分标记节点而其他节点未被标记的单个网络，ConvGNNs可以学习一个健壮的模型，该模型可以有效地标识未标记节点的类标签。为此，可以通过堆叠几个图卷积层，然后堆叠一个用于多分类的softmax层，来构建端到端框架。
-4.  用于图级分类的监督学习
+    When no class labels are available on a graph, graph embeddings can be learned in a fully unsupervised manner within an end-to-end framework. These algorithms exploit edge-level information in two ways. A simple approach adopts an autoencoder framework: the encoder maps the graph into a latent representation using graph convolution layers, and a decoder reconstructs the graph structure from that representation. Another popular approach uses negative sampling: a subset of node pairs is drawn as negative pairs, while existing linked node pairs in the graph serve as positive pairs. A logistic regression layer is then applied to distinguish positive from negative pairs.
 
-    图分类旨在预测整个图的类标签。可以通过图卷积层，图池层和/或读出层的组合来实现此任务的端到端学习。图卷积层负责精确的高级节点表示，而图池化层则充当下采样的角色，从而每次将每个图都粗化为子结构。
+3. Semi-supervised learning for node-level classification
+
+    Given a single network in which some nodes are labeled and others are not, ConvGNNs can learn a robust model that effectively predicts class labels for unlabeled nodes. An end-to-end framework can be built by stacking several graph convolution layers followed by a softmax layer for multi-class classification.
+
+4. Supervised learning for graph-level classification
+
+    Graph classification aims to predict a class label for an entire graph. End-to-end learning for this task can be implemented by combining graph convolution layers, graph pooling layers, and/or readout layers. Graph convolution layers produce high-level node representations; graph pooling layers act as downsampling operators, coarsening each graph into substructures at each stage.
 
 <hr align="left" color="#987cb9" size="1">
-

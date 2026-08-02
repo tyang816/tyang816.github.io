@@ -1,0 +1,13 @@
+已按 `scripts/i18n_verify_brief.md` 对照中英文全文核对：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文完整、结构与中文一致 | Abstract / Introduction / Methods / Results（含 AAR、体外结合、scRMSD）/ Discussion 均对应 |
+| 正文无中文 | 无中文字符 |
+| Frontmatter | `lang: en`；`alt_url` 为中文 `permalink`（`/zh/bi/IgDesign：...`）；无英文 `permalink`；其余字段与中文一致 |
+| 图、链接、DOI、GitHub | 与中文一致 |
+| 术语与数值 | 8 抗原、100 设计、*p* &lt; 2e-4 / 3e-3、模型名等一致 |
+
+英文表述与学术语气正常，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-12-08-IgDesign：In vitro validated antibody design against multiple therapeutic antigen (1).md`

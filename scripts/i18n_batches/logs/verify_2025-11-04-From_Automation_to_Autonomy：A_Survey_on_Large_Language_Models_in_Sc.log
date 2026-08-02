@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-11-04-From Automation to Autonomy：A Survey on Large Language Models in Scientific Discovery.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+1. **完整性**：英文与中文章节一致（Abstract → §6），结尾 `<hr>` 齐全，无截断。  
+2. **正文语言**：英文正文中无中文叙述。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink`（`/zh/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/`）一致；英文无 `permalink`；其余字段与中文对应。  
+4. **资源**：论文链接、GitHub、图片 URL 与中文一致。  
+5. **结构**：各级标题（含 3.1–5.2、Table A3 小节）与中文对齐。  
+6. **用语**：学术英文通顺；英文已修正中文笔误「AI Scientis-v1」为 **AI Scientist-v1**。  
+7. **专有名词与引用**：模型/系统名、作者与年份未改义。
+
+无需修改，故返回 **OK**。

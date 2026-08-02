@@ -5,23 +5,26 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: ICML
 date: 2019-02-02
+lang: en
+alt_url: /zh/cl/Parameter-Efficient-Transfer-Learning-for-NLP/
+permalink: /cl/Parameter-Efficient-Transfer-Learning-for-NLP/
 ---
 
-> 论文地址：[Parameter-Efficient Transfer Learning for NLP](https://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
+> Paper: [Parameter-Efficient Transfer Learning for NLP](https://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 >
-> 论文实现：<https://github.com/google-research/adapter-bert>
+> Code: <https://github.com/google-research/adapter-bert>
 
-## adapter-bert：小组件嵌入transformer
+## adapter-bert: Small modules embedded in the transformer
 
 ### Abstract
 
-NLP 中微调大规模预训练模型是常用的迁移方式，但是许多下游任务重，微调是参数无效的：每个任务都需要一个完全新的模型。提出使用 adaptor 模块进行迁移：针对每个任s务仅添加少量可训练参数，之前网络的参数固定，参数高度复用。为了证明 adaptor 的有效性，将 BERT 迁移至 26 个不同的文本分类任务。实验证明作者的方法可以仅调整少量参数，并获得和调整所有参数的微调方法同样的效果
+Fine-tuning large pretrained models is a standard transfer-learning approach in NLP, but for many downstream tasks it is parameter-inefficient: each task requires an entirely new model. This work proposes transfer via adapter modules: only a small set of trainable parameters is added per task while the rest of the network stays fixed, enabling heavy parameter reuse. To validate adapters, BERT is adapted to 26 text classification tasks. Experiments show that tuning only a small fraction of parameters can match full fine-tuning of all parameters.
 
 ### Adapter tuning for NLP
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/adapter-bert/fig2.png" alt="avatar" style="zoom:80%;" /></div>
 
-这里的adapter就是一个下采样的FC层，一个transformer block里面加了两个adapter，其他层都是锁住的，只学习了adapter
+Here an adapter is a down-projection FC layer; each transformer block contains two adapters, the remaining layers are frozen, and only the adapters are trained.
 
 ### Experiments
 

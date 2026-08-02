@@ -5,17 +5,20 @@ categories: [SE]
 tags: [code-summarization, transformer]
 proceedings: ACL
 date: 2020-05-01
+lang: en
+alt_url: /zh/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
+permalink: /se/A-Transformer-based-Approach-for-Source-Code-Summarization/
 ---
 
-> 论文地址：[A Transformer-based Approach for Source Code Summarization](https://aclanthology.org/2020.acl-main.449.pdf)
+> Paper: [A Transformer-based Approach for Source Code Summarization](https://aclanthology.org/2020.acl-main.449.pdf)
 >
-> 论文实现：<https://github.com/wasiahmad/NeuralCodeSum>
+> Code: <https://github.com/wasiahmad/NeuralCodeSum>
 
-## NeuralCodeSum：用transformer做代码摘要生成
+## NeuralCodeSum: Transformer-based source code summarization
 
 ### Abstract
 
-用transformer做代码摘要生成
+Transformer-based generation of natural language summaries from source code.
 
 ### Experiment
 
@@ -23,7 +26,7 @@ date: 2020-05-01
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/NeuralCodeSum/tab7.png" alt="avatar" style="zoom:100%;" /></div>
 
-超参设置
+Hyperparameter settings
 
 #### Results and Analysis
 

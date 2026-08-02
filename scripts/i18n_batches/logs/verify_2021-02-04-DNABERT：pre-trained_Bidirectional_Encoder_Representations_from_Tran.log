@@ -1,0 +1,10 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文版章节一致（Abstract、Introduction、Materials and methods 子节、Results、fig1–fig6、页脚 HR）。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url` 为中文版 `permalink`（`/zh/bi/...`）；英文无 `permalink`；其余字段与中文一致。
+4. **链接与资源**：论文链接、GitHub、图片 URL 一致。
+5. **结构与语气**：标题层级对齐；英文表述通顺，术语与数字（120k steps、batch_size=2000、DNABERT-Prom/TF/Splice 等）保留正确。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-02-04-DNABERT：pre-trained Bidirectional Encoder Representations from Transformers mode.md`

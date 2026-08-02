@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构完整（Abstract / Introduction / Method / Experiments + HR） | 与中文一致 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` 指向中文 `permalink`，无英文 `permalink` | 通过 |
+| 图片、arXiv/GitHub 链接 | 一致 |
+| 章节与要点（KL 散度、batch 内多正样本、约 3 个点、prompt / post-network、zero-shot） | 均已覆盖 |
+| 术语与数字 | CLIP、ViT、ImageNet 等保留正确 |
+
+英文版已是完整、规范的学术笔记翻译，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-09-17-ActionCLIP：A New Paradigm for Video Action Recognition.md`

@@ -1,0 +1,13 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-01-24-AudioCLIP：Extending CLIP to Image, Text and Audio.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（Abstract / Model / Result、三张图、结尾 HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 链接与图片 URL 一致 | 通过 |
+| 术语（ESResNeXt、CLIP 等）保留 | 通过 |
+
+英文摘要与 Model 段与中文含义一致，无需修改。

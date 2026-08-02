@@ -5,40 +5,43 @@ categories: [IR]
 tags: [meta-learning, recommendation-system]
 proceedings: KDD
 date: 2019-07-25
+lang: en
+alt_url: /zh/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
+permalink: /ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
 ---
 
-> 论文地址：[MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation](https://dl.acm.org/doi/10.1145/3292500.3330859)
+> Paper: [MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation](https://dl.acm.org/doi/10.1145/3292500.3330859)
 >
-> 论文实现：<https://github.com/hoyeoplee/MeLU>
+> Code: <https://github.com/hoyeoplee/MeLU>
 >
-> 本文参考：<https://blog.csdn.net/qq_36426650/article/details/109378554>
+> Further reading: <https://blog.csdn.net/qq_36426650/article/details/109378554>
 
-## MeLU：元学习用户冷启动+证据候选策略
+## MeLU: Meta-Learning for User Cold-Start and Evidence Candidate Selection
 
 ### Abstract
 
-先前的推荐工作主要有两大局限性：1.消费少量物品的用户推荐效果很差；2.证据候选不够充分识别出用户偏好。作者提出MeLU解决了上述问题，同时提供了一个证据候选选择策略，来确定区分物品的定制偏好评估。用两个基准数据集验证了MeLU，所提出的模型比数据集上比两个比较模型减少了至少5.92%的平均绝对误差
+Prior recommendation work suffers from two major limitations: (1) poor recommendation quality for users who consume only a few items, and (2) evidence candidates that are insufficient to identify user preferences. The authors propose MeLU to address both issues and introduce an evidence candidate selection strategy that yields customized preference estimates that better discriminate among items. MeLU is evaluated on two benchmark datasets; the proposed model reduces mean absolute error by at least 5.92% compared with two baselines on those datasets.
 
 ### Introduction
 
-协同过滤、基于内容或混和系统都很难处理新用户（用户冷启动）和新物品（物品冷启动），因为缺少用户与物品之间的交互信息，为了解决这种问题，比如Netflix就根据最热门电影和电视节目推荐给新用户，这些视频就被称为：*evidence candidates（证据候选）*，系统再根据用户从候选集中选择情况再推荐
+Collaborative filtering, content-based, and hybrid systems struggle with new users (user cold-start) and new items (item cold-start) because interaction data are scarce. A common workaround—used, for example, by Netflix—is to show new users popular movies and TV programs; these items serve as *evidence candidates*, and the system recommends further content based on what the user selects from that set.
 
-先前的冷启动方法主要有：
+Earlier cold-start approaches include:
 
-- popularity-based：根据热门、或者随机等方式为用户提供一定的推荐列表，试图先获取一定的反馈
-- evidence candidate：遵循一种策略，事先获得一定的候选物品供用户选择，其次根据交互结果为用户进行推荐
+- **Popularity-based**: provide recommendation lists via popularity, random exposure, or similar heuristics to collect initial feedback.
+- **Evidence candidate**: follow a strategy that first presents a set of candidate items for the user to choose from, then personalize recommendations from the resulting interactions.
 
-先前的推荐系统主要被两个问题限制：
+Prior systems are constrained by two problems:
 
-- 系统应该能够给只打了很少评分的新用户推荐，但系统一般没为这个设计，即使是用户画像依旧基本没提升，比如两个20岁失业男子，一个看了点恐怖电影，一个看了点科幻电影，但推荐列表依旧差不多，因为他们的年龄，状态等等用户信息太相近了
-- 现有系统提供的证据候选不可靠：因为都是推荐热门的东西。作者就有意的选择一些不热门的证据候选来提高系统对新用户的效果
+- The system should recommend well for new users with very few ratings, but most designs do not target this setting; user profiles often help little. For instance, two unemployed 20-year-old men—one watching horror films and one science fiction—may still receive similar lists because demographic attributes (age, employment status, etc.) are nearly identical.
+- Evidence candidates offered by existing systems are unreliable because they tend to be popular items. The authors deliberately choose less popular evidence candidates to improve performance for new users.
 
-本文主要有以下四项贡献：
+Main contributions:
 
-- 在推荐系统中引入了MAML概念来缓解冷启动问题
-- 第一个确定可靠的证据候选的研究来提高初始化推荐性能
-- MeLU可以使用每个用户独特的物品消费历史
-- 在两个数据集和一个用户调查上对系统和证据候选选择策略进行验证
+- Introduce MAML-style meta-learning in recommendation to mitigate cold-start.
+- First work to identify reliable evidence candidates to improve initial recommendation quality.
+- MeLU leverages each user’s distinct item consumption history.
+- Validate the system and evidence candidate selection strategy on two datasets and a user study.
 
 ### Method
 
@@ -46,11 +49,11 @@ date: 2019-07-25
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MeLU/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-- 输入层（input layer）：对于离散变量，embedding映射到连续空间，此处包含的embedding参数；对于连续的变量则跳过embedding层直接与其他向量进行拼接；
-- 嵌入层：根据离散的特征，通过嵌入层嵌入到连续的向量空间中；
-- 拼接层：将多个特征向量直接拼接起来；
-- 决策层：由于用户和物品的向量维度不完全一致，所以无法使用矩阵分解，而使用多层神经网络；
-- 输出层：则表示优化的目标，可以是点击率，隐式反馈、停留时长等；
+- **Input layer**: discrete features are mapped to continuous space via embeddings (embedding parameters live here); continuous features skip the embedding layer and are concatenated directly with other vectors.
+- **Embedding layer**: discrete features are embedded into continuous vectors.
+- **Concatenation layer**: feature vectors are concatenated.
+- **Decision layer**: user and item vector dimensions need not match, so matrix factorization is replaced by a multilayer neural network.
+- **Output layer**: the optimization target (e.g., click-through rate, implicit feedback, dwell time).
 
 #### Meta-Learned User Preference Estimator
 
@@ -58,32 +61,32 @@ date: 2019-07-25
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MeLU/alg1.png" alt="avatar" style="zoom:60%;" /></div>
 
-支持集做局部更新（单个用户，也可以说是任务），查询集做全局更新
+The support set drives local updates (one user, i.e., one task); the query set drives global updates.
 
-输入层和嵌入层作为一个整体，其对应的训练参数用 $\theta_1$ 表示，决策层和输出层作为一个整体，其对应的训练参数用 $\theta_2$ 表示。每一轮训练过程中，挑选一定数量的用户，对每个用户（相当于MAML中的Task）进行采样得到支持集，获得少量的交互数据后，计算在支持集上得到的训练loss，并计算对应的梯度实现局部更新。每个用户的局部更新均是在 $\theta_1$ 的基础上进行的
+The input and embedding layers share parameters $\theta_1$; the decision and output layers share $\theta_2$. Each training round samples a batch of users. For each user (a MAML task), a support set is drawn from their interactions; the support-set loss and its gradients perform local updates. All local updates start from the shared $\theta_1$.
 
-每个用户进行局部更新的目的是，模拟让模型对新的用户进行学习的过程。在全局更新阶段则是对所有用户再次采样得到的查询集上进行的，每个用户的查询集上均可以得到测试loss，并平均后计算梯度
+Local updates per user simulate rapid adaptation to a new user. Global updates use query sets resampled for all users; each user yields a query loss, and gradients are computed on the averaged query loss.
 
 #### Evidence Candidate Selection
 
-模型中，整个用户的个性化梯度的平均Frobenius范数（矩阵各项元素的绝对值平方的总和开根号）越大（即本地更新的梯度，$||\nabla_{\theta_2^i}L_i(f_{\theta_1},\theta_2^i)||_F$），用户偏好之间的区别就越好，所以将计算梯度时将 $L_1$ 改为了 $L_1/|L_1|$ ，其中||表示反向传播单位误差的绝对值
+In the model, a larger average Frobenius norm of user-specific personalization gradients (local update gradients, $||\nabla_{\theta_2^i}L_i(f_{\theta_1},\theta_2^i)||_F$) indicates better separation among user preferences. For gradient computation, $L_1$ is replaced by $L_1/|L_1|$, where $|\cdot|$ denotes the absolute value of the backpropagated unit error.
 
-除了更大的梯度对区分用户有用外，还增加了用户对物品的意识。通过计算gradient-based和popularity-based的值作为平均Frobenius范数和用户-物品对里使用到的交互数。前者表示每个用户在局部更新时的梯度的F范数，并进行归一化；后者是该物品的热门情况，即该物品被用户交互的相对频率，可以反映用户-物品的交互是否频繁。如果梯度的F1范数越大，或者交互越频繁，我们认为这个物品可能是该用户的偏好，给与更高的分数（两个value归一化的乘积）
+Beyond large gradients for user discrimination, the method also emphasizes user awareness of items. It combines gradient-based and popularity-based scores: average Frobenius norm and the interaction count for each user–item pair. The former is the Frobenius norm of each user’s local-update gradient (normalized); the latter reflects item popularity—the relative frequency with which the item appears in interactions—indicating how often the user–item pair is observed. Higher Frobenius norm or more frequent interaction suggests stronger user preference and receives a higher score (the product of the two normalized values).
 
 ### Experiment
 
-看了下原代码，支持和查询集的划分就比较简单，最后10个是查询集，前面都是支持集
+In the released code, support/query split is simple: the last 10 interactions form the query set; all earlier ones form the support set.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MeLU/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-包括MovieLens和Bookcrossing两个数据集
+Experiments use MovieLens and Book-Crossing.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MeLU/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 
-针对四种推荐场景，可以得到相关的结果，其中PPR和Wide&Deep分别是一种基于用户和物品特征的冷启动推荐方法和基于记忆和泛化的推荐模型，MeLU-1和MeLU-5则分别表示局部更新的次数分别是1次和5次
+Results are reported for four recommendation scenarios. PPR and Wide&Deep are a feature-based cold-start method and a memorization–generalization model, respectively. MeLU-1 and MeLU-5 denote one and five local update steps.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/MeLU/tab3.png" alt="avatar" style="zoom:60%;" /></div>
 
-测试候选物品策略，基于热门的方法被选可能仅仅是因为热门，和用户兴趣没关系，作者提出的方法可以在很少交互数据中评估出用户偏好
+Evidence candidate strategies are compared: popularity-based selection may reflect popularity rather than interest; the proposed method can infer preferences from very sparse interactions.
 
 <HR align=left color=#987cb9 SIZE=1>

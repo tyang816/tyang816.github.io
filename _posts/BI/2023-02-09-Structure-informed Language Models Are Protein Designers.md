@@ -5,44 +5,47 @@ categories: [BI]
 tags: [protein, PLM, protein-design]
 proceedings: ICML
 date: 2023-02-09
+lang: en
+alt_url: /zh/bi/Structure-informed-Language-Models-Are-Protein-Designers/
+permalink: /bi/Structure-informed-Language-Models-Are-Protein-Designers/
 ---
 
-> 论文地址：[Structure-informed Language Models Are Protein Designers](https://proceedings.mlr.press/v202/zheng23a/zheng23a.pdf)
+> Paper: [Structure-informed Language Models Are Protein Designers](https://proceedings.mlr.press/v202/zheng23a/zheng23a.pdf)
 >
-> 论文实现：<https://github.com/BytedProtein/ByProt>
+> Code: <https://github.com/BytedProtein/ByProt>
 >
 
-## LM-DESIGN：结构模型输入序列模型精炼蛋白质设计序列
+## LM-DESIGN: Structure models prompt sequence models to refine protein design sequences
 
 ### Abstract
 
-基于序列的蛋白质语言模型（plm）的通用方法，将轻量级的结构adapter丢到plm中，在推理过程中，进行迭代再细化，以有效地优化生成的蛋白质序列
+A general approach built on sequence-based protein language models (PLMs) inserts lightweight structural adapters into PLMs and applies iterative refinement during inference to effectively optimize generated protein sequences.
 
 ### Introduction
 
-基于结构的蛋白质设计方法主要受限于：
+Structure-based protein design is mainly limited by:
 
-1. 通过实验确定的蛋白质结构数据有限
+1. Limited experimentally determined protein structure data
 
-2. 结构上有不确定性区域
+2. Regions of structural uncertainty
 
-   从生物学的角度来看，蛋白质结构有时没有足够的信息，特别是对于那些灵活的区域，如环和暴露的表面。在这些区域中，假设残差恒等式与结构上下文的相关性较小，而序列知识更有用，但在很大程度上被忽略了。我们验证了这一假设，并发现现有的纯基于结构的方法容易为这些区域产生功能无效的序列
+   From a biological perspective, protein structure sometimes carries insufficient information, especially for flexible regions such as loops and exposed surfaces. In these regions, residue identity is assumed to correlate less with structural context, whereas sequence knowledge is more useful but has largely been ignored. The authors validate this hypothesis and find that existing purely structure-based methods tend to produce functionally invalid sequences for such regions.
 
-所以用结构模型来提示序列模型生成序列
+Therefore, structure models are used to prompt sequence models to generate sequences.
 
 ### Reprogramming pLMs for Structure-based Protein Design with Structure Surgery
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LM-DESIGN/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-增加这种structual adapter是模型无关的方法
+Adding this structural adapter is a model-agnostic approach.
 
 #### Training
 
-去噪自编码方式，使用conditional masked language modeling(CMLM)，用这个目标函数只看到左侧的氨基酸对于序列生成任务而言更好
+Denoising autoencoding with conditional masked language modeling (CMLM); for sequence generation, this objective—exposing the model only to amino acids on the left—is preferable.
 
 #### Inference with Iterative Refinement
 
-从结构模型用一个线性头映射到20个氨基酸得到的序列作为初始序列，反复迭代T次直到不再优化
+The initial sequence comes from mapping the structure model to the 20 amino acids via a linear head; the method iteratively refines for T steps until optimization plateaus.
 
 ### Experiments
 

@@ -5,87 +5,103 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: ICML
 date: 2021-02-26
+lang: en
+alt_url: /zh/cv/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/
+permalink: /cv/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/
 ---
 
-> 论文地址：[Learning Transferable Visual Models From Natural Language Supervision](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
+> Paper: [Learning Transferable Visual Models From Natural Language Supervision](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)
 
-## CLIP：单模态正样本换成多模态，用文本提示做迁移学习
+## CLIP: Replace unimodal positives with multimodal pairs; use text prompts for transfer learning
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img1.png" alt="avatar" style="zoom:60%;" /></div>
 
 ### Abstract and Related Work
 
-1. CLIP 强大的一个主要原因是 OpenAI 收集了4亿个**图片和文本的配对，打破了固定类别标签的做法**。
-2. 彻底摆脱了 categorical label 的限制，无论在训练还是在推理的时候，都不需要一个提前定好的标签列表，任意照片都可以通过给模型喂不同的文本句子从而知道图片里是否有感兴趣的物体，也延申出了一些很有意思的工作。
+1. A major reason CLIP is strong is that OpenAI collected **400 million image–text pairs, breaking away from fixed categorical labels**.
+2. It fully removes the constraint of categorical labels: neither training nor inference requires a predefined label list. Any image can be queried by feeding the model different text sentences to test whether objects of interest are present, which has spawned many interesting follow-ups.
 
-   2.1 [StyleCLIP](https://openaccess.thecvf.com/content/ICCV2021/papers/Patashnik_StyleCLIP_Text-Driven_Manipulation_of_StyleGAN_Imagery_ICCV_2021_paper.pdf)：CLIP + styleGAN，文字上的改变引导图片的生成，[code](https://github.com/orpatashnik/StyleCLIP)
+   2.1 [StyleCLIP](https://openaccess.thecvf.com/content/ICCV2021/papers/Patashnik_StyleCLIP_Text-Driven_Manipulation_of_StyleGAN_Imagery_ICCV_2021_paper.pdf): CLIP + StyleGAN—text edits guide image generation, [code](https://github.com/orpatashnik/StyleCLIP)
 
-   2.2 [CLIPDraw](https://arxiv.org/pdf/2106.14843.pdf)：CLIP 预训练模型指导图像生成，做几步 gradient descent 就可以生成简笔画图像
+   2.2 [CLIPDraw](https://arxiv.org/pdf/2106.14843.pdf): a CLIP pretrained model guides image generation; a few steps of gradient descent suffice to produce sketch-like images
 
-   2.3 [物体检测和分割](https://arxiv.org/pdf/2104.13921.pdf)：检测出新的类，比如不仅识别出玩具，还能识别出这是什么颜色的玩具
-3. 直接做 zero-shot 的点太低，11.5%，即使大家知道做**有类别的这种预训练泛化性太弱了**，依旧没人跟进，于是有人寻求图片和文本的中间地带。
-4. 例如从 Ins 带有 hastag 的数据学习，或者从 JFT-300（类别一万多） 的标签学习，都算是从自然语言中学习图像特征的方法，但是多是在亿级规模的数据上训练，这说明不是类似 CLIP 的方法不行，而是数据不够大，尝试了8个模型，横跨2个数量级，且发现**效果和规模成正相关**。
-5. 即使预训练的模型训练好了之后把它冻住（Linear-Probe），只抽特征训练最后分类头训练分类任务也比 ImageNet 上的效果好，而且计算高效
+   2.3 [Object detection and segmentation](https://arxiv.org/pdf/2104.13921.pdf): detect novel categories—for example, not only recognizing a toy but also what color it is
+3. Pure zero-shot performance was initially too low (11.5%). Even though **category-based pretraining was known to generalize poorly**, few pursued the direction, so people looked for a middle ground between images and text.
+4. Examples include learning from Instagram data with hashtags, or from JFT-300 labels (10k+ categories)—all ways to learn visual features from natural language—but most required training at hundred-million to billion scale. That suggests the issue was not the CLIP-style approach itself but insufficient data. They tried eight models spanning two orders of magnitude in scale and found **performance scales positively with scale**.
+5. Even after freezing the pretrained backbone (linear probe) and training only a final classification head, results beat ImageNet-trained baselines while remaining compute-efficient.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img2.png" alt="avatar" style="zoom:60%;" /></div>
 
-1. 为什么要用自然语言信号来帮助训练：
+1. Why use natural language supervision:
 
-   1.1 **不用标注数据**，筛选类别，请理数据，现在只用文字和图片的配对。而且因为信号是个文本，而不是n选1的标签，模型的输入和输出**自由度大**很多
+   1.1 **No manual labeling** of categories or heavy data cleaning—only image–text pairs. Because the supervision is free-form text rather than an n-way label, the model’s inputs and outputs have **much higher degrees of freedom**.
 
-   1.2 因为训练的时候把图片和文字绑定在一起，因此现在学习到的特征实际是一个**多模态特征**而不是简单是视觉特征
-2. 造大数据集，有4个亿，数据增强都不用做了，就做了一个随机裁剪，也很难过拟合。也因为大，导致不好调参，就导致了 temperature 是一个很重要的超参数
-3. 不同的人对同一图片的文字描述可能差距巨大，所以用**预测**型任务预训练模型训练很**慢**，而将任务变成图片和文字**配对**任务就似乎简单很多，这样不需要逐字逐句预测文本，**训练效率提高了4倍**
-4. 发现无论是 none-linear 还是 linear 投射层都对结果没太大关系（none-linear在SimCLR提了10个点），可能只是用来适配纯图片的单模态学习
-5. 模型可以选择 ResNet，也可以选择 Transformer
+   1.2 Training binds images and text together, so the learned representation is genuinely **multimodal**, not purely visual.
+
+2. They built a large dataset (~400M pairs). With so much data, heavy augmentation is unnecessary—they use only random cropping and still struggle to overfit. Scale also makes hyperparameter tuning hard; **temperature** becomes a critical hyperparameter.
+
+3. Human captions for the same image can differ wildly, so **predictive** pretraining (e.g., caption generation) is **slow**. Reframing the task as image–text **matching** is much easier: there is no need to predict text token-by-token, and **training efficiency improves by about 4×**.
+
+4. Whether the projection head is nonlinear or linear barely matters (nonlinear heads helped SimCLR by ~10 points)—possibly because nonlinearity mainly helps unimodal image-only contrastive learning.
+
+5. The visual encoder can be ResNet or Transformer.
 
 ### Experiment
 
-1. 之前的无监督或无监督的方法主要研究特征学习的能力，目标是学习泛化性比较好的特征，比如MOCO，SimCLR，DINO等，但应用到下游任务时还是需要有标签的数据进行微调，能不能有一种不用调的
-2. zero-shot 推理
+1. Prior unsupervised or self-supervised methods mainly studied representation quality—learning features that generalize (e.g., MoCo, SimCLR, DINO)—but downstream use still typically requires labeled fine-tuning. Can we avoid tuning altogether?
 
-   图片经过编码器，文字经过编码，计算余弦相似度后 softmax 得到最终结果，例如 ImageNet 的分类任务就是有1000个句子，类似于一个个去问图片“你是不是狗”，“你是不是猫”
+2. Zero-shot inference
+
+   Images and text pass through encoders; cosine similarity followed by softmax yields predictions. On ImageNet classification, this means 1000 text prompts—effectively asking the image, one by one, “Is this a dog?”, “Is this a cat?”, and so on.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img3.png" alt="avatar" style="zoom:60%;" /></div>
 
-3. prompt template：
+3. Prompt templates
 
-   作者用了80个“提示模板”，它起到的是一个文本引导作用，怎么样变句子也有讲究，所以 CLIP 后面也提出了 prompt engineering 和 prompt ensemble
+   The authors use 80 prompt templates as textual anchors. Wording matters, which later motivated **prompt engineering** and **prompt ensemble** in CLIP.
 
-   3.1 为什么要做 prompt engineering 或 prompt ensemble 呢？
+   3.1 Why prompt engineering or prompt ensemble?
 
-   ① 多义性，一个单词多个含义，只用一个单词做特征抽取肯定歧义；② 因为模型没有分类头，而且在训练的时候采用一个“句子”配对一个“图片”，所以在推理的时候要将“单词”扩展为“句子”，这样尽量避免降低准确率
+   ① Polysemy: one word, many senses—using a single word as the text input is ambiguous. ② There is no dedicated classification head; training pairs one **sentence** with one **image**, so at inference a **word** (class name) must be expanded into a **sentence** to avoid unnecessary accuracy drops.
 
-   3.2 prompt engineering
+   3.2 Prompt engineering
 
-   有更多的先验知识的情况下，可以把模板做得更谨慎，减小搜索空间，比如知道某个数据集全是动物等
+   With more prior knowledge about a dataset, templates can be chosen more carefully to shrink the search space—for example, knowing a benchmark is all animals.
 
-   3.3 prompt ensemble
+   3.3 Prompt ensemble
 
-   多用几次模板，把结果综合起来，一般结果更好
-4. 做了27个数据集测试迁移效果，证明了确实是广泛应用的。做分类的普通数据集表现更好，但对特别难的任务，比如计数（复杂），给肿瘤做分类（需要领域知识），直接做 zero-shot 就不是很好，做 few-shot 更公平，其实发现甚至全部数据微调都是吊打所有模型
+   Applying multiple templates and aggregating scores usually improves results.
+
+4. They evaluate transfer on 27 datasets, showing broad applicability. CLIP does well on standard classification benchmarks, but on very hard tasks—counting (complex), tumor classification (domain knowledge)—zero-shot is weak; few-shot comparison is fairer. In practice, full fine-tuning still beats all alternatives by a large margin.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img4.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img5.png" alt="avatar" style="zoom:60%;" /></div>
 
-5. 作者甚至做了人和 CLIP 的对比，找了志愿者对37类猫猫狗狗分类，志愿者是没看过种类示意图，还做了 one-shot 和 two-shot 的实验
+5. The authors even compare humans vs. CLIP: volunteers classify 37 fine-grained dog/cat breeds without reference exemplars, alongside one-shot and two-shot human experiments.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP/CLIP-img6.png" alt="avatar" style="zoom:60%;" /></div>
 
-6. 同时也做了人和 CLIP 对类别识别难易的对比，对人难识别的类对 CLIP 也难
+6. They also compare which categories are hard for humans vs. CLIP—classes humans find difficult tend to be hard for CLIP as well.
 
 ### Limitation
 
-1. 性能强是和 Res50 比较，实际上和各种 SOTA 比还是差了许多，估计得x1000才能达到。肯定需要新的方法在计算和数据的高效性上提高
-2. 在有些数据集上 zero-shot 的结果也并不好，比如细分类等，也无法处理抽象和难的任务，可能在很多领域 CLIP 和瞎猜一样
-3. 做推理的时候如果数据和训练的分布差距真的很大，泛化性照样很差。比如在 MNIST 这种甚至只有88%，一个线性回归都比它高
-4. 虽然可以做 zero-shot 任务，但还是在给定的类别里做选择，更灵活的方式是生成图像标题，这样都是模型处理，可以生成新输出（生成式模型），考虑有没有一种损失函数可以包含对比学习和生成式学习
-5. 对数据利用不是很高效，需要大量投喂，其实大概跑了128亿张图片。减少数据量得方法：数据增强、伪标签、自监督
-6. 在做下游任务时，不断用 ImageNet 带入指导，其实已经有偏见，也就其实不是真正的 zero-shot 的情况
-7. 数据从网上爬的，没清洗，可能有社会偏见等被不正当使用
-8. 其实很多工作用语言也无法描述，如果下游任务能提供一些这种训练样本也会很有帮助（few-shot），有时候多给了几张图片反而训练精度不如 zero-shot
+1. Strong numbers are often vs. ResNet-50; compared with various SOTAs, CLIP still lags by a lot—perhaps needing ~1000× scale. New methods must improve compute and data efficiency.
+
+2. Zero-shot is poor on some datasets (e.g., fine-grained classification) and on abstract or difficult tasks; in many domains CLIP can be near random guessing.
+
+3. At inference, large train–test distribution shift hurts generalization—for example ~88% on MNIST, where a linear baseline can do better.
+
+4. Zero-shot still chooses among a fixed set of categories. A more flexible setup is caption generation (generative models) so the model can produce novel outputs—raising whether a loss could unify contrastive and generative learning.
+
+5. Data efficiency is low: training effectively sees on the order of 12.8 billion image exposures. Reducing data needs may require stronger augmentation, pseudo-labels, or self-supervision.
+
+6. Using ImageNet as the recurring benchmark for downstream evaluation introduces bias—it is not truly zero-shot in the wild.
+
+7. Web-scraped, minimally cleaned data may encode societal biases and enable misuse.
+
+8. Many visual concepts are hard to describe in language; a few downstream examples (few-shot) can help—yet sometimes adding a few labeled images hurts accuracy compared with zero-shot.
 
 <HR align=left color=#987cb9 SIZE=1>

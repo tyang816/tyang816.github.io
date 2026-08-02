@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-12-08-AI-Researcher：Autonomous Scientific Innovation.md`
+
+已按 `scripts/i18n_verify_brief.md` 对照中文版逐项核对：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文完整（含结尾 `<hr>`，章节与 ZH 一致） | 通过 |
+| 正文无中文（仅标题/专有名词中的全角符号） | 通过 |
+| Frontmatter：`lang: en`，`alt_url` = ZH 的 `permalink`，无 EN `permalink` | 通过 |
+| 图片/链接/数学公式（13 处资源 URL 一致） | 通过 |
+| 标题层级与 ZH 对齐 | 通过 |
+| 术语与数字（93.8%、2.65、22 篇、Level-1/2 等） | 一致 |
+
+英文版无需修改；实验小节中 VQ 译为 “vector quantization” 与 ZH 前文「向量量化」一致（ZH 4.1 中「视觉与问答 (VQ)」应为笔误）。

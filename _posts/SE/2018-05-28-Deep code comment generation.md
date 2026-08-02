@@ -5,33 +5,34 @@ categories: [SE]
 tags: [code-comment]
 proceedings: ICPC
 date: 2018-05-28
+lang: en
+alt_url: /zh/se/Deep-code-comment-generation/
+permalink: /se/Deep-code-comment-generation/
 ---
 
-> 论文地址：[Deep code comment generation](https://ieeexplore.ieee.org/abstract/document/8973050)
+> Paper: [Deep code comment generation](https://ieeexplore.ieee.org/abstract/document/8973050)
 
-## DeepCom：NMT的方法+SBT+type替换
+## DeepCom: NMT + SBT + type substitution
 
 ### Abstract
 
-DeepCom使用了NLP的技术学习大规模语料并从中生成注释，使用神经网络分析Java方法的结构信息，使用机器翻译的评价指标
+DeepCom applies NLP techniques to learn from large-scale corpora and generate comments from them. It uses neural networks to analyze structural information in Java methods and evaluates outputs with machine translation metrics.
 
 ### Introduction
 
-软件开发与维护领域，花了59%时间在理解代码上，所以代码注释有必要
+In software development and maintenance, developers spend about 59% of their time understanding code, which makes code comments important.
 
-过去的模板式和启发式方法缺陷在于：
+Template-based and heuristic approaches suffer from two limitations:
 
-- 标识符和方法命名不当时难以提取出准确的关键词
-- 依赖于检索相似度代码段和这种相似程度
+- When identifiers and method names are poorly chosen, it is difficult to extract accurate keywords.
+- They rely on retrieving similar code fragments and on how similar those fragments are.
 
-作者把代码生成问题看作NMT问题的变种，从程序语言翻译到自然语言，与Code-NN只对注释建模不同，作者对代码和注释都建模了，与传统的机器翻译问题相比，本文任务挑战如下：
+The authors cast comment generation as a variant of neural machine translation (NMT): translating from a programming language into natural language. Unlike Code-NN, which models only comments, they model both code and comments. Relative to conventional machine translation, this task poses additional challenges:
 
-- 代码有结构：如何用上这种丰富的结构信息来推进现有的NMT方法
-- 词表：自然语言就30000个常用，但代码上二十来万很正常，因为有一堆标识符啥的
+- Code is structured: how to exploit rich structural information to improve existing NMT methods.
+- Vocabulary: natural language may use on the order of 30,000 frequent words, whereas code vocabularies of roughly 200,000 tokens are common because of identifiers and similar tokens.
 
-针对结构问题使用了SBT方法来遍历AST
-
-针对词表问题用它们的类型来替代具体的词或<UNK>
+For structure, they traverse the abstract syntax tree (AST) with the structure-based traversal (SBT) method. For vocabulary, they replace concrete tokens with their types or with `<UNK>`.
 
 ### Proposed Approach
 
@@ -39,18 +40,17 @@ DeepCom使用了NLP的技术学习大规模语料并从中生成注释，使用�
 
 #### Sequence-to-Sequence Model
 
-编码器都是带注意力的LSTM
+The encoders are LSTMs with attention.
 
-#### Abstract Syntax Tree with SBT travesal
+#### Abstract Syntax Tree with SBT traversal
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DeepCom/img4.png" alt="avatar" style="zoom:60%;" /></div>
 
-- 从根节点开始，首先使用一对括号来表示树结构，然后将根节点本身放在右方括号的后面，即（1）1
+- Starting from the root, a pair of parentheses denotes tree structure; the root node itself is placed immediately after the closing parenthesis, e.g., `(1)1`.
 
-- 接下来，遍历根节点的子树，并将子树的所有根节点放入括号中，例(1(2)2(3)3)1
+- Next, traverse each subtree of the root and place each subtree’s root inside parentheses, e.g., `(1(2)2(3)3)1`.
 
-
-- 遍历每个子树，直到遍历所有节点并获得最终序列（1（2（4）4（5）5（6）6）2（3）3）1
+- Recurse on each subtree until every node has been visited, yielding a final sequence such as `(1(2(4)4(5)5(6)6)2(3)3)1`.
 
 ### Experiment
 

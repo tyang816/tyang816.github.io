@@ -1,0 +1,8 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-09-25-Multistate and functional protein design using RoseTTAFold sequence space diffus.md`
+
+**issues:**
+- ESM pseudo-perplexity / EvoDiff：原句 “substantially higher than sequences from EvoDiff” 与指标含义及中文「质量优于 EvoDiff」不符，已改为 comparable / substantially better 表述
+- 湿实验一句 Chinglish（“similar and credible to the designed conformations”），已理顺 AF2/ESMFold 折叠表述
+- Discussion 中 em dash 后 “— difficult” 语法不完整，已改为 “a capability that is difficult…”
+
+**已通过项：** 结构与中文版一致；frontmatter（`lang: en`、`alt_url` 对应中文 `permalink`、无 `permalink`）；图片/链接/数值一致；正文无中文；melittin 小节已用 fig. 4b（中文误写 fig2b）。

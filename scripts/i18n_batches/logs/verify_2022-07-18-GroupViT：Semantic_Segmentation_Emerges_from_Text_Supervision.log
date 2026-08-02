@@ -1,0 +1,12 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-07-18-GroupViT：Semantic Segmentation Emerges from Text Supervision.md`
+
+已按 `i18n_verify_brief.md` 对照中文版逐项核对：
+
+- 结构完整：Abstract → Method（含 Image-Text、Multi-Label、Zero-Shot）→ Experiment → Limitation and Future Work，与中文一致且未截断  
+- 正文无中文  
+- Frontmatter：`lang: en`，`alt_url` 与中文 `permalink` 一致，无英文 `permalink`，其余字段一致  
+- 图片、链接、URL 与中文相同  
+- 数字与要点（64/61/8、0.9、与无监督/有监督对比）均已覆盖  
+- 英文表述通顺，小节标题将中文笔误 “Futrue” 译为 “Future Work” 属合理修正  
+
+未修改英文文件。

@@ -1,0 +1,12 @@
+按 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 1. 完整性 | EN 与 ZH 结构一致（Abstract → Introduction → Proposed Approach → Experiment，含相同子节与结尾 `<HR>`） |
+| 2. 无中文正文 | 正文为英文 |
+| 3. Frontmatter | `lang: en`；`alt_url: /zh/se/Deep-code-comment-generation/` 与 ZH 的 `permalink` 一致；EN 无 `permalink`；其余字段一致 |
+| 4. 资源 | IEEE 链接与三张图/两表 URL 一致 |
+| 5. 标题结构 | 对齐；EN 将 ZH 标题中的 “travesal” 正确写为 “traversal” |
+| 6–7. 语气与术语 | 学术英文合理；59%、30k/200k、Code-NN、SBT、`<UNK>` 等与 ZH 一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2018-05-28-Deep code comment generation.md`

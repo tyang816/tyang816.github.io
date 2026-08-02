@@ -1,0 +1,11 @@
+对照 `scripts/i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**核对结果**
+1. **完整性**：与中文相同的章节（Abstract → Introduction → PoET → Model Architecture → Training Data → Protein Variant Fitness Prediction → Experiments）及全部图片、结尾 `<HR>` 均存在。
+2. **正文语言**：无中文正文。
+3. **Frontmatter**：`lang: en`；`alt_url` 为 `/zh/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/`，与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文一致。
+4. **链接与公式**：NeurIPS PDF、GitHub、COS 图片 URL 及 `$P=(X=x)$` 等数学内容与中文一致。
+5. **结构**：标题层级与中文对齐；H2 使用正确的 “causal”（中文为 “casual” 笔误）。
+6. **术语与数字**：ProteinGym 87 substitution / 7 indel、29M、相似度与 context length、$N_{\mathrm{ensemble}}=15$ 等与中文一致；英文对中文摘要末尾不完整处做了合理补全。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-11-01-PoET：A generative model of protein families as sequences-of-sequences.md`

@@ -5,35 +5,38 @@ categories: [CV]
 tags: [video, action-recognition]
 proceedings: NeurIPS
 date: 2014-11-12
+lang: en
+alt_url: /zh/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+permalink: /cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
 ---
 
-> 论文地址：[Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)
+> Paper: [Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)
 
-## 双流卷积网络：空间+时间，视频处理开山作
+## Two-Stream ConvNets: Spatial + Temporal — A Landmark for Video Understanding
 
-神经网络开始难以学习到物体的特征，现在从传统方法的**光流**直接把抽取好的运动信息特征塞进去，让网络学习映射，**提供先验信息或许能够大幅提高网络效果**
+Neural networks initially struggled to learn useful object representations. This work instead feeds **optical flow**—motion features extracted by classical methods—into the network to learn the mapping. **Supplying such priors can substantially boost network performance.**
 
 ### Abstract
 
-1. 学到 appearance(空间) 信息和 motion(时间) 信息
-2. 贡献：
+1. Learn appearance (spatial) and motion (temporal) information.
+2. Contributions:
 
-   2.1 提出了双流网络，效果好了一大截
+   2.1 Propose a two-stream architecture with large accuracy gains.
 
-   2.2 在少量数据上也能体现出不错的效果
+   2.2 Strong performance even with limited training data.
 
-   2.3 弥补训练上的不足，提出 multitask learning 在两个数据集上训练骨干网络
+   2.3 Mitigate data scarcity via multitask learning: train the backbone on two datasets jointly.
 
 ### Introduction
 
-1. 视频里的时序信息能够给图像分类提供重要线索，并且视频天生能提供很好的**数据增强**
-2. 简单粗暴的把数据丢进网络效果不好，甚至不如手工提取特征。于是作者发现手工方法都是按**光流**，能够很好的提取运动信息，于是提出双流，使用 late fusion 在 logits 上做合并
-3. 从人脑受到启发
+1. Temporal cues in video provide important signals for recognition, and video naturally enables rich **data augmentation**.
+2. Naively feeding raw video into a network works poorly—often worse than hand-crafted features. Classical pipelines rely on **optical flow** to capture motion well, motivating a two-stream design with **late fusion** over logits.
+3. The design is inspired by processing in the human brain.
 
 ### Related Work
 
-1. spatio-teporal features 演变成了 3D 网络， dense point trajectories 演变成了双流法
-2. 如果把视频帧一张一张的输入 2D 网络，和一系列的视频帧叠加丢进 3D 网络或 2D 网络进行时空学习效果一样，比传统方法低了20个点。说明这种方法并没有抓取到动作和时序信息，也让大家意识到这种动作和时序信息的重要性
+1. Spatio-temporal features evolved into 3D networks; dense point trajectories evolved into the two-stream approach.
+2. Feeding video frames one-by-one into a 2D network versus stacking sequences of frames into a 3D or 2D network for joint spatio-temporal learning yields similarly weak results—about 20 points below traditional methods. This suggests such pipelines fail to capture action and temporal structure and highlighted the importance of explicit motion/temporal modeling.
 
 ### Model
 
@@ -41,29 +44,29 @@ date: 2014-11-12
 
 #### Spatial stream ConvNet
 
-实际上是一帧一帧的处理，和视频关系不大，类似于图像分类，结果还是不错的。但这种静止的信息往往有很强的线索，如果用 ImgaeNet 上预训练好的模型来微调其实也很不错
+Processes video **frame by frame**; temporal context is largely unused, similar to image classification, yet accuracy is already strong. Static appearance carries strong cues, and fine-tuning a model **pretrained on ImageNet** works very well.
 
 #### Optical flow ConvNet
 
 <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img2.png" alt="avatar" style="zoom:67%;" />
 
-1. 视频长度是 L 帧，那么得到的是 L-1 个光流图
-2. 如果把前后两帧计算的光流直接丢进 2D 网络，那就相当于做一个分类任务，作者认为这样意义不大。为了学习到这个时序信息，就把**多张光流图叠加**在一起，先叠加水平方向位移，再叠加竖直方向
+1. For a clip of length L frames, there are L-1 optical-flow fields.
+2. Feeding only the flow between two consecutive frames into a 2D network reduces the task to a single-step classification, which the authors argue is too weak. To model temporal structure, they **stack multiple flow maps**—first stacking horizontal displacement, then vertical displacement.
 
-   2.1 简单直接叠加
+   2.1 Simple direct stacking.
 
-   2.2 根据光流轨迹，在轨迹上叠加
+   2.2 Stacking along flow trajectories.
 
-   2.3 但实验发现基于轨迹效果比基于初始位置的效果差
+   2.3 Experiments show trajectory-based stacking underperforms stacking anchored at initial pixel locations.
 
    <img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/2StreamConvNet/2StreamConvNet-img3.png" alt="avatar" style="zoom:67%;" />
-3. 双向光流，这种双向方法起码不掉点
+3. **Bidirectional optical flow**: this bidirectional setup at least does not hurt accuracy.
 
 ### Implementation Details
 
-1. 视频等间距取出25帧，不管视频原本有多少帧
-2. 测试视角数五花八门
-3. 光流抽取非常耗时，而且光流是密集表示，非常耗空间，于是作者也提出了压缩方法
+1. Sample 25 frames at equal intervals regardless of the original clip length.
+2. Test-time evaluation uses many crops/views (dataset-dependent).
+3. Optical-flow extraction is slow, and dense flow maps are storage-heavy; the authors also propose compression strategies.
 
 ### Evaluation
 

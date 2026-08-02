@@ -1,0 +1,7 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿与中文笔记一致，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2018-10-23-Improving Abstraction in Text Summarization.md`
+
+- 结构与中文一致（含 Abstract 在 “the second is a new metric” 处与中文同样未写完）
+- 正文无中文；frontmatter 为 `lang: en`，`alt_url: /zh/cl/Improving-Abstraction-in-Text-Summarization/` 与中文 `permalink` 一致，且无英文 `permalink`
+- 图片、链接、公式与章节标题均对齐；术语与表述符合学术英文习惯

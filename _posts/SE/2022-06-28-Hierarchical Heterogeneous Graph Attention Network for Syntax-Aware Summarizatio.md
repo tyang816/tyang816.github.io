@@ -5,34 +5,37 @@ categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: AAAI
 date: 2022-06-28
+lang: en
+alt_url: /zh/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
+permalink: /se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
 ---
 
-> 论文地址：[Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization](https://www.aaai.org/AAAI22Papers/AAAI-6812.SongZ.pdf)
+> Paper: [Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization](https://www.aaai.org/AAAI22Papers/AAAI-6812.SongZ.pdf)
 
-## SynapSum：句法图注意力网络
+## SynapSum: Syntax Graph Attention Network
 
 ### Abstract
 
-提出了一种新的基于选区的解析树上的层次异构图注意网络，用于语法感知的摘要，该方法反映了心理学上的发现，即人类将确定特定的选择模式来分层构建总结。实验表明对不同领域的6个基准数据集上的抽象和提取摘要任务都是有效的
+The authors propose a hierarchical heterogeneous graph attention network built on constituency parse trees for syntax-aware summarization, motivated by psychological evidence that people construct summaries hierarchically by selecting specific constituency patterns. Experiments on six benchmark datasets across diverse domains show that the approach is effective for both abstractive and extractive summarization.
 
 ### Introduction
 
-现有的基于图的方法的输出摘要往往与输入文本存在语义偏差，因为这些模型中构建的图大多是在统计层面上，经常忽视了高层次语义信息
+Summaries produced by existing graph-based methods often diverge semantically from the source text, because the graphs in these models are largely statistical and tend to neglect higher-level semantic information.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/SynapSum/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-先前的研究表明，句法结构有利于生成压缩但信息丰富的摘要，因为其层次结构有利于去除不重要的部分，并注意更显著的部分，这也模仿了人类生成摘要的方式：通过逐级提取最重要的信息来融合语义意义。此外，句法图通常比语义图更容易获得，从而缓解了以往基于构造的复杂语义图的方法中的计算问题
+Prior work indicates that syntactic structure helps generate compressed yet informative summaries: its hierarchical organization supports pruning less important material and focusing on more salient content, in line with how humans summarize by progressively extracting the most important information to integrate meaning. Syntactic graphs are also typically easier to obtain than semantic graphs, which mitigates the computational cost of earlier methods that construct complex semantic graphs.
 
-选择选区解析树的原因：
+Reasons for using constituency parse trees:
 
-- 词元间的句法依赖关系显示反应路径
-- 选取树提取子短句很容易
+- Syntactic dependencies among tokens explicitly encode relational paths.
+- Sub-phrases can be extracted straightforwardly from the tree.
 
-主要贡献：
+Main contributions:
 
-- 提出了基于选区树的语法感知摘要的异构图注意网络
-- 6个数据集SOTA
-- 应用到代码摘要任务中，用抽象语法树替换图
+- A heterogeneous graph attention network for syntax-aware summarization on constituency trees.
+- State-of-the-art results on six datasets.
+- Extension to code summarization by replacing the parse tree with an abstract syntax tree (AST).
 
 ### Methodology
 

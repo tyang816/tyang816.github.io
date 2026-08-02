@@ -1,0 +1,11 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-07-12-Contrastive Deep Supervision.md`
+
+核对摘要：
+1. 结构与中文一致（Abstract → Introduction → Methodology → Experiment → Discussion），结尾 `<HR>` 一致。  
+2. 正文无中文。  
+3. Frontmatter：`lang: en`；`alt_url: /zh/cv/Contrastive-Deep-Supervision/` 与中文 `permalink` 一致；无 `permalink`；其余字段与中文对齐。  
+4. 论文链接、代码链接、全部图片 URL 与公式/符号与中文一致。  
+5. 章节标题与层级对应；英文表述通顺，术语（deep supervision、ECE、AutoAugment 等）合理。  
+6. 「9 个数据集 / 11 个模型」译为 “nine datasets and eleven model architectures”，语义一致。

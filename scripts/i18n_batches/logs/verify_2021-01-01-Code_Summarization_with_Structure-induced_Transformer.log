@@ -1,0 +1,16 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿，结论如下。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 完整性 | EN 与 ZH 章节一致（Abstract → Introduction → Structure-based Code Summarization → Experiment），结尾 `<HR>` 一致 |
+| 正文无中文 | EN 正文为英文 |
+| Frontmatter | `lang: en`；`alt_url: /zh/se/Code-Summarization-with-Structure-induced-Transformer/` 与 ZH `permalink` 一致；无 `permalink`；其余字段与 ZH 对齐 |
+| 图/链/公式 | ACL 链接、三张图/表、数学式与 ZH 一致 |
+| 结构 | 标题层级一致（EN 将 ZH 标题拼写 “Stucture” 更正为 “Structure”，内容对应） |
+| 术语与数字 | SiT、SBT、MVN、模型名与实验表述与 ZH 一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2021-01-01-Code Summarization with Structure-induced Transformer.md`
+
+未修改 EN 文件。

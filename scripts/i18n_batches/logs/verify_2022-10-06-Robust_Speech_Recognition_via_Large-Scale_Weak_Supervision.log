@@ -1,0 +1,3 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/ML/2022-10-06-Robust Speech Recognition via Large-Scale Weak Supervision.md`
+
+核对结果：英文稿完整，章节与中文一致（含仅含图片的 Text Normalization）；正文无中文；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致且无 `permalink`；链接、图片 URL、数字（680k/117k/125k/10k/5k/1M、5.8%、1.4%、700M、50k 等）均一致；表述为正常学术英语，无需修改。

@@ -1,0 +1,9 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将中文笔记译为学术英文，并写入：
+
+`_posts/SE/2022-03-07-Competition-Level Code Generation with AlphaCode.md`
+
+- **Frontmatter：** `lang: en`；`alt_url: /zh/se/Competition-Level-Code-Generation-with-AlphaCode/`（对应中文 `permalink`）；无 `permalink`；已去掉 `lang: zh-CN`。
+- **正文：** 结构、图片块、链接与 `n@k` 等标识均保留；顶部引用为 `Paper:`。
+- **校验：** 正文中无残留中文。

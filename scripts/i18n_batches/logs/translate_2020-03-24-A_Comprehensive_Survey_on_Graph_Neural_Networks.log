@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/ML/2020-03-24-A Comprehensive Survey on Graph Neural Networks.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/`（对应中文 `permalink`）；无英文 `permalink`；其余字段与中文版一致。
+- **正文**：学术英文译文；`论文地址` → `Paper`；链接与 `<hr>` 保留；无残留中文正文。

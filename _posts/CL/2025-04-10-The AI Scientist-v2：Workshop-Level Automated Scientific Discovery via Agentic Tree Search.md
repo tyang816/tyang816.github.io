@@ -5,320 +5,323 @@ categories: [CL]
 tags: [Agent, LLM, NLP]
 proceedings: arXiv
 date: 2025-04-10
+lang: en
+alt_url: /zh/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+permalink: /cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
 ---
 
-> 论文地址：[The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search](https://)
+> Paper: [The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search](https://)
 >
-> 论文实现：<https://github.com/SakanaAI/AI-Scientist-v2>
+> Code: <https://github.com/SakanaAI/AI-Scientist-v2>
 
-## AI Scientist-v2：树搜索实验管理智能体+VLM检查实验
+## AI Scientist-v2: Tree-Search Experiment Manager Agent + VLM Experiment Checking
 
 ### Abstract
 
-人工智能（AI）在转变科学发现方式方面正发挥着愈发关键的作用 。该研究介绍了一个名为 **THE AI SCIENTIST-V2** 的端到端智能体系统，该系统能够产出首篇完全由 AI 生成并被同行评审接受的研讨会论文 。
+Artificial intelligence (AI) is playing an increasingly central role in transforming how scientific discovery is conducted. This work introduces **THE AI SCIENTIST-V2**, an end-to-end agentic system that produced the first fully AI-generated manuscript accepted through peer review at a workshop.
 
-该系统能够完成以下任务：
+The system can:
 
-- 迭代式地制定科学假设 。
-- 设计并执行实验 。
-- 分析并可视化数据 。
-- 自主撰写科学手稿 。
+- Iteratively formulate scientific hypotheses.
+- Design and run experiments.
+- Analyze and visualize data.
+- Autonomously write scientific manuscripts.
 
-与前代系统（v1, Lu et al., 2024）相比，THE AI SCIENTIST-V2 具有以下改进：
+Compared with the prior system (v1, Lu et al., 2024), THE AI SCIENTIST-V2 offers the following improvements:
 
-- 消除了对人类编写的代码模板的依赖 。
-- 能够有效推广至多样化的机器学习领域 。
-- 利用了一种由专门的实验管理器智能体管理的创新渐进式**智能体树搜索方法** 。
-- 通过集成**视觉语言模型（VLM）反馈闭环增强了 AI 评审组件**，实现了对图表内容和美学设计的迭代优化 。
+- It removes reliance on human-written code templates.
+- It generalizes effectively across diverse machine learning domains.
+- It employs an innovative progressive **agentic tree search** approach managed by a dedicated experiment manager agent.
+- It strengthens the AI review component by integrating a **vision–language model (VLM) feedback loop**, enabling iterative refinement of figure content and visual design.
 
-研究团队通过向一个经过同行评审的 ICLR 研讨会提交三篇完全自主生成的论文，对 THE AI SCIENTIST-V2 进行了评估 。值得注意的是，**其中一篇论文的分数足以超过人类录取的平均门槛**，这标志着完全由 AI 生成的论文首次成功通过了同行评审 。这一成就突显了 AI 在进行科学研究各方面能力上的日益增长 。
+The team evaluated THE AI SCIENTIST-V2 by submitting three fully autonomously generated papers to a peer-reviewed ICLR workshop. Notably, **one paper scored above the average human acceptance threshold**, marking the first time a fully AI-generated paper successfully passed peer review. This milestone highlights the growing capability of AI across the full scientific research pipeline.
 
-研究者预计，自主科学发现技术的进一步进步将深刻影响人类知识的产生，使研究生产力实现前所未有的可扩展性，并显著加速科学突破，从而造福整个社会 。目前，研究团队已将代码开源，以促进该技术的未来发展 。此外，论文还讨论了 AI 在科学中的作用，包括 AI 安全性 。
+The authors expect further advances in autonomous scientific discovery to profoundly affect how human knowledge is produced, enabling unprecedented scalability of research productivity and accelerating scientific breakthroughs for society. They have open-sourced the code to support future development. The paper also discusses the role of AI in science, including AI safety.
 
 ### 1 Introduction
 
-**1. 背景与动机**
+**1. Background and motivation**
 
-近年来，由人工智能（AI）驱动的**自动化科学发现**引起了广泛关注 。开发能够自主**制定假设、执行实验、分析结果并撰写手稿**的端到端框架，有望从根本上改变科学进程 。这一领域的显著进展是 **THE AI SCIENTIST-V1**（Lu et al., 2024），它展示了全自动科学工作流及下游论文产出的可行性 。
+In recent years, **automated scientific discovery** driven by artificial intelligence (AI) has attracted broad attention. End-to-end frameworks that can autonomously **formulate hypotheses, run experiments, analyze results, and write manuscripts** promise to reshape the scientific process. A landmark step in this area is **THE AI SCIENTIST-V1** (Lu et al., 2024), which demonstrated the feasibility of a fully automated scientific workflow and downstream paper output.
 
-然而，V1 版本存在显著的局限性，制约了其广泛适用性和自主性：
+However, V1 has significant limitations that constrain broad applicability and autonomy:
 
-- **模板依赖**：它严重依赖人类编写的代码模板，每个新课题领域都需要手动创建新模板 。
-- **探索深度不足**：其线性且浅层的实验方法阻碍了对科学假设的深入探索 。
+- **Template dependence**: It relies heavily on human-written code templates; each new topic area requires manually creating a new template.
+- **Shallow exploration**: Its linear, shallow experimental procedure limits deep exploration of scientific hypotheses.
 
-**2. THE AI SCIENTIST-V2 的技术突破**
+**2. Technical advances in THE AI SCIENTIST-V2**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 
-作为 V1 的继任者，**THE AI SCIENTIST-V2** 进行了实质性的改进，直接解决了上述局限性 。其核心贡献体现在三个维度：
+As the successor to V1, **THE AI SCIENTIST-V2** makes substantial improvements that directly address these limitations. Its core contributions span three dimensions:
 
-1. **消除模板依赖**：系统不再依赖人类提供的代码模板，显著增强了自主性，使其能够**跨多个机器学习领域开箱即用** 。
-2. **实验进度管理器与树搜索**：引入了实验管理器智能体及一种新型的**智能体树搜索算法（Agentic Tree-Search Algorithm）**，实现了对复杂假设更深层次、更系统的探索 。
-3. **多模态反馈机制**：通过集成基于**视觉语言模型（VLM）**的反馈机制，改进了评审和细化阶段，提升了生成的图表、说明文字及文本解读的质量、清晰度和一致性 。
+1. **Removing template dependence**: The system no longer depends on human-provided code templates, greatly increasing autonomy and enabling **out-of-the-box use across multiple machine learning domains**.
+2. **Experiment progress manager and tree search**: It introduces an experiment manager agent and a novel **Agentic Tree-Search Algorithm**, enabling deeper, more systematic exploration of complex hypotheses.
+3. **Multimodal feedback**: It improves the review and refinement stages by integrating **vision–language model (VLM)** feedback, raising the quality, clarity, and consistency of generated figures, captions, and textual interpretation.
 
-关于 V1 与 V2 在代码起草、执行规划及并行实验等方面的具体对比，请参见 **Table 1** 。
+For a concrete comparison of V1 and V2 on code drafting, execution planning, and parallel experiments, see **Table 1**.
 
-**3. 同行评审实验与成果**
+**3. Peer-review experiment and results**
 
-为了严谨评估全自主论文生成的能力，研究团队进行了一项受控实验：将三篇完全由 THE AI SCIENTIST-V2 生成的手稿提交至 **ICLR 的一个同行评审研讨会（Workshop）** 。
+To rigorously evaluate fully autonomous paper generation, the team ran a controlled experiment: three complete manuscripts generated by THE AI SCIENTIST-V2 were submitted to **a peer-reviewed ICLR workshop**.
 
-实验结果非常显著：
+The results are striking:
 
-- **首例突破**：其中一篇手稿获得了 **6.33 的平均评审分**（位列投稿的前 45% 左右）。
-- **接受门槛**：该分数足以使其在由人类撰写的情况下通过元评审（Meta-review）并被录取 。
-- **里程碑意义**：这标志着**首篇完全由 AI 生成的手稿成功通过了正式的同行评审过程** 。
+- **First breakthrough**: One manuscript received an **average review score of 6.33** (roughly top 45% of submissions).
+- **Acceptance threshold**: That score would be sufficient for meta-review acceptance if the paper were human-written.
+- **Milestone**: This marks the **first fully AI-generated manuscript to pass a formal peer-review process**.
 
-**4. 关于录用论文的内容与评审分析**
+**4. Content and review analysis of the accepted paper**
 
-这篇被录用的论文调查了在神经网络训练中加入显式的**组合正则化项（Compositional Regularization）**是否能改善组合泛化性 。该论文假设，通过惩罚序列模型中连续时间步嵌入（Embeddings）之间的巨大偏差，可以鼓励模型的组合能力 。
+The accepted paper investigates whether adding an explicit **compositional regularization** term during neural network training improves compositional generalization. It hypothesizes that penalizing large deviations between consecutive timestep embeddings in sequence models can encourage compositional behavior.
 
-**实验与反馈情况：**
+**Experiments and feedback:**
 
-- **实验结论**：在合成算术表达式数据集上的评估表明，组合正则化并没有带来显著改善，甚至偶尔会损害性能 。
-- **评审员评价**：评审员赞赏论文清晰地识别了组合正则化的挑战并报告了**负面结果（Negative Results）** 。
-- **存在的短板**：评审员指出该文缺乏足够的论证和直观解释，未说明为何选择该正则化方法能增强组合性 。
-- **作者内部评估**：研究团队在后期分析中发现，论文在方法描述（如未明确具体正则化了哪个组件）、**数据集重叠（Dataset Overlap）**以及图表标题准确性方面仍有提升空间 。
-- **总体定性**：评审员认为这是一项有趣且技术扎实的研讨会贡献，但若要达到正式会议（Conference）的严谨程度，仍需进一步开发和更广泛的实验 。
+- **Experimental conclusion**: Evaluation on a synthetic arithmetic expression dataset shows compositional regularization did not yield significant gains and occasionally hurt performance.
+- **Reviewer assessment**: Reviewers appreciated clear identification of challenges with compositional regularization and reporting of **negative results**.
+- **Remaining gaps**: Reviewers noted insufficient argumentation and intuition for why the chosen regularizer should enhance compositionality.
+- **Internal author assessment**: Post-hoc analysis found room to improve method descriptions (e.g., which component is regularized), **dataset overlap**, and figure caption accuracy.
+- **Overall qualitative view**: Reviewers viewed the work as an interesting, technically solid workshop contribution, but further development and broader experiments would be needed for main-conference rigor.
 
-**5. 引言总结：四大总体贡献**
+**5. Introduction summary: four overarching contributions**
 
-论文最后总结了 THE AI SCIENTIST-V2 的主要贡献：
+The paper summarizes the main contributions of THE AI SCIENTIST-V2 as follows:
 
-1. **系统创新**：引入了增强型自动化科学发现框架，具备智能体树搜索、VLM 反馈和并行实验能力，显著提升了自主性和探索深度 。
-2. **里程碑达成**：首次证明 AI 生成的手稿能通过公认的机器学习研讨会的同行评审 。
-3. **深度洞察**：对同行评审反馈和系统输出进行了全面的内部评估，揭示了 AI 论文相对于传统人类论文的现状与局限 。
-4. **开源精神**：**开源了完整代码库**以及 ICLR 2025 研讨会的实验数据，以促进社区讨论 AI 在科学中不断演变的角色 。
+1. **System innovation**: An enhanced automated scientific discovery framework with agentic tree search, VLM feedback, and parallel experiments, improving autonomy and exploration depth.
+2. **Milestone**: First demonstration that an AI-generated manuscript can pass peer review at a recognized machine learning workshop.
+3. **In-depth insight**: Comprehensive internal evaluation of peer-review feedback and system outputs, clarifying the current state and limits of AI papers relative to conventional human papers.
+4. **Open-source release**: **Full codebase** and ICLR 2025 workshop experiment data are open-sourced to foster community discussion on the evolving role of AI in science.
 
 ### 2 Background
 
-论文指出，**THE AI SCIENTIST-V1**（Lu et al., 2024）是首个实现从科学发现到结果呈现全流程自动化的 AI 系统。
+The paper notes that **THE AI SCIENTIST-V1** (Lu et al., 2024) was the first AI system to automate the full pipeline from scientific discovery to presentation of results.
 
-- **核心功能**：在给定基准代码模板的情况下，V1 能够自主编写代码、执行实验、可视化结果并撰写完整的科学论文 。
-- **主要局限**：
-  - **模板依赖**：V1 严重依赖人类设计的基准代码模板，这大大限制了其自主性，且无法做到“开箱即用”，因为人类仍需预先编写实验的大纲代码 。
-  - **线性流程**：其实验过程遵循严格的线性假设测试程序，在面对复杂的研究问题时缺乏探索的深度和灵活性 。
+- **Core capability**: Given a benchmark code template, V1 could autonomously write code, run experiments, visualize results, and produce a complete scientific paper.
+- **Main limitations**:
+  - **Template dependence**: V1 relied heavily on human-designed benchmark templates, limiting autonomy and preventing true out-of-the-box use because humans still had to pre-write outline code for experiments.
+  - **Linear workflow**: Experiments followed a strict linear hypothesis-testing procedure, lacking depth and flexibility on complex research questions.
 
-**1. 语言模型智能体架构（Scaffolding）**
+**1. Language model agent scaffolding**
 
-为了提升大语言模型（LLM）处理复杂推理任务的能力，研究者们开发了多种智能体架构：
+To improve large language models (LLMs) on complex reasoning tasks, researchers have developed several agent architectures:
 
-- **Reflexion 架构**：例如 Reflexion（Shinn et al., 2024），它允许模型对先前的响应进行迭代式反思，通过自我评估来促进改进 。虽然增强了鲁棒性，但也会带来计算开销和推理速度变慢的问题 。
-- **树搜索策略**：另一个有前景的方向是将**树搜索策略**与 LLM 结合（Jiang et al., 2025），允许对推理路径进行结构化的探索 。这种方法增强了系统推理的全面性，但付出了增加复杂性和计算需求更高的代价 。
+- **Reflexion-style scaffolding**: For example Reflexion (Shinn et al., 2024), which iteratively reflects on prior responses and self-evaluates to drive improvement. This improves robustness but adds compute cost and slower inference.
+- **Tree search strategies**: Another promising direction combines **tree search** with LLMs (Jiang et al., 2025), enabling structured exploration of reasoning paths. This improves comprehensiveness at the cost of higher complexity and compute.
 
-**2. 大语言模型与树搜索的结合**
+**2. Combining LLMs with tree search**
 
-研究团队观察到，由 V1 版本进行的自动化研究往往表现出“目光短浅”的实验特征 。相比之下，人类的科学进程依赖于开放式的假设生成、寻找跳板（stepping-stones）以及迭代式的假设细化 。
+The team observed that automated research in V1 often exhibited “short-sighted” experimentation. Human science, by contrast, relies on open-ended hypothesis generation, finding stepping-stones, and iterative hypothesis refinement.
 
-- **AIDE 系统**：受近期将代码生成作为动作空间的研究启发，AIDE（Jiang et al., 2025）将基于 LLM 的代码生成与树搜索相结合，在机器学习工程基准测试 MLEBench 上取得了领先成绩 。
-- **技术原理**：在 AIDE 中，树的每个节点代表一个潜在的解决方案状态，并带有一个标量评估分数（如验证准确率） 。系统会根据这些分数迭代选择节点进行调试或完善 。
+- **AIDE**: Inspired by recent work treating code generation as an action space, AIDE (Jiang et al., 2025) combines LLM-based code generation with tree search and leads on the MLEBench machine learning engineering benchmark.
+- **Mechanism**: In AIDE, each tree node represents a candidate solution state with a scalar evaluation score (e.g., validation accuracy). The system iteratively selects nodes to debug or refine based on these scores.
 
-**THE AI SCIENTIST-V2** 汲取了这种方法的灵感，在其自动化科学发现框架中集成了一套类似的树搜索探索策略，并专门针对科学实验的多阶段特性进行了调整 。
+**THE AI SCIENTIST-V2** draws on this approach, integrating a similar tree-search exploration strategy into its automated scientific discovery framework, adapted to the multi-stage nature of scientific experiments.
 
 ### 3 The AI Scientist-v2
 
 #### 3.1 More General Idea Generation
 
-与前代系统主要关注基于现有代码库进行增量修改不同，V2 版本在更高层级的抽象维度上开始研究 。
+Unlike the prior system, which focused mainly on incremental edits to an existing codebase, V2 begins research at a higher level of abstraction.
 
-- **开放式思维**：系统被要求进行更开放的思考，涉及潜在的研究方向、假设和实验设计，类似于在实施前撰写研究摘要或资助提案 。
-- **摆脱代码限制**：这种方法鼓励探索更具新颖性或基础性的想法，而不仅仅受限于预定义代码的结构 。
-- **文献检索集成**：该阶段将 **Semantic Scholar** 等文献检索工具纳入循环，允许系统查询数据库以评估想法的新颖性并识别相关的先验研究 。
+- **Open-ended thinking**: The system is prompted to think more openly about potential research directions, hypotheses, and experimental designs, akin to writing a research abstract or grant proposal before implementation.
+- **Beyond code constraints**: This encourages more novel or foundational ideas rather than being limited by predefined code structure.
+- **Literature retrieval**: This stage integrates tools such as **Semantic Scholar**, allowing the system to query the literature to assess novelty and identify prior work.
 
 #### 3.2 Removing Template Dependency
 
-##### 3.2.1 实验进度管理器 (Experiment Progress Manager)
+##### 3.2.1 Experiment Progress Manager
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-为了模仿现实世界科学实验的结构化方法，系统引入了一个**实验进度管理器智能体**，负责协调四个定义的实验阶段 ：
+To mirror structured real-world experimentation, the system introduces an **experiment progress manager agent** that coordinates four defined experimental stages:
 
-- **阶段 1：初步调查 (Preliminary Investigation)**：通过基于生成的研究想法构建最小可行原型，确立初始可行性和正确性 。
-- **阶段 2：超参数调优 (Hyperparameter Tuning)**：通过优化关键超参数（如学习率、周期）来改进初始实现，创建稳健的实验基准 。
-- **阶段 3：研究议程执行 (Research Agenda Execution)**：在调优后的基准之上，系统地实施核心研究议程 。
-- **阶段 4：消融实验 (Ablation Studies)**：系统评估各种研究组件的重要性，为主要发现提供严谨支持 。
+- **Stage 1: Preliminary Investigation**: Build a minimal viable prototype from the generated research idea to establish initial feasibility and correctness.
+- **Stage 2: Hyperparameter Tuning**: Refine the initial implementation by optimizing key hyperparameters (e.g., learning rate, epochs) to create a robust experimental baseline.
+- **Stage 3: Research Agenda Execution**: Systematically implement the core research agenda on top of the tuned baseline.
+- **Stage 4: Ablation Studies**: Systematically assess the importance of research components to support main findings rigorously.
 
-每个阶段都有明确的**停止标准** 。阶段 1 在原型成功执行后结束；阶段 2 在训练曲线收敛且在至少两个数据集上执行成功时结束；阶段 3 和 4 则在分配的计算预算耗尽时结束 。在每个阶段结束时，管理器会使用专门的 **LLM 评价器**选择表现最佳的节点作为后续阶段的种子，并启动多次重复实验以获取均值和标准差等统计数据 。
+Each stage has explicit **stopping criteria**. Stage 1 ends after the prototype runs successfully; stage 2 ends when training curves converge and runs succeed on at least two datasets; stages 3 and 4 end when the allocated compute budget is exhausted. At the end of each stage, the manager uses a dedicated **LLM evaluator** to select the best-performing node as the seed for the next stage and launches repeated runs to obtain statistics such as mean and standard deviation.
 
-##### 3.2.2 并行化智能体树搜索 (Parallelized Agentic Tree Search)
+##### 3.2.2 Parallelized Agentic Tree Search
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-**THE AI SCIENTIST-V2** 放弃了 V1 的严格线性流程，采用了受近期研究启发的更具灵活性和探索性的**树搜索方法** 。该方法横跨上述四个实验阶段，支持对科学假设进行更系统的探索 。
+**THE AI SCIENTIST-V2** abandons V1’s strict linear pipeline in favor of a more flexible, exploratory **tree search** approach inspired by recent work. The method spans the four experimental stages above and supports more systematic exploration of scientific hypotheses.
 
-**节点执行循环 (Execution Cycle)：** 树中的每个实验节点都会经历一个完整的执行周期 ：
+**Node execution cycle:** Each experimental node in the tree undergoes a full cycle:
 
-- **生成与执行**：LLM 首先生成具体的实验计划及相应的 Python 代码，随后立即在解释器中运行 。
-- **绘图与 VLM 评审**：若代码成功执行，系统会根据存储的结果生成可视化图表，并交由**视觉语言模型（VLM）**进行评审 
-- **状态标记**：运行出错或未通过 VLM 评审（如标签缺失、视觉误导）的节点被标记为 **Buggy（有错）**，其余则为 **Non-buggy（无错）** 。
+- **Generation and execution**: The LLM first produces a concrete experiment plan and corresponding Python code, then runs it immediately in an interpreter.
+- **Plotting and VLM review**: If execution succeeds, the system generates visualizations from stored results and sends them to a **vision–language model (VLM)** for review.
+- **Status labeling**: Nodes that fail at runtime or fail VLM review (e.g., missing labels, visually misleading plots) are marked **Buggy**; others are **Non-buggy**.
 
-**搜索与扩展策略：** 系统在每次迭代中并行选择多个节点进行扩展 。系统会以预定义概率选择 **Buggy 节点进行调试**，或根据 **LLM 引导的最佳优先搜索策略**选择 **Non-buggy 节点进行细化** 。
+**Search and expansion strategy:** At each iteration the system selects multiple nodes in parallel for expansion. With a predefined probability it selects **Buggy nodes for debugging**, or uses an **LLM-guided best-first strategy** to select **Non-buggy nodes for refinement**.
 
-**专门的节点变体：** 为了满足特定的实验需求，系统引入了多种节点类型 ：
+**Specialized node variants:** To meet specific experimental needs, the system defines several node types:
 
-- **超参数节点 (Hyperparameter nodes)**：在阶段 2 中探索不同的配置，并防止重复实验 。
-- **消融节点 (Ablation nodes)**：在阶段 4 中评估各组件的重要性 。
-- **重复节点 (Replication nodes)**：使用不同的随机种子重复父实验，以增强结果的稳健性 。
-- **聚合节点 (Aggregation nodes)**：不进行新实验，仅生成脚本来汇总重复实验的结果，并绘制带有均值和标准差的统计图表 。
+- **Hyperparameter nodes**: Explore configurations in stage 2 while avoiding duplicate experiments.
+- **Ablation nodes**: Assess component importance in stage 4.
+- **Replication nodes**: Repeat parent experiments with different random seeds to strengthen robustness.
+- **Aggregation nodes**: Perform no new experiment; only generate scripts to aggregate replication results and plot statistics with mean and standard deviation.
 
-这种结构化的实验阶段设计和定制的节点类型，使得系统能够灵活地引导整个研究周期，同时保持迭代阶段的连贯性 。关于树搜索在不同阶段的具体流程图，请参见 **Figure 2** 
+This structured staging and customized node types let the system steer the full research cycle flexibly while preserving coherence across iterative stages. See **Figure 2** for stage-specific tree-search flow diagrams.
 
 #### **3.3 Dataset Loading via Hugging Face**
 
-**统一框架的利用**：Hugging Face Hub 为访问各种常用数据集提供了一个便捷且统一的框架，这些数据集通常都包含预定义的训练集、验证集和测试集划分 。
+**Unified framework**: Hugging Face Hub provides a convenient, unified way to access many common datasets, often with predefined train/validation/test splits.
 
-**自动化下载流程**：在 **THE AI SCIENTIST-V2** 中，系统被提示尽可能利用 Hugging Face Hub 。它使用标准的单行函数（`datasets.load_dataset`）来自动下载所需的实验数据集 。
+**Automated download**: In **THE AI SCIENTIST-V2**, the system is prompted to use Hugging Face Hub whenever possible. It downloads required datasets automatically via the standard one-line `datasets.load_dataset` call.
 
-**优势与局限性**：
+**Benefits and limitations**:
 
-- **简化处理**：这种标准化方法极大地简化了数据集的处理流程 。
-- **兼容性问题**：作者承认这种方式在某种程度上是权宜之计（ad-hoc），因为并非所有的数据集仓库都支持这种下载方法 。
+- **Simplified handling**: This standardized approach greatly simplifies dataset handling.
+- **Compatibility issues**: The authors acknowledge this is somewhat ad hoc because not all dataset repositories support this download path.
 
 #### **3.4 Vision-Language Model Reviewer**
 
-与不具备视觉能力的 THE AI SCIENTIST-V1 不同，V2 版本在研究工作流的两个阶段引入了视觉语言模型（VLM）：
+Unlike THE AI SCIENTIST-V1, which lacks vision, V2 introduces vision–language models (VLMs) at two points in the research workflow:
 
-**1. 两个应用阶段**
+**1. Two application stages**
 
-- **实验阶段**：在基于树的实验过程中，VLM 会对生成的图表提供即时反馈，确保这些可视化内容能够有效且准确地传达实验结果 。
-- **论文撰写阶段**：在手稿撰写的反思环节，VLM 会评估图表及其说明文字（Captions），从而增强最终论文的视觉清晰度和连贯性 。
+- **Experiment stage**: During tree-based experimentation, the VLM gives immediate feedback on generated plots, ensuring visualizations communicate results effectively and accurately.
+- **Paper writing stage**: During manuscript reflection, the VLM evaluates figures and captions, improving visual clarity and coherence in the final paper.
 
-**2. 具体操作流程**
+**2. Concrete workflow**
 
-在论文撰写过程中，系统会执行以下步骤 ：
+During paper writing, the system:
 
-- **信息提取**：提取图表的屏幕截图，并附带其对应的说明文字。
-- **上下文关联**：通过关键词“Figure X”识别并提取论文正文中引用该图表的相关文本内容。
-- **综合评估**：将图像信息和文本引用同时提供给 VLM 进行多项质量检查 。
+- **Extracts information**: Captures screenshots of figures together with their captions.
+- **Links context**: Identifies and extracts in-text references to each figure via the keyword “Figure X”.
+- **Holistic evaluation**: Supplies both image content and textual references to the VLM for multiple quality checks.
 
-**3. VLM 执行的质量检查内容**
+**3. VLM quality checks**
 
-VLM 评审员会执行一系列严谨的审核任务，包括 ：
+The VLM reviewer performs rigorous checks including:
 
-- **对齐性验证**：核查图表内容与说明文字之间是否一致。
-- **视觉清晰度检测**：识别视觉呈现上的问题，例如是否缺失图例（Legends）或存在含义不明的标签（Labels）。
-- **查重功能**：检测正文与附录之间是否存在重复的图表。
+- **Alignment verification**: Whether figure content matches the caption.
+- **Visual clarity**: Issues such as missing legends or ambiguous labels.
+- **Duplicate detection**: Whether the same figure appears in both the main text and appendix.
 
-**4. 实施效果**
+**4. Effect**
 
-通过这种迭代式的 VLM 反馈整合，THE AI SCIENTIST-V2 生成的手稿在视觉质量和清晰度上得到了显著提升 。这一流程的具体位置在整个工作流中清晰可见，如 **Figure 1** 所示 。
+Iterative VLM feedback substantially improves visual quality and clarity in manuscripts from THE AI SCIENTIST-V2. The placement of this pipeline in the overall workflow is shown in **Figure 1**.
 
 ### 4 Human Evaluation of Manuscripts Generated by The AI Scientist -v2
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/fig3.png" alt="avatar" style="zoom:100%;" /></div>
 
-研究团队详细介绍了如何通过与人类学术界的真实互动来验证系统的能力。研究者与 ICLR 2025 的 “I Can't Believe It's Not Better” (ICBINB) 研讨会组织者合作，进行了一项人类评估研究，将系统完全自动生成的论文提交至官方同行评审流程 。
+The team describes how they validated the system through real interaction with the human research community. In collaboration with organizers of the ICLR 2025 “I Can't Believe It's Not Better” (ICBINB) workshop, they ran a human evaluation study by submitting fully automatically generated papers to the official peer-review process.
 
 #### 4.1 Evaluation Methodology
 
-具体的评估过程包含以下四个受控步骤：
+The evaluation followed four controlled steps:
 
-1. **AI 生成投稿 (AI-Generated Submissions)**：
-   - 研究团队利用 THE AI SCIENTIST-V2 生成了三篇完整的手稿。
-   - 生成过程仅提供与研讨会范围一致的高层级主题提示（Prompts），随后的科学假设制定、实验设计、编程、数据分析、可视化及论文撰写均由系统自主完成，**无任何人工干预或修改**。
-2. **盲审流程 (Blind Peer Review)**：
-   - 这三篇 AI 生成的论文被混合在 ICBINB 研讨会收到的 43 篇总投稿中。
-   - 评审员预先被告知部分投稿可能是由 AI 生成的，但他们并不知道具体哪些稿件出自 THE AI SCIENTIST-V2 之手。评审员可以选择拒绝评审此类稿件。
-3. **评审结果与录用决定 (Review Outcomes and Acceptance Decisions)**：
-   - 在三篇投稿中，有一篇论文获得了足够高的评审分数，其平均分为 $6.33$（满分 10 分，单项分数为 6、6、7），**超过了研讨会的录用阈值**。
-   - 另外两篇投稿得分较低，未被录用。该录用论文的具体展示可见于 **Figure 3**。
-4. **评审后撤稿 (Post-Review Withdrawal)**：
-   - 研究团队与 ICLR 领导层预先达成协议，所有被录用的 AI 论文在评审结束后均被撤回，不会进入正式科学记录。
-   - 此举是为了避免在社区尚未达成共识前过早设定此类先例。评审员仅在评审结束后才被告知这项实验。
+1. **AI-generated submissions**:
+   - The team used THE AI SCIENTIST-V2 to generate three complete manuscripts.
+   - Generation used only high-level topic prompts aligned with the workshop scope; hypothesis formulation, experiment design, programming, data analysis, visualization, and writing were fully autonomous, **with no human editing or intervention**.
+2. **Blind peer review**:
+   - The three AI papers were mixed among 43 total ICBINB submissions.
+   - Reviewers were told in advance that some submissions might be AI-generated but not which ones came from THE AI SCIENTIST-V2. Reviewers could decline to review such papers.
+3. **Review outcomes and acceptance decisions**:
+   - Among the three submissions, one received scores high enough for acceptance, with an average of $6.33$ (out of 10, individual scores 6, 6, 7), **above the workshop acceptance threshold**.
+   - The other two scored lower and were not accepted. The accepted paper is illustrated in **Figure 3**.
+4. **Post-review withdrawal**:
+   - The team agreed in advance with ICLR leadership that all accepted AI papers would be withdrawn after review and would not enter the formal scientific record.
+   - This avoids setting precedent before the community reaches consensus. Reviewers were informed of the experiment only after reviews concluded.
 
-**内部评估与观察 (Internal Evaluation & Observations)**
+**Internal evaluation and observations**
 
-除了官方评审，研究团队还进行了深入的内部评估：
+Beyond official reviews, the team conducted in-depth internal assessment:
 
-- **质量判定**：团队认为这三篇论文目前均**未达到**顶级国际会议（Main-track）的正刊录用标准。
-- **水平对标**：内部评估结论与官方评审一致，即其中一篇论文确实达到了顶级机器学习研讨会的水平。
-- **发现的缺陷**：
-  - 系统偶尔会引入**引用错误**，类似于大语言模型常见的“幻觉”问题。
-  - 尽管能执行标准实验流程，但在深入的方法论严谨性和深度分析方面仍显不足。
+- **Quality judgment**: All three papers **did not yet meet** main-track acceptance standards at top international conferences.
+- **Level alignment**: Internal conclusions matched official reviews: one paper did reach the bar for a top machine learning workshop.
+- **Observed flaws**:
+  - The system occasionally introduced **citation errors**, similar to common LLM “hallucination”.
+  - Despite running standard experimental pipelines, methodological rigor and depth of analysis remained limited.
 
-**透明度与伦理 (Transparency and Ethical Considerations)**
+**Transparency and ethical considerations**
 
-- **伦理批准**：此项研究获得了不列颠哥伦比亚大学机构审查委员会（IRB）的批准（编号：H24-02652）。
-- **透明化要求**：研究者强调所有由 AI 生成的论文都应贴上明确标签，且 THE AI SCIENTIST 始终确保做到这一点。
+- **Ethics approval**: The study received institutional review board (IRB) approval from the University of British Columbia (ID: H24-02652).
+- **Transparency requirements**: The authors stress that all AI-generated papers should be clearly labeled, and THE AI SCIENTIST is designed to ensure this.
 
 #### **4.2 The first AI-generated peer-reviewed workshop paper**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/pmt1.png" alt="avatar" style="zoom:100%;" /></div>
 
-**1. 论文生成过程**
+**1. Paper generation process**
 
-生成这篇被录用论文的过程经历了多个自动化阶段，体现了系统在宏观引导下的自主性：
+Generating the accepted paper involved multiple automated stages under high-level human guidance:
 
-- **初始想法生成**：系统首先根据研讨会（ICBINB）的主题生成了约 20 个初始想法 。
-- **提示词调整**：研究者修改了系统提示词，引导其关注深度学习在金融、心理学等现实领域的应用，随后系统又生成了约 20 个新想法 。
-- **想法选择**：从这组想法中，人类研究员选出了三个最有潜力的初始想法 。这一步类似于教授决定资助哪些研究方向，但并未修改想法本身 。
-- **自主执行**：对于选定的想法，系统自主执行了完整的实验流程，包括代码生成、执行、分析和写作 。
-- **多随机种子运行**：系统使用不同的随机种子多次运行，人类研究员最终从多个完整手稿中选出了一篇质量最连贯的进行投稿 。
+- **Initial idea generation**: The system first produced about 20 initial ideas aligned with the workshop (ICBINB) theme.
+- **Prompt adjustment**: Researchers modified system prompts to emphasize deep learning in real-world domains such as finance and psychology; the system then generated about 20 additional ideas.
+- **Idea selection**: From this pool, human researchers chose three of the most promising starting ideas—analogous to a PI deciding which directions to fund, without editing the ideas themselves.
+- **Autonomous execution**: For selected ideas, the system autonomously ran the full pipeline: code generation, execution, analysis, and writing.
+- **Multi-seed runs**: The system ran multiple times with different random seeds; human researchers ultimately selected the most coherent complete manuscript for submission.
 
-**2. 被录用论文的核心内容**
+**2. Core content of the accepted paper**
 
-这篇名为《Enhancing Compositional Generalization in Neural Networks via Compositional Regularization》的论文探讨了显式正则化对模型能力的影响 ：
+The paper *Enhancing Compositional Generalization in Neural Networks via Compositional Regularization* studies the effect of explicit regularization on model capabilities:
 
-- **核心假设**：在训练损失函数中加入组合正则化项，通过惩罚序列模型中连续时间步嵌入（Embeddings）之间的巨大变化，可以鼓励网络开发出组合式表示 。
-- **实验结果**：在合成算术表达式数据集上的测试得出了负面结论 。组合正则化并未显著提升泛化性能，且随着表达式复杂度的增加，表现进一步恶化 。
-- **最终结论**：论文认为单纯通过正则化来强制执行组合结构是不够的，并指出了正则化项与主要学习目标之间可能存在的冲突 。论文的具体外观展示在 **Figure 3** 中 。
+- **Core hypothesis**: Adding a compositional regularization term to the training loss, by penalizing large changes between consecutive timestep embeddings in sequence models, encourages compositional representations.
+- **Experimental results**: Tests on a synthetic arithmetic expression dataset yielded negative conclusions: compositional regularization did not materially improve generalization and worsened as expression complexity increased.
+- **Final conclusion**: Enforcing compositional structure through regularization alone is insufficient; the paper notes potential conflict between the regularizer and the primary learning objective. The paper’s appearance is shown in **Figure 3**.
 
-**3. 作者的内部评估**
+**3. Authors’ internal assessment**
 
-研究团队对这篇生成的论文进行了严格的“自检”，识别出以下优缺点：
+The team performed strict self-review and identified the following strengths and weaknesses:
 
-- **优点**：实验任务选择恰当，对负面结果的探索具有启发性 。
-- **技术缺陷**：
-  - **描述模糊**：关于正则化项应用于“输入嵌入”还是“LSTM 隐藏状态”的表述不够清晰 。
-  - **引用不当**：遗漏了核心参考文献（如 Hochreiter & Schmidhuber, 1997），且过于依赖通用教材引用 。
-  - **数据重叠**：代码审查发现训练集和测试集之间存在约 **57% 的重叠**，这严重影响了结果的可信度 。
-  - **解读错误**：Figure 3 的标题错误解读了验证损失，且 Figure 5 的结论与图表显示的结果相矛盾 。
+- **Strengths**: Appropriate experimental task and informative exploration of negative results.
+- **Technical issues**:
+  - **Ambiguous description**: Unclear whether regularization applies to “input embeddings” or “LSTM hidden states”.
+  - **Citation problems**: Missing core references (e.g., Hochreiter & Schmidhuber, 1997) and over-reliance on generic textbook citations.
+  - **Data overlap**: Code review found roughly **57% overlap** between training and test sets, severely undermining credibility.
+  - **Misinterpretation**: Figure 3’s caption misread validation loss; Figure 5’s conclusion contradicted what the plot showed.
 
-**4. 人类评审员的评价**
+**4. Human reviewer comments**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/rev1.png" alt="avatar" style="zoom:100%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI Scientist-v2/rev2.png" alt="avatar" style="zoom:100%;" /></div>
 
-该论文在 ICBINB 研讨会上获得了 **6.33 的高分**（三位评审员打分分别为 6、7、6），位列前 45% ：
+The paper received a **strong score of 6.33** at ICBINB (reviewer scores 6, 7, 6), placing it in the top 45%:
 
-- **评审员 #1 (7分/接受)**：认为“压缩隐藏表示以鼓励组合性”的想法非常有趣，且消融实验做得很好，揭示了为何该方法未达预期 。
-- **评审员 #2 (6分/接受)**：认为该论文完美符合研讨会关注“负面或意外结果”的主题，是极佳的讨论案例 。
-- **共同建议**：评审员普遍建议增加更多直观解释，并扩展到 Transformer 等更多架构进行验证 。
+- **Reviewer #1 (7 / accept)**: Found the idea of compressing hidden representations to encourage compositionality very interesting; ablations were well done and explained why the method underperformed.
+- **Reviewer #2 (6 / accept)**: Viewed the paper as a perfect fit for the workshop focus on “negative or surprising results” and an excellent discussion case.
+- **Common suggestions**: Reviewers generally recommended more intuitive explanation and validation on additional architectures such as Transformers.
 
-总体而言，虽然这篇论文在严谨性上尚未达到顶会标准，但评审员一致认为其对负面结果的分析具有科学价值，足以在研讨会级别录用 。
+Overall, although the paper did not yet meet main-conference rigor, reviewers agreed that analysis of the negative results had scientific value sufficient for workshop acceptance.
 
 ### 5 Limitations & Ethical Considerations
 
-**1. 对研究成就的客观解读**
+**1. Interpreting the achievement soberly**
 
-虽然 THE AI SCIENTIST-V2 成功生成了被录用的研讨会论文，但作者强调必须清楚地看待这一成就 ：
+Although THE AI SCIENTIST-V2 produced an accepted workshop paper, the authors emphasize keeping the milestone in perspective:
 
-- **录取级别差异**：此次论文录取发生在**研讨会（Workshop）**级别，而非主会场投稿（Main conference track），且三篇投稿中仅有一篇被接受 。
-- **录取率对比**：研讨会论文通常报告初步结果和探索性工作，其录取率（通常为 **60-80%**）显著高于顶级机器学习会议（如 ICLR、ICML 和 NeurIPS 的主会录取率通常为 **20-30%**） 。
-- **质量一致性**：目前版本的系统尚不能稳定达到顶会所需的严谨标准，甚至在研讨会级别也无法保证产出的一致性 。
+- **Venue level**: Acceptance was at **workshop** level, not the main conference track, and only one of three submissions was accepted.
+- **Acceptance-rate context**: Workshop papers often report preliminary or exploratory work; acceptance rates (typically **60–80%**) are much higher than top ML conferences (main-track rates at ICLR, ICML, and NeurIPS are often **20–30%**).
+- **Consistency**: The current system cannot reliably meet main-conference rigor and does not guarantee consistent quality even at workshop level.
 
-**2. 科学探究中的深层挑战**
+**2. Deeper challenges in scientific inquiry**
 
-尽管引入了结构化的智能体树搜索，某些科学研究的核心环节对纯自动化系统而言依然极具挑战 ：
+Even with structured agentic tree search, core aspects of research remain very hard for fully automated systems:
 
-- 制定具有**真正新颖性且高影响力**的假设 。
-- 设计真正创新的实验方法论 。
-- 利用深厚的**领域专业知识**来严谨地论证设计选择 。
-- 为了从初步或增量研究结果向高质量、会议级别的贡献迈进，解决这些局限性是未来迭代的关键 。
+- Formulating **genuinely novel, high-impact** hypotheses.
+- Designing truly innovative experimental methodology.
+- Applying deep **domain expertise** to justify design choices rigorously.
+- Addressing these gaps is key to moving from preliminary or incremental results toward high-quality, conference-level contributions.
 
-**3. 治理、伦理与社区共识**
+**3. Governance, ethics, and community consensus**
 
-研究团队在进行该实验时采取了极其审慎的态度，并呼吁建立行业规范：
+The team took a cautious approach and calls for community norms:
 
-- **监管与合规**：研究获得了**不列颠哥伦比亚大学机构审查委员会（IRB）**的批准（编号 H24-02652），并在与 ICLR 领导层及研讨会组织者的充分沟通下进行 。
-- **撤稿与透明度**：为了避免在社区达成共识前过早设定先例，所有被录用的 AI 生成论文已根据协议从 **OpenReview** 的公共论坛撤回，不会出现在正式科学记录中 。
-- **建立行业标准**：科学界需要为 AI 生成的科学研究建立规范，包括**披露要求**和**发布时机** 。虽然提倡透明度，但关于“是否应先进行隐名评审以避免偏见”的问题仍待商榷 。
+- **Oversight and compliance**: The study received **University of British Columbia IRB** approval (H24-02652) and was conducted in close coordination with ICLR leadership and workshop organizers.
+- **Withdrawal and transparency**: To avoid premature precedent before community consensus, all accepted AI-generated papers were withdrawn from the public **OpenReview** forum per agreement and do not appear in the formal record.
+- **Industry standards**: Science needs norms for AI-generated research, including **disclosure requirements** and **timing of release**. Transparency is encouraged, but whether anonymous review should precede disclosure to reduce bias remains open.
 
-**4. 防范科研不端行为**
+**4. Guarding against research misconduct**
 
-作者特别警示了该技术可能被滥用的风险：
+The authors warn about potential misuse:
 
-- **防止博弈评审系统**：必须确保该技术不会演变成专门用于**“博弈”同行评审系统**的工具 。
-- **打击简历灌水**：防范不道德的科学家利用此类系统**人为抬高引用量或简历含金量**，否则将削弱科学同行评审和评价体系的意义 。
+- **Gaming peer review**: The technology must not become a tool to **game** peer-review systems.
+- **CV padding**: Unethical use to **inflate citations or résumé credentials** would undermine the meaning of peer review and scientific evaluation.
 
 <hr align="left" color="#987cb9" size="1">

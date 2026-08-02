@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2025-01-23-ToolACE：Winning the Points of LLM Function Calling.md`
+
+对照 `i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | 章节与中文版一致（Abstract → 3.6），结尾完整 |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无英文 `permalink`；其余字段一致 |
+| 资源 | 9 张图、OpenReview、Hugging Face 链接及公式/数学标记一致 |
+| 术语与数字 | 26,507、8B、85.37%、83.81%、BFCL、API-Bank 等与原文一致 |
+
+英文版无需修改。

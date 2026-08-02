@@ -1,0 +1,12 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿。
+
+**核对结果**
+1. **完整性**：与中文版相同的区块（Abstract、Introduction、Materials and methods、Results）及 4 张图、链接、`<HR>` 均一致。  
+2. **正文语言**：英文正文无中文叙述。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/bi/DeepLoc：prediction-of-protein-subcellular-localization-using-deep-learning/`）；英文无 `permalink`；其余字段与中文一致。  
+4. **资源**：论文 URL、项目站、图片 URL 与 zoom 一致。  
+5. **结构**：标题层级与中文对齐。  
+6. **译文**：Abstract/Introduction 与中文含义一致，术语与语气正常（如 homologs、proteomics、pathogenesis）。  
+7. **数字与专名**：DeepLoc、Bioinformatics、日期等未改。
+
+**OK** path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2017-07-07-DeepLoc：prediction of protein subcellular localization using deep learning.md

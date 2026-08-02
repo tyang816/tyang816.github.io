@@ -1,0 +1,14 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文完整、结构与中文一致 | 通过（Abstract → Model → Experiment，含两张图与结尾 `<HR>`） |
+| 正文无中文 | 通过 |
+| Frontmatter：`lang: en`，`alt_url` 与中文 `permalink` 一致，无英文 `permalink` | 通过 |
+| 图片、链接、URL | 与中文一致 |
+| 标题层级 | 一致 |
+| 术语与数字 | ImageNet、10 帧、256×340、{256,224,192,168}、20 次复制等与原文一致 |
+
+英文译文完整、结构对齐、frontmatter 正确，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2016-11-17-Temporal Segment Networks：Towards Good Practices for Deep Action Recognition.md`

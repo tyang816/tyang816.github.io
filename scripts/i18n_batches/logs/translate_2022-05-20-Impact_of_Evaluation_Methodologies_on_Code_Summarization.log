@@ -1,0 +1,7 @@
+**DONE**
+
+已按 `i18n_translate_brief.md` 将中文笔记译为学术英文，并写入 [`_posts/SE/2022-05-20-Impact of Evaluation Methodologies on Code Summarization.md`](_posts/SE/2022-05-20-Impact of Evaluation Methodologies on Code Summarization.md)。
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/`；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：blockquote 标签为 Paper / Code；图片 URL、HTML 块、数学符号（$\tau$、$\tau^{-1}$）均保留；口语表述（如「编得」）译为 illustrative / acknowledged 等学术表述。
+- **校验**：目标文件存在，正文中无残留中文。

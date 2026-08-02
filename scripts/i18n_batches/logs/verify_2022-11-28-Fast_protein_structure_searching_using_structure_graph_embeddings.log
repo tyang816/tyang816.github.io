@@ -1,0 +1,13 @@
+对照 `i18n_verify_brief.md` 核对结果如下：
+
+| 项 | 结果 |
+|---|---|
+| 1. 完整性 | 与中文一致：Abstract → Introduction → Results → Discussion → Methods（Training / Testing）→ `<HR>` |
+| 2. 无中文正文 | 通过 |
+| 3. Frontmatter | `lang: en`；`alt_url` 与中文 `permalink`（`/zh/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/`）一致；无 `permalink`；其余字段一致 |
+| 4. 图/链/URL | 与中文相同（含 bioRxiv、GitHub、全部 Progress 图片） |
+| 5. 结构 | 章节对齐；中文标题「Progress」在英文中已正确写为 Progres |
+| 6. 英文质量 | 术语与语气正常；中文里的 ADFB 在英文中已改为 AFDB |
+| 7. 数字/模型名 | Astral 2.08、EGNN、FAISS、53M、5e-5、1e-16、500 epochs 等与原文一致 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2022-11-28-Fast protein structure searching using structure graph embeddings.md`

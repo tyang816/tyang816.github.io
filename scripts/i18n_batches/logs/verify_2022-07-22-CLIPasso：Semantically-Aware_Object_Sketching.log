@@ -1,0 +1,3 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-07-22-CLIPasso：Semantically-Aware Object Sketching.md`
+
+对照 `i18n_verify_brief.md` 检查后：英文稿结构完整（Abstract → Introduction → Method → Result → Limitations），正文无中文；frontmatter 为 `lang: en`，`alt_url` 与中文 `permalink` 一致且无英文 `permalink`；图片、链接与公式与中文版一致；章节对齐、术语与数字（2000/100 迭代、ResNet-50 阶段 2–4、2048-D 等）均合理。无需修改。

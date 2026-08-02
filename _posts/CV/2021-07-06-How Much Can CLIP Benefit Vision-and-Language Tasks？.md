@@ -5,23 +5,26 @@ categories: [CV]
 tags: [vision-language, contrastive-learning]
 proceedings: arXiv
 date: 2021-07-06
+lang: en
+alt_url: /zh/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
+permalink: /cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
 ---
 
-> 论文地址：[How Much Can CLIP Benefit Vision-and-Language Tasks？](http://arxiv.org/abs/2107.06383)
+> Paper: [How Much Can CLIP Benefit Vision-and-Language Tasks？](http://arxiv.org/abs/2107.06383)
 >
-> 论文实现：https://github.com/clip-vil/CLIP-ViL
+> Code: https://github.com/clip-vil/CLIP-ViL
 
-## CLIP-ViL：CLIP在视觉下游任务的实验性文章
+## CLIP-ViL: An empirical study of CLIP on vision-language downstream tasks
 
 ### Abstract
 
-实验性文章，把CLIP拿到多模态来初始化还能继续提高下游vision language task的准确度
+An empirical study showing that initializing multimodal models with CLIP can further improve accuracy on downstream vision-language tasks.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/CLIP-ViL/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-主要贡献：第一个大规模的用CLIP预训练好的模型当作视觉编码器的初始化参数，在各种下游任务上做empirical study
+Main contribution: the first large-scale empirical study that uses CLIP-pretrained weights to initialize the visual encoder and evaluates them on a broad set of downstream tasks.
 
 ### Experiments
 

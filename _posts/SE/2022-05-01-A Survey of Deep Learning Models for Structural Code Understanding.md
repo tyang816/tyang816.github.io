@@ -5,23 +5,26 @@ categories: [SE]
 tags: [code-understanding]
 proceedings: arXiv
 date: 2022-05-01
+lang: en
+alt_url: /zh/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
+permalink: /se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
 ---
 
-> 论文地址：[A Survey of Deep Learning Models for Structural Code Understanding](http://arxiv.org/abs/2205.01293)
+> Paper: [A Survey of Deep Learning Models for Structural Code Understanding](http://arxiv.org/abs/2205.01293)
 
-## 综述：深度学习结构化代码理解
+## Survey: Deep Learning Models for Structural Code Understanding
 
 ### Abstract
 
-代码理解的方法和应用数量在不断增加，本文把近几年代码理解的文章分为两组：基于序列和基于图的模型。同时也介绍了一些指标，数据集和下游任务，并对未来的结构化代码理解领域做出建议
+Methods and applications for code understanding continue to proliferate. This survey groups recent code-understanding work into sequence-based and graph-based models. It also covers metrics, datasets, and downstream tasks, and offers recommendations for future research on structural code understanding.
 
 ### Introduction
 
-代码结构建模：怎么有效地在代码里建模结构信息，怎么对特定的下游任务选择有效的结构信息
+**Structural modeling of code:** how to represent structural information in code effectively, and how to select structural signals that help a given downstream task.
 
-代码通用表征学习：怎么学习超越语言限制的代码表征
+**General-purpose code representation learning:** how to learn code representations that transfer beyond a single programming language.
 
-代码特定任务适应：对下游任务怎么选择特有架构，怎么处理特定任务数据，怎么在few-shot做，迁移学习，跨语言场景中适应模型
+**Task-specific adaptation:** how to choose architectures tailored to downstream tasks, handle task-specific data, and adapt models under few-shot learning, transfer learning, and cross-language settings.
 
 ### Preliminary
 
@@ -31,29 +34,29 @@ date: 2022-05-01
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig1.png" alt="avatar" style="zoom:60%;" /></div>
 
-词法分析得到NCS，语法分析得到AST，再语义分析和中间代码生成得到CFG和DFG
+Lexical analysis yields natural code sequences (NCS); syntactic analysis yields abstract syntax trees (AST); semantic analysis and intermediate-code generation further yield control-flow graphs (CFG) and data-flow graphs (DFG).
 
 #### Other structures
 
 ##### Intermediate Representation
 
-从编译器中获取比如Static Single Assignment (SSA)，或者Program Dependency Graph (PDG)
+Examples obtained from compilers include Static Single Assignment (SSA) and Program Dependency Graph (PDG).
 
 ##### The Unified Modeling Language
 
-软件系统的UML图
+UML diagrams of software systems.
 
 ##### Sequence-based models
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/A Survey of Deep Learning Models for Structural Code Understanding/fig4.png" alt="avatar" style="zoom:60%;" /></div>
 
-type-1：深度优先遍历
+type-1: depth-first traversal
 
-type-2：AST路径
+type-2: AST paths
 
-type-3：结构信息添加
+type-3: injection of structural information
 
-type-4：AST部分保留
+type-4: partial retention of the AST
 
 ### Tasks
 

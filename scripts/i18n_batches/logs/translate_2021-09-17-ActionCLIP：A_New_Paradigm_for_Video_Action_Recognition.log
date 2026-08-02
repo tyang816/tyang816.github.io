@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/CV/2021-09-17-ActionCLIP：A New Paradigm for Video Action Recognition.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/`；无 `permalink`；其余字段与中文稿一致。
+- **正文**：学术英文译文；图片、链接、HTML 块与结构保留；文首引用为 Paper / Code。

@@ -1,0 +1,13 @@
+**FIXED** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2023-06-15-End-to-End Full-Atom Antibody Design.md` `issues=heading grammar (Information exchange)`
+
+**核对结果摘要**
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文版一致（至 Limitations + hr） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` 指向中文 `permalink`，无英文 `permalink` | 通过 |
+| 链接、图片、公式与数值（AAR 43.65% 等）一致 | 通过 |
+| 学术英文表述 | 已改一处小节标题 |
+
+**修改**：`#### Adaptive Multi-Channel Equivariant Encoder` 下标题由 “Information exchanging between …” 改为 “Information exchange between …”。

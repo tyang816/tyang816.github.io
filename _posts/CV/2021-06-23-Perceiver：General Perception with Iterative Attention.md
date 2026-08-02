@@ -5,25 +5,28 @@ categories: [CV]
 tags: [vision-language]
 proceedings: ICML
 date: 2021-06-23
+lang: en
+alt_url: /zh/cv/Perceiver：General-Perception-with-Iterative-Attention/
+permalink: /cv/Perceiver：General-Perception-with-Iterative-Attention/
 ---
 
-> 论文地址：[Perceiver：General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html)
+> Paper: [Perceiver: General Perception with Iterative Attention](https://proceedings.mlr.press/v139/jaegle21a.html)
 >
-> 论文实现：<https://github.com/lucidrains/perceiver-pytorch>
+> Code: <https://github.com/lucidrains/perceiver-pytorch>
 
-## Perceiver: 不对称注意力多模态蒸馏压缩
+## Perceiver: asymmetric-attention multimodal distillation and compression
 
 ### Abstract
 
-该模型利用非对称注意机制迭代地将输入压缩到一个紧密的潜在瓶颈中，允许其扩展以处理非常大的输入，这种架构在各种模式的分类任务上具有强大的专业模型：图像、点云、音频、视频和视频+音频。
+The model uses an asymmetric attention mechanism to iteratively compress inputs into a compact latent bottleneck, enabling it to scale to very large inputs. This architecture achieves strong performance on classification across modalities—images, point clouds, audio, video, and video+audio—competitive with specialized models.
 
 ### Introduction
 
-早期计算机视觉里面的空间局部性（spatial locality）这种归纳偏差对于提升性能是有益的，但是随着数据集的增加，继续把这种偏差引入模型是正确的吗？或者我们是否应该去鼓励让数据本身说话？
+Inductive biases such as spatial locality in early computer vision have been helpful for performance, but as datasets grow, is it still right to bake such biases into models—or should we let the data speak for itself?
 
-具有强烈先验知识的框架有一个显眼的问题，就是非常的modality-specific，比如在输入单个图片时可以使用2D网络架构，但是如果换到立体像对时，怎么从多个sensor中联合处理像素呢，concat或是sum？如果换到audio，那么2D网络就不适用了，1D卷积或LSTM可能是必要的
+Frameworks built on strong priors are conspicuously modality-specific: a 2D architecture works for a single image, but for stereo pairs how should pixels from multiple sensors be fused—concatenation or summation? For audio, 2D networks no longer apply; 1D convolutions or LSTMs may be required.
 
-核心思想是引入一组潜在的单元，形成一个注意瓶颈，输入必须通过这个瓶颈
+The core idea is to introduce a set of latent units that form an attention bottleneck through which all inputs must pass.
 
 ### Methods
 
@@ -33,21 +36,21 @@ date: 2021-06-23
 
 #### The Perceiver architecture
 
-如果在transformer的每个block之间共享权重，模型就类似于RNN
+If weights are shared across every block of the Transformer, the model resembles an RNN.
 
 #### Taming quadratic complexity with cross-attention
 
-Q的shape为(N, D)，其中N为当前序列的token的数量，H是hidden size；并且K和V的shape分别为(M, D)和(M, C)，Q和K做乘积之后，得到的是(N, D) * (D, M) = (N, M)大小的矩阵，再右边乘以(M, C)，就得到了(N, C)大小的矩阵
+Let Q have shape (N, D), where N is the number of tokens in the current sequence and D is the hidden size; K and V have shapes (M, D) and (M, C), respectively. The product of Q and K yields a matrix of size (N, M) from (N, D) × (D, M), and multiplying on the right by (M, C) gives an (N, C) matrix.
 
-当N << M的时候，可以近似认为O(M)就是其复杂度了，把O(M*M)这种二次复杂度，降低到了一次复杂度
+When N ≪ M, complexity can be approximated as O(M), reducing the quadratic O(M×M) cost to linear.
 
-- asymmetric attention mechansim：N和M如果大小差别特别多
-- distill inputs：query和Byte array做局部检索，把inputs信息压缩到一个小矩阵
-- tight latent bottleneck：通过cross attention不断交互，得到新的低维度矩阵，用一个足够小的latent bottleneck表示复杂信息
+- **Asymmetric attention mechanism**: N and M differ greatly in size.
+- **Distill inputs**: queries perform local retrieval over the byte array, compressing input information into a small matrix.
+- **Tight latent bottleneck**: repeated cross-attention exchanges information to produce a new low-dimensional representation—a sufficiently small latent bottleneck that encodes complex inputs.
 
 #### Uncoupling depth with a latent Transformer
 
-使用的GPT-2架构
+Uses a GPT-2-style architecture.
 
 ### Experiments
 

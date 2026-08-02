@@ -1,0 +1,15 @@
+已按 `i18n_verify_brief.md` 逐项对照中英文稿。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与章节（Abstract → Future Work 两小节 + HR） | 与中文一致 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` = `/zh/se/Impact-of-Evaluation-Methodologies-on-Code-Summarization/` | 通过 |
+| 论文链接、GitHub、全部图片 URL、$\tau$ / $\tau^{-1}$ / $t$ | 一致 |
+| 混项目 / 跨项目 / 时间分割、Future Work 两条用例 | 语义对齐，英文表述自然 |
+
+英文版已完整翻译，frontmatter 符合规范，未发现需修改之处。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2022-05-20-Impact of Evaluation Methodologies on Code Summarization.md`

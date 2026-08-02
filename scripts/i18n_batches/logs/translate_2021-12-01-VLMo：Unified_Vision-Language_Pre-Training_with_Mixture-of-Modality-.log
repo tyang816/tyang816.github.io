@@ -1,0 +1,9 @@
+**DONE**
+
+已将中文笔记译为学术英文并写入：
+
+[`_posts/CV/2021-12-01-VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts.md`](file:///home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-12-01-VLMo%EF%BC%9AUnified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts.md)
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/`（对应中文版 permalink）；无 `permalink`。
+- **正文**：结构、图片、链接与表格块均保留；文首引用为 Paper / Code。
+- **校验**：目标路径文件已存在，正文无残留中文。

@@ -1,0 +1,13 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2021-11-10-Language models enable zero-shot prediction of the effects of mutations on prote.md`
+
+对照 `i18n_verify_brief.md` 检查结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（Abstract → Introduction → Zero-Shot Transfer → Method → Result + 图/链接） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` = 中文 `permalink` | 通过 |
+| 图片、NeurIPS 链接、GitHub URL 一致 | 通过 |
+| 术语与数字（UR90/UR50、98 million、ESM-1v/1b 等） | 通过 |
+
+英文译文完整、语气合适，无需修改。

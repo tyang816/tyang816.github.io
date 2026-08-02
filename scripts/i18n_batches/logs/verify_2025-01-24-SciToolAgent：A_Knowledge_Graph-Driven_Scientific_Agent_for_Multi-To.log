@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 已完成中英逐节核对，结论如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 英文全文完整（Abstract → Methods，含 4 个 case study 与 Planner/Executor/Summarizer） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` 与中文 `permalink` 一致；英文无 `permalink` | 通过 |
+| Nature / GitHub 链接及 fig1–6、frm1–6 图片 URL、公式 `$S′=…$`、`$S^(x,D)$` | 一致 |
+| 标题层级与中文结构一致 | 通过 |
+| 531、94%、152/379、δ=0.95、模型名等 | 一致 |
+
+英文表述与术语（SciToolKG、Retrieve-based safety check module 等与中文一致）无明显 Chinglish 或漏译，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2025-01-24-SciToolAgent：A Knowledge Graph-Driven Scientific Agent for Multi-Tool Integration.md`

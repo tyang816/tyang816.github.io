@@ -5,40 +5,43 @@ categories: [BI]
 tags: [protein, benchmark]
 proceedings: NeurIPS
 date: 2021-10-11
+lang: en
+alt_url: /zh/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
+permalink: /bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
 ---
 
-> 论文地址：[FLIP：Benchmark tasks in fitness landscape inference for proteins](https://openreview.net/forum?id=p2dMLEwL8tF)
+> Paper: [FLIP：Benchmark tasks in fitness landscape inference for proteins](https://openreview.net/forum?id=p2dMLEwL8tF)
 >
-> 论文实现：<https://benchmark.protein.properties/>
+> Benchmark: <https://benchmark.protein.properties/>
 > 
 
-## FLIP：蛋白质fitness有监督预测benchmark
+## FLIP: A supervised benchmark for protein fitness prediction
 
 ### Abstract
 
-机器学习方法来捕获蛋白质序列-功能的关系，被称为fitness landscape。目前的benchmark像是CASP和CAFA分别是评估蛋白质结构和功能预测，但和蛋白质工程不相关。本文介绍一个fitness landscape inference for proteins(FLIP)的benchmark来让蛋白质工程领域的表征学习进行快速预测。FLIP包括adeno-associated virus stability for gene therapy（腺相关病毒基因治疗稳定性）、protein domain B1 stability和immunoglobulin binding以及多个蛋白家族的热稳定性实验数据
+Machine learning approaches that capture the relationship between protein sequence and function are often framed as fitness landscape inference. Benchmarks such as CASP and CAFA evaluate protein structure and function prediction, respectively, but are not aligned with the goals of protein engineering. This work introduces Fitness Landscape Inference for Proteins (FLIP), a benchmark that enables fast, supervised prediction via representation learning in protein engineering. FLIP aggregates experimental data on adeno-associated virus stability for gene therapy, stability and immunoglobulin binding of protein domain B1, and thermostability across multiple protein families.
 
 ### Introduction
 
-蛋白质执行所需功能的能力是由其氨基酸序列决定的，通常是通过折叠到三维结构来介导的
+The ability of a protein to perform its required function is determined by its amino acid sequence, typically mediated by folding into a three-dimensional structure.
 
-目前的生物物理和结构预测方法不能可靠地将序列映射到其执行所需功能的能力，所以目前蛋白质工程在很大程度上依赖于定向进化（DE）的方法，随机修改（突变）一个起始序列，测量所有序列找出fitness提高的，然后迭代直到蛋白质性能足够。从序列中预测适应度的机器学习方法可以利用正负样本选择筛选突变序列，比传统的定向进化以更少的测量量达到更高的fitness的效果，不需要对结构或机制的详细理解
+Current biophysical and structure-prediction methods cannot reliably map sequence to functional performance. Protein engineering therefore relies heavily on directed evolution (DE): randomly modifying (mutating) a starting sequence, measuring fitness across variants, selecting improvements, and iterating until performance is sufficient. Machine learning methods that predict fitness from sequence can use positive and negative labels to screen mutants, often reaching higher fitness with fewer measurements than conventional directed evolution, without requiring detailed structural or mechanistic knowledge.
 
 ### Related Work
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FLIP/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 
-The Critical Assessment of Protein Structure Prediction (CASP) 做蛋白质结构预测
+The Critical Assessment of Protein Structure Prediction (CASP) targets protein structure prediction.
 
-The Critical Assessment of Function Annotation (CAFA) 重点是将基因本体论（GO）类（蛋白质功能的分类定义）分配给蛋白质
+The Critical Assessment of Function Annotation (CAFA) focuses on assigning Gene Ontology (GO) terms—standardized classifications of protein function—to proteins.
 
-Tasks Assessing Protein Embeddings (TAPE) 评估不同的预训练机制和模型对预测蛋白质特性的有效性
+Tasks Assessing Protein Embeddings (TAPE) evaluates how different pretraining schemes and models affect prediction of protein properties.
 
-Envision整理了几十个单一氨基酸变异（SAV）数据集，但不包括其他类型的序列变异
+Envision compiled dozens of single-amino-acid variant (SAV) datasets but does not cover other types of sequence variation.
 
-DeepSequence收集了42个深度突变扫描（DMS）数据集
+DeepSequence collected 42 deep mutational scanning (DMS) datasets.
 
-这些研究没有一个标准的train/test split
+None of these efforts define a standard train/test split.
 
 ### Landscapes and Splits
 
@@ -46,50 +49,50 @@ DeepSequence收集了42个深度突变扫描（DMS）数据集
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FLIP/tab2.png" alt="avatar" style="zoom:100%;" /></div>
 
-设计FLIP来回答两个关于机器学习建模蛋白质序列的基础问题：
+FLIP is designed to address two foundational questions about machine learning on protein sequences:
 
-- 一个模型是否能捕捉到除了父序列突变之外的复杂fitness
-- 一个模型能否在一系列测量非常不同功能的适应度的蛋白质上表现良好
+- Can a model capture complex fitness effects beyond mutations relative to a parent sequence?
+- Can a model generalize across proteins for which fitness reflects very different functional readouts?
 
-现有的工作如DeepSequence、Envision等可以很好的证明第二点，但不能证明第一点
+Prior work such as DeepSequence and Envision supports the second question well but not the first.
 
-TAPE的荧光预测任务能评估第一点，但不能评估第二点
+TAPE’s fluorescence prediction task evaluates the first question but not the second.
 
-为了测试上述问题，在表2收集了三个已发表的landscape并创建了15个split，来测试模型不同情况下的泛化能力。简单的随机分割方法在经典的蛋白质序列到功能的预测中是出了名的误导性，因为蛋白质序列不是采样的I.I.D，而是与进化历史是相关的
+To probe both questions, the authors curate three published landscapes (Table 2) and define 15 splits to test generalization under distinct regimes. Naive random splits are notoriously misleading for sequence-to-function prediction because sequences are not independent and identically distributed (i.i.d.) but structured by evolutionary history.
 
 #### GB1
 
 ##### Motivation
 
-预测突变之间的相互作用的能力称为上位性，这些相互作用导致了对蛋白质适应度的non-additive效应，并已被证明限制了进化可用的路径
+Predicting interactions among mutations—epistasis—captures non-additive effects on fitness and is known to constrain evolutionarily accessible paths.
 
 ##### Landscape
 
-GB1是蛋白G的结合域，蛋白G是链球菌中发现的一种免疫球蛋白结合蛋白。在他们最初的研究中测量了在4个位置的16万种可能的突变组合中的149,361种的fitness
+GB1 is the immunoglobulin-binding domain of protein G from streptococci. The original study measured fitness for 149,361 of 160,000 possible combinatorial mutants at four sites.
 
 ##### Splits
 
-超过96%的氨基酸突变产生非结合或低结合序列149361个序列中有143539个的适应度值低于0.5，其中野生型fitness为1，fitness为0为非结合
+More than 96% of amino acid mutations yield non-binding or weak-binding variants; among 149,361 sequences, 143,539 have fitness below 0.5 (wild-type fitness = 1; fitness 0 denotes non-binding).
 
-为了确保模型学习nontrivial信号，在创建训练集之前对非功能序列进行降采样。5822个适应度以上的0.5的序列和2911个适应度小于或等于0.5的随机抽样序列。从这个集合中，策划了5个数据集的分割
+To ensure models learn nontrivial signal, nonfunctional sequences are downsampled before training set construction: 5,822 sequences with fitness above 0.5 and 2,911 randomly sampled sequences with fitness at or below 0.5. From this pool, five split regimes are defined:
 
 - **Train on single mutants (1-vs-rest)**
 - **Train on single and double mutants (2-vs-rest)**
 - **Train on single, double and triple mutants (3-vs-rest)**
-- **Train on low fifitness, test on high (low-vs-high)**：负样本训练，正样本测试
-- **Sampled**：随机划分8：2
+- **Train on low fitness, test on high (low-vs-high)**: train on negative (low-fitness) examples, test on positive (high-fitness) examples
+- **Sampled**: random 80:20 split
 
 #### AAV
 
 ##### Motivation
 
-蛋白质工程上往往只突变一个特定区域，比如已知protein-protein interface是知道作为subset of positions，对长序列而言成功预测这样一个位置子集也是有意义的
+Protein engineering often mutates only a localized region—for example, a known protein–protein interface as a subset of positions. For long sequences, accurate prediction on such a positional subset remains meaningful.
 
 ##### Landscape
 
-Adeno-associated virus (AAV) 衣壳蛋白负责帮助病毒将DNA有效载荷整合到目标细胞中。
+The adeno-associated virus (AAV) capsid protein helps the virus deliver its DNA payload into target cells.
 
-从VP-1的561到588位有一个28个氨基酸窗口，测量1到39之间的变异的适应度，这被称为采样池（sampled pool）。此外，还测量了使用各种机器学习模型选择或设计的序列的适应度，这些称为设计池（designed pool）
+A 28-amino-acid window (positions 561–588 of VP-1) was assayed for variants with one to 39 mutations; this constitutes the sampled pool. Fitness was also measured for sequences chosen or designed by various machine learning models—the designed pool.
 
 ##### Splits
 
@@ -98,36 +101,36 @@ Adeno-associated virus (AAV) 衣壳蛋白负责帮助病毒将DNA有效载荷整
 - **Train on single mutants (1-vs-rest)**
 - **Train on single and double mutants (2-vs-rest)**
 - **Train on mutants with up to seven changes (7-vs-rest)**
-- **Train on low fifitness, test on high (low-vs-high)**
-- **Sampled**：随机划分8：2
+- **Train on low fitness, test on high (low-vs-high)**
+- **Sampled**: random 80:20 split
 
 #### Thermostability
 
 ##### Motivation
 
-蛋白质热稳定性在工业上很重要，也是定向进化里很好的一个起点。热稳定性的预测具有挑战性，因为它不一定是一个平滑的功能landscape；在某些蛋白质家族中，一个单一的氨基酸替代可以赋予或破坏热稳定性
+Thermostability matters industrially and is a common starting point in directed evolution. Prediction is difficult because the landscape is not necessarily smooth; in some families, a single substitution can confer or abolish stability.
 
 ##### Landscape
 
-13个物种48000个蛋白，包括了全局和局部突变体
+48,000 proteins from 13 species, including global and local mutants.
 
 ##### Splits
 
-- **Mixed**：对所有序列聚类，使用MMseqs2以20%的序列标识阈值选择聚类代表创建一个split。这个split中的80%的cluster中的所有序列用于训练，剩下的20%测试
-- **Human**：对所有human序列聚类，使用MMseqs2以20%的序列标识阈值选择聚类代表创建一个split，同上
-- **Human-cell**：对所有human细胞系（one cell line for human）序列聚类，使用MMseqs2以20%的序列标识阈值选择聚类代表创建一个split，同上
+- **Mixed**: cluster all sequences with MMseqs2 at 20% sequence identity, pick cluster representatives to form a split; use all sequences in 80% of clusters for training and the remainder for testing
+- **Human**: same procedure restricted to human sequences
+- **Human-cell**: same procedure restricted to sequences from one human cell line
 
 ### Baseline algorithms
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/FLIP/tab3.png" alt="avatar" style="zoom:100%;" /></div>
 
-对于使用蛋白质语言模型的baseline，我们计算每个氨基酸的embedding，用三种方法做pool
+For protein language model baselines, per-residue embeddings are pooled in three ways:
 
-- **Per amino acid (per AA)**：pool over the sequence uing a 1D attention layer来做回归预测
-- **Mean**：对整个蛋白质长度每个氨基酸做mean pool
-- **Mean over subset (mut mean)**：对mutated region of interst的每个氨基酸做pool
+- **Per amino acid (per AA)**: sequence-level pooling with a 1D attention layer for regression
+- **Mean**: mean pooling over all residues in the full-length protein
+- **Mean over subset (mut mean)**: mean pooling over residues in the mutated region of interest
 
-训练的时候，10%随机采样的训练集作为验证集
+During training, 10% of the training set is held out at random as a validation set.
 
 ### Results
 

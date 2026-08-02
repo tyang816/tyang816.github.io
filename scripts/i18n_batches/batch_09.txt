@@ -1,0 +1,10 @@
+_posts/zh/CL/2022-01-29-LoRA：Low-Rank Adaptation of Large Language Models.md
+_posts/zh/CL/2022-03-16-Training language models to follow instructions with human feedback.md
+_posts/zh/CL/2022-04-16-Training a Helpful and Harmless Assistant with Reinforcement Learning from Human.md
+_posts/zh/CL/2022-07-29-MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation.md
+_posts/zh/CL/2022-11-09-Holistic Evaluation of Language Models.md
+_posts/zh/CL/2024-08-23-LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models.md
+_posts/zh/CL/2025-01-23-ToolACE：Winning the Points of LLM Function Calling.md
+_posts/zh/CL/2025-04-10-The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search.md
+_posts/zh/CL/2025-09-08-ACEBench：Who Wins the Match Point in Tool Usage.md
+_posts/zh/CL/2025-11-04-From Automation to Autonomy：A Survey on Large Language Models in Scientific Discovery.md

@@ -1,0 +1,11 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2024-02-20-T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-I.md`
+
+对照 `i18n_verify_brief.md` 检查结果：
+
+1. **完整性**：与中文版章节一致（Abstract → Introduction → Method 及子节 → Experiment → Applications），结尾 `<HR>` 一致。  
+2. **正文语言**：无残留中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 与中文 `permalink` 一致（`/zh/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/`）；英文无 `permalink`；其余字段与中文对应。  
+4. **资源**：论文链接、GitHub、全部图片 URL 一致；英文对 SD 部分使用了 $X_0$、$Z_T$ 等，与中文含义一致。  
+5. **结构与术语**：标题层级对齐；训练细节（batch 8、10 epochs、Adam、$1\times10^{-5}$、4×V100-32G、77M/300M、三种 condition）与中文一致。
+
+英文稿无需修改。

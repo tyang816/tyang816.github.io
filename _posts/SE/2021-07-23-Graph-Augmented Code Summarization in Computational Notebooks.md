@@ -5,15 +5,18 @@ categories: [SE]
 tags: [code-summarization, GNN]
 proceedings: IJCAI
 date: 2021-07-23
+lang: en
+alt_url: /zh/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+permalink: /se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
 ---
 
-> 论文地址：[Graph-Augmented Code Summarization in Computational Notebooks](https://www.ijcai.org/proceedings/2021/717)
+> Paper: [Graph-Augmented Code Summarization in Computational Notebooks](https://www.ijcai.org/proceedings/2021/717)
 
-## Themisto：通过计算本生成文档的端到端系统
+## Themisto: An end-to-end system for generating documentation in computational notebooks
 
-1. 针对 jupyter notebook 的代码块生成注释，有三种方法：①基于HAConvGNN；②基于查询在线api文档；③基于代码结果推动用户自己编写注释。上述方法可以分为“描述为什么写这块代码”和“这块代码的结果是什么”
-2. HAConvGNN 是在 [[LeClair et al, 2020]](http://arxiv.org/abs/2004.02843) 的补充，多编码了相邻的四个代码块获取更高层次的注意力权重
-3. 这是篇系统实现文章，要看 HAConvGNN 的文章
+1. For Jupyter notebook code cells, three approaches generate comments: (1) HAConvGNN-based; (2) querying online API documentation; (3) using code execution results to prompt users to write their own comments. These methods fall into two categories: describing why a code block was written, and describing what the code block produces.
+2. HAConvGNN extends [[LeClair et al, 2020]](http://arxiv.org/abs/2004.02843) by additionally encoding the four neighboring code cells to obtain higher-level attention weights.
+3. This is primarily a systems paper; refer to the HAConvGNN work for the underlying model.
 
 <HR align=left color=#987cb9 SIZE=1>
 

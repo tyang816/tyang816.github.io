@@ -1,0 +1,7 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 将 [`_posts/zh/ML/2022-03-02-AI Index Report.md`](_posts/zh/ML/2022-03-02-AI Index Report.md) 译为学术英文并写入 [`_posts/ML/2022-03-02-AI Index Report.md`](_posts/ML/2022-03-02-AI Index Report.md)。
+
+- **Frontmatter**：`lang: en`，`alt_url: /zh/ml/AI-Index-Report/`（对应中文 `permalink`），无 `permalink`；其余字段与中文版一致。
+- **正文**：结构、链接（AI Index PDF）、`<hr>` 均保留；图号引用（如 Figure 1.1.1）保留；blockquote 标签译为 Report / 说明性英文。
+- **校验**：目标文件存在，正文无残留中文。

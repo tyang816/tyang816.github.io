@@ -5,116 +5,119 @@ categories: [CL]
 tags: [LLM, NLP]
 proceedings: ACL
 date: 2024-08-23
+lang: en
+alt_url: /zh/cl/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/
+permalink: /cl/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/
 ---
 
-> 论文地址：[LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models](https://aclanthology.org/2024.acl-demos.38/)
+> Paper: [LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models](https://aclanthology.org/2024.acl-demos.38/)
 >
-> 论文实现：<https://github.com/hiyouga/LLaMA-Factory>
+> Code: <https://github.com/hiyouga/LLaMA-Factory>
 
-## LlamaFactory：高效微调LLM的框架
+## LlamaFactory: A Framework for Efficient Fine-Tuning of LLMs
 
 ### Abstract
 
-在下游任务上高效微调大模型是非常重要的，作者这里提出了LlamaFactory，可以通过内置的web UI，不需要代码就可以轻易微调100+LLM
+Efficient fine-tuning of large models on downstream tasks is critically important. The authors present LlamaFactory, which enables easy fine-tuning of 100+ LLMs through a built-in web UI with little or no coding.
 
 ### Introduction
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab1.png "avatar")![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab2.png "avatar")​
 
-大型语言模型（LLMs）在推理能力和多种任务（如问答、机器翻译和信息提取）中表现卓越。近年来，LLMs在开源社区中得到广泛发展，例如 Hugging Face 的 LLM leaderboard 提供了超过 5000 个模型，便于用户利用 LLMs 的能力
+Large language models (LLMs) excel at reasoning and a wide range of tasks such as question answering, machine translation, and information extraction. In recent years, LLMs have flourished in the open-source community; for example, Hugging Face’s LLM leaderboard lists more than 5,000 models, making it easier for users to leverage LLM capabilities.
 
-为了使LLMs适应下游任务，需要进行微调，但微调极大规模的模型参数需要大量计算资源，成为关键挑战。高效微调技术（如 LoRA、QLoRA 等）被提出以降低训练成本，但目前社区贡献了多种方法，缺乏统一的框架来支持这些技术的广泛适配与定制。
+To adapt LLMs to downstream tasks, fine-tuning is required, but updating parameters at extreme scale demands substantial compute, which becomes a key bottleneck. Parameter-efficient fine-tuning techniques (e.g., LoRA, QLoRA) reduce training cost, yet the community offers many disparate methods and lacks a unified framework to support broad adoption and customization.
 
-**LLAMAFACTORY 框架**：
+**LLAMAFACTORY framework**:
 
-*   作者提出了 **LLAMAFACTORY**，一个统一的框架，用于高效微调超过 100 种 LLMs。
-*   框架整合了一系列最新的高效微调方法，能够以最小的资源和高吞吐量对模型进行微调。
-*   提供两种用户友好的操作方式：命令行和图形化界面（LLAMABOARD），支持用户灵活定制和微调LLMs，几乎无需编写代码。
+*   The authors propose **LLAMAFACTORY**, a unified framework for efficiently fine-tuning more than 100 LLMs.
+*   The framework integrates state-of-the-art efficient fine-tuning methods and can fine-tune models with minimal resources and high throughput.
+*   It offers two user-friendly modes—command line and a graphical interface (**LLAMABOARD**)—so users can flexibly customize and fine-tune LLMs with almost no code.
 
-**LLAMAFACTORY由三个核心模块组成：**
+**LLAMAFACTORY comprises three core modules:**
 
-1.  **Model Loader**：加载和管理预训练模型。
-2.  **Data Worker**：处理和对齐不同格式的数据集。
-3.  **Trainer**：应用高效的微调方法。
+1.  **Model Loader**: loads and manages pretrained models.
+2.  **Data Worker**: processes and aligns datasets in diverse formats.
+3.  **Trainer**: applies efficient fine-tuning methods.
 
-**技术实现**：
+**Implementation**:
 
-*   框架基于 PyTorch 和多个开源库（如 Transformers 和 PEFT）实现，提供了高抽象级别的开箱即用工具。
-*   使用 Gradio 构建的 LLAMABOARD 图形界面使用户无需编写代码即可微调LLMs。
+*   The framework is built on PyTorch and several open-source libraries (e.g., Transformers and PEFT), providing high-level, out-of-the-box tooling.
+*   **LLAMABOARD**, implemented with Gradio, lets users fine-tune LLMs without writing code.
 
 ### Efficient Fine-Tuning Techniques
 
 #### Efficient Optimization
 
-**概述**
+**Overview**
 
-高效优化技术的目标是以最小的资源成本调整LLMs的参数。这些技术通过冻结部分参数或引入低维适配器，减少计算复杂度。
+Efficient optimization techniques aim to adapt LLM parameters at minimal resource cost. They reduce computational complexity by freezing part of the parameters or introducing low-dimensional adapters.
 
-**技术细节**
+**Technical details**
 
 1.  **Freeze-tuning**:
 
-    *   仅微调模型的少量参数，冻结大部分层。
-    *   通常只微调解码器层中少量参数，例如最后几层。
-    *   减少了需要更新的参数数量，从而降低资源消耗。
+    *   Only a small subset of parameters is updated while most layers remain frozen.
+    *   Typically only a few parameters in decoder layers—often the last few layers—are trained.
+    *   Fewer trainable parameters lowers resource consumption.
 2.  **Gradient Low-Rank Projection (GaLore)**:
 
-    *   将梯度投影到低维空间中，支持全参数学习的同时显著节省内存。
-    *   适合大模型训练，既能保持性能又能减少内存开销。
+    *   Projects gradients into a low-dimensional subspace, enabling full-parameter learning while substantially saving memory.
+    *   Suited to large-model training: maintains performance with lower memory overhead.
 3.  **BAdam**:
 
-    *   基于 **Block Coordinate Descent (BCD)** 的方法，将参数分块处理以优化训练效率。
-    *   能高效优化大量参数。
+    *   A **Block Coordinate Descent (BCD)**-based method that partitions parameters into blocks to improve training efficiency.
+    *   Can optimize large parameter sets efficiently.
 4.  **Low-Rank Adaptation (LoRA)**:
 
-    *   冻结所有预训练权重，仅为指定层引入一对低秩矩阵，作为微调参数。
-    *   结合量化技术（如QLoRA）时，可以进一步减少内存使用。
+    *   Freezes all pretrained weights and adds a pair of low-rank matrices to selected layers as trainable adapters.
+    *   Combined with quantization (e.g., QLoRA), memory use can be reduced further.
 5.  **QLoRA**:
 
-    *   在量化权重的基础上进行LoRA微调。
-    *   使用4位量化和双重量化技术（如LLM.int8），显著降低了内存消耗。
+    *   Applies LoRA fine-tuning on quantized weights.
+    *   Uses 4-bit quantization and double quantization (e.g., LLM.int8), greatly reducing memory consumption.
 6.  **DoRA**:
 
-    *   将预训练权重分解为大小和方向两部分，仅更新方向部分以提升性能。
-    *   比LoRA更高效，适用于复杂的微调场景。
+    *   Decomposes pretrained weights into magnitude and direction components and updates only the direction part to improve performance.
+    *   More effective than LoRA alone in complex fine-tuning settings.
 7.  **LoRA+**:
 
-    *   针对LoRA的优化，通过解决低秩分解的次优问题，进一步提升性能。
+    *   An optimization for LoRA that addresses suboptimal low-rank factorization and further improves performance.
 8.  **PiSSA (Principal Singular Values and Singular Vectors Adaptation)**:
 
-    *   基于预训练权重的主成分初始化适配器，收敛速度更快。
+    *   Initializes adapters from principal components of pretrained weights for faster convergence.
 
 #### Efficient Computation
 
-**概述**
+**Overview**
 
-高效计算技术的目标是减少LLMs训练过程中的时间或内存需求，通过硬件优化和计算方法提升效率。
+Efficient computation techniques reduce time or memory during LLM training through hardware-aware optimizations and algorithmic improvements.
 
-**技术细节**
+**Technical details**
 
 1.  **Mixed Precision Training**:
 
-    *   使用混合精度（如float16和bfloat16）进行训练，减少内存占用。
-    *   在不显著降低模型精度的情况下提高计算效率。
+    *   Trains with mixed precision (e.g., float16 and bfloat16) to lower memory footprint.
+    *   Improves compute efficiency with limited impact on model accuracy.
 2.  **Activation Checkpointing**:
 
-    *   在前向传播中保存部分中间结果，并在反向传播时重新计算未保存的部分，以降低内存使用。
+    *   Stores only some intermediate activations during the forward pass and recomputes the rest in the backward pass to save memory.
 3.  **Flash Attention**:
 
-    *   一种硬件友好的注意力机制，减少了Attention层的I/O开销，提高计算效率。
+    *   A hardware-friendly attention implementation that cuts I/O overhead in attention layers and speeds up computation.
 4.  **S2Attention (Shifted Sparse Attention)**:
 
-    *   针对长上下文的LLMs，利用稀疏注意力机制减少内存消耗。
+    *   For long-context LLMs, uses sparse attention to reduce memory use.
 5.  **Quantization**:
 
-    *   通过权重的低精度表示（如4位或8位）降低模型的内存需求。
-    *   支持多种后训练量化方法，如GPTQ、AWQ和AQLM。
+    *   Represents weights in lower precision (e.g., 4-bit or 8-bit) to shrink memory requirements.
+    *   Supports multiple post-training quantization methods such as GPTQ, AWQ, and AQLM.
 6.  **Unsloth**:
 
-    *   利用Triton库实现LoRA的反向传播，减少浮点运算（FLOPs），加速梯度下降。
-    *   提升了LoRA微调的效率。
+    *   Implements LoRA backward passes with the Triton library, reducing FLOPs and accelerating gradient descent.
+    *   Improves the efficiency of LoRA fine-tuning.
 
-LLAMAFACTORY 将上述优化和计算技术无缝集成到框架中，显著提升了LLMs微调的效率
+LLAMAFACTORY integrates the above optimization and computation techniques seamlessly, substantially improving the efficiency of LLM fine-tuning.
 
 ### LlamaFactory Framework
 
@@ -122,163 +125,163 @@ LLAMAFACTORY 将上述优化和计算技术无缝集成到框架中，显著提�
 
 #### Model Loader
 
-**Model Loader** 负责管理模型的初始化和微调，具体包括以下功能：
+The **Model Loader** manages model initialization and fine-tuning setup, including:
 
-1.  **Model Initialization（模型初始化）**：
+1.  **Model Initialization**:
 
-    *   使用 Transformers 的 Auto 类（如 AutoModelForCausalLM 和 AutoTokenizer）加载预训练模型和分词器。
-    *   支持自动调整嵌入层大小并初始化新参数。
-    *   利用 RoPE（旋转位置编码）的比例因子扩展上下文长度。
-2.  **Model Patching（模型补丁）**：
+    *   Loads pretrained models and tokenizers via Transformers Auto classes (e.g., `AutoModelForCausalLM` and `AutoTokenizer`).
+    *   Supports automatic resizing of embedding layers and initialization of new parameters.
+    *   Extends context length using scaling factors for RoPE (rotary position embeddings).
+2.  **Model Patching**:
 
-    *   使用“猴子补丁”技术为模型添加新功能，如 S²Attention。
-    *   原生支持 Flash Attention，优化计算效率。
-    *   在 DeepSpeed ZeRO stage-3 下优化 MoE（专家混合）模型，防止动态层过度分区。
-3.  **Model Quantization（模型量化）**：
+    *   Uses monkey patching to add capabilities such as S²Attention.
+    *   Natively supports Flash Attention for better compute efficiency.
+    *   Optimizes mixture-of-experts (MoE) models under DeepSpeed ZeRO stage-3 to avoid excessive partitioning of dynamic layers.
+3.  **Model Quantization**:
 
-    *   支持 4 位或 8 位动态量化（如 LLM.int8 和 QLoRA 的双量化）。
-    *   兼容多种量化方法（如 GPTQ、AWQ 和 AQLM），但仅支持适配器方法对量化权重进行微调。
-4.  **Adapter Attaching（适配器挂载）**：
+    *   Supports 4-bit or 8-bit dynamic quantization (e.g., LLM.int8 and QLoRA double quantization).
+    *   Compatible with multiple quantization methods (GPTQ, AWQ, AQLM); fine-tuning of quantized weights is limited to adapter-based methods.
+4.  **Adapter Attaching**:
 
-    *   自动检测适配器插入的位置（如所有线性层）以优化收敛性能。
-    *   支持多种适配器方法（如 LoRA、DoRA 和 PiSSA）。
-    *   使用 Unsloth 替换反向传播以加速训练。
-5.  **Precision Adaptation（精度适配）**：
+    *   Automatically detects where to insert adapters (e.g., all linear layers) for better convergence.
+    *   Supports multiple adapter methods (LoRA, DoRA, PiSSA, etc.).
+    *   Can replace the backward pass with Unsloth to speed up training.
+5.  **Precision Adaptation**:
 
-    *   根据硬件计算能力调整浮点精度（如 bfloat16 或 float16）。
-    *   在混合精度训练中保留所有可训练参数为 float32，以提高稳定性。
+    *   Adjusts floating-point precision (e.g., bfloat16 or float16) according to hardware capability.
+    *   Keeps all trainable parameters in float32 during mixed-precision training for stability.
 
 #### Data Worker
 
-**Data Worker** 提供了一整套数据处理流水线，使得不同任务的数据能够被统一格式化处理。
+The **Data Worker** provides a full data-processing pipeline so task-specific data can be normalized into a unified format.
 
-1.  **Dataset Loading（数据集加载）**：
+1.  **Dataset Loading**:
 
-    *   基于 Datasets 库加载本地或远程数据集。
-    *   使用 Arrow 格式减少内存开销，支持数据流模式，避免下载整个数据集。
-2.  **Dataset Aligning（数据对齐）**：
+    *   Loads local or remote datasets via the Datasets library.
+    *   Uses the Arrow format to reduce memory overhead and supports streaming to avoid downloading entire datasets.
+2.  **Dataset Aligning**:
 
-    *   提供数据描述规范，将多种数据格式（如 Alpaca、ShareGPT 等）标准化为统一结构。
-3.  **Dataset Merging（数据合并）**：
+    *   Provides a data specification that standardizes diverse formats (e.g., Alpaca, ShareGPT) into a common structure.
+3.  **Dataset Merging**:
 
-    *   提供高效的合并方法：
+    *   Offers efficient merging strategies:
 
-        *   非流模式下直接拼接数据集。
-        *   流模式下交替读取数据以保持随机性。
-4.  **Dataset Preprocessing（数据预处理）**：
+        *   Direct concatenation in non-streaming mode.
+        *   Interleaved reads in streaming mode to preserve randomness.
+4.  **Dataset Preprocessing**:
 
-    *   提供多种聊天模板（chat templates）来适配不同模型。
-    *   默认仅计算生成部分的损失，支持序列压缩技术以减少训练时间。
+    *   Supplies multiple chat templates for different models.
+    *   By default, loss is computed only on the generation segment; sequence packing reduces training time.
 
 #### Trainer
 
-**Trainer** 是框架的核心模块之一，用于整合高效微调方法和训练机制。
+The **Trainer** is a core module that integrates efficient fine-tuning methods and training mechanics.
 
-1.  **Efficient Training（高效训练）**：
+1.  **Efficient Training**:
 
-    *   支持最新的高效微调方法（如 LoRA+、GaLore 和 BAdam）。
-    *   通过模块化设计，使不同任务能够灵活应用这些方法。
-    *   使用 Transformers 和 TRL 库的训练器支持预训练、指令调优、偏好优化等任务。
-2.  **Model-Sharing RLHF（模型共享的 RLHF）**：
+    *   Supports recent efficient fine-tuning methods (LoRA+, GaLore, BAdam, etc.).
+    *   Modular design lets different tasks apply these methods flexibly.
+    *   Uses trainers from Transformers and TRL for pretraining, instruction tuning, preference optimization, and related objectives.
+2.  **Model-Sharing RLHF**:
 
-    *   提出一种新方法，使 RLHF（基于人类反馈的强化学习）能够在消费者设备上完成。
-    *   通过动态切换适配器，单个预训练模型即可同时充当策略、价值、参考和奖励模型。
-3.  **Distributed Training（分布式训练）**：
+    *   Proposes an approach so RLHF (reinforcement learning from human feedback) can run on consumer hardware.
+    *   By dynamically switching adapters, a single pretrained backbone can serve as policy, value, reference, and reward models.
+3.  **Distributed Training**:
 
-    *   结合 DeepSpeed 实现数据并行，通过 ZeRO 优化器减少内存消耗。
+    *   Combines DeepSpeed for data parallelism and uses the ZeRO optimizer to reduce memory consumption.
 
 #### Utilities
 
-*   **Model Inference（模型推理）**：
+*   **Model Inference**:
 
-    *   支持基于 Transformers 和 vLLM 的流式解码，提供高吞吐量推理服务。
-    *   提供 OpenAI 风格的 API，方便集成至应用中。
-*   **Model Evaluation（模型评估）**：
+    *   Supports streaming decoding with Transformers and vLLM for high-throughput inference.
+    *   Provides an OpenAI-style API for easy integration into applications.
+*   **Model Evaluation**:
 
-    *   支持多种任务的自动评估（如 MMLU、CMMLU 和 BLEU）。
-    *   提供文本相似度计算和人类评估功能。
+    *   Supports automatic evaluation on multiple benchmarks (e.g., MMLU, CMMLU, and BLEU).
+    *   Includes text similarity metrics and human evaluation utilities.
 
 #### LLAMABOARD: A Unified Interface for LLAMAFACTORY
 
-LLAMABOARD 是 LLAMAFACTORY 的图形界面，允许用户通过 Web 界面无代码地定制微调和评估流程。
+**LLAMABOARD** is the graphical front end for LLAMAFACTORY, allowing users to customize fine-tuning and evaluation workflows through a web UI without code.
 
-1.  **Easy Configuration（易配置）**：
+1.  **Easy Configuration**:
 
-    *   默认提供推荐参数，用户可通过界面预览和验证数据集。
-2.  **Monitorable Training（可监控训练）**：
+    *   Sensible default hyperparameters; users can preview and validate datasets in the UI.
+2.  **Monitorable Training**:
 
-    *   提供实时的训练日志和损失曲线，帮助用户分析训练进程。
-3.  **Flexible Evaluation（灵活评估）**：
+    *   Real-time training logs and loss curves for monitoring progress.
+3.  **Flexible Evaluation**:
 
-    *   支持自动和人类评估，便于用户测量模型能力。
-4.  **Multilingual Support（多语言支持）**：
+    *   Supports automatic and human evaluation to measure model capability.
+4.  **Multilingual Support**:
 
-    *   支持界面本地化，目前支持英语、俄语和中文。
+    *   Localized UI; currently English, Russian, and Chinese.
 
 ### Empirical Study
 
 #### Training Efficiency
 
-**实验设置**
+**Experimental setup**
 
-*   **数据集**：使用 **PubMed 数据集**，其中包含 3600 万条生物医学文献记录，抽取约 40 万个 token 构建训练语料
-*   **实验条件**：学习率：10−5、Token 批大小：512、优化器：8位 AdamW、精度：bfloat16、使用激活检查点技术减少内存占用、Freeze-tuning：仅微调模型最后3层解码器、GaLore：秩设置为128，缩放因子设置为2.0、LoRA/QLoRA：在所有线性层附加适配器，秩为128，alpha 为256、硬件：单张 NVIDIA A100 40GB GPU、Flash Attention 在所有实验中启用；LoRA 和 QLoRA 还启用了 Unsloth。
+*   **Dataset**: **PubMed**, with roughly 36 million biomedical records; about 400k tokens were sampled to build the training corpus.
+*   **Settings**: learning rate $10^{-5}$, token batch size 512, 8-bit AdamW optimizer, bfloat16 precision, activation checkpointing to reduce memory, Freeze-tuning: only the last 3 decoder layers, GaLore: rank 128 and scale factor 2.0, LoRA/QLoRA: adapters on all linear layers with rank 128 and alpha 256, hardware: single NVIDIA A100 40GB GPU, Flash Attention enabled in all runs; Unsloth additionally enabled for LoRA and QLoRA.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab4.png "avatar")​
 
-*   在 Gemma-2B 上，QLoRA 的内存消耗为 5.21 GB，吞吐量为 3158.59 tokens/s，PPL 为 10.46。
-*   在 Llama2-13B 上，GaLore 的 PPL 为 5.72，比 LoRA 和 QLoRA 更优，但内存需求较高
+*   On Gemma-2B, QLoRA used 5.21 GB memory, throughput 3158.59 tokens/s, and PPL 10.46.
+*   On Llama2-13B, GaLore achieved PPL 5.72, better than LoRA and QLoRA, at higher memory cost.
 
 #### Fine-Tuning on Downstream Tasks
 
-**实验设置**
+**Experimental setup**
 
-*   **任务**：
+*   **Tasks**:
 
-    *   CNN/DM：摘要生成任务
-    *   XSum：极端摘要生成任务
-    *   AdGen：广告文本生成任务
+    *   CNN/DM: summarization
+    *   XSum: extreme summarization
+    *   AdGen: advertisement text generation
 
-*   **数据集划分**：
+*   **Data split**:
 
-    *   每个任务使用 2000 个训练样本和 1000 个测试样本。
-    *   训练集和测试集互不重叠。
+    *   2,000 training and 1,000 test examples per task.
+    *   Training and test sets are disjoint.
 
-*   **评估指标**：
+*   **Metrics**:
 
-    *   使用 **ROUGE 分数**（包括 ROUGE-1、ROUGE-2 和 ROUGE-L）评估生成文本质量。
+    *   **ROUGE** (ROUGE-1, ROUGE-2, ROUGE-L) for generation quality.
 
-*   **实验条件**：
+*   **Settings**:
 
-    *   学习率：10−5、批大小：4、最大输入长度：2048、优化器：8位 AdamW、硬件：NVIDIA A100 40GB GPU、LoRA 和 QLoRA 的适配器设置与训练效率实验相同
+    *   Learning rate $10^{-5}$, batch size 4, max input length 2048, 8-bit AdamW optimizer, NVIDIA A100 40GB GPU; LoRA and QLoRA adapter settings match the training-efficiency experiment.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/LlamaFactory/tab5.png "avatar")​
 
-*   **最佳微调方法**：
+*   **Best fine-tuning methods**:
 
-    *   LoRA 和 QLoRA 在大多数任务和模型中表现最佳。
-    *   例如，在 XSum 和 AdGen 任务中，Llama3-8B 使用 QLoRA 获得了最高 ROUGE 分数。
-*   **不同模型的表现**：
+    *   LoRA and QLoRA perform best on most tasks and models.
+    *   For example, on XSum and AdGen, Llama3-8B with QLoRA achieves the highest ROUGE scores.
+*   **Model comparison**:
 
-    *   Llama3-8B 是所有模型中性能最好的，在多个任务中实现了最高分数。
-    *   Yi-6B 和 Mistral-7B 在同等规模的模型中表现出竞争力。
-*   **任务相关性**：
+    *   Llama3-8B is the strongest overall across tasks.
+    *   Yi-6B and Mistral-7B are competitive among models of similar size.
+*   **Task relevance**:
 
-    *   QLoRA 在生成任务上表现稳定，尤其适用于高资源受限的场景。
+    *   QLoRA is stable on generation tasks, especially under tight resource constraints.
 
-**总结**
+**Summary**
 
-1.  **训练效率**：
+1.  **Training efficiency**:
 
-    *   QLoRA 和 LoRA 的内存效率和吞吐量显著高于传统的全参数微调方法。
-    *   在大模型中，GaLore 通过优化梯度表现出更优的 PPL。
-2.  **下游任务适配性**：
+    *   QLoRA and LoRA offer much better memory efficiency and throughput than full fine-tuning.
+    *   On large models, GaLore achieves lower PPL through gradient optimization.
+2.  **Downstream adaptation**:
 
-    *   LoRA 和 QLoRA 展现了极强的适应能力，尤其是在小模型和资源受限场景中。
-    *   不同模型在特定任务中表现存在差异，Llama3-8B 在多个任务中占据优势。
-3.  **LLAMAFACTORY 的有效性**：
+    *   LoRA and QLoRA adapt strongly, especially for smaller models and resource-limited settings.
+    *   Task-specific performance varies; Llama3-8B leads on many benchmarks.
+3.  **Effectiveness of LLAMAFACTORY**:
 
-    *   框架的高效微调方法不仅提升了训练效率，还能很好地适配下游任务，验证了其在多场景下的实用性。
+    *   The framework’s efficient fine-tuning methods improve training efficiency and transfer well to downstream tasks, validating its practicality across scenarios.
 
 ​
 

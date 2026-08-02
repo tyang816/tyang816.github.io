@@ -1,0 +1,12 @@
+对照 `i18n_verify_brief.md` 逐项核对后，英文稿无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/OS/2020-03-13-Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Paralle.md`
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与完整性 | 与中文一致（摘要、Introduction、Model Parallel Transformers、Experiments、结尾 `<HR>`） |
+| 正文语言 | 无中文正文 |
+| Frontmatter | `lang: en`；`alt_url` 与中文 `permalink` 一致；无 `permalink`；其余字段一致 |
+| 链接与图片 | arXiv、GitHub 及全部 COS 图片 URL 一致 |
+| 术语与数字 | GPT-2、BERT、512 GPU、1.2B、WikiText103、LAMBADA、RACE、76%、30% 等均保留 |
+| 英文表述 | 学术笔记语气，无明显 Chinglish |

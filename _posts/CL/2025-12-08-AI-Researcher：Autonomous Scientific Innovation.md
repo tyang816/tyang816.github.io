@@ -5,365 +5,365 @@ categories: [CL]
 tags: [Agent, NLP, LLM]
 proceedings: NeurIPS
 date: 2025-12-08
+lang: en
+alt_url: /zh/cl/AI-Researcher：Autonomous-Scientific-Innovation/
+permalink: /cl/AI-Researcher：Autonomous-Scientific-Innovation/
 ---
 
-> 论文地址：[AI-Researcher：Autonomous Scientific Innovation](https://openreview.net/pdf/a1c63cdd0495de94664b1513f7d95a3aedcb483a.pdf)
+> Paper: [AI-Researcher：Autonomous Scientific Innovation](https://openreview.net/pdf/a1c63cdd0495de94664b1513f7d95a3aedcb483a.pdf)
 >
-> 论文实现：<https://github.com/HKUDS/AI-Researcher>
+> Code: <https://github.com/HKUDS/AI-Researcher>
 
-## AI-Researcher：AI系统产生AI科学论文
+## AI-Researcher: AI Systems That Produce AI Science Papers
 
 ### Abstract
 
-大语言模型（LLMs）在**数学和编程领域表现出的强大推理能力**，结合其通过智能体框架自动化处理复杂任务的能力，为加速科学创新提供了前所未有的机遇 。在本文中，研究者介绍了 **AI-Researcher**，这是一个**全自主的研究系统**，旨在改变人工智能驱动的科学发现及评估方式 。
+Large language models (LLMs) exhibit strong reasoning in **mathematics and programming**, and their ability to automate complex tasks through agent frameworks creates an unprecedented opportunity to accelerate scientific innovation. This work introduces **AI-Researcher**, a **fully autonomous research system** aimed at transforming how AI-driven scientific discovery is conducted and evaluated.
 
-该框架的主要特点与贡献包括：
+The framework’s main features and contributions include:
 
-- **全流程自动化流水线**：该框架能够无缝编排完整的科研流程——从**文献综述、假设生成到算法实现以及可供发表的手稿准备**——且仅需极少的人类干预 。
-- **Scientist-Bench 评估基准**：为了严谨评估自主研究能力，作者开发了 **Scientist-Bench** 。这是一个综合性基准，包含多个 AI 研究领域的尖端论文，涵盖了**引导式创新（guided innovation）**和**开放式探索（open-ended exploration）**任务 。
-- **显著的研究成果**：通过广泛的实验，研究证明 AI-Researcher 实现了卓越的算法实现成功率，并能产出**接近人类水平质量**的研究论文 。
-- **扩展人类认知边界**：这项工作为自主科学创新奠定了新基础，能够通过系统地探索**超越人类认知限制**的解空间，从而对人类研究人员形成补充 。
+- **End-to-end automated pipeline**: The framework seamlessly orchestrates the full research workflow—from **literature review and hypothesis generation to algorithm implementation and publication-ready manuscript preparation**—with minimal human intervention.
+- **Scientist-Bench evaluation benchmark**: To rigorously assess autonomous research capability, the authors develop **Scientist-Bench**, a comprehensive benchmark spanning cutting-edge papers across multiple AI research areas, covering both **guided innovation** and **open-ended exploration** tasks.
+- **Strong research outcomes**: Extensive experiments show that AI-Researcher achieves high algorithm implementation success rates and can produce research papers of **near-human quality**.
+- **Extending human cognitive boundaries**: This work lays a new foundation for autonomous scientific innovation, complementing human researchers by systematically exploring solution spaces **beyond human cognitive limits**.
 
 ### 1 Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig1.png" alt="avatar" style="zoom:100%;" /></div>
 
-**1. 科学发现的瓶颈与 AI 的机遇**
+**1. Bottlenecks in scientific discovery and the opportunity for AI**
 
-科学发现历来受到人类认知局限性以及潜在解空间巨大规模的限制 。尽管大型语言模型（LLMs）在数学推理、代码编写和问题解决方面展现出了卓越的能力，这些任务以往被认为需要人类专家才能完成 。然而，将孤立的能力转化为能够进行原始创新的**全自主科学研究系统**，仍然是一个尚未解决的挑战，这可能会从根本上改变科学进步的方式 。
+Scientific discovery has long been constrained by human cognitive limits and the vast size of the underlying solution space. Although LLMs have shown remarkable ability in mathematical reasoning, coding, and problem solving—tasks once thought to require human experts—turning isolated capabilities into a **fully autonomous scientific research system** capable of original innovation remains an open challenge that could fundamentally change how science advances.
 
-**2. 科学创新的复杂性**
+**2. The complexity of scientific innovation**
 
-科学创新代表了一个智力前沿，其挑战性比目前 AI 智能体掌握的任务自动化（如日程安排或结构化信息检索）高出几个数量级 。真正的科学发现需要：
+Scientific innovation sits at an intellectual frontier whose difficulty exceeds task automation already mastered by AI agents (e.g., scheduling or structured information retrieval) by orders of magnitude. Genuine scientific discovery requires:
 
-- 在抽象理论领域进行复杂的**概念推理** 。
-- 能够跨越不同知识领域的**变革性假设生成** 。
-- 超越简单模式识别的**方法论创新** 。
-- 在保持对数千篇论文连贯理解的同时，生成能从根本上推进知识边界的见解 。
+- Sophisticated **conceptual reasoning** in abstract theoretical domains.
+- **Transformative hypothesis generation** that spans knowledge areas.
+- **Methodological innovation** beyond simple pattern recognition.
+- Insights that advance the knowledge frontier while maintaining coherent understanding across thousands of papers.
 
-此外，科学探索涉及在具有高度不确定回报的无限解空间中航行，这需要**元认知能力**来识别有前景的方向并放弃无效路径 。研究人员必须根据意外发现调整假设，并保持推动突破性发现的创造性火花 。
+Moreover, scientific exploration navigates an unbounded solution space with highly uncertain payoffs, demanding **metacognitive ability** to identify promising directions and abandon unproductive paths. Researchers must revise hypotheses in light of unexpected findings and preserve the creative spark that drives breakthroughs.
 
-**3. 当前系统的局限**
+**3. Limitations of current systems**
 
-目前的局限性使得 AI 系统无法自主进行有意义的科学工作，AI 仍被局限于狭窄的辅助角色 。
+Present limitations prevent AI systems from conducting meaningful science autonomously; AI remains confined to narrow assistive roles.
 
-- **缺乏协同性**：虽然存在专门用于文献分析或实验设计的系统，但它们无法编排从假设生成到出版质量报告的完整流程 。
-- **缺乏标准基准**：目前缺乏标准化的基准来跨不同科学领域系统地评估自主研究能力 。
+- **Lack of coordination**: Systems exist for literature analysis or experiment design, but none orchestrate the full pipeline from hypothesis generation to publication-quality reporting.
+- **Lack of standard benchmarks**: There is no standardized benchmark for systematically evaluating autonomous research capability across scientific domains.
 
-**4. AI-Researcher 框架及其核心创新**
+**4. The AI-Researcher framework and its core innovations**
 
-为了解决这些限制，作者引入了 **AI-Researcher**。如 **Figure 1** 所示，该框架涵盖了从文献探索、想法生成、算法实现、实验验证到学术出版的完整生命周期 。
+To address these limits, the authors introduce **AI-Researcher**. As shown in **Figure 1**, the framework covers the full lifecycle from literature exploration, idea generation, algorithm implementation, and experimental validation to academic publication.
 
-该框架引入了三项关键创新：
+The framework introduces three key innovations:
 
-1. **资源分析智能体 (Resource Analyst Agent)**：将复杂的科研概念分解为原子组件，并在数学公式与代码实现之间建立显式的双向映射，显著降低了幻觉风险 。
-2. **实现框架 (Implementation Framework)**：采用受人类启发的迭代优化范式，通过结构化反馈循环进行协作，模拟学术研究中的“导师-学生”关系 。
-3. **文档智能体 (Documentation Agent)**：通过层次化合成方法克服 LLM 在长文本连贯性上的限制，将研究成果转化为出版质量的手稿，并保持事实完整性 。
+1. **Resource Analyst Agent**: Decomposes complex research concepts into atomic components and establishes explicit bidirectional mapping between mathematical formulations and code implementations, substantially reducing hallucination risk.
+2. **Implementation Framework**: Uses a human-inspired iterative refinement paradigm with structured feedback loops, simulating the “advisor–student” dynamic in academic research.
+3. **Documentation Agent**: Overcomes LLM limitations on long-text coherence via hierarchical synthesis, turning research outputs into publication-quality manuscripts while preserving factual integrity.
 
-**5. Scientist-Bench 与研究发现**
+**5. Scientist-Bench and findings**
 
-为了严谨评估此类系统，作者开发了 **Scientist-Bench**。这是首个支持在引导式创新和开放式探索任务下进行标准化评估的综合基准，包含了22篇benchmark论文。
+To rigorously evaluate such systems, the authors develop **Scientist-Bench**, the first comprehensive benchmark supporting standardized evaluation under guided innovation and open-ended exploration, built from 22 benchmark papers.
 
-- **卓越表现**：实验表明，AI-Researcher 达到了显著的实现成功率，其产生的科研贡献频繁接近人类水平 。
-- **意外发现**：AI-Researcher 在**开放式探索**中的表现优于引导式任务。这表明当自主研究系统利用内部知识合成而非遵循特定的指令时，其表现更为出色 。
+- **Strong performance**: Experiments show that AI-Researcher achieves notable implementation success rates, with research contributions frequently approaching human-level quality.
+- **Unexpected finding**: AI-Researcher performs **better on open-ended exploration** than on guided tasks, suggesting that autonomous research systems excel when leveraging internal knowledge synthesis rather than following specific instructions.
 
 ### 2 Scientist-Bench: Benchmarking AI Agents for Scientific Discovery
 
-科学发现需要深厚的专业知识和系统的方法论推理。在该领域中，开发用于评估新颖科学发现的基准测试并建立相应的评估指标，仍然是目前面临的挑战。为此，本文引入了 **Scientist-Bench**，这是一个将大语言模型（LLM）智能体生成的研究与人类专家工作进行比较的综合性基准。与现有的基准测试不同，Scientist-Bench 提供了一个全面的框架，其中包括：
+Scientific discovery demands deep expertise and systematic methodological reasoning. Developing benchmarks and metrics for evaluating novel scientific discoveries in this setting remains challenging. This work introduces **Scientist-Bench**, a comprehensive benchmark that compares research produced by LLM agents with expert human work. Unlike existing benchmarks, Scientist-Bench provides a full framework including:
 
-- 精心策划的研究指令；
-- 参考文献；
-- 源自同行评审论文的数据集。
+- Carefully curated research instructions;
+- Reference literature;
+- Datasets derived from peer-reviewed papers.
 
-该基准通过多维度的评估标准，实现了 AI 生成内容与人类科学贡献之间的直接对比 9。作者将科学发现任务定义如下（完整的基准细节请参阅附录 A.7）：
+The benchmark enables direct comparison between AI-generated content and human scientific contributions through multi-dimensional evaluation criteria. The authors define the scientific discovery task as follows (full benchmark details are in Appendix A.7):
 
 **1. Task Formulation**
 
-该基准旨在评估智能体系统的科学研究能力。
+The benchmark evaluates the scientific research capability of agent systems.
 
-- **输入信息**：输入 `$\mathcal{X}=\{\mathcal{R},I,\mathcal{D}\}$` 由以下部分组成：
-  - **参考论文 `$\mathcal{R}$`**：通过 LLM 挑选的 15-20 篇相关文献；
-  - **研究指令 `$I$`**：包含核心研究构思的指令，一个详细的研究指令旨在让研究人员在不阅读整篇论文的情况下，能够实现其核心方法论：
-    - **任务说明**：模型所执行的具体任务 。
-    - **核心技术与算法**：包括具体的神经网络架构、优化方法和数据处理方式 。
-    - **组件功能**：每个主要技术组件的目的和作用 。
-    - **实现细节**：包括关键参数配置、输入/输出规范以及重要的约束要求 。
-    - **系统交互描述**：各组件如何相互作用并组合成完整系统的分步骤说明 。
-    - **性能关键点**：影响模型表现的关键实现细节 。
-  - **数据集 `$\mathcal{D}$`**，处理由 **Plan Agent** 和 **Code Agent** 协作完成
-    - 从 Scientist-Bench 所包含的同行评审目标论文中衍生出来的，根据研究领域的不同而变化，包括计算机视觉（扩散模型）、信号处理（向量量化）、图学习（GNN）和信息检索（推荐系统）等 。
-    - **数据集规划**：**Plan Agent** 会制定详细的“数据集计划”，其中包括数据集描述、存储位置、任务定义以及完整的数据加载流水线（读取、预处理、Dataloader 步骤） 。
-    - **环境准备**：所有数据集都在受控的 **Docker 容器**环境中使用，系统支持动态的依赖安装以确保数据处理代码能够正常运行 。
-    - **代码实现**：**Code Agent** 必须严格遵循计划，使用指定的学术数据集来验证模型组件的有效性
-- **挑战等级**：Scientist-Bench 定义了两个挑战等级：
-  - **Level-1**：提供从目标论文 `$y$` 中提取的**显式研究指令**，测试系统的**执行能力**；
-  - **Level-2**：**省略这些指令**，挑战智能体仅利用参考文献和数据集来制定新颖的研究方向。
-- **输出结果**：输出 `$\hat{\mathcal{Y}}=\{\mathcal{C},p\}$` 包含：
-  - **实现代码 `$\mathcal{C}$`**；
-  - **技术报告 `$p$`**：详细描述研究背景、方法论、实验及结果。
-- **评估方式**：上述代码与报告均需经过评估，以便与人类生成的研究进行质量与创新性的对比，从而在理论和实践维度上提供全面的评估。
+- **Input**: Input `$\mathcal{X}=\{\mathcal{R},I,\mathcal{D}\}$` consists of:
+  - **Reference papers `$\mathcal{R}$`**: 15–20 relevant works selected via LLM;
+  - **Research instruction `$I$`**: An instruction capturing the core research idea; a detailed instruction is designed so researchers can implement the core methodology without reading the full target paper:
+    - **Task description**: The specific task the model performs.
+    - **Core techniques and algorithms**: Including concrete neural architectures, optimization methods, and data processing.
+    - **Component roles**: Purpose and function of each major technical component.
+    - **Implementation details**: Key hyperparameters, I/O specifications, and important constraints.
+    - **System interaction description**: Step-by-step explanation of how components interact and compose a full system.
+    - **Performance-critical points**: Implementation details that strongly affect model performance.
+  - **Dataset `$\mathcal{D}$`**, handled collaboratively by the **Plan Agent** and **Code Agent**:
+    - Derived from peer-reviewed target papers in Scientist-Bench; varies by domain, including computer vision (diffusion models), signal processing (vector quantization), graph learning (GNNs), and information retrieval (recommender systems), among others.
+    - **Dataset planning**: The **Plan Agent** produces a detailed “dataset plan” covering dataset description, storage location, task definition, and a full data-loading pipeline (read, preprocess, DataLoader steps).
+    - **Environment setup**: All datasets run in a controlled **Docker container** environment with dynamic dependency installation so data-processing code executes reliably.
+    - **Code implementation**: The **Code Agent** must strictly follow the plan and use the specified academic datasets to validate model components.
+- **Challenge levels**: Scientist-Bench defines two levels:
+  - **Level-1**: Provides **explicit research instructions** extracted from the target paper `$y$`, testing **execution capability**;
+  - **Level-2**: **Omits these instructions**, challenging agents to formulate novel research directions using only references and datasets.
+- **Output**: Output `$\hat{\mathcal{Y}}=\{\mathcal{C},p\}$` includes:
+  - **Implementation code `$\mathcal{C}$`**;
+  - **Technical report `$p$`**: Detailed background, methodology, experiments, and results.
+- **Evaluation**: Both code and report are evaluated against human-generated research for quality and novelty, yielding assessment along theoretical and practical dimensions.
 
 **2. Benchmark Construction**
 
-**第一步：系统性论文筛选 (Systematic Selection)**
+**Step 1: Systematic paper selection**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/tab5.png" alt="avatar" style="zoom:80%;" /></div>
 
-研究者首先从 2022-2024 年间发表的学术论文中，系统性地收集了跨越 **16 个研究领域**（如计算机视觉、图学习、推荐系统等）的样本 。该过程结合了 **LLM 关键词生成**与 **arXiv 引用量过滤**：先由 LLM 生成各领域的关键词，然后检索每个关键词下引用率前 10 的论文，最终精选出 **22 篇** 能够展示 AI 领域突破性成果的代表作作为基准的基础 。这些论文的具体统计分布可参见 **Table 5** 。
+The authors first systematically collect samples from papers published in 2022–2024 across **16 research areas** (e.g., computer vision, graph learning, recommender systems). The process combines **LLM keyword generation** with **arXiv citation filtering**: LLMs generate domain keywords, retrieve the top-10 cited papers per keyword, and finally select **22** representative works showcasing breakthrough AI results as the benchmark foundation. See **Table 5** for the distribution.
 
-**第二步：输入信息构建 (Input Construction)**
+**Step 2: Input construction**
 
-该步骤旨在为 AI 系统提供类似人类科研的初始条件，包含两个核心维度：
+This step supplies initial conditions analogous to human research, along two core dimensions:
 
-- **参考文献综述 (`$\mathcal{R}$`)**：为了识别出对目标论文产生根本影响的 **15-20 篇文献**，研究者设计了一套严格的**五步 LLM 评估流程**：
-  1. **引用模式分析**：统计引用频率、位置及跨章节分布。
-  2. **上下文分析**：评估文献对方法论、理论和实验设计的影响深度。
-  3. **证据收集**：提取具体的概念借用、改进点及影响证据。
-  4. **影响评分**：基于频率（30%）、位置（25%）、深度（25%）和直接影响（20%）计算综合分。
-  5. **最终选择**：根据得分排名并提供详细的入选理由。
-- **研究需求生成 (`$I$`)**：利用 LLM 从目标论文中提取核心概念、现有局限和主要目标。为确保科研原创性并防止信息泄露，提取过程**严禁包含具体的技术规范、模型标识符、定量结果或架构细节**。
+- **Reference literature survey (`$\mathcal{R}$`)**: To identify **15–20 papers** that fundamentally influenced the target work, the authors design a rigorous **five-step LLM evaluation pipeline**:
+  1. **Citation pattern analysis**: Citation frequency, location, and cross-section distribution.
+  2. **Contextual analysis**: Depth of influence on methodology, theory, and experimental design.
+  3. **Evidence collection**: Concrete concept borrowing, improvements, and impact evidence.
+  4. **Impact scoring**: Composite score from frequency (30%), location (25%), depth (25%), and direct influence (20%).
+  5. **Final selection**: Rank by score with detailed justification.
+- **Research requirement generation (`$I$`)**: LLMs extract core concepts, limitations, and main goals from the target paper. To preserve originality and prevent leakage, extraction **must not include** specific technical specifications, model identifiers, quantitative results, or architecture details.
 
-**第三步：严格匿名化 (Rigorous Anonymization)**
+**Step 3: Rigorous anonymization**
 
-为了区分 AI 是在真正解决问题还是在复述记忆中的训练数据，基准实施了全面的匿名化协议 ：
+To distinguish genuine problem solving from regurgitation of memorized training data, the benchmark applies a comprehensive anonymization protocol:
 
-- **方法名称屏蔽**：将特定的算法和模型名称替换为通用标识符，以测试系统的概念理解能力 。
-- **技术细节抽象**：移除具体实现细节但保留核心原则 。
-- **数据集标准化**：规范化实验背景，防止系统利用对特定数据集的熟悉度走捷径 。
-- **引用匿名化**：消除文献中的时间（年份）和机构标记 。
+- **Method name masking**: Replace specific algorithm and model names with generic identifiers to test conceptual understanding.
+- **Technical detail abstraction**: Remove concrete implementation details while retaining core principles.
+- **Dataset standardization**: Normalize experimental context to prevent shortcutting via familiarity with specific datasets.
+- **Citation anonymization**: Remove temporal (year) and institutional markers from references.
 
-通过这一构造过程，Scientist-Bench 能够区分出 **Level-1（引导式创新）** 和 **Level-2（开放式探索）** 两种任务等级，分别测试系统的执行力与独立创新能力 。
+Through this construction, Scientist-Bench separates **Level-1 (guided innovation)** and **Level-2 (open-ended exploration)**, testing execution versus independent innovation.
 
 ### 3 The AI-Researcher Framework
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig2.png" alt="avatar" style="zoom:100%;" /></div>
 
-**AI-Researcher** 是一个系统性的框架 ，旨在通过最小化的人类监督，将科学概念转化为完整的学术贡献 。该框架建立在近期关于 AI 系统自主科学发现潜力的研究基础之上 ，并引入了一个分为三个阶段的流水线 ：
+**AI-Researcher** is a systematic framework for turning scientific concepts into complete academic contributions with minimal human supervision. It builds on recent work on the potential of AI for autonomous scientific discovery and introduces a three-stage pipeline:
 
-1. **文献综述与想法生成** (Literature Review and Idea Generation) 。
-2. **新算法设计、实现与验证** (New Algorithm Design, Implementation and Validation) 。
-3. **自动化科学文档撰写** (Automated Scientific Documentation) 。
+1. **Literature review and idea generation**.
+2. **New algorithm design, implementation, and validation**.
+3. **Automated scientific documentation**.
 
-这一流水线的具体架构框架如图 **Figure 2** 所示 。
+The architectural overview is shown in **Figure 2**.
 
 #### 3.1 Multi-Agent System Overview of AI-Researcher
 
-##### 3.1.1 文献综述 (Literature Review)
+##### 3.1.1 Literature Review
 
-这一阶段主要由以下核心组件构成：
+This stage comprises the following core components:
 
-- **知识获取智能体 (Knowledge Acquisition Agent)**：
+- **Knowledge Acquisition Agent**:
+  - **Autonomous exploration**: Systematically collects relevant papers and codebases from scientific databases.
+  - **Low input barrier**: Users need only provide 10–15 reference papers.
+  - **Core functions**:
+    1. **Codebase selection**: Filters at least five high-quality GitHub repositories by recency, popularity, documentation quality, domain relevance, and citation impact.
+    2. **Supplementary literature**: Automatically retrieves arXiv papers for selected repos, including full LaTeX sources, to enrich technical context.
 
-  - **自主探索**：系统地从科学数据库中收集相关的论文和代码库 。
-  - **低输入门槛**：用户仅需提供 10-15 篇参考论文 。
-  - **核心功能**：
-    1. **代码库选择**：基于代码近况、GitHub 受欢迎程度、文档质量、领域相关性和引用影响力，筛选出至少 5 个高质量的 GitHub 仓库 。
-    2. **补充文献收集**：自动从 arXiv 检索对应仓库的论文，包括完整的 LaTeX 源代码，以丰富技术背景知识 。
+- **Resource Analyst Agent**:
+  - Deconstructs research concepts into manageable **atomic components**.
+  - Via **Paper Analyst** and **Code Analyst** sub-agents, precisely extracts mathematical formulas and aligns them with code implementations for theory–practice consistency.
+  - **Analysis pipeline**: Concept decomposition, mathematical formalization, implementation analysis, and knowledge integration, culminating in a detailed research report.
 
-- **资源分析智能体 (Resource Analyst Agent)**：
+- **Secure Research Environment**:
+  - To protect the host, all automated operations run in **Docker containers** with strong isolation, preconfigured ML stacks, and dynamic package management for autonomous dependency installation.
 
-  - 该智能体将研究概念解构为可管理的**原子组件** 。
-  - 通过 **Paper Analyst**（论文分析）和 **Code Analyst**（代码分析）子智能体，精确提取数学公式并与其代码实现进行匹配，确保理论与实践的一致性 。
-  - **分析流程**：包括概念分解、数学形式化、实现分析和知识整合，最终形成详细的研究报告 。
+- **Integrated Research Analysis**:
 
-- **安全研究环境 (Secure Research Environment)**：
+  The **Resource Analyst** bridges abstract concepts and concrete implementations, substantially reducing hallucination risk in later development. It follows a structured analysis workflow:
 
-  - 为保护主机系统，所有自动化操作均在 **Docker 容器**中运行 。该环境提供坚固的安全边界、预配置的机器学习框架以及支持自主安装依赖的动态包管理系统 。
+  1. **Concept Decomposition**: Breaks complex research goals into fundamental, indivisible atomic academic concepts.
+  2. **Mathematical Formalization**: **Paper Analyst** inspects LaTeX via a **RAG (retrieval-augmented generation)** paradigm and extracts mathematical expressions for each atomic concept.
+  3. **Implementation Analysis**: **Code Analyst** analyzes codebases, locates implementations of those expressions, and identifies key files and dependencies.
+  4. **Knowledge Integration**: Synthesizes paper and implementation analyses into **Concept Profiles** linking formulas and code. The loop continues until all concepts are thoroughly investigated, producing a detailed research report.
 
-- **集成研究分析 (Integrated Research Analysis)**：
-
-  **Resource Analyst** 构成了抽象概念与具体实现之间的关键桥梁，显著降低了后续开发阶段出现幻觉的风险 。该智能体遵循严谨的结构化分析流程：
-
-  1. **概念分解 (Concept Decomposition)**：将复杂的科研目标分解为基础的、不可分割的原子学术概念 。
-  2. **数学形式化 (Mathematical Formalization)**：**Paper Analyst** 利用基于 **RAG（检索增强生成）** 的范式检查 LaTeX 文件，提取每个原子概念的数学表达 。
-  3. **实现分析 (Implementation Analysis)**：**Code Analyst** 分析代码库，定位这些数学表达式的具体实现，并识别关键文件和依赖项 。
-  4. **知识整合 (Knowledge Integration)**：将论文与实现的分析结果合成到**概念剖面 (Concept Profiles)** 中，建立数学公式与代码之间的连接 。 该循环持续进行，直至所有概念被彻底调查，最终形成详细的研究报告 。
-
-- **计划智能体 (Plan Agent)**： 等待上述循环持续完成，基本所有概念得到彻底研究后，将上述发现转化为全面的**实施路线图**，涵盖训练程序、测试方法和数据集要求，形成完整的可执行研究策略 。
+- **Plan Agent**: After the loop completes and concepts are thoroughly studied, converts findings into a comprehensive **implementation roadmap** covering training procedures, evaluation protocols, and dataset requirements—a fully executable research strategy.
 
 ##### 3.1.2 Idea Generation
 
-**想法生成器 (Idea Generator)** 旨在跨越既定范式，进入新的科学前沿 。在完成综合分析后，它通过知识合成识别未探索的研究领域，系统地寻找科学发现往往涌现的**概念空白、矛盾发现和新兴模式** 。
+The **Idea Generator** aims to move beyond established paradigms toward new scientific frontiers. After integrated analysis, it identifies unexplored research areas through knowledge synthesis, systematically seeking **conceptual gaps, contradictory findings, and emerging patterns** where discovery often arises.
 
-每项生成的提案包含以下要素：**挑战分析**（定位理解局限）、**现有方法**（揭示创新点）、**动机**（建立科学必要性）、**提出的方法**（引入新理论或算法）、**技术细节**以及**预期成果** 。
+Each proposal includes: **challenge analysis** (pinpointing limits of understanding), **existing methods** (surfacing innovation opportunities), **motivation** (scientific necessity), **proposed approach** (new theory or algorithms), **technical details**, and **expected outcomes**.
 
-- **发散-收敛发现 (Divergent-Convergent Discovery)**： 受前人启发，该过程首先在**发散阶段**生成五个不同的研究方向，探索正交视角 。随后在**收敛阶段**，针对**科学新颖性、技术合理性和变革潜力**进行评估，最终将得分最高的概念开发为具有清晰路径的正式提案 。
+- **Divergent–Convergent Discovery**: Inspired by prior work, the process first enters a **divergent phase** generating five distinct research directions from orthogonal perspectives. In the **convergent phase**, concepts are scored on **scientific novelty, technical soundness, and transformative potential**; the top-scoring idea is developed into a formal proposal with a clear path forward.
 
 #### 3.2 New Algorithm Design, Implementation and Validation
 
-将新颖的科研概念转化为实际的代码实现是计算科学中最具挑战性的方面之一 。不同于传统代码智能体尝试的一次性（one-shot）实现方式（这种方式往往会导致错误或科研偏差），该框架引入了一个镜像人类科研范式的迭代优化和协作反馈框架 。
+Translating novel research concepts into working code is among the hardest aspects of computational science. Unlike one-shot implementations typical of conventional code agents (which often yield errors or research drift), this framework introduces iterative refinement and collaborative feedback mirroring human research practice.
 
-- **多阶段优化架构 (Multi-Stage Refinement Architecture)**：该方法实现了一个带有显式反馈机制的循环开发过程，从而实现逐步改进 。类似于导师与学生之间的协作，该架构通过结构化的指导进行迭代优化，利用测试时缩放（test-time scaling）能力提高了实现的成功率 。
-- **代码实现框架 (Code Implementation Framework)**：代码智能体（Code Agent）将研究分析和开发计划转化为可执行的实现 。它在受控工作区内运行，具备全面的文件系统和执行能力 。该智能体在确保学术概念忠实转化为代码的同时，强制执行严格的代码独立性原则，并根据实施计划进行持续验证和修改记录 。
-- **专家验证框架 (Expert Validation Framework)**：顾问智能体（Advisor Agent）通过提供专家反馈，弥合了理论概念与实际实现之间的鸿沟 。它通过将代码与分析阶段提取的原子研究想法进行系统对比，来验证实现的忠实度 。该智能体利用专门的导航工具、可视化手段和工作区材料检查结果，并生成带有具体、可操作修改建议的评估报告，以指导迭代优化 。
-- **渐进式实验循环 (Progressive Experimental Cycles)**：实验过程通过严谨的科学方法进行代码验证 。代码智能体首先开发原型实现，并在极小规模的数据上（通常为 1-2 个 epoch 或小数据集子集）进行初步测试，以确立基线可行性 。随后，合并了评审反馈的成功实现将进入全规模实验；而经过多次优化尝试后仍未成功的实现则被归类为“不可行” 。在整个循环过程中，顾问智能体通过评估结果并推荐补充调查（如可视化、消融实验等）来提供分析支持，确保发现的科学严谨性和可复现性 。
+- **Multi-Stage Refinement Architecture**: Implements a cyclic development process with explicit feedback for incremental improvement. Like advisor–student collaboration, structured guidance iteratively refines implementations, leveraging test-time scaling to raise success rates.
+- **Code Implementation Framework**: The **Code Agent** turns research analysis and development plans into executable code in a controlled workspace with full filesystem and execution access. It enforces strict code independence while faithfully translating academic concepts, with continuous validation and change logging against the implementation plan.
+- **Expert Validation Framework**: The **Advisor Agent** bridges theory and implementation via expert feedback. It verifies fidelity by systematically comparing code against atomic research ideas from the analysis phase, using specialized navigation tools, visualization, and workspace artifacts to produce evaluation reports with concrete, actionable revision guidance.
+- **Progressive Experimental Cycles**: Experiments validate code through rigorous scientific method. The Code Agent first builds a prototype and runs small-scale tests (often 1–2 epochs or small data subsets) to establish baseline feasibility. Successful implementations incorporating review feedback proceed to full-scale experiments; implementations that fail after repeated refinement are labeled **infeasible**. Throughout, the Advisor Agent supports analysis by evaluating results and recommending follow-ups (e.g., visualization, ablations), preserving scientific rigor and reproducibility.
 
 #### 3.3 Automated Scientific Documentation
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig3.png" alt="avatar" style="zoom:50%;" /></div>
 
-在经历了实质性的实现和实验循环后，文档智能体启动了一个复杂的流程，将技术构件转换为符合出版标准的学术论文 。如 **Figure 3** 的右侧部分所示，这一过程并非简单的文本填充，而是涵盖了从研究轨迹合成到分层撰写的完整体系 。
+After substantial implementation and experimental cycles, the Documentation Agent runs a complex pipeline converting technical artifacts into publication-standard academic papers. As shown on the right of **Figure 3**, this is not simple text filling but a full system from research-trajectory synthesis to hierarchical writing.
 
-**1. 研究轨迹合成 (Research Trajectory Synthesis)**
+**1. Research Trajectory Synthesis**
 
-- **多维度整合**：系统性地整合了研究过程中的各种元素，包括智能体的推理过程、执行日志、实现的源代码以及实验结果 。
-- **保留智力背景**：与简单的文档工具不同，该系统不仅捕捉最终结果，还记录了导致科学进步的关键决策路径，从而保留了完整的发现背景 。
-- **学术规范化**：按照既定的学术惯例组织发现，将技术细节转化为连贯的科学叙事 。
+- **Multi-dimensional integration**: Systematically integrates agent reasoning, execution logs, source code, and experimental results.
+- **Preserving intellectual context**: Unlike simple documentation tools, the system captures not only final outcomes but decision paths that led to scientific progress, preserving full discovery context.
+- **Academic normalization**: Organizes findings according to established conventions, turning technical detail into coherent scientific narrative.
 
-**2. 克服文档规模的连贯性挑战 (Overcoming Document-Scale Coherence Challenge)**
+**2. Overcoming Document-Scale Coherence Challenges**
 
-- **应对 LLM 局限**：针对大语言模型在生成长文本时难以维持逻辑一致性的问题，研究团队开发了一个多阶段生成框架 。
-- **模仿人类策略**：该框架的灵感源自人类研究员起草论文的习惯，通过将写作任务分解为可管理的组件，确保了在扩展输出过程中的逻辑连接和事实诚信 。
+- **Addressing LLM limits**: To mitigate logical inconsistency in long-form LLM generation, the team developed a multi-stage generation framework.
+- **Mimicking human strategy**: Inspired by how human researchers draft papers, writing is decomposed into manageable components to preserve logical flow and factual integrity at scale.
 
-**3. 三阶段层次化文档流程 (Three-Phase Hierarchical Documentation)**
+**3. Three-Phase Hierarchical Documentation**
 
-该智能体采用严谨的三阶段流程来确保手稿质量 ：
+The agent follows a rigorous three-phase process to ensure manuscript quality:
 
-- **阶段 1：合成研究构件**：根据特定领域的模板进行结构化大纲编写，确立章节层次结构和逻辑流 。
-- **阶段 2：模板引导结构**：进行有条理的内容详述，在开发解释说明时保持跨文档的一致性 。
-- **阶段 3：分层文档处理**：使用专门的学术检查清单进行系统性验证，识别并修复任何准确性缺陷或遗漏 。
+- **Phase 1: Synthesize research artifacts**: Structured outlining from domain-specific templates, establishing section hierarchy and logical flow.
+- **Phase 2: Template-guided structure**: Systematic elaboration of content with cross-document consistency in explanations.
+- **Phase 3: Hierarchical document processing**: Systematic verification with specialized academic checklists to find and fix accuracy gaps or omissions.
 
-这种“多走一步”的审查过程显著增强了事实的完整性，确保生成的手稿能够达到出版标准，有效避免了通常困扰 LLM 长文本生成的幻觉和不一致问题 。
+This extra review pass substantially strengthens factual integrity, helping manuscripts meet publication standards and avoiding hallucinations and inconsistencies common in long LLM outputs.
 
 ### 4 Experiments
 
-作者对 **AI-Researcher** 在其开发的 **Scientist-Bench** 基准上进行了全面评估 。实验设置涉及对 22 篇基准论文进行测试，涵盖多个 LLM 评估器，重点考察实现成功率和科研贡献质量 。
+The authors evaluate **AI-Researcher** on **Scientist-Bench**. Experiments cover all 22 benchmark papers, multiple LLM evaluators, implementation success rates, and research contribution quality.
 
 #### 4.1 Dual-Metric Evaluation Framework: Quantifying Implementation Quality (RQ1)
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig4.png" alt="avatar" style="zoom:50%;" /></div>
 
-为了评估 **AI-Researcher** 系统根据需求实施代码的稳定性和质量，研究者提出了**双指标评估框架**，包括“完成率”和“正确性”两个关键维度 。
+To assess stability and quality of code implementation from requirements, the authors propose a **dual-metric evaluation framework** with **completeness** and **correctness**.
 
-**1. 指标定义与评估流程**
+**1. Metric definitions and evaluation protocol**
 
-- **完成率 (Completeness)**：衡量智能体是否能在分配的推理预算内生成可执行的代码 。系统通过明确的终止协议进行评估：智能体通过 `case_resolved` 信号表示成功，或通过 `case_not_resolved` 确认失败 。
-- **正确性 (Correctness)**：针对即使代码能运行也可能存在的细微实现缺陷、概念错位或组件缺失进行评估 。该评估采用多智能体框架：首先由 **Advisor Agent** 生成详细的分析报告，随后由 **Judge Agent** 按照 5 分制进行打分 。最终的正确性指标是多次独立评判的平均分 。
+- **Completeness**: Whether the agent produces executable code within the allocated reasoning budget. Evaluation uses explicit termination: success via `case_resolved`, failure via `case_not_resolved`.
+- **Correctness**: Captures subtle implementation flaws, conceptual misalignment, or missing components even when code runs. A multi-agent pipeline applies: the **Advisor Agent** produces a detailed analysis report, then the **Judge Agent** scores on a 5-point scale. Final correctness is the mean over independent judgments.
 
-**2. 性能表现分析**
+**2. Performance analysis**
 
-如 **Figure 4** 所示，研究团队使用 **Claude 系列模型** 在整个基准数据集上进行了广泛实验 ：
+As shown in **Figure 4**, experiments use **Claude-family models** across the full benchmark:
 
-- **高完成率**：系统达到了 **93.8%** 的卓越完成率，仅在涉及复杂的张量维度冲突或数据类型不匹配且多次调试无效的情况下才会失败 。
-- **正确性表现**：平均正确性分数为 **2.65**（总分 5 分），超过了中位阈值，表明系统成功实现了大部分指定要求 。
-- **领域差异**：性能在不同领域表现不一，其中**视觉与问答 (VQ)** 任务的正确性最高（3.22），而**推荐系统 (Rec)** 任务平均为 2.20，这反映了推荐系统算法和数据处理的更高复杂性 。
+- **High completeness**: The system reaches **93.8%** completeness, failing mainly on persistent tensor shape conflicts or dtype mismatches that resist debugging.
+- **Correctness**: Mean correctness is **2.65** / 5, above the midpoint, indicating most specified requirements are implemented successfully.
+- **Domain variation**: Performance varies by domain; **vector quantization (VQ)** tasks score highest (3.22), while **recommender systems (Rec)** average 2.20, reflecting greater algorithmic and data-processing complexity.
 
-**3. 不同 LLM 的横向对比**
+**3. Cross-model comparison**
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig5.png" alt="avatar" style="zoom:100%;" /></div>
 
-通过 **Figure 5（左图）** 的受控评估，研究揭示了不同模型家族之间的显著性能差异 ：
+Controlled evaluation in **Figure 5 (left)** reveals large gaps across model families:
 
-- **Claude 系列 vs 4o 系列**：在评估子集中，Claude 系列模型达到了 **87.5%** 的完成率，远超 4o 系列模型的 **50%** 。
-- **调试能力差距**：性能差距主要源于调试能力。4o 系列模型经常产生持久的张量维度不匹配和训练不稳定（如 NaN 损失）问题且无法修复 。
-- **正确性差距**：Claude 系列的平均正确性得分（2.75）显著高于 4o 系列（1.0） 。4o 系列在复杂任务中表现出过度简化和概念遗漏的趋势 。例如在扩散模型任务中，4o 模型虽声称实现了 Diffusion Transformer，但检查发现其仅提供了标准 ViT 实现，完全缺失了核心的扩散组件 。
+- **Claude vs 4o**: On the evaluation subset, Claude models reach **87.5%** completeness versus **50%** for 4o-family models.
+- **Debugging gap**: The gap stems largely from debugging: 4o models often leave persistent tensor shape mismatches and training instability (e.g., NaN loss) unfixed.
+- **Correctness gap**: Claude averages **2.75** correctness versus **1.0** for 4o. 4o tends toward oversimplification and conceptual omissions on hard tasks—for example, claiming a Diffusion Transformer in diffusion tasks while implementing only a standard ViT without core diffusion components.
 
-**4. 任务复杂度（Level-2）的影响**
+**4. Effect of task complexity (Level-2)**
 
-如 **Figure 5（右图）** 所示，作者分析了 Level-1（改编现有方法）与 Level-2（生成并实现新想法）任务的表现对比 ：
+**Figure 5 (right)** compares Level-1 (adapt existing methods) vs Level-2 (generate and implement new ideas):
 
-- **稳健的完成率**：即使在更具挑战性的 Level-2 创新任务中，AI-Researcher 依然保持了 **100%** 的完美完成率 。
-- **正确性小幅下降**：从 Level-1 的 2.5 分下降到了 Level-2 的 **2.25 分** 。这表明虽然系统能可靠地执行自生成的科研想法，但在实现新颖且复杂的创新概念时，质量偶尔会逊色于改编任务 。这一差距主要源于智能体生成的创新点技术难度较高，或框架在完美实现野心勃勃的创新时存在局限 。
+- **Robust completeness**: Even on harder Level-2 innovation tasks, AI-Researcher maintains **100%** completeness.
+- **Modest correctness drop**: Correctness falls from 2.5 at Level-1 to **2.25** at Level-2, indicating reliable execution of self-generated ideas but occasional quality loss on novel, complex concepts—due to higher technical difficulty of agent-generated innovations or limits in perfectly realizing ambitious ideas.
 
 #### 4.2 Evaluating Scientific Quality Through Pairwise Comparison (RQ2)
 
-为了评估 **AI-Researcher** 生成研究的科学价值，研究者实施了一套**成对评估协议 (pairwise evaluation protocol)**，将 AI 生成的论文与匹配领域的**人类撰写出版物**进行比较 。
+To assess scientific value of AI-Researcher outputs, the authors use a **pairwise evaluation protocol** comparing AI-generated papers with **human publications** in matched domains.
 
-**1. 评估协议与维度**
+**1. Protocol and dimensions**
 
-专门的评审智能体遵循 **ICLR 指南**进行比较分析，评估维度涵盖了两个作品的：**研究动机、方法论、创新性以及实验验证** 。
+Dedicated reviewer agents follow **ICLR guidelines**, comparing **motivation, methodology, novelty, and experimental validation**.
 
-**2. 总体性能表现**
+**2. Overall performance**
 
-成对评估的结果显示，尽管 AI-Researcher 生成的论文平均评分略低于人类撰写作品（各评估器的平均评分在 **-0.53 到 -1.70** 之间），但仍有**相当大比例 (13.64% 到 81.82%)** 的 AI 生成论文表现出与人类研究相当的质量 。
+Pairwise results show AI-Researcher papers score slightly below human work on average (mean scores between **−0.53 and −1.70** across evaluators), yet a **substantial fraction (13.64% to 81.82%)** of AI papers match human research quality.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/tab1.png" alt="avatar" style="zoom:100%;" /></div>
 
-这一发现具有显著意义，因为基准测试中的对比对象完全是从各领域顶级会议中精心挑选的**顶尖人类学术出版物** 。如 **Table 1** 所示，AI-Researcher 展示了执行完整科学研究流水线的卓越能力——从开发方法论上的技术创新到进行严谨的实验验证，并最终合成逻辑清晰、结构良好的学术手稿 。
+This is notable because human baselines are **top-tier publications** carefully selected from leading venues. As **Table 1** shows, AI-Researcher demonstrates strong end-to-end capability—from methodological innovation and rigorous experiments to coherent, well-structured manuscripts.
 
-**Table 1: AI-Researcher 生成研究与基准人类研究的对比**  该表展示了不同评估器（如 GPT-4o, o1-mini, Claude-3.5/3.7 等）在不同领域（Diffusion, VQ, GNN, Rec）下的评分：
+**Table 1: AI-Researcher vs benchmark human research** — Scores from evaluators (GPT-4o, o1-mini, Claude-3.5/3.7, etc.) across domains (Diffusion, VQ, GNN, Rec):
 
-- **GPT-4o** 给出的评分最高：平均分 **-0.53**，认为 **81.82%** 的论文具有可比性 。
-- **Claude-3.7** 给出的评分最低：平均分 **-1.70**，认为仅有 **22.73%** 的论文具有可比性 。
+- **GPT-4o** is most generous: mean **−0.53**, **81.82%** comparable.
+- **Claude-3.7** is strictest: mean **−1.70**, only **22.73%** comparable.
 
-**3. LLM 评估器的分歧与偏好**
+**3. Evaluator disagreement and preferences**
 
-实验观察到不同 LLM 评估器之间存在显著分歧 ：
+Experiments show significant disagreement among LLM evaluators:
 
-- **评分差异**：GPT-4o 倾向于给出最高评分，而 Claude-3.7 则最为严苛 。
-- **领域偏好**：例如，GPT-4o 和 o1-mini 认为生成的推荐系统 (Rec) 论文全部可与人类论文相比，而 o3-mini 则认为它们质量较差 。
-- **评估偏置**：这种分歧说明了仅使用单一 LLM 评估器来衡量研究成果可能存在**潜在偏置** 。
+- **Score spread**: GPT-4o tends highest; Claude-3.7 strictest.
+- **Domain preferences**: GPT-4o and o1-mini rate all Rec papers comparable to human work; o3-mini rates them lower.
+- **Evaluation bias**: Disagreement highlights **potential bias** when relying on a single LLM evaluator.
 
-**4. 特定领域分析**
+**4. Domain-specific analysis**
 
-性能在不同研究领域之间有所波动，但**没有表现出一致的模式** ：
+Performance fluctuates across domains **without a consistent pattern**:
 
-- 在使用 GPT-4o 和 Claude-3.7 评估时，扩散模型 (Diffusion) 的可比率高于图神经网络 (GNN)；但在使用 o1-mini 评估时，情况正好相反 。
-- 评估器对不同领域的看法也存在冲突，例如在矢量量化 (VQ) 领域，三款评估器认为其优于扩散模型，而另外两款则持相反意见 。
+- With GPT-4o and Claude-3.7, Diffusion comparability exceeds GNN; with o1-mini, the reverse holds.
+- Evaluators conflict on VQ vs Diffusion as well.
 
-总体而言，这些变化更多受**评估器偏好**的影响而非领域本身，这表明 AI-Researcher 在不同研究领域保持了**一致的性能**，没有在任何特定领域出现灾难性的表现下降 。
+Overall, variation reflects **evaluator preferences** more than domain difficulty, suggesting **consistent performance** across areas without catastrophic failure in any one domain.
 
 #### 4.3 Open-Ended Autonomous Scientific Innovation Capabilities (RQ3)
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/tab2.png" alt="avatar" style="zoom:100%;" /></div>
 
-为了评估 **AI-Researcher** 的创新潜力，研究团队在**开放式任务**中对其进行了测试 。在这些任务中，系统仅接收参考文献，没有明确的指令，要求其独立识别研究方向、提出假设并执行完整的科研流程 。
+To assess innovation potential, the team tests **AI-Researcher** on **open-ended tasks** with references only—no explicit instructions—requiring independent identification of directions, hypotheses, and full research execution.
 
-**Table 2** 展示了不同领域下的对比评估结果 。为了确保方法论的多样性并考虑专业研究社区内的自然引用重叠，研究者精心选择了 5 篇涵盖不同研究领域的代表性论文进行评估 。通过对这些自主科学探索的分析，研究揭示了关于系统创造性研究能力的几项关键见解：
+**Table 2** summarizes cross-domain pairwise results. Five representative papers across diverse areas were selected for methodological diversity and natural citation overlap. Analysis of these autonomous explorations yields key insights on creative research capability:
 
-**1. 性能分析 (Performance Analysis)**
+**1. Performance analysis**
 
-- **出色的 Level-2 表现**：当对比不同任务结构时，出现了一个显著的模式：系统在**开放式 Level-2 场景**中的表现明显优于**指令引导的 Level-1 任务** 。
-- **指标的显著提升**：这种质量差异在所有评估指标中都得到了体现 。平均评分从 -0.53 ~ -1.70 显著提高到 **-0.23 ~ -1.22**；同时，可比率（Comparable rates）从 13.64% ~ 81.82% 大幅上升至 **50.00% ~ 100.00%** 。
-- **对传统假设的挑战**：这些发现挑战了关于 AI 研究能力的传统假设 。结果表明，当 AI-Researcher 利用其**内部知识合成和构思过程**，而非遵循显式的研究指令时，表现更为出色 。
-- **指令的潜在局限性**：显式的研究指令可能会无意中限制系统的创造性探索能力，而自主制定的研究方向则允许系统追求与其实现能力更匹配、科学上更有前景的方向 。
+- **Strong Level-2 performance**: A clear pattern emerges: the system performs **better in open-ended Level-2 settings** than on **instruction-guided Level-1 tasks**.
+- **Metric gains**: Mean scores improve from −0.53 ~ −1.70 to **−0.23 ~ −1.22**; comparable rates rise from 13.64% ~ 81.82% to **50.00% ~ 100.00%**.
+- **Challenging conventional assumptions**: Results suggest AI-Researcher excels when leveraging **internal knowledge synthesis and ideation** rather than explicit research instructions.
+- **Limits of explicit instructions**: Detailed instructions may unintentionally constrain creative exploration, whereas self-directed directions allow pursuit of scientifically promising paths better matched to implementation capability.
 
-**2. 领域特定资源约束对创新质量的影响**
+**2. Domain-specific resource constraints and innovation quality**
 
-- **计算需求与表现的关系**：跨领域分析揭示了**计算需求与自主研究表现**之间存在系统性联系 。
-- **轻量级计算领域的优势**：计算需求较低的研究领域（特别是**推荐系统**）在开放式探索中表现出显著的质量提升，在大多数评估基准中达到了 **66.67% 到 100%** 的惊人可比率 。
-- **计算密集型领域的挑战**：相比之下，**扩散模型**等计算密集型领域虽然概念创新性相似，但在评估指标上的增益较为温和 。
-- **资源限制而非能力不足**：这一模式表明，AI-Researcher 的基本研究能力超出了目前实现的展示，表现差异反映的是**实际资源限制**而非概念理解上的缺陷 。这凸显了计算能力作为 AI 研究质量决定因素的重要性，暗示若能提供更充足的计算资源，性能仍有巨大的提升潜力 。
+- **Compute vs performance**: Cross-domain analysis links **computational demand** to autonomous research outcomes.
+- **Lightweight domains**: Lower-compute areas—especially **recommender systems**—show large quality gains in open exploration, reaching **66.67% to 100%** comparability on most evaluators.
+- **Compute-intensive domains**: **Diffusion** and similar domains show similar conceptual novelty but more modest metric gains.
+- **Resource limits, not capability gaps**: Differences likely reflect **practical resource constraints** rather than conceptual weakness, underscoring compute as a determinant of AI research quality and room for improvement with more resources.
 
 #### 4.4 Impact of LLM Backbones (RQ4)
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/tab3.png" alt="avatar" style="zoom:100%;" /></div>
 
-为了分离基础模型对研究能力的影响，研究者在保持系统架构和协议相同的情况下，针对不同的 **LLM 主干模型**进行了消融实验 。该研究使用了 7 个具有代表性的研究问题来评估模型特定的性能差异 。
+To isolate backbone effects, the authors ablate **LLM backbones** while holding architecture and protocols fixed, using seven representative research questions.
 
-**Table 3** 展示了对比分析结果，揭示了模型间显著的性能差距 ：
+**Table 3** shows large inter-model gaps:
 
-- **Claude-3.5 的优势**：实证证据表明，**Claude-3.5** 作为研究智能体的主干具有实质性优势，在所有评估基准中，该配置实现的平均质量评分始终高于基于 GPT-4o 的实现 。
-- **可比率表现**：除了 o1-mini 的评估外，Claude-3.5 在大多数评估语境下的“可比率”（Comparable rates）均优于其他模型 。
-- **严苛标准下的差距**：在最严苛的评估标准（o3-mini）下，质量差距尤为明显：基于 Claude-3.5 的系统产出了达到人类标准的研究，而基于 GPT-4o 的配置未能生成任何达到最低可比阈值的研究 。这些发现强调了**基础模型选择**在决定自动化科学研究质量上限方面的关键作用 。
+- **Claude-3.5 advantage**: **Claude-3.5** as the research agent backbone consistently achieves higher mean quality scores than GPT-4o across evaluators.
+- **Comparability**: Except under o1-mini, Claude-3.5 achieves better comparable rates in most settings.
+- **Under strict evaluation**: With o3-mini, the gap is stark: Claude-3.5 produces human-level research; GPT-4o fails to reach minimum comparability on any instance—highlighting **backbone choice** as a ceiling on automated research quality.
 
 #### 4.5 Paper Review Agent Validation Against Human Expert Judgments (RQ5)
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/tab6.png" alt="avatar" style="zoom:100%;" /></div>
 
-为了验证自动化评审系统与专家科学评估的一致性，研究者使用来自 **ICLR 会议**的金标准人类判断数据进行了系统评估 。
+To validate automated review against expert judgment, the authors evaluate on gold-standard human decisions from **ICLR**.
 
-实验采用了 32 对精心挑选的论文（每对包含一篇接收论文和一篇被拒论文），并应用了与主实验相同的成对评审方法 。**Table 6** 的结果揭示了以下见解 ：
+The experiment uses 32 curated pairs (accepted vs rejected) with the same pairwise protocol as the main study. **Table 6** reports:
 
-- **鲁棒的专家对标能力**：评审智能体展现了持续的判别有效性，所有评估模型在比较“已接收”与“已拒绝”论文时均给出了正值的平均评分（0.31-0.99） 。
-- **高准确率**：系统展现了与人类专家决策的强力对齐，在 **65.62% 到 90.62%** 的案例中正确识别出了更优秀的论文 。在六个评估器中，有五个在 32 对论文中的准确率超过了 **81%** 。
-- **模型可靠性差异**：Gemini-2.0-flash 的可靠性显著较低，因此被排除在主要实验之外 。有趣的是，Claude-3.7 增强的系统 2 思考能力并未转化为比 Claude-3.5 更优的评审表现 。
+- **Robust expert alignment**: Review agents show consistent discriminative validity; all models yield positive mean scores (0.31–0.99) when comparing accepted vs rejected papers.
+- **High accuracy**: Alignment with human decisions reaches **65.62% to 90.62%**; five of six evaluators exceed **81%** on the 32 pairs.
+- **Model reliability**: Gemini-2.0-flash is substantially less reliable and excluded from main experiments. Claude-3.7’s extended thinking does not outperform Claude-3.5 on review.
 
 #### 4.6 Case Studies of AI-Generated Scientific Contributions (RQ6)
 
-研究者通过定性分析深入考察了 **AI-Researcher** 生成研究的实现质量与学术呈现，重点关注了 `rotation_vq` 基准任务 。
+Qualitative analysis examines implementation quality and scholarly presentation of AI-Researcher outputs, focusing on the `rotation_vq` benchmark task.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/AI-Researcher/fig6-fig9.png" alt="avatar" style="zoom:100%;" /></div>
 
-**1. 结构化软件架构与最小化脚手架**
+**1. Structured software architecture with minimal scaffolding**
 
-- **组织严密的架构**：如 **Figure 6** 所示，代码智能体生成了极具组织性的项目架构，具有解耦的模型组件、训练流水线和评估模块 。
-- **从基本原理开发**：不同于需要适配预有代码库的旧框架，AI-Researcher 允许智能体从**基本原理（First principles）**出发进行开发，同时融入人类软件工程的最佳实践，这增强了实现的连贯性 。如 **Figure 7** 和 **Figure 8** 所示，其实现展示了专业的编码标准和逻辑模块化 。
+- **Organized architecture**: As in **Figure 6**, the Code Agent produces well-structured projects with decoupled model components, training pipelines, and evaluation modules.
+- **Development from first principles**: Unlike frameworks tied to existing codebases, AI-Researcher lets agents build **from first principles** while following software engineering best practices, improving coherence. **Figures 7 and 8** show professional coding standards and logical modularity.
 
-**2. 无须显式指令的涌现式实验严谨性**
+**2. Emergent experimental rigor without explicit instructions**
 
-- **自主实验设计**：系统具备通过智能体间协作而涌现出的自主实验设计能力 。
-- **全面的科学评估**：这种自发的严谨性体现在最终手稿中（如 **Figure 9** 所示），系统独立进行并报告了完整的科学评估，包括**性能基准测试、受控消融研究、训练动态可视化以及潜在空间嵌入分析** 。
-- **超越指令遵循**：这种实验方法论是从多智能体系统中自然产生的，无需显式的实验要求，证明了其具有超越简单指令遵循的高级科学推理能力 。
+- **Autonomous experiment design**: Multi-agent collaboration yields emergent autonomous experimental design.
+- **Comprehensive evaluation**: This rigor appears in final manuscripts (**Figure 9**): independent reporting of full scientific evaluation including **performance benchmarks, controlled ablations, training dynamics visualization, and latent-space embedding analysis**.
+- **Beyond instruction following**: The methodology arises naturally from the multi-agent system without explicit experimental requirements, indicating scientific reasoning beyond simple instruction following.
 
 <hr align="left" color="#987cb9" size="1">

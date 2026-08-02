@@ -1,0 +1,11 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+1. **完整性**：英文版涵盖与中文相同的章节（Abstract → Introduction → Materials and methods → Results → Discussion 四个子节），含 4 张图、论文与 GitHub 链接，并以相同的 `<hr>` 结尾。  
+2. **正文语言**：英文正文中无中文。  
+3. **Frontmatter**：`lang: en`；`alt_url` 为 `/zh/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/`，与中文 `permalink` 一致；英文无 `permalink`；title、categories、tags、proceedings、date 与中文一致。  
+4. **资源**：图片 URL、论文链接、GitHub 链接及数学/统计符号（Δρ、P < 10⁻⁴、L × 20 等）与中文一致。  
+5. **结构**：标题层级与中文对齐。  
+6. **用语**：学术英文表达通顺，术语（GEMME、ProteinGym、MAVE、pLM/PLM 等）使用恰当。  
+7. **数字与名称**：39 million、0.48 ± 0.02、660k、5.7 s、10⁵ 等与中文一致（含中文原文中 “1.3 GB RAM” 的表述，英文未擅自改动）。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-11-22-Expert-guided protein language models enable accurate and blazingly fast fitness.md`

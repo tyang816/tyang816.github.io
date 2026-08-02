@@ -5,33 +5,36 @@ categories: [BI]
 tags: [protein, antibody, diffusion, GNN]
 proceedings: NeurIPS
 date: 2022-11-01
+lang: en
+alt_url: /zh/bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/
+permalink: /bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/
 ---
 
-> 论文地址：[Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures](https://proceedings.neurips.cc/paper_files/paper/2022/hash/3fa7d76a0dc1179f1e98d1bc62403756-Abstract-Conference.html)
+> Paper: [Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures](https://proceedings.neurips.cc/paper_files/paper/2022/hash/3fa7d76a0dc1179f1e98d1bc62403756-Abstract-Conference.html)
 >
-> 论文实现：<https://github.com/luost26/diffab>
+> Code: <https://github.com/luost26/diffab>
 
-## DiffAb：扩散模型做序列-结构联合设计/给定结构的序列设计/抗体优化等
+## DiffAb: Diffusion models for joint sequence–structure design, sequence design given structure, and antibody optimization
 
 ### Abstract
 
-抗体和抗原的结合主要取决于抗体的CDR区域，本文介绍了一个基于扩散概率模型和等变图神经网络的CDRs序列和结构生成模型，能够进行序列结构协同设计、给定主干结构的的序列设计和抗体优化等，在生物物理能量函数和其他蛋白质设计指标测量的结合亲和度方面产生有竞争的结果
+Antibody–antigen binding is largely determined by the antibody CDR regions. This work introduces a generative model for CDR sequence and structure based on diffusion probabilistic models and equivariant graph neural networks. It supports joint sequence–structure co-design, sequence design given a fixed backbone, and antibody optimization, achieving competitive binding affinity under biophysical energy functions and other protein-design metrics.
 
 ### Introduction
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig1.png "avatar")​
 
-一种抗体包含两条重链和两条轻链，其整体结构相似。六个可变区域决定了一种抗体对抗原的特异性。它们被称为互补性决定区域（CDRs），记为H1、H2、H3、L1、L2和L3。
+An antibody comprises two heavy chains and two light chains with similar overall architecture. Six variable regions determine antigen specificity; these are the complementarity-determining regions (CDRs), denoted H1, H2, H3, L1, L2, and L3.
 
-传统方法依赖于从复杂的生物物理能量函数中取样蛋白质序列和结构，通常是耗时的，而且很容易陷入局部最优状态
+Traditional approaches sample protein sequences and structures from complex biophysical energy functions. They are often slow and prone to local optima.
 
-现有方法无法满足以下三个关键设计原则：
+Existing methods fail to satisfy three key design principles:
 
-*   模型必须显式地基于抗原的 3D 结构来生成与之匹配的 CDR
-*   模型需要同时考虑氨基酸的位置和方向（特别是侧链方向）来建模抗体-抗原的相互作用
-*   除了从头设计，还应能够优化已有抗体以提高与抗原的结合亲和力
+*   The model must explicitly generate CDRs matched to the antigen from the antigen’s 3D structure.
+*   The model must jointly model amino-acid position and orientation (especially side-chain orientation) to capture antibody–antigen interactions.
+*   Beyond de novo design, the method should optimize existing antibodies to improve binding affinity to the antigen.
 
-作者提出了一种基于扩散生成模型的框架，支持 **CDR 的序列-结构联合生成**，并直接条件化于抗原的 3D 结构。该模型首先聚集了来自抗原和抗体框架的信息。然后，迭代地更新CDR上每个氨基酸的氨基酸类型、位置和方向。在最后一步中，我们利用基于预测方向的侧链填充算法在原子水平上重建CDR结构。使用Diffusion的一个重要原因是它可以在序列结构空间中迭代地生成CDR候选对象，以便我们可以干扰并在采样过程上施加约束，以支持更广泛的设计任务
+The authors propose a diffusion-based generative framework that supports **joint CDR sequence–structure generation** conditioned directly on the antigen 3D structure. The model first aggregates information from the antigen and antibody framework, then iteratively updates each CDR residue’s type, position, and orientation. At the final step, a side-chain packing algorithm conditioned on predicted orientations reconstructs the CDR at atomic resolution. A key motivation for diffusion is iterative generation of CDR candidates in sequence–structure space, enabling intervention and constraints during sampling for a broader range of design tasks.
 
 ### Methods
 
@@ -41,79 +44,79 @@ date: 2022-11-01
 
 #### Definitions and Notations
 
-在这项工作中，假设给出了抗原结构和抗体框架（图2），重点是在抗体框架上设计CDR。氨基酸类型 `$s_i$` ，主 `$C_\alpha$` 坐标`$x_i\in\mathbb{R}^3$`，`$O_i\in SO(3)$` 描述侧链方向的旋转矩阵
+Given the antigen structure and antibody framework (Figure 2), the task is to design the CDRs on the framework. For each residue, `$s_i$` denotes amino-acid type, `$x_i\in\mathbb{R}^3$` the `$C_\alpha$` coordinates, and `$O_i\in SO(3)$` the rotation matrix describing side-chain orientation.
 
 #### Diffusion Processes
 
 **Multinomial Diffusion for Amino Acid Types**
 
-单步扩散，在时间步t，氨基酸类型 `$s_j^t$` 的分布由以下公式定义
+At a single diffusion step at time `$t$`, the distribution over amino-acid type `$s_j^t$` is defined as follows:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm1.png "avatar")​
 
-`$\beta_t^{type}$`控制噪音加入速率，随着时间步t增大逐渐增大
+`$\beta_t^{type}$` controls the noise injection rate and increases with `$t$`.
 
-从初始数据扩散至任意时间步
+Forward diffusion from initial data to an arbitrary time step:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm2.png "avatar")​
 
-当t -> T时，`$\alpha_t^{type}$` -> 0，表示数据逐渐变成均匀分布
+As `$t \to T$`, `$\alpha_t^{type} \to 0$`, so the data gradually approaches a uniform distribution.
 
-正向扩散过程不依赖于上下文或其他输入，仅根据噪声参数来平滑真实数据分布
+The forward process does not depend on context or other inputs; it smooths the true data distribution according to the noise schedule alone.
 
-生成扩散，在时间步t，氨基酸类型 `$s_j^{t-1}$` 的生成分布定义为：
+For the generative (reverse) process at time `$t$`, the distribution over `$s_j^{t-1}$` is:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm3.png "avatar")​
 
-`$F(R^t,C)[j]$` 通过神经网络预测的后验分布，条件化于：当前时间步的CDR状态和抗原抗体框架
+`$F(R^t,C)[j]$` is the neural-network–predicted posterior, conditioned on the CDR state at the current time step and the antigen–antibody framework.
 
-模型需要最小化生成分布与真实后验分布之间的 KL 散度：
+Training minimizes the KL divergence between the generative distribution and the true posterior:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm4.png "avatar")​
 
-`$q(s_j{t-1}|s_jt,s_j^0)$` 是正向扩散的真实后验分布，`$p(s_j{t-1}|Rt,C)$` 是生成扩散的预测分布，m是CDR中氨基酸的数量
+`$q(s_j{t-1}|s_jt,s_j^0)$` is the true forward posterior; `$p(s_j{t-1}|Rt,C)$` is the predicted reverse distribution; `$m$` is the number of residues in the CDR.
 
 **Diffusion for Cα Coordinates**
 
-在时间步t
+At time step `$t$`:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm5.png "avatar")​
 
-`$\beta_t^{pos}$` 扩散速率0-1，随着时间步t增加逐渐增大，I单位矩阵，表示噪声的协方差矩阵，坐标数据逐渐平滑接近正态分布
+`$\beta_t^{pos}$` is a diffusion rate in `[0, 1]` that increases with `$t$`; `$I$` is the identity matrix (covariance of the noise), so coordinates are gradually smoothed toward a Gaussian.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm6.png "avatar")​
 
-`$\alpha_t^\mathrm{pos}=\prod_{\tau=1}t(1-\beta_\tau^\mathrm{pos})$` 表示当前分布与初始真实数据的相似程度
+`$\alpha_t^\mathrm{pos}=\prod_{\tau=1}t(1-\beta_\tau^\mathrm{pos})$` measures how much the current distribution retains the initial true data.
 
-单步生成扩散
+Single-step reverse diffusion:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm7-8.png "avatar")​
 
-G是神经网络用于预测噪音
+`$G$` is the network that predicts the noise.
 
-模型最小化生成分布与真实后验分布之间的均方误差 (MSE) 损失函数：
+Training minimizes mean squared error (MSE) between the generative and true posterior distributions:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm9.png "avatar")​
 
 **SO(3) Denoising for Amino Acid Orientations**
 
-利用 **SO(3)** 群（3D 空间中的特殊正交群）来建模氨基酸的旋转方向，能够确保生成的方向具有物理一致性和旋转不变性
+**SO(3)** (the special orthogonal group in 3D) models residue orientations, ensuring physical consistency and rotational equivariance.
 
-单步扩散：
+Single-step forward diffusion:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm10.png "avatar")​
 
-`$\mathrm{IG_{SO(3)}}$` 是定义在SO(3) 群上的等变高斯分布，`$\alpha_t^{ori}$` 是控制方向矩阵与初始真实方向的相似程度，随着时间步t增加而减少，ScaleRot 通过缩放旋转角度来模拟噪声的加入
+`$\mathrm{IG_{SO(3)}}$` is an isotropic Gaussian on SO(3); `$\alpha_t^{ori}$` controls similarity to the initial orientation and decreases with `$t$`. ScaleRot injects noise by scaling rotation angles.
 
-当t->T，`$\alpha_t^{ori}$` -> 0表示方向逐渐被完全随机化，接近均匀分布
+As `$t \to T$`, `$\alpha_t^{ori} \to 0$`, so orientations become fully randomized and approach the uniform distribution on SO(3).
 
-生成扩散过程：
+Reverse generative process:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm11.png "avatar")​
 
-H是神经网络预测方向的后验分布，`$\beta_t^{ori}$` 控制去噪过程中的不确定性
+`$H$` predicts the orientation posterior; `$\beta_t^{ori}$` controls uncertainty during denoising.
 
-模型需要最小化生成分布与真实分布之间的距离，用 Frobenius 范数最小化真实方向和预测方向之间的误差
+Training minimizes distance between generative and true distributions, using the Frobenius norm between true and predicted orientations:
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm12.png "avatar")​
 
@@ -123,126 +126,124 @@ H是神经网络预测方向的后验分布，`$\beta_t^{ori}$` 控制去噪过�
 
 #### Parameterization with Neural Networks
 
-`$F(R^t,C)$` 用于预测氨基酸的类型（离散变量），`$G(R^t,C)$` 用于预测氨基酸的坐标变化（连续变量），`$H(R^t,C)$` 用于预测氨基酸的方向（旋转矩阵，SO(3)）
+`$F(R^t,C)$` predicts amino-acid types (discrete); `$G(R^t,C)$` predicts coordinate updates (continuous); `$H(R^t,C)$` predicts orientations (rotation matrices on SO(3)).
 
-每个神经网络的输入是当前时间步t和状态 `$R^t$`(扩散模型生成的中间状态，包括氨基酸的类型、坐标和方向) 和上下文C (抗原和抗体框架的上下文，包括抗体骨架和抗原的 3D 结构)
+Each network takes the current time `$t$`, state `$R^t$` (intermediate diffusion state: types, coordinates, orientations), and context `$C$` (antigen and antibody framework, including framework backbone and antigen 3D structure).
 
-1.  定义等变性
+1.  **Equivariance definition**
 
-    对于任意旋转矩阵 `$R\in SO(3)$` 和平移矩阵 `$r\in \mathbb{R}^3$` ，网络满足
+    For any rotation `$R\in SO(3)$` and translation `$r\in \mathbb{R}^3$`, the networks satisfy
 
     ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/frm14-16.png "avatar")​
-2.  实现等变性
+2.  **Implementing equivariance**
 
-    使用图神经网络或等变注意力模块，将氨基酸的几何关系嵌入模型，同时确保输出结果在旋转和平移下保持一致性
+    Graph neural networks or equivariant attention modules encode geometric relationships among residues while keeping outputs consistent under rotation and translation.
 
 #### Sampling Algorithms
 
-采样算法的核心是生成抗体的 CDR 序列和结构，分为以下三个步骤：
+Sampling generates CDR sequence and structure in three steps:
 
-1.  **初始化**：从均匀分布（氨基酸类型）或标准正态分布（坐标和方向）中随机采样初始状态。
-2.  **逐步去噪**：从时间步 T 开始，采样算法逐步逆向执行扩散过程，通过神经网络在每一步预测去噪值并更新状态
-3.  **结构重建**：在最终时间步 t=0 完成生成后，根据预测的坐标和方向用 **侧链填充算法**（如 Rosetta 的 packing 功能）补全侧链原子位置，生成完整的抗体结构。
+1.  **Initialization**: Sample initial states from a uniform distribution (types) or standard normal (coordinates and orientations).
+2.  **Iterative denoising**: Starting at `$T$`, reverse the diffusion step by step; at each step the networks predict denoised values and update the state.
+3.  **Structure reconstruction**: At `$t=0$`, use predicted coordinates and orientations with a **side-chain packing** algorithm (e.g., Rosetta packing) to place side-chain atoms and obtain a full antibody structure.
 
 ### Experiments
 
 #### Sequence-Structure Co-design
 
-数据清洗：数据来源于 SAbDab 数据库，移除分辨率差于 4Å 的结构，丢弃针对非蛋白抗原的抗体；
+**Data curation**: Structures from SAbDab; remove entries worse than 4 Å resolution; discard antibodies targeting non-protein antigens.
 
-数据划分：根据 **CDR-H3 序列**（互补决定区）的 50% 序列相似性对抗体进行聚类，手动选择 **5 个聚类**作为测试集，总共包含 **19 个抗体-抗原复合物**，包含来自 **SARS-CoV-2、MERS、流感等病原体**的抗原
+**Split**: Cluster antibodies by 50% sequence similarity on **CDR-H3**; manually select **5 clusters** as the test set (**19 antibody–antigen complexes**), including antigens from **SARS-CoV-2, MERS, influenza**, and other pathogens.
 
-与 Rosetta 能量函数驱动的抗体设计软件 **RAbD**【Adolf-Bryfogle et al., 2018】进行比较，每种方法为每个 CDR 生成 **100 个样本**
+Compared with **RAbD** [Adolf-Bryfogle et al., 2018], Rosetta energy–driven antibody design; each method generates **100 samples** per CDR.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab1.png "avatar")​
 
-指标：
+Metrics:
 
-*   **Amino Acid Recovery (AAR)**：
+*   **Amino Acid Recovery (AAR)**:
 
-    *   **定义**：生成序列与参考序列的序列一致性（序列相似度）。
-    *   **作用**：衡量模型生成准确性。
-*   **Root-Mean-Square Deviation (RMSD)**：
+    *   **Definition**: Sequence identity between generated and reference sequences.
+    *   **Role**: Measures generative fidelity.
+*   **Root-Mean-Square Deviation (RMSD)**:
 
-    *   **定义**：生成结构的 Cα 原子与原始结构的均方根偏差。
-    *   **作用**：衡量生成结构与真实结构的几何相似性。
-*   **Improved Binding Percentage (IMP)**：
+    *   **Definition**: RMSD of Cα atoms between generated and native structures.
+    *   **Role**: Measures geometric similarity to the native structure.
+*   **Improved Binding Percentage (IMP)**:
 
-    *   **定义**：生成 CDR 与抗原的结合能低于原始 CDR 的比例（结合能由 Rosetta 的 InterfaceAnalyzer 计算）。
-    *   **作用**：评估生成抗体在结合性能上的改进。
+    *   **Definition**: Fraction of generated CDRs whose binding energy to the antigen is lower than the original CDR (binding energy from Rosetta InterfaceAnalyzer).
+    *   **Role**: Assesses improvement in binding performance.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig4.png "avatar")​
 
-*   提供了针对 SARS-CoV-2 RBD（PDB: 7chf）生成的 CDR-H3 示例及其结合能量分布。
-*   示例 1 与抗原的互补性最佳，结合能最低（ΔG = -15.45）。
-*   示例 3 的形状不适合抗原，结合能高于原始抗体
+*   Example generated CDR-H3 designs for SARS-CoV-2 RBD (PDB: 7chf) and their binding-energy distributions.
+*   Example 1 shows the best complementarity to the antigen and the lowest binding energy (ΔG = −15.45).
+*   Example 3 has a shape poorly suited to the antigen; binding energy exceeds that of the native antibody.
 
 #### Fix-Backbone Sequence Design and Structure Prediction
 
-*   在此任务中，已知抗体互补决定区（CDR）的骨架结构，目标是基于给定的骨架设计出新的 CDR 序列。
-*   同时模型可以通过固定序列来预测 CDR 的结构
-
-基准方法使用 **FixBB**，这是一种基于 Rosetta 的序列设计软件，可以根据 CDR 骨架结构设计序列
+*   Given the CDR backbone, design a new CDR sequence; the model can also predict CDR structure with sequence fixed.
+*   Baseline **FixBB**: Rosetta-based sequence design from a fixed CDR backbone.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab2-3.png "avatar")​
 
-*   在 CDR H1、H2、L1、L2 和 L3 上，DiffAb 的结构预测精度非常高（RMSD ≤ 1.5 Å）。
-*   在 CDR-H3 上，预测精度较低，主要由于其较高的变异性
+*   On CDR H1, H2, L1, L2, and L3, DiffAb achieves very high structure-prediction accuracy (RMSD ≤ 1.5 Å).
+*   On CDR-H3, accuracy is lower due to higher variability.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig5.png "avatar")​
 
-图5a 显示了不同长度的 CDR-H3 结构的预测精度，短序列的预测更准确，而长度超过10个氨基酸的 CDR-H3 预测精度降低
+Figure 5a shows prediction accuracy versus CDR-H3 length; shorter loops are predicted more accurately, and accuracy drops for CDR-H3 longer than 10 residues.
 
 #### Antibody Optimization
 
-对现有抗体的 CDR（互补决定区）序列和结构进行优化，以增强抗体与抗原的结合能力（使其与目标抗原的结合能降低），同时尽量保持原始抗体的结构和功能特性
+Optimize existing CDR sequence and structure to strengthen antibody–antigen binding (lower binding energy) while preserving native structure and function as much as possible.
 
-先正向加噪：对原始抗体的 CDR 序列和结构进行 ttt 步的正向扩散（添加噪声），使其从原始状态逐渐接近随机分布；再从T-t开始反向去噪逐步生成优化后的CDR
+**Forward noising**: Apply `$t$` forward diffusion steps to the native CDR sequence and structure so they move toward a random distribution; **reverse denoising** from `$T-t$` yields optimized CDRs.
 
-对测试集中抗体的 CDR-H3 进行优化，每个抗体的优化重复 **100 次**，以生成 **100 个候选的优化 CDR**
+CDR-H3 on the test set is optimized **100 times** per antibody (**100 candidate CDRs** each).
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/tab4.png "avatar")​
 
-表4和图5c所示，通过 Rosetta 能量函数测量，优化方法可以产生抗体的结合能提高的抗体
+Table 4 and Figure 5c show that, under Rosetta energy, optimization can yield antibodies with improved binding.
 
-*   **结合能改进**：
+*   **Binding improvement**:
 
-    *   在较少优化步数（如 t=4）时，IMP 得分较高，说明优化后的 CDR 在结合能上有显著改进。
-*   **结构保持**：
+    *   With fewer optimization steps (e.g., `$t=4$`), IMP is higher, indicating substantial binding-energy gains.
+*   **Structure preservation**:
 
-    *   RMSD 值随着 t 增加而升高，说明更多的优化步数导致结构偏离原始 CDR。
-*   **序列保持**：
+    *   RMSD increases with `$t$`; more steps deviate further from the native CDR structure.
+*   **Sequence preservation**:
 
-    *   SeqID 随着 t 增加显著降低，说明更大的步数会导致序列与原始序列的差异增大。
+    *   SeqID drops sharply as `$t$` increases; larger `$t$` yields greater sequence divergence from the native CDR.
 
 #### Design Without Bound Antibody Frameworks
 
-在没有已绑定抗体框架的情况下，根据抗原信息独立设计 CDR，生成合理的序列和结构，模拟抗体-抗原的结合
+Design CDR sequence and structure from antigen information alone when no bound antibody framework is available, mimicking antibody–antigen binding.
 
-*   **输入条件**：
+*   **Inputs**:
 
-    *   **抗原结构**：目标抗原的 3D 结构（无已绑定抗体框架）。
-    *   **抗体模板**：通过 docking（分子对接）技术生成的抗体骨架模板。
-*   **对接（Docking）**：
+    *   **Antigen structure**: Target antigen 3D structure (no bound framework).
+    *   **Antibody template**: Framework template from **docking**.
+*   **Docking**:
 
-    *   使用抗体模板和抗原进行对接来生成初始抗体-抗原复合物。
-    *   对接工具：使用 **HDOCK**【Yan et al., 2017】进行对接。
-*   **示例任务**：
+    *   Dock antibody template to antigen to obtain an initial complex.
+    *   Tool: **HDOCK** [Yan et al., 2017].
+*   **Example**:
 
-    *   设计针对 SARS-CoV-2 Omicron RBD 的抗体。
-    *   抗体模板来源：针对流感病毒的抗体（PDB: 3bgf）。
-    *   初始 CDR-H3 的残基范围为 **A322-A590**
+    *   Design antibodies against SARS-CoV-2 Omicron RBD.
+    *   Template: anti-influenza antibody (PDB: 3bgf).
+    *   Initial CDR-H3 spans residues **A322–A590**.
 
 ​![avatar](https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/DiffAb/fig6.png "avatar")​
 
-*   **结构结果**：
+*   **Structure**:
 
-    *   针对 SARS-CoV-2 Omicron RBD，生成的抗体在结构上表现出合理性，与抗原存在明显的结合位点。
-    *   图 **6** 显示了对接后的抗体-抗原复合物以及生成的 CDR-H3 的结合模式。
-*   **结合能结果**：
+    *   For SARS-CoV-2 Omicron RBD, generated antibodies are structurally plausible with clear binding interfaces to the antigen.
+    *   Figure **6** shows the docked complex and generated CDR-H3 binding mode.
+*   **Binding energy**:
 
-    *   生成的抗体虽然缺乏参考抗体的结合能力，但结合能分布表明其生成结果在合理范围内。
-    *   结合能（ΔG）可以作为生成抗体合理性的支持证据。
+    *   Generated antibodies lack a native reference for affinity, but the binding-energy distribution falls in a reasonable range.
+    *   ΔG supports the plausibility of generated designs.
 
 ***
 

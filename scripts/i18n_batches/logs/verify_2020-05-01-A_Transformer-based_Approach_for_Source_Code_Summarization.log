@@ -1,0 +1,11 @@
+对照 `i18n_verify_brief.md` 逐项核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构与中文一致（标题、Abstract、Experiment、Setup、Results、图片、HR） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`，`alt_url` = `/zh/se/A-Transformer-based-Approach-for-Source-Code-Summarization/`，无 `permalink` | 通过 |
+| PDF/GitHub 链接与图片 URL 一致 | 通过 |
+| Abstract / Setup 文案与中文含义一致 | 通过 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2020-05-01-A Transformer-based Approach for Source Code Summarization.md`

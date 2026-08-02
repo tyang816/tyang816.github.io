@@ -1,0 +1,15 @@
+**FIXED** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-09-26-Multi-Scale Representation Learning for Protein Fitness Prediction.md`  
+`issues=GVP SE(3) wording (invariance vs equivariance)`
+
+**核对摘要**
+
+| 项 | 结果 |
+|---|---|
+| 完整性（至 4.6 + hr） | 与中文版一致 |
+| 正文无中文 | 通过 |
+| Frontmatter（`lang: en`，`alt_url` = 中文 `permalink`，无 `permalink`） | 通过 |
+| 图/链/公式 | 与中文版一致（英文已修正中文 3.4 处 “iii / fif_ifi” 笔误） |
+| 章节结构 | 一致（均无 Section 2） |
+| 数值与模型名 | 217、0.470、20M 等均一致 |
+
+**修改**：§3.3 中将 GVP 描述改为 **SE(3)-equivariance**，避免 “invariance” 与 “equivariant” 混用。

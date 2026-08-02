@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/ML/2022-03-02-AI Index Report.md`
+
+按 `scripts/i18n_verify_brief.md` 核对结果：
+
+| 项 | 结果 |
+|---|---|
+| 完整性 | 与中文版章节一致（Top Takeaways → Ch.5），含结尾 `<hr>` |
+| 正文语言 | 无中文残留 |
+| Frontmatter | `lang: en`；`alt_url: /zh/ml/AI-Index-Report/` 与中文 `permalink` 一致；无英文 `permalink`；其余字段与中文对齐 |
+| 链接 | PDF 与「Papers with Code」表述一致 |
+| 结构 | 各级标题与 bullet 一一对应（含跳过 3.3、Figure 3.3.2 等原文编号） |
+| 数字 | 93.5 亿美元 → $9.35B，117M/280M，42k/22.6k 等均一致 |
+
+英文版在拼写与术语上已相对中文原文做了合理修正（如 Takeaways、Performance、VIDEO、CORPORATE），无需再改。

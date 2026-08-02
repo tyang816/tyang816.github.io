@@ -1,0 +1,14 @@
+对照 `scripts/i18n_verify_brief.md` 核对结果如下：
+
+| 检查项 | 结果 |
+|--------|------|
+| 结构完整 | 与中文一致（Abstract → Introduction → Pre-training → Experiment，含全部图片与结尾 `<HR>`） |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；无 `permalink`；`alt_url` 为中文 `permalink`（`/zh/cl/Unified-Language-Model-.../`）；其余字段与中文一致 |
+| 链接/图片/公式 | arXiv、GitHub、图片 URL、Adam 超参公式一致 |
+| 章节结构 | 对齐 |
+| 术语与数字 | UNILM、340M、28996、770000 steps 等与中文一致 |
+
+英文表述与学术语气正常，无需修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2019-05-08-Unified Language Model Pre-training for Natural Language Understanding and Gener.md`

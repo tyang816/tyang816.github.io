@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 完成翻译并写入：
+
+`_posts/CV/2023-01-09-MixGen：A New Multi-Modal Data Augmentation.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/`（对应中文 `permalink`）；无 `permalink`；保留 layout、title、categories、tags、proceedings、date。
+- **正文**：学术英文；区块引用为 Paper / Code；图片链接与 HTML 块未改；无残留中文正文。

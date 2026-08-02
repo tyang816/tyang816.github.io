@@ -1,0 +1,14 @@
+**OK** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2024-06-21-Feature Reuse and Scaling：Understanding Transfer Learning with Protein Language .md`
+
+按 `scripts/i18n_verify_brief.md` 逐项核对结果：
+
+| 项 | 状态 |
+|---|---|
+| 结构与中文一致（至 `Some Tasks Do Not Benefit from MLM Pretraining` + `<hr>`，该节正文两边均为空） | 通过 |
+| 正文无中文 | 通过 |
+| `lang: en`；`alt_url` = 中文 `permalink`（`/zh/bi/Feature-Reuse-and-Scaling：Understanding-Transfer-Learning-with-Protein-Language-/`）；无英文 `permalink` | 通过 |
+| 论文链接、GitHub、全部图片 URL 一致 | 通过 |
+| 标题层级与中文对应 | 通过 |
+| 英文表述与术语（370、ESM/CARP、UniRef50、MLM 等）合理 | 通过 |
+
+未修改 EN 文件。

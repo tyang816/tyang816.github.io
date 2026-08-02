@@ -1,0 +1,13 @@
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CL/2022-01-16-Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficie.md` issues=`full-width list markers （1）（2）（3）→ (1)(2)(3)`
+
+**核对摘要**
+
+| 项 | 结果 |
+|---|---|
+| 结构与结尾 | 与中文版一致，含 Discussion Q1–Q6 与 `<HR>` |
+| 正文中文 | 无中文叙述（已改全角序号括号） |
+| Frontmatter | `lang: en`，`alt_url` 与中文 `permalink` 一致，无 `permalink` |
+| 图/链/公式 | 与中文版一致 |
+| 术语与数字 | Switch-C、2048、0.68→0.01、Switch-base-Expand 等均已保留 |
+
+英文版此前已完整翻译；仅将三处编号列表的全角括号改为半角，以符合 checklist 第 2、6 条。中文版小节标题仍为 `Discusstion`，英文为 `Discussion`，属合理修正。

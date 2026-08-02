@@ -1,0 +1,3 @@
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/SE/2018-05-27-Deep code search.md`
+
+核对结果：英文稿完整，结构与中文一致（Abstract → Introduction → 网络 → DeepCS → Evaluation → Discussion）；正文无中文；frontmatter 为 `lang: en`、`alt_url: /zh/se/Deep-code-search/`（与中文 `permalink` 一致）、无 `permalink`；论文链接、四张图 URL 与 `<HR>` 均一致；术语与数字（CODEnn、DeepCS、18.2 million、50 Stack Overflow queries）正确。中文标题里的「Discusstion」在英文中已正确写为 Discussion，无需修改 EN 文件。

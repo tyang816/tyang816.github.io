@@ -1,0 +1,7 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入英文笔记：  
+`_posts/CV/2022-06-05-GLIPv2：Unifying Localization and Vision-Language Understanding.md`
+
+- **Frontmatter**：`lang: en`；`alt_url: /zh/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/`；无 `permalink`；保留其余字段。
+- **正文**：学术英文；blockquote 为 Paper / Code；图片、链接与 HTML 块未改；小节标题修正为 **Abstract**（原中文为 “Abstratc”）。

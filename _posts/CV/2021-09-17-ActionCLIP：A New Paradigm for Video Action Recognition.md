@@ -5,61 +5,64 @@ categories: [CV]
 tags: [video, action-recognition, contrastive-learning]
 proceedings: arXiv
 date: 2021-09-17
+lang: en
+alt_url: /zh/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
+permalink: /cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
 ---
 
-> 论文地址：[ActionCLIP：A New Paradigm for Video Action Recognition](https://arxiv.org/pdf/2109.08472.pdf)
+> Paper: [ActionCLIP：A New Paradigm for Video Action Recognition](https://arxiv.org/pdf/2109.08472.pdf)
 >
-> 论文实现：<https://github.com/sallymmx/actionclip>
+> Code: <https://github.com/sallymmx/actionclip>
 
-## ActionCLIP：文本提示视频动作识别
+## ActionCLIP: Text-Prompted Video Action Recognition
 
 ### Abstract
 
-本文提供了一个新的动作识别视角，通过重视标签文本的语义信息，而不是简单地将它们映射成数字，在多模态学习框架内将此任务建模为视频-文本匹配问题，通过语言加强视频表征能做zero-shot。首先从大量的网络图像文本或视频文本数据的预训练中学习表征，然后通过prompt engineering使动作识别任务更像是预训练问题，最后，它对目标数据集进行端到端微调
+This paper reframes action recognition from a new angle: within a multimodal learning framework, the task is modeled as video–text matching by leveraging the semantic content of label text rather than mapping labels to discrete class indices. Language supervision strengthens video representations and enables zero-shot transfer. The approach first learns representations from large-scale pre-training on web image–text or video–text data, then uses prompt engineering so that action recognition more closely resembles the pre-training objective, and finally fine-tunes end-to-end on the target dataset.
 
 ### Introduction
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/fig1.png" alt="avatar" style="zoom:70%;" /></div>
 
-图1上半部分之前的方法在视频动作理解的做法是：有一些视频，给一个视频编码器，得到向量过分类头得到输出，与标号的数据做Loss
+The top half of Figure 1 summarizes prior practice in video action understanding: videos are encoded by a video encoder, the embedding passes through a classification head, and training minimizes supervised loss against numeric labels.
 
-这里面最大的局限性有监督学习是需要标签的，但是对于视频理解而言怎么定义标签，怎么标记更多带标签的数据都是非常困难的问题，比如imagenet里面每个物体都是很清晰的，苹果是苹果，香蕉是香蕉，但是视频的动作理解里面有无穷多的组合，开门的开也可以是开瓶盖，开窗户等等，不可能标注很多很多类别，所以必须要拜托这种标注数据
+The central limitation is that supervised learning requires labels, yet defining categories and collecting labeled data for video understanding is extremely difficult. In ImageNet, object categories are crisp—an apple is an apple, a banana is a banana—but action understanding admits combinatorially many variants: “open” may mean opening a door, unscrewing a bottle cap, opening a window, and so on. Annotating ever more fine-grained action classes does not scale, so one must move beyond reliance on exhaustive manual labeling.
 
-图1下半部分作者的做法是视频输入编码器得到特征，把标签当作文本得到文本特征，之后算相似度，和ground truth算loss。这里有个问题是文本用的是标好的标签，当batch size比较大的时候，同一行或者同一列里面就可能出现多个正样本，比如多个样本都属于跑步这个标签，不再是一个one-hot问题，ground truth不一定是对角线才是正样本。作者把cross entropy loss换成了KL散度
+The bottom half of Figure 1 shows the authors’ design: a video encoder produces features, class names are treated as text to obtain text features, similarities are computed, and training aligns predictions with ground truth. A subtle issue is that the text comes from fixed class labels; with a large batch, multiple samples can share the same label (e.g., several “running” clips), so positives need not lie only on the diagonal of the similarity matrix—the setting is no longer strict one-hot classification. The authors therefore replace cross-entropy with a KL divergence loss.
 
 ### Method
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/fig2.png" alt="avatar" style="zoom:60%;" /></div>
 
-和CLIP几乎大差不差 
+The overall pipeline closely follows CLIP.
 
-- 图2b主要是文本的提示模板，在前面，中间和末尾加上一个句子
-- 图2c把时间的embedding和空间的token放一起给网络来学习
-- 图2d是shift概念，简单高效放在每个block中间
-- 图2efg是把视频时间维度多个特征变成1个特征
+- Figure 2b: text prompt templates—wrapping the action name in a sentence at the beginning, middle, and end.
+- Figure 2c: temporal embeddings are combined with spatial tokens for the network to learn joint space–time representations.
+- Figure 2d: a shift operation inserted in the middle of each block—simple and efficient.
+- Figures 2e–g: aggregating multiple features along the temporal dimension into a single video-level representation.
 
 ### Experiments
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/tab1.png" alt="avatar" style="zoom:60%;" /></div>
 
-vision-language framework到底有没有用呢？就是把one-hot标签换成language guided的目标函数有没有用
+Does a vision–language framework help—in particular, replacing one-hot labels with a language-guided training objective?
 
-从表1看出来还是提升了3个点的
+Table 1 indicates a gain of about three percentage points.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/tab2.png" alt="avatar" style="zoom:60%;" /></div>
 
-pre-train这个阶段到底重不重要？
+How important is the pre-training stage?
 
-可以看到都用了CLIP性能很高的，但是文本的初始化问题不是很大，基本多模态的注意力都会放在视觉这边，使用vit去初始化
+CLIP-based initialization yields strong performance; text-side initialization is less critical because multimodal attention tends to focus on the visual branch—ViT initialization is typically used for the video encoder.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/tab3.png" alt="avatar" style="zoom:50%;" /><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/tab4.png" alt="avatar" style="zoom:50%;" /></div>
 
-prompt到底有没有用呢？
+Do prompts matter?
 
-文本这边不用prompt也就掉了零点几个点，视频这边发现post-network是很有用的
+On the text side, omitting prompts drops accuracy by only a few tenths of a point; on the video side, the post-network module is clearly beneficial.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/ActionCLIP/fig3.png" alt="avatar" style="zoom:60%;" /></div>
 
-zero-shot能力很强
+Zero-shot performance is strong.
 
 <HR align=left color=#987cb9 SIZE=1>

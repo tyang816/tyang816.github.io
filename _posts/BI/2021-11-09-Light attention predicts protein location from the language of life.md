@@ -5,35 +5,38 @@ categories: [BI]
 tags: [protein, localization, PLM]
 proceedings: Bioinformatics Advances
 date: 2021-11-09
+lang: en
+alt_url: /zh/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
+permalink: /bi/Light-attention-predicts-protein-location-from-the-language-of-life/
 ---
 
-> 论文地址：[Light attention predicts protein location from the language of life](https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbab035/6432029)
+> Paper: [Light attention predicts protein location from the language of life](https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbab035/6432029)
 >
-> 论文实现：<https://github.com/HannesStark/protein-localization>
+> Code: <https://github.com/HannesStark/protein-localization>
 
-## LA-ProtT5: 语言模型表征+attention预测蛋白质定位
+## LA-ProtT5: Language-model representations and attention for protein localization
 
 ### Abstract
 
-知道蛋白质在细胞中的作用对于表征生物过程很重要，但目前大多数已知的蛋白质是没有的，目前专家设计的需要MSA信息或机器学习预测，搜索MSA和专家设计是比较昂贵的。这里使用来自蛋白质语言模型的嵌入在没有MSA的情况下进行蛋白质定位预测，取得了SOTA
+Knowing where proteins act in the cell is important for characterizing biological processes, but most proteins still lack such annotations. Current expert-designed pipelines rely on MSA information or machine learning predictors; building MSAs and hand-crafted features is comparatively expensive. This work uses embeddings from protein language models for localization prediction without MSAs and reports state-of-the-art performance.
 
 ### Introduction
 
 #### Prediction bridges gap between proteins with and without location annotations
 
-在分子生物学中标准的预测工具是homology-based inference (HBI)，从已经注释的相似蛋白迁移到未注释的蛋白上，但是HBI方法在大多数蛋白上不可靠或者不可用
+In molecular biology, the standard predictive tool is homology-based inference (HBI), which transfers annotations from annotated similar proteins to unannotated ones; however, HBI is unreliable or unavailable for most proteins.
 
-机器学习方法精度低，但是在大多蛋白上是可用的，比如使用MSA做输入，但随着数据库的增长，MSA的开销变得巨大
+Machine learning methods are less accurate in some settings but applicable to most proteins—for example, when MSAs are used as input—but as databases grow, the computational cost of MSAs becomes substantial.
 
 #### Protein language models better represent sequences
 
-使用蛋白质语言模型的表征来预测蛋白质定位，不需要MSA，使用一种Light Attention (LA)
+The authors predict protein localization using representations from protein language models without MSAs, via a Light Attention (LA) mechanism.
 
 ### Methods
 
 #### Data
 
-标准的DeepLoc和从swissprot中构建的新的setHARD
+The standard DeepLoc benchmark and a new setHARD constructed from Swiss-Prot.
 
 #### Models
 

@@ -1,0 +1,16 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文稿，结论如下。
+
+**核对结果**
+
+| 项 | 状态 |
+|---|---|
+| 结构与结尾完整（引言、5 条 + 5.1/5.2、三张图、`<HR>`） | 一致 |
+| 正文无中文 | 通过 |
+| `lang: en`；无 `permalink`；`alt_url` 与中文 `permalink` 一致 | 通过 |
+| 论文 PDF 链接与三张图 URL | 一致 |
+| 章节与要点对应 | 一致 |
+| 英文表述与术语（Patch Merging、shifted windows、masked MSA、相对位置编码等） | 合理 |
+
+英文在 5.2 等处比中文略作展开（如 Patch Merging 与 cyclic shift），与 Swin 原意一致，不属于遗漏或错误，无需改文件。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2021-08-17-Swin Transformer：Hierarchical Vision Transformer using Shifted Windows.md`

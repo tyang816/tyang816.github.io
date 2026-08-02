@@ -5,30 +5,33 @@ categories: [BI]
 tags: [protein, PLM, GNN]
 proceedings: bioRxiv
 date: 2023-01-05
+lang: en
+alt_url: /zh/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+permalink: /bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
 ---
 
-> 论文地址：[When Geometric Deep Learning Meets Pretrained Protein Language Models](http://biorxiv.org/lookup/doi/10.1101/2023.01.05.522958)
+> Paper: [When Geometric Deep Learning Meets Pretrained Protein Language Models](http://biorxiv.org/lookup/doi/10.1101/2023.01.05.522958)
 >
-> 论文实现：<https://github.com/smiles724/bottleneck>
+> Code: <https://github.com/smiles724/bottleneck>
 >
-> 论文数据：The data of model quality assessment, protein-protein interface prediction, and ligand affinity prediction is available by <https://www.atom3d.ai/>. The data of protein-protein rigid-body docking can be downloaded directly from the official repository of Equidock <https://github.com/octavian-ganea/equidock_public>.
+> Data: The data of model quality assessment, protein-protein interface prediction, and ligand affinity prediction is available by <https://www.atom3d.ai/>. The data of protein-protein rigid-body docking can be downloaded directly from the official repository of Equidock <https://github.com/octavian-ganea/equidock_public>.
 >
 
-## PLM-GNN：语言模型输入初始化GNN
+## PLM-GNN: Initializing GNNs with language-model inputs
 
 ### Abstract
 
-目前没有很先进的研究融合了蛋白质的不同模态来提升几何表征能力，本文把从预训练蛋白质语言模型的知识融合到多种SOTA的几何网络中，在多个任务中整体有近20%的提升，包括protein-protein interface prediction，model quality assessment，protein-protein rigid-body docking和binding affinity prediction
+Few advanced studies have fused multiple modalities of proteins to strengthen geometric representation learning. This work integrates knowledge from pretrained protein language models into several state-of-the-art geometric networks, yielding roughly 20% overall gains across tasks including protein-protein interface prediction, model quality assessment, protein-protein rigid-body docking, and binding affinity prediction.
 
 ### Introduction
 
-相比于序列信息，用结构信息训练会少很多个数量级
+Compared with sequence data, structure-based training involves orders of magnitude fewer examples.
 
-通过自监督方法训练得到的PLM可以解锁编码在蛋白质序列中的信息，包括适应性，稳定性，功能以及自然序列分布
+Protein language models (PLMs) trained with self-supervision unlock information encoded in protein sequences, including fitness, stability, function, and the natural sequence distribution.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLM-GNN/fig1.png" alt="avatar" style="zoom:80%;" /></div>
 
-因此通过PLM提升GGNN的能力
+The paper therefore uses PLMs to enhance geometric graph neural networks (GGNNs).
 
 ### Experiments
 
@@ -36,23 +39,23 @@ date: 2023-01-05
 
 ##### Model Quality Assessment (MQA)
 
-旨在从一个蛋白质的一个大的候选结构池中选出最佳的结构模型。MQA方法通过预测一个候选结构和实验解决的结构的GDT-TS分数来评估，数据库是由过去18年来通过CASP提交的所有结构模型组成。MQA和protein structure ranking类似
+The goal is to select the best structural model for a protein from a large pool of candidates. MQA methods evaluate candidates by predicting the GDT-TS score between each candidate and experimentally determined structures. The database comprises all models submitted to CASP over the past 18 years. MQA is analogous to protein structure ranking.
 
 ##### Protein-protein Rigid-body Docking (PPRD)
 
-从individual unbound structures预测protein-protein complex的3D结构，假设在蛋白质结合的时候没有构造变化，使用Docking Benchmark 5.5 (DB5.5)作为数据集
+Predict the 3D structure of a protein-protein complex from individual unbound structures, assuming no conformational change upon binding. The dataset is Docking Benchmark 5.5 (DB5.5).
 
 ##### Protein-protein Interface (PPI)
 
-当各自的蛋白质结合时两个氨基酸是否会接触，这是理解蛋白质相互作用很重要的问题，比如抗体蛋白识别抗原。使用Database of Interacting Protein Structures (DIPS) 
+Predict whether two amino acids contact each other when their respective proteins bind—an important question for understanding protein interactions, e.g., antibody recognition of antigen. The dataset is the Database of Interacting Protein Structures (DIPS).
 
 ##### Ligand Binding Affinity (LBA)
 
-是对药物发现应用很关键的任务，预测与靶蛋白的一个候选药物分子交互长度，使用PDBbind database
+A task critical for drug discovery: predict interaction strength between a candidate small molecule and a target protein. The dataset is PDBbind.
 
 #### Experimental Setup
 
-使用pytorch和PyG，对MQA,PPI,LBA用GVP-GNN，EGNN和Molformer，对于PPRD用EquiDock作为backbone
+Implemented in PyTorch and PyG. For MQA, PPI, and LBA, the authors use GVP-GNN, EGNN, and Molformer; for PPRD, EquiDock serves as the backbone.
 
 #### Results
 
@@ -70,35 +73,35 @@ date: 2023-01-05
 
 ### Conclusion
 
-提出了一种简单有效的方法，即用现有的预训练蛋白质语言模型的氨基酸表征作为图网络初始化，在各个下游任务上有着明显的提升
+The authors propose a simple and effective approach: initialize graph networks with amino-acid representations from an existing pretrained protein language model, yielding clear gains on downstream tasks.
 
 ### Method
 
-初始化的PLM是ESM-2，维度1280
+The initialization PLM is ESM-2 with embedding dimension 1280.
 
-现存的实验结构和原始氨基酸序列也存在不完整，有些残基的字符串因为现实因素缺失，通常的做法有直接使用片段信息来丢入模型forward，或是动态规划算法来实现成对序列对齐，并放弃PDB结构中不存在的残基
+Experimental structures and raw amino-acid sequences are often incomplete: some residue strings are missing for practical reasons. Common strategies are to feed fragment information directly into the model forward pass, or to align sequence pairs with dynamic programming and discard residues absent from the PDB structure.
 
 ### Sequence Recovery Analysis
 
-GGNN在采用三维几何图形时的模式上主要是多样化的，输入特征包括距离、角度、扭转和其他阶数项。然而，在构建GGNN的三维图时，通常忽略了隐藏在蛋白质序列中的position index
+When operating on 3D geometry, GGNNs use diverse input features including distances, angles, torsions, and higher-order terms. However, when building 3D graphs for GGNNs, the position index hidden in the protein sequence is typically ignored.
 
 #### Protein Graph Construction
 
-三种形式来构建分子联通：r-ball graphs，fully-connected（FC），K-nearest neighbors（KNN），
+Three connectivity patterns are considered: r-ball graphs, fully connected (FC), and K-nearest neighbors (KNN).
 
 #### Recovery from Graphs to Sequences
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLM-GNN/fig4.png" alt="avatar" style="zoom:80%;" /></div>
 
-主要回答一个问题：现有的GGNN是否只从蛋白质的几何结构中就能识别序列位置顺序？
+The analysis addresses one question: can existing GGNNs recover sequential order from protein geometry alone?
 
-如图4所示，两个任务，预测绝对位置和预测相对位置
+As shown in Figure 4, two tasks are defined: predicting absolute position and predicting relative position.
 
 #### Results and Analysis
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/PLM-GNN/tab6.png" alt="avatar" style="zoom:80%;" /></div>
 
-所有的GGNN都不能识别出相对位置和绝对位置信息，准确度低于1%，RMSE较高，主要是源于构造图的连通性的时候没有考虑到序列信息，更具体的说不像引文网络，社交网络，知识图谱，分子没有明确定义的边或邻接
+None of the GGNNs recover relative or absolute positional information: accuracy stays below 1% and RMSE is high. The main reason is that graph connectivity is constructed without sequence information; unlike citation networks, social networks, or knowledge graphs, molecules do not have uniquely defined edges or adjacency.
 
 
 <HR align=left color=#987cb9 SIZE=1>

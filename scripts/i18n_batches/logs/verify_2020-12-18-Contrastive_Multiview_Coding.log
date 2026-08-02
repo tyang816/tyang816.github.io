@@ -1,0 +1,14 @@
+已按 `scripts/i18n_verify_brief.md` 逐项对照中英文两篇笔记。
+
+**核对结果**
+
+| 项 | 结果 |
+|---|---|
+| 结构与完整性 | 引言、## 标题、3 条要点、Comment、`<HR>` 与中文版一致 |
+| 正文无中文 | 通过 |
+| Frontmatter | `lang: en`；`alt_url: /zh/cv/Contrastive-Multiview-Coding/` 与中文 `permalink` 一致；英文无 `permalink`；layout/categories/tags/proceedings/date 一致 |
+| 链接与格式 | ECCV PDF、GitHub、`<HR>` 一致 |
+| 章节与语气 | 对应准确，术语（mutual information、positive/negative pairs、encoders、transformers）合理 |
+| 数字与专名 | ECCV-2020、CMC、HobbitLong/CMC 未改 |
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2020-12-18-Contrastive Multiview Coding.md`

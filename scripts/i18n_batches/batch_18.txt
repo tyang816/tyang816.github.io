@@ -1,0 +1,10 @@
+_posts/zh/SE/2019-05-25-A Neural Model for Generating Natural Language Summaries of Program Subroutines.md
+_posts/zh/SE/2019-05-25-A Novel Neural Source Code Representation Based on Abstract Syntax Tree.md
+_posts/zh/SE/2019-08-10-Commit Message Generation for Source Code Changes.md
+_posts/zh/SE/2020-05-01-A Transformer-based Approach for Source Code Summarization.md
+_posts/zh/SE/2020-07-13-Graph-based, Self-Supervised Program Repair from Diagnostic Feedback.md
+_posts/zh/SE/2020-07-25-Contrastive Code Representation Learning.md
+_posts/zh/SE/2020-11-18-Improved Automatic Summarization of Subroutines via Attention to File Context.md
+_posts/zh/SE/2021-01-01-Code Summarization with Structure-induced Transformer.md
+_posts/zh/SE/2021-01-27-Automating just-in-time comment updating.md
+_posts/zh/SE/2021-03-12-A Multi-Modal Transformer-based Code Summarization Approach for Smart Contracts.md

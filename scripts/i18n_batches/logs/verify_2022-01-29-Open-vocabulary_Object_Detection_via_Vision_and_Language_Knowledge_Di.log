@@ -1,0 +1,15 @@
+已按 brief 逐项对照中英文 frontmatter、章节、图片链接与正文，英文稿完整且无需修改。
+
+**FIXED** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2022-01-29-Open-vocabulary Object Detection via Vision and Language Knowledge Distillation.md`
+
+核对结果：
+
+| 检查项 | 状态 |
+|--------|------|
+| 结构与章节（Abstract / Introduction / Method / Experiment + HR） | 与中文一致 |
+| 正文无中文 | 通过 |
+| `lang: en`，无 `permalink`，`alt_url` = 中文 `permalink` | 通过 |
+| 论文链接、代码链接、全部图片 URL | 一致 |
+| ViLD-text / ViLD-image、Mask R-CNN、baseline (a)–(d)、CB、N/M loss 等 | 内容对齐；英文已修正中文里的 ViLD-imgae、bonding box 等笔误 |
+
+英文版在保持原意的前提下用语更规范（如 yellow rubber duck、ViLD-image、bounding-box），未发现需再改动的遗漏或 Chinglish。

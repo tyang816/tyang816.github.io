@@ -1,0 +1,8 @@
+**DONE**
+
+已按 `scripts/i18n_translate_brief.md` 写入：
+
+`_posts/SE/2022-06-08-Learning code summarization from a small and local dataset.md`
+
+- Frontmatter：`lang: en`，`alt_url: /zh/se/Learning-code-summarization-from-a-small-and-local-dataset/`，无 `permalink`；已去掉 `lang: zh-CN`。
+- 正文：学术英文笔记；图片、链接、数学（$\lambda=3$）、HTML 块均保留；文首引用为 Paper / Code。

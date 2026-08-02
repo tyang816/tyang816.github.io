@@ -1,0 +1,4 @@
+**FIXED** `path=/home/tanyang/workspace/tyang816.github.io/_posts/BI/2025-10-24-Democratizing protein language model training, sharing and collaboration.md`  
+**issues=** 湿实验 bullet 两处将 “mutational prediction” 改为 “mutational effect prediction”，与全文及中文「突变效应预测」一致
+
+**核对摘要：** 英文稿结构完整（Abstract / Main / Methods §1–18），无中文正文；frontmatter 为 `lang: en`、`alt_url` 指向中文 `permalink`、无英文 `permalink`；图链、公式与数值与中文版一致。除上述术语外无需改动。中文 GFP 条目中单独的 “108” 视为脚注编号，英文未内联保留。

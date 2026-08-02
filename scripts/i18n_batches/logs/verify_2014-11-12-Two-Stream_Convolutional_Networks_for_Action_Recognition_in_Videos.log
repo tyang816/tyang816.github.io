@@ -1,0 +1,19 @@
+已按 `i18n_verify_brief.md` 逐项对照中英文稿，结论如下。
+
+**1. 完整性** — 英文与中文结构一致：导语、Abstract、Introduction、Related Work、Model（Spatial / Optical flow）、Implementation Details、Evaluation，结尾 `<HR>` 均在。
+
+**2. 正文语言** — 英文正文无残留中文。
+
+**3. Frontmatter** — `lang: en`；`alt_url: /zh/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/` 与中文 `permalink` 一致；英文无 `permalink`；其余字段与中文对应。
+
+**4. 资源** — NeurIPS 论文链接与 5 张图 URL 一致。
+
+**5. 标题层级** — 与中文对齐。
+
+**6. 表述** — 学术英文通顺；中文笔误（如 spatio-teporal、ImgaeNet）在英文中已正确（Spatio-temporal、ImageNet）。
+
+**7. 数字与术语** — L、L−1、25 frames、20 points、late fusion、multitask learning 等均保留。
+
+未对英文文件做修改。
+
+**OK** path=`/home/tanyang/workspace/tyang816.github.io/_posts/CV/2014-11-12-Two-Stream Convolutional Networks for Action Recognition in Videos.md`

@@ -5,22 +5,25 @@ categories: [CL]
 tags: [NLP]
 proceedings: ACL
 date: 2018-10-23
+lang: en
+alt_url: /zh/cl/Improving-Abstraction-in-Text-Summarization/
+permalink: /cl/Improving-Abstraction-in-Text-Summarization/
 ---
 
-> 论文地址：[Improving Abstraction in Text Summarization](http://arxiv.org/abs/1808.07913)
+> Paper: [Improving Abstraction in Text Summarization](http://arxiv.org/abs/1808.07913)
 >
 
-## 分解解码器为上下文网络和预训练模型
+## Decomposing the Decoder into a Context Network and a Pretrained Model
 
 ### Abstract
 
-在现有方法中还是很少，准确的摘要比如用没有出现在源文档的新短语来衡量依然很低。本文提出两种提高生成摘要的抽象程度的方法，第一种是将解码器分解为一个检索源文档相关信息的上下文网络，和一个预训练模型；第二种是一个新的指标
+Among existing methods, accurate abstractive summarization—as measured by novel phrases that do not appear in the source document—remains low. This paper proposes two ways to improve the level of abstraction in generated summaries. The first decomposes the decoder into a context network that retrieves relevant information from the source document and a pretrained model; the second is a new metric
 
 ### Introduction
 
-第一个贡献通过将解码器分解为上下文网络和语言模型来降低解码器的提取和生成的responsibilities，上下文网络负责压缩源文档，语言模型负责生成简明释义
+The first contribution reduces the decoder’s extractive and generative responsibilities by splitting it into a context network and a language model: the context network compresses the source document, and the language model produces concise paraphrases.
 
-第二个贡献是一个混合目标，它联合优化与ground truth的n-gram重叠，同时鼓励abstraction
+The second contribution is a hybrid objective that jointly optimizes n-gram overlap with ground truth while encouraging abstraction.
 
 ### Model
 
@@ -28,65 +31,65 @@ date: 2018-10-23
 
 #### Base Model and Training Objective
 
-编码器用的biLSTM
+The encoder uses a biLSTM.
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm1.png" alt="avatar" style="zoom:60%;" /></div>
 
-时间注意力上下文分数计算
+Temporal attention context score computation
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm2-frm5.png" alt="avatar" style="zoom:60%;" /></div>
 
-解码时内部注意力（intra-attention）上下文计算
+Intra-attention context computation during decoding
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm6-frm7.png" alt="avatar" style="zoom:60%;" /></div>
 
-计算解码器从输出词表里生成的概率
+Probability of generating from the output vocabulary
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm8-frm9.png" alt="avatar" style="zoom:60%;" /></div>
 
-计算从固定词表选择词的概率
+Probability of selecting a word from the fixed vocabulary
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm10.png" alt="avatar" style="zoom:60%;" /></div>
 
-计算从原文档中复制的概率
+Probability of copying from the source document
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm11.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm12.png" alt="avatar" style="zoom:60%;" /></div>
 
-目标函数极大似然估计
+Maximum-likelihood training objective
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm13.png" alt="avatar" style="zoom:60%;" /></div>
 
-策略学习使用ROUGE-L作为奖励函数，并使用贪婪解码策略作为self-critical baseline
+Policy learning uses ROUGE-L as the reward and greedy decoding as the self-critical baseline
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm14-frm15.png" alt="avatar" style="zoom:60%;" /></div>
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm16.png" alt="avatar" style="zoom:60%;" /></div>
 
-最终的损失是两者混合
+The final loss is a mixture of the two
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm17.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### Language Model Fusion
 
-这种分解还有一个额外的好处，即通过在一个大规模的文本语料库上对语言模型进行预训练，可以很容易地整合关于流畅性或领域特定风格的外部知识
+An additional benefit of this decomposition is that external knowledge about fluency and domain-specific style can be incorporated easily by pretraining the language model on a large text corpus.
 
-使用了3层无向LSTM，把最后一层语言模型的LSTM层的hidden state和公式8融合起来
+A 3-layer LSTM is used; the hidden state of the last LSTM layer of the language model is fused with Equation (8).
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm18.png" alt="avatar" style="zoom:60%;" /></div>
 
-$g_t$ 是门控函数
+$g_t$ is the gating function
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm19-frm21.png" alt="avatar" style="zoom:60%;" /></div>
 
-把公式10的输出分布替换为
+Replace the output distribution of Equation (10) with
 
 <div align="center" style="float:center"><img src="https://blog-img-1259433191.cos.ap-shanghai.myqcloud.com/Improving Abstraction in Text Summarization/frm22.png" alt="avatar" style="zoom:60%;" /></div>
 
 #### Abstract Reward
 
-看原文
+See the original paper.
 
 ### Experiment
 
