@@ -173,7 +173,7 @@
       "knowsAbout": {{ site.keywords | jsonify }}
     },
     {
-      "@type": {% if page.project == "tcm" or page.note_cat %}["WebPage", "CollectionPage"]{% else %}"WebPage"{% endif %},
+      "@type": {% if page.note_cat %}["WebPage", "CollectionPage"]{% elsif page.project == "tcm" and page.tcm_item_id == nil %}["WebPage", "CollectionPage"]{% else %}"WebPage"{% endif %},
       "@id": "{{ canonical_url }}#webpage",
       "url": {{ canonical_url | jsonify }},
       "name": {{ ld_name | jsonify }},
@@ -184,12 +184,41 @@
       {% if page.project == "tcm" %}
       ,"relatedLink": "https://github.com/tyang816/Awesome-TCM-LLM"
       {% endif %}
-      {% if seo_project and seo_project.code %}
+      {% if page.project == "tcm" and page.tcm_item_id == nil %}
+      ,"mainEntity": { "@id": "{{ canonical_url }}#itemlist" }
+      {% elsif page.project != "tcm" and seo_project and seo_project.code %}
       ,"mainEntity": { "@id": "{{ canonical_url }}#software" }
-      {% elsif seo_project and seo_project.paper %}
+      {% elsif page.project != "tcm" and seo_project and seo_project.paper %}
       ,"mainEntity": { "@id": "{{ canonical_url }}#article" }
       {% endif %}
-    }{% if seo_project and seo_project.code %},
+    }{% if page.project == "tcm" and page.tcm_item_id == nil and site.data.tcm_catalog.items %},
+    {
+      "@type": "ItemList",
+      "@id": "{{ canonical_url }}#itemlist",
+      "name": {{ ld_name | jsonify }},
+      "numberOfItems": {{ site.data.tcm_catalog.items.size }},
+      "itemListElement": [
+        {% for it in site.data.tcm_catalog.items limit: 60 %}
+          {% if is_zh_ld %}
+            {% assign tcm_item_path = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
+            {% if it.type == "news" %}
+              {% assign tcm_item_name = it.summary_zh | default: it.name | default: it.id | replace: "**", "" %}
+            {% else %}
+              {% assign tcm_item_name = it.name | default: it.title_zh | default: it.id | replace: "**", "" %}
+            {% endif %}
+          {% else %}
+            {% assign tcm_item_path = "/projects/tcm/items/" | append: it.id | append: "/" %}
+            {% assign tcm_item_name = it.name | default: it.summary_zh | default: it.id | replace: "**", "" %}
+          {% endif %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ tcm_item_name | jsonify }},
+          "url": {{ tcm_item_path | absolute_url | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% endif %}{% if page.project != "tcm" and seo_project and seo_project.code %},
     {
       "@type": "SoftwareSourceCode",
       "@id": "{{ canonical_url }}#software",

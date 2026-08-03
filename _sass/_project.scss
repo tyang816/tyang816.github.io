@@ -740,6 +740,86 @@ $project-wide: 100%;
   padding: 0 0.15rem;
 }
 
+/* TCM catalog hub + item pages */
+.tcm-catalog-section {
+  .hub-title-row h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.55rem, 3vw, 1.9rem);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: $project-ink;
+  }
+}
+
+.tcm-hub {
+  overflow-anchor: none;
+}
+
+.tcm-updated {
+  margin: -0.35rem 0 1rem;
+}
+
+.tcm-hub-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+
+  button {
+    @extend %hub-chip;
+  }
+}
+
+.tcm-hub-results {
+  min-height: 24rem;
+}
+
+.tcm-item-summary {
+  font-size: 1.05rem;
+  color: $project-ink;
+  max-width: 42rem;
+
+  p {
+    margin: 0 0 0.75rem;
+  }
+}
+
+.tcm-item-tags {
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  color: $project-muted;
+  font-size: 0.92rem;
+
+  &__label {
+    font-weight: 700;
+    margin-right: 0.15rem;
+  }
+}
+
+.tcm-tag {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid $project-line;
+  border-radius: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $project-muted;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.tcm-item-links {
+  margin: 0;
+  padding-left: 1.2rem;
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-hero,
   .project-section,

@@ -1,0 +1,159 @@
+{% assign is_zh = false %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+
+{% if is_zh %}
+  {% assign all_label = "全部" %}
+  {% assign type_aria = "资源类型" %}
+  {% assign year_aria = "年份筛选" %}
+  {% assign all_years = "全部年份" %}
+  {% assign hub_title = "资源目录" %}
+  {% assign search_ph = "搜索名称 / 机构 / 标签…" %}
+  {% assign updated_prefix = "更新于：" %}
+  {% assign hide_general_label = "隐藏通医" %}
+  {% assign empty_msg = "没有匹配的资源。" %}
+  {% assign blurb_all_title = "全部资源" %}
+  {% assign blurb_all = "中医大模型相关新闻、论文、综述、数据集与开源权重，按类型与年份筛选。" %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+{% else %}
+  {% assign all_label = "All" %}
+  {% assign type_aria = "Resource type" %}
+  {% assign year_aria = "Filter by year" %}
+  {% assign all_years = "All years" %}
+  {% assign hub_title = "Catalog" %}
+  {% assign search_ph = "Search name / org / tag…" %}
+  {% assign updated_prefix = "Updated: " %}
+  {% assign hide_general_label = "Hide general-medical" %}
+  {% assign empty_msg = "No matching resources." %}
+  {% assign blurb_all_title = "All resources" %}
+  {% assign blurb_all = "TCM LLM news, papers, surveys, datasets, and open weights — filter by type and year." %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+{% endif %}
+
+{% assign catalog = site.data.tcm_catalog %}
+{% assign raw_items = catalog.items | default: empty %}
+{% assign updated_at = catalog.updated_at | default: catalog.meta.updated_at %}
+
+{% comment %} Collect years + types present in data {% endcomment %}
+{% assign year_list = "" | split: "" %}
+{% assign type_present = "" | split: "" %}
+{% for it in raw_items %}
+  {% assign y = it.year | append: "" %}
+  {% if y == "" and it.date %}{% assign y = it.date | slice: 0, 4 %}{% endif %}
+  {% if y != "" %}{% assign year_list = year_list | push: y %}{% endif %}
+  {% if it.type %}{% assign type_present = type_present | push: it.type %}{% endif %}
+{% endfor %}
+{% assign year_list = year_list | uniq | sort | reverse %}
+{% assign type_present = type_present | uniq %}
+
+{% assign type_order = "news,resource,survey,dataset,model_hf,tool,kg,product,benchmark" | split: "," %}
+
+<div class="tcm-hub project-hub" data-tcm-hub data-locale="{% if is_zh %}zh{% else %}en{% endif %}">
+  <div class="hub-title-row">
+    <h2 id="tcm-heading-overview">{{ hub_title }}</h2>
+    <input id="tcm-search" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-tcm-search>
+  </div>
+
+  {% if updated_at %}
+  <p class="tcm-updated notes-stats" id="tcm-updated">{{ updated_prefix }}{{ updated_at }}</p>
+  {% endif %}
+
+  <nav class="project-cat-nav" aria-label="{{ type_aria }}" data-tcm-type-nav>
+    <button type="button" class="is-active" data-tcm-type="all" data-hash="#type-all" data-blurb-title="{{ blurb_all_title | escape }}" data-blurb="{{ blurb_all | escape }}">{{ all_label }}</button>
+    {% for key in type_order %}
+      {% if type_present contains key %}
+        {% assign label = key %}
+        {% for pair in type_labels %}
+          {% assign parts = pair | split: ":" %}
+          {% if parts[0] == key %}{% assign label = parts[1] %}{% endif %}
+        {% endfor %}
+        <button type="button" data-tcm-type="{{ key }}" data-hash="#type-{{ key }}" data-blurb-title="{{ label | escape }}" data-blurb="{{ blurb_all | escape }}">{{ label }}</button>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ year_aria }}" data-tcm-year-nav>
+    <button type="button" class="is-active" data-tcm-year="all">{{ all_years }}</button>
+    {% for y in year_list %}
+      <button type="button" data-tcm-year="{{ y }}">{{ y }}</button>
+    {% endfor %}
+  </nav>
+
+  <div class="tcm-hub-toggles">
+    <button type="button" class="is-active" data-tcm-hide-general aria-pressed="true">{{ hide_general_label }}</button>
+  </div>
+
+  <header class="project-cat-head" data-tcm-blurb>
+    <h3 data-tcm-blurb-title>{{ blurb_all_title }}</h3>
+    <p data-tcm-blurb-text>{{ blurb_all }}</p>
+  </header>
+
+  <div class="project-hub-results tcm-hub-results">
+    <div class="project-grid" data-tcm-grid>
+      {% assign sorted_items = raw_items | sort: "date" | reverse %}
+      {% for it in sorted_items %}
+        {% assign y = it.year | append: "" %}
+        {% if y == "" and it.date %}{% assign y = it.date | slice: 0, 4 %}{% endif %}
+        {% assign type_key = it.type | default: "resource" %}
+        {% assign type_label = type_key %}
+        {% for pair in type_labels %}
+          {% assign parts = pair | split: ":" %}
+          {% if parts[0] == type_key %}{% assign type_label = parts[1] %}{% endif %}
+        {% endfor %}
+
+        {% if type_key == "news" %}
+          {% assign card_title = it.summary_zh | default: it.name | default: it.id %}
+          {% assign card_summary = "" %}
+        {% else %}
+          {% assign card_title = it.name | default: it.title_zh | default: it.id %}
+          {% assign card_summary = it.summary_zh | default: it.title_zh | default: "" %}
+        {% endif %}
+        {% assign card_title = card_title | replace: "**", "" %}
+        {% assign card_summary = card_summary | replace: "**", "" %}
+
+        {% assign orgs = it.orgs | join: " / " %}
+        {% assign venue = it.venue | default: "" %}
+        {% assign date_show = it.date | default: y %}
+        {% assign meta_bits = type_label %}
+        {% if date_show != "" %}{% assign meta_bits = meta_bits | append: " · " | append: date_show %}{% endif %}
+        {% if venue != "" %}{% assign meta_bits = meta_bits | append: " · " | append: venue %}{% endif %}
+        {% if orgs != "" %}{% assign meta_bits = meta_bits | append: " · " | append: orgs %}{% endif %}
+
+        {% assign is_general = false %}
+        {% for tg in it.tags %}
+          {% if tg == "general-medical" %}{% assign is_general = true %}{% endif %}
+        {% endfor %}
+
+        {% if is_zh %}
+          {% assign item_url = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
+        {% else %}
+          {% assign item_url = "/projects/tcm/items/" | append: it.id | append: "/" %}
+        {% endif %}
+
+        {% capture search_blob %}{{ card_title }} {{ card_summary }} {{ orgs }} {{ venue }} {{ it.tags | join: " " }} {{ it.name }}{% endcapture %}
+
+        <a class="project-card-link"
+           href="{{ item_url | relative_url }}"
+           data-tcm-card
+           data-type="{{ type_key }}"
+           data-year="{{ y }}"
+           data-general="{% if is_general %}1{% else %}0{% endif %}"
+           data-search="{{ search_blob | strip_newlines | strip | escape }}">
+          <div class="venue">{{ meta_bits }}</div>
+          <h2>{{ card_title }}</h2>
+          {% if card_summary != "" and card_summary != card_title %}
+          <p>{{ card_summary }}</p>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+    <p class="notes-hub-empty" data-tcm-empty hidden>{{ empty_msg }}</p>
+  </div>
+
+  <div class="hub-pager-row" data-tcm-pager-row hidden>
+    <p class="notes-stats" data-tcm-stats></p>
+    <nav class="notes-pagination" data-tcm-pagination aria-label="Pagination"></nav>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/tcm-hub.js' | relative_url }}"></script>

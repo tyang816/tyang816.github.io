@@ -60,12 +60,12 @@
   slug: tcm
   image: "/images/papers/tcm.png"
   category: llm
-  venue: Resource hub
-  venue_zh: 资源导航
-  tagline: Curated Traditional Chinese Medicine LLM resources
-  tagline_zh: 中医大模型开源资源导航
-  summary: Open catalog of TCM LLM papers, models, benchmarks, datasets, and industry news — synced with Awesome-TCM-LLM.
-  summary_zh: 汇总中医大模型论文、开源权重、评测、数据集与行业动态，与 Awesome-TCM-LLM 同源维护。
+  venue: News hub
+  venue_zh: 新闻汇聚
+  tagline: Curated Traditional Chinese Medicine LLM news and resources
+  tagline_zh: 中医大模型新闻与开源资源汇聚
+  summary: Filterable hub of TCM LLM news, papers, surveys, models, and datasets — synced with Awesome-TCM-LLM.
+  summary_zh: 可筛选的中医大模型新闻与资源汇聚：论文、综述、开源权重与数据集，与 Awesome-TCM-LLM 同源维护。
   url: /projects/tcm/
   url_zh: /zh/projects/tcm/
   code: https://github.com/tyang816/Awesome-TCM-LLM

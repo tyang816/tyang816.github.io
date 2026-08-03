@@ -1,0 +1,167 @@
+{% assign is_zh = false %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+
+{% assign item = false %}
+{% for it in site.data.tcm_catalog.items %}
+  {% if it.id == page.tcm_item_id %}
+    {% assign item = it %}
+  {% endif %}
+{% endfor %}
+
+{% if is_zh %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+  {% assign back_label = "返回资源目录" %}
+  {% assign hub_url = "/zh/projects/tcm/" %}
+  {% assign links_heading = "相关链接" %}
+  {% assign related_heading = "相关" %}
+  {% assign github_label = "Awesome-TCM-LLM" %}
+  {% assign med_label = "MedChatZH" %}
+  {% assign orgs_label = "机构" %}
+  {% assign tags_label = "标签" %}
+  {% assign missing = "未找到该条目，可能已被移除。请返回目录。" %}
+{% else %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+  {% assign back_label = "Back to catalog" %}
+  {% assign hub_url = "/projects/tcm/" %}
+  {% assign links_heading = "Links" %}
+  {% assign related_heading = "Related" %}
+  {% assign github_label = "Awesome-TCM-LLM" %}
+  {% assign med_label = "MedChatZH" %}
+  {% assign orgs_label = "Organizations" %}
+  {% assign tags_label = "Tags" %}
+  {% assign missing = "This item was not found. It may have been removed — return to the catalog." %}
+{% endif %}
+
+{% unless item %}
+<section class="project-section">
+  <p>{{ missing }}</p>
+  <div class="project-cta">
+    <a class="project-btn project-btn--primary" href="{{ hub_url | relative_url }}">{{ back_label }}</a>
+  </div>
+</section>
+{% else %}
+  {% assign type_key = item.type | default: "resource" %}
+  {% assign type_label = type_key %}
+  {% for pair in type_labels %}
+    {% assign parts = pair | split: ":" %}
+    {% if parts[0] == type_key %}{% assign type_label = parts[1] %}{% endif %}
+  {% endfor %}
+
+  {% if type_key == "news" %}
+    {% assign item_title = item.summary_zh | default: item.name | default: item.id %}
+    {% assign item_body = "" %}
+  {% else %}
+    {% assign item_title = item.name | default: item.title_zh | default: item.id %}
+    {% assign item_body = item.summary_zh | default: item.title_zh | default: "" %}
+  {% endif %}
+  {% assign item_title = item_title | replace: "**", "" %}
+  {% comment %} Keep simple bold markers as HTML via markdownify on a temporary string {% endcomment %}
+  {% capture body_md %}{{ item.summary_zh | default: item.title_zh | default: "" }}{% endcapture %}
+  {% if type_key == "news" %}
+    {% capture body_md %}{{ item.summary_zh | default: item.name | default: "" }}{% endcapture %}
+  {% endif %}
+
+  {% assign date_show = item.date | default: item.year %}
+  {% assign orgs = item.orgs | join: " / " %}
+
+  <header class="project-hero tcm-item-hero">
+    <p class="project-kicker">{{ type_label }}{% if date_show %} · {{ date_show }}{% endif %}</p>
+    <h1>{{ item_title }}</h1>
+    {% if item.venue %}
+    <p class="project-lede">{{ item.venue }}</p>
+    {% endif %}
+    {% if orgs != "" %}
+    <p class="project-authors">{{ orgs_label }}：{{ orgs }}</p>
+    {% endif %}
+    <div class="project-cta">
+      {% assign link_i = 0 %}
+      {% for link in item.links %}
+        {% if link[1] and link[1] != "" %}
+          {% if link_i == 0 %}
+          <a class="project-btn project-btn--primary" href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>
+          {% else %}
+          <a class="project-btn project-btn--ghost" href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>
+          {% endif %}
+          {% assign link_i = link_i | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      <a class="project-btn project-btn--ghost" href="{{ hub_url | relative_url }}">{{ back_label }}</a>
+    </div>
+  </header>
+
+  {% if body_md != "" %}
+  <section class="project-section">
+    <div class="tcm-item-summary">
+      {{ body_md | markdownify }}
+    </div>
+    {% if item.tags and item.tags.size > 0 %}
+    <p class="tcm-item-tags"><span class="tcm-item-tags__label">{{ tags_label }}</span>
+      {% for tg in item.tags %}<span class="tcm-tag">{{ tg }}</span>{% endfor %}
+    </p>
+    {% endif %}
+  </section>
+  {% elsif item.tags and item.tags.size > 0 %}
+  <section class="project-section">
+    <p class="tcm-item-tags"><span class="tcm-item-tags__label">{{ tags_label }}</span>
+      {% for tg in item.tags %}<span class="tcm-tag">{{ tg }}</span>{% endfor %}
+    </p>
+  </section>
+  {% endif %}
+
+  {% if link_i and link_i > 0 %}
+  <section class="project-section">
+    <h2>{{ links_heading }}</h2>
+    <ul class="tcm-item-links">
+      {% for link in item.links %}
+        {% if link[1] and link[1] != "" %}
+        <li><a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="project-section">
+    <h2>{{ related_heading }}</h2>
+    <ul>
+      <li><a href="{{ hub_url | relative_url }}">{% if is_zh %}中医大模型资源目录{% else %}TCM AI catalog{% endif %}</a></li>
+      <li>
+        {% if is_zh %}
+        <a href="{{ '/zh/projects/medchatzh/' | relative_url }}">{{ med_label }}</a>
+        {% else %}
+        <a href="{{ '/projects/medchatzh/' | relative_url }}">{{ med_label }}</a>
+        {% endif %}
+      </li>
+      <li><a href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">{{ github_label }}</a></li>
+    </ul>
+  </section>
+
+  {% assign ld_type = "CreativeWork" %}
+  {% if type_key == "news" %}{% assign ld_type = "NewsArticle" %}{% endif %}
+  {% assign ld_date = item.verified_at | default: item.date %}
+  {% if item.date %}
+    {% assign ld_date_iso = item.date | replace: ".", "-" %}
+    {% if ld_date_iso.size == 7 %}{% assign ld_date_iso = ld_date_iso | append: "-01" %}{% endif %}
+  {% else %}
+    {% assign ld_date_iso = item.verified_at %}
+  {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {{ ld_type | jsonify }},
+    "headline": {{ item_title | jsonify }},
+    "name": {{ item_title | jsonify }},
+    "description": {{ body_md | strip_html | strip_newlines | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "inLanguage": {% if is_zh %}"zh-CN"{% else %}"en"{% endif %},
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": {% if is_zh %}"中医大模型资源"{% else %}"TCM AI Resources"{% endif %},
+      "url": {{ hub_url | absolute_url | jsonify }}
+    }
+    {% if ld_date_iso %},"datePublished": {{ ld_date_iso | jsonify }}{% endif %}
+    {% if item.tags %},"keywords": {{ item.tags | join: ", " | jsonify }}{% endif %}
+  }
+  </script>
+{% endunless %}
