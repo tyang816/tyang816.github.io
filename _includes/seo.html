@@ -109,10 +109,22 @@
   {% if excerpt_plain contains "论文地址" or excerpt_plain contains "论文实现" %}
     {% assign excerpt_is_linkdump = true %}
   {% endif %}
+  {% if is_post and excerpt_plain contains "Paper:" %}
+    {% assign excerpt_is_linkdump = true %}
+  {% endif %}
   {% if excerpt_plain != "" and excerpt_is_linkdump == false %}
     {% assign seo_description = excerpt_plain | truncate: 160 %}
   {% elsif is_post %}
-    {% assign content_plain = page.content | strip_html | strip_newlines | strip %}
+    {% comment %} Strip the leading link-dump blockquote (Paper:/论文地址…) before extracting text {% endcomment %}
+    {% assign post_html = page.content %}
+    {% assign bq_parts = post_html | split: "</blockquote>" %}
+    {% if bq_parts.size > 1 %}
+      {% assign first_bq_text = bq_parts[0] | strip_html %}
+      {% if first_bq_text contains "Paper:" or first_bq_text contains "Project:" or first_bq_text contains "论文地址" or first_bq_text contains "论文实现" or first_bq_text contains "项目地址" %}
+        {% assign post_html = bq_parts | slice: 1, 999 | join: " " %}
+      {% endif %}
+    {% endif %}
+    {% assign content_plain = post_html | strip_html | strip_newlines | strip %}
     {% assign desc_candidate = "" %}
     {% if content_plain contains "Abstract" %}
       {% assign abs_parts = content_plain | split: "Abstract" %}
@@ -146,6 +158,25 @@
     {% assign seo_keywords = _kw %}
   {% elsif seo_notecat %}
     {% capture _kw %}{{ seo_notecat.name }}, {{ seo_notecat.name_zh }}, paper notes, 论文笔记, Yang Tan, 谭扬{% endcapture %}
+    {% assign seo_keywords = _kw %}
+  {% elsif is_post and page.tags.size > 0 %}
+    {% comment %} Post-specific keywords: own tags + category name + author {% endcomment %}
+    {% assign _post_cat = "" %}
+    {% for c in page.categories %}
+      {% unless c == "zh" or c == "en" %}
+        {% if _post_cat == "" %}{% assign _post_cat = c %}{% endif %}
+      {% endunless %}
+    {% endfor %}
+    {% for cat in site.data.note_categories %}
+      {% if cat.id == _post_cat %}
+        {% if is_zh_page %}
+          {% assign _post_cat = cat.name_zh | default: cat.name %}
+        {% else %}
+          {% assign _post_cat = cat.name %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% capture _kw %}{{ page.tags | join: ", " }}, {{ _post_cat }}, {% if is_zh_page %}论文笔记, 谭扬{% else %}paper notes, Yang Tan{% endif %}{% endcapture %}
     {% assign seo_keywords = _kw %}
   {% endif %}
 {% endunless %}
@@ -194,6 +225,12 @@
 {% endif %}
 {% if is_post and page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {% if _post_cat and _post_cat != "" %}
+    <meta property="article:section" content="{{ _post_cat | escape }}">
+  {% endif %}
+  {% for t in page.tags %}
+    <meta property="article:tag" content="{{ t | escape }}">
+  {% endfor %}
 {% endif %}
 
 <link rel="canonical" href="{{ canonical_url }}">

@@ -51,3 +51,44 @@ author_profile: true
 {% endif %}
 
 {{ content }}
+
+{% comment %} Related notes: same category, centered on this post by date — builds
+  the internal-link mesh between notes and back to the category hub. {% endcomment %}
+{% if primary_cat != "" %}
+  {% if post_is_zh %}
+    {% assign rel_lang = "zh-CN" %}
+  {% else %}
+    {% assign rel_lang = "en" %}
+  {% endif %}
+  {% assign cat_posts = site.posts | where: "lang", rel_lang | where: "categories", primary_cat | sort: "date" %}
+  {% assign self_idx = -1 %}
+  {% for p in cat_posts %}
+    {% if p.url == page.url %}{% assign self_idx = forloop.index0 %}{% endif %}
+  {% endfor %}
+  {% if self_idx >= 0 %}
+    {% assign win_start = self_idx | minus: 3 %}
+    {% if win_start < 0 %}{% assign win_start = 0 %}{% endif %}
+    {% assign rel_window = cat_posts | slice: win_start, 7 %}
+    {% assign cat_slug = primary_cat | downcase %}
+    <nav class="post-related-notes" aria-label="{% if post_is_zh %}相关笔记{% else %}Related notes{% endif %}">
+      <h2>{% if post_is_zh %}相关笔记{% else %}Related notes{% endif %}</h2>
+      <ul>
+        {% assign rel_shown = 0 %}
+        {% for p in rel_window %}
+          {% if p.url != page.url and rel_shown < 6 %}
+            <li>
+              <a href="{{ p.url | relative_url }}">{{ p.title | escape_once }}</a>
+              <span class="post-related-notes__date">{{ p.date | date: "%Y-%m-%d" }}</span>
+            </li>
+            {% assign rel_shown = rel_shown | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p class="post-related-notes__more">
+        <a href="{% if post_is_zh %}{{ '/zh/notes/' | append: cat_slug | append: '/' | relative_url }}{% else %}{{ '/notes/' | append: cat_slug | append: '/' | relative_url }}{% endif %}">
+          {% if post_is_zh %}更多{{ cat_label }}笔记 →{% else %}More {{ cat_label }} notes →{% endif %}
+        </a>
+      </p>
+    </nav>
+  {% endif %}
+{% endif %}

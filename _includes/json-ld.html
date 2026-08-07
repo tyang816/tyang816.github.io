@@ -50,10 +50,21 @@
   {% if excerpt_plain contains "论文地址" or excerpt_plain contains "论文实现" %}
     {% assign excerpt_is_linkdump = true %}
   {% endif %}
+  {% if is_post and excerpt_plain contains "Paper:" %}
+    {% assign excerpt_is_linkdump = true %}
+  {% endif %}
   {% if excerpt_plain != "" and excerpt_is_linkdump == false %}
     {% assign ld_description = excerpt_plain | truncate: 160 %}
   {% elsif is_post %}
-    {% assign content_plain = page.content | strip_html | strip_newlines | strip %}
+    {% assign post_html = page.content %}
+    {% assign bq_parts = post_html | split: "</blockquote>" %}
+    {% if bq_parts.size > 1 %}
+      {% assign first_bq_text = bq_parts[0] | strip_html %}
+      {% if first_bq_text contains "Paper:" or first_bq_text contains "Project:" or first_bq_text contains "论文地址" or first_bq_text contains "论文实现" or first_bq_text contains "项目地址" %}
+        {% assign post_html = bq_parts | slice: 1, 999 | join: " " %}
+      {% endif %}
+    {% endif %}
+    {% assign content_plain = post_html | strip_html | strip_newlines | strip %}
     {% assign desc_candidate = "" %}
     {% if content_plain contains "Abstract" %}
       {% assign abs_parts = content_plain | split: "Abstract" %}
@@ -198,7 +209,7 @@
       "name": {{ ld_name | jsonify }},
       "numberOfItems": {{ site.data.tcm_catalog.items.size }},
       "itemListElement": [
-        {% for it in site.data.tcm_catalog.items limit: 60 %}
+        {% for it in site.data.tcm_catalog.items %}
           {% if is_zh_ld %}
             {% assign tcm_item_path = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
             {% if it.type == "news" %}
@@ -269,6 +280,23 @@
       "description": {{ ld_description | jsonify }},
       "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
       "inLanguage": {{ page_lang | jsonify }},
+      {% assign ld_sec = "" %}
+      {% for c in page.categories %}
+        {% unless c == "zh" or c == "en" %}
+          {% if ld_sec == "" %}{% assign ld_sec = c %}{% endif %}
+        {% endunless %}
+      {% endfor %}
+      {% for cat in site.data.note_categories %}
+        {% if cat.id == ld_sec %}
+          {% if is_zh_ld %}
+            {% assign ld_sec = cat.name_zh | default: cat.name %}
+          {% else %}
+            {% assign ld_sec = cat.name %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% if ld_sec != "" %}"articleSection": {{ ld_sec | jsonify }},{% endif %}
+      {% if page.tags.size > 0 %}"keywords": {{ page.tags | join: ", " | jsonify }},{% endif %}
       "author": { "@id": "{{ seo_url }}/#person" },
       "publisher": { "@id": "{{ seo_url }}/#person" },
       "isPartOf": { "@id": "{{ seo_url }}/#website" },

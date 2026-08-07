@@ -24,10 +24,10 @@ author_profile: true
 我是**谭扬（Yang Tan）**，现于[上海交通大学](https://www.sjtu.edu.cn/)与[上海创智学院](https://www.sii.edu.cn/)攻读博士学位，导师为[洪亮](https://ins.sjtu.edu.cn/people/lhong/index.html)教授，联培导师为[董楠卿](https://eveningdong.github.io/)教授。2025 年获华东理工大学计算机科学与技术硕士学位（GPA 3.8/4.0，专业第一），2022 年获软件工程学士学位（GPA 3.8/4.0，专业第一）。
 
 研究方向位于人工智能与生物学交叉（AI for Biology）：
-- *人工智能*：大语言模型、图神经网络、智能体工作流
-- *生物学*：定向进化、功能预测、蛋白结合体设计
+- *人工智能*：[大语言模型]({{ '/zh/notes/cl/' | relative_url }})、图神经网络、智能体工作流
+- *生物学*：[定向进化、功能预测]({{ '/zh/notes/bi/' | relative_url }})、蛋白结合体设计
 
-已在 AI4Bio 相关方向发表论文 20 余篇（含 NeurIPS、ICLR、eLife 等），并担任 NMI、JCTC、ICLR 等审稿人。
+已在 AI4Bio 相关方向发表论文 20 余篇（含 NeurIPS、ICLR、eLife 等），并担任 NMI、JCTC、ICLR 等审稿人。此外，我长期维护 [中医大模型资源大全]({{ '/zh/projects/tcm/' | relative_url }})（Awesome-TCM-LLM），持续收录中医药大语言模型的模型发布、论文、评测基准与开放数据集。
 
 <span class='anchor' id='-news'></span>
 

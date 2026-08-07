@@ -164,4 +164,16 @@
     {% if item.tags %},"keywords": {{ item.tags | join: ", " | jsonify }}{% endif %}
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": {% if is_zh %}"首页"{% else %}"Home"{% endif %}, "item": {% if is_zh %}{{ "/zh/" | absolute_url | jsonify }}{% else %}{{ "/" | absolute_url | jsonify }}{% endif %} },
+      { "@type": "ListItem", "position": 2, "name": {% if is_zh %}"开源项目"{% else %}"Projects"{% endif %}, "item": {% if is_zh %}{{ "/zh/projects/" | absolute_url | jsonify }}{% else %}{{ "/projects/" | absolute_url | jsonify }}{% endif %} },
+      { "@type": "ListItem", "position": 3, "name": {% if is_zh %}"中医大模型"{% else %}"TCM AI"{% endif %}, "item": {{ hub_url | absolute_url | jsonify }} },
+      { "@type": "ListItem", "position": 4, "name": {{ item_title | jsonify }} }
+    ]
+  }
+  </script>
 {% endunless %}

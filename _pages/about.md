@@ -34,10 +34,10 @@ redirect_from:
 My name is **Yang Tan (谭扬)**. I am now a PhD student in [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) & [Shanghai Innovation Institute](https://www.sii.edu.cn/), supervised by Prof. [Liang Hong](https://ins.sjtu.edu.cn/people/lhong/index.html) and co-advised by Prof. [Nanqing Dong](https://eveningdong.github.io/). I receive my M.S. degree of Computer Science (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2025, supervised by Prof. [Guisheng Fan](https://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm) and Prof. [Huiqun Yu](https://faculty.ecust.edu.cn/cise/yhq/main.htm), and B.S. degree of Software Engineering (GPA 3.8/4.0, #1 ranking) from East China University of Science and Technology in 2022.
 
 My research interests lie at the intersection of Artificial Intelligence and Biology. 
-- *AI research*: Large Language Models, Graph Neural Networks, and Agent Workflow.
-- *Biology research*: Directed Evolution, Function Prediction, and Binder Design.
+- *AI research*: [Large Language Models]({{ '/notes/cl/' | relative_url }}), Graph Neural Networks, and Agent Workflow.
+- *Biology research*: [Directed Evolution, Function Prediction]({{ '/notes/bi/' | relative_url }}), and Binder Design.
 
-I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc).
+I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc). I also maintain the [TCM LLM hub]({{ '/projects/tcm/' | relative_url }}) (Awesome-TCM-LLM), which continuously tracks Traditional Chinese Medicine large language models, papers, benchmarks, and open datasets.
 
 ## 🔥 News
 {:.home-section}
