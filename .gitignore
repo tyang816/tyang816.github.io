@@ -2,3 +2,5 @@ _site/
 push.sh
 .DS_Store
 tmp/
+.claude/
+.cursor/
