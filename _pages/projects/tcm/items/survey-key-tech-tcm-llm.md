@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/survey-key-tech-tcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
-seo_description: "系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
+description: "Survey of key technologies for TCM LLMs: knowledge organization, aided diagnosis, and clinical decision support (formally published in IJPRAI, World Scientific)."
+seo_description: "Survey of key technologies for TCM LLMs: knowledge organization, aided diagnosis, and clinical decision support (formally published in IJPRAI, World Scientific)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

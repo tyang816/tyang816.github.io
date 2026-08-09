@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/cmm-embedcluster/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于LLM与药性理论的中药聚类框架，构建567味药性知识库"
-seo_description: "基于LLM与药性理论的中药聚类框架，构建567味药性知识库"
+description: "LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
+seo_description: "LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

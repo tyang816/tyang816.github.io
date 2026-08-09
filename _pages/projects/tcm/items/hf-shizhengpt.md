@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 系列"
-seo_description: "ShizhenGPT 系列"
+description: "ShizhenGPT multimodal weight series."
+seo_description: "ShizhenGPT multimodal weight series."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

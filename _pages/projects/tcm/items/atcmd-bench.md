@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/atcmd-bench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "首个Agentic中医诊断基准，通过多智能体模拟问诊评估LLM诊疗能力"
-seo_description: "首个Agentic中医诊断基准，通过多智能体模拟问诊评估LLM诊疗能力"
+description: "First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
+seo_description: "First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

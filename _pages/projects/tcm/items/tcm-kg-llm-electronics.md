@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-kg-llm-electronics/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于大语言模型的中医知识图谱构建"
-seo_description: "基于大语言模型的中医知识图谱构建"
+description: "Constructing Traditional Chinese Medicine knowledge graphs based on large language models."
+seo_description: "Constructing Traditional Chinese Medicine knowledge graphs based on large language models."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-tongue/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
-seo_description: "6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
+description: "6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
+seo_description: "6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

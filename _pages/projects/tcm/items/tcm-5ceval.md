@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-5ceval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
-seo_description: "在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
+description: "Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
+seo_description: "Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

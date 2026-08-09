@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/zhifangdantai/
-title: "知方丹台 (ZhiFangDanTai) | TCM AI"
+title: "ZhiFangDanTai | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/zhifangdantai/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GraphRAG+LLM微调的中医方剂生成框架，输出君臣佐使/功效/禁忌等可解释信息并开源权重"
-seo_description: "GraphRAG+LLM微调的中医方剂生成框架，输出君臣佐使/功效/禁忌等可解释信息并开源权重"
+description: "GraphRAG + LLM fine-tuning for interpretable formula generation (sovereign–minister–assistant–courier, efficacy, contraindications) with open weights."
+seo_description: "GraphRAG + LLM fine-tuning for interpretable formula generation (sovereign–minister–assistant–courier, efficacy, contraindications) with open weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -22,7 +22,7 @@ keywords:
 - "rag"
 - "kg"
 - "open-weights"
-- "知方丹台 (ZhiFangDanTai)"
+- "ZhiFangDanTai"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

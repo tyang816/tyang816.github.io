@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-prescription-hybrid-retrieval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "混合检索+重排序增强LLM的中医处方生成（Springer CCIS会议论文）"
-seo_description: "混合检索+重排序增强LLM的中医处方生成（Springer CCIS会议论文）"
+description: "Hybrid retrieval with re-ranking to enhance LLM-based TCM prescription generation (Springer CCIS conference paper)."
+seo_description: "Hybrid retrieval with re-ranking to enhance LLM-based TCM prescription generation (Springer CCIS conference paper)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

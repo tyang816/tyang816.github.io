@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-std-rag-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索增强技术构建中医药标准知识问答系统的探索与实践"
-seo_description: "检索增强技术构建中医药标准知识问答系统的探索与实践"
+description: "Retrieval-augmented QA system for TCM standards knowledge, built and evaluated in practice."
+seo_description: "Retrieval-augmented QA system for TCM standards knowledge, built and evaluated in practice."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-guop2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI 全景综述（ML/DL/KG/NLP/LLM），LLM 为一节，附多尺度数据资源与平台编目"
-seo_description: "AI 全景综述（ML/DL/KG/NLP/LLM），LLM 为一节，附多尺度数据资源与平台编目"
+description: "Panoramic AI review (ML/DL/KG/NLP/LLM) for TCM modernization with multimodal data integration."
+seo_description: "Panoramic AI review (ML/DL/KG/NLP/LLM) for TCM modernization with multimodal data integration."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

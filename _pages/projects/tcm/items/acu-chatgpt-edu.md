@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/acu-chatgpt-edu/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatGPT 作为针灸学习工具的对照研究"
-seo_description: "ChatGPT 作为针灸学习工具的对照研究"
+description: "Comparative study of ChatGPT as a learning tool in acupuncture education."
+seo_description: "Comparative study of ChatGPT as a learning tool in acupuncture education."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

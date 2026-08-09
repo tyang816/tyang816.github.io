@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/new-snow-tablets/
-title: "New Snow Tablets（新雪片） | TCM AI"
+title: "New Snow Tablets | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/new-snow-tablets/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "揭示通用与中医专用LLM依赖药名猜测成分的系统缺陷"
-seo_description: "揭示通用与中医专用LLM依赖药名猜测成分的系统缺陷"
+description: "Reveals systematic flaws of general and TCM-specific LLMs that guess formula ingredients from drug names."
+seo_description: "Reveals systematic flaws of general and TCM-specific LLMs that guess formula ingredients from drug names."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "evaluation"
-- "New Snow Tablets（新雪片）"
+- "New Snow Tablets"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

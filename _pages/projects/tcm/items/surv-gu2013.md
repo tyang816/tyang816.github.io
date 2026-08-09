@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-gu2013/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "生物信息学×中医（组学、文本挖掘）历史综述"
-seo_description: "生物信息学×中医（组学、文本挖掘）历史综述"
+description: "Historical review of bioinformatics meeting TCM (omics and text mining)."
+seo_description: "Historical review of bioinformatics meeting TCM (omics and text mining)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tianyi/
-title: "天医 (Tianyi) | TCM AI"
+title: "Tianyi | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tianyi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
-seo_description: "南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
+description: "~7B TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation."
+seo_description: "~7B TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "benchmark"
-- "天医 (Tianyi)"
+- "Tianyi"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

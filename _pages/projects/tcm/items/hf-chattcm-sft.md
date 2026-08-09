@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-chattcm-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatTCM全参SFT版"
-seo_description: "ChatTCM全参SFT版"
+description: "ChatTCM full-parameter SFT checkpoint."
+seo_description: "ChatTCM full-parameter SFT checkpoint."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-sage/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医师的证据合成RAG助手（混合向量+知识图谱）"
-seo_description: "面向中医师的证据合成RAG助手（混合向量+知识图谱）"
+description: "Evidence-synthesis RAG assistant for TCM practitioners (hybrid vector + knowledge graph)."
+seo_description: "Evidence-synthesis RAG assistant for TCM practitioners (hybrid vector + knowledge graph)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/bianque/
-title: "扁鹊 (BianQue) | TCM AI"
+title: "BianQue | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/bianque/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文领域生活空间主动健康大模型"
-seo_description: "中文领域生活空间主动健康大模型"
+description: "Chinese proactive health LLM for everyday living spaces (BianQue)."
+seo_description: "Chinese proactive health LLM for everyday living spaces (BianQue)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "general-medical"
-- "扁鹊 (BianQue)"
+- "BianQue"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2023"

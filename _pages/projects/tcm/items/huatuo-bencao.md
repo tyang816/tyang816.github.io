@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/huatuo-bencao/
-title: "本草[原名：华驼(HuaTuo)] | TCM AI"
+title: "BenCao (formerly HuaTuo) | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/huatuo-bencao/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于中文医学知识的大语言模型指令微调"
-seo_description: "基于中文医学知识的大语言模型指令微调"
+description: "Instruction-tuned Chinese medical LLM (BenCao / formerly HuaTuo)."
+seo_description: "Instruction-tuned Chinese medical LLM (BenCao / formerly HuaTuo)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "general-medical"
-- "本草[原名：华驼(HuaTuo)]"
+- "BenCao (formerly HuaTuo)"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2024"

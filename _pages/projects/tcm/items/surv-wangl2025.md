@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-wangl2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述：AI 诊断模型（四诊客观化、辨证）"
-seo_description: "系统综述：AI 诊断模型（四诊客观化、辨证）"
+description: "Systematic review of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
+seo_description: "Systematic review of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

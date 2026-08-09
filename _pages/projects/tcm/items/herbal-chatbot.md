@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/herbal-chatbot/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI 聊天机器人驱动的智能草药配送系统"
-seo_description: "AI 聊天机器人驱动的智能草药配送系统"
+description: "Smarter herbal medication delivery system employing an AI-powered chatbot."
+seo_description: "Smarter herbal medication delivery system employing an AI-powered chatbot."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

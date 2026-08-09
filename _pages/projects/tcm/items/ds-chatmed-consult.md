@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-chatmed-consult/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
-seo_description: "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
+description: "Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
+seo_description: "Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

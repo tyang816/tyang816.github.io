@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tianhui/
-title: "天惠 (TianHui) | TCM AI"
+title: "TianHui | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tianhui/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本"
-seo_description: "面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本"
+description: "Domain LLM for 12 TCM scenarios (DeepSeek-R1-Distill-Qwen-14B + PT/SFT) with open code and eval scripts."
+seo_description: "Domain LLM for 12 TCM scenarios (DeepSeek-R1-Distill-Qwen-14B + PT/SFT) with open code and eval scripts."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "model"
-- "天惠 (TianHui)"
+- "TianHui"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

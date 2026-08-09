@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-llm-bias/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "比较不同国家大模型的中医表现，论证本土化模型的必要性"
-seo_description: "比较不同国家大模型的中医表现，论证本土化模型的必要性"
+description: "Comparing LLMs developed in different countries on TCM; highlights language/cultural bias and the need for localized models."
+seo_description: "Comparing LLMs developed in different countries on TCM; highlights language/cultural bias and the need for localized models."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

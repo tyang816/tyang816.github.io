@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/zmt-m1/
-title: "智明堂 (ZMT-M1) | TCM AI"
+title: "ZMT-M1 | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/zmt-m1/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医大模型及TCM-Eval动态可扩展评测基准"
-seo_description: "中医大模型及TCM-Eval动态可扩展评测基准"
+description: "ZMT-M1 TCM LLM and the dynamic, extensible TCM-Eval benchmark platform."
+seo_description: "ZMT-M1 TCM LLM and the dynamic, extensible TCM-Eval benchmark platform."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "benchmark"
-- "智明堂 (ZMT-M1)"
+- "ZMT-M1"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

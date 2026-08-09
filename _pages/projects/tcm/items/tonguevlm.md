@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tonguevlm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医舌诊多模态大模型，支持舌象描述生成与体质推理"
-seo_description: "中医舌诊多模态大模型，支持舌象描述生成与体质推理"
+description: "Multimodal VLM for TCM tongue diagnosis, description generation, and constitution reasoning."
+seo_description: "Multimodal VLM for TCM tongue diagnosis, description generation, and constitution reasoning."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

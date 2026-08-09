@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/acubert/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "针灸适应证知识库的经络实体识别与分类模型"
-seo_description: "针灸适应证知识库的经络实体识别与分类模型"
+description: "ACUBERT for meridian entity recognition and classification in acupuncture indication knowledge bases."
+seo_description: "ACUBERT for meridian entity recognition and classification in acupuncture indication knowledge bases."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

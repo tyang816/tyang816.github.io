@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-eval-wise/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
-seo_description: "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
+description: "Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) despite the identical name."
+seo_description: "Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) despite the identical name."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

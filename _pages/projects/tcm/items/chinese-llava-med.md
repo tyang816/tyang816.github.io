@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chinese-llava-med/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于 LLaVA 架构的中文医学多模态大模型，支持中文医学影像问答，配套 llava-med-zh-eval 评测集与开源 7B 权重"
-seo_description: "基于 LLaVA 架构的中文医学多模态大模型，支持中文医学影像问答，配套 llava-med-zh-eval 评测集与开源 7B 权重"
+description: "Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
+seo_description: "Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

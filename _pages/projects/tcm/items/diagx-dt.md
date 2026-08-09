@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/diagx-dt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
-seo_description: "辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
+description: "Exclusionary syndrome-differentiation reasoning with CoT and an external TCM knowledge base."
+seo_description: "Exclusionary syndrome-differentiation reasoning with CoT and an external TCM knowledge base."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

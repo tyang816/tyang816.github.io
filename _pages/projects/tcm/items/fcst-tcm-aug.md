@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/fcst-tcm-aug/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
-seo_description: "面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
+description: "Knowledge augmentation for TCM LLMs — a graph built from ~100k classical formulas preserving prescription structure."
+seo_description: "Knowledge augmentation for TCM LLMs — a graph built from ~100k classical formulas preserving prescription structure."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

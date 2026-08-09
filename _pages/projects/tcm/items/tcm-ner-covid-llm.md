@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ner-covid-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
-seo_description: "大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
+description: "Comparative study of LLMs for named entity recognition in TCM COVID-19 literature (preprint)."
+seo_description: "Comparative study of LLMs for named entity recognition in TCM COVID-19 literature (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

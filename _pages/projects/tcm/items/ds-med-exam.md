@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-med-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "医疗大模型中文考试评估"
-seo_description: "医疗大模型中文考试评估"
+description: "Chinese medical exam evaluation for medical LLMs."
+seo_description: "Chinese medical exam evaluation for medical LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

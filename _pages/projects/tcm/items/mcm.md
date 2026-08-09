@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/mcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多智能体协同的中医多模态诊断框架（ICIP 2025）"
-seo_description: "多智能体协同的中医多模态诊断框架（ICIP 2025）"
+description: "Multi-agent collaborative multimodal TCM diagnosis framework (IEEE ICIP 2025)."
+seo_description: "Multi-agent collaborative multimodal TCM diagnosis framework (IEEE ICIP 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

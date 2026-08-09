@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/baize-tcm/
-title: "白泽 (Baize-TCM-LLM) | TCM AI"
+title: "Baize-TCM-LLM | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/baize-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中国中医科学院中药研究所基于Qwen3的中医问答模型系列（0.6B/8B），约15.7万条语料LoRA微调"
-seo_description: "中国中医科学院中药研究所基于Qwen3的中医问答模型系列（0.6B/8B），约15.7万条语料LoRA微调"
+description: "ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
+seo_description: "ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "open-weights"
-- "白泽 (Baize-TCM-LLM)"
+- "Baize-TCM-LLM"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

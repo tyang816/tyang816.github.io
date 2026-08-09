@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/njucm-tcm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "覆盖13个学科共29506道题的中医测评基准，系统评测3个通用模型与5个中文医疗模型"
-seo_description: "覆盖13个学科共29506道题的中医测评基准，系统评测3个通用模型与5个中文医疗模型"
+description: "Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
+seo_description: "Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

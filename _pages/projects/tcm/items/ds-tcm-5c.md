@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-5c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-5CEval 五维中医深度评测"
-seo_description: "TCM-5CEval 五维中医深度评测"
+description: "Five-dimension deep TCM evaluation suite."
+seo_description: "Five-dimension deep TCM evaluation suite."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chatgpt-tcm-feasibility/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
-seo_description: "以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
+description: "Feasibility and challenges of interactive AI for TCM, using ChatGPT as an example."
+seo_description: "Feasibility and challenges of interactive AI for TCM, using ChatGPT as an example."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

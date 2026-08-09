@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-zhao2015/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ML 驱动的中医病人/证候分类综述"
-seo_description: "ML 驱动的中医病人/证候分类综述"
+description: "Review of ML-driven advances in patient classification for TCM."
+seo_description: "Review of ML-driven advances in patient classification for TCM."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

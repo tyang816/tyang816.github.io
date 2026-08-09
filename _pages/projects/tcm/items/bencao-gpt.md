@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/bencao-gpt/
-title: "BenCao（指令微调本草助手） | TCM AI"
+title: "BenCao | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/bencao-gpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于ChatGPT自然语言指令对齐的中医多模态助手，对接舌象API与知识库，部署于GPTs Store（区别于华驼/本草）"
-seo_description: "基于ChatGPT自然语言指令对齐的中医多模态助手，对接舌象API与知识库，部署于GPTs Store（区别于华驼/本草）"
+description: "Instruction-aligned multimodal TCM assistant (ChatGPT/GPTs Store) with tongue APIs and knowledge bases (distinct from HuaTuo/BenCao)."
+seo_description: "Instruction-aligned multimodal TCM assistant (ChatGPT/GPTs Store) with tongue APIs and knowledge bases (distinct from HuaTuo/BenCao)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "multimodal"
-- "BenCao（指令微调本草助手）"
+- "BenCao"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

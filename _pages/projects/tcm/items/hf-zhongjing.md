@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-zhongjing/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "仲景"
-seo_description: "仲景"
+description: "ZhongJing GPT weights."
+seo_description: "ZhongJing GPT weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

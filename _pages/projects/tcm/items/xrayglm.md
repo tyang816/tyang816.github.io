@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/xrayglm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "会看胸部X光片的中文多模态医学大模型"
-seo_description: "会看胸部X光片的中文多模态医学大模型"
+description: "Chinese multimodal medical LLM for chest X-ray interpretation."
+seo_description: "Chinese multimodal medical LLM for chest X-ray interpretation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

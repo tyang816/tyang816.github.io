@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/dongyuan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理"
-seo_description: "中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理"
+description: "Integrative spleen–stomach disease diagnosis LLM framework combining TCM pattern differentiation with Western diagnostic reasoning."
+seo_description: "Integrative spleen–stomach disease diagnosis LLM framework combining TCM pattern differentiation with Western diagnostic reasoning."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

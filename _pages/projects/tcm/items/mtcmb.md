@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/mtcmb/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多任务评测基准，12子集约7100样本，覆盖知识/推理/方剂/安全"
-seo_description: "中医多任务评测基准，12子集约7100样本，覆盖知识/推理/方剂/安全"
+description: "Multi-task TCM benchmark (~12 subsets, ~7.1k samples) covering knowledge, reasoning, formulas, and safety."
+seo_description: "Multi-task TCM benchmark (~12 subsets, ~7.1k samples) covering knowledge, reasoning, formulas, and safety."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

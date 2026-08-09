@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tongue-face-mllm/
-title: "舌面多模态融合智能诊断 | TCM AI"
+title: "Tongue–face multimodal fusion diagnosis | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tongue-face-mllm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "舌-面多模态特征融合+LLM驱动的中医智能诊断"
-seo_description: "舌-面多模态特征融合+LLM驱动的中医智能诊断"
+description: "Tongue–face multimodal feature fusion with LLM-driven intelligent TCM diagnosis."
+seo_description: "Tongue–face multimodal feature fusion with LLM-driven intelligent TCM diagnosis."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "multimodal"
 - "model"
-- "舌面多模态融合智能诊断"
+- "Tongue–face multimodal fusion diagnosis"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

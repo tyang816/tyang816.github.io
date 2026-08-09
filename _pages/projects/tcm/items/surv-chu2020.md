@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-chu2020/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医知识定量表示模型（本体、规则、统计）综述"
-seo_description: "中医知识定量表示模型（本体、规则、统计）综述"
+description: "Review of quantitative knowledge representation models of TCM (ontologies, rules, statistics)."
+seo_description: "Review of quantitative knowledge representation models of TCM (ontologies, rules, statistics)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

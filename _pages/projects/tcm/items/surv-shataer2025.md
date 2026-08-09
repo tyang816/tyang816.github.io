@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-shataer2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "叙述性综述，扫描 TCM LLM 应用场景（诊疗、教育、翻译、科研）"
-seo_description: "叙述性综述，扫描 TCM LLM 应用场景（诊疗、教育、翻译、科研）"
+description: "State-of-the-art review scanning TCM LLM application scenarios (care, education, translation, research)."
+seo_description: "State-of-the-art review scanning TCM LLM application scenarios (care, education, translation, research)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

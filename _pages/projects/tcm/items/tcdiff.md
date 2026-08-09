@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcdiff/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
-seo_description: "三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
+description: "Triplet cascaded diffusion model generating high-fidelity multimodal TCM EHRs, with the TCM-SZ1 benchmark dataset."
+seo_description: "Triplet cascaded diffusion model generating high-fidelity multimodal TCM EHRs, with the TCM-SZ1 benchmark dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

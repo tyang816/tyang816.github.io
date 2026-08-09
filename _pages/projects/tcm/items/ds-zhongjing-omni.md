@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-zhongjing-omni/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhongJing-OMNI 中医多模态评测（含舌诊）"
-seo_description: "ZhongJing-OMNI 中医多模态评测（含舌诊）"
+description: "ZhongJing-OMNI multimodal TCM eval (including tongue)."
+seo_description: "ZhongJing-OMNI multimodal TCM eval (including tongue)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

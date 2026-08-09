@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/metaphor-to-mechanism/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM解码中医隐喻/取象语言并映射现代医学概念"
-seo_description: "LLM解码中医隐喻/取象语言并映射现代医学概念"
+description: "LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
+seo_description: "LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

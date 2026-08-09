@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-zhifangdantai/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知方丹台方剂生成模型"
-seo_description: "知方丹台方剂生成模型"
+description: "ZhiFangDanTai formula-generation model weights."
+seo_description: "ZhiFangDanTai formula-generation model weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-e2e-bench/
-title: "中医端到端临床支持基准 | TCM AI"
+title: "End-to-end TCM clinical support benchmark | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-e2e-bench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向端到端临床支持全链路的中医LLM评测基准"
-seo_description: "面向端到端临床支持全链路的中医LLM评测基准"
+description: "Benchmark for end-to-end TCM clinical support across the full LLM care pipeline."
+seo_description: "Benchmark for end-to-end TCM clinical support across the full LLM care pipeline."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "benchmark"
 - "evaluation"
-- "中医端到端临床支持基准"
+- "End-to-end TCM clinical support benchmark"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

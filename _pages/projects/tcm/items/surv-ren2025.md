@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-ren2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Arksey–O'Malley scoping review，纳入 29 篇（至 2024-04），覆盖知识管理、辅助诊疗与考试准确率"
-seo_description: "Arksey–O'Malley scoping review，纳入 29 篇（至 2024-04），覆盖知识管理、辅助诊疗与考试准确率"
+description: "Arksey-O'Malley scoping review (29 studies to 2024-04) covering knowledge management, assisted care, and exam accuracy."
+seo_description: "Arksey-O'Malley scoping review (29 studies to 2024-04) covering knowledge management, assisted care, and exam accuracy."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

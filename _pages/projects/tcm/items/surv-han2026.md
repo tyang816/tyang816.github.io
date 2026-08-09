@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-han2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
-seo_description: "PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
+description: "PRISMA-ScR scoping review (27 studies to 2025-05) on tuning (LoRA/CPT/RAG) and clinical application of TCM LLMs."
+seo_description: "PRISMA-ScR scoping review (27 studies to 2025-05) on tuning (LoRA/CPT/RAG) and clinical application of TCM LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -48,22 +48,38 @@
     {% if parts[0] == type_key %}{% assign type_label = parts[1] %}{% endif %}
   {% endfor %}
 
-  {% if type_key == "news" %}
-    {% assign item_title = item.summary_zh | default: item.name | default: item.id %}
-    {% assign item_body = "" %}
+  {% if is_zh %}
+    {% if type_key == "news" %}
+      {% assign item_title = item.summary_zh | default: item.name | default: item.id %}
+      {% capture body_md %}{{ item.summary_zh | default: item.name | default: "" }}{% endcapture %}
+    {% else %}
+      {% assign item_title = item.name | default: item.title_zh | default: item.id %}
+      {% capture body_md %}{{ item.summary_zh | default: item.title_zh | default: "" }}{% endcapture %}
+    {% endif %}
+    {% assign orgs = item.orgs | join: " / " %}
+    {% assign item_links = item.links %}
   {% else %}
-    {% assign item_title = item.name | default: item.title_zh | default: item.id %}
-    {% assign item_body = item.summary_zh | default: item.title_zh | default: "" %}
+    {% if type_key == "news" %}
+      {% assign item_title = item.summary_en | default: item.summary_zh | default: item.name | default: item.id %}
+      {% capture body_md %}{{ item.summary_en | default: item.summary_zh | default: item.name | default: "" }}{% endcapture %}
+    {% else %}
+      {% assign item_title = item.name_en | default: item.name | default: item.title_en | default: item.title_zh | default: item.id %}
+      {% capture body_md %}{{ item.summary_en | default: item.title_en | default: item.summary_zh | default: item.title_zh | default: "" }}{% endcapture %}
+    {% endif %}
+    {% if item.orgs_en and item.orgs_en.size > 0 %}
+      {% assign orgs = item.orgs_en | join: " / " %}
+    {% else %}
+      {% assign orgs = item.orgs | join: " / " %}
+    {% endif %}
+    {% if item.links_en and item.links_en.size > 0 %}
+      {% assign item_links = item.links_en %}
+    {% else %}
+      {% assign item_links = item.links %}
+    {% endif %}
   {% endif %}
   {% assign item_title = item_title | replace: "**", "" %}
-  {% comment %} Keep simple bold markers as HTML via markdownify on a temporary string {% endcomment %}
-  {% capture body_md %}{{ item.summary_zh | default: item.title_zh | default: "" }}{% endcapture %}
-  {% if type_key == "news" %}
-    {% capture body_md %}{{ item.summary_zh | default: item.name | default: "" }}{% endcapture %}
-  {% endif %}
 
   {% assign date_show = item.date | default: item.year %}
-  {% assign orgs = item.orgs | join: " / " %}
 
   <header class="project-hero tcm-item-hero">
     <p class="project-kicker">{{ type_label }}{% if date_show %} · {{ date_show }}{% endif %}</p>
@@ -72,11 +88,11 @@
     <p class="project-lede">{{ item.venue }}</p>
     {% endif %}
     {% if orgs != "" %}
-    <p class="project-authors">{{ orgs_label }}：{{ orgs }}</p>
+    <p class="project-authors">{% if is_zh %}{{ orgs_label }}：{{ orgs }}{% else %}{{ orgs_label }}: {{ orgs }}{% endif %}</p>
     {% endif %}
     <div class="project-cta">
       {% assign link_i = 0 %}
-      {% for link in item.links %}
+      {% for link in item_links %}
         {% if link[1] and link[1] != "" %}
           {% if link_i == 0 %}
           <a class="project-btn project-btn--primary" href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>
@@ -113,7 +129,7 @@
   <section class="project-section">
     <h2>{{ links_heading }}</h2>
     <ul class="tcm-item-links">
-      {% for link in item.links %}
+      {% for link in item_links %}
         {% if link[1] and link[1] != "" %}
         <li><a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a></li>
         {% endif %}

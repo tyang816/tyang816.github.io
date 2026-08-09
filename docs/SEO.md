@@ -121,7 +121,7 @@ GitHub Pages 在国内访问与百度抓取均不稳定，**可跳过**。若仍
 
 Awesome-TCM-LLM README、知乎/博客统一指向 `/zh/projects/tcm/` 与 `/zh/projects/`。
 
-TCM 汇聚页数据来自本仓库 `_data/tcm_catalog.json`（由 `scripts/sync_tcm_catalog.py` 从 Awesome-TCM-LLM 同步），条目详情在 `/zh/projects/tcm/items/<id>/`。上游 `meta.portal_url` 若仍指向旧 `/tcm/`，应改为 `/projects/tcm/`（中文 `/zh/projects/tcm/`）。
+TCM 汇聚页数据来自本仓库 `_data/tcm_catalog.json`（由 `scripts/sync_tcm_catalog.py` 从 Awesome-TCM-LLM 同步；优先本地 `--repo`，并合并 `data/i18n_en.yml` 英文摘要），条目详情在 `/zh/projects/tcm/items/<id>/` 与 `/projects/tcm/items/<id>/`。上游 `meta.portal_url` 若仍指向旧 `/tcm/`，应改为 `/projects/tcm/`（中文 `/zh/projects/tcm/`）。
 
 ---
 

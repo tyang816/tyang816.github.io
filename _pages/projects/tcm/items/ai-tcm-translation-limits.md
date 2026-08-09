@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ai-tcm-translation-limits/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
-seo_description: "讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
+description: "Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative-AI translation of TCM texts (Translation Review)."
+seo_description: "Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative-AI translation of TCM texts (Translation Review)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

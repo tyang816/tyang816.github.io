@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/sylvanl-pretrain/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "非网络来源高质量中医预训练数据集（约 1GB），含临床案例、名家典籍、医学百科等，99% 简体中文"
-seo_description: "非网络来源高质量中医预训练数据集（约 1GB），含临床案例、名家典籍、医学百科等，99% 简体中文"
+description: "High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classics, encyclopedia), 99% simplified Chinese."
+seo_description: "High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classics, encyclopedia), 99% simplified Chinese."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

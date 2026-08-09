@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/gat-llm-tcm-prescription/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "图注意力网络与LLM结合的中医处方智能生成模型（KSII TIIS正式发表）"
-seo_description: "图注意力网络与LLM结合的中医处方智能生成模型（KSII TIIS正式发表）"
+description: "Intelligent TCM prescription generation combining graph attention networks with LLMs (formally published in KSII TIIS)."
+seo_description: "Intelligent TCM prescription generation combining graph attention networks with LLMs (formally published in KSII TIIS)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

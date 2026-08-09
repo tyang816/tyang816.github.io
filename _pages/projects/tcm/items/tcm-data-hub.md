@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-data-hub/
-title: "TCM Data Hub（谊元） | TCM AI"
+title: "TCM Data Hub (YiYuan) | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-data-hub/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "谊元 (YiYuan) LLM驱动的中医数据平台"
-seo_description: "谊元 (YiYuan) LLM驱动的中医数据平台"
+description: "YiYuan LLM-driven TCM data platform."
+seo_description: "YiYuan LLM-driven TCM data platform."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "tool"
-- "TCM Data Hub（谊元）"
+- "TCM Data Hub (YiYuan)"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

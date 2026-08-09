@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ladder/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "首个中医多模态问答评测基准，涵盖52000+题目"
-seo_description: "首个中医多模态问答评测基准，涵盖52000+题目"
+description: "First large multimodal TCM QA benchmark with 52,000+ items (NeurIPS 2025)."
+seo_description: "First large multimodal TCM QA benchmark with 52,000+ items (NeurIPS 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

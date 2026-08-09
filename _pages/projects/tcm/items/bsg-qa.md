@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/bsg-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于 BSG 深度学习模型的中医智能问答系统（方剂与中药实例）"
-seo_description: "基于 BSG 深度学习模型的中医智能问答系统（方剂与中药实例）"
+description: "Intelligent QA system for TCM based on a BSG deep-learning model (prescription and materia medica cases)."
+seo_description: "Intelligent QA system for TCM based on a BSG deep-learning model (prescription and materia medica cases)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

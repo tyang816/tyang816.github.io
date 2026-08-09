@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmbencheval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于真实临床医案的LLM中医评测基准"
-seo_description: "基于真实临床医案的LLM中医评测基准"
+description: "Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
+seo_description: "Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

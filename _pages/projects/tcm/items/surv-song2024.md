@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-song2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "战略研究综述：多模态数据融合、症状关联、证候量化与推理及中医药大模型关键问题"
-seo_description: "战略研究综述：多模态数据融合、症状关联、证候量化与推理及中医药大模型关键问题"
+description: "Strategic-study review of key issues in AI-assisted TCM syndrome differentiation — multimodal fusion, symptom association, pattern quantification and reasoning, and TCM LLMs."
+seo_description: "Strategic-study review of key issues in AI-assisted TCM syndrome differentiation — multimodal fusion, symptom association, pattern quantification and reasoning, and TCM LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

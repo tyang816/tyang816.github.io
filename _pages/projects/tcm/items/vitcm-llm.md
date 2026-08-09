@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/vitcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
-seo_description: "Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
+description: "Qwen2.5-VL + RAG tongue multimodal clinical framework; MedTCM dataset and TDEU metric (precursor to MMIR-TCM)."
+seo_description: "Qwen2.5-VL + RAG tongue multimodal clinical framework; MedTCM dataset and TDEU metric (precursor to MMIR-TCM)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-chens2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "叙述性前瞻：多模态、Agent 与临床落地路线"
-seo_description: "叙述性前瞻：多模态、Agent 与临床落地路线"
+description: "Narrative review on the next step of LLMs in TCM — multimodality, agents, and clinical translation."
+seo_description: "Narrative review on the next step of LLMs in TCM — multimodality, agents, and clinical translation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

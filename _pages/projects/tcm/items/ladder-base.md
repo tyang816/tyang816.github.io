@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ladder-base/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM"
-seo_description: "TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM"
+description: "First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team."
+seo_description: "First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

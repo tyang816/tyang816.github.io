@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/linglan/
-title: "灵兰秘典 (LingLan) | TCM AI"
+title: "LingLan | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/linglan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25624 实例"
-seo_description: "大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25624 实例"
+description: "Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,624 instances."
+seo_description: "Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,624 instances."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "benchmark"
 - "evaluation"
-- "灵兰秘典 (LingLan)"
+- "LingLan"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

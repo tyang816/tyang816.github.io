@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcmnsclc/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "真实世界医案全标注（辨证/治法/汤药/中成药）的中医推理数据集"
-seo_description: "真实世界医案全标注（辨证/治法/汤药/中成药）的中医推理数据集"
+description: "Real-world NSCLC TCM reasoning dataset with fully annotated cases (pattern differentiation / treatment method / decoction / patent medicine)."
+seo_description: "Real-world NSCLC TCM reasoning dataset with fully annotated cases (pattern differentiation / treatment method / decoction / patent medicine)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/acu-point-re/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大语言模型关系抽取案例研究：腧穴定位知识"
-seo_description: "大语言模型关系抽取案例研究：腧穴定位知识"
+description: "Relation extraction with LLMs — a case study on acupuncture point locations."
+seo_description: "Relation extraction with LLMs — a case study on acupuncture point locations."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-guideline-adherence/
-title: "中医临床指南遵循评估 | TCM AI"
+title: "TCM guideline adherence evaluation | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-guideline-adherence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM遵循中医临床实践指南的内容分析评估"
-seo_description: "LLM遵循中医临床实践指南的内容分析评估"
+description: "Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
+seo_description: "Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "evaluation"
-- "中医临床指南遵循评估"
+- "TCM guideline adherence evaluation"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

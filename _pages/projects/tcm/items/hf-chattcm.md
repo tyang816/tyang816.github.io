@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-chattcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatTCM"
-seo_description: "ChatTCM"
+description: "ChatTCM pretrained weights."
+seo_description: "ChatTCM pretrained weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-wu2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中药学×AI 全栈 survey（成分、靶点、质控，含 LLM 一节）"
-seo_description: "中药学×AI 全栈 survey（成分、靶点、质控，含 LLM 一节）"
+description: "Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
+seo_description: "Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

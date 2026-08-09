@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-rlaif/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "通过AI反馈强化学习增强大语言模型的中医能力"
-seo_description: "通过AI反馈强化学习增强大语言模型的中医能力"
+description: "Enhancing LLMs' TCM capabilities through reinforcement learning from AI feedback."
+seo_description: "Enhancing LLMs' TCM capabilities through reinforcement learning from AI feedback."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

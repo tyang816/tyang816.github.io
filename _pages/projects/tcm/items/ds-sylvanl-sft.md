@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-sylvanl-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "高质量中医 SFT 数据集"
-seo_description: "高质量中医 SFT 数据集"
+description: "High-quality TCM supervised fine-tuning dataset."
+seo_description: "High-quality TCM supervised fine-tuning dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

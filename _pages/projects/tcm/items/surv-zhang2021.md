@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-zhang2021/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "计算化中医诊断的文献综述（症状采集、辨证建模与系统）"
-seo_description: "计算化中医诊断的文献综述（症状采集、辨证建模与系统）"
+description: "Literature survey of computational TCM diagnosis — symptom acquisition, pattern modeling, and systems."
+seo_description: "Literature survey of computational TCM diagnosis — symptom acquisition, pattern modeling, and systems."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

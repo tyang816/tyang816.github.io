@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-lukman2007/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
-seo_description: "计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
+description: "Foundational survey of computational methods for TCM (expert systems, ML, data mining)."
+seo_description: "Foundational survey of computational methods for TCM (expert systems, ML, data mining)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

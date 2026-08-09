@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-yao2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PRISMA scoping review，纳入 12 篇（2022-11 至 2026-01），覆盖 LLM 循证中医的证据生成、合成与转化"
-seo_description: "PRISMA scoping review，纳入 12 篇（2022-11 至 2026-01），覆盖 LLM 循证中医的证据生成、合成与转化"
+description: "PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based Chinese medicine."
+seo_description: "PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based Chinese medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

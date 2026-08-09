@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-opentcm-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
-seo_description: "OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
+description: "OpenTCM gynecology classics KG (~48k entities / ~152k relations)."
+seo_description: "OpenTCM gynecology classics KG (~48k entities / ~152k relations)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

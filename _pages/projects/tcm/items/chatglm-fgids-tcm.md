@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chatglm-fgids-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识融合的ChatGLM中医临床决策支持模型，面向功能性胃肠病（FGIDs）"
-seo_description: "知识融合的ChatGLM中医临床决策支持模型，面向功能性胃肠病（FGIDs）"
+description: "Knowledge-fused ChatGLM clinical decision-support model for functional gastrointestinal disorders (FGIDs)."
+seo_description: "Knowledge-fused ChatGLM clinical decision-support model for functional gastrointestinal disorders (FGIDs)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

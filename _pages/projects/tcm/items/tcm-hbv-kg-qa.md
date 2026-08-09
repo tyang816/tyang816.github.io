@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-hbv-kg-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
-seo_description: "基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
+description: "Knowledge-graph-based QA system for TCM diagnosis and treatment of viral hepatitis B."
+seo_description: "Knowledge-graph-based QA system for TCM diagnosis and treatment of viral hepatitis B."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

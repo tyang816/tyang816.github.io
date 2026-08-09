@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-text-exams/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Text-Exams 近年中医执业/考研真题文本基准"
-seo_description: "TCM-Text-Exams 近年中医执业/考研真题文本基准"
+description: "Recent TCM licensure / graduate-exam text benchmark."
+seo_description: "Recent TCM licensure / graduate-exam text benchmark."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

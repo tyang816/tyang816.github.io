@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/rag-lora-tcm-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
-seo_description: "RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
+description: "RAG+LoRA generative architecture with an 11,476-item Taiwan TCM licensing-exam dataset (2005-2025), raising accuracy from 61.0% to 89.0%+ (Future Internet, MDPI)."
+seo_description: "RAG+LoRA generative architecture with an 11,476-item Taiwan TCM licensing-exam dataset (2005-2025), raising accuracy from 61.0% to 89.0%+ (Future Internet, MDPI)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

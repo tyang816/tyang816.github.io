@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-shizhen-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
-seo_description: "ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
+description: "ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
+seo_description: "ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

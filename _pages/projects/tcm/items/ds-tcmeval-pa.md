@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcmeval-pa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "328道处方规范性与合理性选择题，面向中药处方安全审核评测"
-seo_description: "328道处方规范性与合理性选择题，面向中药处方安全审核评测"
+description: "328 multiple-choice items on prescription normative quality and safety auditing."
+seo_description: "328 multiple-choice items on prescription normative quality and safety auditing."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

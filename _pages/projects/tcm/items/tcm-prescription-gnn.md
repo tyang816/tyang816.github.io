@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-prescription-gnn/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大语言模型与图神经网络结合的中医处方推荐模型"
-seo_description: "大语言模型与图神经网络结合的中医处方推荐模型"
+description: "TCM prescription recommendation combining large language models with graph neural networks."
+seo_description: "TCM prescription recommendation combining large language models with graph neural networks."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

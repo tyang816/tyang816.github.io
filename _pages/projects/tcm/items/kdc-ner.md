@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/kdc-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
-seo_description: "知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
+description: "Knowledge-guided data augmentation + LLM fine-tuning framework for nested NER in TCM."
+seo_description: "Knowledge-guided data augmentation + LLM fine-tuning framework for nested NER in TCM."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/qwen-tcm-dia/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医泄泻的专科微调模型（续训+CoT指令微调），覆盖症状→病机→治法→方药推理链"
-seo_description: "面向中医泄泻的专科微调模型（续训+CoT指令微调），覆盖症状→病机→治法→方药推理链"
+description: "Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains."
+seo_description: "Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

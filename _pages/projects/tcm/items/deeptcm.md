@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/deeptcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于通用LLM的多专家AI Agent，解析中药复方作用机制（Research Square预印本）"
-seo_description: "基于通用LLM的多专家AI Agent，解析中药复方作用机制（Research Square预印本）"
+description: "DeepTCM1.0: a multi-expert AI agent built on general LLMs for interpreting the mechanisms of TCM compound formulas (Research Square preprint)."
+seo_description: "DeepTCM1.0: a multi-expert AI agent built on general LLMs for interpreting the mechanisms of TCM compound formulas (Research Square preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

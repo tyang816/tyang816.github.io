@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/qibo/
-title: "岐伯 (Qibo) | TCM AI"
+title: "Qibo | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/qibo/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
-seo_description: "天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
+description: "TCM LLM and Qibo Benchmark from Tianjin University et al.; CPT + SFT for SDT and QA."
+seo_description: "TCM LLM and Qibo Benchmark from Tianjin University et al.; CPT + SFT for SDT and QA."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "benchmark"
-- "岐伯 (Qibo)"
+- "Qibo"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

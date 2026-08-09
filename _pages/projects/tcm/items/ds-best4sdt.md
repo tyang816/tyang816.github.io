@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-best4sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-BEST4SDT 辨证论治病例评测基准"
-seo_description: "TCM-BEST4SDT 辨证论治病例评测基准"
+description: "Case benchmark for syndrome differentiation and treatment."
+seo_description: "Case benchmark for syndrome differentiation and treatment."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

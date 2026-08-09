@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/pregenerator/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索与生成方法结合的中医处方推荐模型"
-seo_description: "检索与生成方法结合的中医处方推荐模型"
+description: "TCM prescription recommendation model combining retrieval and generation."
+seo_description: "TCM prescription recommendation model combining retrieval and generation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-ai-tutor-eval/
-title: "中医教育AI导师评估 | TCM AI"
+title: "TCM AI-tutor evaluation | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ai-tutor-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "跨认知层级的多模态LLM中医教育评估"
-seo_description: "跨认知层级的多模态LLM中医教育评估"
+description: "Multimodal LLM evaluation for TCM education across cognitive levels."
+seo_description: "Multimodal LLM evaluation for TCM education across cognitive levels."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "evaluation"
 - "multimodal"
-- "中医教育AI导师评估"
+- "TCM AI-tutor evaluation"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

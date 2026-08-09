@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/cpm-pediatric-influenza/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
-seo_description: "整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
+description: "Knowledge graph of Chinese patent medicines for pediatric influenza built from authoritative guidelines and integrated with an LLM (JMIR Preprints)."
+seo_description: "Knowledge graph of Chinese patent medicines for pediatric influenza built from authoritative guidelines and integrated with an LLM (JMIR Preprints)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-chp-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于《中国药典》一部构建的KnowledgeQA与PrescriptionWriting指令数据"
-seo_description: "基于《中国药典》一部构建的KnowledgeQA与PrescriptionWriting指令数据"
+description: "KnowledgeQA and PrescriptionWriting instructions built from Chinese Pharmacopoeia Vol. I."
+seo_description: "KnowledgeQA and PrescriptionWriting instructions built from Chinese Pharmacopoeia Vol. I."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

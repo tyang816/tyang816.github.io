@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-zhang2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "短 survey+展望，TCM LLM 模型与任务速览"
-seo_description: "短 survey+展望，TCM LLM 模型与任务速览"
+description: "Short survey and outlook on TCM LLM models and tasks."
+seo_description: "Short survey and outlook on TCM LLM models and tasks."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

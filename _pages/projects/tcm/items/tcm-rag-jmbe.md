@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-rag-jmbe/
-title: "LLM+RAG中医推理 | TCM AI"
+title: "LLM + RAG TCM inference | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-rag-jmbe/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM与RAG结合的中医推理方法"
-seo_description: "LLM与RAG结合的中医推理方法"
+description: "Combining LLMs with RAG for TCM inference."
+seo_description: "Combining LLMs with RAG for TCM inference."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "rag"
-- "LLM+RAG中医推理"
+- "LLM + RAG TCM inference"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

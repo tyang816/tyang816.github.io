@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmi-f-6d/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医信息学跨学科基础能力六维基准"
-seo_description: "中医信息学跨学科基础能力六维基准"
+description: "Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
+seo_description: "Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

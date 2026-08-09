@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/pcdh-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
-seo_description: "患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
+description: "Patient-conditioned dual-hypergraph reasoning for auditable TCM prescription support, organizing symptom/tongue/pulse evidence around patterns and treatment principles (Tianjin …"
+seo_description: "Patient-conditioned dual-hypergraph reasoning for auditable TCM prescription support, organizing symptom/tongue/pulse evidence around patterns and treatment principles (Tianjin …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

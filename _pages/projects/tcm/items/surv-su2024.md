@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/surv-su2024/
-title: "苏尤丽 et al. 2024: 人工智能在中医诊疗领域的研究综述 | TCM AI"
+title: "Su et al. 2024 — Review of AI in TCM diagnosis and treatment (Chinese) | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,14 +11,14 @@ alt_url: /zh/projects/tcm/items/surv-su2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
-seo_description: "中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
+description: "Chinese-language review of three AI stages in TCM care — expert systems, ML, and deep learning — with challenges."
+seo_description: "Chinese-language review of three AI stages in TCM care — expert systems, ML, and deep learning — with challenges."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "survey"
-- "苏尤丽 et al. 2024: 人工智能在中医诊疗领域的研究综述"
+- "Su et al. 2024 — Review of AI in TCM diagnosis and treatment (Chinese)"
 tcm_type: "survey"
 tcm_type_label: "survey"
 tcm_date: "2024"

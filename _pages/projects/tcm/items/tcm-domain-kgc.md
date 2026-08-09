@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-domain-kgc/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医领域知识图谱补全与质量评估研究"
-seo_description: "中医领域知识图谱补全与质量评估研究"
+description: "Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
+seo_description: "Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

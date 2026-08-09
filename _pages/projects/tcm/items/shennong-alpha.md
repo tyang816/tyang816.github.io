@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/shennong-alpha/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
-seo_description: "西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
+description: "ShennongAlpha (Westlake University): an AI-driven sharing and collaboration platform for intelligent curation, acquisition and translation of natural-medicinal-material knowledg…"
+seo_description: "ShennongAlpha (Westlake University): an AI-driven sharing and collaboration platform for intelligent curation, acquisition and translation of natural-medicinal-material knowledg…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

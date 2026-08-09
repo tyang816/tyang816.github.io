@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-xu2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医智能问答系统谱系综述（KG-QA→LLM-QA、RAG）"
-seo_description: "中医智能问答系统谱系综述（KG-QA→LLM-QA、RAG）"
+description: "Review of intelligent TCM question-answering systems based on LLMs (KG-QA to LLM-QA and RAG)."
+seo_description: "Review of intelligent TCM question-answering systems based on LLMs (KG-QA to LLM-QA and RAG)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/qizhengpt/
-title: "启真医学大模型 (QiZhenGPT) | TCM AI"
+title: "QiZhenGPT | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/qizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗场景、药品知识问答、优化疾病、手术、检验等"
-seo_description: "中文医疗场景、药品知识问答、优化疾病、手术、检验等"
+description: "Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
+seo_description: "Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "general-medical"
-- "启真医学大模型 (QiZhenGPT)"
+- "QiZhenGPT"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2023"

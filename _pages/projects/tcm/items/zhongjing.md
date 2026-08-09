@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/zhongjing/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
-seo_description: "专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
+description: "ZhongJingGPT, an expert-knowledge-guided TCM LLM combining vertical-domain fine-tuning with cognitive-psychology insights and multi-scenario TCM knowledge instructions (Tsinghua…"
+seo_description: "ZhongJingGPT, an expert-knowledge-guided TCM LLM combining vertical-domain fine-tuning with cognitive-psychology insights and multi-scenario TCM knowledge instructions (Tsinghua…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

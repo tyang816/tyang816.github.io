@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-r1/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "通过GRPO增强中医推理能力的大模型"
-seo_description: "通过GRPO增强中医推理能力的大模型"
+description: "TCM LLM with GRPO-enhanced reasoning."
+seo_description: "TCM LLM with GRPO-enhanced reasoning."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/xinghe/
-title: "杏核 (Xinghe) | TCM AI"
+title: "Xinghe | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/xinghe/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于Qwen3.5-9B、扎根《黄帝内经》的推理型中医模型，显式思维链辨证并强调安全边界"
-seo_description: "基于Qwen3.5-9B、扎根《黄帝内经》的推理型中医模型，显式思维链辨证并强调安全边界"
+description: "Qwen3.5-9B reasoning TCM model grounded in the *Neijing*, with explicit CoT pattern differentiation and safety boundaries."
+seo_description: "Qwen3.5-9B reasoning TCM model grounded in the *Neijing*, with explicit CoT pattern differentiation and safety boundaries."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "open-weights"
-- "杏核 (Xinghe)"
+- "Xinghe"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-guo2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "综述+实证分析，讨论 GPT 适配中医诊疗的挑战与幻觉问题"
-seo_description: "综述+实证分析，讨论 GPT 适配中医诊疗的挑战与幻觉问题"
+description: "Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
+seo_description: "Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

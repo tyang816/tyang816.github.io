@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-mkg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-MKG 中医药多维知识图谱"
-seo_description: "TCM-MKG 中医药多维知识图谱"
+description: "TCM multi-dimensional knowledge graph."
+seo_description: "TCM multi-dimensional knowledge graph."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

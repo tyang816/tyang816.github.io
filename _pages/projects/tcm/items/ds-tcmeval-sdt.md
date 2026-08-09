@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcmeval-sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医辨证思维评测基准，含 300 例证候诊断案例（来源网络、古籍与医院病案），元数据遵循 FAIR 原则（Scientific Data 2025）"
-seo_description: "中医辨证思维评测基准，含 300 例证候诊断案例（来源网络、古籍与医院病案），元数据遵循 FAIR 原则（Scientific Data 2025）"
+description: "TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-differentiation reasoning, with FAIR metadata (Sci.…"
+seo_description: "TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-differentiation reasoning, with FAIR metadata (Sci.…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

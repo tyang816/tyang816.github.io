@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
-seo_description: "CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
+description: "ZhongJing real multi-turn doctor–patient dialogues (~70k)."
+seo_description: "ZhongJing real multi-turn doctor–patient dialogues (~70k)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

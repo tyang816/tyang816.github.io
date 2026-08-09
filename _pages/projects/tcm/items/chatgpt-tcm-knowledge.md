@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chatgpt-tcm-knowledge/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatGPT 对中医知识理解能力的评测"
-seo_description: "ChatGPT 对中医知识理解能力的评测"
+description: "Evaluating ChatGPT's comprehension of Traditional Chinese Medicine knowledge."
+seo_description: "Evaluating ChatGPT's comprehension of Traditional Chinese Medicine knowledge."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

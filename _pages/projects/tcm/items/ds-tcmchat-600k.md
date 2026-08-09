@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcmchat-600k/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMChat-dataset-600k 中药知识问答与推荐指令数据"
-seo_description: "TCMChat-dataset-600k 中药知识问答与推荐指令数据"
+description: "TCMChat herbal QA and recommendation instruction data (~600k)."
+seo_description: "TCMChat herbal QA and recommendation instruction data (~600k)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

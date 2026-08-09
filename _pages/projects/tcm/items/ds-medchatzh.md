@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MedChatZH 中医问诊数据集"
-seo_description: "MedChatZH 中医问诊数据集"
+description: "MedChatZH TCM consultation dataset."
+seo_description: "MedChatZH TCM consultation dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

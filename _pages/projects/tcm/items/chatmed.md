@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chatmed/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult"
-seo_description: "ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult"
+description: "ChatMed series of Chinese medical LLMs, including ChatMed-Consult trained on 500k+ online consultation dialogues."
+seo_description: "ChatMed series of Chinese medical LLMs, including ChatMed-Consult trained on 500k+ online consultation dialogues."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

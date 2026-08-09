@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/chattcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "从预训练数据到模型权重完全开源的中医大模型"
-seo_description: "从预训练数据到模型权重完全开源的中医大模型"
+description: "Fully open TCM LLM from pretraining data through released weights."
+seo_description: "Fully open TCM LLM from pretraining data through released weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/lingdan/
-title: "TCMLLM / 灵丹 (Lingdan) | TCM AI"
+title: "TCMLLM / Lingdan | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/lingdan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医药大模型与处方推荐"
-seo_description: "中医药大模型与处方推荐"
+description: "TCMLLM / Lingdan for TCM modeling and prescription recommendation."
+seo_description: "TCMLLM / Lingdan for TCM modeling and prescription recommendation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "open-weights"
-- "TCMLLM / 灵丹 (Lingdan)"
+- "TCMLLM / Lingdan"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2024"

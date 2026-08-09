@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/awesome-cmed-nlp/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医学 NLP 公开资源整理：术语集、语料库、词向量、预训练模型、知识图谱、NER、QA 等（含 CBLUE 挑战榜）"
-seo_description: "中文医学 NLP 公开资源整理：术语集、语料库、词向量、预训练模型、知识图谱、NER、QA 等（含 CBLUE 挑战榜）"
+description: "Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NER and QA (incl. CBLUE)."
+seo_description: "Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NER and QA (incl. CBLUE)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

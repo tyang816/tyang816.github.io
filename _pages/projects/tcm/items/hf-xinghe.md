@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-xinghe/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "杏核内经推理模型"
-seo_description: "杏核内经推理模型"
+description: "Xinghe Neijing reasoning model weights."
+seo_description: "Xinghe Neijing reasoning model weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

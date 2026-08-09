@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/pathogenesis-cot/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "以病机推理思维链监督替代固定标签分类，做脾胃病症候表现识别与多维评估（《生物化学与生物物理进展》）"
-seo_description: "以病机推理思维链监督替代固定标签分类，做脾胃病症候表现识别与多维评估（《生物化学与生物物理进展》）"
+description: "Pathogenesis-reasoning chain-of-thought supervision replacing fixed-label classification for spleen-stomach disease syndrome recognition and multi-dimensional evaluation (Prog. …"
+seo_description: "Pathogenesis-reasoning chain-of-thought supervision replacing fixed-label classification for spleen-stomach disease syndrome recognition and multi-dimensional evaluation (Prog. …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

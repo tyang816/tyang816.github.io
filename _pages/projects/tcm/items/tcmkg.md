@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmkg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于深度学习的中医知识图谱平台"
-seo_description: "基于深度学习的中医知识图谱平台"
+description: "Deep-learning-based TCM knowledge graph platform."
+seo_description: "Deep-learning-based TCM knowledge graph platform."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-kllama/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识图谱与大模型融合的中医方剂智能生成模型"
-seo_description: "知识图谱与大模型融合的中医方剂智能生成模型"
+description: "KG-fused LLM for intelligent TCM formula generation."
+seo_description: "KG-fused LLM for intelligent TCM formula generation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

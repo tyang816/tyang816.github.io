@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-yip2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "综述：LLM 在整合医学（中西医结合）中的进展、挑战与机遇"
-seo_description: "综述：LLM 在整合医学（中西医结合）中的进展、挑战与机遇"
+description: "Review of LLMs in integrative medicine — progress, challenges, and opportunities."
+seo_description: "Review of LLMs in integrative medicine — progress, challenges, and opportunities."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

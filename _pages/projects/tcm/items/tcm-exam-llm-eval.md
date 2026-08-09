@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-exam-llm-eval/
-title: "中医考题大/轻量模型对比 | TCM AI"
+title: "Large vs lightweight LLMs on TCM exams | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-exam-llm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大规模与轻量级LLM中医考题系统对比"
-seo_description: "大规模与轻量级LLM中医考题系统对比"
+description: "Systematic comparison of large-scale vs lightweight LLMs on TCM exam questions."
+seo_description: "Systematic comparison of large-scale vs lightweight LLMs on TCM exam questions."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "evaluation"
-- "中医考题大/轻量模型对比"
+- "Large vs lightweight LLMs on TCM exams"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

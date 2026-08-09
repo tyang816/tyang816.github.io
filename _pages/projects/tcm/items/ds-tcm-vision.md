@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-vision/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Vision-Benchmark 中医视觉评测（药材识别/望诊等，约 7k 题）"
-seo_description: "TCM-Vision-Benchmark 中医视觉评测（药材识别/望诊等，约 7k 题）"
+description: "TCM vision benchmark (herb recognition / inspection, ~7k items)."
+seo_description: "TCM vision benchmark (herb recognition / inspection, ~7k items)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

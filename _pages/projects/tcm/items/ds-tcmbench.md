@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcmbench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
-seo_description: "面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
+description: "TCMBench: a comprehensive benchmark for evaluating LLMs in traditional Chinese medicine (arXiv 2024)."
+seo_description: "TCMBench: a comprehensive benchmark for evaluating LLMs in traditional Chinese medicine (arXiv 2024)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

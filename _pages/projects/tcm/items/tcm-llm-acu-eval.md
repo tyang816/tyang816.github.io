@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-llm-acu-eval/
-title: "TCM LLM针灸诊疗能力评估 | TCM AI"
+title: "TCM LLM acupuncture clinical evaluation | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-llm-acu-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "7个通用LLM与执业针灸师对照的真实病例评估（辨证/选穴/针法/方药），高影响力临床测评研究"
-seo_description: "7个通用LLM与执业针灸师对照的真实病例评估（辨证/选穴/针法/方药），高影响力临床测评研究"
+description: "Real-case evaluation of 7 general LLMs vs licensed acupuncturists on SDT, point selection, needling, and herbs (*npj Digital Medicine*)."
+seo_description: "Real-case evaluation of 7 general LLMs vs licensed acupuncturists on SDT, point selection, needling, and herbs (*npj Digital Medicine*)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "benchmark"
-- "TCM LLM针灸诊疗能力评估"
+- "TCM LLM acupuncture clinical evaluation"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/macat/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
-seo_description: "多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
+description: "Multi-agent culture-aware translation framework, evaluated on culture-loaded terms from TCM classics and the Analects."
+seo_description: "Multi-agent culture-aware translation framework, evaluated on culture-loaded terms from TCM classics and the Analects."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

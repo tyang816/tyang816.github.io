@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmsf-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
-seo_description: "中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
+description: "TCMSF: a construction framework for a TCM syndrome ancient-book knowledge graph that organizes syndrome knowledge from classical texts in a structured, semantically oriented way…"
+seo_description: "TCMSF: a construction framework for a TCM syndrome ancient-book knowledge graph that organizes syndrome knowledge from classical texts in a structured, semantically oriented way…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

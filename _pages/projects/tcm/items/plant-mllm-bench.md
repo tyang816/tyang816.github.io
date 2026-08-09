@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/plant-mllm-bench/
-title: "药用植物多模态大模型评测 | TCM AI"
+title: "Medicinal-plant MLLM benchmark | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/plant-mllm-bench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多模态LLM药用植物识别系统评测"
-seo_description: "多模态LLM药用植物识别系统评测"
+description: "Benchmarking multimodal LLMs for medicinal plant identification."
+seo_description: "Benchmarking multimodal LLMs for medicinal plant identification."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "benchmark"
 - "multimodal"
-- "药用植物多模态大模型评测"
+- "Medicinal-plant MLLM benchmark"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

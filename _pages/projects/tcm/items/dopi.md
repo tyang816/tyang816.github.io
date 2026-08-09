@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/dopi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "类医生主动问诊中医大模型，引导模型+专家模型协同架构，问诊准确率84.68%"
-seo_description: "类医生主动问诊中医大模型，引导模型+专家模型协同架构，问诊准确率84.68%"
+description: "Doctor-like proactive inquiry TCM LLM (guide + expert models); reported inquiry accuracy 84.68%."
+seo_description: "Doctor-like proactive inquiry TCM LLM (guide + expert models); reported inquiry accuracy 84.68%."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

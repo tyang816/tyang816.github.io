@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/shennong-tcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "首个中医药大规模语言模型\"神农\"，配套 ShenNong_TCM_Dataset 指令数据与开源权重"
-seo_description: "首个中医药大规模语言模型\"神农\"，配套 ShenNong_TCM_Dataset 指令数据与开源权重"
+description: "ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
+seo_description: "ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

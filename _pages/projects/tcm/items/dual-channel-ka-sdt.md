@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/dual-channel-ka-sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "双通道知识注意力的中医辨证NLP模型，缓解生僻字与术语抽取难题"
-seo_description: "双通道知识注意力的中医辨证NLP模型，缓解生僻字与术语抽取难题"
+description: "Dual-channel knowledge-attention NLP model for TCM syndrome differentiation, addressing rare characters and terminology extraction."
+seo_description: "Dual-channel knowledge-attention NLP model for TCM syndrome differentiation, addressing rare characters and terminology extraction."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

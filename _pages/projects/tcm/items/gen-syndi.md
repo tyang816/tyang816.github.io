@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/gen-syndi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
-seo_description: "知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
+description: "Knowledge-guided generative-AI framework for dual education of syndrome differentiation and disease diagnosis."
+seo_description: "Knowledge-guided generative-AI framework for dual education of syndrome differentiation and disease diagnosis."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

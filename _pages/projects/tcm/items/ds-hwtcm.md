@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-hwtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "HWTCMBench 中医能力评测集"
-seo_description: "HWTCMBench 中医能力评测集"
+description: "HWTCMBench TCM capability evaluation set."
+seo_description: "HWTCMBench TCM capability evaluation set."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

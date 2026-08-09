@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-preconsult-eval/
-title: "中医智能预问诊临床评估 | TCM AI"
+title: "TCM intelligent pre-consultation clinical evaluation | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-preconsult-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
-seo_description: "LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
+description: "Tertiary-hospital clinical evaluation of an LLM intelligent pre-consultation system using a physician–AI–patient triad model."
+seo_description: "Tertiary-hospital clinical evaluation of an LLM intelligent pre-consultation system using a physician–AI–patient triad model."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "evaluation"
-- "中医智能预问诊临床评估"
+- "TCM intelligent pre-consultation clinical evaluation"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

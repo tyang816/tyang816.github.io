@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/njucm-rag-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "RAG 结合 P-Tuning v2 微调的中医药问答大模型（ChatGLM2-6B）"
-seo_description: "RAG 结合 P-Tuning v2 微调的中医药问答大模型（ChatGLM2-6B）"
+description: "TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
+seo_description: "TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

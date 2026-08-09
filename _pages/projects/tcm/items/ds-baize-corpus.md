@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-baize-corpus/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "约15.7万条中医QA，覆盖理论、中药、方剂、诊断、针灸与临床"
-seo_description: "约15.7万条中医QA，覆盖理论、中药、方剂、诊断、针灸与临床"
+description: "~157k TCM QA items covering theory, herbs, formulas, diagnosis, acupuncture, and clinic."
+seo_description: "~157k TCM QA items covering theory, herbs, formulas, diagnosis, acupuncture, and clinic."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

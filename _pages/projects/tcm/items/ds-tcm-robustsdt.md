@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-robustsdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医临床推理LLM鲁棒性基准数据集（Figshare）"
-seo_description: "中医临床推理LLM鲁棒性基准数据集（Figshare）"
+description: "TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
+seo_description: "TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

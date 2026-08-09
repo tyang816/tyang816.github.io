@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/gpt4-tcm-postgrad/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT-4 与国产主流大模型在中医研究生考试数据集上的表现评估（预印本）"
-seo_description: "GPT-4 与国产主流大模型在中医研究生考试数据集上的表现评估（预印本）"
+description: "GPT-4 vs mainstream Chinese LLMs on a TCM postgraduate examination dataset (preprint)."
+seo_description: "GPT-4 vs mainstream Chinese LLMs on a TCM postgraduate examination dataset (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

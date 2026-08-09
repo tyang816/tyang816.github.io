@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "神农"
-seo_description: "神农"
+description: "ShenNong-TCM-LLM weights."
+seo_description: "ShenNong-TCM-LLM weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

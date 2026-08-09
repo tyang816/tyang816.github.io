@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/cpmi-chatglm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中成药指令数据的 ChatGLM 参数高效微调模型"
-seo_description: "中成药指令数据的 ChatGLM 参数高效微调模型"
+description: "Parameter-efficient fine-tuning of ChatGLM with Chinese patent medicine instructions."
+seo_description: "Parameter-efficient fine-tuning of ChatGLM with Chinese patent medicine instructions."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

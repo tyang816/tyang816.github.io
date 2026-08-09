@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-gpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医领域自适应的高效预训练大模型"
-seo_description: "面向中医领域自适应的高效预训练大模型"
+description: "Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine."
+seo_description: "Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

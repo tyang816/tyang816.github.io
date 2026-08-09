@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/opentcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于 GraphRAG 的中医知识检索与诊断系统，含妇科古籍知识图谱"
-seo_description: "基于 GraphRAG 的中医知识检索与诊断系统，含妇科古籍知识图谱"
+description: "GraphRAG TCM retrieval and diagnosis system with a gynecology classics knowledge graph."
+seo_description: "GraphRAG TCM retrieval and diagnosis system with a gynecology classics knowledge graph."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

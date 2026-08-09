@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医药指令数据集 ShenNong_TCM_Dataset"
-seo_description: "中医药指令数据集 ShenNong_TCM_Dataset"
+description: "ShenNong TCM instruction dataset."
+seo_description: "ShenNong TCM instruction dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

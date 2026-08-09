@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ming/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
-seo_description: "中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
+description: "MING: a Chinese medical consultation LLM using a sparse mixture of low-rank adapter experts (MING-MoE) for medical multi-task learning (arXiv 2024)."
+seo_description: "MING: a Chinese medical consultation LLM using a sparse mixture of low-rank adapter experts (MING-MoE) for medical multi-task learning (arXiv 2024)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

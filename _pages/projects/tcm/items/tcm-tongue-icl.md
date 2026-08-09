@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-tongue-icl/
-title: "少样本舌诊上下文多任务微调 | TCM AI"
+title: "Few-shot tongue-diagnosis in-context multitask learning | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-tongue-icl/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "舌象到体质直接判别的少样本上下文多任务LLM微调方法"
-seo_description: "舌象到体质直接判别的少样本上下文多任务LLM微调方法"
+description: "Few-shot in-context multitask fine-tuning of LLMs mapping tongue images directly to constitutions."
+seo_description: "Few-shot in-context multitask fine-tuning of LLMs mapping tongue images directly to constitutions."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "multimodal"
-- "少样本舌诊上下文多任务微调"
+- "Few-shot tongue-diagnosis in-context multitask learning"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-formula-llm-clf/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "微调大语言模型并结合提示模板进行中医方剂分类，数据源自中成药国家医保目录等（IEEE BIBM 2023）"
-seo_description: "微调大语言模型并结合提示模板进行中医方剂分类，数据源自中成药国家医保目录等（IEEE BIBM 2023）"
+description: "Fine-tuned LLMs with refined prompt templates for TCM formula classification, using data sources such as the national medical-insurance catalog of proprietary Chinese medicines …"
+seo_description: "Fine-tuned LLMs with refined prompt templates for TCM formula classification, using data sources such as the national medical-insurance catalog of proprietary Chinese medicines …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

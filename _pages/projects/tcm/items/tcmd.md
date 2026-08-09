@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmd/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向大模型评测的中医问答数据集"
-seo_description: "面向大模型评测的中医问答数据集"
+description: "TCMD, a TCM QA dataset for evaluating large language models."
+seo_description: "TCMD, a TCM QA dataset for evaluating large language models."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

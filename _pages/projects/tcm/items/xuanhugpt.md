@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/xuanhugpt/
-title: "悬壶 (XuanHuGPT) | TCM AI"
+title: "XuanHuGPT | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/xuanhugpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于参数高效微调（PEFT）的中医领域大模型"
-seo_description: "基于参数高效微调（PEFT）的中医领域大模型"
+description: "TCM domain LLM built with parameter-efficient fine-tuning (PEFT)."
+seo_description: "TCM domain LLM built with parameter-efficient fine-tuning (PEFT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "model"
-- "悬壶 (XuanHuGPT)"
+- "XuanHuGPT"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

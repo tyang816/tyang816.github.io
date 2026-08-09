@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-tian2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "望闻问切四诊的 ML 传感与模型综述"
-seo_description: "望闻问切四诊的 ML 传感与模型综述"
+description: "Review of machine learning for TCM four diagnoses — inspection, auscultation-olfaction, inquiry, and palpation."
+seo_description: "Review of machine learning for TCM four diagnoses — inspection, auscultation-olfaction, inquiry, and palpation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

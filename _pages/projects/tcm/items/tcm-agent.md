@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-agent/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向网络药理学与中药发现的 LLM 多智能体系统"
-seo_description: "面向网络药理学与中药发现的 LLM 多智能体系统"
+description: "LLM multi-agent system for network pharmacology and herbal discovery."
+seo_description: "LLM multi-agent system for network pharmacology and herbal discovery."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

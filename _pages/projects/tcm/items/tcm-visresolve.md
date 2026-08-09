@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-visresolve/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于Qwen2.5-VL的中医多模态大模型，支持163类22万张干药材图像识别与88万候选答案临床MCQ"
-seo_description: "基于Qwen2.5-VL的中医多模态大模型，支持163类22万张干药材图像识别与88万候选答案临床MCQ"
+description: "Qwen2.5-VL-based TCM multimodal LLM — 163-class dried-herb recognition over 220k images plus clinical MCQs with 880k candidate answers."
+seo_description: "Qwen2.5-VL-based TCM multimodal LLM — 163-class dried-herb recognition over 220k images plus clinical MCQs with 880k candidate answers."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

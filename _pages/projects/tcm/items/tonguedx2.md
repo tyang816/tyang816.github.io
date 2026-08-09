@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tonguedx2/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "舌诊深度学习设计空间系统消融研究（20+模型版本），含5109图像/976专家标注"
-seo_description: "舌诊深度学习设计空间系统消融研究（20+模型版本），含5109图像/976专家标注"
+description: "Systematic ablation of the tongue-diagnosis DL design space (20+ model variants); TongueDx2 includes 5,109 images / 976 expert annotations."
+seo_description: "Systematic ablation of the tongue-diagnosis DL design space (20+ model variants); TongueDx2 includes 5,109 images / 976 expert annotations."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

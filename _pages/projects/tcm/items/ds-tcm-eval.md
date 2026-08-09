@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Eval 动态可扩展中医评测基准"
-seo_description: "TCM-Eval 动态可扩展中医评测基准"
+description: "Dynamic, extensible TCM evaluation platform."
+seo_description: "Dynamic, extensible TCM evaluation platform."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

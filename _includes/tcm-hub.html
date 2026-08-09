@@ -101,17 +101,32 @@
           {% if parts[0] == type_key %}{% assign type_label = parts[1] %}{% endif %}
         {% endfor %}
 
-        {% if type_key == "news" %}
-          {% assign card_title = it.summary_zh | default: it.name | default: it.id %}
-          {% assign card_summary = "" %}
+        {% if is_zh %}
+          {% if type_key == "news" %}
+            {% assign card_title = it.summary_zh | default: it.name | default: it.id %}
+            {% assign card_summary = "" %}
+          {% else %}
+            {% assign card_title = it.name | default: it.title_zh | default: it.id %}
+            {% assign card_summary = it.summary_zh | default: it.title_zh | default: "" %}
+          {% endif %}
+          {% assign orgs = it.orgs | join: " / " %}
         {% else %}
-          {% assign card_title = it.name | default: it.title_zh | default: it.id %}
-          {% assign card_summary = it.summary_zh | default: it.title_zh | default: "" %}
+          {% if type_key == "news" %}
+            {% assign card_title = it.summary_en | default: it.summary_zh | default: it.name | default: it.id %}
+            {% assign card_summary = "" %}
+          {% else %}
+            {% assign card_title = it.name_en | default: it.name | default: it.title_en | default: it.title_zh | default: it.id %}
+            {% assign card_summary = it.summary_en | default: it.title_en | default: it.summary_zh | default: it.title_zh | default: "" %}
+          {% endif %}
+          {% if it.orgs_en and it.orgs_en.size > 0 %}
+            {% assign orgs = it.orgs_en | join: " / " %}
+          {% else %}
+            {% assign orgs = it.orgs | join: " / " %}
+          {% endif %}
         {% endif %}
         {% assign card_title = card_title | replace: "**", "" %}
         {% assign card_summary = card_summary | replace: "**", "" %}
 
-        {% assign orgs = it.orgs | join: " / " %}
         {% assign venue = it.venue | default: "" %}
         {% assign date_show = it.date | default: y %}
         {% assign meta_bits = type_label %}

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/biancang/
-title: "扁仓 (BianCang) | TCM AI"
+title: "BianCang | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/biancang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
-seo_description: "系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
+description: "BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
+seo_description: "BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "open-weights"
-- "扁仓 (BianCang)"
+- "BianCang"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

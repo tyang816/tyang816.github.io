@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-mtcmb/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
-seo_description: "中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
+description: "MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
+seo_description: "MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

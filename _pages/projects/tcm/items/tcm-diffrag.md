@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-diffrag/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "通用知识图谱 + 个性化知识图谱 + CoT 的辨证推理 RAG 框架"
-seo_description: "通用知识图谱 + 个性化知识图谱 + CoT 的辨证推理 RAG 框架"
+description: "Syndrome-differentiation RAG with a general KG, a personalized KG, and chain-of-thought."
+seo_description: "Syndrome-differentiation RAG with a general KG, a personalized KG, and chain-of-thought."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

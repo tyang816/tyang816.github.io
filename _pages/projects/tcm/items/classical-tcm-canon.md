@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/classical-tcm-canon/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
-seo_description: "中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
+description: "Full-text digitizations of the TCM canon: Neijing, Nanjing, Shanghan Lun, Jingui Yaolue and warm-disease classics."
+seo_description: "Full-text digitizations of the TCM canon: Neijing, Nanjing, Shanghan Lun, Jingui Yaolue and warm-disease classics."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

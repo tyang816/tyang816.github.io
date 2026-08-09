@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-baize/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "白泽中医大模型"
-seo_description: "白泽中医大模型"
+description: "Baize TCM LLM weights."
+seo_description: "Baize TCM LLM weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

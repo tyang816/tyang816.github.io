@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/jingfang/
-title: "经方 (Jingfang) | TCM AI"
+title: "Jingfang | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/jingfang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
-seo_description: "基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
+description: "LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
+seo_description: "LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "agent"
-- "经方 (Jingfang)"
+- "Jingfang"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

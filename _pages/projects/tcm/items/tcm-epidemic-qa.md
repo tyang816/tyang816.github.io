@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-epidemic-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于大语言模型的中医疫病防治问答模型"
-seo_description: "基于大语言模型的中医疫病防治问答模型"
+description: "LLM-based QA model for TCM epidemic prevention and treatment."
+seo_description: "LLM-based QA model for TCM epidemic prevention and treatment."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

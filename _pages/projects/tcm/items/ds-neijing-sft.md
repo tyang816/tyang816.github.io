@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-neijing-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "杏核配套约2009条内经相关指令数据，含thinking/output字段"
-seo_description: "杏核配套约2009条内经相关指令数据，含thinking/output字段"
+description: "~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
+seo_description: "~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-3c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
-seo_description: "TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
+description: "Three-axis eval: core knowledge, classics, clinical decisions."
+seo_description: "Three-axis eval: core knowledge, classics, clinical decisions."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

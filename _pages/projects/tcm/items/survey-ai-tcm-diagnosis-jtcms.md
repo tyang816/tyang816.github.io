@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
-seo_description: "综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
+description: "Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
+seo_description: "Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/rag-cpmf/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
-seo_description: "多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
+description: "Multi-LLM verification + RAG for Chinese patent medicine recommendation, with a living public CPM dataset."
+seo_description: "Multi-LLM verification + RAG for Chinese patent medicine recommendation, with a living public CPM dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

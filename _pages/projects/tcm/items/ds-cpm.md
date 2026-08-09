@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-cpm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "RAG-CPMF配套的持续更新大规模中成药公开数据"
-seo_description: "RAG-CPMF配套的持续更新大规模中成药公开数据"
+description: "Living large-scale public Chinese patent medicine data accompanying RAG-CPMF."
+seo_description: "Living large-scale public Chinese patent medicine data accompanying RAG-CPMF."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

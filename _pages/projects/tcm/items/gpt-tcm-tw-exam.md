@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/gpt-tcm-tw-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
-seo_description: "GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
+description: "GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
+seo_description: "GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

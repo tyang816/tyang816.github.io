@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/mmir-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "记忆增强的多模态舌诊与临床决策框架，提出 MedTCM 数据集与 TDEU 评测指标"
-seo_description: "记忆增强的多模态舌诊与临床决策框架，提出 MedTCM 数据集与 TDEU 评测指标"
+description: "Memory-augmented multimodal tongue diagnosis and clinical decision framework; proposes MedTCM dataset and TDEU metric."
+seo_description: "Memory-augmented multimodal tongue diagnosis and clinical decision framework; proposes MedTCM dataset and TDEU metric."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

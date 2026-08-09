@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-case-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "融合大语言模型与知识图谱的中医医案问答系统，提升医案检索与分析效率（Frontiers in Medicine 2025）"
-seo_description: "融合大语言模型与知识图谱的中医医案问答系统，提升医案检索与分析效率（Frontiers in Medicine 2025）"
+description: "A TCM case-based QA system integrating LLMs and knowledge graphs for efficient case retrieval and analysis (Front. Med. 2025)."
+seo_description: "A TCM case-based QA system integrating LLMs and knowledge graphs for efficient case retrieval and analysis (Front. Med. 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

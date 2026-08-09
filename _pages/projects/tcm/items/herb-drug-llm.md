@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/herb-drug-llm/
-title: "草药-药物相互作用预测 | TCM AI"
+title: "LLM herb–drug interaction prediction | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/herb-drug-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM增强的草药-药物相互作用预测"
-seo_description: "LLM增强的草药-药物相互作用预测"
+description: "LLM-enhanced herbal medicine–drug interaction prediction."
+seo_description: "LLM-enhanced herbal medicine–drug interaction prediction."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "model"
-- "草药-药物相互作用预测"
+- "LLM herb–drug interaction prediction"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

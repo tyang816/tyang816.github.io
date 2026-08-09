@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-chimed2/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChiMed 2.0 中文医疗预训练数据集（覆盖中医语料）"
-seo_description: "ChiMed 2.0 中文医疗预训练数据集（覆盖中医语料）"
+description: "Upgraded Chinese medical pretraining dataset covering TCM corpora for LLM pretraining."
+seo_description: "Upgraded Chinese medical pretraining dataset covering TCM corpora for LLM pretraining."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-chatmed-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed 知识图谱"
-seo_description: "ChatMed 知识图谱"
+description: "ChatMed knowledge graph."
+seo_description: "ChatMed knowledge graph."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

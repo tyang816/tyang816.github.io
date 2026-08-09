@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-hsq-td/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "健身气功养生领域首个指令微调数据集，57,843条指令基于官方教材与专业文献蒸馏（ScienceDB）"
-seo_description: "健身气功养生领域首个指令微调数据集，57,843条指令基于官方教材与专业文献蒸馏（ScienceDB）"
+description: "HSQ-TD: the first instruction-tuning dataset for health Qigong/wellness, with 57,843 instructions distilled from official textbooks and professional literature (ScienceDB)."
+seo_description: "HSQ-TD: the first instruction-tuning dataset for health Qigong/wellness, with 57,843 instructions distilled from official textbooks and professional literature (ScienceDB)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

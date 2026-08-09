@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多模态大模型，支持望闻问切"
-seo_description: "中医多模态大模型，支持望闻问切"
+description: "Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
+seo_description: "Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

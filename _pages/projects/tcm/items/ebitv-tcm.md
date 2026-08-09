@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ebitv-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
-seo_description: "Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
+description: "Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, 1,263 symptoms) with four-stage symptom matching (LLM-verified) and information-gain-driv…"
+seo_description: "Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, 1,263 symptoms) with four-stage symptom matching (LLM-verified) and information-gain-driv…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

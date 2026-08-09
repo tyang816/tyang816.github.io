@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ftp/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中药处方预测的大模型微调方法"
-seo_description: "面向中药处方预测的大模型微调方法"
+description: "Fine-tuning LLMs for herbal prescription prediction."
+seo_description: "Fine-tuning LLMs for herbal prescription prediction."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

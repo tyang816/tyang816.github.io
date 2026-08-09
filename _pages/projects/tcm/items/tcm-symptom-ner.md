@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-symptom-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "自由文本中医临床记录中症状名识别的监督方法"
-seo_description: "自由文本中医临床记录中症状名识别的监督方法"
+description: "Supervised methods for symptom name recognition in free-text TCM clinical records."
+seo_description: "Supervised methods for symptom name recognition in free-text TCM clinical records."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

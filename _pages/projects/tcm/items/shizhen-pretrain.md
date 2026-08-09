@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/shizhen-pretrain/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
-seo_description: "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
+description: "ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus Stage-2 multimodal ~3.6B)."
+seo_description: "ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus Stage-2 multimodal ~3.6B)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

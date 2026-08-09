@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-lingdan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "灵丹"
-seo_description: "灵丹"
+description: "Lingdan / TCMLLM weights."
+seo_description: "Lingdan / TCMLLM weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

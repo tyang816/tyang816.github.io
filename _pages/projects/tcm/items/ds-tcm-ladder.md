@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-tcm-ladder/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多模态问答评测基准 TCM-Ladder，面向真实世界任务综合评估中医多模态大模型（arXiv 2025）"
-seo_description: "中医多模态问答评测基准 TCM-Ladder，面向真实世界任务综合评估中医多模态大模型（arXiv 2025）"
+description: "TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
+seo_description: "TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

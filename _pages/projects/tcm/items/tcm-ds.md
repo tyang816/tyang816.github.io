@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ds/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "药食同源食疗方智能推荐领域大模型"
-seo_description: "药食同源食疗方智能推荐领域大模型"
+description: "Domain LLM for medicine–food homology dietary-therapy recommendation."
+seo_description: "Domain LLM for medicine–food homology dietary-therapy recommendation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/bigdatatcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
-seo_description: "河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
+description: "BigDataTCM (34B): a vertical TCM LLM co-developed by HAUT's Complexity Science institute and Apus, offering medical QA, diagnostic support and TCM knowledge services."
+seo_description: "BigDataTCM (34B): a vertical TCM LLM co-developed by HAUT's Complexity Science institute and Apus, offering medical QA, diagnostic support and TCM knowledge services."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

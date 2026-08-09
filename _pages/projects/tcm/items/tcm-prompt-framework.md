@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-prompt-framework/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于提示工程框架的大语言模型中医智能理解方法"
-seo_description: "基于提示工程框架的大语言模型中医智能理解方法"
+description: "Prompt-engineering framework for LLM intelligent understanding in TCM."
+seo_description: "Prompt-engineering framework for LLM intelligent understanding in TCM."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

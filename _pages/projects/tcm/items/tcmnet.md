@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmnet/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM辅助疾病知识挖掘+PPI网络与结合预测的方剂优化策略"
-seo_description: "LLM辅助疾病知识挖掘+PPI网络与结合预测的方剂优化策略"
+description: "LLM-assisted disease knowledge mining with PPI networks and binding prediction for formula optimization."
+seo_description: "LLM-assisted disease knowledge mining with PPI networks and binding prediction for formula optimization."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

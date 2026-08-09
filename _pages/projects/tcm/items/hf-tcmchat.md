@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-tcmchat/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMChat"
-seo_description: "TCMChat"
+description: "TCMChat weights."
+seo_description: "TCMChat weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

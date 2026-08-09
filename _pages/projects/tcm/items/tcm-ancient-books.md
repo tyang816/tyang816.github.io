@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-ancient-books/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医药古籍文本语料合集，收录近 700 项古籍文本"
-seo_description: "中医药古籍文本语料合集，收录近 700 项古籍文本"
+description: "A corpus of nearly 700 TCM ancient-book texts."
+seo_description: "A corpus of nearly 700 TCM ancient-book texts."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

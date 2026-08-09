@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-lu2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述+验证缺口分析：DL 中医疾病诊断研究的方法学质量与临床转化"
-seo_description: "系统综述+验证缺口分析：DL 中医疾病诊断研究的方法学质量与临床转化"
+description: "Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
+seo_description: "Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

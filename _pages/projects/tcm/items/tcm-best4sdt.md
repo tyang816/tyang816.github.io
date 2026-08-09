@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-best4sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向辨证论治的病例评测基准（知识/伦理/安全/SDT）"
-seo_description: "面向辨证论治的病例评测基准（知识/伦理/安全/SDT）"
+description: "Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
+seo_description: "Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-chen2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述，纳入 10 篇（至 2024 年中），聚焦生成任务证据"
-seo_description: "系统综述，纳入 10 篇（至 2024 年中），聚焦生成任务证据"
+description: "Systematic review of 10 studies (to mid-2024) on LLMs in TCM generative tasks."
+seo_description: "Systematic review of 10 studies (to mid-2024) on LLMs in TCM generative tasks."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-meng2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "综述：大模型与虚拟细胞用于中风方药现代分析"
-seo_description: "综述：大模型与虚拟细胞用于中风方药现代分析"
+description: "Review of large models and virtual cells aiding modern analysis of stroke treatment with TCM formulas."
+seo_description: "Review of large models and virtual cells aiding modern analysis of stroke treatment with TCM formulas."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/rag-tcm-confidence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索增强生成提升大模型中医问答置信度（预印本）"
-seo_description: "检索增强生成提升大模型中医问答置信度（预印本）"
+description: "Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
+seo_description: "Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

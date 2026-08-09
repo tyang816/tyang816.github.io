@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hf-medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MedChatZH"
-seo_description: "MedChatZH"
+description: "MedChatZH weights."
+seo_description: "MedChatZH weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

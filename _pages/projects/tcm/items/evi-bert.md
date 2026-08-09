@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/evi-bert/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医RCT证据自动抽取的信息抽取模型开发与验证"
-seo_description: "中医RCT证据自动抽取的信息抽取模型开发与验证"
+description: "Automated information-extraction model (Evi-BERT) enhancing RCT evidence extraction for TCM."
+seo_description: "Automated information-extraction model (Evi-BERT) enhancing RCT evidence extraction for TCM."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

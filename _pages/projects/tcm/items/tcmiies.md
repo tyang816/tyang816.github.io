@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcmiies/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
-seo_description: "浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
+description: "TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TCM and other specialty researchers."
+seo_description: "TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TCM and other specialty researchers."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

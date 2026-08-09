@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/core-acu/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
-seo_description: "针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
+description: "Acupuncture clinical decision support with structured reasoning traces and a knowledge-graph safety veto loop."
+seo_description: "Acupuncture clinical decision support with structured reasoning traces and a knowledge-graph safety veto loop."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

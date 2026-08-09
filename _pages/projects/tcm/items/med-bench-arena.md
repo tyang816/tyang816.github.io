@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/med-bench-arena/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向医学与中医药LLM/Agent的开源评测平台，支持HF/vLLM/LiteLLM、多模态与中医特色指标（ZhongJing团队）"
-seo_description: "面向医学与中医药LLM/Agent的开源评测平台，支持HF/vLLM/LiteLLM、多模态与中医特色指标（ZhongJing团队）"
+description: "Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the ZhongJing team."
+seo_description: "Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the ZhongJing team."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

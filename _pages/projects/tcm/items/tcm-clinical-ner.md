@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/tcm-clinical-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于中医临床病历构建细粒度实体识别语料"
-seo_description: "基于中医临床病历构建细粒度实体识别语料"
+description: "Fine-grained entity-recognition corpus built from TCM clinical records."
+seo_description: "Fine-grained entity-recognition corpus built from TCM clinical records."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

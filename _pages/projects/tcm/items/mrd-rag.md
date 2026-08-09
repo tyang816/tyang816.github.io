@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/mrd-rag/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
-seo_description: "模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
+description: "Multi-round diagnostic RAG simulating clinical reasoning; builds DiagnosGraph spanning TCM and Western medicine (876 diseases / 7,997 nodes / 37,201 triples)."
+seo_description: "Multi-round diagnostic RAG simulating clinical reasoning; builds DiagnosGraph spanning TCM and Western medicine (876 diseases / 7,997 nodes / 37,201 triples)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

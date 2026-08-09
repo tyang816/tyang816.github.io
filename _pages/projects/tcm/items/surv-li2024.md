@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/surv-li2024/
-title: "李欣桐 et al. 2024: 中医药领域大语言模型研究进展与展望 | TCM AI"
+title: "Li et al. 2024 — Research progress and prospects of LLMs in TCM (Chinese) | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,14 +11,14 @@ alt_url: /zh/projects/tcm/items/surv-li2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文综述：中医药 LLM 研究过程、前沿技术（提示工程/RAG/RLHF）与应用前景"
-seo_description: "中文综述：中医药 LLM 研究过程、前沿技术（提示工程/RAG/RLHF）与应用前景"
+description: "Chinese-language review of TCM LLM pipelines, frontier techniques (prompting/RAG/RLHF), and application prospects."
+seo_description: "Chinese-language review of TCM LLM pipelines, frontier techniques (prompting/RAG/RLHF), and application prospects."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "survey"
-- "李欣桐 et al. 2024: 中医药领域大语言模型研究进展与展望"
+- "Li et al. 2024 — Research progress and prospects of LLMs in TCM (Chinese)"
 tcm_type: "survey"
 tcm_type_label: "survey"
 tcm_date: "2024"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/huatuogpt/
-title: "华佗GPT | TCM AI"
+title: "HuaTuoGPT | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/huatuogpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医学语料训练的大型语言模型"
-seo_description: "中文医学语料训练的大型语言模型"
+description: "Large language model trained on Chinese medical corpora (HuaTuoGPT)."
+seo_description: "Large language model trained on Chinese medical corpora (HuaTuoGPT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -20,7 +20,7 @@ keywords:
 - "resource"
 - "model"
 - "general-medical"
-- "华佗GPT"
+- "HuaTuoGPT"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2023"

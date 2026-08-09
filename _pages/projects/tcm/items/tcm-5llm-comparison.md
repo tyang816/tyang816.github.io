@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/tcm-5llm-comparison/
-title: "中医临床决策5-LLM对比 | TCM AI"
+title: "5-LLM TCM clinical decision comparison | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/tcm-5llm-comparison/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "5个LLM中医临床决策能力对比研究"
-seo_description: "5个LLM中医临床决策能力对比研究"
+description: "Comparative study of 5 LLMs for TCM clinical decision-making."
+seo_description: "Comparative study of 5 LLMs for TCM clinical decision-making."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "evaluation"
-- "中医临床决策5-LLM对比"
+- "5-LLM TCM clinical decision comparison"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

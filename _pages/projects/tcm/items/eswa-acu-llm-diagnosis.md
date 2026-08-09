@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/eswa-acu-llm-diagnosis/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
-seo_description: "面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
+description: "Taming LLMs for acupuncture & moxibustion diagnosis, with generation quality evaluated at the semantic-similarity level."
+seo_description: "Taming LLMs for acupuncture & moxibustion diagnosis, with generation quality evaluated at the semantic-similarity level."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

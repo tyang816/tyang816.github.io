@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/survey-agentic-tcm-osf/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医Agentic/知识接地LLM系统综述的OSF预注册方案（证据图谱+文本挖掘+转化就绪度），非完成版综述"
-seo_description: "中医Agentic/知识接地LLM系统综述的OSF预注册方案（证据图谱+文本挖掘+转化就绪度），非完成版综述"
+description: "OSF preregistration (not a completed review) of a systematic review on agentic and knowledge-grounded LLMs in TCM: evidence mapping, text mining, and translation readiness."
+seo_description: "OSF preregistration (not a completed review) of a systematic review on agentic and knowledge-grounded LLMs in TCM: evidence mapping, text mining, and translation readiness."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

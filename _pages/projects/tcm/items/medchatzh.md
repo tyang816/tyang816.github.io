@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医问诊对话的微调大语言模型 MedChatZH，开源问诊数据集与模型权重（Computers in Biology and Medicine 2024）"
-seo_description: "面向中医问诊对话的微调大语言模型 MedChatZH，开源问诊数据集与模型权重（Computers in Biology and Medicine 2024）"
+description: "MedChatZH: a fine-tuned LLM for TCM consultation dialogues, released with open dataset and weights (Comput. Biol. Med. 2024)."
+seo_description: "MedChatZH: a fine-tuned LLM for TCM consultation dialogues, released with open dataset and weights (Comput. Biol. Med. 2024)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

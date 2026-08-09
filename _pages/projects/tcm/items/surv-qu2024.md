@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/surv-qu2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医知识图谱的分析、构建、应用与展望"
-seo_description: "中医知识图谱的分析、构建、应用与展望"
+description: "Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
+seo_description: "Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/hengqin-ra/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "类风湿关节炎中医诊疗大模型及配套数据集"
-seo_description: "类风湿关节炎中医诊疗大模型及配套数据集"
+description: "LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis."
+seo_description: "LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/qingnangtcm/
-title: "青囊 (QingNangTCM) | TCM AI"
+title: "QingNangTCM | TCM AI"
 layout: default
 project: tcm
 section: item
@@ -11,15 +11,15 @@ alt_url: /zh/projects/tcm/items/qingnangtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
-seo_description: "参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
+description: "Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
+seo_description: "Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
 - "model"
-- "青囊 (QingNangTCM)"
+- "QingNangTCM"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2026"

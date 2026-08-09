@@ -11,8 +11,8 @@ alt_url: /zh/projects/tcm/items/ds-linglan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
-seo_description: "LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
+description: "LingLan large multi-task TCM evaluation benchmark (2026)."
+seo_description: "LingLan large multi-task TCM evaluation benchmark (2026)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
