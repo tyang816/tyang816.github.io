@@ -57,7 +57,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 <span class='anchor' id='-honors-and-awards'></span>
 
-## 🏆 Honors and Awards
+## 🏆 Honors
 {:.home-section}
 - *2026*, ***WAIC 2026 National Treasure***, *MatwingsVenus (晓鹜)*, *Project Leader*, Ph.D.
 - *2026*, ***Shanghai Innovation Institute Student Project (1,250,000 RMB)***, *Project Leader*, Ph.D.
@@ -82,7 +82,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 <span class='anchor' id='-media-coverage'></span>
 
-## 📰 Media Coverage
+## 📰 Media
 {:.home-section}
 
 {% include media-list.html lang="en" %}
