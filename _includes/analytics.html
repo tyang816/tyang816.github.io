@@ -5,9 +5,30 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', "{{ site.google_analytics_id }}");
+  function bootGA(extra) {
+    gtag('js', new Date());
+    gtag('config', "{{ site.google_analytics_id }}", extra || {});
+  }
+
+  if (document.documentElement.getAttribute('data-page') === '404') {
+    var reported404 = false;
+    window.__report404 = function () {
+      if (reported404 || window.__404Redirecting) return;
+      reported404 = true;
+      var missing = window.location.pathname || '/404.html';
+      document.title = '404: ' + missing + ' | Yang Tan';
+      bootGA({
+        page_title: document.title,
+        page_path: missing,
+        page_location: window.location.href
+      });
+      gtag('event', 'page_not_found', { page_path: missing });
+    };
+    setTimeout(function () { window.__report404(); }, 2500);
+  } else {
+    bootGA();
+  }
 </script>
 
 {% endif %}

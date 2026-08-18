@@ -10,7 +10,9 @@ alt_url: /projects/tcm/
 author_profile: true
 redirect_from:
 - /tcm/
+- /tcm/items/
 - /zh/tcm/
+- /zh/tcm/items/
 - /zh/project/tcm/
 description: 中医大模型（TCM LLM）资源大全：收录扁鹊、仲景、华佗GPT、神农等中医药大语言模型的新闻、论文、综述、评测基准与开源数据集，与 Awesome-TCM-LLM 同源持续更新。
 seo_description: 中医大模型（TCM LLM）资源大全：收录扁鹊、仲景、华佗GPT、神农等中医药大语言模型的新闻、论文、综述、评测基准与开源数据集，与 Awesome-TCM-LLM 同源持续更新。

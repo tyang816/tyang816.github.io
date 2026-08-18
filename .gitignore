@@ -4,3 +4,4 @@ push.sh
 tmp/
 .claude/
 .cursor/
+.tmp*

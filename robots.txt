@@ -1,6 +1,7 @@
 # https://tyang816.github.io
 User-agent: *
 Allow: /
+Disallow: /404.html
 
 # Primary index targets (also listed in sitemaps):
 #   /  /zh/  /projects/  /zh/projects/  /notes/  /zh/notes/

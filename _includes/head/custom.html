@@ -12,6 +12,16 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}"/>
 
+{% if page.permalink == '/404.html' %}
+<script>
+  window.__404CFG = {
+    index: {{ '/path-index.json' | relative_url | jsonify }},
+    slugs: {{ site.data.projects | map: 'slug' | jsonify }}
+  };
+</script>
+<script src="{{ '/assets/js/404-recover.js' | relative_url }}"></script>
+{% endif %}
+
 {% comment %} MathJax (~1MB) is only needed on note pages with formulas. {% endcomment %}
 {% if page.layout == "post" or page.mathjax %}
 <script>

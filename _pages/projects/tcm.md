@@ -11,6 +11,7 @@ author_profile: true
 redirect_from:
 - /pub/tcm/
 - /tcm-en/
+- /tcm-en/items/
 - /project/tcm/
 description: TCM LLM hub — curated Traditional Chinese Medicine large language model resources covering BianQue, ZhongJing, HuaTuoGPT, ShenNong and more, with papers, surveys, benchmarks, and open datasets. Synced with Awesome-TCM-LLM.
 seo_description: TCM LLM hub — curated Traditional Chinese Medicine large language model resources covering BianQue, ZhongJing, HuaTuoGPT, ShenNong and more, with papers, surveys, benchmarks, and open datasets. Synced with Awesome-TCM-LLM.
