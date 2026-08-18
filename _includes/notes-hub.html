@@ -3,20 +3,20 @@
 {% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
 {% if is_zh %}
   {% assign all_label = "全部" %}
-  {% assign cat_aria = "笔记分类" %}
+  {% assign cat_aria = "分类" %}
   {% assign search_ph = "搜索笔记…" %}
   {% assign hub_title = "论文笔记" %}
   {% assign locale_js = "zh" %}
   {% assign label_proc = "期刊/会议" %}
-  {% assign label_year = "年份跳转" %}
+  {% assign label_year = "年份" %}
 {% else %}
   {% assign all_label = "All" %}
-  {% assign cat_aria = "Note categories" %}
+  {% assign cat_aria = "Topic" %}
   {% assign search_ph = "Search notes…" %}
   {% assign hub_title = "Paper Notes" %}
   {% assign locale_js = "en" %}
-  {% assign label_proc = "Proceedings" %}
-  {% assign label_year = "Jump to year" %}
+  {% assign label_proc = "Venue" %}
+  {% assign label_year = "Year" %}
 {% endif %}
 
 {% capture cat_meta_json %}{
@@ -33,20 +33,41 @@
     <input id="notes-search" type="search" placeholder="{{ search_ph }}" autocomplete="off">
   </div>
 
-  <nav class="project-cat-nav" aria-label="{{ cat_aria }}" id="notes-cat-nav">
-    <button type="button" class="is-active" data-notes-cat-link="all" data-hash="#cat-all">{{ all_label }}</button>
-    {% for cat in site.data.note_categories %}
-      {% if is_zh %}
-        {% assign cat_name = cat.name_zh | default: cat.name %}
-      {% else %}
-        {% assign cat_name = cat.name %}
-      {% endif %}
-      <button type="button" data-notes-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}">{{ cat_name }}</button>
-    {% endfor %}
-  </nav>
+  <div class="hub-filters">
+    <details class="hub-filter" open data-hub-filter="cat">
+      <summary>
+        <span class="hub-filter__label">{{ cat_aria }}</span>
+        <span class="hub-filter__value" data-filter-summary>{{ all_label }}</span>
+      </summary>
+      <nav class="project-cat-nav" aria-label="{{ cat_aria }}" id="notes-cat-nav">
+        <button type="button" class="is-active" data-notes-cat-link="all" data-hash="#cat-all">{{ all_label }}</button>
+        {% for cat in site.data.note_categories %}
+          {% if is_zh %}
+            {% assign cat_name = cat.name_zh | default: cat.name %}
+          {% else %}
+            {% assign cat_name = cat.name %}
+          {% endif %}
+          <button type="button" data-notes-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}">{{ cat_name }}</button>
+        {% endfor %}
+      </nav>
+    </details>
 
-  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_proc }}" id="notes-proc-links"></nav>
-  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_year }}" id="notes-year-links"></nav>
+    <details class="hub-filter" data-hub-filter="proc">
+      <summary>
+        <span class="hub-filter__label">{{ label_proc }}</span>
+        <span class="hub-filter__value" data-filter-summary>{% if is_zh %}全部{% else %}All{% endif %}</span>
+      </summary>
+      <nav class="project-cat-nav" aria-label="{{ label_proc }}" id="notes-proc-links"></nav>
+    </details>
+
+    <details class="hub-filter" data-hub-filter="year">
+      <summary>
+        <span class="hub-filter__label">{{ label_year }}</span>
+        <span class="hub-filter__value" data-filter-summary>{% if is_zh %}全部年份{% else %}All years{% endif %}</span>
+      </summary>
+      <nav class="project-cat-nav" aria-label="{{ label_year }}" id="notes-year-links"></nav>
+    </details>
+  </div>
 
   {% for cat in site.data.note_categories %}
     {% if is_zh %}
@@ -78,7 +99,7 @@
     {% for year_group in posts_by_year %}
       <div class="notes-year-block" id="notes-year-{{ year_group.name }}">
         <h3 class="notes-year-heading">{{ year_group.name }}</h3>
-        <div class="project-grid">
+        <div class="hub-entry-list">
           {% for post in year_group.items %}
             {% assign primary_cat = "" %}
             {% for c in post.categories %}
@@ -96,13 +117,7 @@
                 {% endif %}
               {% endif %}
             {% endfor %}
-            <a class="project-card-link" href="{{ post.url | relative_url }}" data-cat="{{ primary_cat }}">
-              {% if post.proceedings or primary_cat != "" %}
-                <div class="venue">{% if post.proceedings %}{{ post.proceedings }}{% if primary_cat != "" %} &middot; {% endif %}{% endif %}{{ cat_label }}</div>
-              {% endif %}
-              <h2>{{ post.title | escape_once }}</h2>
-              <p>{{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} &middot; {{ post.tags | slice: 0, 4 | join: ", " }}{% endif %}</p>
-            </a>
+            {% include note-card.html post=post primary_cat=primary_cat cat_label=cat_label %}
           {% endfor %}
         </div>
       </div>

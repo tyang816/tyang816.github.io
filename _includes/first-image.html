@@ -1,0 +1,23 @@
+{% comment %}
+  Sets `first_img` to the first <img src> in include.html, else include.fallback.
+{% endcomment %}
+{% assign first_img = include.fallback | default: "" | strip %}
+{% if first_img == "" and include.html %}
+  {% if include.html contains "<img" %}
+    {% assign _img_chunks = include.html | split: "<img" %}
+    {% if _img_chunks.size > 1 %}
+      {% assign _img_tag = _img_chunks[1] %}
+      {% if _img_tag contains 'src="' %}
+        {% assign _src_bits = _img_tag | split: 'src="' %}
+        {% if _src_bits.size > 1 %}
+          {% assign first_img = _src_bits[1] | split: '"' | first | strip %}
+        {% endif %}
+      {% elsif _img_tag contains "src='" %}
+        {% assign _src_bits = _img_tag | split: "src='" %}
+        {% if _src_bits.size > 1 %}
+          {% assign first_img = _src_bits[1] | split: "'" | first | strip %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endif %}

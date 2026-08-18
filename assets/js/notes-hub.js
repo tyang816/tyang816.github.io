@@ -12,6 +12,7 @@
       unknownYear: 'Unknown',
       allYears: 'All years',
       allProceedings: 'All',
+      allCats: 'All',
       page: 'Page',
       of: 'of',
       prev: 'Prev',
@@ -26,6 +27,7 @@
       unknownYear: '未知',
       allYears: '全部年份',
       allProceedings: '全部',
+      allCats: '全部',
       page: '第',
       of: '/',
       prev: '上一页',
@@ -63,18 +65,62 @@
     return (cats || []).filter(function (c) { return c !== 'zh' && c !== 'en'; });
   }
 
+  function esc(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]);
+    });
+  }
+
+  function clip(s, n) {
+    s = String(s || '').replace(/\s+/g, ' ').trim();
+    if (s.length <= n) return s;
+    return s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…';
+  }
+
+  function tagHtml(text, kind) {
+    if (!text) return '';
+    var cls = 'hub-tag' + (kind ? ' hub-tag--' + kind : '');
+    return '<span class="' + cls + '">' + esc(text) + '</span>';
+  }
+
+  function mediaHtml(p, label, cat) {
+    var mark = String(p.proceedings || label || cat || '·').slice(0, 14);
+    if (p.image) {
+      return (
+        '<div class="hub-entry__media has-img" data-ph-cat="' + esc(cat) + '" data-ph-mark="' + esc(mark) + '">' +
+          '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async"' +
+          ' onerror="var m=this.parentNode;this.remove();m.classList.remove(\'has-img\');var p=document.createElement(\'div\');p.className=\'hub-entry__ph\';p.setAttribute(\'data-cat\',m.getAttribute(\'data-ph-cat\')||\'\');p.innerHTML=\'<span class=hub-entry__ph-mark>\'+(m.getAttribute(\'data-ph-mark\')||\'\')+\'</span>\';m.appendChild(p);">' +
+        '</div>'
+      );
+    }
+    return (
+      '<div class="hub-entry__media">' +
+        '<div class="hub-entry__ph" data-cat="' + esc(cat) + '" aria-hidden="true">' +
+          '<span class="hub-entry__ph-mark">' + esc(mark) + '</span>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
   function cardHtml(p, locale, catMeta) {
     var cats = subjectCategories(p.categories);
     var primary = cats[0] || '';
     var label = catLabel(primary, locale, catMeta);
-    var venue = [p.proceedings, label].filter(Boolean).join(' · ');
-    var tags = (p.tags || []).slice(0, 4).join(', ');
-    var meta = [formatDate(p.date), tags].filter(Boolean).join(' · ');
+    var tags = (p.tags || []).slice(0, 4);
+    var rawEx = p.excerpt || '';
+    var excerpt = /Paper:|论文地址|论文实现/.test(rawEx) ? '' : clip(rawEx, 180);
+    var chips = tagHtml(p.proceedings, 'venue') + tagHtml(label) + tagHtml(formatDate(p.date), 'soft');
+    tags.forEach(function (tag) { chips += tagHtml(tag, 'soft'); });
     return (
-      '<a class="project-card-link" href="' + p.url + '" data-cat="' + primary + '">' +
-        (venue ? '<div class="venue">' + venue + '</div>' : '') +
-        '<h2>' + (p.title || 'Untitled') + '</h2>' +
-        (meta ? '<p>' + meta + '</p>' : '') +
+      '<a class="hub-entry" href="' + esc(p.url) + '" data-cat="' + esc(primary) + '">' +
+        '<div class="hub-entry__card">' +
+          mediaHtml(p, label, primary) +
+          '<div class="hub-entry__body">' +
+            '<h2 class="hub-entry__title">' + esc(p.title || 'Untitled') + '</h2>' +
+            '<div class="hub-entry__tags">' + chips + '</div>' +
+            (excerpt ? '<p class="hub-entry__excerpt">' + esc(excerpt) + '</p>' : '') +
+          '</div>' +
+        '</div>' +
       '</a>'
     );
   }
@@ -158,6 +204,14 @@
     var activeProc = '';
     var activeYear = '';
     var page = 1;
+
+    function setFilterValue(name, text, isSet) {
+      var box = hubEl && hubEl.querySelector('[data-hub-filter="' + name + '"]');
+      if (!box) return;
+      var val = box.querySelector('[data-filter-summary]');
+      if (val) val.textContent = text || '';
+      box.classList.toggle('is-set', !!isSet);
+    }
 
     function renderProcJump(values) {
       if (!procLinks) return;
@@ -286,7 +340,7 @@
         return (
           '<div class="notes-year-block" id="notes-year-' + y + '">' +
             '<h3 class="notes-year-heading">' + y + '</h3>' +
-            '<div class="project-grid">' + cards + '</div>' +
+            '<div class="hub-entry-list">' + cards + '</div>' +
           '</div>'
         );
       }).join('');
@@ -319,6 +373,11 @@
       renderYearJump(yearsFrom(withoutYear));
       var items = filteredList();
       render(items);
+
+      var catBtn = hubEl.querySelector('[data-notes-cat-link].is-active');
+      setFilterValue('cat', catBtn ? catBtn.textContent : t(locale, 'allCats'), activeCat !== 'all');
+      setFilterValue('proc', activeProc || t(locale, 'allProceedings'), !!activeProc);
+      setFilterValue('year', activeYear || t(locale, 'allYears'), !!activeYear);
     }
 
     function filteredListWithoutYear() {

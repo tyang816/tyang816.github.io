@@ -1,0 +1,29 @@
+{% comment %}
+  Named entry + card for a paper note.
+  include.post, include.primary_cat, include.cat_label
+{% endcomment %}
+{% assign _ex = include.post.excerpt | strip_html | strip_newlines | strip | truncate: 180 %}
+{% if _ex contains "Paper:" or _ex contains "论文地址" or _ex contains "论文实现" %}
+  {% assign _ex = "" %}
+{% endif %}
+{% include first-image.html html=include.post.content fallback=include.post.image %}
+{% assign _mark = include.post.proceedings | default: include.cat_label | default: include.primary_cat %}
+<a class="hub-entry" href="{{ include.post.url | relative_url }}" data-cat="{{ include.primary_cat }}">
+  <div class="hub-entry__card">
+    {% include hub-media.html image=first_img mark=_mark cat=include.primary_cat %}
+    <div class="hub-entry__body">
+      <h2 class="hub-entry__title">{{ include.post.title | escape_once }}</h2>
+      <div class="hub-entry__tags">
+        {% if include.post.proceedings %}<span class="hub-tag hub-tag--venue">{{ include.post.proceedings }}</span>{% endif %}
+        {% if include.cat_label != "" %}<span class="hub-tag">{{ include.cat_label }}</span>{% endif %}
+        <span class="hub-tag hub-tag--soft">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+        {% for tag in include.post.tags limit: 4 %}
+          <span class="hub-tag hub-tag--soft">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% if _ex != "" %}
+      <p class="hub-entry__excerpt">{{ _ex }}</p>
+      {% endif %}
+    </div>
+  </div>
+</a>

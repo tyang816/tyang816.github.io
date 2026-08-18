@@ -1,0 +1,16 @@
+{% assign _src = include.image | default: "" | strip %}
+{% if _src != "" %}
+  {% unless _src contains "://" %}
+    {% assign _src = _src | relative_url %}
+  {% endunless %}
+{% endif %}
+{% assign _mark = include.mark | default: include.cat | default: "·" %}
+<div class="hub-entry__media{% if _src != "" %} has-img{% endif %}" data-ph-cat="{{ include.cat }}" data-ph-mark="{{ _mark | truncate: 14, "" | escape }}">
+  {% if _src != "" %}
+  <img src="{{ _src }}" alt="" loading="lazy" decoding="async" onerror="var m=this.parentNode;this.remove();m.classList.remove('has-img');var p=document.createElement('div');p.className='hub-entry__ph';p.setAttribute('data-cat',m.getAttribute('data-ph-cat')||'');p.innerHTML='<span class=hub-entry__ph-mark>'+(m.getAttribute('data-ph-mark')||'')+'</span>';m.appendChild(p);">
+  {% else %}
+  <div class="hub-entry__ph" data-cat="{{ include.cat }}" aria-hidden="true">
+    <span class="hub-entry__ph-mark">{{ _mark | truncate: 14, "" }}</span>
+  </div>
+  {% endif %}
+</div>

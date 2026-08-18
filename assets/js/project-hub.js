@@ -37,7 +37,7 @@
     var yearNav = root.querySelector('[data-year-nav]');
     var yearBtns = yearNav ? yearNav.querySelectorAll('[data-year-link]') : [];
     var grid = root.querySelector('[data-projects-grid]');
-    var cards = grid ? [].slice.call(grid.querySelectorAll('.project-card-link[data-cat]')) : [];
+    var cards = grid ? [].slice.call(grid.querySelectorAll('.hub-entry[data-cat], .project-card-link[data-cat]')) : [];
     var searchInput = root.querySelector('[data-projects-search]');
     var pagerRow = root.querySelector('[data-projects-pager-row]');
     var pagerEl = root.querySelector('[data-projects-pagination]');
@@ -72,6 +72,14 @@
       if (blurbText) blurbText.textContent = btn.getAttribute('data-blurb') || '';
     }
 
+    function setFilterValue(name, text, isSet) {
+      var box = root.querySelector('[data-hub-filter="' + name + '"]');
+      if (!box) return;
+      var val = box.querySelector('[data-filter-summary]');
+      if (val) val.textContent = text || '';
+      box.classList.toggle('is-set', !!isSet);
+    }
+
     function preserveAnchor(fn) {
       var before = anchorEl.getBoundingClientRect().top;
       fn();
@@ -91,6 +99,10 @@
           b.classList.toggle('is-active', (b.getAttribute('data-year-link') || 'all') === activeYear);
         });
         updateBlurb();
+        var catBtn = activeCatBtn();
+        var yearBtn = root.querySelector('[data-year-link].is-active');
+        setFilterValue('cat', catBtn ? catBtn.textContent : '', activeCat !== 'all');
+        setFilterValue('year', yearBtn ? yearBtn.textContent : '', activeYear !== 'all');
 
         var matched = cards.filter(matchCard);
         var total = matched.length;

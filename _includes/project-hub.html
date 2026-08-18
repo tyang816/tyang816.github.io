@@ -3,8 +3,8 @@
 {% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
 {% if is_zh %}
   {% assign all_label = "全部" %}
-  {% assign cat_aria = "项目分类" %}
-  {% assign label_year = "年份筛选" %}
+  {% assign cat_aria = "分类" %}
+  {% assign label_year = "年份" %}
   {% assign all_years = "全部年份" %}
   {% assign hub_title = "开源项目" %}
   {% assign search_ph = "搜索项目…" %}
@@ -12,8 +12,8 @@
   {% assign all_blurb = "一作/共一开源项目，按分类与年份筛选。" %}
 {% else %}
   {% assign all_label = "All" %}
-  {% assign cat_aria = "Project categories" %}
-  {% assign label_year = "Filter by year" %}
+  {% assign cat_aria = "Category" %}
+  {% assign label_year = "Year" %}
   {% assign all_years = "All years" %}
   {% assign hub_title = "Open Projects" %}
   {% assign search_ph = "Search projects…" %}
@@ -37,26 +37,40 @@
     <input id="projects-search" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-projects-search>
   </div>
 
-  <nav class="project-cat-nav" aria-label="{{ cat_aria }}" data-cat-nav>
-    <button type="button" class="is-active" data-cat-link="all" data-hash="#cat-all" data-blurb-title="{{ all_blurb_title | escape }}" data-blurb="{{ all_blurb | escape }}">{{ all_label }}</button>
-    {% for cat in site.data.project_categories %}
-      {% if is_zh %}
-        {% assign cat_name = cat.name_zh | default: cat.name %}
-        {% assign cat_blurb = cat.blurb_zh | default: cat.blurb %}
-      {% else %}
-        {% assign cat_name = cat.name %}
-        {% assign cat_blurb = cat.blurb %}
-      {% endif %}
-      <button type="button" data-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}" data-blurb-title="{{ cat_name | escape }}" data-blurb="{{ cat_blurb | escape }}">{{ cat_name }}</button>
-    {% endfor %}
-  </nav>
+  <div class="hub-filters">
+    <details class="hub-filter" open data-hub-filter="cat">
+      <summary>
+        <span class="hub-filter__label">{{ cat_aria }}</span>
+        <span class="hub-filter__value" data-filter-summary>{{ all_label }}</span>
+      </summary>
+      <nav class="project-cat-nav" aria-label="{{ cat_aria }}" data-cat-nav>
+        <button type="button" class="is-active" data-cat-link="all" data-hash="#cat-all" data-blurb-title="{{ all_blurb_title | escape }}" data-blurb="{{ all_blurb | escape }}">{{ all_label }}</button>
+        {% for cat in site.data.project_categories %}
+          {% if is_zh %}
+            {% assign cat_name = cat.name_zh | default: cat.name %}
+            {% assign cat_blurb = cat.blurb_zh | default: cat.blurb %}
+          {% else %}
+            {% assign cat_name = cat.name %}
+            {% assign cat_blurb = cat.blurb %}
+          {% endif %}
+          <button type="button" data-cat-link="{{ cat.id }}" data-hash="#cat-{{ cat.id }}" data-blurb-title="{{ cat_name | escape }}" data-blurb="{{ cat_blurb | escape }}">{{ cat_name }}</button>
+        {% endfor %}
+      </nav>
+    </details>
 
-  <nav class="project-cat-nav project-cat-nav--secondary" aria-label="{{ label_year }}" data-year-nav>
-    <button type="button" class="is-active" data-year-link="all">{{ all_years }}</button>
-    {% for y in project_years %}
-      <button type="button" data-year-link="{{ y }}">{{ y }}</button>
-    {% endfor %}
-  </nav>
+    <details class="hub-filter" data-hub-filter="year">
+      <summary>
+        <span class="hub-filter__label">{{ label_year }}</span>
+        <span class="hub-filter__value" data-filter-summary>{{ all_years }}</span>
+      </summary>
+      <nav class="project-cat-nav" aria-label="{{ label_year }}" data-year-nav>
+        <button type="button" class="is-active" data-year-link="all">{{ all_years }}</button>
+        {% for y in project_years %}
+          <button type="button" data-year-link="{{ y }}">{{ y }}</button>
+        {% endfor %}
+      </nav>
+    </details>
+  </div>
 
   <header class="project-cat-head" data-cat-blurb>
     <h2 data-cat-blurb-title>{{ all_blurb_title }}</h2>
@@ -64,7 +78,7 @@
   </header>
 
   <div class="project-hub-results">
-    <div class="project-grid" data-projects-grid>
+    <div class="project-grid project-grid--entries" data-projects-grid>
       {% for p in sorted_projects %}
         {% assign p_year = p.date | slice: 0, 4 %}
         {% if is_zh %}
@@ -81,13 +95,27 @@
           {% assign p_name = p.name %}
           {% assign p_summary = p.summary %}
           {% assign p_venue = p.venue %}
-          {% assign cat_label = p.category | upcase %}
+          {% assign cat_label = "" %}
+          {% for cat in site.data.project_categories %}
+            {% if cat.id == p.category %}{% assign cat_label = cat.name %}{% endif %}
+          {% endfor %}
         {% endif %}
         {% capture p_search %}{{ p_name }} {{ p_summary }} {{ p_venue }}{% endcapture %}
-        <a class="project-card-link" href="{{ p_url | relative_url }}" data-cat="{{ p.category }}" data-year="{{ p_year }}" data-search="{{ p_search | strip_newlines | strip | escape }}">
-          <div class="venue">{{ p_venue }} · {{ cat_label }} · {{ p_year }}</div>
-          <h2>{{ p_name }}</h2>
-          <p>{{ p_summary }}</p>
+        <a class="hub-entry" href="{{ p_url | relative_url }}" data-cat="{{ p.category }}" data-year="{{ p_year }}" data-search="{{ p_search | strip_newlines | strip | escape }}">
+          <div class="hub-entry__card">
+            {% include hub-media.html image=p.image mark=p_name cat=p.category %}
+            <div class="hub-entry__body">
+              <h2 class="hub-entry__title">{{ p_name }}</h2>
+              <div class="hub-entry__tags">
+                {% if p_venue != "" %}<span class="hub-tag hub-tag--venue">{{ p_venue }}</span>{% endif %}
+                {% if cat_label != "" %}<span class="hub-tag">{{ cat_label }}</span>{% endif %}
+                {% if p_year != "" %}<span class="hub-tag hub-tag--soft">{{ p_year }}</span>{% endif %}
+              </div>
+              {% if p_summary != "" %}
+              <p class="hub-entry__excerpt">{{ p_summary }}</p>
+              {% endif %}
+            </div>
+          </div>
         </a>
       {% endfor %}
     </div>
