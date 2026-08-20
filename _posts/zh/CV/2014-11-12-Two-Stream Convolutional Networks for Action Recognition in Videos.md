@@ -8,6 +8,10 @@ date: 2014-11-12
 lang: zh-CN
 alt_url: /notes/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
 permalink: /zh/notes/cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+redirect_from:
+  - /2014/11/12/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+  - /cv/Two-Stream-Convolutional-Networks-for-Action-Recognition-in-Videos/
+
 ---
 
 > 论文地址：[Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)

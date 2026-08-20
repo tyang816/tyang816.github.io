@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-formula-llm-clf"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-formula-llm-clf/
+- /zh/tcm/items/tcm-formula-llm-clf/
 alt_url: /projects/tcm/items/tcm-formula-llm-clf/
 author_profile: true
 sidebar_collapsed: true

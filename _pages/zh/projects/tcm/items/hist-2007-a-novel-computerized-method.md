@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2007-a-novel-computerized-method-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2007-a-novel-computerized-method-/
+- /zh/tcm/items/hist-2007-a-novel-computerized-method-/
+- /zh/projects/tcm/items/hist-2007-a-novel-computerized-method/
+- /zh/tcm/items/hist-2007-a-novel-computerized-method/
+- /tcm/items/hist-2007-a-novel-computerized-method/
 alt_url: /projects/tcm/items/hist-2007-a-novel-computerized-method-/
 author_profile: true
 sidebar_collapsed: true

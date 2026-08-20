@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2009-equilibrium-and-nonequilibri"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2009-equilibrium-and-nonequilibri/
+- /zh/tcm/items/hist-2009-equilibrium-and-nonequilibri/
 alt_url: /projects/tcm/items/hist-2009-equilibrium-and-nonequilibri/
 author_profile: true
 sidebar_collapsed: true

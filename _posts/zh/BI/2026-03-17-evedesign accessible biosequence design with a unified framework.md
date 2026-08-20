@@ -8,6 +8,10 @@ date: 2026-03-17
 lang: zh-CN
 alt_url: /notes/bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
 permalink: /zh/notes/bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
+redirect_from:
+  - /2026/03/17/evedesign-accessible-biosequence-design-with-a-unified-framework/
+  - /bi/evedesign-accessible-biosequence-design-with-a-unified-framework/
+
 ---
 
 > 论文地址：[evedesign accessible biosequence design with a unified framework](https://doi.org/10.64898/2026.03.17.712115)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "metaphor-to-mechanism"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/metaphor-to-mechanism/
+- /pub/tcm/items/metaphor-to-mechanism/
 alt_url: /zh/projects/tcm/items/metaphor-to-mechanism/
 author_profile: true
 sidebar_collapsed: true

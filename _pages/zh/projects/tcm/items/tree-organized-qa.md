@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tree-organized-qa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tree-organized-qa/
+- /zh/tcm/items/tree-organized-qa/
 alt_url: /projects/tcm/items/tree-organized-qa/
 author_profile: true
 sidebar_collapsed: true

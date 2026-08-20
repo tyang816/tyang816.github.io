@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gastro-tcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/gastro-tcm/
+- /zh/tcm/items/gastro-tcm/
 alt_url: /projects/tcm/items/gastro-tcm/
 author_profile: true
 sidebar_collapsed: true

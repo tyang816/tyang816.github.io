@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-chatmed-consult"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-chatmed-consult/
+- /zh/tcm/items/ds-chatmed-consult/
 alt_url: /projects/tcm/items/ds-chatmed-consult/
 author_profile: true
 sidebar_collapsed: true

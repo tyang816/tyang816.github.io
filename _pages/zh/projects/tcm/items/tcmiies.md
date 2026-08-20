@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmiies"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcmiies/
+- /zh/tcm/items/tcmiies/
 alt_url: /projects/tcm/items/tcmiies/
 author_profile: true
 sidebar_collapsed: true

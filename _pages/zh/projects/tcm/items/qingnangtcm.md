@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "qingnangtcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/qingnangtcm/
+- /zh/tcm/items/qingnangtcm/
 alt_url: /projects/tcm/items/qingnangtcm/
 author_profile: true
 sidebar_collapsed: true

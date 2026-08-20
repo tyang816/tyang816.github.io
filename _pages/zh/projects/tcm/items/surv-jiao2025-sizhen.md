@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-jiao2025-sizhen"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-jiao2025-sizhen/
+- /zh/tcm/items/surv-jiao2025-sizhen/
 alt_url: /projects/tcm/items/surv-jiao2025-sizhen/
 author_profile: true
 sidebar_collapsed: true

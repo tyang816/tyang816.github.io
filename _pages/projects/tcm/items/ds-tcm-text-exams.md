@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-text-exams"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcm-text-exams/
+- /pub/tcm/items/ds-tcm-text-exams/
 alt_url: /zh/projects/tcm/items/ds-tcm-text-exams/
 author_profile: true
 sidebar_collapsed: true

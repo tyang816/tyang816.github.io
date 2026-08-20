@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmbencheval"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcmbencheval/
+- /pub/tcm/items/tcmbencheval/
 alt_url: /zh/projects/tcm/items/tcmbencheval/
 author_profile: true
 sidebar_collapsed: true

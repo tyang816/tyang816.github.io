@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmkg"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcmkg/
+- /zh/tcm/items/tcmkg/
 alt_url: /projects/tcm/items/tcmkg/
 author_profile: true
 sidebar_collapsed: true

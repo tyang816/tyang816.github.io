@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "yaoshi-rag"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/yaoshi-rag/
+- /zh/tcm/items/yaoshi-rag/
 alt_url: /projects/tcm/items/yaoshi-rag/
 author_profile: true
 sidebar_collapsed: true

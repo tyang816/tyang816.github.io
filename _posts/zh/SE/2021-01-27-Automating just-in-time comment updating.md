@@ -8,6 +8,10 @@ date: 2021-01-27
 lang: zh-CN
 alt_url: /notes/se/Automating-just-in-time-comment-updating/
 permalink: /zh/notes/se/Automating-just-in-time-comment-updating/
+redirect_from:
+  - /2021/01/27/Automating-just-in-time-comment-updating/
+  - /se/Automating-just-in-time-comment-updating/
+
 ---
 
 > 论文地址：[Automating just-in-time comment updating](https://dl.acm.org/doi/10.1145/3324884.3416581)

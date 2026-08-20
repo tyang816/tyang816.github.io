@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "chatgpt-tcm-knowledge"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/chatgpt-tcm-knowledge/
+- /pub/tcm/items/chatgpt-tcm-knowledge/
 alt_url: /zh/projects/tcm/items/chatgpt-tcm-knowledge/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-medchatzh"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hf-medchatzh/
+- /pub/tcm/items/hf-medchatzh/
 alt_url: /zh/projects/tcm/items/hf-medchatzh/
 author_profile: true
 sidebar_collapsed: true

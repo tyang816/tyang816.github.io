@@ -8,6 +8,10 @@ date: 2023-02-06
 lang: zh-CN
 alt_url: /notes/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
 permalink: /zh/notes/cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
+redirect_from:
+  - /2023/02/06/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
+  - /cv/AIM：Adapting-Image-Models-for-Efficient-Video-Action-Recognition/
+
 ---
 
 > 论文地址：[AIM：Adapting Image Models for Efficient Video Action Recognition](http://arxiv.org/abs/2302.03024)

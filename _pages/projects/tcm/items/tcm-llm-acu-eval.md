@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-llm-acu-eval"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-llm-acu-eval/
+- /pub/tcm/items/tcm-llm-acu-eval/
 alt_url: /zh/projects/tcm/items/tcm-llm-acu-eval/
 author_profile: true
 sidebar_collapsed: true

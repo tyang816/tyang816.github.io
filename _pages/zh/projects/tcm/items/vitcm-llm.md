@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "vitcm-llm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/vitcm-llm/
+- /zh/tcm/items/vitcm-llm/
 alt_url: /projects/tcm/items/vitcm-llm/
 author_profile: true
 sidebar_collapsed: true

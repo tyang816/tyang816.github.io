@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-shizhen-sft"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-shizhen-sft/
+- /zh/tcm/items/ds-shizhen-sft/
 alt_url: /projects/tcm/items/ds-shizhen-sft/
 author_profile: true
 sidebar_collapsed: true

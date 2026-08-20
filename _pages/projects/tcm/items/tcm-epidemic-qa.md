@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-epidemic-qa"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-epidemic-qa/
+- /pub/tcm/items/tcm-epidemic-qa/
 alt_url: /zh/projects/tcm/items/tcm-epidemic-qa/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "njucm-rag-qa"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/njucm-rag-qa/
+- /pub/tcm/items/njucm-rag-qa/
 alt_url: /zh/projects/tcm/items/njucm-rag-qa/
 author_profile: true
 sidebar_collapsed: true

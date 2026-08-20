@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-guideline-adherence"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-guideline-adherence/
+- /zh/tcm/items/tcm-guideline-adherence/
 alt_url: /projects/tcm/items/tcm-guideline-adherence/
 author_profile: true
 sidebar_collapsed: true

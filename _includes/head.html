@@ -1,6 +1,16 @@
 <meta charset="utf-8">
 
 {% include seo.html %}
+{% if page.permalink == '/404.html' %}
+<script>
+(function () {
+  var p = location.pathname || '/';
+  if (p !== '/404.html' && p !== '/404' && p !== '/404/') {
+    document.title = '404: ' + p + ' | Yang Tan';
+  }
+})();
+</script>
+{% endif %}
 
 <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 

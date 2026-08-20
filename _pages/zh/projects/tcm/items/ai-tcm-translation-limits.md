@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ai-tcm-translation-limits"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ai-tcm-translation-limits/
+- /zh/tcm/items/ai-tcm-translation-limits/
 alt_url: /projects/tcm/items/ai-tcm-translation-limits/
 author_profile: true
 sidebar_collapsed: true

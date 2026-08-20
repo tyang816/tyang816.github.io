@@ -8,6 +8,10 @@ date: 2021-03-12
 lang: zh-CN
 alt_url: /notes/se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
 permalink: /zh/notes/se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
+redirect_from:
+  - /2021/03/12/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
+  - /se/A-Multi-Modal-Transformer-based-Code-Summarization-Approach-for-Smart-Contracts/
+
 ---
 
 > 论文地址：[A Multi-Modal Transformer-based Code Summarization Approach for Smart Contract](https://www.computer.org/csdl/proceedings-article/icpc/2021/140300a001/1tB7vPlB8wo)

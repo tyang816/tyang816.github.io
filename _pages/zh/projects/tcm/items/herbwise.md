@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "herbwise"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/herbwise/
+- /zh/tcm/items/herbwise/
 alt_url: /projects/tcm/items/herbwise/
 author_profile: true
 sidebar_collapsed: true

@@ -8,6 +8,10 @@ date: 2020-06-13
 lang: zh-CN
 alt_url: /notes/ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
 permalink: /zh/notes/ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
+redirect_from:
+  - /2020/06/13/Contrastive-Multi-View-Representation-Learning-on-Graphs/
+  - /ml/Contrastive-Multi-View-Representation-Learning-on-Graphs/
+
 ---
 
 > 论文地址：[Contrastive Multi-View Representation Learning on Graphs](https://proceedings.mlr.press/v119/hassani20a.html)

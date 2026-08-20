@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-hsq-td"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-hsq-td/
+- /zh/tcm/items/ds-hsq-td/
 alt_url: /projects/tcm/items/ds-hsq-td/
 author_profile: true
 sidebar_collapsed: true

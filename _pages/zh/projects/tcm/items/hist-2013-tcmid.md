@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2013-tcmid"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2013-tcmid/
+- /zh/tcm/items/hist-2013-tcmid/
 alt_url: /projects/tcm/items/hist-2013-tcmid/
 author_profile: true
 sidebar_collapsed: true

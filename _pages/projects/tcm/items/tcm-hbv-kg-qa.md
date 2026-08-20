@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-hbv-kg-qa"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-hbv-kg-qa/
+- /pub/tcm/items/tcm-hbv-kg-qa/
 alt_url: /zh/projects/tcm/items/tcm-hbv-kg-qa/
 author_profile: true
 sidebar_collapsed: true

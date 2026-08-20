@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-chu2020"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-chu2020/
+- /pub/tcm/items/surv-chu2020/
 alt_url: /zh/projects/tcm/items/surv-chu2020/
 author_profile: true
 sidebar_collapsed: true

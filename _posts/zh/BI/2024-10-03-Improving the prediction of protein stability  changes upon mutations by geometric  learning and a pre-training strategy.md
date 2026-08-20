@@ -8,6 +8,10 @@ date: 2024-10-03
 lang: zh-CN
 alt_url: /notes/bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
 permalink: /zh/notes/bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
+redirect_from:
+  - /2024/10/03/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
+  - /bi/Improving-the-prediction-of-protein-stability--changes-upon-mutations-by-geometric--learning-and-a-pre-training-strategy/
+
 ---
 
 > 论文地址：[Improving the prediction of protein stability  changes upon mutations by geometric  learning and a pre-training strategy](https://www.nature.com/articles/s43588-024-00716-2)

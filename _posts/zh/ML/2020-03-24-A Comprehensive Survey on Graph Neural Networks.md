@@ -8,6 +8,10 @@ date: 2020-03-24
 lang: zh-CN
 alt_url: /notes/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
 permalink: /zh/notes/ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+redirect_from:
+  - /2020/03/24/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+  - /ml/A-Comprehensive-Survey-on-Graph-Neural-Networks/
+
 ---
 
 > 论文地址：[A Comprehensive Survey on Graph Neural Networks](https://ieeexplore.ieee.org/document/9046288)

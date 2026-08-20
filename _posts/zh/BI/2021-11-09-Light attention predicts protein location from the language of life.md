@@ -8,6 +8,10 @@ date: 2021-11-09
 lang: zh-CN
 alt_url: /notes/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
 permalink: /zh/notes/bi/Light-attention-predicts-protein-location-from-the-language-of-life/
+redirect_from:
+  - /2021/11/09/Light-attention-predicts-protein-location-from-the-language-of-life/
+  - /bi/Light-attention-predicts-protein-location-from-the-language-of-life/
+
 ---
 
 > 论文地址：[Light attention predicts protein location from the language of life](https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbab035/6432029)

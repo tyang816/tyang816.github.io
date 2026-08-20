@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ebitv-tcm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ebitv-tcm/
+- /pub/tcm/items/ebitv-tcm/
 alt_url: /zh/projects/tcm/items/ebitv-tcm/
 author_profile: true
 sidebar_collapsed: true

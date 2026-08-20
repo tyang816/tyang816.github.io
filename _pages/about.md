@@ -18,6 +18,14 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
+  - /cv/
+  - /cv
+  - /resume/
+  - /resume
+  - /publications/
+  - /publications
+  - /blog/
+  - /blog
 ---
 
 {% if site.google_scholar_stats_use_cdn %}
@@ -38,6 +46,8 @@ My research interests lie at the intersection of Artificial Intelligence and Bio
 - *Biology research*: Directed Evolution, Function Prediction, and Protein Design.
 
 I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](https://papers.nips.cc/), [***ICLR***](https://openreview.net/group?id=ICLR.cc), and [***eLife***](https://elifesciences.org/). I also serve as a reviewer for [***NMI***](https://www.nature.com/natmachintell/), [***JCTC***](https://pubs.acs.org/journal/jcisd8), and [***ICLR***](https://openreview.net/group?id=ICLR.cc). I also maintain the [TCM LLM hub]({{ '/projects/tcm/' | relative_url }}) (Awesome-TCM-LLM), which continuously tracks Traditional Chinese Medicine large language models, papers, benchmarks, and open datasets.
+
+<span class='anchor' id='-news'></span>
 
 ## 🔥 News
 {:.home-section}
@@ -86,6 +96,8 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 {:.home-section}
 
 {% include media-list.html lang="en" %}
+
+<span class='anchor' id='-educations'></span>
 
 ## 📖 Educations
 {:.home-section}

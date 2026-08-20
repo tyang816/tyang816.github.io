@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-data-hub"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-data-hub/
+- /zh/tcm/items/tcm-data-hub/
 alt_url: /projects/tcm/items/tcm-data-hub/
 author_profile: true
 sidebar_collapsed: true

@@ -6,14 +6,19 @@
   var slugs = cfg.slugs || [];
   var indexUrl = cfg.index || '/path-index.json';
   var path = window.location.pathname || '/';
+  var extra = (window.location.search || '') + (window.location.hash || '');
+  var NOTE_CAT = 'cv|bi|cl|ml|se|ir|os';
+  var HOME_MS = 2000;
+  var homeTimer = null;
 
   var I18N = {
     en: {
       title: 'This page does not exist',
-      lede: 'The address may be outdated after a site reorganization. Search below, or open a main section.',
+      lede: 'This address is outdated or was never published. If we cannot recover it, you will be sent back to the homepage.',
       requested: 'Requested URL',
-      looking: 'Looking for a close match…',
-      redirect: 'Redirecting to a matching page…',
+      looking: 'Looking for a matching page…',
+      redirect: 'Found a matching page. Redirecting…',
+      home: 'Page not found. Returning to the homepage in 2 seconds…',
       none: 'No close match for this URL.',
       searchLabel: 'Search notes, projects, and pages',
       searchPh: 'VenusX, TCM LLM, paper title…',
@@ -23,10 +28,11 @@
     },
     zh: {
       title: '页面不存在',
-      lede: '这个地址可能在站点改版后失效了。可以搜索，或从下面的入口继续浏览。',
+      lede: '这个地址可能是站点改版前的旧链接。能对上的会送到原文，对不上则 2 秒后返回首页。',
       requested: '请求的地址',
-      looking: '正在查找相近页面…',
-      redirect: '正在跳转到匹配页面…',
+      looking: '正在查找匹配页面…',
+      redirect: '找到匹配页面，正在跳转…',
+      home: '页面不存在，2 秒后返回首页…',
       none: '没有找到足够接近的页面。',
       searchLabel: '搜索笔记、项目和页面',
       searchPh: 'VenusX、中医大模型、论文标题…',
@@ -45,10 +51,24 @@
       || /\.(php|aspx?|jsp|cgi|env|sql|bak)$/i.test(p);
   }
 
+  // Soft-404 guard: never send crawlers to the homepage.
+  function isCrawler() {
+    var ua = (navigator.userAgent || '').toLowerCase();
+    return /googlebot|adsbot-google|bingbot|bingpreview|slurp|duckduckbot|baiduspider|yandex(bot|images)|sogou|exabot|facebot|facebookexternalhit|ia_archiver|semrush|ahrefs|dotbot|petalbot|bytespider|applebot|twitterbot|linkedinbot/.test(ua);
+  }
+
   function preferZh() {
     if (path.indexOf('/zh/') === 0) return true;
     var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
     return lang.indexOf('zh') === 0;
+  }
+
+  function notesHub() {
+    return preferZh() ? '/zh/notes/' : '/notes/';
+  }
+
+  function homeUrl() {
+    return preferZh() ? '/zh/' : '/';
   }
 
   function withSlash(p) {
@@ -57,12 +77,22 @@
     return p;
   }
 
+  function hyphenate(s) {
+    return String(s || '').replace(/\s+/g, '-');
+  }
+
   function remap(raw) {
     var next = raw || '/';
     try { next = decodeURIComponent(next); } catch (err) { /* keep raw */ }
     next = next.replace(/\/{2,}/g, '/');
     next = next.replace(/\/index\.html$/i, '/');
     next = next.replace(/\.html$/i, '/');
+    // HTML entities / raw & in slugs (e.g. "Inputs & Outputs")
+    var qAt = next.indexOf('?');
+    var pathPart = qAt === -1 ? next : next.slice(0, qAt);
+    var queryPart = qAt === -1 ? '' : next.slice(qAt);
+    pathPart = pathPart.replace(/&amp;/gi, 'and').replace(/&/g, 'and');
+    next = pathPart + queryPart;
 
     var rules = [
       [/^\/tcm-en(\/.*)?$/i, '/projects/tcm'],
@@ -80,6 +110,23 @@
         next = rules[i][1] + (m[1] || '/');
         break;
       }
+    }
+
+    if (/^\/(zh\/)?(categories?|tags?)(\/|$)/i.test(next)) {
+      return notesHub();
+    }
+
+    // /cv and /cv/ are the resume aliases on the homepage. Leave them alone.
+    m = next.match(new RegExp('^/(' + NOTE_CAT + ')/?$', 'i'));
+    if (m && !/^\/cv\/?$/.test(next)) {
+      return notesHub();
+    }
+
+    // Old Hexo/Jekyll notes: /cv/Title/ or /zh/cv/Title/ (no /notes/ prefix)
+    m = next.match(new RegExp('^/(zh/)?(' + NOTE_CAT + ')/(.+)$', 'i'));
+    if (m) {
+      next = (m[1] || (preferZh() ? 'zh/' : '')) + 'notes/' + m[2].toLowerCase() + '/' + hyphenate(m[3]);
+      next = next.charAt(0) === '/' ? next : '/' + next;
     }
 
     next = next.replace(/^(\/zh)?\/notes\/([A-Za-z]{2})\//, function (_all, zh, cat) {
@@ -111,6 +158,15 @@
     return withSlash(next);
   }
 
+  function lookupQuery(raw) {
+    var q = raw || '/';
+    try { q = decodeURIComponent(q); } catch (err) { /* keep raw */ }
+    q = q.replace(/\/index\.html$/i, '/');
+    var dateM = q.match(/^\/\d{4}\/\d{2}\/\d{2}\/(.+?)\/?$/);
+    if (dateM) return '/' + hyphenate(dateM[1]);
+    return hyphenate(q);
+  }
+
   function go(next) {
     if (!next) return false;
     var hashIdx = next.indexOf('#');
@@ -120,6 +176,27 @@
     window.__404Redirecting = true;
     window.location.replace(destPath + (window.location.search || '') + destHash);
     return true;
+  }
+
+  function cancelHome() {
+    if (homeTimer) {
+      clearTimeout(homeTimer);
+      homeTimer = null;
+    }
+  }
+
+  function goHome(root, i18n) {
+    cancelHome();
+    report404();
+    if (isCrawler()) {
+      if (root) setStatus(root, i18n.none, 'none');
+      return;
+    }
+    if (root) setStatus(root, i18n.home, 'home');
+    window.__404Redirecting = true;
+    homeTimer = setTimeout(function () {
+      window.location.replace(homeUrl());
+    }, HOME_MS);
   }
 
   function report404() {
@@ -134,7 +211,8 @@
   function normSeg(s) {
     return String(s || '')
       .toLowerCase()
-      .replace(/[:：,，._]+/g, '-')
+      .replace(/&amp;|&/g, '-and-')
+      .replace(/[:：,，._？?]+/g, '-')
       .replace(/[^a-z0-9\u4e00-\u9fff-]+/g, '-')
       .replace(/-+/g, '-')
       .replace(/^-|-$/g, '');
@@ -145,7 +223,7 @@
     if (!a) return b.length;
     if (!b) return a.length;
     if (Math.abs(a.length - b.length) > 2) return 99;
-    var i, j, prev, cur, tmp;
+    var i, j, prev, cur;
     var row = [];
     for (j = 0; j <= b.length; j++) row[j] = j;
     for (i = 1; i <= a.length; i++) {
@@ -194,11 +272,21 @@
     return scored;
   }
 
-  function pickRedirect(ranked) {
+  function pickRedirect(ranked, zh) {
     if (!ranked.length) return null;
-    var top = ranked[0];
-    if (top.s < 78) return null;
-    if (ranked.length > 1 && ranked[1].s >= top.s - 2) return null;
+    var preferred = ranked.filter(function (r) {
+      var u = r.e.u || '';
+      return zh ? u.indexOf('/zh/') === 0 : u.indexOf('/zh/') !== 0;
+    });
+    var pool = preferred.length ? preferred : ranked;
+    var top = pool[0];
+    // Crawlers only follow exact slug matches, never fuzzy guesses.
+    var minScore = isCrawler() ? 90 : 78;
+    if (top.s < minScore) return null;
+    if (pool.length > 1 && pool[1].s >= top.s - 2) {
+      if (normSeg(lastSeg(top.e.u)) === normSeg(lastSeg(pool[1].e.u))) return top.e.u;
+      return null;
+    }
     return top.e.u;
   }
 
@@ -251,7 +339,7 @@
     el.setAttribute('data-kind', kind || '');
   }
 
-  function renderHits(root, items, heading, emptyText) {
+  function renderHits(root, items, heading) {
     var box = $('[data-404="hits"]', root);
     var head = $('[data-404="hits-heading"]', root);
     if (!box) return;
@@ -319,6 +407,7 @@
       renderHits(root, hits, i18n.hits);
     }
     input.addEventListener('input', function () {
+      cancelHome();
       clearTimeout(timer);
       timer = setTimeout(run, 160);
     });
@@ -327,7 +416,7 @@
   function enhance(entries) {
     var root = document.getElementById('page-404');
     if (!root) {
-      report404();
+      goHome(null, I18N[preferZh() ? 'zh' : 'en']);
       return;
     }
     var zh = preferZh();
@@ -340,20 +429,15 @@
       return;
     }
 
-    var ranked = rank(path, entries, 48);
-    var dest = pickRedirect(ranked);
+    var ranked = rank(lookupQuery(path), entries, 48);
+    if (!ranked.length) ranked = rank(path, entries, 48);
+    var dest = pickRedirect(ranked, zh);
     if (dest && go(dest)) {
       setStatus(root, i18n.redirect, 'redirect');
       return;
     }
 
-    if (ranked.length) {
-      renderHits(root, ranked.map(function (r) { return r.e; }), i18n.hits);
-      setStatus(root, '', '');
-    } else {
-      setStatus(root, i18n.none, 'none');
-    }
-    report404();
+    goHome(root, i18n);
   }
 
   if (!is404File(path) && !isNoise(path) && go(remap(path))) return;

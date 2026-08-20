@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-neijing-sft"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-neijing-sft/
+- /pub/tcm/items/ds-neijing-sft/
 alt_url: /zh/projects/tcm/items/ds-neijing-sft/
 author_profile: true
 sidebar_collapsed: true

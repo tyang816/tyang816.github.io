@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2023-tcmbank"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-2023-tcmbank/
+- /pub/tcm/items/hist-2023-tcmbank/
 alt_url: /zh/projects/tcm/items/hist-2023-tcmbank/
 author_profile: true
 sidebar_collapsed: true

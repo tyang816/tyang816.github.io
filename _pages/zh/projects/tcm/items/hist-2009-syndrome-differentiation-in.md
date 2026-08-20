@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2009-syndrome-differentiation-in-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2009-syndrome-differentiation-in-/
+- /zh/tcm/items/hist-2009-syndrome-differentiation-in-/
+- /zh/projects/tcm/items/hist-2009-syndrome-differentiation-in/
+- /zh/tcm/items/hist-2009-syndrome-differentiation-in/
+- /tcm/items/hist-2009-syndrome-differentiation-in/
 alt_url: /projects/tcm/items/hist-2009-syndrome-differentiation-in-/
 author_profile: true
 sidebar_collapsed: true

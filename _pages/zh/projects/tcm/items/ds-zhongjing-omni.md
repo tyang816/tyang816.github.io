@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-zhongjing-omni"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-zhongjing-omni/
+- /zh/tcm/items/ds-zhongjing-omni/
 alt_url: /projects/tcm/items/ds-zhongjing-omni/
 author_profile: true
 sidebar_collapsed: true

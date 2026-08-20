@@ -8,6 +8,10 @@ date: 2021-08-10
 lang: zh-CN
 alt_url: /notes/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
 permalink: /zh/notes/se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+redirect_from:
+  - /2021/08/10/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+  - /se/Learning-Sequential-and-Structural-Information-for-Source-Code-Summarization/
+
 ---
 
 > 论文地址：[Learning Sequential and Structural Information for Source Code Summarization](https://aclanthology.org/2021.findings-acl.251)

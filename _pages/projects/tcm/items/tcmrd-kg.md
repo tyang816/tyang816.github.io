@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmrd-kg"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcmrd-kg/
+- /pub/tcm/items/tcmrd-kg/
 alt_url: /zh/projects/tcm/items/tcmrd-kg/
 author_profile: true
 sidebar_collapsed: true

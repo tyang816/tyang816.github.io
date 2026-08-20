@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcmbench"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcmbench/
+- /pub/tcm/items/ds-tcmbench/
 alt_url: /zh/projects/tcm/items/ds-tcmbench/
 author_profile: true
 sidebar_collapsed: true

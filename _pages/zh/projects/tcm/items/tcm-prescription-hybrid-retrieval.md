@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-prescription-hybrid-retrieval"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-prescription-hybrid-retrieval/
+- /zh/tcm/items/tcm-prescription-hybrid-retrieval/
 alt_url: /projects/tcm/items/tcm-prescription-hybrid-retrieval/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "med-bench-arena"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/med-bench-arena/
+- /pub/tcm/items/med-bench-arena/
 alt_url: /zh/projects/tcm/items/med-bench-arena/
 author_profile: true
 sidebar_collapsed: true

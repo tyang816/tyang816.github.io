@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2017-diagnostic-method-of-diabete"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2017-diagnostic-method-of-diabete/
+- /zh/tcm/items/hist-2017-diagnostic-method-of-diabete/
 alt_url: /projects/tcm/items/hist-2017-diagnostic-method-of-diabete/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-1987-functional-structure-model-o"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-1987-functional-structure-model-o/
+- /zh/tcm/items/hist-1987-functional-structure-model-o/
 alt_url: /projects/tcm/items/hist-1987-functional-structure-model-o/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-eval-wise"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-eval-wise/
+- /zh/tcm/items/tcm-eval-wise/
 alt_url: /projects/tcm/items/tcm-eval-wise/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2023-etcm-v2-0"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2023-etcm-v2-0/
+- /zh/tcm/items/hist-2023-etcm-v2-0/
 alt_url: /projects/tcm/items/hist-2023-etcm-v2-0/
 author_profile: true
 sidebar_collapsed: true

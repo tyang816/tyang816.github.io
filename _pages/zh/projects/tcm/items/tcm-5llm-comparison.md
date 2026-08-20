@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-5llm-comparison"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-5llm-comparison/
+- /zh/tcm/items/tcm-5llm-comparison/
 alt_url: /projects/tcm/items/tcm-5llm-comparison/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "sylvanl-pretrain"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/sylvanl-pretrain/
+- /pub/tcm/items/sylvanl-pretrain/
 alt_url: /zh/projects/tcm/items/sylvanl-pretrain/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-kllama"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-kllama/
+- /zh/tcm/items/tcm-kllama/
 alt_url: /projects/tcm/items/tcm-kllama/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hengqin-ra"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hengqin-ra/
+- /zh/tcm/items/hengqin-ra/
 alt_url: /projects/tcm/items/hengqin-ra/
 author_profile: true
 sidebar_collapsed: true

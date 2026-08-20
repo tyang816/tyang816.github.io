@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-1985-fuzzy-match-and-floating-thr"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-1985-fuzzy-match-and-floating-thr/
+- /zh/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
 alt_url: /projects/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
 author_profile: true
 sidebar_collapsed: true

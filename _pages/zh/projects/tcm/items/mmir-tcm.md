@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "mmir-tcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/mmir-tcm/
+- /zh/tcm/items/mmir-tcm/
 alt_url: /projects/tcm/items/mmir-tcm/
 author_profile: true
 sidebar_collapsed: true

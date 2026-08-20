@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-tongue"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-tcm-tongue/
+- /zh/tcm/items/ds-tcm-tongue/
 alt_url: /projects/tcm/items/ds-tcm-tongue/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "core-acu"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/core-acu/
+- /zh/tcm/items/core-acu/
 alt_url: /projects/tcm/items/core-acu/
 author_profile: true
 sidebar_collapsed: true

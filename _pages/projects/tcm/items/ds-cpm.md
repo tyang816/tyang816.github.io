@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-cpm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-cpm/
+- /pub/tcm/items/ds-cpm/
 alt_url: /zh/projects/tcm/items/ds-cpm/
 author_profile: true
 sidebar_collapsed: true

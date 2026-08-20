@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-lukman2007"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-lukman2007/
+- /zh/tcm/items/surv-lukman2007/
 alt_url: /projects/tcm/items/surv-lukman2007/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "qibo"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/qibo/
+- /pub/tcm/items/qibo/
 alt_url: /zh/projects/tcm/items/qibo/
 author_profile: true
 sidebar_collapsed: true

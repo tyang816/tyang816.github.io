@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "shennong-alpha"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/shennong-alpha/
+- /zh/tcm/items/shennong-alpha/
 alt_url: /projects/tcm/items/shennong-alpha/
 author_profile: true
 sidebar_collapsed: true

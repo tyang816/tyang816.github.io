@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tonguevlm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tonguevlm/
+- /zh/tcm/items/tonguevlm/
 alt_url: /projects/tcm/items/tonguevlm/
 author_profile: true
 sidebar_collapsed: true

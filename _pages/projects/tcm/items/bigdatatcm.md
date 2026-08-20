@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "bigdatatcm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/bigdatatcm/
+- /pub/tcm/items/bigdatatcm/
 alt_url: /zh/projects/tcm/items/bigdatatcm/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-biancang"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hf-biancang/
+- /zh/tcm/items/hf-biancang/
 alt_url: /projects/tcm/items/hf-biancang/
 author_profile: true
 sidebar_collapsed: true

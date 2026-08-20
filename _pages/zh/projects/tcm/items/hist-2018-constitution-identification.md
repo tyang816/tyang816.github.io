@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2018-constitution-identification-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2018-constitution-identification-/
+- /zh/tcm/items/hist-2018-constitution-identification-/
+- /zh/projects/tcm/items/hist-2018-constitution-identification/
+- /zh/tcm/items/hist-2018-constitution-identification/
+- /tcm/items/hist-2018-constitution-identification/
 alt_url: /projects/tcm/items/hist-2018-constitution-identification-/
 author_profile: true
 sidebar_collapsed: true

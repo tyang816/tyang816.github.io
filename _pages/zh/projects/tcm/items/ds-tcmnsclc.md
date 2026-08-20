@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcmnsclc"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-tcmnsclc/
+- /zh/tcm/items/ds-tcmnsclc/
 alt_url: /projects/tcm/items/ds-tcmnsclc/
 author_profile: true
 sidebar_collapsed: true

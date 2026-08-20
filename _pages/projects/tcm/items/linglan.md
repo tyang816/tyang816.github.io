@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "linglan"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/linglan/
+- /pub/tcm/items/linglan/
 alt_url: /zh/projects/tcm/items/linglan/
 author_profile: true
 sidebar_collapsed: true

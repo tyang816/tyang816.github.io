@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-mtcmb"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-mtcmb/
+- /pub/tcm/items/ds-mtcmb/
 alt_url: /zh/projects/tcm/items/ds-mtcmb/
 author_profile: true
 sidebar_collapsed: true

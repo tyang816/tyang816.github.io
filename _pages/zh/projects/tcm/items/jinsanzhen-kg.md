@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "jinsanzhen-kg"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/jinsanzhen-kg/
+- /zh/tcm/items/jinsanzhen-kg/
 alt_url: /projects/tcm/items/jinsanzhen-kg/
 author_profile: true
 sidebar_collapsed: true

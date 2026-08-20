@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gat-llm-tcm-prescription"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/gat-llm-tcm-prescription/
+- /zh/tcm/items/gat-llm-tcm-prescription/
 alt_url: /projects/tcm/items/gat-llm-tcm-prescription/
 author_profile: true
 sidebar_collapsed: true

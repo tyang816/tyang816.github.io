@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tianyi"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tianyi/
+- /pub/tcm/items/tianyi/
 alt_url: /zh/projects/tcm/items/tianyi/
 author_profile: true
 sidebar_collapsed: true

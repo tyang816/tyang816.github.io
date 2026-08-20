@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-lei2025-healthcare-qa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-lei2025-healthcare-qa/
+- /zh/tcm/items/surv-lei2025-healthcare-qa/
 alt_url: /projects/tcm/items/surv-lei2025-healthcare-qa/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "cam-lm-extract"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/cam-lm-extract/
+- /pub/tcm/items/cam-lm-extract/
 alt_url: /zh/projects/tcm/items/cam-lm-extract/
 author_profile: true
 sidebar_collapsed: true

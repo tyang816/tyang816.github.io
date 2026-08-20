@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "zhongjing-cmtmedqa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/zhongjing-cmtmedqa/
+- /zh/tcm/items/zhongjing-cmtmedqa/
 alt_url: /projects/tcm/items/zhongjing-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true

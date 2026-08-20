@@ -8,6 +8,10 @@ date: 2024-09-26
 lang: zh-CN
 alt_url: /notes/bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
 permalink: /zh/notes/bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
+redirect_from:
+  - /2024/09/26/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
+  - /bi/Multi-Scale-Representation-Learning-for-Protein-Fitness-Prediction/
+
 ---
 
 > 论文地址：[Multi-Scale Representation Learning for Protein Fitness Prediction](https://openreview.net/forum?id=kWMVzIdCEn&referrer=%5Bthe%20profile%20of%20Jian%20Tang%5D(%2Fprofile%3Fid%3D~Jian_Tang1))

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-qu2024"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-qu2024/
+- /pub/tcm/items/surv-qu2024/
 alt_url: /zh/projects/tcm/items/surv-qu2024/
 author_profile: true
 sidebar_collapsed: true

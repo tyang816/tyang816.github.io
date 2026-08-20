@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-gpt"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-gpt/
+- /pub/tcm/items/tcm-gpt/
 alt_url: /zh/projects/tcm/items/tcm-gpt/
 author_profile: true
 sidebar_collapsed: true

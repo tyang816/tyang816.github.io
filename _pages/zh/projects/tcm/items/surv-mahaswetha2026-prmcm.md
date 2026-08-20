@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-mahaswetha2026-prmcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-mahaswetha2026-prmcm/
+- /zh/tcm/items/surv-mahaswetha2026-prmcm/
 alt_url: /projects/tcm/items/surv-mahaswetha2026-prmcm/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "rag-cpmf"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/rag-cpmf/
+- /pub/tcm/items/rag-cpmf/
 alt_url: /zh/projects/tcm/items/rag-cpmf/
 author_profile: true
 sidebar_collapsed: true

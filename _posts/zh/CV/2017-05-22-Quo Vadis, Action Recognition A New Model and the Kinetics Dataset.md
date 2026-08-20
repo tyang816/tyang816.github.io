@@ -8,6 +8,10 @@ date: 2017-05-22
 lang: zh-CN
 alt_url: /notes/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
 permalink: /zh/notes/cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+redirect_from:
+  - /2017/05/22/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+  - /cv/Quo-Vadis,-Action-Recognition-A-New-Model-and-the-Kinetics-Dataset/
+
 ---
 
 > 论文地址：[Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset](http://ieeexplore.ieee.org/document/8099985/)

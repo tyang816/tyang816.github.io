@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-song2024"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-song2024/
+- /zh/tcm/items/surv-song2024/
 alt_url: /projects/tcm/items/surv-song2024/
 author_profile: true
 sidebar_collapsed: true

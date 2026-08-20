@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-eval"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-tcm-eval/
+- /zh/tcm/items/ds-tcm-eval/
 alt_url: /projects/tcm/items/ds-tcm-eval/
 author_profile: true
 sidebar_collapsed: true

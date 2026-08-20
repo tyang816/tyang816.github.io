@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-hwtcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-hwtcm/
+- /zh/tcm/items/ds-hwtcm/
 alt_url: /projects/tcm/items/ds-hwtcm/
 author_profile: true
 sidebar_collapsed: true

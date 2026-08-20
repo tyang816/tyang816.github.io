@@ -8,6 +8,10 @@ date: 2020-10-20
 lang: zh-CN
 alt_url: /notes/cv/BYOL-works-even-without-batch-statistics/
 permalink: /zh/notes/cv/BYOL-works-even-without-batch-statistics/
+redirect_from:
+  - /2020/10/20/BYOL-works-even-without-batch-statistics/
+  - /cv/BYOL-works-even-without-batch-statistics/
+
 ---
 
 > 论文地址：[BYOL works even without batch statistics](http://arxiv.org/abs/2010.10241)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-kg-llm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-kg-llm/
+- /zh/tcm/items/tcm-kg-llm/
 alt_url: /projects/tcm/items/tcm-kg-llm/
 author_profile: true
 sidebar_collapsed: true

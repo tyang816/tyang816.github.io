@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2004-ontology-development-for-uni"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2004-ontology-development-for-uni/
+- /zh/tcm/items/hist-2004-ontology-development-for-uni/
 alt_url: /projects/tcm/items/hist-2004-ontology-development-for-uni/
 author_profile: true
 sidebar_collapsed: true

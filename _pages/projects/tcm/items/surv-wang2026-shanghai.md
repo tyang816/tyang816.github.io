@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-wang2026-shanghai"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-wang2026-shanghai/
+- /pub/tcm/items/surv-wang2026-shanghai/
 alt_url: /zh/projects/tcm/items/surv-wang2026-shanghai/
 author_profile: true
 sidebar_collapsed: true

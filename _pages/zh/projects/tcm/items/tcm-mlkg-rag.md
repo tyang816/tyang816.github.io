@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-mlkg-rag"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-mlkg-rag/
+- /zh/tcm/items/tcm-mlkg-rag/
 alt_url: /projects/tcm/items/tcm-mlkg-rag/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "cpmi-chatglm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/cpmi-chatglm/
+- /zh/tcm/items/cpmi-chatglm/
 alt_url: /projects/tcm/items/cpmi-chatglm/
 author_profile: true
 sidebar_collapsed: true

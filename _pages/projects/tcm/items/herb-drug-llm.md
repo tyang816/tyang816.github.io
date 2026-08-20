@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "herb-drug-llm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/herb-drug-llm/
+- /pub/tcm/items/herb-drug-llm/
 alt_url: /zh/projects/tcm/items/herb-drug-llm/
 author_profile: true
 sidebar_collapsed: true

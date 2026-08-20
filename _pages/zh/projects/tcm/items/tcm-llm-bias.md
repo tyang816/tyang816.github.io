@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-llm-bias"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-llm-bias/
+- /zh/tcm/items/tcm-llm-bias/
 alt_url: /projects/tcm/items/tcm-llm-bias/
 author_profile: true
 sidebar_collapsed: true

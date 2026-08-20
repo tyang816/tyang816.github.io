@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcdiff"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcdiff/
+- /pub/tcm/items/tcdiff/
 alt_url: /zh/projects/tcm/items/tcdiff/
 author_profile: true
 sidebar_collapsed: true

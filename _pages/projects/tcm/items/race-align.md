@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "race-align"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/race-align/
+- /pub/tcm/items/race-align/
 alt_url: /zh/projects/tcm/items/race-align/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "survey-agentic-tcm-osf"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/survey-agentic-tcm-osf/
+- /pub/tcm/items/survey-agentic-tcm-osf/
 alt_url: /zh/projects/tcm/items/survey-agentic-tcm-osf/
 author_profile: true
 sidebar_collapsed: true

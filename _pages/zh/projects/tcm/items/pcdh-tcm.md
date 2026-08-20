@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "pcdh-tcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/pcdh-tcm/
+- /zh/tcm/items/pcdh-tcm/
 alt_url: /projects/tcm/items/pcdh-tcm/
 author_profile: true
 sidebar_collapsed: true

@@ -8,6 +8,10 @@ date: 2021-02-19
 lang: zh-CN
 alt_url: /notes/bi/E(n)-Equivariant-Graph-Neural-Networks/
 permalink: /zh/notes/bi/E(n)-Equivariant-Graph-Neural-Networks/
+redirect_from:
+  - /2021/02/19/E(n)-Equivariant-Graph-Neural-Networks/
+  - /bi/E(n)-Equivariant-Graph-Neural-Networks/
+
 ---
 
 > 论文地址：[E(n) Equivariant Graph Neural Networks](http://proceedings.mlr.press/v139/satorras21a/satorras21a.pdf)

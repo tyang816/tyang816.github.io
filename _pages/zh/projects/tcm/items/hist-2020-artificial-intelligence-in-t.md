@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2020-artificial-intelligence-in-t"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2020-artificial-intelligence-in-t/
+- /zh/tcm/items/hist-2020-artificial-intelligence-in-t/
 alt_url: /projects/tcm/items/hist-2020-artificial-intelligence-in-t/
 author_profile: true
 sidebar_collapsed: true

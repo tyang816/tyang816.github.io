@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2010-classification-of-pulse-wave"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2010-classification-of-pulse-wave/
+- /zh/tcm/items/hist-2010-classification-of-pulse-wave/
 alt_url: /projects/tcm/items/hist-2010-classification-of-pulse-wave/
 author_profile: true
 sidebar_collapsed: true

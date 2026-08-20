@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-chimed2"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-chimed2/
+- /zh/tcm/items/ds-chimed2/
 alt_url: /projects/tcm/items/ds-chimed2/
 author_profile: true
 sidebar_collapsed: true

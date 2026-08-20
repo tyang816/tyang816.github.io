@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-compound-agent"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-compound-agent/
+- /pub/tcm/items/tcm-compound-agent/
 alt_url: /zh/projects/tcm/items/tcm-compound-agent/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-stroke-bench"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-stroke-bench/
+- /zh/tcm/items/tcm-stroke-bench/
 alt_url: /projects/tcm/items/tcm-stroke-bench/
 author_profile: true
 sidebar_collapsed: true

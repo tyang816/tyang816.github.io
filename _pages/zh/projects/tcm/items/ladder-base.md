@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ladder-base"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ladder-base/
+- /zh/tcm/items/ladder-base/
 alt_url: /projects/tcm/items/ladder-base/
 author_profile: true
 sidebar_collapsed: true

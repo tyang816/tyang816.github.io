@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2008-establishment-of-a-fuzzy-mat"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
+- /zh/tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
 alt_url: /projects/tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
 author_profile: true
 sidebar_collapsed: true

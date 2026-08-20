@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-vision"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcm-vision/
+- /pub/tcm/items/ds-tcm-vision/
 alt_url: /zh/projects/tcm/items/ds-tcm-vision/
 author_profile: true
 sidebar_collapsed: true

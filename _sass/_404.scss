@@ -28,11 +28,21 @@
 
 .page-404__status {
   margin: 0 0 1rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.35rem;
   font-size: 0.95rem;
   color: $project-muted;
+  background: rgba(26, 35, 50, 0.05);
 
   &[data-kind="redirect"] {
     color: #0f6e56;
+    background: rgba(15, 110, 86, 0.08);
+  }
+
+  &[data-kind="home"] {
+    color: #7a3b00;
+    background: rgba(196, 98, 16, 0.1);
+    font-weight: 650;
   }
 }
 

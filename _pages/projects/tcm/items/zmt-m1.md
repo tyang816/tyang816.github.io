@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "zmt-m1"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/zmt-m1/
+- /pub/tcm/items/zmt-m1/
 alt_url: /zh/projects/tcm/items/zmt-m1/
 author_profile: true
 sidebar_collapsed: true

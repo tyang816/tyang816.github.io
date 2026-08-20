@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "deeptcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/deeptcm/
+- /zh/tcm/items/deeptcm/
 alt_url: /projects/tcm/items/deeptcm/
 author_profile: true
 sidebar_collapsed: true

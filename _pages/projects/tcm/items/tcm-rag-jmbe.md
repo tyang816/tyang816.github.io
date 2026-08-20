@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-rag-jmbe"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-rag-jmbe/
+- /pub/tcm/items/tcm-rag-jmbe/
 alt_url: /zh/projects/tcm/items/tcm-rag-jmbe/
 author_profile: true
 sidebar_collapsed: true

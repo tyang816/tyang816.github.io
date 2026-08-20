@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2022-data-driven-based-four-exami"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-2022-data-driven-based-four-exami/
+- /pub/tcm/items/hist-2022-data-driven-based-four-exami/
 alt_url: /zh/projects/tcm/items/hist-2022-data-driven-based-four-exami/
 author_profile: true
 sidebar_collapsed: true

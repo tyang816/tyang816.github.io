@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-gu2013"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-gu2013/
+- /zh/tcm/items/surv-gu2013/
 alt_url: /projects/tcm/items/surv-gu2013/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "njucm-tcm-eval"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/njucm-tcm-eval/
+- /zh/tcm/items/njucm-tcm-eval/
 alt_url: /projects/tcm/items/njucm-tcm-eval/
 author_profile: true
 sidebar_collapsed: true

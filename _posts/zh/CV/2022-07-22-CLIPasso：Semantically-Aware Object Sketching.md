@@ -8,6 +8,10 @@ date: 2022-07-22
 lang: zh-CN
 alt_url: /notes/cv/CLIPasso：Semantically-Aware-Object-Sketching/
 permalink: /zh/notes/cv/CLIPasso：Semantically-Aware-Object-Sketching/
+redirect_from:
+  - /2022/07/22/CLIPasso：Semantically-Aware-Object-Sketching/
+  - /cv/CLIPasso：Semantically-Aware-Object-Sketching/
+
 ---
 
 > 论文地址：[CLIPasso：Semantically-Aware Object Sketching](https://dl.acm.org/doi/10.1145/3528223.3530068)

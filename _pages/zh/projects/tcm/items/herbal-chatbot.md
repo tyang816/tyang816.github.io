@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "herbal-chatbot"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/herbal-chatbot/
+- /zh/tcm/items/herbal-chatbot/
 alt_url: /projects/tcm/items/herbal-chatbot/
 author_profile: true
 sidebar_collapsed: true

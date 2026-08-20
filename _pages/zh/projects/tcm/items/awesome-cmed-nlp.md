@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "awesome-cmed-nlp"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/awesome-cmed-nlp/
+- /zh/tcm/items/awesome-cmed-nlp/
 alt_url: /projects/tcm/items/awesome-cmed-nlp/
 author_profile: true
 sidebar_collapsed: true

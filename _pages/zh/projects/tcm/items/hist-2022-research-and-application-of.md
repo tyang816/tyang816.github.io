@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2022-research-and-application-of-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2022-research-and-application-of-/
+- /zh/tcm/items/hist-2022-research-and-application-of-/
+- /zh/projects/tcm/items/hist-2022-research-and-application-of/
+- /zh/tcm/items/hist-2022-research-and-application-of/
+- /tcm/items/hist-2022-research-and-application-of/
 alt_url: /projects/tcm/items/hist-2022-research-and-application-of-/
 author_profile: true
 sidebar_collapsed: true

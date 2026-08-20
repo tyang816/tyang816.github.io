@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "mrd-rag"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/mrd-rag/
+- /zh/tcm/items/mrd-rag/
 alt_url: /projects/tcm/items/mrd-rag/
 author_profile: true
 sidebar_collapsed: true

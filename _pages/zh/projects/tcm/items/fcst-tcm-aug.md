@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "fcst-tcm-aug"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/fcst-tcm-aug/
+- /zh/tcm/items/fcst-tcm-aug/
 alt_url: /projects/tcm/items/fcst-tcm-aug/
 author_profile: true
 sidebar_collapsed: true

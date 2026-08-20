@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-tian2024"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-tian2024/
+- /zh/tcm/items/surv-tian2024/
 alt_url: /projects/tcm/items/surv-tian2024/
 author_profile: true
 sidebar_collapsed: true

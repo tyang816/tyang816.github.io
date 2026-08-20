@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-cai-osf"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-cai-osf/
+- /zh/tcm/items/surv-cai-osf/
 alt_url: /projects/tcm/items/surv-cai-osf/
 author_profile: true
 sidebar_collapsed: true

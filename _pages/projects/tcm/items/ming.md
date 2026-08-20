@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ming"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ming/
+- /pub/tcm/items/ming/
 alt_url: /zh/projects/tcm/items/ming/
 author_profile: true
 sidebar_collapsed: true

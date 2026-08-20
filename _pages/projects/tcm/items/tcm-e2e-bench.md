@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-e2e-bench"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-e2e-bench/
+- /pub/tcm/items/tcm-e2e-bench/
 alt_url: /zh/projects/tcm/items/tcm-e2e-bench/
 author_profile: true
 sidebar_collapsed: true

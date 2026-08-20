@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "shennong-tcm-llm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/shennong-tcm-llm/
+- /pub/tcm/items/shennong-tcm-llm/
 alt_url: /zh/projects/tcm/items/shennong-tcm-llm/
 author_profile: true
 sidebar_collapsed: true

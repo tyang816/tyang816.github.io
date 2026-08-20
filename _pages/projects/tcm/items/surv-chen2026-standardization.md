@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-chen2026-standardization"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-chen2026-standardization/
+- /pub/tcm/items/surv-chen2026-standardization/
 alt_url: /zh/projects/tcm/items/surv-chen2026-standardization/
 author_profile: true
 sidebar_collapsed: true

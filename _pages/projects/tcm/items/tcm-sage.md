@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-sage"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-sage/
+- /pub/tcm/items/tcm-sage/
 alt_url: /zh/projects/tcm/items/tcm-sage/
 author_profile: true
 sidebar_collapsed: true

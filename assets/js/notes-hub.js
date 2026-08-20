@@ -112,7 +112,7 @@
     var chips = tagHtml(p.proceedings, 'venue') + tagHtml(label) + tagHtml(formatDate(p.date), 'soft');
     tags.forEach(function (tag) { chips += tagHtml(tag, 'soft'); });
     return (
-      '<a class="hub-entry" href="' + esc(p.url) + '" data-cat="' + esc(primary) + '">' +
+      '<a class="hub-entry" href="' + String(p.url || '').replace(/"/g, '%22') + '" data-cat="' + esc(primary) + '">' +
         '<div class="hub-entry__card">' +
           mediaHtml(p, label, primary) +
           '<div class="hub-entry__body">' +

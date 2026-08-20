@@ -8,6 +8,10 @@ date: 2023-01-05
 lang: zh-CN
 alt_url: /notes/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
 permalink: /zh/notes/bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+redirect_from:
+  - /2023/01/05/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+  - /bi/When-Geometric-Deep-Learning-Meets-Pretrained-Protein-Language-Models/
+
 ---
 
 > 论文地址：[When Geometric Deep Learning Meets Pretrained Protein Language Models](http://biorxiv.org/lookup/doi/10.1101/2023.01.05.522958)

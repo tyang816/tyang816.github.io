@@ -8,6 +8,10 @@ date: 2023-06-15
 lang: zh-CN
 alt_url: /notes/bi/End-to-End-Full-Atom-Antibody-Design/
 permalink: /zh/notes/bi/End-to-End-Full-Atom-Antibody-Design/
+redirect_from:
+  - /2023/06/15/End-to-End-Full-Atom-Antibody-Design/
+  - /bi/End-to-End-Full-Atom-Antibody-Design/
+
 ---
 
 > 论文地址：[End-to-End Full-Atom Antibody Design](https://proceedings.mlr.press/v202/kong23c.html)

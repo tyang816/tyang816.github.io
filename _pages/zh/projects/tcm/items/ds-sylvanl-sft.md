@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-sylvanl-sft"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-sylvanl-sft/
+- /zh/tcm/items/ds-sylvanl-sft/
 alt_url: /projects/tcm/items/ds-sylvanl-sft/
 author_profile: true
 sidebar_collapsed: true

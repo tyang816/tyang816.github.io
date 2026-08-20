@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-ftp"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-ftp/
+- /zh/tcm/items/tcm-ftp/
 alt_url: /projects/tcm/items/tcm-ftp/
 author_profile: true
 sidebar_collapsed: true

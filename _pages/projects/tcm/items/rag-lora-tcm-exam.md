@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "rag-lora-tcm-exam"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/rag-lora-tcm-exam/
+- /pub/tcm/items/rag-lora-tcm-exam/
 alt_url: /zh/projects/tcm/items/rag-lora-tcm-exam/
 author_profile: true
 sidebar_collapsed: true

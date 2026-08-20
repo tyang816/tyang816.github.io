@@ -8,6 +8,10 @@ date: 2023-01-22
 lang: zh-CN
 alt_url: /notes/bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
 permalink: /zh/notes/bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
+redirect_from:
+  - /2023/01/22/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
+  - /bi/DeepTP：A-Deep-Learning-Model-for-Thermophilic-Protein-Prediction/
+
 ---
 
 > 论文地址：[DeepTP：A Deep Learning Model for Thermophilic Protein Prediction](https://doi.org/10.3390/ijms24032217)

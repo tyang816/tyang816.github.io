@@ -8,6 +8,10 @@ date: 2022-09-18
 lang: zh-CN
 alt_url: /notes/se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
 permalink: /zh/notes/se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
+redirect_from:
+  - /2022/09/18/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
+  - /se/CodeBERT：A-Pre-Trained-Model-for-Programming-and-Natural-Languages/
+
 ---
 
 > 论文地址：[CodeBERT: A Pre-Trained Model for Programming and Natural Languages](http://arxiv.org/abs/2002.08155)

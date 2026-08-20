@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "bianque"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/bianque/
+- /zh/tcm/items/bianque/
 alt_url: /projects/tcm/items/bianque/
 author_profile: true
 sidebar_collapsed: true

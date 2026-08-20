@@ -8,6 +8,10 @@ date: 2020-05-28
 lang: zh-CN
 alt_url: /notes/cv/End-to-End-Object-Detection-with-Transformers/
 permalink: /zh/notes/cv/End-to-End-Object-Detection-with-Transformers/
+redirect_from:
+  - /2020/05/28/End-to-End-Object-Detection-with-Transformers/
+  - /cv/End-to-End-Object-Detection-with-Transformers/
+
 ---
 
 > 论文地址：[End-to-End Object Detection with Transformers](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460205.pdf)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "shizhengpt"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/shizhengpt/
+- /pub/tcm/items/shizhengpt/
 alt_url: /zh/projects/tcm/items/shizhengpt/
 author_profile: true
 sidebar_collapsed: true

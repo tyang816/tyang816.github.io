@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-wang2026-zhfyx"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-wang2026-zhfyx/
+- /pub/tcm/items/surv-wang2026-zhfyx/
 alt_url: /zh/projects/tcm/items/surv-wang2026-zhfyx/
 author_profile: true
 sidebar_collapsed: true

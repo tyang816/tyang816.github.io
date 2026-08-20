@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "pregenerator"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/pregenerator/
+- /zh/tcm/items/pregenerator/
 alt_url: /projects/tcm/items/pregenerator/
 author_profile: true
 sidebar_collapsed: true

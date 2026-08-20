@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2012-automated-tongue-feature-ext"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2012-automated-tongue-feature-ext/
+- /zh/tcm/items/hist-2012-automated-tongue-feature-ext/
 alt_url: /projects/tcm/items/hist-2012-automated-tongue-feature-ext/
 author_profile: true
 sidebar_collapsed: true

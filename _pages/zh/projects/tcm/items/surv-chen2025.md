@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-chen2025"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-chen2025/
+- /zh/tcm/items/surv-chen2025/
 alt_url: /projects/tcm/items/surv-chen2025/
 author_profile: true
 sidebar_collapsed: true

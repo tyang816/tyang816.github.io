@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmi-f-6d"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcmi-f-6d/
+- /zh/tcm/items/tcmi-f-6d/
 alt_url: /projects/tcm/items/tcmi-f-6d/
 author_profile: true
 sidebar_collapsed: true

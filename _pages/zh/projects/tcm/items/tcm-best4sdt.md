@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-best4sdt"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-best4sdt/
+- /zh/tcm/items/tcm-best4sdt/
 alt_url: /projects/tcm/items/tcm-best4sdt/
 author_profile: true
 sidebar_collapsed: true

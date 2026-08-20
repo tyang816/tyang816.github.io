@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-5c"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcm-5c/
+- /pub/tcm/items/ds-tcm-5c/
 alt_url: /zh/projects/tcm/items/ds-tcm-5c/
 author_profile: true
 sidebar_collapsed: true

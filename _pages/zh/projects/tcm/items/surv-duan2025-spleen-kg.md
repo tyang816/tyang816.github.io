@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-duan2025-spleen-kg"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-duan2025-spleen-kg/
+- /zh/tcm/items/surv-duan2025-spleen-kg/
 alt_url: /projects/tcm/items/surv-duan2025-spleen-kg/
 author_profile: true
 sidebar_collapsed: true

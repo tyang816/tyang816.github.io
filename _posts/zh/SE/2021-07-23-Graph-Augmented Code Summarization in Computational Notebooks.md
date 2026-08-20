@@ -8,6 +8,10 @@ date: 2021-07-23
 lang: zh-CN
 alt_url: /notes/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
 permalink: /zh/notes/se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+redirect_from:
+  - /2021/07/23/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+  - /se/Graph-Augmented-Code-Summarization-in-Computational-Notebooks/
+
 ---
 
 > 论文地址：[Graph-Augmented Code Summarization in Computational Notebooks](https://www.ijcai.org/proceedings/2021/717)

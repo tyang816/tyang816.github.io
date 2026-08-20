@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcpm-kg"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcpm-kg/
+- /zh/tcm/items/tcpm-kg/
 alt_url: /projects/tcm/items/tcpm-kg/
 author_profile: true
 sidebar_collapsed: true

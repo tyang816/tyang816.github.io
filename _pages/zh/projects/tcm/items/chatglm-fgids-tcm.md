@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "chatglm-fgids-tcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/chatglm-fgids-tcm/
+- /zh/tcm/items/chatglm-fgids-tcm/
 alt_url: /projects/tcm/items/chatglm-fgids-tcm/
 author_profile: true
 sidebar_collapsed: true

@@ -15,6 +15,16 @@ keywords:
   - AI for Biology
   - 蛋白质语言模型
   - 谭扬
+redirect_from:
+  - /zh/notes/CV/
+  - /zh/notes/BI/
+  - /zh/notes/CL/
+  - /zh/notes/ML/
+  - /zh/notes/SE/
+  - /zh/notes/IR/
+  - /zh/notes/OS/
+  - /zh/categories/
+  - /zh/tags/
 ---
 
 <span class='anchor' id='notes'></span>

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "survey-ai-tcm-diagnosis-jtcms"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/survey-ai-tcm-diagnosis-jtcms/
+- /zh/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 alt_url: /projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "jingfang"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/jingfang/
+- /zh/tcm/items/jingfang/
 alt_url: /projects/tcm/items/jingfang/
 author_profile: true
 sidebar_collapsed: true

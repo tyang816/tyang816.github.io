@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gpt-ernie-tcm-culture"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/gpt-ernie-tcm-culture/
+- /zh/tcm/items/gpt-ernie-tcm-culture/
 alt_url: /projects/tcm/items/gpt-ernie-tcm-culture/
 author_profile: true
 sidebar_collapsed: true

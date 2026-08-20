@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-preconsult-eval"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-preconsult-eval/
+- /zh/tcm/items/tcm-preconsult-eval/
 alt_url: /projects/tcm/items/tcm-preconsult-eval/
 author_profile: true
 sidebar_collapsed: true

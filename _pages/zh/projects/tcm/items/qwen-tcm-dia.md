@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "qwen-tcm-dia"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/qwen-tcm-dia/
+- /zh/tcm/items/qwen-tcm-dia/
 alt_url: /projects/tcm/items/qwen-tcm-dia/
 author_profile: true
 sidebar_collapsed: true

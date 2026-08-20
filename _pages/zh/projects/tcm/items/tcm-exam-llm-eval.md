@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-exam-llm-eval"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-exam-llm-eval/
+- /zh/tcm/items/tcm-exam-llm-eval/
 alt_url: /projects/tcm/items/tcm-exam-llm-eval/
 author_profile: true
 sidebar_collapsed: true

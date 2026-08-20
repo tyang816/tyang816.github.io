@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-xinghe"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hf-xinghe/
+- /pub/tcm/items/hf-xinghe/
 alt_url: /zh/projects/tcm/items/hf-xinghe/
 author_profile: true
 sidebar_collapsed: true

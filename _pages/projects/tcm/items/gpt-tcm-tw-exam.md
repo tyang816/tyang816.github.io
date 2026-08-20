@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gpt-tcm-tw-exam"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/gpt-tcm-tw-exam/
+- /pub/tcm/items/gpt-tcm-tw-exam/
 alt_url: /zh/projects/tcm/items/gpt-tcm-tw-exam/
 author_profile: true
 sidebar_collapsed: true

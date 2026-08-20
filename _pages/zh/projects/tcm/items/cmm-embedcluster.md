@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "cmm-embedcluster"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/cmm-embedcluster/
+- /zh/tcm/items/cmm-embedcluster/
 alt_url: /projects/tcm/items/cmm-embedcluster/
 author_profile: true
 sidebar_collapsed: true

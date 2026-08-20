@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-robustsdt"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcm-robustsdt/
+- /pub/tcm/items/ds-tcm-robustsdt/
 alt_url: /zh/projects/tcm/items/ds-tcm-robustsdt/
 author_profile: true
 sidebar_collapsed: true

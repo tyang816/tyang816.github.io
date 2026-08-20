@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-med-exam"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-med-exam/
+- /zh/tcm/items/ds-med-exam/
 alt_url: /projects/tcm/items/ds-med-exam/
 author_profile: true
 sidebar_collapsed: true

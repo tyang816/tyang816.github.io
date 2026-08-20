@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-1998-a-computer-model-of-the-five"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-1998-a-computer-model-of-the-five/
+- /pub/tcm/items/hist-1998-a-computer-model-of-the-five/
 alt_url: /zh/projects/tcm/items/hist-1998-a-computer-model-of-the-five/
 author_profile: true
 sidebar_collapsed: true

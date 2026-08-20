@@ -16,25 +16,25 @@ sitemap: false
   {% assign en_abs = post.url | absolute_url %}
   {% if post.alt_url %}{% assign zh_abs = post.alt_url | absolute_url %}{% endif %}
   <url>
-    <loc>{{ en_abs }}</loc>
+    <loc>{{ en_abs | xml_escape }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     {% if post.alt_url %}
-    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs }}"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs }}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs | xml_escape }}"/>
     {% endif %}
   </url>
   {% if post.alt_url %}
   <url>
-    <loc>{{ zh_abs }}</loc>
+    <loc>{{ zh_abs | xml_escape }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs }}"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs }}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_abs | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ zh_abs | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_abs | xml_escape }}"/>
   </url>
   {% endif %}
 {% endfor %}

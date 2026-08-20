@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "med-shicheng"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/med-shicheng/
+- /pub/tcm/items/med-shicheng/
 alt_url: /zh/projects/tcm/items/med-shicheng/
 author_profile: true
 sidebar_collapsed: true

@@ -8,6 +8,10 @@ date: 2021-07-14
 lang: zh-CN
 alt_url: /notes/se/Evaluating-Large-Language-Models-Trained-on-Code/
 permalink: /zh/notes/se/Evaluating-Large-Language-Models-Trained-on-Code/
+redirect_from:
+  - /2021/07/14/Evaluating-Large-Language-Models-Trained-on-Code/
+  - /se/Evaluating-Large-Language-Models-Trained-on-Code/
+
 ---
 
 > 论文地址：[Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374)

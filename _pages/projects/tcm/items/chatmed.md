@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "chatmed"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/chatmed/
+- /pub/tcm/items/chatmed/
 alt_url: /zh/projects/tcm/items/chatmed/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "plant-mllm-bench"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/plant-mllm-bench/
+- /pub/tcm/items/plant-mllm-bench/
 alt_url: /zh/projects/tcm/items/plant-mllm-bench/
 author_profile: true
 sidebar_collapsed: true

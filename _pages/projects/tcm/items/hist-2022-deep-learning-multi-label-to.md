@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2022-deep-learning-multi-label-to"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-2022-deep-learning-multi-label-to/
+- /pub/tcm/items/hist-2022-deep-learning-multi-label-to/
 alt_url: /zh/projects/tcm/items/hist-2022-deep-learning-multi-label-to/
 author_profile: true
 sidebar_collapsed: true

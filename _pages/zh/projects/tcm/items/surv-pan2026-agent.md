@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-pan2026-agent"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-pan2026-agent/
+- /zh/tcm/items/surv-pan2026-agent/
 alt_url: /projects/tcm/items/surv-pan2026-agent/
 author_profile: true
 sidebar_collapsed: true

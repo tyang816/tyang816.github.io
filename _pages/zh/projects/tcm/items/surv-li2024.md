@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-li2024"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-li2024/
+- /zh/tcm/items/surv-li2024/
 alt_url: /projects/tcm/items/surv-li2024/
 author_profile: true
 sidebar_collapsed: true

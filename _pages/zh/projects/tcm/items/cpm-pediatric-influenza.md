@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "cpm-pediatric-influenza"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/cpm-pediatric-influenza/
+- /zh/tcm/items/cpm-pediatric-influenza/
 alt_url: /projects/tcm/items/cpm-pediatric-influenza/
 author_profile: true
 sidebar_collapsed: true

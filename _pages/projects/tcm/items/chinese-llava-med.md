@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "chinese-llava-med"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/chinese-llava-med/
+- /pub/tcm/items/chinese-llava-med/
 alt_url: /zh/projects/tcm/items/chinese-llava-med/
 author_profile: true
 sidebar_collapsed: true

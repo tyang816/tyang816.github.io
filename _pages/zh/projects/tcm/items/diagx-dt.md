@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "diagx-dt"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/diagx-dt/
+- /zh/tcm/items/diagx-dt/
 alt_url: /projects/tcm/items/diagx-dt/
 author_profile: true
 sidebar_collapsed: true

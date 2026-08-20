@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-symptom-ner"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-symptom-ner/
+- /pub/tcm/items/tcm-symptom-ner/
 alt_url: /zh/projects/tcm/items/tcm-symptom-ner/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "rag-tcm-confidence"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/rag-tcm-confidence/
+- /zh/tcm/items/rag-tcm-confidence/
 alt_url: /projects/tcm/items/rag-tcm-confidence/
 author_profile: true
 sidebar_collapsed: true

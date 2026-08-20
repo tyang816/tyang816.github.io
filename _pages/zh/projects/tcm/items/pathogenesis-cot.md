@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "pathogenesis-cot"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/pathogenesis-cot/
+- /zh/tcm/items/pathogenesis-cot/
 alt_url: /projects/tcm/items/pathogenesis-cot/
 author_profile: true
 sidebar_collapsed: true

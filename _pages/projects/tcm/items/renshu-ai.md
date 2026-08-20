@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "renshu-ai"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/renshu-ai/
+- /pub/tcm/items/renshu-ai/
 alt_url: /zh/projects/tcm/items/renshu-ai/
 author_profile: true
 sidebar_collapsed: true

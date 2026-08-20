@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-kg-llm-electronics"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-kg-llm-electronics/
+- /pub/tcm/items/tcm-kg-llm-electronics/
 alt_url: /zh/projects/tcm/items/tcm-kg-llm-electronics/
 author_profile: true
 sidebar_collapsed: true

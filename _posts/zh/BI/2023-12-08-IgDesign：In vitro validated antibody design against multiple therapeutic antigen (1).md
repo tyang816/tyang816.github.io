@@ -8,6 +8,10 @@ date: 2023-12-08
 lang: zh-CN
 alt_url: /notes/bi/IgDesign：In-vitro-validated-antibody-design-against-multiple-therapeutic-antigen-(1)/
 permalink: /zh/notes/bi/IgDesign：In-vitro-validated-antibody-design-against-multiple-therapeutic-antigen-(1)/
+redirect_from:
+  - /2023/12/08/IgDesign：In-vitro-validated-antibody-design-against-multiple-therapeutic-antigen-(1)/
+  - /bi/IgDesign：In-vitro-validated-antibody-design-against-multiple-therapeutic-antigen-(1)/
+
 ---
 
 > 论文地址：[IgDesign: *In vitro* validated antibody design against multiple therapeutic antigens using inverse folding](http://biorxiv.org/lookup/doi/10.1101/2023.12.08.570889)

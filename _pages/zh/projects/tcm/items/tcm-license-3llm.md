@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-license-3llm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-license-3llm/
+- /zh/tcm/items/tcm-license-3llm/
 alt_url: /projects/tcm/items/tcm-license-3llm/
 author_profile: true
 sidebar_collapsed: true

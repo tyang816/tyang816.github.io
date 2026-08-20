@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2008-traditional-chinese-medical-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2008-traditional-chinese-medical-/
+- /zh/tcm/items/hist-2008-traditional-chinese-medical-/
+- /zh/projects/tcm/items/hist-2008-traditional-chinese-medical/
+- /zh/tcm/items/hist-2008-traditional-chinese-medical/
+- /tcm/items/hist-2008-traditional-chinese-medical/
 alt_url: /projects/tcm/items/hist-2008-traditional-chinese-medical-/
 author_profile: true
 sidebar_collapsed: true

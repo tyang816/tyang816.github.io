@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "dual-channel-ka-sdt"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/dual-channel-ka-sdt/
+- /pub/tcm/items/dual-channel-ka-sdt/
 alt_url: /zh/projects/tcm/items/dual-channel-ka-sdt/
 author_profile: true
 sidebar_collapsed: true

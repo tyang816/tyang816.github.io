@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-zhifangdantai"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hf-zhifangdantai/
+- /zh/tcm/items/hf-zhifangdantai/
 alt_url: /projects/tcm/items/hf-zhifangdantai/
 author_profile: true
 sidebar_collapsed: true

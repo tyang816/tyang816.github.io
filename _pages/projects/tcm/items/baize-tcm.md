@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "baize-tcm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/baize-tcm/
+- /pub/tcm/items/baize-tcm/
 alt_url: /zh/projects/tcm/items/baize-tcm/
 author_profile: true
 sidebar_collapsed: true

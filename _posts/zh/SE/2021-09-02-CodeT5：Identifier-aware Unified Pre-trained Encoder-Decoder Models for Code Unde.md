@@ -8,6 +8,10 @@ date: 2021-09-02
 lang: zh-CN
 alt_url: /notes/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
 permalink: /zh/notes/se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+redirect_from:
+  - /2021/09/02/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+  - /se/CodeT5：Identifier-aware-Unified-Pre-trained-Encoder-Decoder-Models-for-Code-Unde/
+
 ---
 
 > 论文地址：[CodeT5：Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation](https://aclanthology.org/2021.emnlp-main.685)

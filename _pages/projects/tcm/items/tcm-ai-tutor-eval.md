@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-ai-tutor-eval"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-ai-tutor-eval/
+- /pub/tcm/items/tcm-ai-tutor-eval/
 alt_url: /zh/projects/tcm/items/tcm-ai-tutor-eval/
 author_profile: true
 sidebar_collapsed: true

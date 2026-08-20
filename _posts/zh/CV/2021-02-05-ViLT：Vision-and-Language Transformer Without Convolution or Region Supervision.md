@@ -8,6 +8,10 @@ date: 2021-02-05
 lang: zh-CN
 alt_url: /notes/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
 permalink: /zh/notes/cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+redirect_from:
+  - /2021/02/05/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+  - /cv/ViLT：Vision-and-Language-Transformer-Without-Convolution-or-Region-Supervision/
+
 ---
 
 > 论文地址：[ViLT：Vision-and-Language Transformer Without Convolution or Region Supervision](https://proceedings.mlr.press/v139/kim21k.html)

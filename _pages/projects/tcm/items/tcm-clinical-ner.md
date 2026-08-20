@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-clinical-ner"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-clinical-ner/
+- /pub/tcm/items/tcm-clinical-ner/
 alt_url: /zh/projects/tcm/items/tcm-clinical-ner/
 author_profile: true
 sidebar_collapsed: true

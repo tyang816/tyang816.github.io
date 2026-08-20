@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "sunsimiao"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/sunsimiao/
+- /pub/tcm/items/sunsimiao/
 alt_url: /zh/projects/tcm/items/sunsimiao/
 author_profile: true
 sidebar_collapsed: true

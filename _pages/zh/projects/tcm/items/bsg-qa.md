@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "bsg-qa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/bsg-qa/
+- /zh/tcm/items/bsg-qa/
 alt_url: /projects/tcm/items/bsg-qa/
 author_profile: true
 sidebar_collapsed: true

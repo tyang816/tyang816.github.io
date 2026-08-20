@@ -8,6 +8,10 @@ date: 2024-03-15
 lang: zh-CN
 alt_url: /notes/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
 permalink: /zh/notes/bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+redirect_from:
+  - /2024/03/15/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+  - /bi/Sensitive-remote-homology-search-by-local-alignment-of-small-positional-embeddin/
+
 ---
 
 > 论文地址：[Sensitive remote homology search by local alignment of small positional embeddings from protein language models](https://elifesciences.org/articles/91415)

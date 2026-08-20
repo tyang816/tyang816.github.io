@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "acu-point-re"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/acu-point-re/
+- /pub/tcm/items/acu-point-re/
 alt_url: /zh/projects/tcm/items/acu-point-re/
 author_profile: true
 sidebar_collapsed: true

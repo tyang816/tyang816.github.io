@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "fcst-kg-llm-qa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/fcst-kg-llm-qa/
+- /zh/tcm/items/fcst-kg-llm-qa/
 alt_url: /projects/tcm/items/fcst-kg-llm-qa/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-domain-kgc"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-domain-kgc/
+- /zh/tcm/items/tcm-domain-kgc/
 alt_url: /projects/tcm/items/tcm-domain-kgc/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "new-snow-tablets"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/new-snow-tablets/
+- /zh/tcm/items/new-snow-tablets/
 alt_url: /projects/tcm/items/new-snow-tablets/
 author_profile: true
 sidebar_collapsed: true

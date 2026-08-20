@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tianhui"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tianhui/
+- /zh/tcm/items/tianhui/
 alt_url: /projects/tcm/items/tianhui/
 author_profile: true
 sidebar_collapsed: true

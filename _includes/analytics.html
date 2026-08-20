@@ -13,11 +13,15 @@
 
   if (document.documentElement.getAttribute('data-page') === '404') {
     var reported404 = false;
+    var missing = window.location.pathname || '/404.html';
+    var noise = /\/(wp-admin|wp-login|xmlrpc|cgi-bin|\.git|wordpress|phpmyadmin)/i.test(missing)
+      || /\.(php|aspx?|jsp|cgi|env|sql|bak)$/i.test(missing);
     window.__report404 = function () {
-      if (reported404 || window.__404Redirecting) return;
+      if (reported404 || window.__404Redirecting || noise) return;
       reported404 = true;
-      var missing = window.location.pathname || '/404.html';
-      document.title = '404: ' + missing + ' | Yang Tan';
+      if (missing !== '/404.html' && missing !== '/404' && missing !== '/404/') {
+        document.title = '404: ' + missing + ' | Yang Tan';
+      }
       bootGA({
         page_title: document.title,
         page_path: missing,
@@ -25,7 +29,8 @@
       });
       gtag('event', 'page_not_found', { page_path: missing });
     };
-    setTimeout(function () { window.__report404(); }, 2500);
+    if (!window.__404Redirecting && !noise) window.__report404();
+    else setTimeout(function () { window.__report404(); }, 800);
   } else {
     bootGA();
   }

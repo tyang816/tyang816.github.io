@@ -40,29 +40,29 @@ layout: null
   {% assign zh_path = parts[1] %}
   {% assign lastmod = parts[2] %}
   <url>
-    <loc>{{ site.url }}{{ en_path }}</loc>
+    <loc>{{ site.url }}{{ en_path | xml_escape }}</loc>
     <lastmod>{{ lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>{% if en_path == '/' or en_path == '/projects/' %}1.0{% elsif en_path == '/notes/' or en_path == '/timeline/' %}0.8{% else %}0.7{% endif %}</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path }}"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path }}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path | xml_escape }}"/>
   </url>
   <url>
-    <loc>{{ site.url }}{{ zh_path }}</loc>
+    <loc>{{ site.url }}{{ zh_path | xml_escape }}</loc>
     <lastmod>{{ lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>{% if zh_path == '/zh/' or zh_path == '/zh/projects/' %}1.0{% elsif zh_path == '/zh/notes/' or zh_path == '/zh/timeline/' %}0.8{% else %}0.7{% endif %}</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path }}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path }}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path | xml_escape }}"/>
   </url>
 {% endfor %}
 {% comment %} Leaderboards currently exist in English only — list without fake zh pairs. {% endcomment %}
 {% for p in site.data.projects %}
   {% if p.leaderboard %}
   <url>
-    <loc>{{ site.url }}{{ p.leaderboard }}</loc>
+    <loc>{{ site.url }}{{ p.leaderboard | xml_escape }}</loc>
     <lastmod>{{ p.date | append: "-01" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>

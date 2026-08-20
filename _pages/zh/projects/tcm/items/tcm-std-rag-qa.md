@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-std-rag-qa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-std-rag-qa/
+- /zh/tcm/items/tcm-std-rag-qa/
 alt_url: /projects/tcm/items/tcm-std-rag-qa/
 author_profile: true
 sidebar_collapsed: true

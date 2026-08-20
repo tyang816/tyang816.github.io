@@ -8,6 +8,10 @@ date: 2025-04-10
 lang: zh-CN
 alt_url: /notes/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
 permalink: /zh/notes/cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+redirect_from:
+  - /2025/04/10/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+  - /cl/The-AI-Scientist-v2：Workshop-Level-Automated-Scientific-Discovery-via-Agentic-Tree-Search/
+
 ---
 
 > 论文地址：[The AI Scientist-v2：Workshop-Level Automated Scientific Discovery via Agentic Tree Search](https://)

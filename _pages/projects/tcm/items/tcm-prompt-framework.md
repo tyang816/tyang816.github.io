@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-prompt-framework"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-prompt-framework/
+- /pub/tcm/items/tcm-prompt-framework/
 alt_url: /zh/projects/tcm/items/tcm-prompt-framework/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tongue-face-mllm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tongue-face-mllm/
+- /pub/tcm/items/tongue-face-mllm/
 alt_url: /zh/projects/tcm/items/tongue-face-mllm/
 author_profile: true
 sidebar_collapsed: true

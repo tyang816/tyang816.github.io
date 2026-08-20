@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "mcm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/mcm/
+- /pub/tcm/items/mcm/
 alt_url: /zh/projects/tcm/items/mcm/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "huatuogpt"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/huatuogpt/
+- /zh/tcm/items/huatuogpt/
 alt_url: /projects/tcm/items/huatuogpt/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "xrayglm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/xrayglm/
+- /zh/tcm/items/xrayglm/
 alt_url: /projects/tcm/items/xrayglm/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2025-mathematical-modeling-of-chi"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-2025-mathematical-modeling-of-chi/
+- /pub/tcm/items/hist-2025-mathematical-modeling-of-chi/
 alt_url: /zh/projects/tcm/items/hist-2025-mathematical-modeling-of-chi/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2023-discovering-golden-ratio-in-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2023-discovering-golden-ratio-in-/
+- /zh/tcm/items/hist-2023-discovering-golden-ratio-in-/
+- /zh/projects/tcm/items/hist-2023-discovering-golden-ratio-in/
+- /zh/tcm/items/hist-2023-discovering-golden-ratio-in/
+- /tcm/items/hist-2023-discovering-golden-ratio-in/
 alt_url: /projects/tcm/items/hist-2023-discovering-golden-ratio-in-/
 author_profile: true
 sidebar_collapsed: true

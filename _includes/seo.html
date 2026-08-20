@@ -233,7 +233,9 @@
   {% endfor %}
 {% endif %}
 
+{% unless page.permalink == '/404.html' %}
 <link rel="canonical" href="{{ canonical_url }}">
+{% endunless %}
 {% if page.robots %}
   <meta name="robots" content="{{ page.robots }}">
 {% endif %}
@@ -278,5 +280,7 @@
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}" />
 {% endif %}
 
+{% unless page.permalink == '/404.html' %}
 {% include json-ld.html %}
+{% endunless %}
 <!-- end SEO -->

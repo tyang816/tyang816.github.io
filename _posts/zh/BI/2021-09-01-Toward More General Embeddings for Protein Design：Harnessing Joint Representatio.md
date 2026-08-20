@@ -8,6 +8,10 @@ date: 2021-09-01
 lang: zh-CN
 alt_url: /notes/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
 permalink: /zh/notes/bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
+redirect_from:
+  - /2021/09/01/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
+  - /bi/Toward-More-General-Embeddings-for-Protein-Design：Harnessing-Joint-Representatio/
+
 ---
 
 > 论文地址：[Toward More General Embeddings for Protein Design：Harnessing Joint Representations of Sequence and Structure](http://biorxiv.org/lookup/doi/10.1101/2021.09.01.458592)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "eswa-acu-llm-diagnosis"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/eswa-acu-llm-diagnosis/
+- /zh/tcm/items/eswa-acu-llm-diagnosis/
 alt_url: /projects/tcm/items/eswa-acu-llm-diagnosis/
 author_profile: true
 sidebar_collapsed: true

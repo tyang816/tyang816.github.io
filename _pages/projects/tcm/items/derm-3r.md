@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "derm-3r"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/derm-3r/
+- /pub/tcm/items/derm-3r/
 alt_url: /zh/projects/tcm/items/derm-3r/
 author_profile: true
 sidebar_collapsed: true

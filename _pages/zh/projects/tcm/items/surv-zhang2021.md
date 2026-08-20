@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-zhang2021"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-zhang2021/
+- /zh/tcm/items/surv-zhang2021/
 alt_url: /projects/tcm/items/surv-zhang2021/
 author_profile: true
 sidebar_collapsed: true

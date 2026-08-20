@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "survey-key-tech-tcm-llm"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/survey-key-tech-tcm-llm/
+- /pub/tcm/items/survey-key-tech-tcm-llm/
 alt_url: /zh/projects/tcm/items/survey-key-tech-tcm-llm/
 author_profile: true
 sidebar_collapsed: true

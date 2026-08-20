@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcmeval-pa"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-tcmeval-pa/
+- /zh/tcm/items/ds-tcmeval-pa/
 alt_url: /projects/tcm/items/ds-tcmeval-pa/
 author_profile: true
 sidebar_collapsed: true

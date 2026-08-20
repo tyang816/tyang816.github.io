@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-xiang2025-kg-classics"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-xiang2025-kg-classics/
+- /pub/tcm/items/surv-xiang2025-kg-classics/
 alt_url: /zh/projects/tcm/items/surv-xiang2025-kg-classics/
 author_profile: true
 sidebar_collapsed: true

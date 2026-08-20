@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2014-a-disturbance-rejection-fram"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2014-a-disturbance-rejection-fram/
+- /zh/tcm/items/hist-2014-a-disturbance-rejection-fram/
 alt_url: /projects/tcm/items/hist-2014-a-disturbance-rejection-fram/
 author_profile: true
 sidebar_collapsed: true

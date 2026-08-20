@@ -8,6 +8,10 @@ date: 2020-07-13
 lang: zh-CN
 alt_url: /notes/ml/Deep-Graph-Contrastive-Representation-Learning/
 permalink: /zh/notes/ml/Deep-Graph-Contrastive-Representation-Learning/
+redirect_from:
+  - /2020/07/13/Deep-Graph-Contrastive-Representation-Learning/
+  - /ml/Deep-Graph-Contrastive-Representation-Learning/
+
 ---
 
 > 论文地址：[Deep Graph Contrastive Representation Learning](http://arxiv.org/abs/2006.04131)

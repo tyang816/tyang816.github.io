@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-opentcm-kg"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-opentcm-kg/
+- /pub/tcm/items/ds-opentcm-kg/
 alt_url: /zh/projects/tcm/items/ds-opentcm-kg/
 author_profile: true
 sidebar_collapsed: true

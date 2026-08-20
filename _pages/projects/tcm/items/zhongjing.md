@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "zhongjing"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/zhongjing/
+- /pub/tcm/items/zhongjing/
 alt_url: /zh/projects/tcm/items/zhongjing/
 author_profile: true
 sidebar_collapsed: true

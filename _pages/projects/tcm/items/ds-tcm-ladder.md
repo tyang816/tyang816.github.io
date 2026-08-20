@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-tcm-ladder"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-tcm-ladder/
+- /pub/tcm/items/ds-tcm-ladder/
 alt_url: /zh/projects/tcm/items/ds-tcm-ladder/
 author_profile: true
 sidebar_collapsed: true

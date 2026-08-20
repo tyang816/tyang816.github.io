@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-wang2025-med-llm-sys"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-wang2025-med-llm-sys/
+- /zh/tcm/items/surv-wang2025-med-llm-sys/
 alt_url: /projects/tcm/items/surv-wang2025-med-llm-sys/
 author_profile: true
 sidebar_collapsed: true

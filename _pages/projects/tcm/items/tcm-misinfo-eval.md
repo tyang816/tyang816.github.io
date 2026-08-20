@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-misinfo-eval"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-misinfo-eval/
+- /pub/tcm/items/tcm-misinfo-eval/
 alt_url: /zh/projects/tcm/items/tcm-misinfo-eval/
 author_profile: true
 sidebar_collapsed: true

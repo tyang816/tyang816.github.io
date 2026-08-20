@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-ancient-books"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-ancient-books/
+- /zh/tcm/items/tcm-ancient-books/
 alt_url: /projects/tcm/items/tcm-ancient-books/
 author_profile: true
 sidebar_collapsed: true

@@ -8,6 +8,10 @@ date: 2019-07-26
 lang: zh-CN
 alt_url: /notes/cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
 permalink: /zh/notes/cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
+redirect_from:
+  - /2019/07/26/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
+  - /cl/RoBERTa：A-Robustly-Optimized-BERT-Pretraining-Approach/
+
 ---
 
 > 论文地址：[RoBERTa：A Robustly Optimized BERT Pretraining Approach](http://arxiv.org/abs/1907.11692)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "acu-chatgpt-edu"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/acu-chatgpt-edu/
+- /zh/tcm/items/acu-chatgpt-edu/
 alt_url: /projects/tcm/items/acu-chatgpt-edu/
 author_profile: true
 sidebar_collapsed: true

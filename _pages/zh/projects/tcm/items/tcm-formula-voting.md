@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-formula-voting"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-formula-voting/
+- /zh/tcm/items/tcm-formula-voting/
 alt_url: /projects/tcm/items/tcm-formula-voting/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "xinghe"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/xinghe/
+- /zh/tcm/items/xinghe/
 alt_url: /projects/tcm/items/xinghe/
 author_profile: true
 sidebar_collapsed: true

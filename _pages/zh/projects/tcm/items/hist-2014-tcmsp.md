@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2014-tcmsp"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2014-tcmsp/
+- /zh/tcm/items/hist-2014-tcmsp/
 alt_url: /projects/tcm/items/hist-2014-tcmsp/
 author_profile: true
 sidebar_collapsed: true

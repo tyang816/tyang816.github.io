@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-chattcm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hf-chattcm/
+- /zh/tcm/items/hf-chattcm/
 alt_url: /projects/tcm/items/hf-chattcm/
 author_profile: true
 sidebar_collapsed: true

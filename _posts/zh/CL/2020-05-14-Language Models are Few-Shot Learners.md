@@ -8,6 +8,10 @@ date: 2020-05-14
 lang: zh-CN
 alt_url: /notes/cl/Language-Models-are-Few-Shot-Learners/
 permalink: /zh/notes/cl/Language-Models-are-Few-Shot-Learners/
+redirect_from:
+  - /2020/05/14/Language-Models-are-Few-Shot-Learners/
+  - /cl/Language-Models-are-Few-Shot-Learners/
+
 ---
 
 > 论文地址：[Language Models are Few-Shot Learners](http://arxiv.org/abs/2005.14165)

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-han2026"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-han2026/
+- /zh/tcm/items/surv-han2026/
 alt_url: /projects/tcm/items/surv-han2026/
 author_profile: true
 sidebar_collapsed: true

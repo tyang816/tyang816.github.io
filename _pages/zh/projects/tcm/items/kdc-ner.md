@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "kdc-ner"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/kdc-ner/
+- /zh/tcm/items/kdc-ner/
 alt_url: /projects/tcm/items/kdc-ner/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-cong-osf"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-cong-osf/
+- /zh/tcm/items/surv-cong-osf/
 alt_url: /projects/tcm/items/surv-cong-osf/
 author_profile: true
 sidebar_collapsed: true

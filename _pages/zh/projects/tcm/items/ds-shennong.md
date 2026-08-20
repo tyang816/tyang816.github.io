@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-shennong"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/ds-shennong/
+- /zh/tcm/items/ds-shennong/
 alt_url: /projects/tcm/items/ds-shennong/
 author_profile: true
 sidebar_collapsed: true

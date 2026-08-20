@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "evi-bert"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/evi-bert/
+- /zh/tcm/items/evi-bert/
 alt_url: /projects/tcm/items/evi-bert/
 author_profile: true
 sidebar_collapsed: true

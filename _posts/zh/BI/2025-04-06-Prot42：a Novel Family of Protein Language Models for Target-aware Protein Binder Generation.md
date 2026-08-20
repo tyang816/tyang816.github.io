@@ -8,6 +8,10 @@ date: 2025-04-06
 lang: zh-CN
 alt_url: /notes/bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
 permalink: /zh/notes/bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
+redirect_from:
+  - /2025/04/06/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
+  - /bi/Prot42：a-Novel-Family-of-Protein-Language-Models-for-Target-aware-Protein-Binder-Generation/
+
 ---
 
 > 论文地址：[Prot42: a Novel Family of Protein Language Models for Target-aware Protein Binder Generation](https://arxiv.org/abs/2504.04453)

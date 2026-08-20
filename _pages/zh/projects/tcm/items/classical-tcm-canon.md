@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "classical-tcm-canon"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/classical-tcm-canon/
+- /zh/tcm/items/classical-tcm-canon/
 alt_url: /projects/tcm/items/classical-tcm-canon/
 author_profile: true
 sidebar_collapsed: true

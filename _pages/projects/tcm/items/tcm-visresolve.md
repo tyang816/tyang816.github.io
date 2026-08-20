@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-visresolve"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-visresolve/
+- /pub/tcm/items/tcm-visresolve/
 alt_url: /zh/projects/tcm/items/tcm-visresolve/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-chen2026-ai-empowers"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-chen2026-ai-empowers/
+- /zh/tcm/items/surv-chen2026-ai-empowers/
 alt_url: /projects/tcm/items/surv-chen2026-ai-empowers/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "dongyuan"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/dongyuan/
+- /pub/tcm/items/dongyuan/
 alt_url: /zh/projects/tcm/items/dongyuan/
 author_profile: true
 sidebar_collapsed: true

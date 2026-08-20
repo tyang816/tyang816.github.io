@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "dopi"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/dopi/
+- /zh/tcm/items/dopi/
 alt_url: /projects/tcm/items/dopi/
 author_profile: true
 sidebar_collapsed: true

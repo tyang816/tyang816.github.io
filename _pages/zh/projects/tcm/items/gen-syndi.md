@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gen-syndi"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/gen-syndi/
+- /zh/tcm/items/gen-syndi/
 alt_url: /projects/tcm/items/gen-syndi/
 author_profile: true
 sidebar_collapsed: true

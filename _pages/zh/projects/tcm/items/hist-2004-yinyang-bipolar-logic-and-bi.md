@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2004-yinyang-bipolar-logic-and-bi"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
+- /zh/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
 alt_url: /projects/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
 author_profile: true
 sidebar_collapsed: true

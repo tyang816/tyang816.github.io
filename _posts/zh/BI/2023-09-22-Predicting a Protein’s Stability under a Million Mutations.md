@@ -8,6 +8,10 @@ date: 2023-09-22
 lang: zh-CN
 alt_url: /notes/bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
 permalink: /zh/notes/bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
+redirect_from:
+  - /2023/09/22/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
+  - /bi/Predicting-a-Protein’s-Stability-under-a-Million-Mutations/
+
 ---
 
 > 论文地址：[Predicting a Protein’s Stability under a Million Mutations](https://openreview.net/forum?id=YWSOpYjyG4&referrer=%5Bthe%20profile%20of%20Adam%20Klivans%5D(%2Fprofile%3Fid%3D~Adam_Klivans1))

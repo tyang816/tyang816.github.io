@@ -8,6 +8,10 @@ date: 2022-01-28
 lang: zh-CN
 alt_url: /notes/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
 permalink: /zh/notes/cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
+redirect_from:
+  - /2022/01/28/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
+  - /cl/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Large-Language-Models/
+
 ---
 
 > 论文地址：[Chain of Thought Prompting Elicits Reasoning in Large Language Models](https://openreview.net/pdf?id=_VjQlMeSB_J)

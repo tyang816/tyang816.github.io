@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "macat"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/macat/
+- /zh/tcm/items/macat/
 alt_url: /projects/tcm/items/macat/
 author_profile: true
 sidebar_collapsed: true

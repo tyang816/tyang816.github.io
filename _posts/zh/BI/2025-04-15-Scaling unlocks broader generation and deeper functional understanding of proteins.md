@@ -8,6 +8,10 @@ date: 2025-04-15
 lang: zh-CN
 alt_url: /notes/bi/Scaling-unlocks-broader-generation-and-deeper-functional-understanding-of-proteins/
 permalink: /zh/notes/bi/Scaling-unlocks-broader-generation-and-deeper-functional-understanding-of-proteins/
+redirect_from:
+  - /2025/04/15/Scaling-unlocks-broader-generation-and-deeper-functional-understanding-of-proteins/
+  - /bi/Scaling-unlocks-broader-generation-and-deeper-functional-understanding-of-proteins/
+
 ---
 
 > 论文地址：[Scaling unlocks broader generation and deeper functional understanding of proteins](https://www.biorxiv.org/content/10.1101/2025.04.15.649055v1.full.pdf)

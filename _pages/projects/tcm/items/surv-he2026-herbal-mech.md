@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-he2026-herbal-mech"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-he2026-herbal-mech/
+- /pub/tcm/items/surv-he2026-herbal-mech/
 alt_url: /zh/projects/tcm/items/surv-he2026-herbal-mech/
 author_profile: true
 sidebar_collapsed: true

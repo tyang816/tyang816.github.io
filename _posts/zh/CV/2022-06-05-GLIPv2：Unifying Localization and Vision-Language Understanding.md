@@ -8,6 +8,10 @@ date: 2022-06-05
 lang: zh-CN
 alt_url: /notes/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
 permalink: /zh/notes/cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+redirect_from:
+  - /2022/06/05/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+  - /cv/GLIPv2：Unifying-Localization-and-Vision-Language-Understanding/
+
 ---
 
 > 论文地址：[GLIPv2：Unifying Localization and Vision-Language Understanding](http://arxiv.org/abs/2206.05836)

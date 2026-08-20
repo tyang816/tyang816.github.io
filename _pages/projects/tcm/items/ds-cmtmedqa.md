@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-cmtmedqa"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-cmtmedqa/
+- /pub/tcm/items/ds-cmtmedqa/
 alt_url: /zh/projects/tcm/items/ds-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true

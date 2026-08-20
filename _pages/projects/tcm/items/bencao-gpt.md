@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "bencao-gpt"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/bencao-gpt/
+- /pub/tcm/items/bencao-gpt/
 alt_url: /zh/projects/tcm/items/bencao-gpt/
 author_profile: true
 sidebar_collapsed: true

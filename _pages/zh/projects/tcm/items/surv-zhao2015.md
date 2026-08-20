@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-zhao2015"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-zhao2015/
+- /zh/tcm/items/surv-zhao2015/
 alt_url: /projects/tcm/items/surv-zhao2015/
 author_profile: true
 sidebar_collapsed: true

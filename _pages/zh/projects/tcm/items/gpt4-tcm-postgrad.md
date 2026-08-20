@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "gpt4-tcm-postgrad"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/gpt4-tcm-postgrad/
+- /zh/tcm/items/gpt4-tcm-postgrad/
 alt_url: /projects/tcm/items/gpt4-tcm-postgrad/
 author_profile: true
 sidebar_collapsed: true

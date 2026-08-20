@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "huatuo-bencao"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/huatuo-bencao/
+- /zh/tcm/items/huatuo-bencao/
 alt_url: /projects/tcm/items/huatuo-bencao/
 author_profile: true
 sidebar_collapsed: true

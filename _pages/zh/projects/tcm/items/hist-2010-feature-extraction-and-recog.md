@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2010-feature-extraction-and-recog"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2010-feature-extraction-and-recog/
+- /zh/tcm/items/hist-2010-feature-extraction-and-recog/
 alt_url: /projects/tcm/items/hist-2010-feature-extraction-and-recog/
 author_profile: true
 sidebar_collapsed: true

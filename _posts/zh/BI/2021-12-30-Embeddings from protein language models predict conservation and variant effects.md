@@ -8,6 +8,10 @@ date: 2021-12-30
 lang: zh-CN
 alt_url: /notes/bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
 permalink: /zh/notes/bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
+redirect_from:
+  - /2021/12/30/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
+  - /bi/Embeddings-from-protein-language-models-predict-conservation-and-variant-effects/
+
 ---
 
 > 论文地址：[Embeddings from protein language models predict conservation and variant effects](https://link.springer.com/10.1007/s00439-021-02411-y)

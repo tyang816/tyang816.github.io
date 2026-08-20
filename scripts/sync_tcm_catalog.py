@@ -272,6 +272,17 @@ def write_item_page(path: Path, item: dict, zh: bool) -> None:
     kws = keywords_for(item, zh)
     kw_yaml = "\n".join(f"- {yaml_quote(k)}" for k in kws)
     date_val = item.get("date") or str(item.get("year") or "")
+    old_paths = (
+        f"\nredirect_from:\n- /zh/tcm/items/{item_id}/\n- /tcm/items/{item_id}/"
+        if zh
+        else f"\nredirect_from:\n- /tcm-en/items/{item_id}/\n- /pub/tcm/items/{item_id}/"
+    )
+    if item_id.endswith("-") and len(item_id) > 1:
+        bare = item_id.rstrip("-")
+        if zh:
+            old_paths += f"\n- /zh/tcm/items/{bare}/\n- /tcm/items/{bare}/\n- /zh/projects/tcm/items/{bare}/"
+        else:
+            old_paths += f"\n- /tcm-en/items/{bare}/\n- /pub/tcm/items/{bare}/\n- /projects/tcm/items/{bare}/"
     fm = f"""---
 permalink: {permalink}
 title: {yaml_quote(title)}
@@ -281,7 +292,7 @@ section: item
 tcm_item_id: {yaml_quote(item_id)}
 tcm_generated: true
 lang: {"zh-CN" if zh else "en"}
-alt_url: {alt}
+alt_url: {alt}{old_paths}
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false

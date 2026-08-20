@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-diffrag"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-diffrag/
+- /zh/tcm/items/tcm-diffrag/
 alt_url: /projects/tcm/items/tcm-diffrag/
 author_profile: true
 sidebar_collapsed: true

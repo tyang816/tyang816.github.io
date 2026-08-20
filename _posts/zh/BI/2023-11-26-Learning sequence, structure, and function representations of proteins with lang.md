@@ -8,6 +8,10 @@ date: 2023-11-26
 lang: zh-CN
 alt_url: /notes/bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
 permalink: /zh/notes/bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
+redirect_from:
+  - /2023/11/26/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
+  - /bi/Learning-sequence,-structure,-and-function-representations-of-proteins-with-lang/
+
 ---
 
 > 论文地址：[Learning sequence, structure, and function representations of proteins with language models](http://biorxiv.org/lookup/doi/10.1101/2023.11.26.568742)

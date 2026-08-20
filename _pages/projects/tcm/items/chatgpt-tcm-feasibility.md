@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "chatgpt-tcm-feasibility"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/chatgpt-tcm-feasibility/
+- /pub/tcm/items/chatgpt-tcm-feasibility/
 alt_url: /zh/projects/tcm/items/chatgpt-tcm-feasibility/
 author_profile: true
 sidebar_collapsed: true

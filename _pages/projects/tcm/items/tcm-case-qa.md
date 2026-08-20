@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-case-qa"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-case-qa/
+- /pub/tcm/items/tcm-case-qa/
 alt_url: /zh/projects/tcm/items/tcm-case-qa/
 author_profile: true
 sidebar_collapsed: true

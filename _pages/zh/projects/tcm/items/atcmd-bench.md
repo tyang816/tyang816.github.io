@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "atcmd-bench"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/atcmd-bench/
+- /zh/tcm/items/atcmd-bench/
 alt_url: /projects/tcm/items/atcmd-bench/
 author_profile: true
 sidebar_collapsed: true

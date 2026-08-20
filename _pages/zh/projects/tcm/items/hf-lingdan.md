@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-lingdan"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hf-lingdan/
+- /zh/tcm/items/hf-lingdan/
 alt_url: /projects/tcm/items/hf-lingdan/
 author_profile: true
 sidebar_collapsed: true

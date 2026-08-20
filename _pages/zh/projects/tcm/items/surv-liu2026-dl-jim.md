@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-liu2026-dl-jim"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-liu2026-dl-jim/
+- /zh/tcm/items/surv-liu2026-dl-jim/
 alt_url: /projects/tcm/items/surv-liu2026-dl-jim/
 author_profile: true
 sidebar_collapsed: true

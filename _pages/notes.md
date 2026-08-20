@@ -15,6 +15,19 @@ keywords:
   - AI for Biology
   - protein language model
   - Yang Tan
+redirect_from:
+  - /notes/CV/
+  - /notes/BI/
+  - /notes/CL/
+  - /notes/ML/
+  - /notes/SE/
+  - /notes/IR/
+  - /notes/OS/
+  - /categories/
+  - /categories/PaperNote/
+  - /categories/papernote/
+  - /tags/
+  - /tag/
 ---
 
 <span class='anchor' id='notes'></span>

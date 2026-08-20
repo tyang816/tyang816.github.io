@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-prescription-gnn"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-prescription-gnn/
+- /zh/tcm/items/tcm-prescription-gnn/
 alt_url: /projects/tcm/items/tcm-prescription-gnn/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "sdt-thinking-llm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/sdt-thinking-llm/
+- /zh/tcm/items/sdt-thinking-llm/
 alt_url: /projects/tcm/items/sdt-thinking-llm/
 author_profile: true
 sidebar_collapsed: true

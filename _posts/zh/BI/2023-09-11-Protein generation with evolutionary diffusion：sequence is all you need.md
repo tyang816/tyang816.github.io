@@ -8,6 +8,10 @@ date: 2023-09-11
 lang: zh-CN
 alt_url: /notes/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
 permalink: /zh/notes/bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
+redirect_from:
+  - /2023/09/11/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
+  - /bi/Protein-generation-with-evolutionary-diffusion：sequence-is-all-you-need/
+
 ---
 
 > 论文地址：[Protein generation with evolutionary diffusion：sequence is all you need](http://biorxiv.org/lookup/doi/10.1101/2023.09.11.556673)

@@ -8,6 +8,10 @@ date: 2017-11-02
 lang: zh-CN
 alt_url: /notes/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
 permalink: /zh/notes/se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+redirect_from:
+  - /2017/11/02/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+  - /se/A-parallel-corpus-of-Python-functions-and-documentation-strings-for-automated-co/
+
 ---
 
 > 论文地址：[A parallel corpus of Python functions and documentation strings for automated code documentation and code generation](https://aclanthology.org/I17-2053/)

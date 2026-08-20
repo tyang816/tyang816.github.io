@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "ds-baize-corpus"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/ds-baize-corpus/
+- /pub/tcm/items/ds-baize-corpus/
 alt_url: /zh/projects/tcm/items/ds-baize-corpus/
 author_profile: true
 sidebar_collapsed: true

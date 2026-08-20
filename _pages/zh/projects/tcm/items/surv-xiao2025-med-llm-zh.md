@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-xiao2025-med-llm-zh"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/surv-xiao2025-med-llm-zh/
+- /zh/tcm/items/surv-xiao2025-med-llm-zh/
 alt_url: /projects/tcm/items/surv-xiao2025-med-llm-zh/
 author_profile: true
 sidebar_collapsed: true

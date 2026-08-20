@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "acubert"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/acubert/
+- /zh/tcm/items/acubert/
 alt_url: /projects/tcm/items/acubert/
 author_profile: true
 sidebar_collapsed: true

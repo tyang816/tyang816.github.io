@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2023-historical-analysis-of-medic"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2023-historical-analysis-of-medic/
+- /zh/tcm/items/hist-2023-historical-analysis-of-medic/
 alt_url: /projects/tcm/items/hist-2023-historical-analysis-of-medic/
 author_profile: true
 sidebar_collapsed: true

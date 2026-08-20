@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-rlaif"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-rlaif/
+- /zh/tcm/items/tcm-rlaif/
 alt_url: /projects/tcm/items/tcm-rlaif/
 author_profile: true
 sidebar_collapsed: true

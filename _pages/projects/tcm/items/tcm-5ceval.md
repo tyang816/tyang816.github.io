@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-5ceval"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-5ceval/
+- /pub/tcm/items/tcm-5ceval/
 alt_url: /zh/projects/tcm/items/tcm-5ceval/
 author_profile: true
 sidebar_collapsed: true

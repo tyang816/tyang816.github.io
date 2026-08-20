@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcmchat"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcmchat/
+- /zh/tcm/items/tcmchat/
 alt_url: /projects/tcm/items/tcmchat/
 author_profile: true
 sidebar_collapsed: true

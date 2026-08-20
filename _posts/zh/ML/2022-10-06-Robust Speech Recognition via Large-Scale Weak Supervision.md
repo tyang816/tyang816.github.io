@@ -8,6 +8,10 @@ date: 2022-10-06
 lang: zh-CN
 alt_url: /notes/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
 permalink: /zh/notes/ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
+redirect_from:
+  - /2022/10/06/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
+  - /ml/Robust-Speech-Recognition-via-Large-Scale-Weak-Supervision/
+
 ---
 
 > 论文地址：[Robust Speech Recognition via Large-Scale Weak Supervision](https://cdn.openai.com/papers/whisper.pdf)

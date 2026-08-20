@@ -8,6 +8,10 @@ date: 2025-09-08
 lang: zh-CN
 alt_url: /notes/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
 permalink: /zh/notes/cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
+redirect_from:
+  - /2025/09/08/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
+  - /cl/ACEBench：Who-Wins-the-Match-Point-in-Tool-Usage/
+
 ---
 
 > 论文地址：[ACEBench：Who Wins the Match Point in Tool Usage](https://arxiv.org/abs/2501.12851)

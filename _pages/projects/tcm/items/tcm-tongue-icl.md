@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-tongue-icl"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tcm-tongue-icl/
+- /pub/tcm/items/tcm-tongue-icl/
 alt_url: /zh/projects/tcm/items/tcm-tongue-icl/
 author_profile: true
 sidebar_collapsed: true

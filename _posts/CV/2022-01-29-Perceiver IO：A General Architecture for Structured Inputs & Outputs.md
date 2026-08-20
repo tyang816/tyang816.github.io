@@ -6,8 +6,10 @@ tags: [vision-language]
 proceedings: ICLR
 date: 2022-01-29
 lang: en
-alt_url: /zh/notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
-permalink: /notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
+alt_url: /zh/notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
+permalink: /notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
+redirect_from:
+  - /notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
 ---
 
 > Paper: [Perceiver IO: A General Architecture for Structured Inputs & Outputs](https://openreview.net/forum?id=fILj7WpI-g)

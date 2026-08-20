@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-shennong"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hf-shennong/
+- /pub/tcm/items/hf-shennong/
 alt_url: /zh/projects/tcm/items/hf-shennong/
 author_profile: true
 sidebar_collapsed: true

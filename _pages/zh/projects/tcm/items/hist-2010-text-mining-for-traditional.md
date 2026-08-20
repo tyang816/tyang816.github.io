@@ -7,6 +7,12 @@ section: item
 tcm_item_id: "hist-2010-text-mining-for-traditional-"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/hist-2010-text-mining-for-traditional-/
+- /zh/tcm/items/hist-2010-text-mining-for-traditional-/
+- /zh/projects/tcm/items/hist-2010-text-mining-for-traditional/
+- /zh/tcm/items/hist-2010-text-mining-for-traditional/
+- /tcm/items/hist-2010-text-mining-for-traditional/
 alt_url: /projects/tcm/items/hist-2010-text-mining-for-traditional-/
 author_profile: true
 sidebar_collapsed: true

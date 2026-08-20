@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tcm-ner-covid-llm"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/tcm-ner-covid-llm/
+- /zh/tcm/items/tcm-ner-covid-llm/
 alt_url: /projects/tcm/items/tcm-ner-covid-llm/
 author_profile: true
 sidebar_collapsed: true

@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "tonguedx2"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/tonguedx2/
+- /pub/tcm/items/tonguedx2/
 alt_url: /zh/projects/tcm/items/tonguedx2/
 author_profile: true
 sidebar_collapsed: true

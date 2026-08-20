@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hist-2021-automatic-construction-of-ch"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hist-2021-automatic-construction-of-ch/
+- /pub/tcm/items/hist-2021-automatic-construction-of-ch/
 alt_url: /zh/projects/tcm/items/hist-2021-automatic-construction-of-ch/
 author_profile: true
 sidebar_collapsed: true

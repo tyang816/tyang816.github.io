@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "surv-yao2026-ai-hospitals"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/surv-yao2026-ai-hospitals/
+- /pub/tcm/items/surv-yao2026-ai-hospitals/
 alt_url: /zh/projects/tcm/items/surv-yao2026-ai-hospitals/
 author_profile: true
 sidebar_collapsed: true

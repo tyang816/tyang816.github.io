@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "shizhen-pretrain"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/shizhen-pretrain/
+- /pub/tcm/items/shizhen-pretrain/
 alt_url: /zh/projects/tcm/items/shizhen-pretrain/
 author_profile: true
 sidebar_collapsed: true

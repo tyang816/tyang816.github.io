@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "huangdi"
 tcm_generated: true
 lang: zh-CN
+redirect_from:
+- /tcm/items/huangdi/
+- /zh/tcm/items/huangdi/
 alt_url: /projects/tcm/items/huangdi/
 author_profile: true
 sidebar_collapsed: true

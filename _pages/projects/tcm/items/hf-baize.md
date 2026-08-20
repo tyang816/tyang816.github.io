@@ -7,6 +7,9 @@ section: item
 tcm_item_id: "hf-baize"
 tcm_generated: true
 lang: en
+redirect_from:
+- /tcm-en/items/hf-baize/
+- /pub/tcm/items/hf-baize/
 alt_url: /zh/projects/tcm/items/hf-baize/
 author_profile: true
 sidebar_collapsed: true
