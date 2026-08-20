@@ -12,6 +12,8 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 
   &__inner-wrap {
     @include container;
@@ -55,7 +57,7 @@
   white-space: nowrap;
   font-size: 0.95em;
   line-height: 1;
-  padding: 0.35rem 0.15rem 0.35rem 0.5rem;
+  padding: 0.45rem 0.25rem 0.45rem 0.5rem;
 
   a {
     color: $masthead-link-color;

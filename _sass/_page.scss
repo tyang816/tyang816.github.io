@@ -6,8 +6,8 @@
   @include container;
   @include clearfix;
   margin-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: calc(1em + env(safe-area-inset-left));
+  padding-right: calc(1em + env(safe-area-inset-right));
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
@@ -76,6 +76,16 @@
 
   p, li, dl {
     font-size: 1em;
+  }
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
   }
 
   /* paragraph indents */

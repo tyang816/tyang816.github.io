@@ -346,8 +346,8 @@ $project-wide: 100%;
   margin: 0 0 0.85rem;
   padding: 0.35rem 0;
   position: sticky;
-  top: 0;
-  z-index: 30;
+  top: 3.5rem;
+  z-index: 18;
   background: #fff;
 
   a,
@@ -366,8 +366,8 @@ $project-wide: 100%;
 /* Collapsible filter groups (Notes / Projects) */
 .hub-filters {
   position: sticky;
-  top: 0;
-  z-index: 30;
+  top: 3.5rem;
+  z-index: 18;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -581,6 +581,27 @@ $project-wide: 100%;
 }
 
 @media (max-width: 640px) {
+  .hub-title-row {
+    h1 {
+      font-size: clamp(1.65rem, 8vw, 2.2rem);
+    }
+
+    input[type="search"] {
+      flex: 1 1 100%;
+      min-width: 0;
+      max-width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  .project-hero h1 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .project-hero .project-lede {
+    font-size: 1.05rem;
+  }
+
   .hub-entry__card {
     flex-direction: column;
   }
@@ -817,7 +838,7 @@ $project-wide: 100%;
     border: 1px solid $project-line;
     border-radius: 0.35rem;
     background: rgba(255, 255, 255, 0.7);
-    font-size: 0.98rem;
+    font-size: 1rem;
     color: $project-ink;
 
     &:focus {

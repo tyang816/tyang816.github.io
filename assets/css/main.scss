@@ -50,27 +50,35 @@
     flex-direction: row;
     flex-wrap: wrap;
     border-bottom: 1px #efefef solid;
-    padding: 2em 0 2em 0;
-    
+    padding: 1.25em 0;
+    gap: 0.85rem 0;
 
     .paper-box-image{
         justify-content: center;
         display: flex;
         width: 100%;
+        max-width: 100%;
         order: 2;
+        min-width: 0;
         img {
-            max-width: 400px;
+            width: 100%;
+            max-width: min(400px, 100%);
+            height: auto;
             box-shadow: 3px 3px 6px #888;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
     
     .paper-box-text{
         max-width: 100%;
+        min-width: 0;
         order: 1;
     }
     
     @include breakpoint($medium) {
+        padding: 2em 0;
+        gap: 0;
+
         .paper-box-image{
             justify-content: left;
             min-width: 200px;
