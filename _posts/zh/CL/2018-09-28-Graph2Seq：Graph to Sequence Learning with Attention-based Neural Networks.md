@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
 permalink: /zh/notes/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
 redirect_from:
-  - /2018/09/28/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
-  - /cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/
-
+  - "/2018/09/28/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/"
+  - "/zh/cl/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/"
+  - "/zh/CL/Graph2Seq：Graph-to-Sequence-Learning-with-Attention-based-Neural-Networks/"
 ---
 
 

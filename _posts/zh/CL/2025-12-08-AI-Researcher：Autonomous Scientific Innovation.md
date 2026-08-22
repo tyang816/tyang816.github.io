@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
 permalink: /zh/notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
 redirect_from:
-  - /2025/12/08/AI-Researcher：Autonomous-Scientific-Innovation/
-  - /cl/AI-Researcher：Autonomous-Scientific-Innovation/
-
+  - "/2025/12/08/AI-Researcher：Autonomous-Scientific-Innovation/"
+  - "/zh/cl/AI-Researcher：Autonomous-Scientific-Innovation/"
+  - "/zh/CL/AI-Researcher：Autonomous-Scientific-Innovation/"
 ---
 
 > 论文地址：[AI-Researcher：Autonomous Scientific Innovation](https://openreview.net/pdf/a1c63cdd0495de94664b1513f7d95a3aedcb483a.pdf)

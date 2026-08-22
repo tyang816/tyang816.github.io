@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
 permalink: /zh/notes/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
 redirect_from:
-  - /2022/05/27/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
-  - /bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/
-
+  - "/2022/05/27/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/"
+  - "/zh/bi/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/"
+  - "/zh/BI/Tranception：protein-fitness-prediction-with-autoregressive-transformers-and-infe/"
 ---
 
 > 论文地址：[Tranception：protein fitness prediction with autoregressive transformers and inference-time retrieval](http://arxiv.org/abs/2205.13760)

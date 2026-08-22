@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
 permalink: /zh/notes/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
 redirect_from:
-  - /2017/02/04/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
-  - /cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
-
+  - "/2017/02/04/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/"
+  - "/zh/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/"
+  - "/zh/CL/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/"
 ---
 
 > 论文地址：[SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient](https://dl.acm.org/doi/10.5555/3298483.3298649)

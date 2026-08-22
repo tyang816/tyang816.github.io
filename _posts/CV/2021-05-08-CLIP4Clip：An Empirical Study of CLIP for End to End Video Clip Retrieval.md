@@ -8,6 +8,9 @@ date: 2021-05-08
 lang: en
 alt_url: /zh/notes/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
 permalink: /notes/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/
+redirect_from:
+  - "/cv/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/"
+  - "/CV/CLIP4Clip：An-Empirical-Study-of-CLIP-for-End-to-End-Video-Clip-Retrieval/"
 ---
 
 > Paper: [CLIP4Clip：An Empirical Study of CLIP for End to End Video Clip Retrieval](http://arxiv.org/abs/2104.08860)

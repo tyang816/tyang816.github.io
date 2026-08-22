@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Commit-Message-Generation-for-Source-Code-Changes/
 permalink: /zh/notes/se/Commit-Message-Generation-for-Source-Code-Changes/
 redirect_from:
-  - /2019/08/10/Commit-Message-Generation-for-Source-Code-Changes/
-  - /se/Commit-Message-Generation-for-Source-Code-Changes/
-
+  - "/2019/08/10/Commit-Message-Generation-for-Source-Code-Changes/"
+  - "/zh/se/Commit-Message-Generation-for-Source-Code-Changes/"
+  - "/zh/SE/Commit-Message-Generation-for-Source-Code-Changes/"
 ---
 
 > 论文地址：[Commit Message Generation for Source Code Changes](https://www.ijcai.org/proceedings/2019/0552.pdf)

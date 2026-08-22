@@ -1,5 +1,8 @@
 ---
 permalink: /notes/se/
+redirect_from:
+  - "/se/"
+  - "/SE/"
 title: "Software Paper Notes"
 note_cat: SE
 alt_url: /zh/notes/se/

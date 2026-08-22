@@ -1,5 +1,8 @@
 ---
 permalink: /zh/notes/cl/
+redirect_from:
+  - "/zh/cl/"
+  - "/zh/CL/"
 title: "语言与智能体论文笔记"
 note_cat: CL
 alt_url: /notes/cl/

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
 permalink: /zh/notes/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
 redirect_from:
-  - /2022/07/05/AST-trans：code-summarization-with-efficient-tree-structured-attention/
-  - /se/AST-trans：code-summarization-with-efficient-tree-structured-attention/
-
+  - "/2022/07/05/AST-trans：code-summarization-with-efficient-tree-structured-attention/"
+  - "/zh/se/AST-trans：code-summarization-with-efficient-tree-structured-attention/"
+  - "/zh/SE/AST-trans：code-summarization-with-efficient-tree-structured-attention/"
 ---
 
 > 论文地址：[AST-trans：code summarization with efficient tree-structured attention](https://dl.acm.org/doi/10.1145/3510003.3510224)

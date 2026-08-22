@@ -8,6 +8,9 @@ date: 2021-01-13
 lang: en
 alt_url: /zh/notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
 permalink: /notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
+redirect_from:
+  - "/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/"
+  - "/CV/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/"
 ---
 
 > Paper: [An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy)

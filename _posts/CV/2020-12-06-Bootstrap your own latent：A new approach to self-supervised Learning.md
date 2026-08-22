@@ -8,6 +8,9 @@ date: 2020-12-06
 lang: en
 alt_url: /zh/notes/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
 permalink: /notes/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/
+redirect_from:
+  - "/cv/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/"
+  - "/CV/Bootstrap-your-own-latent：A-new-approach-to-self-supervised-Learning/"
 ---
 
 > Paper: [Bootstrap your own latent: A new approach to self-supervised Learning](https://papers.nips.cc/paper_files/paper/2020/file/f3ada80d5c4ee70142b17b8192b2958e-Paper.pdf)

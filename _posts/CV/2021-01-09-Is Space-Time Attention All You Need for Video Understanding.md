@@ -8,6 +8,9 @@ date: 2021-01-09
 lang: en
 alt_url: /zh/notes/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
 permalink: /notes/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/
+redirect_from:
+  - "/cv/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/"
+  - "/CV/Is-Space-Time-Attention-All-You-Need-for-Video-Understanding/"
 ---
 
 > Paper: [Is Space-Time Attention All You Need for Video Understanding](http://proceedings.mlr.press/v139/bertasius21a/bertasius21a-supp.pdf)

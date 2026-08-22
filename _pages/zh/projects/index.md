@@ -19,6 +19,7 @@ keywords:
 - 中医大模型
 - AI for Biology
 redirect_from:
+- /zh/pub/
 - /zh/project/
 ---
 

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
 permalink: /zh/notes/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
 redirect_from:
-  - /2024/02/20/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
-  - /cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/
-
+  - "/2024/02/20/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/"
+  - "/zh/cv/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/"
+  - "/zh/CV/T2I-Adapter：Learning-Adapters-to-Dig-out-More-Controllable-Ability-for-Text-to-I/"
 ---
 
 > 论文地址：[T2I-Adapter：Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models](https://dl.acm.org/doi/10.1609/aaai.v38i5.28226)

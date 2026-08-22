@@ -8,6 +8,9 @@ date: 2022-03-21
 lang: en
 alt_url: /zh/notes/bi/Learning-functional-properties-of-proteins-with-language-models/
 permalink: /notes/bi/Learning-functional-properties-of-proteins-with-language-models/
+redirect_from:
+  - "/bi/Learning-functional-properties-of-proteins-with-language-models/"
+  - "/BI/Learning-functional-properties-of-proteins-with-language-models/"
 ---
 
 > Paper: [Learning functional properties of proteins with language models](https://www.nature.com/articles/s42256-022-00457-9)

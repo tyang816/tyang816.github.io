@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
 permalink: /zh/notes/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
 redirect_from:
-  - /2022/07/05/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
-  - /se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/
-
+  - "/2022/07/05/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/"
+  - "/zh/se/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/"
+  - "/zh/SE/Cross-Domain-Deep-Code-Search-with-Few-Shot-Meta-Learning/"
 ---
 
 > 论文地址：[Cross-Domain Deep Code Search with Few-Shot Meta Learning](https://dl.acm.org/doi/10.1145/3510003.3510125)

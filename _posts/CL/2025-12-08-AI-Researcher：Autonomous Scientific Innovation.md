@@ -8,6 +8,9 @@ date: 2025-12-08
 lang: en
 alt_url: /zh/notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
 permalink: /notes/cl/AI-Researcher：Autonomous-Scientific-Innovation/
+redirect_from:
+  - "/cl/AI-Researcher：Autonomous-Scientific-Innovation/"
+  - "/CL/AI-Researcher：Autonomous-Scientific-Innovation/"
 ---
 
 > Paper: [AI-Researcher：Autonomous Scientific Innovation](https://openreview.net/pdf/a1c63cdd0495de94664b1513f7d95a3aedcb483a.pdf)

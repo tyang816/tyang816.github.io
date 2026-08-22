@@ -8,6 +8,9 @@ date: 2023-03-09
 lang: en
 alt_url: /zh/notes/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
 permalink: /notes/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/
+redirect_from:
+  - "/cv/Improved-Baselines-with-Momentum-Contrastive-Learning/"
+  - "/CV/Improved-Baselines-with-Momentum-Contrastive-Learning/"
 ---
 
 > Paper: [Improved Baselines with Momentum Contrastive Learning](http://arxiv.org/abs/2003.04297)

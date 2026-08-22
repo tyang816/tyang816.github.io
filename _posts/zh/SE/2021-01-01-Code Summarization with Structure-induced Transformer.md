@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Code-Summarization-with-Structure-induced-Transformer/
 permalink: /zh/notes/se/Code-Summarization-with-Structure-induced-Transformer/
 redirect_from:
-  - /2021/01/01/Code-Summarization-with-Structure-induced-Transformer/
-  - /se/Code-Summarization-with-Structure-induced-Transformer/
-
+  - "/2021/01/01/Code-Summarization-with-Structure-induced-Transformer/"
+  - "/zh/se/Code-Summarization-with-Structure-induced-Transformer/"
+  - "/zh/SE/Code-Summarization-with-Structure-induced-Transformer/"
 ---
 
 > 论文地址：[Code Summarization with Structure-induced Transformer](https://aclanthology.org/2021.findings-acl.93)

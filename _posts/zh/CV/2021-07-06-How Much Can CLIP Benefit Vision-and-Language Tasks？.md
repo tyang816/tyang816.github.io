@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
 permalink: /zh/notes/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
 redirect_from:
-  - /2021/07/06/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
-  - /cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/
-
+  - "/2021/07/06/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/"
+  - "/zh/cv/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/"
+  - "/zh/CV/How-Much-Can-CLIP-Benefit-Vision-and-Language-Tasks？/"
 ---
 
 > 论文地址：[How Much Can CLIP Benefit Vision-and-Language Tasks？](http://arxiv.org/abs/2107.06383)

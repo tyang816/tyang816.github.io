@@ -8,6 +8,9 @@ date: 2022-11-28
 lang: en
 alt_url: /zh/notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
 permalink: /notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
+redirect_from:
+  - "/ir/Transformer-Memory-as-a-Differentiable-Search-Index/"
+  - "/IR/Transformer-Memory-as-a-Differentiable-Search-Index/"
 ---
 
 > Paper: [Transformer Memory as a Differentiable Search Index](https://openreview.net/pdf?id=Vu-B0clPfq)

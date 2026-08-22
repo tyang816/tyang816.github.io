@@ -8,6 +8,9 @@ date: 2017-02-04
 lang: en
 alt_url: /zh/notes/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
 permalink: /notes/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/
+redirect_from:
+  - "/cl/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/"
+  - "/CL/SeqGAN：Sequence-Generative-Adversarial-Nets-with-Policy-Gradient/"
 ---
 
 > Paper: [SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient](https://dl.acm.org/doi/10.5555/3298483.3298649)

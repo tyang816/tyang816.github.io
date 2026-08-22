@@ -8,6 +8,9 @@ date: 2019-12-06
 lang: en
 alt_url: /zh/notes/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
 permalink: /notes/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/
+redirect_from:
+  - "/os/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/"
+  - "/OS/GPipe：Efficient-Training-of-Giant-Neural-Networks-using-Pipeline-Parallelism/"
 ---
 
 > Paper: [GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism](https://proceedings.neurips.cc/paper/2019/hash/093f65e080a295f8076b1c5722a46aa2-Abstract.html)

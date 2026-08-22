@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Deep-code-search/
 permalink: /zh/notes/se/Deep-code-search/
 redirect_from:
-  - /2018/05/27/Deep-code-search/
-  - /se/Deep-code-search/
-
+  - "/2018/05/27/Deep-code-search/"
+  - "/zh/se/Deep-code-search/"
+  - "/zh/SE/Deep-code-search/"
 ---
 
 > 论文地址：[Deep code search](https://dl.acm.org/doi/10.1145/3180155.3180167)

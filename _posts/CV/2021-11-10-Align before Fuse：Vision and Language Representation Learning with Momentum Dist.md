@@ -8,6 +8,9 @@ date: 2021-11-10
 lang: en
 alt_url: /zh/notes/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
 permalink: /notes/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/
+redirect_from:
+  - "/cv/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/"
+  - "/CV/Align-before-Fuse：Vision-and-Language-Representation-Learning-with-Momentum-Dist/"
 ---
 
 > Paper: [Align before Fuse：Vision and Language Representation Learning with Momentum Distillation](https://openreview.net/forum?id=OJLaKwiXSbx)

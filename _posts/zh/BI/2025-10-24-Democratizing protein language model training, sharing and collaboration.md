@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
 permalink: /zh/notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
 redirect_from:
-  - /2025/10/24/Democratizing-protein-language-model-training,-sharing-and-collaboration/
-  - /bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
-
+  - "/2025/10/24/Democratizing-protein-language-model-training,-sharing-and-collaboration/"
+  - "/zh/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/"
+  - "/zh/BI/Democratizing-protein-language-model-training,-sharing-and-collaboration/"
 ---
 
 > 论文地址：[Democratizing protein language model training, sharing and collaboration](https://www.nature.com/articles/s41587-025-02859-7)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
 permalink: /zh/notes/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
 redirect_from:
-  - /2020/11/09/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
-  - /os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/
-
+  - "/2020/11/09/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/"
+  - "/zh/os/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/"
+  - "/zh/OS/ZeRO：Memory-Optimizations-Toward-Training-Trillion-Parameter-Models/"
 ---
 
 > 论文地址：[ZeRO：Memory Optimizations Toward Training Trillion Parameter Models](https://dl.acm.org/doi/10.5555/3433701.3433727)

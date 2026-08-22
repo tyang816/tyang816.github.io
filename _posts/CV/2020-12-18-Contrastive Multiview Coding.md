@@ -8,6 +8,9 @@ date: 2020-12-18
 lang: en
 alt_url: /zh/notes/cv/Contrastive-Multiview-Coding/
 permalink: /notes/cv/Contrastive-Multiview-Coding/
+redirect_from:
+  - "/cv/Contrastive-Multiview-Coding/"
+  - "/CV/Contrastive-Multiview-Coding/"
 ---
 
 > Paper: [Contrastive Multiview Coding](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560749.pdf)

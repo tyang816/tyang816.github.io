@@ -8,6 +8,9 @@ date: 2022-05-01
 lang: en
 alt_url: /zh/notes/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
 permalink: /notes/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/
+redirect_from:
+  - "/se/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/"
+  - "/SE/A-Survey-of-Deep-Learning-Models-for-Structural-Code-Understanding/"
 ---
 
 > Paper: [A Survey of Deep Learning Models for Structural Code Understanding](http://arxiv.org/abs/2205.01293)

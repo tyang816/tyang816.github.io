@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
 permalink: /zh/notes/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
 redirect_from:
-  - /2024/11/22/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
-  - /bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/
-
+  - "/2024/11/22/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/"
+  - "/zh/bi/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/"
+  - "/zh/BI/Expert-guided-protein-language-models-enable-accurate-and-blazingly-fast-fitness/"
 ---
 
 > 论文地址：[Expert-guided protein language models enable accurate and blazingly fast fitness prediction](https://academic.oup.com/bioinformatics/article/40/11/btae621/7907184)

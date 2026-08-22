@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
 permalink: /zh/notes/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
 redirect_from:
-  - /2025/12/17/Evaluating-Large-Language-Models-in-Scientific-Discovery/
-  - /cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/
-
+  - "/2025/12/17/Evaluating-Large-Language-Models-in-Scientific-Discovery/"
+  - "/zh/cl/Evaluating-Large-Language-Models-in-Scientific-Discovery/"
+  - "/zh/CL/Evaluating-Large-Language-Models-in-Scientific-Discovery/"
 ---
 
 > 论文地址：[Evaluating Large Language Models in Scientific Discovery](https://)

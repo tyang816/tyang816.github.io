@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
 permalink: /zh/notes/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
 redirect_from:
-  - /2022/06/23/PointCLIP：Point-Cloud-Understanding-by-CLIP/
-  - /cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/
-
+  - "/2022/06/23/PointCLIP：Point-Cloud-Understanding-by-CLIP/"
+  - "/zh/cv/PointCLIP：Point-Cloud-Understanding-by-CLIP/"
+  - "/zh/CV/PointCLIP：Point-Cloud-Understanding-by-CLIP/"
 ---
 
 > 论文地址：[PointCLIP：Point Cloud Understanding by CLIP](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_PointCLIP_Point_Cloud_Understanding_by_CLIP_CVPR_2022_paper.pdf)

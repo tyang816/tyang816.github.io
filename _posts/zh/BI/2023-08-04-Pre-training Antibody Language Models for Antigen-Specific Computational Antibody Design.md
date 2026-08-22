@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/
 permalink: /zh/notes/bi/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/
 redirect_from:
-  - /2023/08/04/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/
-  - /bi/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/
-
+  - "/2023/08/04/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/"
+  - "/zh/bi/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/"
+  - "/zh/BI/Pre-training-Antibody-Language-Models-for-Antigen-Specific-Computational-Antibody-Design/"
 ---
 
 > 论文地址：[Pre-training Antibody Language Models for Antigen-Specific Computational Antibody Design](https://dl.acm.org/doi/10.1145/3580305.3599468)

@@ -9,6 +9,7 @@ alt_url: /projects/prosst/
 author_profile: true
 description: ProSST：量化结构与解耦注意力的蛋白质语言建模（NeurIPS 2024）。
 redirect_from:
+- /zh/pub/prosst/
 - /zh/project/prosst/
 ---
 

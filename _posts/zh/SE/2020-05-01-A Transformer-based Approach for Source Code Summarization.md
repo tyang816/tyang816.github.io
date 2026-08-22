@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
 permalink: /zh/notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
 redirect_from:
-  - /2020/05/01/A-Transformer-based-Approach-for-Source-Code-Summarization/
-  - /se/A-Transformer-based-Approach-for-Source-Code-Summarization/
-
+  - "/2020/05/01/A-Transformer-based-Approach-for-Source-Code-Summarization/"
+  - "/zh/se/A-Transformer-based-Approach-for-Source-Code-Summarization/"
+  - "/zh/SE/A-Transformer-based-Approach-for-Source-Code-Summarization/"
 ---
 
 > 论文地址：[A Transformer-based Approach for Source Code Summarization](https://aclanthology.org/2020.acl-main.449.pdf)

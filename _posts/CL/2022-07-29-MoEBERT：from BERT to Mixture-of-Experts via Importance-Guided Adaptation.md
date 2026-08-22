@@ -8,6 +8,9 @@ date: 2022-07-29
 lang: en
 alt_url: /zh/notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
 permalink: /notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
+redirect_from:
+  - "/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/"
+  - "/CL/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/"
 ---
 
 > Paper: [MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation](https://aclanthology.org/2022.naacl-main.116/)

@@ -8,6 +8,9 @@ date: 2022-10-20
 lang: en
 alt_url: /zh/notes/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
 permalink: /notes/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/
+redirect_from:
+  - "/se/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/"
+  - "/SE/HELoC：Hierarchical-Contrastive-Learning-of-Source-Code-Representation/"
 ---
 
 > Paper: [HELoC：Hierarchical Contrastive Learning of Source Code Representation](https://dl.acm.org/doi/10.1145/3524610.3527896)

@@ -8,6 +8,9 @@ date: 2021-02-26
 lang: en
 alt_url: /zh/notes/cv/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/
 permalink: /notes/cv/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/
+redirect_from:
+  - "/cv/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/"
+  - "/CV/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision/"
 ---
 
 > Paper: [Learning Transferable Visual Models From Natural Language Supervision](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)

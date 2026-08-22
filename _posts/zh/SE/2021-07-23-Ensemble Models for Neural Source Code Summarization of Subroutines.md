@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
 permalink: /zh/notes/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
 redirect_from:
-  - /2021/07/23/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
-  - /se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/
-
+  - "/2021/07/23/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/"
+  - "/zh/se/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/"
+  - "/zh/SE/Ensemble-Models-for-Neural-Source-Code-Summarization-of-Subroutines/"
 ---
 
 > 论文地址：[Ensemble Models for Neural Source Code Summarization of Subroutines](http://arxiv.org/abs/2107.11423)

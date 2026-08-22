@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
 permalink: /zh/notes/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
 redirect_from:
-  - /2025/01/23/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
-  - /bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/
-
+  - "/2025/01/23/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/"
+  - "/zh/bi/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/"
+  - "/zh/BI/Boltzmann-Aligned-Inverse-Folding-Model-as-a-Predictor-of-Mutational-Effects-on-Protein-Protein-Interactions/"
 ---
 
 > 论文地址：[Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions](https://openreview.net/forum?id=lzdFImKK8w)

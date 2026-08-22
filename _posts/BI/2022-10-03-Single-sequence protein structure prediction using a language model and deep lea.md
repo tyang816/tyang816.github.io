@@ -8,6 +8,9 @@ date: 2022-10-03
 lang: en
 alt_url: /zh/notes/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
 permalink: /notes/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/
+redirect_from:
+  - "/bi/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/"
+  - "/BI/Single-sequence-protein-structure-prediction-using-a-language-model-and-deep-lea/"
 ---
 
 > Paper: [Single-sequence protein structure prediction using a language model and deep learning](https://www.nature.com/articles/s41587-022-01432-w)

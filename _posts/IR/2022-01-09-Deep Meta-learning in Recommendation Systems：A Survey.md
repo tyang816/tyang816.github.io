@@ -8,6 +8,9 @@ date: 2022-01-09
 lang: en
 alt_url: /zh/notes/ir/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/
 permalink: /notes/ir/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/
+redirect_from:
+  - "/ir/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/"
+  - "/IR/Deep-Meta-learning-in-Recommendation-Systems：A-Survey/"
 ---
 
 > Paper: [Deep Meta-learning in Recommendation Systems: A Survey](https://dl.acm.org/doi/10.1145/3285029)

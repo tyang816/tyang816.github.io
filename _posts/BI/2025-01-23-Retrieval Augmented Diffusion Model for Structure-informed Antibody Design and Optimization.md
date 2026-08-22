@@ -8,6 +8,9 @@ date: 2025-01-23
 lang: en
 alt_url: /zh/notes/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
 permalink: /notes/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/
+redirect_from:
+  - "/bi/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/"
+  - "/BI/Retrieval-Augmented-Diffusion-Model-for-Structure-informed-Antibody-Design-and-Optimization/"
 ---
 
 > Paper: [Retrieval Augmented Diffusion Model for Structure-informed Antibody Design and Optimization](https://openreview.net/forum?id=a6U41REOa5)

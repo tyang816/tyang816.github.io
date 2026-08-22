@@ -8,6 +8,9 @@ date: 2022-11-10
 lang: en
 alt_url: /zh/notes/se/HAConvGNN：Hierarchical-Attention-Based-Convolutional-Graph-Neural-Network-for-Co/
 permalink: /notes/se/HAConvGNN：Hierarchical-Attention-Based-Convolutional-Graph-Neural-Network-for-Co/
+redirect_from:
+  - "/se/HAConvGNN：Hierarchical-Attention-Based-Convolutional-Graph-Neural-Network-for-Co/"
+  - "/SE/HAConvGNN：Hierarchical-Attention-Based-Convolutional-Graph-Neural-Network-for-Co/"
 ---
 
 > Paper: [HAConvGNN:Hierarchical Attention Based Convolutional Graph Neural Network for Code Documentation Generation in Jupyter Notebooks](https://aclanthology.org/2021.findings-emnlp.381/)

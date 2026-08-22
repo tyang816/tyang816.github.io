@@ -8,6 +8,9 @@ date: 2021-01-13
 lang: en
 alt_url: /zh/notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
 permalink: /notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
+redirect_from:
+  - "/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/"
+  - "/BI/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/"
 ---
 
 > Paper: [Learning from Protein Structure with Geometric Vector Perceptrons](https://openreview.net/forum?id=1YLJDvSx6J4)

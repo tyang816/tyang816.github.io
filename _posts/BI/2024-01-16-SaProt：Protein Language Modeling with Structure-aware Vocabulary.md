@@ -8,6 +8,9 @@ date: 2024-01-16
 lang: en
 alt_url: /zh/notes/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
 permalink: /notes/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/
+redirect_from:
+  - "/bi/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/"
+  - "/BI/SaProt：Protein-Language-Modeling-with-Structure-aware-Vocabulary/"
 ---
 
 > Paper: [SaProt: Protein Language Modeling with Structure-aware Vocabulary](https://openreview.net/forum?id=6MRm3G4NiU)

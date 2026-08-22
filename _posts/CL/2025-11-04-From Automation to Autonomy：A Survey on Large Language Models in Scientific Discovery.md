@@ -8,6 +8,9 @@ date: 2025-11-04
 lang: en
 alt_url: /zh/notes/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
 permalink: /notes/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/
+redirect_from:
+  - "/cl/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/"
+  - "/CL/From-Automation-to-Autonomy：A-Survey-on-Large-Language-Models-in-Scientific-Discovery/"
 ---
 
 > Paper: [From Automation to Autonomy：A Survey on Large Language Models in Scientific Discovery](https://aclanthology.org/2025.emnlp-main.895/)

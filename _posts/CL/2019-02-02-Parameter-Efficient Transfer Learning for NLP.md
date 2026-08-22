@@ -8,6 +8,9 @@ date: 2019-02-02
 lang: en
 alt_url: /zh/notes/cl/Parameter-Efficient-Transfer-Learning-for-NLP/
 permalink: /notes/cl/Parameter-Efficient-Transfer-Learning-for-NLP/
+redirect_from:
+  - "/cl/Parameter-Efficient-Transfer-Learning-for-NLP/"
+  - "/CL/Parameter-Efficient-Transfer-Learning-for-NLP/"
 ---
 
 > Paper: [Parameter-Efficient Transfer Learning for NLP](https://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)

@@ -8,6 +8,9 @@ date: 2018-05-28
 lang: en
 alt_url: /zh/notes/se/Deep-code-comment-generation/
 permalink: /notes/se/Deep-code-comment-generation/
+redirect_from:
+  - "/se/Deep-code-comment-generation/"
+  - "/SE/Deep-code-comment-generation/"
 ---
 
 > Paper: [Deep code comment generation](https://ieeexplore.ieee.org/abstract/document/8973050)

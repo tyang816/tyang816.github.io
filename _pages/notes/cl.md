@@ -1,5 +1,8 @@
 ---
 permalink: /notes/cl/
+redirect_from:
+  - "/cl/"
+  - "/CL/"
 title: "NLP / Agents Paper Notes"
 note_cat: CL
 alt_url: /zh/notes/cl/

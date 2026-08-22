@@ -1,5 +1,8 @@
 ---
 permalink: /notes/os/
+redirect_from:
+  - "/os/"
+  - "/OS/"
 title: "Systems Paper Notes"
 note_cat: OS
 alt_url: /zh/notes/os/

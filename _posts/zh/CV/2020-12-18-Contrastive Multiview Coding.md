@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Contrastive-Multiview-Coding/
 permalink: /zh/notes/cv/Contrastive-Multiview-Coding/
 redirect_from:
-  - /2020/12/18/Contrastive-Multiview-Coding/
-  - /cv/Contrastive-Multiview-Coding/
-
+  - "/2020/12/18/Contrastive-Multiview-Coding/"
+  - "/zh/cv/Contrastive-Multiview-Coding/"
+  - "/zh/CV/Contrastive-Multiview-Coding/"
 ---
 
 > 论文地址：[Contrastive Multiview Coding](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560749.pdf)

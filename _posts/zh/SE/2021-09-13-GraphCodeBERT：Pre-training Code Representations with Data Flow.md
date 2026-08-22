@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
 permalink: /zh/notes/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
 redirect_from:
-  - /2021/09/13/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
-  - /se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/
-
+  - "/2021/09/13/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/"
+  - "/zh/se/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/"
+  - "/zh/SE/GraphCodeBERT：Pre-training-Code-Representations-with-Data-Flow/"
 ---
 
 > 论文地址：[GraphCodeBERT：Pre-training Code Representations with Data Flow](http://arxiv.org/abs/2009.08366)

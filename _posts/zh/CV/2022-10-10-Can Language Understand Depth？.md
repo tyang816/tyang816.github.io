@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Can-Language-Understand-Depth？/
 permalink: /zh/notes/cv/Can-Language-Understand-Depth？/
 redirect_from:
-  - /2022/10/10/Can-Language-Understand-Depth？/
-  - /cv/Can-Language-Understand-Depth？/
-
+  - "/2022/10/10/Can-Language-Understand-Depth？/"
+  - "/zh/cv/Can-Language-Understand-Depth？/"
+  - "/zh/CV/Can-Language-Understand-Depth？/"
 ---
 
 > 论文地址：[Can Language Understand Depth？](https://dl.acm.org/doi/10.1145/3503161.3549201)

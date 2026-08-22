@@ -8,6 +8,9 @@ date: 2022-01-10
 lang: en
 alt_url: /zh/notes/cv/Language-driven-Semantic-Segmentation/
 permalink: /notes/cv/Language-driven-Semantic-Segmentation/
+redirect_from:
+  - "/cv/Language-driven-Semantic-Segmentation/"
+  - "/CV/Language-driven-Semantic-Segmentation/"
 ---
 
 > Paper: [Language-driven Semantic Segmentation](http://arxiv.org/abs/2201.03546)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
 permalink: /zh/notes/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
 redirect_from:
-  - /2021/12/01/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
-  - /cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/
-
+  - "/2021/12/01/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/"
+  - "/zh/cv/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/"
+  - "/zh/CV/VLMo：Unified-Vision-Language-Pre-Training-with-Mixture-of-Modality-Experts/"
 ---
 
 > 论文地址：[VLMo：Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts](https://openreview.net/forum?id=bydKs84JEyw)

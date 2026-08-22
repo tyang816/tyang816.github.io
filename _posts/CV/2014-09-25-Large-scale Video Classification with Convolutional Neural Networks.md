@@ -8,6 +8,9 @@ date: 2014-09-25
 lang: en
 alt_url: /zh/notes/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
 permalink: /notes/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/
+redirect_from:
+  - "/cv/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/"
+  - "/CV/Large-scale-Video-Classification-with-Convolutional-Neural-Networks/"
 ---
 
 

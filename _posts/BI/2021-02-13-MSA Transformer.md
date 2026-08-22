@@ -8,6 +8,9 @@ date: 2021-02-13
 lang: en
 alt_url: /zh/notes/bi/MSA-Transformer/
 permalink: /notes/bi/MSA-Transformer/
+redirect_from:
+  - "/bi/MSA-Transformer/"
+  - "/BI/MSA-Transformer/"
 ---
 
 > Paper: [MSA Transformer](https://proceedings.mlr.press/v139/rao21a.html)

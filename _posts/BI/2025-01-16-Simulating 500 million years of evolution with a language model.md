@@ -8,6 +8,9 @@ date: 2025-01-16
 lang: en
 alt_url: /zh/notes/bi/Simulating-500-million-years-of-evolution-with-a-language-model/
 permalink: /notes/bi/Simulating-500-million-years-of-evolution-with-a-language-model/
+redirect_from:
+  - "/bi/Simulating-500-million-years-of-evolution-with-a-language-model/"
+  - "/BI/Simulating-500-million-years-of-evolution-with-a-language-model/"
 ---
 
 > Paper: [Simulating 500 million years of evolution with a language model](https://www.science.org/doi/10.1126/science.ads0018)

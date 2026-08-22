@@ -8,6 +8,9 @@ date: 2015-09-25
 lang: en
 alt_url: /zh/notes/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
 permalink: /notes/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/
+redirect_from:
+  - "/cv/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/"
+  - "/CV/Learning-Spatiotemporal-Features-with-3D-Convolutional-Networks/"
 ---
 
 > Paper: [Learning Spatiotemporal Features with 3D Convolutional Networks](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf)

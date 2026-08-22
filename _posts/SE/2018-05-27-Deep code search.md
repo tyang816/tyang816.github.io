@@ -8,6 +8,9 @@ date: 2018-05-27
 lang: en
 alt_url: /zh/notes/se/Deep-code-search/
 permalink: /notes/se/Deep-code-search/
+redirect_from:
+  - "/se/Deep-code-search/"
+  - "/SE/Deep-code-search/"
 ---
 
 > Paper: [Deep code search](https://dl.acm.org/doi/10.1145/3180155.3180167)

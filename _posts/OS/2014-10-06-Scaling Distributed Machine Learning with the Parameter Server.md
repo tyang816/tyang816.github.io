@@ -8,6 +8,9 @@ date: 2014-10-06
 lang: en
 alt_url: /zh/notes/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
 permalink: /notes/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/
+redirect_from:
+  - "/os/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/"
+  - "/OS/Scaling-Distributed-Machine-Learning-with-the-Parameter-Server/"
 ---
 
 > Paper: [Scaling Distributed Machine Learning with the Parameter Server](http://dl.acm.org/citation.cfm?doid=2640087.2644155)

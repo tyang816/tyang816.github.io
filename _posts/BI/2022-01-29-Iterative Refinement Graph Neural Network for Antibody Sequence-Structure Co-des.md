@@ -8,6 +8,9 @@ date: 2022-01-29
 lang: en
 alt_url: /zh/notes/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
 permalink: /notes/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/
+redirect_from:
+  - "/bi/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/"
+  - "/BI/Iterative-Refinement-Graph-Neural-Network-for-Antibody-Sequence-Structure-Co-des/"
 ---
 
 > Paper: [Iterative Refinement Graph Neural Network for Antibody Sequence-Structure Co-design](https://openreview.net/pdf?id=LI2bhrE_2A)

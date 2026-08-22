@@ -8,6 +8,9 @@ date: 2019-08-10
 lang: en
 alt_url: /zh/notes/se/Commit-Message-Generation-for-Source-Code-Changes/
 permalink: /notes/se/Commit-Message-Generation-for-Source-Code-Changes/
+redirect_from:
+  - "/se/Commit-Message-Generation-for-Source-Code-Changes/"
+  - "/SE/Commit-Message-Generation-for-Source-Code-Changes/"
 ---
 
 > Paper: [Commit Message Generation for Source Code Changes](https://www.ijcai.org/proceedings/2019/0552.pdf)

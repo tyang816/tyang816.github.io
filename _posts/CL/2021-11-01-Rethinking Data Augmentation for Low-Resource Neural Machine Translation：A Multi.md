@@ -8,6 +8,9 @@ date: 2021-11-01
 lang: en
 alt_url: /zh/notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
 permalink: /notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
+redirect_from:
+  - "/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/"
+  - "/CL/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/"
 ---
 
 

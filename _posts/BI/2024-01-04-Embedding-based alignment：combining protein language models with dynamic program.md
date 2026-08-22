@@ -8,6 +8,9 @@ date: 2024-01-04
 lang: en
 alt_url: /zh/notes/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
 permalink: /notes/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/
+redirect_from:
+  - "/bi/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/"
+  - "/BI/Embedding-based-alignment：combining-protein-language-models-with-dynamic-program/"
 ---
 
 > Paper: [Embedding-based alignment：combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone](https://academic.oup.com/bioinformatics/article/doi/10.1093/bioinformatics/btad786/7510842)

@@ -8,6 +8,9 @@ date: 2022-01-17
 lang: en
 alt_url: /zh/notes/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
 permalink: /notes/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/
+redirect_from:
+  - "/bi/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/"
+  - "/BI/Learning-protein-fitness-models-from-evolutionary-and-assay-labeled-data/"
 ---
 
 > Paper: [Learning protein fitness models from evolutionary and assay-labeled data](https://www.nature.com/articles/s41587-021-01146-5)

@@ -8,6 +8,9 @@ date: 2022-03-07
 lang: en
 alt_url: /zh/notes/se/Competition-Level-Code-Generation-with-AlphaCode/
 permalink: /notes/se/Competition-Level-Code-Generation-with-AlphaCode/
+redirect_from:
+  - "/se/Competition-Level-Code-Generation-with-AlphaCode/"
+  - "/SE/Competition-Level-Code-Generation-with-AlphaCode/"
 ---
 
 > Paper: [Competition-Level Code Generation with AlphaCode](http://arxiv.org/abs/2203.07814)

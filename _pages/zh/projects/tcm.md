@@ -9,6 +9,8 @@ lang: zh-CN
 alt_url: /projects/tcm/
 author_profile: true
 redirect_from:
+- /zh/pub/tcm/
+- /zh/pub/tcm/items/
 - /tcm/
 - /tcm/items/
 - /zh/tcm/

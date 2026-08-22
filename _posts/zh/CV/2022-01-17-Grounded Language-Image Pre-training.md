@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Grounded-Language-Image-Pre-training/
 permalink: /zh/notes/cv/Grounded-Language-Image-Pre-training/
 redirect_from:
-  - /2022/01/17/Grounded-Language-Image-Pre-training/
-  - /cv/Grounded-Language-Image-Pre-training/
-
+  - "/2022/01/17/Grounded-Language-Image-Pre-training/"
+  - "/zh/cv/Grounded-Language-Image-Pre-training/"
+  - "/zh/CV/Grounded-Language-Image-Pre-training/"
 ---
 
 > 论文地址：[Grounded Language-Image Pre-trainin](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_paper.pdf)

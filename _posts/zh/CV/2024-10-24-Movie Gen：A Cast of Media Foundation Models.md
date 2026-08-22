@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
 permalink: /zh/notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
 redirect_from:
-  - /2024/10/24/Movie-Gen：A-Cast-of-Media-Foundation-Models/
-  - /cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
-
+  - "/2024/10/24/Movie-Gen：A-Cast-of-Media-Foundation-Models/"
+  - "/zh/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/"
+  - "/zh/CV/Movie-Gen：A-Cast-of-Media-Foundation-Models/"
 ---
 
 > 论文地址：[Movie Gen：A Cast of Media Foundation Models](https://arxiv.org/abs/2410.13720)

@@ -9,6 +9,7 @@ alt_url: /projects/peta/
 author_profile: true
 description: PETA：子词分词对蛋白质迁移学习下游应用影响的系统评估（Journal of Cheminformatics 2024）。
 redirect_from:
+- /zh/pub/peta/
 - /zh/project/peta/
 ---
 

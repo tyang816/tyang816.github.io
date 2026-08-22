@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
 permalink: /zh/notes/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
 redirect_from:
-  - /2024/11/07/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
-  - /bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/
-
+  - "/2024/11/07/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/"
+  - "/zh/bi/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/"
+  - "/zh/BI/A-joint-embedding-of-protein-sequence-and-structure-enables-robust-variant-effec/"
 ---
 
 > 论文地址：[A joint embedding of protein sequence and structure enables robust variant effect predictions](https://www.nature.com/articles/s41467-024-53982-z)

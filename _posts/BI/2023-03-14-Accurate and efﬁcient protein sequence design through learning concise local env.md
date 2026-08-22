@@ -8,6 +8,9 @@ date: 2023-03-14
 lang: en
 alt_url: /zh/notes/bi/Accurate-and-efﬁcient-protein-sequence-design-through-learning-concise-local-env/
 permalink: /notes/bi/Accurate-and-efﬁcient-protein-sequence-design-through-learning-concise-local-env/
+redirect_from:
+  - "/bi/Accurate-and-efﬁcient-protein-sequence-design-through-learning-concise-local-env/"
+  - "/BI/Accurate-and-efﬁcient-protein-sequence-design-through-learning-concise-local-env/"
 ---
 
 > Paper: [Accurate and efﬁcient protein sequence design through learning concise local environment of residues](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btad122/7077134?login=false)

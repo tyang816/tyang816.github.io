@@ -9,6 +9,7 @@ alt_url: /projects/medchatzh/
 author_profile: true
 description: MedChatZH：面向中医问诊的微调大语言模型（Computers in Biology and Medicine 2024）。
 redirect_from:
+- /zh/pub/medchatzh/
 - /zh/project/medchatzh/
 ---
 

@@ -8,6 +8,9 @@ date: 2022-11-28
 lang: en
 alt_url: /zh/notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
 permalink: /notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
+redirect_from:
+  - "/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/"
+  - "/BI/Fast-protein-structure-searching-using-structure-graph-embeddings/"
 ---
 
 > Paper: [Fast protein structure searching using structure graph embeddings](https://www.biorxiv.org/content/10.1101/2022.11.28.518224v2)

@@ -8,6 +8,9 @@ date: 2020-05-01
 lang: en
 alt_url: /zh/notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
 permalink: /notes/se/A-Transformer-based-Approach-for-Source-Code-Summarization/
+redirect_from:
+  - "/se/A-Transformer-based-Approach-for-Source-Code-Summarization/"
+  - "/SE/A-Transformer-based-Approach-for-Source-Code-Summarization/"
 ---
 
 > Paper: [A Transformer-based Approach for Source Code Summarization](https://aclanthology.org/2020.acl-main.449.pdf)

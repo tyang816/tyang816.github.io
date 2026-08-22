@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
 permalink: /zh/notes/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
 redirect_from:
-  - /2022/11/28/Fast-protein-structure-searching-using-structure-graph-embeddings/
-  - /bi/Fast-protein-structure-searching-using-structure-graph-embeddings/
-
+  - "/2022/11/28/Fast-protein-structure-searching-using-structure-graph-embeddings/"
+  - "/zh/bi/Fast-protein-structure-searching-using-structure-graph-embeddings/"
+  - "/zh/BI/Fast-protein-structure-searching-using-structure-graph-embeddings/"
 ---
 
 > 论文地址：[Fast protein structure searching using structure graph embeddings](https://www.biorxiv.org/content/10.1101/2022.11.28.518224v2)

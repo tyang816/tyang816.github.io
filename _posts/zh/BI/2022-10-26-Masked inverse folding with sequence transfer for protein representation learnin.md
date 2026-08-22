@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
 permalink: /zh/notes/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
 redirect_from:
-  - /2022/10/26/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
-  - /bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/
-
+  - "/2022/10/26/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/"
+  - "/zh/bi/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/"
+  - "/zh/BI/Masked-inverse-folding-with-sequence-transfer-for-protein-representation-learnin/"
 ---
 
 > 论文地址：[Masked inverse folding with sequence transfer for protein representation learning](https://academic.oup.com/peds/article-abstract/doi/10.1093/protein/gzad015/7330543?redirectedFrom=fulltext)

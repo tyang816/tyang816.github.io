@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
 permalink: /zh/notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
 redirect_from:
-  - /2020/07/13/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
-  - /se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
-
+  - "/2020/07/13/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/"
+  - "/zh/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/"
+  - "/zh/SE/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/"
 ---
 
 > 论文地址：[Graph-based, Self-Supervised Program Repair from Diagnostic Feedback](https://dl.acm.org/doi/10.5555/3524938.3525939)

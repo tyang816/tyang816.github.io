@@ -8,6 +8,9 @@ date: 2020-07-01
 lang: en
 alt_url: /zh/notes/cv/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/
 permalink: /notes/cv/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/
+redirect_from:
+  - "/cv/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/"
+  - "/CV/A-Simple-Framework-for-Contrastive-Learning-of-Visual-Representations/"
 ---
 
 > Paper: [A Simple Framework for Contrastive Learning of Visual Representations](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf)

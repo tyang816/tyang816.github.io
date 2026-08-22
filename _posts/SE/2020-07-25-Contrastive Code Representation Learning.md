@@ -8,6 +8,9 @@ date: 2020-07-25
 lang: en
 alt_url: /zh/notes/se/Contrastive-Code-Representation-Learning/
 permalink: /notes/se/Contrastive-Code-Representation-Learning/
+redirect_from:
+  - "/se/Contrastive-Code-Representation-Learning/"
+  - "/SE/Contrastive-Code-Representation-Learning/"
 ---
 
 > Paper: [Contrastive Code Representation Learning](http://arxiv.org/abs/2007.04973)

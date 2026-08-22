@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Language-driven-Semantic-Segmentation/
 permalink: /zh/notes/cv/Language-driven-Semantic-Segmentation/
 redirect_from:
-  - /2022/01/10/Language-driven-Semantic-Segmentation/
-  - /cv/Language-driven-Semantic-Segmentation/
-
+  - "/2022/01/10/Language-driven-Semantic-Segmentation/"
+  - "/zh/cv/Language-driven-Semantic-Segmentation/"
+  - "/zh/CV/Language-driven-Semantic-Segmentation/"
 ---
 
 > 论文地址：[Language-driven Semantic Segmentation](http://arxiv.org/abs/2201.03546)

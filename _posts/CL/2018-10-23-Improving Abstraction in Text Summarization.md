@@ -8,6 +8,9 @@ date: 2018-10-23
 lang: en
 alt_url: /zh/notes/cl/Improving-Abstraction-in-Text-Summarization/
 permalink: /notes/cl/Improving-Abstraction-in-Text-Summarization/
+redirect_from:
+  - "/cl/Improving-Abstraction-in-Text-Summarization/"
+  - "/CL/Improving-Abstraction-in-Text-Summarization/"
 ---
 
 > Paper: [Improving Abstraction in Text Summarization](http://arxiv.org/abs/1808.07913)

@@ -8,6 +8,9 @@ date: 2025-01-23
 lang: en
 alt_url: /zh/notes/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
 permalink: /notes/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/
+redirect_from:
+  - "/cl/ToolACE：Winning-the-Points-of-LLM-Function-Calling/"
+  - "/CL/ToolACE：Winning-the-Points-of-LLM-Function-Calling/"
 ---
 
 > Paper: [ToolACE：Winning the Points of LLM Function Calling](https://openreview.net/forum?id=8EB8k6DdCU)

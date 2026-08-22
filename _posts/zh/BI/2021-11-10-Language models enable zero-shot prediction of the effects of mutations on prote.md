@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
 permalink: /zh/notes/bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
 redirect_from:
-  - /2021/11/10/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
-  - /bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/
-
+  - "/2021/11/10/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/"
+  - "/zh/bi/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/"
+  - "/zh/BI/Language-models-enable-zero-shot-prediction-of-the-effects-of-mutations-on-prote/"
 ---
 
 > 论文地址：[Language models enable zero-shot prediction of the effects of mutations on protein function](https://proceedings.neurips.cc/paper/2021/hash/f51338d736f95dd42427296047067694-Abstract.html)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
 permalink: /zh/notes/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
 redirect_from:
-  - /2023/01/09/MixGen：A-New-Multi-Modal-Data-Augmentation/
-  - /cv/MixGen：A-New-Multi-Modal-Data-Augmentation/
-
+  - "/2023/01/09/MixGen：A-New-Multi-Modal-Data-Augmentation/"
+  - "/zh/cv/MixGen：A-New-Multi-Modal-Data-Augmentation/"
+  - "/zh/CV/MixGen：A-New-Multi-Modal-Data-Augmentation/"
 ---
 
 > 论文地址：[MixGen：A New Multi-Modal Data Augmentation](https://openaccess.thecvf.com/content/WACV2023W/Pretrain/papers/Hao_MixGen_A_New_Multi-Modal_Data_Augmentation_WACVW_2023_paper.pdf)

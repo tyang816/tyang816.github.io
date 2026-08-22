@@ -8,6 +8,9 @@ date: 2022-01-29
 lang: en
 alt_url: /zh/notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
 permalink: /notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
+redirect_from:
+  - "/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/"
+  - "/CV/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/"
 ---
 
 > Paper: [Open-vocabulary Object Detection via Vision and Language Knowledge Distillation](https://openreview.net/forum?id=lL3lnMbR4WU)

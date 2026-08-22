@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
 permalink: /zh/notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
 redirect_from:
-  - /2023/10/08/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
-  - /bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
-
+  - "/2023/10/08/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/"
+  - "/zh/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/"
+  - "/zh/BI/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/"
 ---
 
 > 论文地址：[BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology](https://openreview.net/forum?id=pMCRGmB7Rv)

@@ -92,6 +92,8 @@
     var pathPart = qAt === -1 ? next : next.slice(0, qAt);
     var queryPart = qAt === -1 ? '' : next.slice(qAt);
     pathPart = pathPart.replace(/&amp;/gi, 'and').replace(/&/g, 'and');
+    // Explicit permalinks keep fullwidth colons; search/OS often send ASCII.
+    pathPart = pathPart.replace(/:/g, '：');
     next = pathPart + queryPart;
 
     var rules = [
@@ -117,9 +119,10 @@
     }
 
     // /cv and /cv/ are the resume aliases on the homepage. Leave them alone.
-    m = next.match(new RegExp('^/(' + NOTE_CAT + ')/?$', 'i'));
+    // Other /bi /cl … roots now have category landings under /notes/.
+    m = next.match(new RegExp('^/(zh/)?(' + NOTE_CAT + ')/?$', 'i'));
     if (m && !/^\/cv\/?$/.test(next)) {
-      return notesHub();
+      return '/' + (m[1] || '') + 'notes/' + m[2].toLowerCase() + '/';
     }
 
     // Old Hexo/Jekyll notes: /cv/Title/ or /zh/cv/Title/ (no /notes/ prefix)
@@ -151,7 +154,7 @@
     }
 
     next = next.replace(/^(\/zh)?\/notes\/([a-z]{2})\/?$/, function (_all, zh, cat) {
-      return (zh || '') + '/notes/#cat-' + cat.toUpperCase();
+      return (zh || '') + '/notes/' + cat + '/';
     });
 
     if (next.indexOf('#') !== -1) return next;
@@ -425,7 +428,6 @@
     bindSearch(root, entries, i18n, zh);
 
     if (is404File(path) || isNoise(path)) {
-      report404();
       return;
     }
 
@@ -440,7 +442,11 @@
     goHome(root, i18n);
   }
 
-  if (!is404File(path) && !isNoise(path) && go(remap(path))) return;
+  if (is404File(path)) {
+    window.location.replace(preferZh() ? '/zh/' : '/');
+    return;
+  }
+  if (!isNoise(path) && go(remap(path))) return;
 
   function onReady(fn) {
     if (document.readyState === 'loading') {
@@ -456,8 +462,7 @@
     var i18n = root ? applyI18n(root, zh) : I18N.en;
     if (root) showPath(root);
 
-    if (is404File(path) || isNoise(path)) {
-      report404();
+    if (isNoise(path)) {
       return;
     }
 

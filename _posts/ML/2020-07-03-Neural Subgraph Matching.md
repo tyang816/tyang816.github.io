@@ -8,6 +8,9 @@ date: 2020-07-03
 lang: en
 alt_url: /zh/notes/ml/Neural-Subgraph-Matching/
 permalink: /notes/ml/Neural-Subgraph-Matching/
+redirect_from:
+  - "/ml/Neural-Subgraph-Matching/"
+  - "/ML/Neural-Subgraph-Matching/"
 ---
 
 > Paper: [Neural Subgraph Matching](http://arxiv.org/abs/2007.03092)

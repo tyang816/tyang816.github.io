@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ml/Neural-Subgraph-Matching/
 permalink: /zh/notes/ml/Neural-Subgraph-Matching/
 redirect_from:
-  - /2020/07/03/Neural-Subgraph-Matching/
-  - /ml/Neural-Subgraph-Matching/
-
+  - "/2020/07/03/Neural-Subgraph-Matching/"
+  - "/zh/ml/Neural-Subgraph-Matching/"
+  - "/zh/ML/Neural-Subgraph-Matching/"
 ---
 
 > 论文地址：[Neural Subgraph Matching](http://arxiv.org/abs/2007.03092)

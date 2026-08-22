@@ -8,6 +8,9 @@ date: 2022-01-29
 lang: en
 alt_url: /zh/notes/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
 permalink: /notes/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/
+redirect_from:
+  - "/bi/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/"
+  - "/BI/OntoProtein：Protein-Pretraining-With-Gene-Ontology-Embedding/"
 ---
 
 > Paper: [OntoProtein：Protein Pretraining With Gene Ontology Embedding](https://openreview.net/forum?id=yfe1VMYAXa4)

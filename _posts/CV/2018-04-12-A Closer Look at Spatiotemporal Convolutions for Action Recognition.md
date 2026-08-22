@@ -8,6 +8,9 @@ date: 2018-04-12
 lang: en
 alt_url: /zh/notes/cv/A-Closer-Look-at-Spatiotemporal-Convolutions-for-Action-Recognition/
 permalink: /notes/cv/A-Closer-Look-at-Spatiotemporal-Convolutions-for-Action-Recognition/
+redirect_from:
+  - "/cv/A-Closer-Look-at-Spatiotemporal-Convolutions-for-Action-Recognition/"
+  - "/CV/A-Closer-Look-at-Spatiotemporal-Convolutions-for-Action-Recognition/"
 ---
 
 > Paper: [A Closer Look at Spatiotemporal Convolutions for Action Recognition](https://openaccess.thecvf.com/content_cvpr_2018/papers/Tran_A_Closer_Look_CVPR_2018_paper.pdf)

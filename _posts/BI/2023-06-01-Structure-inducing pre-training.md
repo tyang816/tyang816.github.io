@@ -8,6 +8,9 @@ date: 2023-06-01
 lang: en
 alt_url: /zh/notes/bi/Structure-inducing-pre-training/
 permalink: /notes/bi/Structure-inducing-pre-training/
+redirect_from:
+  - "/bi/Structure-inducing-pre-training/"
+  - "/BI/Structure-inducing-pre-training/"
 ---
 
 > Paper: [Structure-inducing pre-training](https://www.nature.com/articles/s42256-023-00647-z)

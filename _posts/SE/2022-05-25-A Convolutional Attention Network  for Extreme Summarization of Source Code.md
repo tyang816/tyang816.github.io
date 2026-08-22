@@ -8,6 +8,9 @@ date: 2022-05-25
 lang: en
 alt_url: /zh/notes/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
 permalink: /notes/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/
+redirect_from:
+  - "/se/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/"
+  - "/SE/A-Convolutional-Attention-Network--for-Extreme-Summarization-of-Source-Code/"
 ---
 
 > Paper: [A Convolutional Attention Network  for Extreme Summarization of Source Code](http://proceedings.mlr.press/v48/allamanis16.html)

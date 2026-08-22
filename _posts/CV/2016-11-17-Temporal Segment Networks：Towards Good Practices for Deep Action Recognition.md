@@ -8,6 +8,9 @@ date: 2016-11-17
 lang: en
 alt_url: /zh/notes/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
 permalink: /notes/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/
+redirect_from:
+  - "/cv/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/"
+  - "/CV/Temporal-Segment-Networks：Towards-Good-Practices-for-Deep-Action-Recognition/"
 ---
 
 > Paper: [Temporal Segment Networks：Towards Good Practices for Deep Action Recognition](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_2)

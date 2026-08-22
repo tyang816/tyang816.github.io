@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
 permalink: /zh/notes/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
 redirect_from:
-  - /2021/09/17/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
-  - /cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/
-
+  - "/2021/09/17/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/"
+  - "/zh/cv/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/"
+  - "/zh/CV/ActionCLIP：A-New-Paradigm-for-Video-Action-Recognition/"
 ---
 
 > 论文地址：[ActionCLIP：A New Paradigm for Video Action Recognition](https://arxiv.org/pdf/2109.08472.pdf)

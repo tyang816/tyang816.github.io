@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
 permalink: /zh/notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
 redirect_from:
-  - /2020/03/23/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
-  - /cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
-
+  - "/2020/03/23/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/"
+  - "/zh/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/"
+  - "/zh/CV/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/"
 ---
 
 > 论文地址：[Momentum Contrast for Unsupervised Visual Representation Learning](https://ieeexplore.ieee.org/document/9157636/)

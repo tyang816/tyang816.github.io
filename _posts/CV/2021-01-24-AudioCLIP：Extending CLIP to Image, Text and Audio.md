@@ -8,6 +8,9 @@ date: 2021-01-24
 lang: en
 alt_url: /zh/notes/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
 permalink: /notes/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/
+redirect_from:
+  - "/cv/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/"
+  - "/CV/AudioCLIP：Extending-CLIP-to-Image,-Text-and-Audio/"
 ---
 
 > Paper: [AudioCLIP：Extending CLIP to Image, Text and Audio](http://arxiv.org/abs/2106.13043)

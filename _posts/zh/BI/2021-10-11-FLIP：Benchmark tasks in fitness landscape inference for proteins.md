@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
 permalink: /zh/notes/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
 redirect_from:
-  - /2021/10/11/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
-  - /bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/
-
+  - "/2021/10/11/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/"
+  - "/zh/bi/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/"
+  - "/zh/BI/FLIP：Benchmark-tasks-in-fitness-landscape-inference-for-proteins/"
 ---
 
 > 论文地址：[FLIP：Benchmark tasks in fitness landscape inference for proteins](https://openreview.net/forum?id=p2dMLEwL8tF)

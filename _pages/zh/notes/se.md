@@ -1,5 +1,8 @@
 ---
 permalink: /zh/notes/se/
+redirect_from:
+  - "/zh/se/"
+  - "/zh/SE/"
 title: "软件工程论文笔记"
 note_cat: SE
 alt_url: /notes/se/

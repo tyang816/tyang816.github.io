@@ -9,6 +9,7 @@ alt_url: /projects/venusfactory/
 author_profile: true
 description: VenusFactory——一体化蛋白质工程系统（ACL Demo 2025），并由 VenusFactory2 扩展至 Web。
 redirect_from:
+- /zh/pub/venusfactory/
 - /zh/project/venusfactory/
 ---
 

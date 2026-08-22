@@ -8,6 +8,9 @@ date: 2021-04-05
 lang: en
 alt_url: /zh/notes/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
 permalink: /notes/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/
+redirect_from:
+  - "/cv/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/"
+  - "/CV/An-Empirical-Study-of-Training-Self-Supervised-Vision-Transformers/"
 ---
 
 > Paper: [An Empirical Study of Training Self-Supervised Vision Transformers](http://arxiv.org/abs/2104.02057)

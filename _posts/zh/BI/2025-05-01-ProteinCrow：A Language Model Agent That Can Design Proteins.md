@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/
 permalink: /zh/notes/bi/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/
 redirect_from:
-  - /2025/05/01/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/
-  - /bi/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/
-
+  - "/2025/05/01/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/"
+  - "/zh/bi/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/"
+  - "/zh/BI/ProteinCrow：A-Language-Model-Agent-That-Can-Design-Proteins/"
 ---
 
 > 论文地址：[ProteinCrow：A Language Model Agent That Can Design Proteins](https://openreview.net/forum?id=ljXgWDtqCu&referrer=%5Bthe+profile+of+Cade+W+Gordon%5D%28%2Fprofile%3Fid%3D%7ECade_W_Gordon1%29)

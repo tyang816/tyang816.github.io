@@ -8,6 +8,9 @@ date: 2025-10-24
 lang: en
 alt_url: /zh/notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
 permalink: /notes/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/
+redirect_from:
+  - "/bi/Democratizing-protein-language-model-training,-sharing-and-collaboration/"
+  - "/BI/Democratizing-protein-language-model-training,-sharing-and-collaboration/"
 ---
 
 > Paper: [Democratizing protein language model training, sharing and collaboration](https://www.nature.com/articles/s41587-025-02859-7)

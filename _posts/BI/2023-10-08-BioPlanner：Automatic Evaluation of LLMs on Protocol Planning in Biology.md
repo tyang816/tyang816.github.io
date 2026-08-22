@@ -8,6 +8,9 @@ date: 2023-10-08
 lang: en
 alt_url: /zh/notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
 permalink: /notes/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/
+redirect_from:
+  - "/bi/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/"
+  - "/BI/BioPlanner：Automatic-Evaluation-of-LLMs-on-Protocol-Planning-in-Biology/"
 ---
 
 > Paper: [BioPlanner：Automatic Evaluation of LLMs on Protocol Planning in Biology](https://openreview.net/forum?id=pMCRGmB7Rv)

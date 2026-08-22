@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
 permalink: /zh/notes/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
 redirect_from:
-  - /2021/07/01/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
-  - /bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/
-
+  - "/2021/07/01/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/"
+  - "/zh/bi/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/"
+  - "/zh/BI/ProtTrans：Towards-Cracking-the-Language-of-Life’s-Code-Through-Self-Supervised-L/"
 ---
 
 > 论文地址：[ProtTrans：Towards Cracking the Language of Life’s Code Through Self-Supervised Learning](https://ieeexplore.ieee.org/document/9477085/)

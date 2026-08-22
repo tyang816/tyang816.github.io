@@ -8,6 +8,9 @@ date: 2022-01-29
 lang: en
 alt_url: /zh/notes/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
 permalink: /notes/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/
+redirect_from:
+  - "/cl/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/"
+  - "/CL/LoRA：Low-Rank-Adaptation-of-Large-Language-Models/"
 ---
 
 > Paper: [LoRA：Low-Rank Adaptation of Large Language Models](https://openreview.net/forum?id=nZeVKeeFYf9)

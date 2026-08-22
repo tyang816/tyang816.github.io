@@ -9,6 +9,7 @@ alt_url: /projects/venusvaccine/
 author_profile: true
 description: VenusVaccine：双注意力免疫原性预测，支撑疫苗靶点筛选（ICLR 2025）。
 redirect_from:
+- /zh/pub/venusvaccine/
 - /zh/project/venusvaccine/
 ---
 

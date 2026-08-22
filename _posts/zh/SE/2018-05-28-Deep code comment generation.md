@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Deep-code-comment-generation/
 permalink: /zh/notes/se/Deep-code-comment-generation/
 redirect_from:
-  - /2018/05/28/Deep-code-comment-generation/
-  - /se/Deep-code-comment-generation/
-
+  - "/2018/05/28/Deep-code-comment-generation/"
+  - "/zh/se/Deep-code-comment-generation/"
+  - "/zh/SE/Deep-code-comment-generation/"
 ---
 
 > 论文地址：[Deep code comment generation](https://ieeexplore.ieee.org/abstract/document/8973050)

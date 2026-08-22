@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
 permalink: /zh/notes/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
 redirect_from:
-  - /2023/09/30/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
-  - /bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/
-
+  - "/2023/09/30/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/"
+  - "/zh/bi/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/"
+  - "/zh/BI/ProteinGym：Large-Scale-Benchmarks-for-Protein-Design-and-Fitness-Prediction/"
 ---
 
 > 论文地址：[ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction](https://openreview.net/forum?id=URoZHqAohf&noteId=PLTsEAiyz5)

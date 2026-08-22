@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Competition-Level-Code-Generation-with-AlphaCode/
 permalink: /zh/notes/se/Competition-Level-Code-Generation-with-AlphaCode/
 redirect_from:
-  - /2022/03/07/Competition-Level-Code-Generation-with-AlphaCode/
-  - /se/Competition-Level-Code-Generation-with-AlphaCode/
-
+  - "/2022/03/07/Competition-Level-Code-Generation-with-AlphaCode/"
+  - "/zh/se/Competition-Level-Code-Generation-with-AlphaCode/"
+  - "/zh/SE/Competition-Level-Code-Generation-with-AlphaCode/"
 ---
 
 > 论文地址：[Competition-Level Code Generation with AlphaCode](http://arxiv.org/abs/2203.07814)

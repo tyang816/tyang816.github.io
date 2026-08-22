@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
 permalink: /zh/notes/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
 redirect_from:
-  - /2021/04/05/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
-  - /bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/
-
+  - "/2021/04/05/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/"
+  - "/zh/bi/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/"
+  - "/zh/BI/Biological-structure-and-function-emerge-from-scaling-unsupervised-learning-to-2/"
 ---
 
 > 论文地址：[Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences](https://www.pnas.org/doi/10.1073/pnas.2016239118)

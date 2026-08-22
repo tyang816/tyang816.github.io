@@ -8,6 +8,9 @@ date: 2017-07-18
 lang: en
 alt_url: /zh/notes/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
 permalink: /notes/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/
+redirect_from:
+  - "/ml/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/"
+  - "/ML/Model-Agnostic-Meta-Learning-for-Fast-Adaptation-of-Deep-Networks/"
 ---
 
 > Paper: [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](http://arxiv.org/abs/1703.03400)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
 permalink: /zh/notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
 redirect_from:
-  - /2022/06/08/Learning-code-summarization-from-a-small-and-local-dataset/
-  - /se/Learning-code-summarization-from-a-small-and-local-dataset/
-
+  - "/2022/06/08/Learning-code-summarization-from-a-small-and-local-dataset/"
+  - "/zh/se/Learning-code-summarization-from-a-small-and-local-dataset/"
+  - "/zh/SE/Learning-code-summarization-from-a-small-and-local-dataset/"
 ---
 
 > 论文地址：[Learning code summarization from a small and local dataset](http://arxiv.org/abs/2206.00804)

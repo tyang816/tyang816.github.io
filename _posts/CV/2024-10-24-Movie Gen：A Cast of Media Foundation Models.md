@@ -8,6 +8,9 @@ date: 2024-10-24
 lang: en
 alt_url: /zh/notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
 permalink: /notes/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/
+redirect_from:
+  - "/cv/Movie-Gen：A-Cast-of-Media-Foundation-Models/"
+  - "/CV/Movie-Gen：A-Cast-of-Media-Foundation-Models/"
 ---
 
 > Paper: [Movie Gen：A Cast of Media Foundation Models](https://arxiv.org/abs/2410.13720)

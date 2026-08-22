@@ -216,7 +216,9 @@
 <meta property="og:type" content="{% if page_path == '/' or page_path == '/zh/' %}website{% else %}article{% endif %}">
 <meta property="og:site_name" content="{{ site.title | escape }}">
 <meta property="og:title" content="{{ seo_title | escape }}">
+{% unless page.permalink == '/404.html' %}
 <meta property="og:url" content="{{ canonical_url }}">
+{% endunless %}
 {% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
@@ -265,7 +267,9 @@
 {% if seo_description %}
   <meta name="twitter:description" content="{{ seo_description }}">
 {% endif %}
+{% unless page.permalink == '/404.html' %}
 <meta name="twitter:url" content="{{ canonical_url }}">
+{% endunless %}
 {% if og_image %}
   <meta name="twitter:image" content="{{ og_image }}">
 {% endif %}

@@ -8,6 +8,9 @@ date: 2020-03-23
 lang: en
 alt_url: /zh/notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
 permalink: /notes/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/
+redirect_from:
+  - "/cv/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/"
+  - "/CV/Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning/"
 ---
 
 > Paper: [Momentum Contrast for Unsupervised Visual Representation Learning](https://ieeexplore.ieee.org/document/9157636/)

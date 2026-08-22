@@ -8,6 +8,9 @@ date: 2022-07-12
 lang: en
 alt_url: /zh/notes/cv/Contrastive-Deep-Supervision/
 permalink: /notes/cv/Contrastive-Deep-Supervision/
+redirect_from:
+  - "/cv/Contrastive-Deep-Supervision/"
+  - "/CV/Contrastive-Deep-Supervision/"
 ---
 
 > Paper: [Contrastive Deep Supervision](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136860001.pdf)

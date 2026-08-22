@@ -9,12 +9,13 @@ lang: zh-CN
 alt_url: /notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
 permalink: /zh/notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
 redirect_from:
-  - /2022/01/29/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
-  - /2022/01/29/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
-  - /cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
-  - /cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/
-  - /zh/notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/
-
+  - "/2022/01/29/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/"
+  - "/2022/01/29/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/"
+  - "/zh/notes/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/"
+  - "/zh/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/"
+  - "/zh/CV/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-and-Outputs/"
+  - "/zh/cv/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/"
+  - "/zh/CV/Perceiver-IO：A-General-Architecture-for-Structured-Inputs-&-Outputs/"
 ---
 
 > 论文地址：[Perceiver IO：A General Architecture for Structured Inputs & Outputs](https://openreview.net/forum?id=fILj7WpI-g)

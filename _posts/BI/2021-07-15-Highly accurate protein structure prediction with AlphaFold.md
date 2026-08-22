@@ -8,6 +8,9 @@ date: 2021-07-15
 lang: en
 alt_url: /zh/notes/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
 permalink: /notes/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/
+redirect_from:
+  - "/bi/Highly-accurate-protein-structure-prediction-with-AlphaFold/"
+  - "/BI/Highly-accurate-protein-structure-prediction-with-AlphaFold/"
 ---
 
 > Paper: [Highly accurate protein structure prediction with AlphaFold](https://www.nature.com/articles/s41586-021-03819-2)

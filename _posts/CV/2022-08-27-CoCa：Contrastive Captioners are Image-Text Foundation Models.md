@@ -8,6 +8,9 @@ date: 2022-08-27
 lang: en
 alt_url: /zh/notes/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
 permalink: /notes/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/
+redirect_from:
+  - "/cv/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/"
+  - "/CV/CoCa：Contrastive-Captioners-are-Image-Text-Foundation-Models/"
 ---
 
 

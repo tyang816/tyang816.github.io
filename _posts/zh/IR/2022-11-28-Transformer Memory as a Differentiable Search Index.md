@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
 permalink: /zh/notes/ir/Transformer-Memory-as-a-Differentiable-Search-Index/
 redirect_from:
-  - /2022/11/28/Transformer-Memory-as-a-Differentiable-Search-Index/
-  - /ir/Transformer-Memory-as-a-Differentiable-Search-Index/
-
+  - "/2022/11/28/Transformer-Memory-as-a-Differentiable-Search-Index/"
+  - "/zh/ir/Transformer-Memory-as-a-Differentiable-Search-Index/"
+  - "/zh/IR/Transformer-Memory-as-a-Differentiable-Search-Index/"
 ---
 
 > 论文地址：[Transformer Memory as a Differentiable Search Index](https://openreview.net/pdf?id=Vu-B0clPfq)

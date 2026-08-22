@@ -8,6 +8,9 @@ date: 2022-12-01
 lang: en
 alt_url: /zh/notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
 permalink: /notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
+redirect_from:
+  - "/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/"
+  - "/BI/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/"
 ---
 
 > Paper: [PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding](https://proceedings.neurips.cc/paper_files/paper/2022/file/e467582d42d9c13fa9603df16f31de6d-Paper-Datasets_and_Benchmarks.pdf)

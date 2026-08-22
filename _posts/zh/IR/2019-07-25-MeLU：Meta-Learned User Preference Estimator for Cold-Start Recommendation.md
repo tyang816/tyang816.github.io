@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
 permalink: /zh/notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
 redirect_from:
-  - /2019/07/25/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
-  - /ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
-
+  - "/2019/07/25/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/"
+  - "/zh/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/"
+  - "/zh/IR/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/"
 ---
 
 > 论文地址：[MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation](https://dl.acm.org/doi/10.1145/3292500.3330859)

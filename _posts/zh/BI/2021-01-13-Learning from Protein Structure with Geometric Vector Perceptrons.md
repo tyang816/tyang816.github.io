@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
 permalink: /zh/notes/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
 redirect_from:
-  - /2021/01/13/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
-  - /bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/
-
+  - "/2021/01/13/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/"
+  - "/zh/bi/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/"
+  - "/zh/BI/Learning-from-Protein-Structure-with-Geometric-Vector-Perceptrons/"
 ---
 
 > 论文地址：[Learning from Protein Structure with Geometric Vector Perceptrons](https://openreview.net/forum?id=1YLJDvSx6J4)

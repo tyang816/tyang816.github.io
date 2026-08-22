@@ -8,6 +8,9 @@ date: 2023-03-06
 lang: en
 alt_url: /zh/notes/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
 permalink: /notes/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/
+redirect_from:
+  - "/bi/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/"
+  - "/BI/Enhancing-Protein-Language-Models-with-Structure-based-Encoder-and-Pre-training/"
 ---
 
 > Paper: [Enhancing Protein Language Models with Structure-based Encoder and Pre-training](https://openreview.net/forum?id=AAML7ivghpY)

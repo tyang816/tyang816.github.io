@@ -9,6 +9,7 @@ alt_url: /projects/venusrar/
 author_profile: true
 description: VenusRAR（Rank-and-Reason）：多智能体协作的零样本蛋白质突变预测（arXiv:2602.00197）。
 redirect_from:
+- /zh/pub/venusrar/
 - /zh/project/venusrar/
 ---
 

@@ -8,6 +8,9 @@ date: 2019-07-06
 lang: en
 alt_url: /zh/notes/cl/Language-Models-are-Unsupervised-Multitask-Learners/
 permalink: /notes/cl/Language-Models-are-Unsupervised-Multitask-Learners/
+redirect_from:
+  - "/cl/Language-Models-are-Unsupervised-Multitask-Learners/"
+  - "/CL/Language-Models-are-Unsupervised-Multitask-Learners/"
 ---
 
 > Paper: [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)

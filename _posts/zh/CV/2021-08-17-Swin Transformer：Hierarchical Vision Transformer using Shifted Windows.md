@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
 permalink: /zh/notes/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
 redirect_from:
-  - /2021/08/17/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
-  - /cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/
-
+  - "/2021/08/17/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/"
+  - "/zh/cv/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/"
+  - "/zh/CV/Swin-Transformer：Hierarchical-Vision-Transformer-using-Shifted-Windows/"
 ---
 
 > 论文地址：[Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.pdf)

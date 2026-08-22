@@ -9,6 +9,7 @@ alt_url: /projects/protsolm/
 author_profile: true
 description: ProtSolM：多模态序列、结构与特征融合的蛋白质溶解度预测（IEEE BIBM 2024）。
 redirect_from:
+- /zh/pub/protsolm/
 - /zh/project/protsolm/
 ---
 

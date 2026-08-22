@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ml/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/
 permalink: /zh/notes/ml/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/
 redirect_from:
-  - /2020/08/20/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/
-  - /ml/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/
-
+  - "/2020/08/20/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/"
+  - "/zh/ml/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/"
+  - "/zh/ML/GCC：Graph-Contrastive-Coding-for-Graph-Neural-Network-Pre-Training/"
 ---
 
 > 论文地址：[GCC：Graph Contrastive Coding for Graph Neural Network Pre-Training](https://dl.acm.org/doi/10.1145/3394486.3403168)

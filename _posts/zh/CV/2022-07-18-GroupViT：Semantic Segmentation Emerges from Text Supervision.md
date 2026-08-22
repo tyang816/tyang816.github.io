@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
 permalink: /zh/notes/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
 redirect_from:
-  - /2022/07/18/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
-  - /cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/
-
+  - "/2022/07/18/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/"
+  - "/zh/cv/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/"
+  - "/zh/CV/GroupViT：Semantic-Segmentation-Emerges-from-Text-Supervision/"
 ---
 
 > 论文地址：[GroupViT：Semantic Segmentation Emerges from Text Supervision](https://openaccess.thecvf.com/content/CVPR2022/papers/Xu_GroupViT_Semantic_Segmentation_Emerges_From_Text_Supervision_CVPR_2022_paper.pdf)

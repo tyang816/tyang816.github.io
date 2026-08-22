@@ -9,6 +9,7 @@ alt_url: /projects/protssn/
 author_profile: true
 description: ProtSSN：面向生物活性与热稳定性的语义–几何蛋白质编码（eLife 2025）。
 redirect_from:
+- /zh/pub/protssn/
 - /zh/project/protssn/
 ---
 

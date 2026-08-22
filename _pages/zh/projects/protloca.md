@@ -9,6 +9,7 @@ alt_url: /projects/protloca/
 author_profile: true
 description: ProtLOCA：仅结构的局部几何对齐，用于蛋白质同源检测（IEEE BIBM 2024）。
 redirect_from:
+- /zh/pub/protloca/
 - /zh/project/protloca/
 ---
 

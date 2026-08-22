@@ -8,6 +8,9 @@ date: 2022-01-24
 lang: en
 alt_url: /zh/notes/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
 permalink: /notes/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/
+redirect_from:
+  - "/cv/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/"
+  - "/CV/BLIP：Bootstrapping-Language-Image-Pre-training-for-Unified-Vision-Language-Under/"
 ---
 
 > Paper: [BLIP：Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation](http://arxiv.org/abs/2201.12086)

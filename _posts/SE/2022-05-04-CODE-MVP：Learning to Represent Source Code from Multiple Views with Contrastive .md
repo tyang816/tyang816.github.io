@@ -8,6 +8,9 @@ date: 2022-05-04
 lang: en
 alt_url: /zh/notes/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
 permalink: /notes/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/
+redirect_from:
+  - "/se/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/"
+  - "/SE/CODE-MVP：Learning-to-Represent-Source-Code-from-Multiple-Views-with-Contrastive-/"
 ---
 
 > Paper: [CODE-MVP：Learning to Represent Source Code from Multiple Views with Contrastive Pre-Training](http://arxiv.org/abs/2205.02029)

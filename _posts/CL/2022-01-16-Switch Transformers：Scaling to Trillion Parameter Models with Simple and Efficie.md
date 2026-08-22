@@ -8,6 +8,9 @@ date: 2022-01-16
 lang: en
 alt_url: /zh/notes/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
 permalink: /notes/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/
+redirect_from:
+  - "/cl/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/"
+  - "/CL/Switch-Transformers：Scaling-to-Trillion-Parameter-Models-with-Simple-and-Efficie/"
 ---
 
 > Paper: [Switch Transformers：Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://jmlr.org/papers/volume23/21-0998/21-0998.pdf)

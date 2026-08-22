@@ -9,6 +9,7 @@ alt_url: /projects/ses-adapter/
 author_profile: true
 description: SES-Adapter：简洁、高效、可扩展的结构感知适配器，增强蛋白质语言模型（JCIM 2024）。
 redirect_from:
+- /zh/pub/ses-adapter/
 - /zh/project/ses-adapter/
 ---
 

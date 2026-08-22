@@ -8,6 +8,9 @@ date: 2022-03-23
 lang: en
 alt_url: /zh/notes/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
 permalink: /notes/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/
+redirect_from:
+  - "/os/Pathways：Asynchronous-Distributed-Dataflow-for-ML/"
+  - "/OS/Pathways：Asynchronous-Distributed-Dataflow-for-ML/"
 ---
 
 > Paper: [Pathways: Asynchronous Distributed Dataflow for ML](https://proceedings.mlsys.org/paper_files/paper/2022/file/37385144cac01dff38247ab11c119e3c-Paper.pdf)

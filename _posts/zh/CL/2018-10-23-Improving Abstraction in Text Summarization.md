@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Improving-Abstraction-in-Text-Summarization/
 permalink: /zh/notes/cl/Improving-Abstraction-in-Text-Summarization/
 redirect_from:
-  - /2018/10/23/Improving-Abstraction-in-Text-Summarization/
-  - /cl/Improving-Abstraction-in-Text-Summarization/
-
+  - "/2018/10/23/Improving-Abstraction-in-Text-Summarization/"
+  - "/zh/cl/Improving-Abstraction-in-Text-Summarization/"
+  - "/zh/CL/Improving-Abstraction-in-Text-Summarization/"
 ---
 
 > 论文地址：[Improving Abstraction in Text Summarization](http://arxiv.org/abs/1808.07913)

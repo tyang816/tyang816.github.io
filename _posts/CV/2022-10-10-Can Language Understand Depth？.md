@@ -8,6 +8,9 @@ date: 2022-10-10
 lang: en
 alt_url: /zh/notes/cv/Can-Language-Understand-Depth？/
 permalink: /notes/cv/Can-Language-Understand-Depth？/
+redirect_from:
+  - "/cv/Can-Language-Understand-Depth？/"
+  - "/CV/Can-Language-Understand-Depth？/"
 ---
 
 > Paper: [Can Language Understand Depth?](https://dl.acm.org/doi/10.1145/3503161.3549201)

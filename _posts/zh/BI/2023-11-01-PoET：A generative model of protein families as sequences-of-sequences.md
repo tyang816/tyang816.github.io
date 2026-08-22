@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
 permalink: /zh/notes/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
 redirect_from:
-  - /2023/11/01/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
-  - /bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/
-
+  - "/2023/11/01/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/"
+  - "/zh/bi/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/"
+  - "/zh/BI/PoET：A-generative-model-of-protein-families-as-sequences-of-sequences/"
 ---
 
 > 论文地址：[PoET：A generative model of protein families as sequences-of-sequences](https://proceedings.neurips.cc/paper_files/paper/2023/file/f4366126eba252699b280e8f93c0ab2f-Paper-Conference.pdf)

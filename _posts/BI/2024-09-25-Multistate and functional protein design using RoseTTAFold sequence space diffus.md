@@ -8,6 +8,9 @@ date: 2024-09-25
 lang: en
 alt_url: /zh/notes/bi/Multistate-and-functional-protein-design-using-RoseTTAFold-sequence-space-diffus/
 permalink: /notes/bi/Multistate-and-functional-protein-design-using-RoseTTAFold-sequence-space-diffus/
+redirect_from:
+  - "/bi/Multistate-and-functional-protein-design-using-RoseTTAFold-sequence-space-diffus/"
+  - "/BI/Multistate-and-functional-protein-design-using-RoseTTAFold-sequence-space-diffus/"
 ---
 
 > Paper: [Multistate and functional protein design using RoseTTAFold sequence space diffusion](https://www.nature.com/articles/s41587-024-02395-w)

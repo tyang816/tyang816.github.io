@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
 permalink: /zh/notes/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
 redirect_from:
-  - /2022/12/01/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
-  - /bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/
-
+  - "/2022/12/01/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/"
+  - "/zh/bi/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/"
+  - "/zh/BI/PEER：A-Comprehensive-and-Multi-Task-Benchmark-for-Protein-Sequence-Understanding/"
 ---
 
 > 论文地址：[PEER：A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding](https://proceedings.neurips.cc/paper_files/paper/2022/file/e467582d42d9c13fa9603df16f31de6d-Paper-Datasets_and_Benchmarks.pdf)

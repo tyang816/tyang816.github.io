@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
 permalink: /zh/notes/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
 redirect_from:
-  - /2021/02/04/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
-  - /bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/
-
+  - "/2021/02/04/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/"
+  - "/zh/bi/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/"
+  - "/zh/BI/DNABERT：pre-trained-Bidirectional-Encoder-Representations-from-Transformers-mode/"
 ---
 
 > 论文地址：[DNABERT：pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
 permalink: /zh/notes/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
 redirect_from:
-  - /2020/03/13/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
-  - /os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/
-
+  - "/2020/03/13/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/"
+  - "/zh/os/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/"
+  - "/zh/OS/Megatron-LM：Training-Multi-Billion-Parameter-Language-Models-Using-Model-Paralle/"
 ---
 
 > 论文地址：[Megatron-LM：Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053)

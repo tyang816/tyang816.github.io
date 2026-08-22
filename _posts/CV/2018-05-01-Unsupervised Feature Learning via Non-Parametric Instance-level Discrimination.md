@@ -8,6 +8,9 @@ date: 2018-05-01
 lang: en
 alt_url: /zh/notes/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
 permalink: /notes/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/
+redirect_from:
+  - "/cv/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/"
+  - "/CV/Unsupervised-Feature-Learning-via-Non-Parametric-Instance-level-Discrimination/"
 ---
 
 > Paper: [Unsupervised Feature Learning via Non-Parametric Instance-level Discrimination](http://arxiv.org/abs/1805.01978)

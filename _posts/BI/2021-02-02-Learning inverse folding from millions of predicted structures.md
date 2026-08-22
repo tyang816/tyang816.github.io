@@ -8,6 +8,9 @@ date: 2021-02-02
 lang: en
 alt_url: /zh/notes/bi/Learning-inverse-folding-from-millions-of-predicted-structures/
 permalink: /notes/bi/Learning-inverse-folding-from-millions-of-predicted-structures/
+redirect_from:
+  - "/bi/Learning-inverse-folding-from-millions-of-predicted-structures/"
+  - "/BI/Learning-inverse-folding-from-millions-of-predicted-structures/"
 ---
 
 > Paper: [Learning inverse folding from millions of predicted structures](https://proceedings.mlr.press/v162/hsu22a.html)

@@ -8,6 +8,9 @@ date: 2021-11-06
 lang: en
 alt_url: /zh/notes/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
 permalink: /notes/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/
+redirect_from:
+  - "/cv/Masked-Autoencoders-Are-Scalable-Vision-Learners/"
+  - "/CV/Masked-Autoencoders-Are-Scalable-Vision-Learners/"
 ---
 
 > Paper: [Masked Autoencoders Are Scalable Vision Learners](http://arxiv.org/abs/2111.06377)

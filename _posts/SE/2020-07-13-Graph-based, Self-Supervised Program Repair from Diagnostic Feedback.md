@@ -8,6 +8,9 @@ date: 2020-07-13
 lang: en
 alt_url: /zh/notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
 permalink: /notes/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/
+redirect_from:
+  - "/se/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/"
+  - "/SE/Graph-based,-Self-Supervised-Program-Repair-from-Diagnostic-Feedback/"
 ---
 
 > Paper: [Graph-based, Self-Supervised Program Repair from Diagnostic Feedback](https://dl.acm.org/doi/10.5555/3524938.3525939)

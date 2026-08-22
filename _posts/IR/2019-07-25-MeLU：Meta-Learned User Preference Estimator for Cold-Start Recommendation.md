@@ -8,6 +8,9 @@ date: 2019-07-25
 lang: en
 alt_url: /zh/notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
 permalink: /notes/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/
+redirect_from:
+  - "/ir/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/"
+  - "/IR/MeLU：Meta-Learned-User-Preference-Estimator-for-Cold-Start-Recommendation/"
 ---
 
 > Paper: [MeLU: Meta-Learned User Preference Estimator for Cold-Start Recommendation](https://dl.acm.org/doi/10.1145/3292500.3330859)

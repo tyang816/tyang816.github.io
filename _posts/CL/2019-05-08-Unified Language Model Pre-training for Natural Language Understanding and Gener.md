@@ -8,6 +8,9 @@ date: 2019-05-08
 lang: en
 alt_url: /zh/notes/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
 permalink: /notes/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/
+redirect_from:
+  - "/cl/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/"
+  - "/CL/Unified-Language-Model-Pre-training-for-Natural-Language-Understanding-and-Gener/"
 ---
 
 > Paper: [Unified Language Model Pre-training for Natural Language Understanding and Generation](http://arxiv.org/abs/1905.03197)

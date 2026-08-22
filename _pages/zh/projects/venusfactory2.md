@@ -9,6 +9,7 @@ alt_url: /projects/venusfactory2/
 author_profile: true
 description: VenusFactory2——面向蛋白质工程的智能体就绪 Web 平台（arXiv:2603.27303）。
 redirect_from:
+- /zh/pub/venusfactory2/
 - /zh/project/venusfactory2/
 ---
 

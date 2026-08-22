@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Intriguing-Properties-of-Vision-Transformers/
 permalink: /zh/notes/cv/Intriguing-Properties-of-Vision-Transformers/
 redirect_from:
-  - /2021/11/25/Intriguing-Properties-of-Vision-Transformers/
-  - /cv/Intriguing-Properties-of-Vision-Transformers/
-
+  - "/2021/11/25/Intriguing-Properties-of-Vision-Transformers/"
+  - "/zh/cv/Intriguing-Properties-of-Vision-Transformers/"
+  - "/zh/CV/Intriguing-Properties-of-Vision-Transformers/"
 ---
 
 > 论文地址：[Intriguing Properties of Vision Transformers](https://proceedings.neurips.cc/paper/2021/file/c404a5adbf90e09631678b13b05d9d7a-Paper.pdf)

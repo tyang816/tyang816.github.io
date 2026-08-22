@@ -8,6 +8,9 @@ date: 2019-01-21
 lang: en
 alt_url: /zh/notes/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
 permalink: /notes/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/
+redirect_from:
+  - "/bi/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/"
+  - "/BI/Machine-Learning-Applied-to-Predicting-Microorganism-Growth-Temperatures-and-Enz/"
 ---
 
 > Paper: [Machine Learning Applied to Predicting Microorganism Growth Temperatures and Enzyme Catalytic Optima](https://pubs.acs.org/doi/abs/10.1021/acssynbio.9b00099)

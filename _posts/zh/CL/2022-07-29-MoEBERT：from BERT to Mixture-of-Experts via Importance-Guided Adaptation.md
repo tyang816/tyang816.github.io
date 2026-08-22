@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
 permalink: /zh/notes/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
 redirect_from:
-  - /2022/07/29/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
-  - /cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/
-
+  - "/2022/07/29/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/"
+  - "/zh/cl/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/"
+  - "/zh/CL/MoEBERT：from-BERT-to-Mixture-of-Experts-via-Importance-Guided-Adaptation/"
 ---
 
 > 论文地址：[MoEBERT：from BERT to Mixture-of-Experts via Importance-Guided Adaptation](https://aclanthology.org/2022.naacl-main.116/)

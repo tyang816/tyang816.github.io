@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
 permalink: /zh/notes/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
 redirect_from:
-  - /2019/01/19/Evaluating-Protein-Transfer-Learning-with-TAPE/
-  - /bi/Evaluating-Protein-Transfer-Learning-with-TAPE/
-
+  - "/2019/01/19/Evaluating-Protein-Transfer-Learning-with-TAPE/"
+  - "/zh/bi/Evaluating-Protein-Transfer-Learning-with-TAPE/"
+  - "/zh/BI/Evaluating-Protein-Transfer-Learning-with-TAPE/"
 ---
 
 > 论文地址：[Evaluating Protein Transfer Learning with TAPE](https://papers.nips.cc/paper_files/paper/2019/hash/37f65c068b7723cd7809ee2d31d7861c-Abstract.html)

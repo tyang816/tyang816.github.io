@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ml/AI-Index-Report/
 permalink: /zh/notes/ml/AI-Index-Report/
 redirect_from:
-  - /2022/03/02/AI-Index-Report/
-  - /ml/AI-Index-Report/
-
+  - "/2022/03/02/AI-Index-Report/"
+  - "/zh/ml/AI-Index-Report/"
+  - "/zh/ML/AI-Index-Report/"
 ---
 
 > 报告地址：[AI Index Report](https://aiindex.stanford.edu/wp-content/uploads/2022/03/2022-AI-Index-Report_Master.pdf)，数据大多来源于paper with code

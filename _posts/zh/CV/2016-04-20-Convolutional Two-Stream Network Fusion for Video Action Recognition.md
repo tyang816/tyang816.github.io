@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
 permalink: /zh/notes/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
 redirect_from:
-  - /2016/04/20/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
-  - /cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/
-
+  - "/2016/04/20/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/"
+  - "/zh/cv/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/"
+  - "/zh/CV/Convolutional-Two-Stream-Network-Fusion-for-Video-Action-Recognition/"
 ---
 
 > 论文地址：[Convolutional Two-Stream Network Fusion for Video Action Recognition](http://ieeexplore.ieee.org/document/7780582/)

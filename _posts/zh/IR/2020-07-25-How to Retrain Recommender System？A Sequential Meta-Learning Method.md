@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
 permalink: /zh/notes/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
 redirect_from:
-  - /2020/07/25/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
-  - /ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/
-
+  - "/2020/07/25/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/"
+  - "/zh/ir/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/"
+  - "/zh/IR/How-to-Retrain-Recommender-System？A-Sequential-Meta-Learning-Method/"
 ---
 
 > 论文地址：[How to Retrain Recommender System？A Sequential Meta-Learning Method](https://dl.acm.org/doi/10.1145/3397271.3401167)

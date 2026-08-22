@@ -8,6 +8,9 @@ date: 2022-06-01
 lang: en
 alt_url: /zh/notes/se/Automatic-source-code-summarization-with-graph-attention-networks/
 permalink: /notes/se/Automatic-source-code-summarization-with-graph-attention-networks/
+redirect_from:
+  - "/se/Automatic-source-code-summarization-with-graph-attention-networks/"
+  - "/SE/Automatic-source-code-summarization-with-graph-attention-networks/"
 ---
 
 > Paper: [Automatic source code summarization with graph attention networks](https://linkinghub.elsevier.com/retrieve/pii/S0164121222000279)

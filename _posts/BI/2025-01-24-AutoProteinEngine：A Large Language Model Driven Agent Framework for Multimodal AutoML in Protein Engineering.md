@@ -8,6 +8,9 @@ date: 2025-01-24
 lang: en
 alt_url: /zh/notes/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
 permalink: /notes/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/
+redirect_from:
+  - "/bi/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/"
+  - "/BI/AutoProteinEngine：A-Large-Language-Model-Driven-Agent-Framework-for-Multimodal-AutoML-in-Protein-Engineering/"
 ---
 
 > Paper: [AutoProteinEngine：A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering](https://aclanthology.org/2025.coling-industry.36/)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Contrastive-Code-Representation-Learning/
 permalink: /zh/notes/se/Contrastive-Code-Representation-Learning/
 redirect_from:
-  - /2020/07/25/Contrastive-Code-Representation-Learning/
-  - /se/Contrastive-Code-Representation-Learning/
-
+  - "/2020/07/25/Contrastive-Code-Representation-Learning/"
+  - "/zh/se/Contrastive-Code-Representation-Learning/"
+  - "/zh/SE/Contrastive-Code-Representation-Learning/"
 ---
 
 > 论文地址：[Contrastive Code Representation Learning](http://arxiv.org/abs/2007.04973)

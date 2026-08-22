@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
 permalink: /zh/notes/bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
 redirect_from:
-  - /2023/01/16/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
-  - /bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/
-
+  - "/2023/01/16/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/"
+  - "/zh/bi/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/"
+  - "/zh/BI/Ankh：Optimized-Protein-Language-Model-Unlocks-General-Purpose-Modelling/"
 ---
 
 > 论文地址：[Ankh：Optimized Protein Language Model Unlocks General-Purpose Modelling](http://biorxiv.org/lookup/doi/10.1101/2023.01.16.524265)

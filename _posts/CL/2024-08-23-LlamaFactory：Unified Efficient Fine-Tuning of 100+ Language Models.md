@@ -8,6 +8,9 @@ date: 2024-08-23
 lang: en
 alt_url: /zh/notes/cl/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/
 permalink: /notes/cl/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/
+redirect_from:
+  - "/cl/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/"
+  - "/CL/LlamaFactory：Unified-Efficient-Fine-Tuning-of-100+-Language-Models/"
 ---
 
 > Paper: [LlamaFactory：Unified Efficient Fine-Tuning of 100+ Language Models](https://aclanthology.org/2024.acl-demos.38/)

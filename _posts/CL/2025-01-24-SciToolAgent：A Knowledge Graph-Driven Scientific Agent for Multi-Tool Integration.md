@@ -8,6 +8,9 @@ date: 2025-01-24
 lang: en
 alt_url: /zh/notes/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
 permalink: /notes/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/
+redirect_from:
+  - "/bi/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/"
+  - "/BI/SciToolAgent：A-Knowledge-Graph-Driven-Scientific-Agent-for-Multi-Tool-Integration/"
 ---
 
 > Paper: [SciToolAgent：A Knowledge Graph-Driven Scientific Agent for Multi-Tool Integration](https://www.nature.com/articles/s43588-025-00849-y)

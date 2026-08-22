@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
 permalink: /zh/notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
 redirect_from:
-  - /2022/04/16/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
-  - /cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
-
+  - "/2022/04/16/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/"
+  - "/zh/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/"
+  - "/zh/CL/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/"
 ---
 
 > 论文地址：[Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/pdf/2204.05862.pdf)

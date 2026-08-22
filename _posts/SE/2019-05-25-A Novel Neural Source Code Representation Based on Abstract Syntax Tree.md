@@ -8,6 +8,9 @@ date: 2019-05-25
 lang: en
 alt_url: /zh/notes/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
 permalink: /notes/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/
+redirect_from:
+  - "/se/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/"
+  - "/SE/A-Novel-Neural-Source-Code-Representation-Based-on-Abstract-Syntax-Tree/"
 ---
 
 > Paper: [A Novel Neural Source Code Representation Based on Abstract Syntax Tree](https://ieeexplore.ieee.org/document/8812062/)

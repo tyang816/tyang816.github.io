@@ -8,6 +8,9 @@ date: 2018-02-02
 lang: en
 alt_url: /zh/notes/cl/Generative-Adversarial-Network-for-Abstractive-Text-Summarization/
 permalink: /notes/cl/Generative-Adversarial-Network-for-Abstractive-Text-Summarization/
+redirect_from:
+  - "/cl/Generative-Adversarial-Network-for-Abstractive-Text-Summarization/"
+  - "/CL/Generative-Adversarial-Network-for-Abstractive-Text-Summarization/"
 ---
 
 > Paper: [Generative Adversarial Network for Abstractive Text Summarization](https://ojs.aaai.org/index.php/AAAI/article/view/12141)

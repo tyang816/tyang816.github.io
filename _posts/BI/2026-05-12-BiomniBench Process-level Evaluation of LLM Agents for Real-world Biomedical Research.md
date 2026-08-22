@@ -8,6 +8,9 @@ date: 2026-05-12
 lang: en
 alt_url: /zh/notes/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
 permalink: /notes/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/
+redirect_from:
+  - "/bi/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/"
+  - "/BI/BiomniBench-Process-level-Evaluation-of-LLM-Agents-for-Real-world-Biomedical-Research/"
 ---
 
 > Paper: [BiomniBench：Process-level Evaluation of LLM Agents for Real-world Biomedical Research](https://www.biorxiv.org/content/10.64898/2026.05.12.724604v1)

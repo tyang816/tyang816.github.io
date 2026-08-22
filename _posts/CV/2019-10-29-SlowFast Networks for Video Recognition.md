@@ -8,6 +8,9 @@ date: 2019-10-29
 lang: en
 alt_url: /zh/notes/cv/SlowFast-Networks-for-Video-Recognition/
 permalink: /notes/cv/SlowFast-Networks-for-Video-Recognition/
+redirect_from:
+  - "/cv/SlowFast-Networks-for-Video-Recognition/"
+  - "/CV/SlowFast-Networks-for-Video-Recognition/"
 ---
 
 > Paper: [SlowFast Networks for Video Recognition](https://ieeexplore.ieee.org/document/9008780/)

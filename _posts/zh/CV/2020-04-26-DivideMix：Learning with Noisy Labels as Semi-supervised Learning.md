@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
 permalink: /zh/notes/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
 redirect_from:
-  - /2020/04/26/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
-  - /cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/
-
+  - "/2020/04/26/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/"
+  - "/zh/cv/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/"
+  - "/zh/CV/DivideMix：Learning-with-Noisy-Labels-as-Semi-supervised-Learning/"
 ---
 
 > 论文地址：[DivideMix：Learning with Noisy Labels as Semi-supervised Learning](https://openreview.net/pdf?id=HJgExaVtwr)

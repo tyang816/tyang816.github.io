@@ -8,6 +8,9 @@ date: 2023-02-09
 lang: en
 alt_url: /zh/notes/bi/Structure-informed-Language-Models-Are-Protein-Designers/
 permalink: /notes/bi/Structure-informed-Language-Models-Are-Protein-Designers/
+redirect_from:
+  - "/bi/Structure-informed-Language-Models-Are-Protein-Designers/"
+  - "/BI/Structure-informed-Language-Models-Are-Protein-Designers/"
 ---
 
 > Paper: [Structure-informed Language Models Are Protein Designers](https://proceedings.mlr.press/v202/zheng23a/zheng23a.pdf)

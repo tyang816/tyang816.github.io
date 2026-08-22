@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
 permalink: /zh/notes/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
 redirect_from:
-  - /2021/01/13/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
-  - /cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/
-
+  - "/2021/01/13/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/"
+  - "/zh/cl/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/"
+  - "/zh/CL/Supervised-Contrastive-Learning-for-Pre-trained-Language-Model-Fine-tuning/"
 ---
 
 > 论文地址：[Supervised Contrastive Learning for Pre-trained Language Model Fine-tuning](https://openreview.net/forum?id=cu7IUiOhujH)

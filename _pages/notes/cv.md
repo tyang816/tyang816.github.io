@@ -1,5 +1,7 @@
 ---
 permalink: /notes/cv/
+redirect_from:
+  - "/CV/"
 title: "Vision Paper Notes"
 note_cat: CV
 alt_url: /zh/notes/cv/

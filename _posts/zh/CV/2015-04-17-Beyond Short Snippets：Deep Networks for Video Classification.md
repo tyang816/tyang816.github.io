@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
 permalink: /zh/notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
 redirect_from:
-  - /2015/04/17/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
-  - /cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
-
+  - "/2015/04/17/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/"
+  - "/zh/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/"
+  - "/zh/CV/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/"
 ---
 
 > 论文地址：[Beyond Short Snippets：Deep Networks for Video Classification](http://ieeexplore.ieee.org/document/7299101/)

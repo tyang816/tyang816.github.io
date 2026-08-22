@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
 permalink: /zh/notes/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
 redirect_from:
-  - /2019/08/01/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
-  - /cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/
-
+  - "/2019/08/01/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/"
+  - "/zh/cl/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/"
+  - "/zh/CL/Improving-Robustness-of-Neural-Machine-Translation-with-Multi-task-Learning/"
 ---
 
 > 论文地址：[Improving Robustness of Neural Machine Translation with Multi-task Learning](https://aclanthology.org/W19-5368)

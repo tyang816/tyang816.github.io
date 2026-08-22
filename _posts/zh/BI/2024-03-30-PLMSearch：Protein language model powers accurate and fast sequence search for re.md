@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
 permalink: /zh/notes/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
 redirect_from:
-  - /2024/03/30/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
-  - /bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/
-
+  - "/2024/03/30/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/"
+  - "/zh/bi/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/"
+  - "/zh/BI/PLMSearch：Protein-language-model-powers-accurate-and-fast-sequence-search-for-re/"
 ---
 
 > 论文地址：[PLMSearch: Protein language model powers accurate and fast sequence search for remote homology](https://www.nature.com/articles/s41467-024-46808-5)

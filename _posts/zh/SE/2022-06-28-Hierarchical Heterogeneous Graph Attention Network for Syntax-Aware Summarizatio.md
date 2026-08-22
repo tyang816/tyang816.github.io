@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
 permalink: /zh/notes/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
 redirect_from:
-  - /2022/06/28/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
-  - /se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/
-
+  - "/2022/06/28/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/"
+  - "/zh/se/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/"
+  - "/zh/SE/Hierarchical-Heterogeneous-Graph-Attention-Network-for-Syntax-Aware-Summarizatio/"
 ---
 
 > 论文地址：[Hierarchical Heterogeneous Graph Attention Network for Syntax-Aware Summarization](https://www.aaai.org/AAAI22Papers/AAAI-6812.SongZ.pdf)

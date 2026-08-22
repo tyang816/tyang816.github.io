@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
 permalink: /zh/notes/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
 redirect_from:
-  - /2022/01/29/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
-  - /cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/
-
+  - "/2022/01/29/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/"
+  - "/zh/cv/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/"
+  - "/zh/CV/Open-vocabulary-Object-Detection-via-Vision-and-Language-Knowledge-Distillation/"
 ---
 
 > 论文地址：[Open-vocabulary Object Detection via Vision and Language Knowledge Distillation](https://openreview.net/forum?id=lL3lnMbR4WU)

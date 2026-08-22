@@ -9,6 +9,7 @@ alt_url: /projects/venusrem/
 author_profile: true
 description: VenusREM：检索增强的突变效应预测（ISMB/ECCB 2025 / Bioinformatics）。
 redirect_from:
+- /zh/pub/venusrem/
 - /zh/project/venusrem/
 ---
 

@@ -8,6 +8,9 @@ date: 2018-04-13
 lang: en
 alt_url: /zh/notes/cv/Non-local-Neural-Networks/
 permalink: /notes/cv/Non-local-Neural-Networks/
+redirect_from:
+  - "/cv/Non-local-Neural-Networks/"
+  - "/CV/Non-local-Neural-Networks/"
 ---
 
 > Paper: [Non-local Neural Networks](https://openaccess.thecvf.com/content_cvpr_2018/papers/Wang_Non-Local_Neural_Networks_CVPR_2018_paper.pdf)

@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
 permalink: /zh/notes/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
 redirect_from:
-  - /2021/11/01/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
-  - /cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/
-
+  - "/2021/11/01/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/"
+  - "/zh/cl/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/"
+  - "/zh/CL/Rethinking-Data-Augmentation-for-Low-Resource-Neural-Machine-Translation：A-Multi/"
 ---
 
 

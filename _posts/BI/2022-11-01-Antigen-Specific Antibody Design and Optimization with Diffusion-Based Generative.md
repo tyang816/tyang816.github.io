@@ -8,6 +8,9 @@ date: 2022-11-01
 lang: en
 alt_url: /zh/notes/bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/
 permalink: /notes/bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/
+redirect_from:
+  - "/bi/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/"
+  - "/BI/Antigen-Specific-Antibody-Design-and-Optimization-with-Diffusion-Based-Generative/"
 ---
 
 > Paper: [Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures](https://proceedings.neurips.cc/paper_files/paper/2022/hash/3fa7d76a0dc1179f1e98d1bc62403756-Abstract-Conference.html)

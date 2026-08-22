@@ -8,6 +8,9 @@ date: 2018-07-10
 lang: en
 alt_url: /zh/notes/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
 permalink: /notes/cv/Representation-Learning-with-Contrastive-Predictive-Coding/
+redirect_from:
+  - "/cv/Representation-Learning-with-Contrastive-Predictive-Coding/"
+  - "/CV/Representation-Learning-with-Contrastive-Predictive-Coding/"
 ---
 
 

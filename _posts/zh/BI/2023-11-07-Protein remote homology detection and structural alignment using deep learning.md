@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
 permalink: /zh/notes/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
 redirect_from:
-  - /2023/11/07/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
-  - /bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/
-
+  - "/2023/11/07/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/"
+  - "/zh/bi/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/"
+  - "/zh/BI/Protein-remote-homology-detection-and-structural-alignment-using-deep-learning/"
 ---
 
 > 论文地址：[Protein remote homology detection and structural alignment using deep learning](https://www.nature.com/articles/s41587-023-01917-2)

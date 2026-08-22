@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Non-local-Neural-Networks/
 permalink: /zh/notes/cv/Non-local-Neural-Networks/
 redirect_from:
-  - /2018/04/13/Non-local-Neural-Networks/
-  - /cv/Non-local-Neural-Networks/
-
+  - "/2018/04/13/Non-local-Neural-Networks/"
+  - "/zh/cv/Non-local-Neural-Networks/"
+  - "/zh/CV/Non-local-Neural-Networks/"
 ---
 
 > 论文地址：[Non-local Neural Networks](https://openaccess.thecvf.com/content_cvpr_2018/papers/Wang_Non-Local_Neural_Networks_CVPR_2018_paper.pdf)

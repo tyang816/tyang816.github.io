@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
 permalink: /zh/notes/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
 redirect_from:
-  - /2023/02/02/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
-  - /bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/
-
+  - "/2023/02/02/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/"
+  - "/zh/bi/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/"
+  - "/zh/BI/Conditional-Antibody-Design-as-3D-Equivariant-Graph-Translation/"
 ---
 
 > 论文地址：[Conditional Antibody Design as 3D Equivariant Graph Translation](https://openreview.net/forum?id=LFHFQbjxIiP)

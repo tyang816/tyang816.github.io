@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/bi/Structure-inducing-pre-training/
 permalink: /zh/notes/bi/Structure-inducing-pre-training/
 redirect_from:
-  - /2023/06/01/Structure-inducing-pre-training/
-  - /bi/Structure-inducing-pre-training/
-
+  - "/2023/06/01/Structure-inducing-pre-training/"
+  - "/zh/bi/Structure-inducing-pre-training/"
+  - "/zh/BI/Structure-inducing-pre-training/"
 ---
 
 > 论文地址：[Structure-inducing pre-training](https://www.nature.com/articles/s42256-023-00647-z)

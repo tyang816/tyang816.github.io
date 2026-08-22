@@ -8,6 +8,9 @@ date: 2019-04-03
 lang: en
 alt_url: /zh/notes/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
 permalink: /notes/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/
+redirect_from:
+  - "/cv/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/"
+  - "/CV/Unsupervised-Embedding-Learning-via-Invariant-and-Spreading-Instance-Feature/"
 ---
 
 

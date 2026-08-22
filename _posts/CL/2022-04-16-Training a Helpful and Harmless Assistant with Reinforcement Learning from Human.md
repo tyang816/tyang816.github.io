@@ -8,6 +8,9 @@ date: 2022-04-16
 lang: en
 alt_url: /zh/notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
 permalink: /notes/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/
+redirect_from:
+  - "/cl/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/"
+  - "/CL/Training-a-Helpful-and-Harmless-Assistant-with-Reinforcement-Learning-from-Human/"
 ---
 
 > Paper: [Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback](https://arxiv.org/pdf/2204.05862.pdf)

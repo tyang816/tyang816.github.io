@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
 permalink: /zh/notes/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
 redirect_from:
-  - /2023/01/15/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
-  - /cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/
-
+  - "/2023/01/15/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/"
+  - "/zh/cv/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/"
+  - "/zh/CV/Image-as-a-Foreign-Language：BEiT-Pretraining-for-All-Vision-and-Vision-Language-/"
 ---
 
 > 论文地址：[Image as a Foreign Language：BEiT Pretraining for All Vision and Vision-Language Tasks](https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Image_as_a_Foreign_Language_BEiT_Pretraining_for_Vision_and_CVPR_2023_paper.pdf)

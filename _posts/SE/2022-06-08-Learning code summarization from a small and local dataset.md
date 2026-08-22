@@ -8,6 +8,9 @@ date: 2022-06-08
 lang: en
 alt_url: /zh/notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
 permalink: /notes/se/Learning-code-summarization-from-a-small-and-local-dataset/
+redirect_from:
+  - "/se/Learning-code-summarization-from-a-small-and-local-dataset/"
+  - "/SE/Learning-code-summarization-from-a-small-and-local-dataset/"
 ---
 
 > Paper: [Learning code summarization from a small and local dataset](http://arxiv.org/abs/2206.00804)

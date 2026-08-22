@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
 permalink: /zh/notes/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
 redirect_from:
-  - /2021/01/13/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
-  - /cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/
-
+  - "/2021/01/13/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/"
+  - "/zh/cv/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/"
+  - "/zh/CV/An-Image-is-Worth-16x16-Words：Transformers-for-Image-Recognition-at-Scale/"
 ---
 
 > 论文地址：[An Image is Worth 16x16 Words:Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy)

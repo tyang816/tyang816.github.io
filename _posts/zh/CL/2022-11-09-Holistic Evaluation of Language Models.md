@@ -9,9 +9,9 @@ lang: zh-CN
 alt_url: /notes/cl/Holistic-Evaluation-of-Language-Models/
 permalink: /zh/notes/cl/Holistic-Evaluation-of-Language-Models/
 redirect_from:
-  - /2022/11/09/Holistic-Evaluation-of-Language-Models/
-  - /cl/Holistic-Evaluation-of-Language-Models/
-
+  - "/2022/11/09/Holistic-Evaluation-of-Language-Models/"
+  - "/zh/cl/Holistic-Evaluation-of-Language-Models/"
+  - "/zh/CL/Holistic-Evaluation-of-Language-Models/"
 ---
 
 > 论文地址：[Holistic Evaluation of Language Models](http://arxiv.org/abs/2211.09110)

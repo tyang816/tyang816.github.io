@@ -9,6 +9,7 @@ alt_url: /projects/venusx/
 author_profile: true
 description: VenusX：解锁蛋白质细粒度功能理解（ICLR 2026）。
 redirect_from:
+- /zh/pub/venusx/
 - /zh/project/venusx/
 ---
 

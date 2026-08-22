@@ -8,6 +8,9 @@ date: 2021-12-07
 lang: en
 alt_url: /zh/notes/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
 permalink: /notes/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/
+redirect_from:
+  - "/bi/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/"
+  - "/BI/Modeling-Protein-Using-Large-scale-Pretrain-Language-Model/"
 ---
 
 > Paper: [Modeling Protein Using Large-scale Pretrain Language Model](http://arxiv.org/abs/2108.07435)

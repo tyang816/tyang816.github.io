@@ -8,6 +8,9 @@ date: 2024-01-25
 lang: en
 alt_url: /zh/notes/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
 permalink: /notes/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/
+redirect_from:
+  - "/bi/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/"
+  - "/BI/TM-search：An-Efficient-and-Effective-Tool-for-Protein-Structure-Database-Search/"
 ---
 
 > Paper: [TM-search：An Efficient and Effective Tool for Protein Structure Database Search](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01455)

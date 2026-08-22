@@ -8,6 +8,9 @@ date: 2015-04-17
 lang: en
 alt_url: /zh/notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
 permalink: /notes/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/
+redirect_from:
+  - "/cv/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/"
+  - "/CV/Beyond-Short-Snippets：Deep-Networks-for-Video-Classification/"
 ---
 
 

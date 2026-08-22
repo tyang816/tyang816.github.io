@@ -8,6 +8,9 @@ date: 2025-06-14
 lang: en
 alt_url: /zh/notes/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
 permalink: /notes/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/
+redirect_from:
+  - "/bi/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/"
+  - "/BI/Evaluating-the-representational-power-of-pre-trained-DNA-language-models-for-reg/"
 ---
 
 > Paper: [Evaluating the representational power of pre-trained DNA language models for regulatory genomics](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03674-8)
