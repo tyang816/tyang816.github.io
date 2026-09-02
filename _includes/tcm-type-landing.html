@@ -1,0 +1,151 @@
+{% assign is_zh = false %}
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+{% if page_lang == "zh-CN" or page_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+
+{% assign catalog = site.data.tcm_catalog %}
+{% assign raw_items = catalog.items | default: empty %}
+{% assign landing = page.tcm_landing | default: "datasets" %}
+{% assign featured_ids = "bianque,huatuogpt,shennong-tcm-llm,zhongjing,qibo,shizhengpt,baize-tcm,tcmchat,xuanhugpt" | split: "," %}
+
+{% if landing == "models" %}
+  {% assign filter_type = "model_hf" %}
+{% elsif landing == "surveys" %}
+  {% assign filter_type = "survey" %}
+{% else %}
+  {% assign filter_type = "dataset" %}
+{% endif %}
+
+{% if is_zh %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+  {% assign hub_url = "/zh/projects/tcm/" %}
+  {% assign back_label = "返回中医大模型目录" %}
+  {% if landing == "models" %}
+    {% assign kicker = "中医大模型 · 开源权重" %}
+    {% assign h1 = "开源中医大模型" %}
+    {% assign lede = "Awesome-TCM-LLM 收录的开源中医大模型（TCM LLM）权重与代表性系统，含扁鹊、华佗GPT、神农、仲景、岐伯、ShizhenGPT 等。" %}
+  {% elsif landing == "surveys" %}
+    {% assign kicker = "中医大模型 · 综述" %}
+    {% assign h1 = "中医大模型综述" %}
+    {% assign lede = "中医大模型（TCM LLM）相关综述与展望：知识组织、辅助诊疗、多模态舌脉面诊、智能体与评测体系。" %}
+  {% else %}
+    {% assign kicker = "中医大模型 · 数据集" %}
+    {% assign h1 = "中医大模型数据集" %}
+    {% assign lede = "面向中医大模型训练与评测的公开数据集：指令微调、医案问答、方剂、古籍语料与基准评测集。" %}
+  {% endif %}
+{% else %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+  {% assign hub_url = "/projects/tcm/" %}
+  {% assign back_label = "Back to TCM LLM catalog" %}
+  {% if landing == "models" %}
+    {% assign kicker = "TCM LLM · Open weights" %}
+    {% assign h1 = "Open TCM LLMs" %}
+    {% assign lede = "Open-weight Traditional Chinese Medicine large language models curated in Awesome-TCM-LLM, including BianQue, HuaTuoGPT, ShenNong, ZhongJing, Qibo, and ShizhenGPT." %}
+  {% elsif landing == "surveys" %}
+    {% assign kicker = "TCM LLM · Surveys" %}
+    {% assign h1 = "TCM LLM surveys" %}
+    {% assign lede = "Surveys of Traditional Chinese Medicine large language models: knowledge organization, assisted diagnosis, multimodal four examinations, agents, and evaluation." %}
+  {% else %}
+    {% assign kicker = "TCM LLM · Datasets" %}
+    {% assign h1 = "TCM LLM datasets" %}
+    {% assign lede = "Public datasets for training and evaluating TCM LLMs: instruction data, case QA, formulas, classical corpora, and benchmarks." %}
+  {% endif %}
+{% endif %}
+
+{% assign listed = "" | split: "" %}
+{% if landing == "models" %}
+  {% for fid in featured_ids %}
+    {% for it in raw_items %}
+      {% if it.id == fid %}
+        {% assign listed = listed | push: it %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+{% assign extras = raw_items | where: "type", filter_type | sort: "date" | reverse %}
+{% for it in extras %}
+  {% assign already = false %}
+  {% for prev in listed %}
+    {% if prev.id == it.id %}{% assign already = true %}{% endif %}
+  {% endfor %}
+  {% unless already %}
+    {% assign listed = listed | push: it %}
+  {% endunless %}
+{% endfor %}
+
+<header class="project-hero">
+  <p class="project-kicker">{{ kicker }}</p>
+  <h1>{{ h1 }}</h1>
+  <p class="project-lede">{{ lede }}</p>
+  <p class="project-authors">
+    {% if is_zh %}
+    维护：谭扬 · 与 <a href="https://github.com/tyang816/Awesome-TCM-LLM">Awesome-TCM-LLM</a> 同源，共 {{ listed.size }} 条
+    {% else %}
+    Maintained by Yang Tan · synced with <a href="https://github.com/tyang816/Awesome-TCM-LLM">Awesome-TCM-LLM</a> · {{ listed.size }} entries
+    {% endif %}
+  </p>
+  <div class="project-cta">
+    <a class="project-btn project-btn--primary" href="{{ hub_url | relative_url }}">{{ back_label }}</a>
+    <a class="project-btn project-btn--ghost" href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">GitHub</a>
+    {% if page.alt_url %}
+      {% if is_zh %}
+      <a class="project-btn project-btn--ghost" href="{{ page.alt_url | relative_url }}">English</a>
+      {% else %}
+      <a class="project-btn project-btn--ghost" href="{{ page.alt_url | relative_url }}">中文</a>
+      {% endif %}
+    {% endif %}
+  </div>
+</header>
+
+<section class="project-section">
+  <div class="project-grid tcm-landing-grid">
+    {% for it in listed %}
+      {% assign type_key = it.type | default: "resource" %}
+      {% assign type_label = type_key %}
+      {% for pair in type_labels %}
+        {% assign parts = pair | split: ":" %}
+        {% if parts[0] == type_key %}{% assign type_label = parts[1] %}{% endif %}
+      {% endfor %}
+      {% if is_zh %}
+        {% if type_key == "news" %}
+          {% assign card_title = it.summary_zh | default: it.name | default: it.id %}
+          {% assign card_summary = "" %}
+        {% else %}
+          {% assign card_title = it.name | default: it.title_zh | default: it.id %}
+          {% assign card_summary = it.summary_zh | default: it.title_zh | default: "" %}
+        {% endif %}
+        {% assign orgs = it.orgs | join: " / " %}
+        {% assign item_url = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
+      {% else %}
+        {% if type_key == "news" %}
+          {% assign card_title = it.summary_en | default: it.summary_zh | default: it.name | default: it.id %}
+          {% assign card_summary = "" %}
+        {% else %}
+          {% assign card_title = it.name_en | default: it.name | default: it.title_en | default: it.title_zh | default: it.id %}
+          {% assign card_summary = it.summary_en | default: it.title_en | default: it.summary_zh | default: it.title_zh | default: "" %}
+        {% endif %}
+        {% if it.orgs_en and it.orgs_en.size > 0 %}
+          {% assign orgs = it.orgs_en | join: " / " %}
+        {% else %}
+          {% assign orgs = it.orgs | join: " / " %}
+        {% endif %}
+        {% assign item_url = "/projects/tcm/items/" | append: it.id | append: "/" %}
+      {% endif %}
+      {% assign card_title = card_title | replace: "**", "" %}
+      {% assign card_summary = card_summary | replace: "**", "" %}
+      {% assign y = it.year | append: "" %}
+      {% if y == "" and it.date %}{% assign y = it.date | slice: 0, 4 %}{% endif %}
+      {% assign date_show = it.date | default: y %}
+      {% assign meta_bits = type_label %}
+      {% if date_show != "" %}{% assign meta_bits = meta_bits | append: " · " | append: date_show %}{% endif %}
+      {% if it.venue %}{% assign meta_bits = meta_bits | append: " · " | append: it.venue %}{% endif %}
+      {% if orgs != "" %}{% assign meta_bits = meta_bits | append: " · " | append: orgs %}{% endif %}
+      <a class="project-card-link is-static" href="{{ item_url | relative_url }}">
+        <div class="venue">{{ meta_bits }}</div>
+        <h2>{{ card_title }}</h2>
+        {% if card_summary != "" and card_summary != card_title %}
+        <p>{{ card_summary }}</p>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</section>

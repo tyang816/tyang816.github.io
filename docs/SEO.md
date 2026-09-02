@@ -13,9 +13,14 @@
 | 开源项目（中） | `https://tyang816.github.io/zh/projects/` |
 | 中医门户（中文） | `https://tyang816.github.io/zh/projects/tcm/` |
 | TCM 英文目录 | `https://tyang816.github.io/projects/tcm/` |
+| 开源中医大模型 | `https://tyang816.github.io/zh/projects/tcm/models/` |
+| 中医大模型数据集 | `https://tyang816.github.io/zh/projects/tcm/datasets/` |
+| 中医大模型综述 | `https://tyang816.github.io/zh/projects/tcm/surveys/` |
 | 全站 sitemap | `https://tyang816.github.io/sitemap.xml` |
 | 双语优先 sitemap | `https://tyang816.github.io/sitemap_i18n.xml` |
+| TCM 专用 sitemap | `https://tyang816.github.io/sitemap_tcm.xml` |
 | robots | `https://tyang816.github.io/robots.txt` |
+| llms.txt（给 Gemini / ChatGPT / Perplexity） | `https://tyang816.github.io/llms.txt` |
 
 旧路径已用 `redirect_from` 承接：`/pub/`、`/project/`、`/tcm/`、`/tcm-en/` → 对应 `/projects/...`。
 
@@ -56,7 +61,8 @@ curl -sL https://tyang816.github.io/projects/venusx/ | rg 'og:image|SoftwareSour
 2. **站点地图**：提交 / 重新提交：
    - `sitemap.xml`
    - `sitemap_i18n.xml`（优先看这个）
-3. **请求编入索引**：对「重点申请索引」中的 URL 逐条「网址检查 → 请求编入索引」
+   - `sitemap_tcm.xml`（中医大模型目录 + 全部条目）
+3. **请求编入索引**：对「重点申请索引」中的 URL 逐条「网址检查 → 请求编入索引」，并加上 `/zh/projects/tcm/models/`、`/datasets/`、`/surveys/`
 4. 数日后在「页面」查看是否已收录；关注是否仍抓到旧 `/tcm/`、`/tcm-en/`（应 301/redirect 到新地址）
 
 ---
@@ -132,8 +138,50 @@ TCM 汇聚页数据来自本仓库 `_data/tcm_catalog.json`（由 `scripts/sync_
 | 品牌词（Yang Tan / 谭扬 + SJTU） | 有机会进前排 |
 | 项目名（VenusX） | 默认输给 GitHub / OpenReview / arXiv，除非 README/HF 强回链 |
 | 通用词（protein language model） | 个人站几乎不竞争 |
+| 品牌词（Awesome-TCM-LLM / 谭扬 中医大模型） | 应能进前排，优先打这个 |
+| 中长尾（中医大模型 开源 / 数据集 / 综述 / 有哪些） | 专题页 + GitHub 回链后有机会 |
+| 头词（中医大模型） | 会输给论文、医院新闻、高校站；不要用这个当唯一 KPI |
 
 不要用「通用学术关键词首页」衡量本站；用「项目页被索引 + 品牌/项目名可发现」衡量。
+
+---
+
+## 8. 「中医大模型」排名与 Gemini 为什么不提你
+
+站内 title / H1 / FAQ 已经对准「中医大模型」。搜这个头词仍排不进、Gemini 也不引用，通常不是再改 meta 能解决的。
+
+### 为什么排不进去
+
+1. **域名权重**：`tyang816.github.io` 是个人 Pages，竞争不过 arXiv、高校新闻、GitHub.com 上的模型仓库。
+2. **检索意图**：用户搜「中医大模型」时，Google 更常给**具体模型/论文/新闻**（仲景、天医、大数中医、TCMLLM），而不是 awesome 列表。仓库 About 若写成「开源中文医疗大模型」而不是「中医大模型」，更对不齐头词。
+3. **外链太少**：约 70 star、创建于 2025-10，缺少论文引用和第三方转载。
+4. **Gemini**：先看 Google 检索，再看训练语料里的论文/百科。你不在 SERP 前排、又很少被论文引用，就不会被点名。
+
+### 仓库侧（比再改本站更重要）
+
+在 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 上立刻改：
+
+- **About / Description** 写成：`中医大模型（TCM LLM）开源资源：模型、论文、数据集与评测`
+- **README 主标题** 含「中医大模型」，不要只写「开源中文医疗大模型」
+- **门户链接** 用 `https://tyang816.github.io/zh/projects/tcm/`（不要旧的 `/tcm/`）
+- 顶部徽章链到中文门户；英文 README 链 `/projects/tcm/`
+- 加 `CITATION.cff`，方便论文引用
+
+### 上线后在 GSC 做的
+
+1. 提交 `sitemap_tcm.xml`
+2. 对 `/zh/projects/tcm/`、`/zh/projects/tcm/models/`、`/datasets/`、`/surveys/` 请求编入索引
+3. 用「[中医大模型 site:tyang816.github.io](https://www.google.com/search?q=%E4%B8%AD%E5%8C%BB%E5%A4%A7%E6%A8%A1%E5%9E%8B+site%3Atyang816.github.io)」确认已收录
+
+### 让 Gemini / ChatGPT 愿意点名
+
+- 写一篇可引用的短文（知乎 / 微信 / 实验室主页），标题带「中医大模型」，正文链到门户和 GitHub
+- 自己或合作者的综述/评测论文 **Related Work** 引用 Awesome-TCM-LLM
+- Hugging Face 模型卡、Papers with Code、相关 awesome 列表加回链
+- 名称始终用 **Awesome-TCM-LLM** + **中医大模型**，不要每次换说法
+- Wikidata 可建 item（label: Awesome-TCM-LLM，描述: 中医大模型资源列表）
+
+本站已提供 `https://tyang816.github.io/llms.txt`，方便回答引擎发现目录入口。
 
 ---
 

@@ -41,6 +41,8 @@
 {% assign raw_title = page.title | strip %}
 {% if page.seo_title %}
   {% assign seo_title = page.seo_title %}
+{% elsif page.tcm_item_id and raw_title != "" %}
+  {% assign seo_title = raw_title %}
 {% elsif seo_project %}
   {% if is_zh_page %}
     {% assign _pname = seo_project.name_zh | default: seo_project.name %}
@@ -142,6 +144,18 @@
     {% assign seo_description = excerpt_plain | truncate: 160 %}
   {% endif %}
 {% endunless %}
+{% if page.project == "tcm" and page.tcm_item_id %}
+  {% assign tcm_desc_has_kw = false %}
+  {% if seo_description contains "中医大模型" %}{% assign tcm_desc_has_kw = true %}{% endif %}
+  {% if seo_description contains "TCM LLM" %}{% assign tcm_desc_has_kw = true %}{% endif %}
+  {% unless tcm_desc_has_kw %}
+    {% if is_zh_page %}
+      {% assign seo_description = seo_description | append: "（中医大模型 / TCM LLM，收录于 Awesome-TCM-LLM）" %}
+    {% else %}
+      {% assign seo_description = seo_description | append: " (TCM LLM resource in Awesome-TCM-LLM)" %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
 {% if is_zh_page %}
   {% assign seo_description = seo_description | default: site.description_zh | default: site.description %}
 {% else %}

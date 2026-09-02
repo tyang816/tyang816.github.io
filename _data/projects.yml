@@ -62,16 +62,16 @@
   category: llm
   venue: News hub
   venue_zh: 新闻汇聚
-  tagline: Curated Traditional Chinese Medicine LLM news and resources
-  tagline_zh: 中医大模型新闻与开源资源汇聚
+  tagline: Curated Traditional Chinese Medicine LLM catalog
+  tagline_zh: 中医大模型开源资源大全
   summary: Filterable hub of TCM LLM news, papers, surveys, models, and datasets — synced with Awesome-TCM-LLM.
-  summary_zh: 可筛选的中医大模型新闻与资源汇聚：论文、综述、开源权重与数据集，与 Awesome-TCM-LLM 同源维护。
+  summary_zh: 可筛选的中医大模型开源资源大全：论文、综述、开源权重与数据集，与 Awesome-TCM-LLM 同源维护。
   url: /projects/tcm/
   url_zh: /zh/projects/tcm/
   code: https://github.com/tyang816/Awesome-TCM-LLM
   catalog: /projects/tcm/
   catalog_zh: /zh/projects/tcm/
-  date: 2025-10
+  date: 2026-08
 - name: VenusREM
   name_zh: VenusREM
   slug: venusrem

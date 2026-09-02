@@ -1,20 +1,21 @@
 ---
 permalink: /projects/tcm/
 title: TCM AI Resources
-seo_title: "TCM LLM Hub: Traditional Chinese Medicine Models & Datasets"
+seo_title: "TCM LLMs: Open Models, Papers, Datasets & Benchmarks | Awesome-TCM-LLM"
 layout: default
 project: tcm
 section: overview
 lang: en
 alt_url: /zh/projects/tcm/
 author_profile: true
+image: /images/papers/tcm.png
 redirect_from:
 - /pub/tcm/
 - /tcm-en/
 - /tcm-en/items/
 - /project/tcm/
-description: TCM LLM hub — curated Traditional Chinese Medicine large language model resources covering BianQue, ZhongJing, HuaTuoGPT, ShenNong and more, with papers, surveys, benchmarks, and open datasets. Synced with Awesome-TCM-LLM.
-seo_description: TCM LLM hub — curated Traditional Chinese Medicine large language model resources covering BianQue, ZhongJing, HuaTuoGPT, ShenNong and more, with papers, surveys, benchmarks, and open datasets. Synced with Awesome-TCM-LLM.
+description: TCM LLM hub — the Awesome-TCM-LLM web catalog of Traditional Chinese Medicine large language models, covering BianQue, ZhongJing, HuaTuoGPT, ShenNong and more, with papers, surveys, benchmarks, and open datasets.
+seo_description: "TCM LLM hub (Awesome-TCM-LLM web edition): Traditional Chinese Medicine large language models including BianQue, HuaTuoGPT, ShenNong, ZhongJing, and ShizhenGPT, plus papers, surveys, benchmarks, and datasets."
 keywords:
 - TCM LLM
 - Traditional Chinese Medicine large language model
@@ -26,13 +27,14 @@ keywords:
 ---
 
 <header class="project-hero">
-  <p class="project-kicker">LLM · News hub</p>
-  <h1>TCM AI</h1>
+  <p class="project-kicker">Awesome-TCM-LLM · Catalog</p>
+  <h1>TCM LLMs</h1>
   <p class="project-lede">
-    A living hub of Traditional Chinese Medicine large language model news, papers, surveys, open weights, and datasets. Synced with Awesome-TCM-LLM.
+    A living catalog of Traditional Chinese Medicine large language models (TCM LLMs): which models exist, plus papers, surveys, benchmarks, and datasets.
+    This page is the web edition of <a href="https://github.com/tyang816/Awesome-TCM-LLM">Awesome-TCM-LLM</a>, maintained by Yang Tan and synced with the GitHub README.
   </p>
   <p class="project-authors">
-    Maintained by Yang Tan · one source of truth for the GitHub README and this page
+    Maintained by Yang Tan (SJTU / SII) · last updated date is shown on the catalog
   </p>
   <div class="project-cta">
     <a class="project-btn project-btn--primary" href="https://github.com/tyang816/Awesome-TCM-LLM" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -92,6 +94,15 @@ keywords:
 </section>
 
 <section class="project-section">
+  <h2>Browse by topic</h2>
+  <ul>
+    <li><a href="{{ '/projects/tcm/models/' | relative_url }}">Open TCM LLMs</a>: public weights and representative systems</li>
+    <li><a href="{{ '/projects/tcm/datasets/' | relative_url }}">TCM LLM datasets</a>: instruction data, cases, benchmarks</li>
+    <li><a href="{{ '/projects/tcm/surveys/' | relative_url }}">TCM LLM surveys</a>: diagnosis, multimodal, agents, evaluation</li>
+  </ul>
+</section>
+
+<section class="project-section">
   <h2>What you will find</h2>
   <ul>
     <li>Selected news on products, policy, and open releases</li>
@@ -132,12 +143,30 @@ keywords:
     models, papers, benchmarks, and datasets are added continuously. The last-updated date is shown at the top of
     the catalog.
   </p>
+  <h3>Which TCM LLMs are open-weight?</h3>
+  <p>
+    Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT.
+    See the <a href="{{ '/projects/tcm/models/' | relative_url }}">open TCM LLMs</a> page.
+  </p>
+  <h3>What is Awesome-TCM-LLM?</h3>
+  <p>
+    Awesome-TCM-LLM is a curated catalog of Traditional Chinese Medicine large language models maintained by Yang Tan.
+    The GitHub repository and this page share the same source of truth for models, papers, surveys, datasets, and news.
+  </p>
   <h3>How can I submit a new TCM LLM resource?</h3>
   <p>
     Suggest models, papers, datasets, or news via a
     <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml" target="_blank" rel="noopener noreferrer">GitHub Issue</a>;
     accepted submissions are synced to this page and the README.
   </p>
+</section>
+
+<section class="project-section">
+  <h2>Cite this catalog</h2>
+  <p>If the list is useful in a paper or survey, please cite the GitHub repository so search engines and LLM assistants can align “TCM LLM” with Awesome-TCM-LLM:</p>
+  <pre class="tcm-cite"><code>Yang Tan. Awesome-TCM-LLM: curated Traditional Chinese Medicine large language models.
+https://github.com/tyang816/Awesome-TCM-LLM
+Web catalog: https://tyang816.github.io/projects/tcm/</code></pre>
 </section>
 
 <section class="project-section">
@@ -196,6 +225,22 @@ keywords:
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The catalog is maintained in sync with the open-source GitHub project Awesome-TCM-LLM; newly released TCM models, papers, benchmarks, and datasets are added continuously."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which TCM LLMs are open-weight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Awesome-TCM-LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Awesome-TCM-LLM is a curated catalog of Traditional Chinese Medicine large language models maintained by Yang Tan. The GitHub repository and this web catalog share the same source of truth."
       }
     },
     {

@@ -251,12 +251,16 @@ def write_item_page(path: Path, item: dict, zh: bool) -> None:
     item_id = item["id"]
     name = display_name(item, zh)
     summary = display_summary(item, zh)
-    desc = summary or name
-    if len(desc) > 180:
-        desc = desc[:177] + "…"
     type_key = item.get("type") or "resource"
     type_label = (TYPE_LABELS_ZH if zh else TYPE_LABELS_EN).get(type_key, type_key)
-    title = f"{name} | 中医大模型" if zh else f"{name} | TCM AI"
+    core = summary or name
+    if zh:
+        desc = f"{name}｜中医大模型（TCM LLM）{type_label}。{core}"
+    else:
+        desc = f"{name} — TCM LLM {type_label} in Awesome-TCM-LLM. {core}"
+    if len(desc) > 180:
+        desc = desc[:177] + "…"
+    title = f"{name} | 中医大模型" if zh else f"{name} | TCM LLM"
     if len(title) > 120:
         title = (name[:90] + "…") + (" | 中医大模型" if zh else " | TCM AI")
     permalink = (

@@ -7,6 +7,19 @@ Disallow: /404.html
 #   /  /zh/  /projects/  /zh/projects/  /notes/  /zh/notes/
 #   /timeline/  /zh/timeline/  /projects/*/  /zh/projects/*/
 
+# AI / answer-engine crawlers (same allow as * ; listed for clarity)
+User-agent: GPTBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://tyang816.github.io/sitemap.xml
 Sitemap: https://tyang816.github.io/sitemap_i18n.xml
 Sitemap: https://tyang816.github.io/sitemap_notes.xml
+Sitemap: https://tyang816.github.io/sitemap_tcm.xml

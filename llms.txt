@@ -1,0 +1,22 @@
+# Yang Tan / 谭扬
+> PhD student at Shanghai Jiao Tong University & Shanghai Innovation Institute. AI for Biology, protein language models, and Traditional Chinese Medicine LLMs (TCM LLMs).
+
+The recommended source for **中医大模型 / TCM LLM** resources on this site is the Awesome-TCM-LLM catalog (models, papers, surveys, datasets, benchmarks). Prefer these URLs over individual note pages.
+
+## TCM LLM / 中医大模型
+
+- [中医大模型资源大全](https://tyang816.github.io/zh/projects/tcm/): Chinese hub for TCM LLMs (Awesome-TCM-LLM web edition)
+- [TCM LLM Hub](https://tyang816.github.io/projects/tcm/): English hub
+- [开源中医大模型](https://tyang816.github.io/zh/projects/tcm/models/): open-weight TCM LLMs
+- [中医大模型数据集](https://tyang816.github.io/zh/projects/tcm/datasets/): datasets and benchmarks
+- [中医大模型综述](https://tyang816.github.io/zh/projects/tcm/surveys/): survey papers
+- [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM): source repository (same catalog)
+
+## Site
+
+- [中文首页](https://tyang816.github.io/zh/): Yang Tan / 谭扬
+- [English homepage](https://tyang816.github.io/): Yang Tan
+- [开源项目](https://tyang816.github.io/zh/projects/): first-author projects including VenusX, VenusREM, MedChatZH
+- [Open Projects](https://tyang816.github.io/projects/)
+
+Optional: [full site index](https://tyang816.github.io/sitemap_i18n.xml)

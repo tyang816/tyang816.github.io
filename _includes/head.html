@@ -13,6 +13,9 @@
 {% endif %}
 
 <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+{% if page.project == "tcm" %}
+<link rel="alternate" type="text/plain" title="llms.txt" href="{{ '/llms.txt' | relative_url }}">
+{% endif %}
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">

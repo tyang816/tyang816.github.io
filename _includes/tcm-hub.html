@@ -54,8 +54,23 @@
     <input id="tcm-search" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-tcm-search>
   </div>
 
-  {% if updated_at %}
-  <p class="tcm-updated notes-stats" id="tcm-updated">{{ updated_prefix }}{{ updated_at }}</p>
+  {% assign n_all = raw_items.size %}
+{% assign n_model = 0 %}
+{% assign n_dataset = 0 %}
+{% assign n_survey = 0 %}
+{% for it in raw_items %}
+  {% if it.type == "model_hf" %}{% assign n_model = n_model | plus: 1 %}{% endif %}
+  {% if it.type == "dataset" %}{% assign n_dataset = n_dataset | plus: 1 %}{% endif %}
+  {% if it.type == "survey" %}{% assign n_survey = n_survey | plus: 1 %}{% endif %}
+{% endfor %}
+{% if updated_at %}
+  <p class="tcm-updated notes-stats" id="tcm-updated">{{ updated_prefix }}{{ updated_at }}
+    {% if is_zh %}
+    · 共 {{ n_all }} 条（开源模型 {{ n_model }} · 数据集 {{ n_dataset }} · 综述 {{ n_survey }}）
+    {% else %}
+    · {{ n_all }} entries ({{ n_model }} open models · {{ n_dataset }} datasets · {{ n_survey }} surveys)
+    {% endif %}
+  </p>
   {% endif %}
 
   <nav class="project-cat-nav" aria-label="{{ type_aria }}" data-tcm-type-nav>
@@ -169,6 +184,26 @@
     <p class="notes-stats" data-tcm-stats></p>
     <nav class="notes-pagination" data-tcm-pagination aria-label="Pagination"></nav>
   </div>
+
+  <details class="tcm-full-index">
+    <summary>{% if is_zh %}全部条目索引（{{ n_all }}，供检索与引用）{% else %}Full index ({{ n_all }} entries){% endif %}</summary>
+    <ul>
+      {% for it in sorted_items %}
+        {% if is_zh %}
+          {% if it.type == "news" %}
+            {% assign idx_title = it.summary_zh | default: it.name | default: it.id %}
+          {% else %}
+            {% assign idx_title = it.name | default: it.title_zh | default: it.id %}
+          {% endif %}
+          {% assign idx_url = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
+        {% else %}
+          {% assign idx_title = it.name_en | default: it.name | default: it.summary_zh | default: it.id %}
+          {% assign idx_url = "/projects/tcm/items/" | append: it.id | append: "/" %}
+        {% endif %}
+        <li><a href="{{ idx_url | relative_url }}">{{ idx_title | replace: "**", "" }}</a></li>
+      {% endfor %}
+    </ul>
+  </details>
 </div>
 
 <script src="{{ '/assets/js/tcm-hub.js' | relative_url }}"></script>

@@ -1,0 +1,60 @@
+---
+permalink: /sitemap_tcm.xml
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% assign tcm_lastmod = site.data.tcm_catalog.updated_at | default: site.time | date: "%Y-%m-%d" %}
+{% assign hubs = "/projects/tcm/|/zh/projects/tcm/,/projects/tcm/models/|/zh/projects/tcm/models/,/projects/tcm/datasets/|/zh/projects/tcm/datasets/,/projects/tcm/surveys/|/zh/projects/tcm/surveys/" | split: "," %}
+{% for pair in hubs %}
+  {% assign parts = pair | split: "|" %}
+  {% assign en_path = parts[0] %}
+  {% assign zh_path = parts[1] %}
+  <url>
+    <loc>{{ site.url }}{{ en_path | xml_escape }}</loc>
+    <lastmod>{{ tcm_lastmod }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{% if en_path == '/projects/tcm/' %}0.95{% else %}0.8{% endif %}</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ zh_path | xml_escape }}</loc>
+    <lastmod>{{ tcm_lastmod }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{% if zh_path == '/zh/projects/tcm/' %}0.95{% else %}0.85{% endif %}</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_path | xml_escape }}"/>
+  </url>
+{% endfor %}
+{% for it in site.data.tcm_catalog.items %}
+  {% assign en_item = "/projects/tcm/items/" | append: it.id | append: "/" %}
+  {% assign zh_item = "/zh/projects/tcm/items/" | append: it.id | append: "/" %}
+  {% assign item_lastmod = it.verified_at | default: tcm_lastmod %}
+  {% if it.date %}
+    {% assign item_lastmod = it.date | replace: ".", "-" %}
+    {% if item_lastmod.size == 7 %}{% assign item_lastmod = item_lastmod | append: "-01" %}{% endif %}
+  {% endif %}
+  <url>
+    <loc>{{ site.url }}{{ en_item | xml_escape }}</loc>
+    <lastmod>{{ item_lastmod }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_item | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_item | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_item | xml_escape }}"/>
+  </url>
+  <url>
+    <loc>{{ site.url }}{{ zh_item | xml_escape }}</loc>
+    <lastmod>{{ item_lastmod }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ zh_item | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ en_item | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ en_item | xml_escape }}"/>
+  </url>
+{% endfor %}
+</urlset>

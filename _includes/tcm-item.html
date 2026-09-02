@@ -80,6 +80,11 @@
   {% assign item_title = item_title | replace: "**", "" %}
 
   {% assign date_show = item.date | default: item.year %}
+  {% if is_zh %}
+    {% capture context_p %}「{{ item_title }}」是 <a href="{{ hub_url | relative_url }}">中医大模型开源资源目录</a>（Awesome-TCM-LLM）收录的{{ type_label }}{% if date_show %}，记录于 {{ date_show }}{% endif %}。该条目属于中医大模型（TCM LLM）领域，与 GitHub 列表同源维护。{% endcapture %}
+  {% else %}
+    {% capture context_p %}{{ item_title }} is a {{ type_label }} in the <a href="{{ hub_url | relative_url }}">TCM LLM catalog</a> (Awesome-TCM-LLM){% if date_show %}, dated {{ date_show }}{% endif %}. It is maintained alongside the GitHub list of Traditional Chinese Medicine large language models.{% endcapture %}
+  {% endif %}
 
   <header class="project-hero tcm-item-hero">
     <p class="project-kicker">{{ type_label }}{% if date_show %} · {{ date_show }}{% endif %}</p>
@@ -108,6 +113,7 @@
 
   {% if body_md != "" %}
   <section class="project-section">
+    <p class="tcm-item-context">{{ context_p }}</p>
     <div class="tcm-item-summary">
       {{ body_md | markdownify }}
     </div>
@@ -117,11 +123,14 @@
     </p>
     {% endif %}
   </section>
-  {% elsif item.tags and item.tags.size > 0 %}
+  {% else %}
   <section class="project-section">
+    <p class="tcm-item-context">{{ context_p }}</p>
+    {% if item.tags and item.tags.size > 0 %}
     <p class="tcm-item-tags"><span class="tcm-item-tags__label">{{ tags_label }}</span>
       {% for tg in item.tags %}<span class="tcm-tag">{{ tg }}</span>{% endfor %}
     </p>
+    {% endif %}
   </section>
   {% endif %}
 
@@ -141,7 +150,14 @@
   <section class="project-section">
     <h2>{{ related_heading }}</h2>
     <ul>
-      <li><a href="{{ hub_url | relative_url }}">{% if is_zh %}中医大模型资源目录{% else %}TCM AI catalog{% endif %}</a></li>
+      <li><a href="{{ hub_url | relative_url }}">{% if is_zh %}中医大模型资源目录{% else %}TCM LLM catalog{% endif %}</a></li>
+      {% if is_zh %}
+      <li><a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a></li>
+      <li><a href="{{ '/zh/projects/tcm/datasets/' | relative_url }}">中医大模型数据集</a></li>
+      {% else %}
+      <li><a href="{{ '/projects/tcm/models/' | relative_url }}">Open TCM LLMs</a></li>
+      <li><a href="{{ '/projects/tcm/datasets/' | relative_url }}">TCM LLM datasets</a></li>
+      {% endif %}
       <li>
         {% if is_zh %}
         <a href="{{ '/zh/projects/medchatzh/' | relative_url }}">{{ med_label }}</a>
@@ -154,7 +170,11 @@
   </section>
 
   {% assign ld_type = "CreativeWork" %}
-  {% if type_key == "news" %}{% assign ld_type = "NewsArticle" %}{% endif %}
+  {% if type_key == "news" %}{% assign ld_type = "NewsArticle" %}
+  {% elsif type_key == "dataset" or type_key == "benchmark" %}{% assign ld_type = "Dataset" %}
+  {% elsif type_key == "model_hf" %}{% assign ld_type = "SoftwareApplication" %}
+  {% elsif type_key == "survey" or type_key == "resource" %}{% assign ld_type = "ScholarlyArticle" %}
+  {% endif %}
   {% assign ld_date = item.verified_at | default: item.date %}
   {% if item.date %}
     {% assign ld_date_iso = item.date | replace: ".", "-" %}
