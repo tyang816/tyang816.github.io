@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmsf-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmsf-kg/
-- /zh/tcm/items/tcmsf-kg/
 alt_url: /projects/tcm/items/tcmsf-kg/
+redirect_from:
+- /zh/tcm/items/tcmsf-kg/
+- /tcm/items/tcmsf-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
-seo_description: "中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
+description: "TCMSF｜中医大模型（TCM LLM）资源。中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
+seo_description: "TCMSF｜中医大模型（TCM LLM）资源。中医证候古籍知识图谱构建框架 TCMSF，将古籍中的证候知识系统化组织并语义关联，为中医信息化提供基础（Methods of Information in Medicine 2024）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

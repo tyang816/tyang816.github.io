@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-zhongjing-omni"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-zhongjing-omni/
-- /zh/tcm/items/ds-zhongjing-omni/
 alt_url: /projects/tcm/items/ds-zhongjing-omni/
+redirect_from:
+- /zh/tcm/items/ds-zhongjing-omni/
+- /tcm/items/ds-zhongjing-omni/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhongJing-OMNI 中医多模态评测（含舌诊）"
-seo_description: "ZhongJing-OMNI 中医多模态评测（含舌诊）"
+description: "ZhongJing-OMNI｜中医大模型（TCM LLM）数据集。ZhongJing-OMNI 中医多模态评测（含舌诊）"
+seo_description: "ZhongJing-OMNI｜中医大模型（TCM LLM）数据集。ZhongJing-OMNI 中医多模态评测（含舌诊）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

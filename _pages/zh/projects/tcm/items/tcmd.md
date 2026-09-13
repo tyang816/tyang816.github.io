@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmd"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmd/
-- /zh/tcm/items/tcmd/
 alt_url: /projects/tcm/items/tcmd/
+redirect_from:
+- /zh/tcm/items/tcmd/
+- /tcm/items/tcmd/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向大模型评测的中医问答数据集"
-seo_description: "面向大模型评测的中医问答数据集"
+description: "TCMD｜中医大模型（TCM LLM）资源。面向大模型评测的中医执业考试选择题集（论文报告约 2851 训 / 600 测）；独立打开论文页未见官方 GitHub 或 Hugging Face 下载"
+seo_description: "TCMD｜中医大模型（TCM LLM）资源。面向大模型评测的中医执业考试选择题集（论文报告约 2851 训 / 600 测）；独立打开论文页未见官方 GitHub 或 Hugging Face 下载"
 keywords:
 - "中医大模型"
 - "TCM LLM"

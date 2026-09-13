@@ -75,6 +75,8 @@ keywords:
     <li><a href="{{ '/projects/tcm/items/shizhengpt/' | relative_url }}">ShizhenGPT</a>: multimodal TCM LLM supporting the four diagnostic methods (2025)</li>
     <li><a href="{{ '/projects/tcm/items/baize-tcm/' | relative_url }}">Baize-TCM-LLM (白泽)</a>: Qwen3-based TCM QA model series from the Institute of Chinese Materia Medica, CACMS (2025)</li>
     <li><a href="{{ '/projects/tcm/items/tcmchat/' | relative_url }}">TCMChat</a>: generative TCM LLM with a 600k-sample herbal-knowledge dialogue dataset (2025)</li>
+    <li><a href="{{ '/projects/tcm/items/xinghe/' | relative_url }}">Xinghe (杏核)</a>: Xinghe-TCM Neijing reasoning model on Qwen3.5-9B with open weights (2026)</li>
+    <li><a href="{{ '/projects/tcm/items/zhifangdantai/' | relative_url }}">ZhiFangDanTai (知方丹台)</a>: GraphRAG + fine-tuning formula model from Capital Normal University and UQ, with open weights (2025)</li>
     <li><a href="{{ '/projects/tcm/items/xuanhugpt/' | relative_url }}">XuanHuGPT (悬壶)</a>: parameter-efficient fine-tuned TCM domain LLM (2025)</li>
     <li><a href="{{ '/projects/medchatzh/' | relative_url }}">MedChatZH</a>: first-author work — a Baichuan-7B model fine-tuned for Chinese medical / TCM consultation</li>
   </ul>
@@ -145,7 +147,7 @@ keywords:
   </p>
   <h3>Which TCM LLMs are open-weight?</h3>
   <p>
-    Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT.
+    Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, Xinghe, ZhiFangDanTai, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT.
     See the <a href="{{ '/projects/tcm/models/' | relative_url }}">open TCM LLMs</a> page.
   </p>
   <h3>What is Awesome-TCM-LLM?</h3>
@@ -232,7 +234,7 @@ Web catalog: https://tyang816.github.io/projects/tcm/</code></pre>
       "name": "Which TCM LLMs are open-weight?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT."
+        "text": "Public checkpoints include ShenNong-TCM-LLM, TCMChat, ChatTCM, Xinghe, ZhiFangDanTai, TCMLLM/Lingdan, and MedChatZH, alongside paper- or product-only systems such as BianQue, HuaTuoGPT, ZhongJing, Qibo, ShizhenGPT, Baize-TCM-LLM, and XuanHuGPT."
       }
     },
     {

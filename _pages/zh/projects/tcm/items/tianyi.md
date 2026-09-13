@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tianyi"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tianyi/
-- /zh/tcm/items/tianyi/
 alt_url: /projects/tcm/items/tianyi/
+redirect_from:
+- /zh/tcm/items/tianyi/
+- /tcm/items/tianyi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
-seo_description: "南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
+description: "天医 (Tianyi)｜中医大模型（TCM LLM）资源。南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
+seo_description: "天医 (Tianyi)｜中医大模型（TCM LLM）资源。南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证"
 keywords:
 - "中医大模型"
 - "TCM LLM"

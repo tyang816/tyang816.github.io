@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2023-tcmbank/
-title: "TCMBank | TCM AI"
+title: "TCMBank | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2023-tcmbank"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2023-tcmbank/
 redirect_from:
 - /tcm-en/items/hist-2023-tcmbank/
 - /pub/tcm/items/hist-2023-tcmbank/
-alt_url: /zh/projects/tcm/items/hist-2023-tcmbank/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: TCMBank."
-seo_description: "Historical anchor: TCMBank."
+description: "TCMBank — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: TCMBank."
+seo_description: "TCMBank — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: TCMBank."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

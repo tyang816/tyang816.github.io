@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-wang2026-zhfyx"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-wang2026-zhfyx/
-- /zh/tcm/items/surv-wang2026-zhfyx/
 alt_url: /projects/tcm/items/surv-wang2026-zhfyx/
+redirect_from:
+- /zh/tcm/items/surv-wang2026-zhfyx/
+- /tcm/items/surv-wang2026-zhfyx/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文短篇综述：AI在海量数据处理、辅助诊断、疾病预测的应用现状与数据质量/可解释性/理论融合三挑战（北大核心，题录级）"
-seo_description: "中文短篇综述：AI在海量数据处理、辅助诊断、疾病预测的应用现状与数据质量/可解释性/理论融合三挑战（北大核心，题录级）"
+description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊）｜中医大模型（TCM LLM）综述。中文短篇综述：AI在海量数据处理、辅助诊断、疾病预测的应用现状与数据质量/可解释性/理论融合三挑战（北大核心，题录级）"
+seo_description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊）｜中医大模型（TCM LLM）综述。中文短篇综述：AI在海量数据处理、辅助诊断、疾病预测的应用现状与数据质量/可解释性/理论融合三挑战（北大核心，题录级）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

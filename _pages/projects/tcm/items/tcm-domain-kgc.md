@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-domain-kgc/
-title: "中医领域知识图谱补全 | TCM AI"
+title: "中医领域知识图谱补全 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-domain-kgc"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-domain-kgc/
 redirect_from:
 - /tcm-en/items/tcm-domain-kgc/
 - /pub/tcm/items/tcm-domain-kgc/
-alt_url: /zh/projects/tcm/items/tcm-domain-kgc/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
-seo_description: "Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
+description: "中医领域知识图谱补全 — TCM LLM resource in Awesome-TCM-LLM. Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
+seo_description: "中医领域知识图谱补全 — TCM LLM resource in Awesome-TCM-LLM. Domain knowledge graph completion and quality evaluation for Traditional Chinese Medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

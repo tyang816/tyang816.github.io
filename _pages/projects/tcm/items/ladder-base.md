@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ladder-base/
-title: "Ladder-base (GRPO-TCM) | TCM AI"
+title: "Ladder-base (GRPO-TCM) | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ladder-base"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ladder-base/
 redirect_from:
 - /tcm-en/items/ladder-base/
 - /pub/tcm/items/ladder-base/
-alt_url: /zh/projects/tcm/items/ladder-base/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team."
-seo_description: "First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team."
+description: "Ladder-base (GRPO-TCM) — TCM LLM resource in Awesome-TCM-LLM. First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team. arXiv PDF authors at University of Mis…"
+seo_description: "Ladder-base (GRPO-TCM) — TCM LLM resource in Awesome-TCM-LLM. First GRPO reinforcement-learning-aligned TCM LLM, from the TCM-Ladder team. arXiv PDF authors at University of Mis…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

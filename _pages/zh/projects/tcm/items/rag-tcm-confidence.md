@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "rag-tcm-confidence"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/rag-tcm-confidence/
-- /zh/tcm/items/rag-tcm-confidence/
 alt_url: /projects/tcm/items/rag-tcm-confidence/
+redirect_from:
+- /zh/tcm/items/rag-tcm-confidence/
+- /tcm/items/rag-tcm-confidence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索增强生成提升大模型中医问答置信度（预印本）"
-seo_description: "检索增强生成提升大模型中医问答置信度（预印本）"
+description: "RAG 增强中医问答置信度｜中医大模型（TCM LLM）资源。检索增强生成提升大模型中医问答置信度（预印本）"
+seo_description: "RAG 增强中医问答置信度｜中医大模型（TCM LLM）资源。检索增强生成提升大模型中医问答置信度（预印本）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

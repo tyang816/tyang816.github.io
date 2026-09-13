@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcm-robustsdt/
-title: "TCM-RobustSDT | TCM AI"
+title: "TCM-RobustSDT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcm-robustsdt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcm-robustsdt/
 redirect_from:
 - /tcm-en/items/ds-tcm-robustsdt/
 - /pub/tcm/items/ds-tcm-robustsdt/
-alt_url: /zh/projects/tcm/items/ds-tcm-robustsdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
-seo_description: "TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
+description: "TCM-RobustSDT — TCM LLM dataset in Awesome-TCM-LLM. TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
+seo_description: "TCM-RobustSDT — TCM LLM dataset in Awesome-TCM-LLM. TCM-RobustSDT: a robustness benchmark dataset for LLM clinical reasoning in TCM (Figshare)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcmeval-pa/
-title: "TCMEval-PA | TCM AI"
+title: "TCMEval-PA | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcmeval-pa"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcmeval-pa/
 redirect_from:
 - /tcm-en/items/ds-tcmeval-pa/
 - /pub/tcm/items/ds-tcmeval-pa/
-alt_url: /zh/projects/tcm/items/ds-tcmeval-pa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "328 multiple-choice items on prescription normative quality and safety auditing."
-seo_description: "328 multiple-choice items on prescription normative quality and safety auditing."
+description: "TCMEval-PA — TCM LLM dataset in Awesome-TCM-LLM. 328 multiple-choice items on prescription normative quality and safety auditing."
+seo_description: "TCMEval-PA — TCM LLM dataset in Awesome-TCM-LLM. 328 multiple-choice items on prescription normative quality and safety auditing."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

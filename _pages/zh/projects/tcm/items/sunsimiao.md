@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "sunsimiao"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/sunsimiao/
-- /zh/tcm/items/sunsimiao/
 alt_url: /projects/tcm/items/sunsimiao/
+redirect_from:
+- /zh/tcm/items/sunsimiao/
+- /tcm/items/sunsimiao/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "孙思邈中文医疗大模型，Sunsimiao-7B 基于 Qwen2-7B 以高质量医疗数据微调，在 CMB-Exam 达 30B 量级 SOTA"
-seo_description: "孙思邈中文医疗大模型，Sunsimiao-7B 基于 Qwen2-7B 以高质量医疗数据微调，在 CMB-Exam 达 30B 量级 SOTA"
+description: "孙思邈 (Sunsimiao)｜中医大模型（TCM LLM）资源。孙思邈中文医疗大模型，Sunsimiao-7B 基于 Qwen2-7B 以高质量医疗数据微调，在 CMB-Exam 达 30B 量级 SOTA"
+seo_description: "孙思邈 (Sunsimiao)｜中医大模型（TCM LLM）资源。孙思邈中文医疗大模型，Sunsimiao-7B 基于 Qwen2-7B 以高质量医疗数据微调，在 CMB-Exam 达 30B 量级 SOTA"
 keywords:
 - "中医大模型"
 - "TCM LLM"

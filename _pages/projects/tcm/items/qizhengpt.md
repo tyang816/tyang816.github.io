@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/qizhengpt/
-title: "QiZhenGPT | TCM AI"
+title: "QiZhenGPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "qizhengpt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/qizhengpt/
 redirect_from:
 - /tcm-en/items/qizhengpt/
 - /pub/tcm/items/qizhengpt/
-alt_url: /zh/projects/tcm/items/qizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
-seo_description: "Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
+description: "QiZhenGPT — TCM LLM resource in Awesome-TCM-LLM. Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
+seo_description: "QiZhenGPT — TCM LLM resource in Awesome-TCM-LLM. Chinese clinical QA model for drugs, diseases, procedures, and labs (QiZhenGPT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "qizhengpt"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/qizhengpt/
-- /zh/tcm/items/qizhengpt/
 alt_url: /projects/tcm/items/qizhengpt/
+redirect_from:
+- /zh/tcm/items/qizhengpt/
+- /tcm/items/qizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗场景、药品知识问答、优化疾病、手术、检验等"
-seo_description: "中文医疗场景、药品知识问答、优化疾病、手术、检验等"
+description: "启真医学大模型 (QiZhenGPT)｜中医大模型（TCM LLM）资源。中文医疗场景、药品知识问答、优化疾病、手术、检验等"
+seo_description: "启真医学大模型 (QiZhenGPT)｜中医大模型（TCM LLM）资源。中文医疗场景、药品知识问答、优化疾病、手术、检验等"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
-title: "AI驱动中医诊断智能化综述（JTCMS） | TCM AI"
+title: "AI驱动中医诊断智能化综述（JTCMS） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "survey-ai-tcm-diagnosis-jtcms"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 redirect_from:
 - /tcm-en/items/survey-ai-tcm-diagnosis-jtcms/
 - /pub/tcm/items/survey-ai-tcm-diagnosis-jtcms/
-alt_url: /zh/projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
-seo_description: "Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
+description: "AI驱动中医诊断智能化综述（JTCMS） — TCM LLM survey in Awesome-TCM-LLM. Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
+seo_description: "AI驱动中医诊断智能化综述（JTCMS） — TCM LLM survey in Awesome-TCM-LLM. Survey on multimodal fusion and LLMs for intelligent four-diagnosis in TCM: applications, challenges and outlook (JTCMS)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmiies"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmiies/
-- /zh/tcm/items/tcmiies/
 alt_url: /projects/tcm/items/tcmiies/
+redirect_from:
+- /zh/tcm/items/tcmiies/
+- /tcm/items/tcmiies/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
-seo_description: "浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
+description: "TCMIIES｜中医大模型（TCM LLM）资源。浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
+seo_description: "TCMIIES｜中医大模型（TCM LLM）资源。浏览器端零安装的LLM学术文献结构化信息抽取系统，面向中医等专科领域研究者"
 keywords:
 - "中医大模型"
 - "TCM LLM"

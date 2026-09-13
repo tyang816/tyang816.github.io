@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hf-chattcm-sft/
-title: "ChatTCM-7B-SFT | TCM AI"
+title: "ChatTCM-7B-SFT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hf-chattcm-sft"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hf-chattcm-sft/
 redirect_from:
 - /tcm-en/items/hf-chattcm-sft/
 - /pub/tcm/items/hf-chattcm-sft/
-alt_url: /zh/projects/tcm/items/hf-chattcm-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatTCM full-parameter SFT checkpoint."
-seo_description: "ChatTCM full-parameter SFT checkpoint."
+description: "ChatTCM-7B-SFT — TCM LLM model in Awesome-TCM-LLM. ChatTCM full-parameter SFT checkpoint."
+seo_description: "ChatTCM-7B-SFT — TCM LLM model in Awesome-TCM-LLM. ChatTCM full-parameter SFT checkpoint."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

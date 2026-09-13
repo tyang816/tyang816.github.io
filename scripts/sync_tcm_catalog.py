@@ -70,6 +70,12 @@ LINK_LABEL_EN = {
     "JMIR": "JMIR",
     "ScienceDirect": "ScienceDirect",
     "正式发表": "Published",
+    "预训练模型": "Pretrain model",
+    "SFT模型": "SFT model",
+    "ModelScope": "ModelScope",
+    "PubMed": "PubMed",
+    "官网": "Website",
+    "新闻稿": "Press release",
 }
 
 

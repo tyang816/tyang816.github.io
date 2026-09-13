@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hengqin-ra"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hengqin-ra/
-- /zh/tcm/items/hengqin-ra/
 alt_url: /projects/tcm/items/hengqin-ra/
+redirect_from:
+- /zh/tcm/items/hengqin-ra/
+- /tcm/items/hengqin-ra/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "类风湿关节炎中医诊疗大模型及配套数据集"
-seo_description: "类风湿关节炎中医诊疗大模型及配套数据集"
+description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。arXiv/DOI 页署名中医广东省实验室与南方科技大学"
+seo_description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。arXiv/DOI 页署名中医广东省实验室与南方科技大学"
 keywords:
 - "中医大模型"
 - "TCM LLM"

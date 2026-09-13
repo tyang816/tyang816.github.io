@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "metaphor-to-mechanism"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/metaphor-to-mechanism/
-- /zh/tcm/items/metaphor-to-mechanism/
 alt_url: /projects/tcm/items/metaphor-to-mechanism/
+redirect_from:
+- /zh/tcm/items/metaphor-to-mechanism/
+- /tcm/items/metaphor-to-mechanism/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM解码中医隐喻/取象语言并映射现代医学概念"
-seo_description: "LLM解码中医隐喻/取象语言并映射现代医学概念"
+description: "From Metaphor to Mechanism｜中医大模型（TCM LLM）资源。LLM解码中医隐喻/取象语言并映射现代医学概念"
+seo_description: "From Metaphor to Mechanism｜中医大模型（TCM LLM）资源。LLM解码中医隐喻/取象语言并映射现代医学概念"
 keywords:
 - "中医大模型"
 - "TCM LLM"

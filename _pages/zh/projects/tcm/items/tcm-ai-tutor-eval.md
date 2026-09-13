@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-ai-tutor-eval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-ai-tutor-eval/
-- /zh/tcm/items/tcm-ai-tutor-eval/
 alt_url: /projects/tcm/items/tcm-ai-tutor-eval/
+redirect_from:
+- /zh/tcm/items/tcm-ai-tutor-eval/
+- /tcm/items/tcm-ai-tutor-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "跨认知层级的多模态LLM中医教育评估"
-seo_description: "跨认知层级的多模态LLM中医教育评估"
+description: "中医教育AI导师评估｜中医大模型（TCM LLM）资源。跨认知层级的多模态LLM中医教育评估"
+seo_description: "中医教育AI导师评估｜中医大模型（TCM LLM）资源。跨认知层级的多模态LLM中医教育评估"
 keywords:
 - "中医大模型"
 - "TCM LLM"

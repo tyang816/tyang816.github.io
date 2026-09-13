@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-liu2026-dl-jim"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-liu2026-dl-jim/
-- /zh/tcm/items/surv-liu2026-dl-jim/
 alt_url: /projects/tcm/items/surv-liu2026-dl-jim/
+redirect_from:
+- /zh/tcm/items/surv-liu2026-dl-jim/
+- /tcm/items/surv-liu2026-dl-jim/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "深度学习单技术线综述：医学影像、药材物质研究、数据挖掘等应用实例（J Integr Med 2026;24(4):471-480）"
-seo_description: "深度学习单技术线综述：医学影像、药材物质研究、数据挖掘等应用实例（J Integr Med 2026;24(4):471-480）"
+description: "Deep learning in TCM（J Integr Med）｜中医大模型（TCM LLM）综述。深度学习单技术线综述：医学影像、药材物质研究、数据挖掘等应用实例（J Integr Med 2026;24(4):471-480）"
+seo_description: "Deep learning in TCM（J Integr Med）｜中医大模型（TCM LLM）综述。深度学习单技术线综述：医学影像、药材物质研究、数据挖掘等应用实例（J Integr Med 2026;24(4):471-480）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

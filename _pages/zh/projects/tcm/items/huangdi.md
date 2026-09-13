@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "huangdi"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/huangdi/
-- /zh/tcm/items/huangdi/
 alt_url: /projects/tcm/items/huangdi/
+redirect_from:
+- /zh/tcm/items/huangdi/
+- /tcm/items/huangdi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于 Ziya-LLaMA-13B 的中医古籍知识问答大模型，预训练融合 22 本\"十三五\"中医教材与中医网站语料，古籍指令数据 SFT（图书馆论坛 2024 报道）"
-seo_description: "基于 Ziya-LLaMA-13B 的中医古籍知识问答大模型，预训练融合 22 本\"十三五\"中医教材与中医网站语料，古籍指令数据 SFT（图书馆论坛 2024 报道）"
+description: "黄帝 (HuangDi)｜中医大模型（TCM LLM）资源。基于 Ziya-LLaMA-13B 的中医古籍知识问答大模型，预训练融合 22 本\"十三五\"中医教材与中医网站语料，古籍指令数据 SFT（图书馆论坛 2024 报道）"
+seo_description: "黄帝 (HuangDi)｜中医大模型（TCM LLM）资源。基于 Ziya-LLaMA-13B 的中医古籍知识问答大模型，预训练融合 22 本\"十三五\"中医教材与中医网站语料，古籍指令数据 SFT（图书馆论坛 2024 报道）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

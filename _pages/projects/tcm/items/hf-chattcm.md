@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hf-chattcm/
-title: "ChatTCM | TCM AI"
+title: "ChatTCM | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hf-chattcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hf-chattcm/
 redirect_from:
 - /tcm-en/items/hf-chattcm/
 - /pub/tcm/items/hf-chattcm/
-alt_url: /zh/projects/tcm/items/hf-chattcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatTCM pretrained weights."
-seo_description: "ChatTCM pretrained weights."
+description: "ChatTCM — TCM LLM model in Awesome-TCM-LLM. ChatTCM pretrained weights."
+seo_description: "ChatTCM — TCM LLM model in Awesome-TCM-LLM. ChatTCM pretrained weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

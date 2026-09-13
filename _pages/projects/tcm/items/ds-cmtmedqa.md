@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-cmtmedqa/
-title: "CMtMedQA | TCM AI"
+title: "CMtMedQA | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-cmtmedqa"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-cmtmedqa/
 redirect_from:
 - /tcm-en/items/ds-cmtmedqa/
 - /pub/tcm/items/ds-cmtmedqa/
-alt_url: /zh/projects/tcm/items/ds-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhongJing real multi-turn doctor–patient dialogues (~70k)."
-seo_description: "ZhongJing real multi-turn doctor–patient dialogues (~70k)."
+description: "CMtMedQA — TCM LLM dataset in Awesome-TCM-LLM. ZhongJing real multi-turn doctor–patient dialogues (~70k)."
+seo_description: "CMtMedQA — TCM LLM dataset in Awesome-TCM-LLM. ZhongJing real multi-turn doctor–patient dialogues (~70k)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

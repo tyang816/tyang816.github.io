@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/metaphor-to-mechanism/
-title: "From Metaphor to Mechanism | TCM AI"
+title: "From Metaphor to Mechanism | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "metaphor-to-mechanism"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/metaphor-to-mechanism/
 redirect_from:
 - /tcm-en/items/metaphor-to-mechanism/
 - /pub/tcm/items/metaphor-to-mechanism/
-alt_url: /zh/projects/tcm/items/metaphor-to-mechanism/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
-seo_description: "LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
+description: "From Metaphor to Mechanism — TCM LLM resource in Awesome-TCM-LLM. LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
+seo_description: "From Metaphor to Mechanism — TCM LLM resource in Awesome-TCM-LLM. LLMs decode TCM metaphor / imagistic-thinking language and map it to modern medical concepts."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

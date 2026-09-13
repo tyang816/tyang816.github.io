@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/rag-tcm-confidence/
-title: "RAG 增强中医问答置信度 | TCM AI"
+title: "RAG 增强中医问答置信度 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "rag-tcm-confidence"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/rag-tcm-confidence/
 redirect_from:
 - /tcm-en/items/rag-tcm-confidence/
 - /pub/tcm/items/rag-tcm-confidence/
-alt_url: /zh/projects/tcm/items/rag-tcm-confidence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
-seo_description: "Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
+description: "RAG 增强中医问答置信度 — TCM LLM resource in Awesome-TCM-LLM. Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
+seo_description: "RAG 增强中医问答置信度 — TCM LLM resource in Awesome-TCM-LLM. Implementing retrieval-augmented generation to build LLM confidence in TCM (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

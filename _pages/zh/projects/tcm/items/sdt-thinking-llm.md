@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "sdt-thinking-llm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/sdt-thinking-llm/
-- /zh/tcm/items/sdt-thinking-llm/
 alt_url: /projects/tcm/items/sdt-thinking-llm/
+redirect_from:
+- /zh/tcm/items/sdt-thinking-llm/
+- /tcm/items/sdt-thinking-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "评估并提升大语言模型中医辨证思维能力的方法开发研究"
-seo_description: "评估并提升大语言模型中医辨证思维能力的方法开发研究"
+description: "辨证思维评测 (Syndrome Differentiation Thinking)｜中医大模型（TCM LLM）资源。评估并提升大语言模型中医辨证思维能力的方法开发研究"
+seo_description: "辨证思维评测 (Syndrome Differentiation Thinking)｜中医大模型（TCM LLM）资源。评估并提升大语言模型中医辨证思维能力的方法开发研究"
 keywords:
 - "中医大模型"
 - "TCM LLM"

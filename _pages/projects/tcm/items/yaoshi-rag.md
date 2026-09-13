@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/yaoshi-rag/
-title: "Yaoshi-RAG | TCM AI"
+title: "Yaoshi-RAG | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "yaoshi-rag"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/yaoshi-rag/
 redirect_from:
 - /tcm-en/items/yaoshi-rag/
 - /pub/tcm/items/yaoshi-rag/
-alt_url: /zh/projects/tcm/items/yaoshi-rag/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Uncertain-KG RAG for medicine–food homology dietary recommendation with personalization and explainability."
-seo_description: "Uncertain-KG RAG for medicine–food homology dietary recommendation with personalization and explainability."
+description: "Yaoshi-RAG — TCM LLM resource in Awesome-TCM-LLM. Uncertain-KG RAG for medicine–food homology dietary recommendation with personalization and explainability."
+seo_description: "Yaoshi-RAG — TCM LLM resource in Awesome-TCM-LLM. Uncertain-KG RAG for medicine–food homology dietary recommendation with personalization and explainability."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/herbwise/
-title: "HerbWise | TCM AI"
+title: "HerbWise | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "herbwise"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/herbwise/
 redirect_from:
 - /tcm-en/items/herbwise/
 - /pub/tcm/items/herbwise/
-alt_url: /zh/projects/tcm/items/herbwise/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Domain LLM for traditional herbal medicine (THM), serving herbal modernization and standardization."
-seo_description: "Domain LLM for traditional herbal medicine (THM), serving herbal modernization and standardization."
+description: "HerbWise — TCM LLM resource in Awesome-TCM-LLM. Domain LLM for traditional herbal medicine (THM), serving herbal modernization and standardization."
+seo_description: "HerbWise — TCM LLM resource in Awesome-TCM-LLM. Domain LLM for traditional herbal medicine (THM), serving herbal modernization and standardization."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

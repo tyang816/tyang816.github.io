@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-biancang"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-biancang/
-- /zh/tcm/items/hf-biancang/
 alt_url: /projects/tcm/items/hf-biancang/
+redirect_from:
+- /zh/tcm/items/hf-biancang/
+- /tcm/items/hf-biancang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "扁仓 (BianCang) 系列"
-seo_description: "扁仓 (BianCang) 系列"
+description: "BianCang｜中医大模型（TCM LLM）模型。扁仓 (BianCang) 系列"
+seo_description: "BianCang｜中医大模型（TCM LLM）模型。扁仓 (BianCang) 系列"
 keywords:
 - "中医大模型"
 - "TCM LLM"

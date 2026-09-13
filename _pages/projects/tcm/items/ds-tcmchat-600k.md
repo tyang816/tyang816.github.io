@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcmchat-600k/
-title: "TCMChat-dataset-600k | TCM AI"
+title: "TCMChat-dataset-600k | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcmchat-600k"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcmchat-600k/
 redirect_from:
 - /tcm-en/items/ds-tcmchat-600k/
 - /pub/tcm/items/ds-tcmchat-600k/
-alt_url: /zh/projects/tcm/items/ds-tcmchat-600k/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMChat herbal QA and recommendation instruction data (~600k)."
-seo_description: "TCMChat herbal QA and recommendation instruction data (~600k)."
+description: "TCMChat-dataset-600k — TCM LLM dataset in Awesome-TCM-LLM. TCMChat herbal QA and recommendation instruction data (~600k)."
+seo_description: "TCMChat-dataset-600k — TCM LLM dataset in Awesome-TCM-LLM. TCMChat herbal QA and recommendation instruction data (~600k)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

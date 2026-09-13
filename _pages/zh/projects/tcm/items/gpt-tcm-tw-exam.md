@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "gpt-tcm-tw-exam"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/gpt-tcm-tw-exam/
-- /zh/tcm/items/gpt-tcm-tw-exam/
 alt_url: /projects/tcm/items/gpt-tcm-tw-exam/
+redirect_from:
+- /zh/tcm/items/gpt-tcm-tw-exam/
+- /tcm/items/gpt-tcm-tw-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
-seo_description: "GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
+description: "GPT 台湾中医执业考试评估｜中医大模型（TCM LLM）资源。GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
+seo_description: "GPT 台湾中医执业考试评估｜中医大模型（TCM LLM）资源。GPT-3.5/GPT-4/GPT-4o 在台湾中医执业考试中的表现与可靠性分析（预印本）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

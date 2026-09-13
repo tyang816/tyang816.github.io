@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2021-automatic-construction-of-ch/
-title: "Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A | TCM AI"
+title: "Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2021-automatic-construction-of-ch"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2021-automatic-construction-of-ch/
 redirect_from:
 - /tcm-en/items/hist-2021-automatic-construction-of-ch/
 - /pub/tcm/items/hist-2021-automatic-construction-of-ch/
-alt_url: /zh/projects/tcm/items/hist-2021-automatic-construction-of-ch/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A."
-seo_description: "Historical anchor: Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A."
+description: "Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Automatic Construction of Ch…"
+seo_description: "Automatic Construction of Chinese Herbal Prescriptions From Tongue Images Using CNNs and A — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Automatic Construction of Ch…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

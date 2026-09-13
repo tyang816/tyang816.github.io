@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-cpm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-cpm/
-- /zh/tcm/items/ds-cpm/
 alt_url: /projects/tcm/items/ds-cpm/
+redirect_from:
+- /zh/tcm/items/ds-cpm/
+- /tcm/items/ds-cpm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "RAG-CPMF配套的持续更新大规模中成药公开数据"
-seo_description: "RAG-CPMF配套的持续更新大规模中成药公开数据"
+description: "CPM中成药数据集｜中医大模型（TCM LLM）数据集。RAG-CPMF配套的持续更新大规模中成药公开数据"
+seo_description: "CPM中成药数据集｜中医大模型（TCM LLM）数据集。RAG-CPMF配套的持续更新大规模中成药公开数据"
 keywords:
 - "中医大模型"
 - "TCM LLM"

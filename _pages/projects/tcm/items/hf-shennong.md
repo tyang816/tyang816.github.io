@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hf-shennong/
-title: "ShenNong-TCM-LLM | TCM AI"
+title: "ShenNong-TCM-LLM | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hf-shennong"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hf-shennong/
 redirect_from:
 - /tcm-en/items/hf-shennong/
 - /pub/tcm/items/hf-shennong/
-alt_url: /zh/projects/tcm/items/hf-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShenNong-TCM-LLM weights."
-seo_description: "ShenNong-TCM-LLM weights."
+description: "ShenNong-TCM-LLM — TCM LLM model in Awesome-TCM-LLM. ShenNong-TCM-LLM weights."
+seo_description: "ShenNong-TCM-LLM — TCM LLM model in Awesome-TCM-LLM. ShenNong-TCM-LLM weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

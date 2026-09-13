@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "gen-syndi"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/gen-syndi/
-- /zh/tcm/items/gen-syndi/
 alt_url: /projects/tcm/items/gen-syndi/
+redirect_from:
+- /zh/tcm/items/gen-syndi/
+- /tcm/items/gen-syndi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
-seo_description: "知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
+description: "Gen-SynDi｜中医大模型（TCM LLM）资源。知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
+seo_description: "Gen-SynDi｜中医大模型（TCM LLM）资源。知识引导的生成式AI框架，用于辨证与疾病诊断的双向教学"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-guideline-adherence"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-guideline-adherence/
-- /zh/tcm/items/tcm-guideline-adherence/
 alt_url: /projects/tcm/items/tcm-guideline-adherence/
+redirect_from:
+- /zh/tcm/items/tcm-guideline-adherence/
+- /tcm/items/tcm-guideline-adherence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM遵循中医临床实践指南的内容分析评估"
-seo_description: "LLM遵循中医临床实践指南的内容分析评估"
+description: "中医临床指南遵循评估｜中医大模型（TCM LLM）资源。LLM遵循中医临床实践指南的内容分析评估"
+seo_description: "中医临床指南遵循评估｜中医大模型（TCM LLM）资源。LLM遵循中医临床实践指南的内容分析评估"
 keywords:
 - "中医大模型"
 - "TCM LLM"

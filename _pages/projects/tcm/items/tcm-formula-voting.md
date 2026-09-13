@@ -1,27 +1,27 @@
 ---
 permalink: /projects/tcm/items/tcm-formula-voting/
-title: "Weighted-voting TCM formula classification | TCM AI"
+title: "Weighted-voting TCM formula classification | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-formula-voting"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-formula-voting/
 redirect_from:
 - /tcm-en/items/tcm-formula-voting/
 - /pub/tcm/items/tcm-formula-voting/
-alt_url: /zh/projects/tcm/items/tcm-formula-voting/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Weighted-voting LLM approach for TCM formula classification."
-seo_description: "Weighted-voting LLM approach for TCM formula classification."
+description: "Weighted-voting TCM formula classification — TCM LLM resource in Awesome-TCM-LLM. Weighted-voting LLM approach for TCM formula classification."
+seo_description: "Weighted-voting TCM formula classification — TCM LLM resource in Awesome-TCM-LLM. Weighted-voting LLM approach for TCM formula classification."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
-- "model"
+- "prescription"
 - "Weighted-voting TCM formula classification"
 tcm_type: "resource"
 tcm_type_label: "resource"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmbencheval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmbencheval/
-- /zh/tcm/items/tcmbencheval/
 alt_url: /projects/tcm/items/tcmbencheval/
+redirect_from:
+- /zh/tcm/items/tcmbencheval/
+- /tcm/items/tcmbencheval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于真实临床医案的LLM中医评测基准"
-seo_description: "基于真实临床医案的LLM中医评测基准"
+description: "TCMBenchEval｜中医大模型（TCM LLM）资源。基于真实临床医案的LLM中医评测基准"
+seo_description: "TCMBenchEval｜中医大模型（TCM LLM）资源。基于真实临床医案的LLM中医评测基准"
 keywords:
 - "中医大模型"
 - "TCM LLM"

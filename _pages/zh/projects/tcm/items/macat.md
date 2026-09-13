@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "macat"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/macat/
-- /zh/tcm/items/macat/
 alt_url: /projects/tcm/items/macat/
+redirect_from:
+- /zh/tcm/items/macat/
+- /tcm/items/macat/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
-seo_description: "多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
+description: "MACAT｜中医大模型（TCM LLM）资源。多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
+seo_description: "MACAT｜中医大模型（TCM LLM）资源。多智能体文化感知翻译框架，实验覆盖中医经典与《论语》文化负载词英译"
 keywords:
 - "中医大模型"
 - "TCM LLM"

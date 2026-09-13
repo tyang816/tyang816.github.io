@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/gpt-ernie-tcm-culture/
-title: "GPT vs ERNIE 中医文化背景对比研究 | TCM AI"
+title: "GPT vs ERNIE 中医文化背景对比研究 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "gpt-ernie-tcm-culture"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/gpt-ernie-tcm-culture/
 redirect_from:
 - /tcm-en/items/gpt-ernie-tcm-culture/
 - /pub/tcm/items/gpt-ernie-tcm-culture/
-alt_url: /zh/projects/tcm/items/gpt-ernie-tcm-culture/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
-seo_description: "A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
+description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
+seo_description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

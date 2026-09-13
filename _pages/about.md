@@ -51,6 +51,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 ## 🔥 News
 {:.home-section}
+- *2026.09*: &nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) catalog refresh: affiliations and venues backfilled from primary pages, now 432 curated items — browse at [/projects/tcm/]({{ '/projects/tcm/' | relative_url }}).
 - *2026.07*: &nbsp;🎉 [MatwingsVenus (晓鹜)](https://matvenus.com/) wins the **WAIC 2026 National Treasure** and is featured at the [WAIC 2026](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A).
 - *2026.04*: &nbsp;🎉 [VenusFactory2]({{ '/projects/venusfactory2/' | relative_url }}) releases a **free** website at [venusfactory.bio](https://venusfactory.bio/) and technical report [here](https://arxiv.org/abs/2603.27303).
 - *2026.01*: &nbsp;🎉 [VenusX]({{ '/projects/venusx/' | relative_url }}) was accepted by [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG), please see the leaderboard [here]({{ '/projects/venusx/leaderboard/' | relative_url }}).

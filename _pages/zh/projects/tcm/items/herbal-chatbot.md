@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "herbal-chatbot"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/herbal-chatbot/
-- /zh/tcm/items/herbal-chatbot/
 alt_url: /projects/tcm/items/herbal-chatbot/
+redirect_from:
+- /zh/tcm/items/herbal-chatbot/
+- /tcm/items/herbal-chatbot/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI 聊天机器人驱动的智能草药配送系统"
-seo_description: "AI 聊天机器人驱动的智能草药配送系统"
+description: "草药智能配送聊天机器人｜中医大模型（TCM LLM）资源。AI 聊天机器人驱动的智能草药配送系统"
+seo_description: "草药智能配送聊天机器人｜中医大模型（TCM LLM）资源。AI 聊天机器人驱动的智能草药配送系统"
 keywords:
 - "中医大模型"
 - "TCM LLM"

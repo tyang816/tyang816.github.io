@@ -7,21 +7,20 @@ section: item
 tcm_item_id: "shennong-alpha"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/shennong-alpha/
-- /zh/tcm/items/shennong-alpha/
 alt_url: /projects/tcm/items/shennong-alpha/
+redirect_from:
+- /zh/tcm/items/shennong-alpha/
+- /tcm/items/shennong-alpha/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
-seo_description: "西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
+description: "神农Alpha｜中医大模型（TCM LLM）资源。西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
+seo_description: "神农Alpha｜中医大模型（TCM LLM）资源。西湖大学神农 Alpha：AI 驱动的天然药物知识智能编目、获取与翻译共享协作平台（Cell Discovery 2025）"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
 - "tool"
 - "神农Alpha"
 tcm_type: "resource"

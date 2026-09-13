@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmkg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmkg/
-- /zh/tcm/items/tcmkg/
 alt_url: /projects/tcm/items/tcmkg/
+redirect_from:
+- /zh/tcm/items/tcmkg/
+- /tcm/items/tcmkg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于深度学习的中医知识图谱平台"
-seo_description: "基于深度学习的中医知识图谱平台"
+description: "TCMKG｜中医大模型（TCM LLM）资源。基于深度学习的中医知识图谱平台"
+seo_description: "TCMKG｜中医大模型（TCM LLM）资源。基于深度学习的中医知识图谱平台"
 keywords:
 - "中医大模型"
 - "TCM LLM"

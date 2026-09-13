@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "chatgpt-tcm-knowledge"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/chatgpt-tcm-knowledge/
-- /zh/tcm/items/chatgpt-tcm-knowledge/
 alt_url: /projects/tcm/items/chatgpt-tcm-knowledge/
+redirect_from:
+- /zh/tcm/items/chatgpt-tcm-knowledge/
+- /tcm/items/chatgpt-tcm-knowledge/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatGPT 对中医知识理解能力的评测"
-seo_description: "ChatGPT 对中医知识理解能力的评测"
+description: "ChatGPT 中医知识理解探究｜中医大模型（TCM LLM）资源。ChatGPT 对中医知识理解能力的评测"
+seo_description: "ChatGPT 中医知识理解探究｜中医大模型（TCM LLM）资源。ChatGPT 对中医知识理解能力的评测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

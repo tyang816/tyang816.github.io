@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/shizhen-pretrain/
-title: "TCM-Pretrain-Data-ShizhenGPT | TCM AI"
+title: "TCM-Pretrain-Data-ShizhenGPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "shizhen-pretrain"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/shizhen-pretrain/
 redirect_from:
 - /tcm-en/items/shizhen-pretrain/
 - /pub/tcm/items/shizhen-pretrain/
-alt_url: /zh/projects/tcm/items/shizhen-pretrain/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus Stage-2 multimodal ~3.6B)."
-seo_description: "ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus Stage-2 multimodal ~3.6B)."
+description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus St…"
+seo_description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus St…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

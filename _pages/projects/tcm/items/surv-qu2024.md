@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-qu2024/
-title: "Qu et al. 2024: 中医知识图谱综述 | TCM AI"
+title: "Qu et al. 2024: 中医知识图谱综述 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-qu2024"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-qu2024/
 redirect_from:
 - /tcm-en/items/surv-qu2024/
 - /pub/tcm/items/surv-qu2024/
-alt_url: /zh/projects/tcm/items/surv-qu2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
-seo_description: "Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
+description: "Qu et al. 2024: 中医知识图谱综述 — TCM LLM survey in Awesome-TCM-LLM. Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
+seo_description: "Qu et al. 2024: 中医知识图谱综述 — TCM LLM survey in Awesome-TCM-LLM. Review of knowledge graphs in TCM — analysis, construction, applications, and prospects."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-agent"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-agent/
-- /zh/tcm/items/tcm-agent/
 alt_url: /projects/tcm/items/tcm-agent/
+redirect_from:
+- /zh/tcm/items/tcm-agent/
+- /tcm/items/tcm-agent/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向网络药理学与中药发现的 LLM 多智能体系统"
-seo_description: "面向网络药理学与中药发现的 LLM 多智能体系统"
+description: "TCM-Agent｜中医大模型（TCM LLM）资源。面向网络药理学与中药发现的 LLM 多智能体系统"
+seo_description: "TCM-Agent｜中医大模型（TCM LLM）资源。面向网络药理学与中药发现的 LLM 多智能体系统"
 keywords:
 - "中医大模型"
 - "TCM LLM"

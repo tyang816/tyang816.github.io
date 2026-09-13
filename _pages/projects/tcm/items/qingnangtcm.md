@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/qingnangtcm/
-title: "QingNangTCM | TCM AI"
+title: "QingNangTCM | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "qingnangtcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/qingnangtcm/
 redirect_from:
 - /tcm-en/items/qingnangtcm/
 - /pub/tcm/items/qingnangtcm/
-alt_url: /zh/projects/tcm/items/qingnangtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
-seo_description: "Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
+description: "QingNangTCM — TCM LLM resource in Awesome-TCM-LLM. Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
+seo_description: "QingNangTCM — TCM LLM resource in Awesome-TCM-LLM. Parameter-efficient fine-tuned TCM QA and clinical reasoning model; builds the 100k-item QnTCM_Dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

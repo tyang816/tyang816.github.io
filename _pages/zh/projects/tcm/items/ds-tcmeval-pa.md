@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcmeval-pa"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcmeval-pa/
-- /zh/tcm/items/ds-tcmeval-pa/
 alt_url: /projects/tcm/items/ds-tcmeval-pa/
+redirect_from:
+- /zh/tcm/items/ds-tcmeval-pa/
+- /tcm/items/ds-tcmeval-pa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "328道处方规范性与合理性选择题，面向中药处方安全审核评测"
-seo_description: "328道处方规范性与合理性选择题，面向中药处方安全审核评测"
+description: "TCMEval-PA｜中医大模型（TCM LLM）数据集。328道处方规范性与合理性选择题，面向中药处方安全审核评测"
+seo_description: "TCMEval-PA｜中医大模型（TCM LLM）数据集。328道处方规范性与合理性选择题，面向中药处方安全审核评测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

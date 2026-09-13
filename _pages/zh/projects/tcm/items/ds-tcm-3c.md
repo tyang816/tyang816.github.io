@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcm-3c"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcm-3c/
-- /zh/tcm/items/ds-tcm-3c/
 alt_url: /projects/tcm/items/ds-tcm-3c/
+redirect_from:
+- /zh/tcm/items/ds-tcm-3c/
+- /tcm/items/ds-tcm-3c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
-seo_description: "TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
+description: "TCM-3CEval｜中医大模型（TCM LLM）数据集。TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
+seo_description: "TCM-3CEval｜中医大模型（TCM LLM）数据集。TCM-3CEval 核心知识·经典理解·临床决策三轴评测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

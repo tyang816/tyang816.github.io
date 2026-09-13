@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-clinical-ner"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-clinical-ner/
-- /zh/tcm/items/tcm-clinical-ner/
 alt_url: /projects/tcm/items/tcm-clinical-ner/
+redirect_from:
+- /zh/tcm/items/tcm-clinical-ner/
+- /tcm/items/tcm-clinical-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于中医临床病历构建细粒度实体识别语料"
-seo_description: "基于中医临床病历构建细粒度实体识别语料"
+description: "中医临床细粒度 NER 语料｜中医大模型（TCM LLM）资源。基于中医临床病历构建细粒度实体识别语料"
+seo_description: "中医临床细粒度 NER 语料｜中医大模型（TCM LLM）资源。基于中医临床病历构建细粒度实体识别语料"
 keywords:
 - "中医大模型"
 - "TCM LLM"

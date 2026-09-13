@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-clinical-ner/
-title: "中医临床细粒度 NER 语料 | TCM AI"
+title: "中医临床细粒度 NER 语料 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-clinical-ner"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-clinical-ner/
 redirect_from:
 - /tcm-en/items/tcm-clinical-ner/
 - /pub/tcm/items/tcm-clinical-ner/
-alt_url: /zh/projects/tcm/items/tcm-clinical-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Fine-grained entity-recognition corpus built from TCM clinical records."
-seo_description: "Fine-grained entity-recognition corpus built from TCM clinical records."
+description: "中医临床细粒度 NER 语料 — TCM LLM resource in Awesome-TCM-LLM. Fine-grained entity-recognition corpus built from TCM clinical records."
+seo_description: "中医临床细粒度 NER 语料 — TCM LLM resource in Awesome-TCM-LLM. Fine-grained entity-recognition corpus built from TCM clinical records."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

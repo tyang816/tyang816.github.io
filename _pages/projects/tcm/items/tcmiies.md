@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcmiies/
-title: "TCMIIES | TCM AI"
+title: "TCMIIES | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcmiies"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcmiies/
 redirect_from:
 - /tcm-en/items/tcmiies/
 - /pub/tcm/items/tcmiies/
-alt_url: /zh/projects/tcm/items/tcmiies/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TCM and other specialty researchers."
-seo_description: "TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TCM and other specialty researchers."
+description: "TCMIIES — TCM LLM resource in Awesome-TCM-LLM. TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TC…"
+seo_description: "TCMIIES — TCM LLM resource in Awesome-TCM-LLM. TCMIIES: a browser-based, zero-installation LLM system for structured information extraction from academic literature, aimed at TC…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

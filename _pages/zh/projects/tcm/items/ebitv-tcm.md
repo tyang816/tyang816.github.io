@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ebitv-tcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ebitv-tcm/
-- /zh/tcm/items/ebitv-tcm/
 alt_url: /projects/tcm/items/ebitv-tcm/
+redirect_from:
+- /zh/tcm/items/ebitv-tcm/
+- /tcm/items/ebitv-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
-seo_description: "Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
+description: "Evidence-Based TCM Visualization Diagnosis System｜中医大模型（TCM LLM）资源。Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
+seo_description: "Evidence-Based TCM Visualization Diagnosis System｜中医大模型（TCM LLM）资源。Neo4j知识图谱（241证型/1263症状）+四阶段症状匹配（含LLM验证）+信息增益主动问诊的中医可视化诊疗系统"
 keywords:
 - "中医大模型"
 - "TCM LLM"

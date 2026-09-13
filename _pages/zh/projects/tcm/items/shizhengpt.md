@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "shizhengpt"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/shizhengpt/
-- /zh/tcm/items/shizhengpt/
 alt_url: /projects/tcm/items/shizhengpt/
+redirect_from:
+- /zh/tcm/items/shizhengpt/
+- /tcm/items/shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多模态大模型，支持望闻问切"
-seo_description: "中医多模态大模型，支持望闻问切"
+description: "ShizhenGPT｜中医大模型（TCM LLM）资源。中医多模态大模型，支持望闻问切"
+seo_description: "ShizhenGPT｜中医大模型（TCM LLM）资源。中医多模态大模型，支持望闻问切"
 keywords:
 - "中医大模型"
 - "TCM LLM"

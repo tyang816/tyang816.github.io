@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-guideline-adherence/
-title: "TCM guideline adherence evaluation | TCM AI"
+title: "TCM guideline adherence evaluation | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-guideline-adherence"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-guideline-adherence/
 redirect_from:
 - /tcm-en/items/tcm-guideline-adherence/
 - /pub/tcm/items/tcm-guideline-adherence/
-alt_url: /zh/projects/tcm/items/tcm-guideline-adherence/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
-seo_description: "Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
+description: "TCM guideline adherence evaluation — TCM LLM resource in Awesome-TCM-LLM. Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
+seo_description: "TCM guideline adherence evaluation — TCM LLM resource in Awesome-TCM-LLM. Content-analysis evaluation of LLM adherence to clinical practice guidelines in Chinese medicine."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

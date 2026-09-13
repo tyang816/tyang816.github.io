@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-medchatzh/
-title: "MedChatZH | TCM AI"
+title: "MedChatZH | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-medchatzh"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-medchatzh/
 redirect_from:
 - /tcm-en/items/ds-medchatzh/
 - /pub/tcm/items/ds-medchatzh/
-alt_url: /zh/projects/tcm/items/ds-medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MedChatZH TCM consultation dataset."
-seo_description: "MedChatZH TCM consultation dataset."
+description: "MedChatZH — TCM LLM dataset in Awesome-TCM-LLM. MedChatZH TCM consultation dataset."
+seo_description: "MedChatZH — TCM LLM dataset in Awesome-TCM-LLM. MedChatZH TCM consultation dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

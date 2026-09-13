@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-zhongjing-omni/
-title: "ZhongJing-OMNI | TCM AI"
+title: "ZhongJing-OMNI | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-zhongjing-omni"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-zhongjing-omni/
 redirect_from:
 - /tcm-en/items/ds-zhongjing-omni/
 - /pub/tcm/items/ds-zhongjing-omni/
-alt_url: /zh/projects/tcm/items/ds-zhongjing-omni/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhongJing-OMNI multimodal TCM eval (including tongue)."
-seo_description: "ZhongJing-OMNI multimodal TCM eval (including tongue)."
+description: "ZhongJing-OMNI — TCM LLM dataset in Awesome-TCM-LLM. ZhongJing-OMNI multimodal TCM eval (including tongue)."
+seo_description: "ZhongJing-OMNI — TCM LLM dataset in Awesome-TCM-LLM. ZhongJing-OMNI multimodal TCM eval (including tongue)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

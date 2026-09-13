@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2014-pulse-waveform-classificatio"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2014-pulse-waveform-classificatio/
-- /zh/tcm/items/hist-2014-pulse-waveform-classificatio/
 alt_url: /projects/tcm/items/hist-2014-pulse-waveform-classificatio/
+redirect_from:
+- /zh/tcm/items/hist-2014-pulse-waveform-classificatio/
+- /tcm/items/hist-2014-pulse-waveform-classificatio/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GTWED-SVM 在 2470 条五类脉波上的弹性核分类。"
-seo_description: "GTWED-SVM 在 2470 条五类脉波上的弹性核分类。"
+description: "Pulse Waveform Classification Using Support Vector Machine with Gaussian Time Warp Edit Di｜中医大模型（TCM LLM）资源。GTWED-SVM 在 2470 条五类脉波上的弹性核分类。"
+seo_description: "Pulse Waveform Classification Using Support Vector Machine with Gaussian Time Warp Edit Di｜中医大模型（TCM LLM）资源。GTWED-SVM 在 2470 条五类脉波上的弹性核分类。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

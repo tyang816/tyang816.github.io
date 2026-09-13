@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/med-shicheng/
-title: "Med-Shicheng | TCM AI"
+title: "Med-Shicheng | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "med-shicheng"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/med-shicheng/
 redirect_from:
 - /tcm-en/items/med-shicheng/
 - /pub/tcm/items/med-shicheng/
-alt_url: /zh/projects/tcm/items/med-shicheng/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Lightweight master-physician experience-inheritance framework built on Tianyi; a single model internalizes 5 national masters' knowledge systems across 7 task types."
-seo_description: "Lightweight master-physician experience-inheritance framework built on Tianyi; a single model internalizes 5 national masters' knowledge systems across 7 task types."
+description: "Med-Shicheng — TCM LLM resource in Awesome-TCM-LLM. Lightweight master-physician experience-inheritance framework built on Tianyi; a single model internalizes 5 national masters…"
+seo_description: "Med-Shicheng — TCM LLM resource in Awesome-TCM-LLM. Lightweight master-physician experience-inheritance framework built on Tianyi; a single model internalizes 5 national masters…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

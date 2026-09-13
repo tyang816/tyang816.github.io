@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "rag-lora-tcm-exam"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/rag-lora-tcm-exam/
-- /zh/tcm/items/rag-lora-tcm-exam/
 alt_url: /projects/tcm/items/rag-lora-tcm-exam/
+redirect_from:
+- /zh/tcm/items/rag-lora-tcm-exam/
+- /tcm/items/rag-lora-tcm-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
-seo_description: "RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
+description: "RAG+LoRA 中医执照考试推理架构｜中医大模型（TCM LLM）资源。RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
+seo_description: "RAG+LoRA 中医执照考试推理架构｜中医大模型（TCM LLM）资源。RAG+LoRA生成式架构，构建台湾中医师执照考试11,476题（2005–2025）数据集，准确率61.0%→89.0%+（Future Internet）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

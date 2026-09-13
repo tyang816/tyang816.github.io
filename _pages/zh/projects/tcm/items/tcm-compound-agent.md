@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-compound-agent"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-compound-agent/
-- /zh/tcm/items/tcm-compound-agent/
 alt_url: /projects/tcm/items/tcm-compound-agent/
+redirect_from:
+- /zh/tcm/items/tcm-compound-agent/
+- /tcm/items/tcm-compound-agent/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中药化合物信息检索AI智能体系统"
-seo_description: "中药化合物信息检索AI智能体系统"
+description: "中药化合物检索智能体｜中医大模型（TCM LLM）资源。中药化合物信息检索AI智能体系统"
+seo_description: "中药化合物检索智能体｜中医大模型（TCM LLM）资源。中药化合物信息检索AI智能体系统"
 keywords:
 - "中医大模型"
 - "TCM LLM"

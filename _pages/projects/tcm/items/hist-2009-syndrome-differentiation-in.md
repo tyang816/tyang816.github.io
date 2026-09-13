@@ -1,24 +1,24 @@
 ---
 permalink: /projects/tcm/items/hist-2009-syndrome-differentiation-in-/
-title: "Syndrome Differentiation in Intelligent TCM Diagnosis System | TCM AI"
+title: "Syndrome Differentiation in Intelligent TCM Diagnosis System | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2009-syndrome-differentiation-in-"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2009-syndrome-differentiation-in-/
 redirect_from:
 - /tcm-en/items/hist-2009-syndrome-differentiation-in-/
 - /pub/tcm/items/hist-2009-syndrome-differentiation-in-/
-- /projects/tcm/items/hist-2009-syndrome-differentiation-in/
 - /tcm-en/items/hist-2009-syndrome-differentiation-in/
 - /pub/tcm/items/hist-2009-syndrome-differentiation-in/
-alt_url: /zh/projects/tcm/items/hist-2009-syndrome-differentiation-in-/
+- /projects/tcm/items/hist-2009-syndrome-differentiation-in/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Syndrome Differentiation in Intelligent TCM Diagnosis System."
-seo_description: "Historical anchor: Syndrome Differentiation in Intelligent TCM Diagnosis System."
+description: "Syndrome Differentiation in Intelligent TCM Diagnosis System — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Syndrome Differentiation in Intelligent TCM Diagnosis System."
+seo_description: "Syndrome Differentiation in Intelligent TCM Diagnosis System — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Syndrome Differentiation in Intelligent TCM Diagnosis System."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/med-bench-arena/
-title: "Med-Bench-Arena | TCM AI"
+title: "Med-Bench-Arena | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "med-bench-arena"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/med-bench-arena/
 redirect_from:
 - /tcm-en/items/med-bench-arena/
 - /pub/tcm/items/med-bench-arena/
-alt_url: /zh/projects/tcm/items/med-bench-arena/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the ZhongJing team."
-seo_description: "Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the ZhongJing team."
+description: "Med-Bench-Arena — TCM LLM resource in Awesome-TCM-LLM. Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the Zho…"
+seo_description: "Med-Bench-Arena — TCM LLM resource in Awesome-TCM-LLM. Open evaluation platform for medical and TCM LLMs/Agents (HF/vLLM/LiteLLM, multimodal, TCM-specific metrics), from the Zho…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

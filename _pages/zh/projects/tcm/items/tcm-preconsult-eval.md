@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-preconsult-eval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-preconsult-eval/
-- /zh/tcm/items/tcm-preconsult-eval/
 alt_url: /projects/tcm/items/tcm-preconsult-eval/
+redirect_from:
+- /zh/tcm/items/tcm-preconsult-eval/
+- /tcm/items/tcm-preconsult-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
-seo_description: "LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
+description: "中医智能预问诊临床评估｜中医大模型（TCM LLM）资源。LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
+seo_description: "中医智能预问诊临床评估｜中医大模型（TCM LLM）资源。LLM智能预问诊系统三甲医院临床评估，采用医-AI-患三元模式"
 keywords:
 - "中医大模型"
 - "TCM LLM"

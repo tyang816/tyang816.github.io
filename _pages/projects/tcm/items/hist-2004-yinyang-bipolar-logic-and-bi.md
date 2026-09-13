@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
-title: "YinYang bipolar logic and bipolar fuzzy logic | TCM AI"
+title: "YinYang bipolar logic and bipolar fuzzy logic | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2004-yinyang-bipolar-logic-and-bi"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
 redirect_from:
 - /tcm-en/items/hist-2004-yinyang-bipolar-logic-and-bi/
 - /pub/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
-alt_url: /zh/projects/tcm/items/hist-2004-yinyang-bipolar-logic-and-bi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: YinYang bipolar logic and bipolar fuzzy logic."
-seo_description: "Historical anchor: YinYang bipolar logic and bipolar fuzzy logic."
+description: "YinYang bipolar logic and bipolar fuzzy logic — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: YinYang bipolar logic and bipolar fuzzy logic."
+seo_description: "YinYang bipolar logic and bipolar fuzzy logic — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: YinYang bipolar logic and bipolar fuzzy logic."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

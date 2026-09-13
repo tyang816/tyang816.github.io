@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-chatmed-consult/
-title: "ChatMed_Consult_Dataset | TCM AI"
+title: "ChatMed_Consult_Dataset | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-chatmed-consult"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-chatmed-consult/
 redirect_from:
 - /tcm-en/items/ds-chatmed-consult/
 - /pub/tcm/items/ds-chatmed-consult/
-alt_url: /zh/projects/tcm/items/ds-chatmed-consult/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
-seo_description: "Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
+description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
+seo_description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/shizhengpt/
-title: "ShizhenGPT | TCM AI"
+title: "ShizhenGPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "shizhengpt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/shizhengpt/
 redirect_from:
 - /tcm-en/items/shizhengpt/
 - /pub/tcm/items/shizhengpt/
-alt_url: /zh/projects/tcm/items/shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
-seo_description: "Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
+description: "ShizhenGPT — TCM LLM resource in Awesome-TCM-LLM. Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
+seo_description: "ShizhenGPT — TCM LLM resource in Awesome-TCM-LLM. Multimodal TCM LLM supporting the four diagnoses (inspection, auscultation-olfaction, inquiry, palpation)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

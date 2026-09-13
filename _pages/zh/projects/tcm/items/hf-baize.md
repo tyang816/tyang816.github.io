@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-baize"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-baize/
-- /zh/tcm/items/hf-baize/
 alt_url: /projects/tcm/items/hf-baize/
+redirect_from:
+- /zh/tcm/items/hf-baize/
+- /tcm/items/hf-baize/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "白泽中医大模型"
-seo_description: "白泽中医大模型"
+description: "白泽 (Baize)｜中医大模型（TCM LLM）模型。白泽中医大模型"
+seo_description: "白泽 (Baize)｜中医大模型（TCM LLM）模型。白泽中医大模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"

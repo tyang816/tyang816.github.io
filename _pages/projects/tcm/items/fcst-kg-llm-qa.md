@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/fcst-kg-llm-qa/
-title: "大模型融合知识图谱问答系统 | TCM AI"
+title: "大模型融合知识图谱问答系统 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "fcst-kg-llm-qa"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/fcst-kg-llm-qa/
 redirect_from:
 - /tcm-en/items/fcst-kg-llm-qa/
 - /pub/tcm/items/fcst-kg-llm-qa/
-alt_url: /zh/projects/tcm/items/fcst-kg-llm-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Vertical-domain QA system deeply integrating LLMs with knowledge graphs for TCM formulas."
-seo_description: "Vertical-domain QA system deeply integrating LLMs with knowledge graphs for TCM formulas."
+description: "大模型融合知识图谱问答系统 — TCM LLM resource in Awesome-TCM-LLM. Vertical-domain QA system deeply integrating LLMs with knowledge graphs for TCM formulas."
+seo_description: "大模型融合知识图谱问答系统 — TCM LLM resource in Awesome-TCM-LLM. Vertical-domain QA system deeply integrating LLMs with knowledge graphs for TCM formulas."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

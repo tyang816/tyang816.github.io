@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2006-knowledge-discovery-in-tradi/
-title: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives | TCM AI"
+title: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2006-knowledge-discovery-in-tradi"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2006-knowledge-discovery-in-tradi/
 redirect_from:
 - /tcm-en/items/hist-2006-knowledge-discovery-in-tradi/
 - /pub/tcm/items/hist-2006-knowledge-discovery-in-tradi/
-alt_url: /zh/projects/tcm/items/hist-2006-knowledge-discovery-in-tradi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Knowledge discovery in traditional Chinese medicine: State of the art and perspectives."
-seo_description: "Historical anchor: Knowledge discovery in traditional Chinese medicine: State of the art and perspectives."
+description: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Knowledge discovery in tradition…"
+seo_description: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Knowledge discovery in tradition…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

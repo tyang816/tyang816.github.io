@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-mahaswetha2026-prmcm/
-title: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） | TCM AI"
+title: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-mahaswetha2026-prmcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-mahaswetha2026-prmcm/
 redirect_from:
 - /tcm-en/items/surv-mahaswetha2026-prmcm/
 - /pub/tcm/items/surv-mahaswetha2026-prmcm/
-alt_url: /zh/projects/tcm/items/surv-mahaswetha2026-prmcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Broad AI-in-TCM review from multimodal data integration to pharmacological research and clinical decision support (Pharmacol. Res. Mod. Chin. Med. 2026; found in the third-round…"
-seo_description: "Broad AI-in-TCM review from multimodal data integration to pharmacological research and clinical decision support (Pharmacol. Res. Mod. Chin. Med. 2026; found in the third-round…"
+description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. Broad AI-in-TCM review from multimodal data integration to pharma…"
+seo_description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. Broad AI-in-TCM review from multimodal data integration to pharma…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

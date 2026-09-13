@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ai-tcm-translation-limits"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ai-tcm-translation-limits/
-- /zh/tcm/items/ai-tcm-translation-limits/
 alt_url: /projects/tcm/items/ai-tcm-translation-limits/
+redirect_from:
+- /zh/tcm/items/ai-tcm-translation-limits/
+- /tcm/items/ai-tcm-translation-limits/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
-seo_description: "讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
+description: "Beyond the Poetic Bard（中医AI翻译评论）｜中医大模型（TCM LLM）资源。讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
+seo_description: "Beyond the Poetic Bard（中医AI翻译评论）｜中医大模型（TCM LLM）资源。讨论生成式AI翻译中医文本的精确性、认识论与医学语境局限（Translation Review）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hf-xinghe/
-title: "杏核 (Xinghe) | TCM AI"
+title: "杏核 (Xinghe) | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hf-xinghe"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hf-xinghe/
 redirect_from:
 - /tcm-en/items/hf-xinghe/
 - /pub/tcm/items/hf-xinghe/
-alt_url: /zh/projects/tcm/items/hf-xinghe/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Xinghe Neijing reasoning model weights."
-seo_description: "Xinghe Neijing reasoning model weights."
+description: "杏核 (Xinghe) — TCM LLM model in Awesome-TCM-LLM. Xinghe Neijing reasoning model weights."
+seo_description: "杏核 (Xinghe) — TCM LLM model in Awesome-TCM-LLM. Xinghe Neijing reasoning model weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

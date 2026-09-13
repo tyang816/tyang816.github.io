@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "renshu-ai"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/renshu-ai/
-- /zh/tcm/items/renshu-ai/
 alt_url: /projects/tcm/items/renshu-ai/
+redirect_from:
+- /zh/tcm/items/renshu-ai/
+- /tcm/items/renshu-ai/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "FastAPI + LangGraph 多智能体中医问诊系统，融合 GraphRAG 与 DeepSeek-TCM"
-seo_description: "FastAPI + LangGraph 多智能体中医问诊系统，融合 GraphRAG 与 DeepSeek-TCM"
+description: "仁术AI (RenShu-AI)｜中医大模型（TCM LLM）资源。FastAPI + LangGraph 多智能体中医问诊系统，融合 GraphRAG 与 DeepSeek-TCM"
+seo_description: "仁术AI (RenShu-AI)｜中医大模型（TCM LLM）资源。FastAPI + LangGraph 多智能体中医问诊系统，融合 GraphRAG 与 DeepSeek-TCM"
 keywords:
 - "中医大模型"
 - "TCM LLM"

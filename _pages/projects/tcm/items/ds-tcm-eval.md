@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcm-eval/
-title: "TCM-Eval | TCM AI"
+title: "TCM-Eval | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcm-eval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcm-eval/
 redirect_from:
 - /tcm-en/items/ds-tcm-eval/
 - /pub/tcm/items/ds-tcm-eval/
-alt_url: /zh/projects/tcm/items/ds-tcm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Dynamic, extensible TCM evaluation platform."
-seo_description: "Dynamic, extensible TCM evaluation platform."
+description: "TCM-Eval — TCM LLM dataset in Awesome-TCM-LLM. Dynamic, extensible TCM evaluation platform."
+seo_description: "TCM-Eval — TCM LLM dataset in Awesome-TCM-LLM. Dynamic, extensible TCM evaluation platform."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

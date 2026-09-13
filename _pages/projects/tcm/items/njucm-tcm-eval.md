@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/njucm-tcm-eval/
-title: "中医标准化评估基准 | TCM AI"
+title: "中医标准化评估基准 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "njucm-tcm-eval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/njucm-tcm-eval/
 redirect_from:
 - /tcm-en/items/njucm-tcm-eval/
 - /pub/tcm/items/njucm-tcm-eval/
-alt_url: /zh/projects/tcm/items/njucm-tcm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
-seo_description: "Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
+description: "中医标准化评估基准 — TCM LLM resource in Awesome-TCM-LLM. Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
+seo_description: "中医标准化评估基准 — TCM LLM resource in Awesome-TCM-LLM. Standardized TCM evaluation benchmark of 29,506 questions across 13 subjects; tests 3 general and 5 Chinese medical LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

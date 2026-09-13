@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-lingdan"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-lingdan/
-- /zh/tcm/items/hf-lingdan/
 alt_url: /projects/tcm/items/hf-lingdan/
+redirect_from:
+- /zh/tcm/items/hf-lingdan/
+- /tcm/items/hf-lingdan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "灵丹"
-seo_description: "灵丹"
+description: "Lingdan｜中医大模型（TCM LLM）模型。灵丹"
+seo_description: "Lingdan｜中医大模型（TCM LLM）模型。灵丹"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-eval-wise"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-eval-wise/
-- /zh/tcm/items/tcm-eval-wise/
 alt_url: /projects/tcm/items/tcm-eval-wise/
+redirect_from:
+- /zh/tcm/items/tcm-eval-wise/
+- /tcm/items/tcm-eval-wise/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
-seo_description: "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
+description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
+seo_description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
 keywords:
 - "中医大模型"
 - "TCM LLM"

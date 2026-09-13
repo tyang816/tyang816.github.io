@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-ladder"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-ladder/
-- /zh/tcm/items/tcm-ladder/
 alt_url: /projects/tcm/items/tcm-ladder/
+redirect_from:
+- /zh/tcm/items/tcm-ladder/
+- /tcm/items/tcm-ladder/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "首个中医多模态问答评测基准，涵盖52000+题目"
-seo_description: "首个中医多模态问答评测基准，涵盖52000+题目"
+description: "TCM-Ladder｜中医大模型（TCM LLM）资源。首个中医多模态问答评测基准，涵盖52000+题目"
+seo_description: "TCM-Ladder｜中医大模型（TCM LLM）资源。首个中医多模态问答评测基准，涵盖52000+题目"
 keywords:
 - "中医大模型"
 - "TCM LLM"

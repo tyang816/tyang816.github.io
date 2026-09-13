@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-5llm-comparison"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-5llm-comparison/
-- /zh/tcm/items/tcm-5llm-comparison/
 alt_url: /projects/tcm/items/tcm-5llm-comparison/
+redirect_from:
+- /zh/tcm/items/tcm-5llm-comparison/
+- /tcm/items/tcm-5llm-comparison/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "5个LLM中医临床决策能力对比研究"
-seo_description: "5个LLM中医临床决策能力对比研究"
+description: "中医临床决策5-LLM对比｜中医大模型（TCM LLM）资源。5个LLM中医临床决策能力对比研究"
+seo_description: "中医临床决策5-LLM对比｜中医大模型（TCM LLM）资源。5个LLM中医临床决策能力对比研究"
 keywords:
 - "中医大模型"
 - "TCM LLM"

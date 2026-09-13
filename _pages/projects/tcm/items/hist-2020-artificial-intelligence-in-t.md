@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2020-artificial-intelligence-in-t/
-title: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r | TCM AI"
+title: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2020-artificial-intelligence-in-t"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2020-artificial-intelligence-in-t/
 redirect_from:
 - /tcm-en/items/hist-2020-artificial-intelligence-in-t/
 - /pub/tcm/items/hist-2020-artificial-intelligence-in-t/
-alt_url: /zh/projects/tcm/items/hist-2020-artificial-intelligence-in-t/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r."
-seo_description: "Historical anchor: Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r."
+description: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Artificial intelligence in t…"
+seo_description: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Artificial intelligence in t…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

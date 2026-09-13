@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/chinese-llava-med/
-title: "Chinese-LLaVA-Med | TCM AI"
+title: "Chinese-LLaVA-Med | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "chinese-llava-med"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/chinese-llava-med/
 redirect_from:
 - /tcm-en/items/chinese-llava-med/
 - /pub/tcm/items/chinese-llava-med/
-alt_url: /zh/projects/tcm/items/chinese-llava-med/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
-seo_description: "Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
+description: "Chinese-LLaVA-Med — TCM LLM resource in Awesome-TCM-LLM. Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
+seo_description: "Chinese-LLaVA-Med — TCM LLM resource in Awesome-TCM-LLM. Chinese medical multimodal LLM based on the LLaVA architecture, with the llava-med-zh-eval benchmark and open 7B weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

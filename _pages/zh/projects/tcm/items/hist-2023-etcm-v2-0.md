@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2023-etcm-v2-0"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2023-etcm-v2-0/
-- /zh/tcm/items/hist-2023-etcm-v2-0/
 alt_url: /projects/tcm/items/hist-2023-etcm-v2-0/
+redirect_from:
+- /zh/tcm/items/hist-2023-etcm-v2-0/
+- /tcm/items/hist-2023-etcm-v2-0/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ETCM v2.0（platform阶段历史锚点）"
-seo_description: "ETCM v2.0（platform阶段历史锚点）"
+description: "ETCM v2.0｜中医大模型（TCM LLM）资源。ETCM v2.0（platform阶段历史锚点）"
+seo_description: "ETCM v2.0｜中医大模型（TCM LLM）资源。ETCM v2.0（platform阶段历史锚点）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

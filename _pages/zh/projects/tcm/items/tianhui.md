@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tianhui"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tianhui/
-- /zh/tcm/items/tianhui/
 alt_url: /projects/tcm/items/tianhui/
+redirect_from:
+- /zh/tcm/items/tianhui/
+- /tcm/items/tianhui/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本"
-seo_description: "面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本"
+description: "天惠 (TianHui)｜中医大模型（TCM LLM）资源。面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本。arXiv PDF 署名成都中医药大学智能医学院"
+seo_description: "天惠 (TianHui)｜中医大模型（TCM LLM）资源。面向12类中医场景的领域LLM（DeepSeek-R1-Distill-Qwen-14B+PT/SFT），开源代码与评测脚本。arXiv PDF 署名成都中医药大学智能医学院"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "mrd-rag"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/mrd-rag/
-- /zh/tcm/items/mrd-rag/
 alt_url: /projects/tcm/items/mrd-rag/
+redirect_from:
+- /zh/tcm/items/mrd-rag/
+- /tcm/items/mrd-rag/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
-seo_description: "模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
+description: "MRD-RAG｜中医大模型（TCM LLM）资源。模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
+seo_description: "MRD-RAG｜中医大模型（TCM LLM）资源。模拟临床推理的多轮诊断RAG框架，并构建覆盖中西医的DiagnosGraph（876病/7997节点/37201三元组）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

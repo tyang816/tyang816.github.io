@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2013-tcmid"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2013-tcmid/
-- /zh/tcm/items/hist-2013-tcmid/
 alt_url: /projects/tcm/items/hist-2013-tcmid/
+redirect_from:
+- /zh/tcm/items/hist-2013-tcmid/
+- /tcm/items/hist-2013-tcmid/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMID（platform阶段历史锚点）"
-seo_description: "TCMID（platform阶段历史锚点）"
+description: "TCMID｜中医大模型（TCM LLM）资源。TCMID（platform阶段历史锚点）"
+seo_description: "TCMID｜中医大模型（TCM LLM）资源。TCMID（platform阶段历史锚点）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

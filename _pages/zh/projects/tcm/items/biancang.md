@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "biancang"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/biancang/
-- /zh/tcm/items/biancang/
 alt_url: /projects/tcm/items/biancang/
+redirect_from:
+- /zh/tcm/items/biancang/
+- /tcm/items/biancang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
-seo_description: "系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
+description: "扁仓 (BianCang)｜中医大模型（TCM LLM）资源。系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
+seo_description: "扁仓 (BianCang)｜中医大模型（TCM LLM）资源。系列中医大模型（JBHI 正式发表）；2025.12 开源 14B 版本"
 keywords:
 - "中医大模型"
 - "TCM LLM"

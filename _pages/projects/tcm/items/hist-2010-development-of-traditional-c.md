@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-2010-development-of-traditional-c/
-title: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge  | TCM AI"
+title: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge  | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-2010-development-of-traditional-c"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-2010-development-of-traditional-c/
 redirect_from:
 - /tcm-en/items/hist-2010-development-of-traditional-c/
 - /pub/tcm/items/hist-2010-development-of-traditional-c/
-alt_url: /zh/projects/tcm/items/hist-2010-development-of-traditional-c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Development of traditional Chinese medicine clinical data warehouse for medical knowledge ."
-seo_description: "Historical anchor: Development of traditional Chinese medicine clinical data warehouse for medical knowledge ."
+description: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge  — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Development of traditional C…"
+seo_description: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge  — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Development of traditional C…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

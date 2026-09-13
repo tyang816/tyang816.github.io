@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-cai-osf/
-title: "Cai R et al. TCM×LLM scoping review（OSF 预印本） | TCM AI"
+title: "Cai R et al. TCM×LLM scoping review（OSF 预印本） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-cai-osf"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-cai-osf/
 redirect_from:
 - /tcm-en/items/surv-cai-osf/
 - /pub/tcm/items/surv-cai-osf/
-alt_url: /zh/projects/tcm/items/surv-cai-osf/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "OSF-preprint scoping review of LLMs in TCM (not peer-reviewed; archival)."
-seo_description: "OSF-preprint scoping review of LLMs in TCM (not peer-reviewed; archival)."
+description: "Cai R et al. TCM×LLM scoping review（OSF 预印本） — TCM LLM survey in Awesome-TCM-LLM. OSF-preprint scoping review of LLMs in TCM (not peer-reviewed; archival)."
+seo_description: "Cai R et al. TCM×LLM scoping review（OSF 预印本） — TCM LLM survey in Awesome-TCM-LLM. OSF-preprint scoping review of LLMs in TCM (not peer-reviewed; archival)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

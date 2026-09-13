@@ -7,21 +7,22 @@ section: item
 tcm_item_id: "evi-bert"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/evi-bert/
-- /zh/tcm/items/evi-bert/
 alt_url: /projects/tcm/items/evi-bert/
+redirect_from:
+- /zh/tcm/items/evi-bert/
+- /tcm/items/evi-bert/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医RCT证据自动抽取的信息抽取模型开发与验证"
-seo_description: "中医RCT证据自动抽取的信息抽取模型开发与验证"
+description: "Evi-BERT｜中医大模型（TCM LLM）资源。中医RCT证据自动抽取的信息抽取模型开发与验证"
+seo_description: "Evi-BERT｜中医大模型（TCM LLM）资源。中医RCT证据自动抽取的信息抽取模型开发与验证"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
+- "plm"
+- "extract"
 - "Evi-BERT"
 tcm_type: "resource"
 tcm_type_label: "资源"

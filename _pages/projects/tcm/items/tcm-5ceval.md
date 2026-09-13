@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-5ceval/
-title: "TCM-5CEval | TCM AI"
+title: "TCM-5CEval | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-5ceval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-5ceval/
 redirect_from:
 - /tcm-en/items/tcm-5ceval/
 - /pub/tcm/items/tcm-5ceval/
-alt_url: /zh/projects/tcm/items/tcm-5ceval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
-seo_description: "Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
+description: "TCM-5CEval — TCM LLM resource in Awesome-TCM-LLM. Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
+seo_description: "TCM-5CEval — TCM LLM resource in Awesome-TCM-LLM. Five-dimension deep evaluation extending TCM-3CEval with materia medica and non-drug therapies."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

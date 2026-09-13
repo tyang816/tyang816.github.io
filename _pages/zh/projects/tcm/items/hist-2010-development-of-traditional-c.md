@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2010-development-of-traditional-c"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2010-development-of-traditional-c/
-- /zh/tcm/items/hist-2010-development-of-traditional-c/
 alt_url: /projects/tcm/items/hist-2010-development-of-traditional-c/
+redirect_from:
+- /zh/tcm/items/hist-2010-development-of-traditional-c/
+- /tcm/items/hist-2010-development-of-traditional-c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "临床数据仓库支撑知识发现与决策支持的系统论文。"
-seo_description: "临床数据仓库支撑知识发现与决策支持的系统论文。"
+description: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge ｜中医大模型（TCM LLM）资源。临床数据仓库支撑知识发现与决策支持的系统论文。"
+seo_description: "Development of traditional Chinese medicine clinical data warehouse for medical knowledge ｜中医大模型（TCM LLM）资源。临床数据仓库支撑知识发现与决策支持的系统论文。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-best4sdt/
-title: "TCM-BEST4SDT | TCM AI"
+title: "TCM-BEST4SDT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-best4sdt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-best4sdt/
 redirect_from:
 - /tcm-en/items/tcm-best4sdt/
 - /pub/tcm/items/tcm-best4sdt/
-alt_url: /zh/projects/tcm/items/tcm-best4sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
-seo_description: "Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
+description: "TCM-BEST4SDT — TCM LLM resource in Awesome-TCM-LLM. Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
+seo_description: "TCM-BEST4SDT — TCM LLM resource in Awesome-TCM-LLM. Case benchmark for syndrome differentiation and treatment (knowledge / ethics / safety / SDT)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

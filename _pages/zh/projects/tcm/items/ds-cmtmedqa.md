@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-cmtmedqa"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-cmtmedqa/
-- /zh/tcm/items/ds-cmtmedqa/
 alt_url: /projects/tcm/items/ds-cmtmedqa/
+redirect_from:
+- /zh/tcm/items/ds-cmtmedqa/
+- /tcm/items/ds-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
-seo_description: "CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
+description: "CMtMedQA｜中医大模型（TCM LLM）数据集。CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
+seo_description: "CMtMedQA｜中医大模型（TCM LLM）数据集。CMtMedQA 仲景真实多轮医患对话（约 7 万条）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

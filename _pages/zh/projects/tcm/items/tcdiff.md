@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcdiff"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcdiff/
-- /zh/tcm/items/tcdiff/
 alt_url: /projects/tcm/items/tcdiff/
+redirect_from:
+- /zh/tcm/items/tcdiff/
+- /tcm/items/tcdiff/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
-seo_description: "三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
+description: "TCDiff｜中医大模型（TCM LLM）资源。三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
+seo_description: "TCDiff｜中医大模型（TCM LLM）资源。三联级联扩散模型生成高保真多模态中医EHR，并构建TCM-SZ1基准数据集"
 keywords:
 - "中医大模型"
 - "TCM LLM"

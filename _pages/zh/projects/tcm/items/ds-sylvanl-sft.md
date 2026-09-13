@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-sylvanl-sft"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-sylvanl-sft/
-- /zh/tcm/items/ds-sylvanl-sft/
 alt_url: /projects/tcm/items/ds-sylvanl-sft/
+redirect_from:
+- /zh/tcm/items/ds-sylvanl-sft/
+- /tcm/items/ds-sylvanl-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "高质量中医 SFT 数据集"
-seo_description: "高质量中医 SFT 数据集"
+description: "Traditional-Chinese-Medicine-Dataset-SFT｜中医大模型（TCM LLM）数据集。高质量中医 SFT 数据集"
+seo_description: "Traditional-Chinese-Medicine-Dataset-SFT｜中医大模型（TCM LLM）数据集。高质量中医 SFT 数据集"
 keywords:
 - "中医大模型"
 - "TCM LLM"

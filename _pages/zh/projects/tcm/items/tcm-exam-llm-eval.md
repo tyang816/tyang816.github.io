@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-exam-llm-eval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-exam-llm-eval/
-- /zh/tcm/items/tcm-exam-llm-eval/
 alt_url: /projects/tcm/items/tcm-exam-llm-eval/
+redirect_from:
+- /zh/tcm/items/tcm-exam-llm-eval/
+- /tcm/items/tcm-exam-llm-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大规模与轻量级LLM中医考题系统对比"
-seo_description: "大规模与轻量级LLM中医考题系统对比"
+description: "中医考题大/轻量模型对比｜中医大模型（TCM LLM）资源。大规模与轻量级LLM中医考题系统对比"
+seo_description: "中医考题大/轻量模型对比｜中医大模型（TCM LLM）资源。大规模与轻量级LLM中医考题系统对比"
 keywords:
 - "中医大模型"
 - "TCM LLM"

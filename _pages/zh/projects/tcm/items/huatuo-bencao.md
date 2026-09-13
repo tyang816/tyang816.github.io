@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "huatuo-bencao"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/huatuo-bencao/
-- /zh/tcm/items/huatuo-bencao/
 alt_url: /projects/tcm/items/huatuo-bencao/
+redirect_from:
+- /zh/tcm/items/huatuo-bencao/
+- /tcm/items/huatuo-bencao/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于中文医学知识的大语言模型指令微调"
-seo_description: "基于中文医学知识的大语言模型指令微调"
+description: "本草[原名：华驼(HuaTuo)]｜中医大模型（TCM LLM）资源。基于中文医学知识的大语言模型指令微调"
+seo_description: "本草[原名：华驼(HuaTuo)]｜中医大模型（TCM LLM）资源。基于中文医学知识的大语言模型指令微调"
 keywords:
 - "中医大模型"
 - "TCM LLM"

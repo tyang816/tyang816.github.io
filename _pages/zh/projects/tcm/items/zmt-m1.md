@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "zmt-m1"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/zmt-m1/
-- /zh/tcm/items/zmt-m1/
 alt_url: /projects/tcm/items/zmt-m1/
+redirect_from:
+- /zh/tcm/items/zmt-m1/
+- /tcm/items/zmt-m1/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医大模型及TCM-Eval动态可扩展评测基准"
-seo_description: "中医大模型及TCM-Eval动态可扩展评测基准"
+description: "智明堂 (ZMT-M1)｜中医大模型（TCM LLM）资源。中医大模型及TCM-Eval动态可扩展评测基准"
+seo_description: "智明堂 (ZMT-M1)｜中医大模型（TCM LLM）资源。中医大模型及TCM-Eval动态可扩展评测基准"
 keywords:
 - "中医大模型"
 - "TCM LLM"

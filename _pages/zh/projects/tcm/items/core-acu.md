@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "core-acu"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/core-acu/
-- /zh/tcm/items/core-acu/
 alt_url: /projects/tcm/items/core-acu/
+redirect_from:
+- /zh/tcm/items/core-acu/
+- /tcm/items/core-acu/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
-seo_description: "针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
+description: "CORE-Acu｜中医大模型（TCM LLM）资源。针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
+seo_description: "CORE-Acu｜中医大模型（TCM LLM）资源。针灸临床决策：结构化推理轨迹与知识图谱安全否决闭环"
 keywords:
 - "中医大模型"
 - "TCM LLM"

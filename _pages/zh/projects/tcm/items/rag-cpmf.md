@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "rag-cpmf"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/rag-cpmf/
-- /zh/tcm/items/rag-cpmf/
 alt_url: /projects/tcm/items/rag-cpmf/
+redirect_from:
+- /zh/tcm/items/rag-cpmf/
+- /tcm/items/rag-cpmf/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
-seo_description: "多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
+description: "RAG-CPMF｜中医大模型（TCM LLM）资源。多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
+seo_description: "RAG-CPMF｜中医大模型（TCM LLM）资源。多LLM校验+RAG的中成药智能推荐框架，并发布持续更新的大规模中成药公开数据集"
 keywords:
 - "中医大模型"
 - "TCM LLM"

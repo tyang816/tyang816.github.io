@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/lingdan/
-title: "TCMLLM / Lingdan | TCM AI"
+title: "TCMLLM / Lingdan | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "lingdan"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/lingdan/
 redirect_from:
 - /tcm-en/items/lingdan/
 - /pub/tcm/items/lingdan/
-alt_url: /zh/projects/tcm/items/lingdan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMLLM / Lingdan for TCM modeling and prescription recommendation."
-seo_description: "TCMLLM / Lingdan for TCM modeling and prescription recommendation."
+description: "TCMLLM / Lingdan — TCM LLM resource in Awesome-TCM-LLM. TCMLLM / Lingdan for TCM modeling and prescription recommendation."
+seo_description: "TCMLLM / Lingdan — TCM LLM resource in Awesome-TCM-LLM. TCMLLM / Lingdan for TCM modeling and prescription recommendation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

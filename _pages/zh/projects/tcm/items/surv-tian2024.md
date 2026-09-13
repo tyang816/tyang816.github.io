@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-tian2024"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-tian2024/
-- /zh/tcm/items/surv-tian2024/
 alt_url: /projects/tcm/items/surv-tian2024/
+redirect_from:
+- /zh/tcm/items/surv-tian2024/
+- /tcm/items/surv-tian2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "望闻问切四诊的 ML 传感与模型综述"
-seo_description: "望闻问切四诊的 ML 传感与模型综述"
+description: "Tian et al. 2024: 四诊机器学习综述｜中医大模型（TCM LLM）综述。望闻问切四诊的 ML 传感与模型综述"
+seo_description: "Tian et al. 2024: 四诊机器学习综述｜中医大模型（TCM LLM）综述。望闻问切四诊的 ML 传感与模型综述"
 keywords:
 - "中医大模型"
 - "TCM LLM"

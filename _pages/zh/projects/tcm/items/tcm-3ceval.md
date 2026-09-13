@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-3ceval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-3ceval/
-- /zh/tcm/items/tcm-3ceval/
 alt_url: /projects/tcm/items/tcm-3ceval/
+redirect_from:
+- /zh/tcm/items/tcm-3ceval/
+- /tcm/items/tcm-3ceval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医大模型三轴评测（核心知识、经典理解、临床决策）"
-seo_description: "中医大模型三轴评测（核心知识、经典理解、临床决策）"
+description: "TCM-3CEval｜中医大模型（TCM LLM）资源。中医大模型三轴评测（核心知识、经典理解、临床决策）"
+seo_description: "TCM-3CEval｜中医大模型（TCM LLM）资源。中医大模型三轴评测（核心知识、经典理解、临床决策）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

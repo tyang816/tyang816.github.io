@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-duan2025-spleen-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-duan2025-spleen-kg/
-- /zh/tcm/items/surv-duan2025-spleen-kg/
 alt_url: /projects/tcm/items/surv-duan2025-spleen-kg/
+redirect_from:
+- /zh/tcm/items/surv-duan2025-spleen-kg/
+- /tcm/items/surv-duan2025-spleen-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "单病种（脾胃病）KG+智能诊疗综述：「症状-证候-疾病-方剂」框架的知识工程化（Curr Med Sci 2025;45(6):1348-1357）"
-seo_description: "单病种（脾胃病）KG+智能诊疗综述：「症状-证候-疾病-方剂」框架的知识工程化（Curr Med Sci 2025;45(6):1348-1357）"
+description: "AI for Spleen-Stomach Disorders in TCM（Curr Med Sci）｜中医大模型（TCM LLM）综述。单病种（脾胃病）KG+智能诊疗综述：「症状-证候-疾病-方剂」框架的知识工程化（Curr Med Sci 2025;45(6):1348-1357）"
+seo_description: "AI for Spleen-Stomach Disorders in TCM（Curr Med Sci）｜中医大模型（TCM LLM）综述。单病种（脾胃病）KG+智能诊疗综述：「症状-证候-疾病-方剂」框架的知识工程化（Curr Med Sci 2025;45(6):1348-1357）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

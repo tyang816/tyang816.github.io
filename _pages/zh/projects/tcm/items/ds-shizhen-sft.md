@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-shizhen-sft"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-shizhen-sft/
-- /zh/tcm/items/ds-shizhen-sft/
 alt_url: /projects/tcm/items/ds-shizhen-sft/
+redirect_from:
+- /zh/tcm/items/ds-shizhen-sft/
+- /tcm/items/ds-shizhen-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
-seo_description: "ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
+description: "TCM-Instruction-Tuning-ShizhenGPT｜中医大模型（TCM LLM）数据集。ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
+seo_description: "TCM-Instruction-Tuning-ShizhenGPT｜中医大模型（TCM LLM）数据集。ShizhenGPT 多模态指令微调数据（文本/视觉/语音/ECG 等，论文 Table 3 合计约 31.1 万条）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

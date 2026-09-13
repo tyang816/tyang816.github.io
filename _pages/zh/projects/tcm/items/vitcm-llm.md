@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "vitcm-llm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/vitcm-llm/
-- /zh/tcm/items/vitcm-llm/
 alt_url: /projects/tcm/items/vitcm-llm/
+redirect_from:
+- /zh/tcm/items/vitcm-llm/
+- /tcm/items/vitcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
-seo_description: "Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
+description: "ViTCM-LLM｜中医大模型（TCM LLM）资源。Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
+seo_description: "ViTCM-LLM｜中医大模型（TCM LLM）资源。Qwen2.5-VL+RAG的舌诊多模态临床决策框架，提出MedTCM数据集与TDEU指标（MMIR-TCM会议前序）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

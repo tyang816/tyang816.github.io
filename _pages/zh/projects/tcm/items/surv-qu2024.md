@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-qu2024"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-qu2024/
-- /zh/tcm/items/surv-qu2024/
 alt_url: /projects/tcm/items/surv-qu2024/
+redirect_from:
+- /zh/tcm/items/surv-qu2024/
+- /tcm/items/surv-qu2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医知识图谱的分析、构建、应用与展望"
-seo_description: "中医知识图谱的分析、构建、应用与展望"
+description: "Qu et al. 2024: 中医知识图谱综述｜中医大模型（TCM LLM）综述。中医知识图谱的分析、构建、应用与展望"
+seo_description: "Qu et al. 2024: 中医知识图谱综述｜中医大模型（TCM LLM）综述。中医知识图谱的分析、构建、应用与展望"
 keywords:
 - "中医大模型"
 - "TCM LLM"

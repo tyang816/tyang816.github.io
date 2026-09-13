@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-gpt/
-title: "TCM-GPT | TCM AI"
+title: "TCM-GPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-gpt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-gpt/
 redirect_from:
 - /tcm-en/items/tcm-gpt/
 - /pub/tcm/items/tcm-gpt/
-alt_url: /zh/projects/tcm/items/tcm-gpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine."
-seo_description: "Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine."
+description: "TCM-GPT — TCM LLM resource in Awesome-TCM-LLM. Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine. Journal metadata lists BUPT and UCL."
+seo_description: "TCM-GPT — TCM LLM resource in Awesome-TCM-LLM. Efficient pre-training of LLMs for domain adaptation in Traditional Chinese Medicine. Journal metadata lists BUPT and UCL."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

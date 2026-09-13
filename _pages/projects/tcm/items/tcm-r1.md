@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-r1/
-title: "TCM-R1 | TCM AI"
+title: "TCM-R1 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-r1"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-r1/
 redirect_from:
 - /tcm-en/items/tcm-r1/
 - /pub/tcm/items/tcm-r1/
-alt_url: /zh/projects/tcm/items/tcm-r1/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM LLM with GRPO-enhanced reasoning."
-seo_description: "TCM LLM with GRPO-enhanced reasoning."
+description: "TCM-R1 — TCM LLM resource in Awesome-TCM-LLM. TCM LLM with GRPO-enhanced reasoning."
+seo_description: "TCM-R1 — TCM LLM resource in Awesome-TCM-LLM. TCM LLM with GRPO-enhanced reasoning."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

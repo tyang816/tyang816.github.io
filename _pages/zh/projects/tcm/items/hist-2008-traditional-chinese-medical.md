@@ -7,18 +7,18 @@ section: item
 tcm_item_id: "hist-2008-traditional-chinese-medical-"
 tcm_generated: true
 lang: zh-CN
+alt_url: /projects/tcm/items/hist-2008-traditional-chinese-medical-/
 redirect_from:
-- /tcm/items/hist-2008-traditional-chinese-medical-/
 - /zh/tcm/items/hist-2008-traditional-chinese-medical-/
-- /zh/projects/tcm/items/hist-2008-traditional-chinese-medical/
+- /tcm/items/hist-2008-traditional-chinese-medical-/
 - /zh/tcm/items/hist-2008-traditional-chinese-medical/
 - /tcm/items/hist-2008-traditional-chinese-medical/
-alt_url: /projects/tcm/items/hist-2008-traditional-chinese-medical-/
+- /zh/projects/tcm/items/hist-2008-traditional-chinese-medical/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多层模糊筛选+多智能体协作诊断（MADHS）原型。"
-seo_description: "多层模糊筛选+多智能体协作诊断（MADHS）原型。"
+description: "Traditional Chinese medical diagnosis based on fuzzy and certainty reasoning｜中医大模型（TCM LLM）资源。多层模糊筛选+多智能体协作诊断（MADHS）原型。"
+seo_description: "Traditional Chinese medical diagnosis based on fuzzy and certainty reasoning｜中医大模型（TCM LLM）资源。多层模糊筛选+多智能体协作诊断（MADHS）原型。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

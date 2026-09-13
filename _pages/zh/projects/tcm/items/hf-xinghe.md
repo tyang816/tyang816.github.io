@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-xinghe"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-xinghe/
-- /zh/tcm/items/hf-xinghe/
 alt_url: /projects/tcm/items/hf-xinghe/
+redirect_from:
+- /zh/tcm/items/hf-xinghe/
+- /tcm/items/hf-xinghe/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "杏核内经推理模型"
-seo_description: "杏核内经推理模型"
+description: "杏核 (Xinghe)｜中医大模型（TCM LLM）模型。杏核内经推理模型"
+seo_description: "杏核 (Xinghe)｜中医大模型（TCM LLM）模型。杏核内经推理模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"

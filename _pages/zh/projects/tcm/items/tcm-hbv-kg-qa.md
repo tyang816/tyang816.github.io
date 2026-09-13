@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-hbv-kg-qa"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-hbv-kg-qa/
-- /zh/tcm/items/tcm-hbv-kg-qa/
 alt_url: /projects/tcm/items/tcm-hbv-kg-qa/
+redirect_from:
+- /zh/tcm/items/tcm-hbv-kg-qa/
+- /tcm/items/tcm-hbv-kg-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
-seo_description: "基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
+description: "乙肝中医 KG 问答系统｜中医大模型（TCM LLM）资源。基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
+seo_description: "乙肝中医 KG 问答系统｜中医大模型（TCM LLM）资源。基于知识图谱的中医诊治病毒性乙型肝炎问答系统"
 keywords:
 - "中医大模型"
 - "TCM LLM"

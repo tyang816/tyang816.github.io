@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tonguevlm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tonguevlm/
-- /zh/tcm/items/tonguevlm/
 alt_url: /projects/tcm/items/tonguevlm/
+redirect_from:
+- /zh/tcm/items/tonguevlm/
+- /tcm/items/tonguevlm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医舌诊多模态大模型，支持舌象描述生成与体质推理"
-seo_description: "中医舌诊多模态大模型，支持舌象描述生成与体质推理"
+description: "TongueVLM｜中医大模型（TCM LLM）资源。中医舌诊多模态大模型，支持舌象描述生成与体质推理。JMIR 页被拦截，OpenAlex 记录作者单位为合肥工业大学与安徽中医药大学等"
+seo_description: "TongueVLM｜中医大模型（TCM LLM）资源。中医舌诊多模态大模型，支持舌象描述生成与体质推理。JMIR 页被拦截，OpenAlex 记录作者单位为合肥工业大学与安徽中医药大学等"
 keywords:
 - "中医大模型"
 - "TCM LLM"

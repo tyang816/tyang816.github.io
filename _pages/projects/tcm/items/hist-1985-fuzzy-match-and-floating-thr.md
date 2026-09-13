@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
-title: "Fuzzy match and floating threshold strategy for expert system in traditional Chinese medic | TCM AI"
+title: "Fuzzy match and floating threshold strategy for expert system in traditional Chinese medicine | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hist-1985-fuzzy-match-and-floating-thr"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
 redirect_from:
 - /tcm-en/items/hist-1985-fuzzy-match-and-floating-thr/
 - /pub/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
-alt_url: /zh/projects/tcm/items/hist-1985-fuzzy-match-and-floating-thr/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical anchor: Fuzzy match and floating threshold strategy for expert system in traditional Chinese medic."
-seo_description: "Historical anchor: Fuzzy match and floating threshold strategy for expert system in traditional Chinese medic."
+description: "Fuzzy match and floating threshold strategy for expert system in traditional Chinese medicine — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Fuzzy match and floating …"
+seo_description: "Fuzzy match and floating threshold strategy for expert system in traditional Chinese medicine — TCM LLM resource in Awesome-TCM-LLM. Historical anchor: Fuzzy match and floating …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

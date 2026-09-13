@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2012-automated-tongue-feature-ext"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2012-automated-tongue-feature-ext/
-- /zh/tcm/items/hist-2012-automated-tongue-feature-ext/
 alt_url: /projects/tcm/items/hist-2012-automated-tongue-feature-ext/
+redirect_from:
+- /zh/tcm/items/hist-2012-automated-tongue-feature-ext/
+- /tcm/items/hist-2012-automated-tongue-feature-ext/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "舌象颜色特征学习映射寒热证（ZHENG）的代表性工作。"
-seo_description: "舌象颜色特征学习映射寒热证（ZHENG）的代表性工作。"
+description: "Automated Tongue Feature Extraction for ZHENG Classification in Traditional Chinese Medici｜中医大模型（TCM LLM）资源。舌象颜色特征学习映射寒热证（ZHENG）的代表性工作。"
+seo_description: "Automated Tongue Feature Extraction for ZHENG Classification in Traditional Chinese Medici｜中医大模型（TCM LLM）资源。舌象颜色特征学习映射寒热证（ZHENG）的代表性工作。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

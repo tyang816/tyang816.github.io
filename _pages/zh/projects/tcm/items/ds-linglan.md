@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-linglan"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-linglan/
-- /zh/tcm/items/ds-linglan/
 alt_url: /projects/tcm/items/ds-linglan/
+redirect_from:
+- /zh/tcm/items/ds-linglan/
+- /tcm/items/ds-linglan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
-seo_description: "LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
+description: "LingLan｜中医大模型（TCM LLM）数据集。LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
+seo_description: "LingLan｜中医大模型（TCM LLM）数据集。LingLan（灵兰秘典）大规模多任务中医评测基准 (2026)"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,18 +7,18 @@ section: item
 tcm_item_id: "hist-2007-a-novel-computerized-method-"
 tcm_generated: true
 lang: zh-CN
+alt_url: /projects/tcm/items/hist-2007-a-novel-computerized-method-/
 redirect_from:
-- /tcm/items/hist-2007-a-novel-computerized-method-/
 - /zh/tcm/items/hist-2007-a-novel-computerized-method-/
-- /zh/projects/tcm/items/hist-2007-a-novel-computerized-method/
+- /tcm/items/hist-2007-a-novel-computerized-method-/
 - /zh/tcm/items/hist-2007-a-novel-computerized-method/
 - /tcm/items/hist-2007-a-novel-computerized-method/
-alt_url: /projects/tcm/items/hist-2007-a-novel-computerized-method-/
+- /zh/projects/tcm/items/hist-2007-a-novel-computerized-method/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "色纹理特征+SVM/贝叶斯网络的早期计算机舌诊。"
-seo_description: "色纹理特征+SVM/贝叶斯网络的早期计算机舌诊。"
+description: "A Novel Computerized Method Based on Support Vector Machine for Tongue Diagnosis｜中医大模型（TCM LLM）资源。色纹理特征+SVM/贝叶斯网络的早期计算机舌诊。"
+seo_description: "A Novel Computerized Method Based on Support Vector Machine for Tongue Diagnosis｜中医大模型（TCM LLM）资源。色纹理特征+SVM/贝叶斯网络的早期计算机舌诊。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

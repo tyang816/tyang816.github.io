@@ -1,27 +1,27 @@
 ---
 permalink: /projects/tcm/items/cmm-embedcluster/
-title: "CMM-EmbedCluster | TCM AI"
+title: "CMM-EmbedCluster | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "cmm-embedcluster"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/cmm-embedcluster/
 redirect_from:
 - /tcm-en/items/cmm-embedcluster/
 - /pub/tcm/items/cmm-embedcluster/
-alt_url: /zh/projects/tcm/items/cmm-embedcluster/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
-seo_description: "LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
+description: "CMM-EmbedCluster — TCM LLM resource in Awesome-TCM-LLM. LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
+seo_description: "CMM-EmbedCluster — TCM LLM resource in Awesome-TCM-LLM. LLM + medicinal-property-theory clustering framework for Chinese materia medica, with a 567-herb property knowledge base."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
-- "model"
+- "herbal"
 - "CMM-EmbedCluster"
 tcm_type: "resource"
 tcm_type_label: "resource"

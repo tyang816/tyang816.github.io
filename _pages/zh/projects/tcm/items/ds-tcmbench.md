@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcmbench"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcmbench/
-- /zh/tcm/items/ds-tcmbench/
 alt_url: /projects/tcm/items/ds-tcmbench/
+redirect_from:
+- /zh/tcm/items/ds-tcmbench/
+- /tcm/items/ds-tcmbench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
-seo_description: "面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
+description: "TCMBench｜中医大模型（TCM LLM）数据集。面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
+seo_description: "TCMBench｜中医大模型（TCM LLM）数据集。面向中医领域的综合性大模型评测基准 TCMBench（arXiv 2024）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

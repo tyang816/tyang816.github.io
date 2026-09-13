@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-chatmed-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-chatmed-kg/
-- /zh/tcm/items/ds-chatmed-kg/
 alt_url: /projects/tcm/items/ds-chatmed-kg/
+redirect_from:
+- /zh/tcm/items/ds-chatmed-kg/
+- /tcm/items/ds-chatmed-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed 知识图谱"
-seo_description: "ChatMed 知识图谱"
+description: "TCM_KG｜中医大模型（TCM LLM）数据集。ChatMed 知识图谱"
+seo_description: "TCM_KG｜中医大模型（TCM LLM）数据集。ChatMed 知识图谱"
 keywords:
 - "中医大模型"
 - "TCM LLM"

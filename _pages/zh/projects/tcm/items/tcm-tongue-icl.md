@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-tongue-icl"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-tongue-icl/
-- /zh/tcm/items/tcm-tongue-icl/
 alt_url: /projects/tcm/items/tcm-tongue-icl/
+redirect_from:
+- /zh/tcm/items/tcm-tongue-icl/
+- /tcm/items/tcm-tongue-icl/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "舌象到体质直接判别的少样本上下文多任务LLM微调方法"
-seo_description: "舌象到体质直接判别的少样本上下文多任务LLM微调方法"
+description: "少样本舌诊上下文多任务微调｜中医大模型（TCM LLM）资源。舌象到体质直接判别的少样本上下文多任务LLM微调方法"
+seo_description: "少样本舌诊上下文多任务微调｜中医大模型（TCM LLM）资源。舌象到体质直接判别的少样本上下文多任务LLM微调方法"
 keywords:
 - "中医大模型"
 - "TCM LLM"

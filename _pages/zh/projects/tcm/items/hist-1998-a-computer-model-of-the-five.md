@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-1998-a-computer-model-of-the-five"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-1998-a-computer-model-of-the-five/
-- /zh/tcm/items/hist-1998-a-computer-model-of-the-five/
 alt_url: /projects/tcm/items/hist-1998-a-computer-model-of-the-five/
+redirect_from:
+- /zh/tcm/items/hist-1998-a-computer-model-of-the-five/
+- /tcm/items/hist-1998-a-computer-model-of-the-five/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "布尔网络模拟五行吸引子及扰动对稳态的影响。"
-seo_description: "布尔网络模拟五行吸引子及扰动对稳态的影响。"
+description: "A computer model of the “five elements” theory of traditional Chinese medicine｜中医大模型（TCM LLM）资源。布尔网络模拟五行吸引子及扰动对稳态的影响。"
+seo_description: "A computer model of the “five elements” theory of traditional Chinese medicine｜中医大模型（TCM LLM）资源。布尔网络模拟五行吸引子及扰动对稳态的影响。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

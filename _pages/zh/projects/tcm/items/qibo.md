@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "qibo"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/qibo/
-- /zh/tcm/items/qibo/
 alt_url: /projects/tcm/items/qibo/
+redirect_from:
+- /zh/tcm/items/qibo/
+- /tcm/items/qibo/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
-seo_description: "天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
+description: "岐伯 (Qibo)｜中医大模型（TCM LLM）资源。天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
+seo_description: "岐伯 (Qibo)｜中医大模型（TCM LLM）资源。天津大学等提出的中医大模型与Qibo Benchmark，持续预训练+SFT提升辨证与问答能力"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-wu2026/
-title: "Wu et al. 2026: AI 在中药材中的应用综述 | TCM AI"
+title: "Wu et al. 2026: AI 在中药材中的应用综述 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-wu2026"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-wu2026/
 redirect_from:
 - /tcm-en/items/surv-wu2026/
 - /pub/tcm/items/surv-wu2026/
-alt_url: /zh/projects/tcm/items/surv-wu2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
-seo_description: "Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
+description: "Wu et al. 2026: AI 在中药材中的应用综述 — TCM LLM survey in Awesome-TCM-LLM. Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
+seo_description: "Wu et al. 2026: AI 在中药材中的应用综述 — TCM LLM survey in Awesome-TCM-LLM. Full-stack survey of AI in TCM herbs — compounds, targets, quality control, with an LLM section."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

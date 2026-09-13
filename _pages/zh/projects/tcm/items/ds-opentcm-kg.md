@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-opentcm-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-opentcm-kg/
-- /zh/tcm/items/ds-opentcm-kg/
 alt_url: /projects/tcm/items/ds-opentcm-kg/
+redirect_from:
+- /zh/tcm/items/ds-opentcm-kg/
+- /tcm/items/ds-opentcm-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
-seo_description: "OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
+description: "OpenTCM-KG｜中医大模型（TCM LLM）数据集。OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
+seo_description: "OpenTCM-KG｜中医大模型（TCM LLM）数据集。OpenTCM 妇科古籍知识图谱（约 4.8 万实体 / 15.2 万关系）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

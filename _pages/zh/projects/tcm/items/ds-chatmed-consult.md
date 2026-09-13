@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-chatmed-consult"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-chatmed-consult/
-- /zh/tcm/items/ds-chatmed-consult/
 alt_url: /projects/tcm/items/ds-chatmed-consult/
+redirect_from:
+- /zh/tcm/items/ds-chatmed-consult/
+- /tcm/items/ds-chatmed-consult/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
-seo_description: "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
+description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
+seo_description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

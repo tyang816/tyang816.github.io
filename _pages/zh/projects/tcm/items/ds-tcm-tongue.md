@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcm-tongue"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcm-tongue/
-- /zh/tcm/items/ds-tcm-tongue/
 alt_url: /projects/tcm/items/ds-tcm-tongue/
+redirect_from:
+- /zh/tcm/items/ds-tcm-tongue/
+- /tcm/items/ds-tcm-tongue/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
-seo_description: "6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
+description: "TCM-Tongue｜中医大模型（TCM LLM）数据集。6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
+seo_description: "TCM-Tongue｜中医大模型（TCM LLM）数据集。6719张标准化舌象、20类病理多标签公开数据集，含检测基线"
 keywords:
 - "中医大模型"
 - "TCM LLM"

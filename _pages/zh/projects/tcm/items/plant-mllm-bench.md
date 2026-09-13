@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "plant-mllm-bench"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/plant-mllm-bench/
-- /zh/tcm/items/plant-mllm-bench/
 alt_url: /projects/tcm/items/plant-mllm-bench/
+redirect_from:
+- /zh/tcm/items/plant-mllm-bench/
+- /tcm/items/plant-mllm-bench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多模态LLM药用植物识别系统评测"
-seo_description: "多模态LLM药用植物识别系统评测"
+description: "药用植物多模态大模型评测｜中医大模型（TCM LLM）资源。多模态LLM药用植物识别系统评测"
+seo_description: "药用植物多模态大模型评测｜中医大模型（TCM LLM）资源。多模态LLM药用植物识别系统评测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

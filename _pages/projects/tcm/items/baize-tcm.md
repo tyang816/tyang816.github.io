@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/baize-tcm/
-title: "Baize-TCM-LLM | TCM AI"
+title: "Baize-TCM-LLM | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "baize-tcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/baize-tcm/
 redirect_from:
 - /tcm-en/items/baize-tcm/
 - /pub/tcm/items/baize-tcm/
-alt_url: /zh/projects/tcm/items/baize-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
-seo_description: "ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
+description: "Baize-TCM-LLM — TCM LLM resource in Awesome-TCM-LLM. ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
+seo_description: "Baize-TCM-LLM — TCM LLM resource in Awesome-TCM-LLM. ICMM Baize TCM QA models on Qwen3 (0.6B/8B) with ~157k LoRA-tuning examples."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

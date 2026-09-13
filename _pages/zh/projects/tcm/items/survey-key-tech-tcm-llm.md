@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "survey-key-tech-tcm-llm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/survey-key-tech-tcm-llm/
-- /zh/tcm/items/survey-key-tech-tcm-llm/
 alt_url: /projects/tcm/items/survey-key-tech-tcm-llm/
+redirect_from:
+- /zh/tcm/items/survey-key-tech-tcm-llm/
+- /tcm/items/survey-key-tech-tcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
-seo_description: "系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
+description: "中医大模型关键技术综述（IJPRAI）｜中医大模型（TCM LLM）综述。系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
+seo_description: "中医大模型关键技术综述（IJPRAI）｜中医大模型（TCM LLM）综述。系统综述中医大模型知识组织、辅助诊断与临床决策支持关键技术（World Scientific IJPRAI正式发表）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

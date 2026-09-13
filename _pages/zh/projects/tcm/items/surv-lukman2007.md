@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-lukman2007"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-lukman2007/
-- /zh/tcm/items/surv-lukman2007/
 alt_url: /projects/tcm/items/surv-lukman2007/
+redirect_from:
+- /zh/tcm/items/surv-lukman2007/
+- /tcm/items/surv-lukman2007/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
-seo_description: "计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
+description: "Lukman et al. 2007: 中医计算方法综述｜中医大模型（TCM LLM）综述。计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
+seo_description: "Lukman et al. 2007: 中医计算方法综述｜中医大模型（TCM LLM）综述。计算方法（专家系统、ML、数据挖掘）全景，中医计算研究的方法学鼻祖"
 keywords:
 - "中医大模型"
 - "TCM LLM"

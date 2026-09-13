@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "cpm-pediatric-influenza"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/cpm-pediatric-influenza/
-- /zh/tcm/items/cpm-pediatric-influenza/
 alt_url: /projects/tcm/items/cpm-pediatric-influenza/
+redirect_from:
+- /zh/tcm/items/cpm-pediatric-influenza/
+- /tcm/items/cpm-pediatric-influenza/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
-seo_description: "整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
+description: "儿童流感中成药推荐系统（KG+LLM）｜中医大模型（TCM LLM）资源。整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
+seo_description: "儿童流感中成药推荐系统（KG+LLM）｜中医大模型（TCM LLM）资源。整合权威指南构建儿童流感中成药知识图谱并与LLM集成（JMIR Preprints预印本）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

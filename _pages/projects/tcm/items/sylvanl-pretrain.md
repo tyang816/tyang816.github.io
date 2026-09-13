@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/sylvanl-pretrain/
-title: "Traditional-Chinese-Medicine-Dataset-Pretrain | TCM AI"
+title: "Traditional-Chinese-Medicine-Dataset-Pretrain | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "sylvanl-pretrain"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/sylvanl-pretrain/
 redirect_from:
 - /tcm-en/items/sylvanl-pretrain/
 - /pub/tcm/items/sylvanl-pretrain/
-alt_url: /zh/projects/tcm/items/sylvanl-pretrain/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classics, encyclopedia), 99% simplified Chinese."
-seo_description: "High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classics, encyclopedia), 99% simplified Chinese."
+description: "Traditional-Chinese-Medicine-Dataset-Pretrain — TCM LLM dataset in Awesome-TCM-LLM. High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classic…"
+seo_description: "Traditional-Chinese-Medicine-Dataset-Pretrain — TCM LLM dataset in Awesome-TCM-LLM. High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classic…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-med-exam/
-title: "Medical-LLMs-Chinese-Exam | TCM AI"
+title: "Medical-LLMs-Chinese-Exam | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-med-exam"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-med-exam/
 redirect_from:
 - /tcm-en/items/ds-med-exam/
 - /pub/tcm/items/ds-med-exam/
-alt_url: /zh/projects/tcm/items/ds-med-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Chinese medical exam evaluation for medical LLMs."
-seo_description: "Chinese medical exam evaluation for medical LLMs."
+description: "Medical-LLMs-Chinese-Exam — TCM LLM dataset in Awesome-TCM-LLM. Chinese medical exam evaluation for medical LLMs."
+seo_description: "Medical-LLMs-Chinese-Exam — TCM LLM dataset in Awesome-TCM-LLM. Chinese medical exam evaluation for medical LLMs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

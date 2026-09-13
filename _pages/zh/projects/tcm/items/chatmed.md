@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "chatmed"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/chatmed/
-- /zh/tcm/items/chatmed/
 alt_url: /projects/tcm/items/chatmed/
+redirect_from:
+- /zh/tcm/items/chatmed/
+- /tcm/items/chatmed/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult"
-seo_description: "ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult"
+description: "ChatMed｜中医大模型（TCM LLM）资源。ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult。GitHub README 引用 Wei Zhu / Xiaoling Wang，无独立期刊论文"
+seo_description: "ChatMed｜中医大模型（TCM LLM）资源。ChatMed 系列中文医疗大模型，含基于 50 万+ 在线问诊数据训练的 ChatMed-Consult。GitHub README 引用 Wei Zhu / Xiaoling Wang，无独立期刊论文"
 keywords:
 - "中医大模型"
 - "TCM LLM"

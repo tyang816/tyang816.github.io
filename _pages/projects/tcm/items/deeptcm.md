@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/deeptcm/
-title: "DeepTCM1.0 | TCM AI"
+title: "DeepTCM1.0 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "deeptcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/deeptcm/
 redirect_from:
 - /tcm-en/items/deeptcm/
 - /pub/tcm/items/deeptcm/
-alt_url: /zh/projects/tcm/items/deeptcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "DeepTCM1.0: a multi-expert AI agent built on general LLMs for interpreting the mechanisms of TCM compound formulas (Research Square preprint)."
-seo_description: "DeepTCM1.0: a multi-expert AI agent built on general LLMs for interpreting the mechanisms of TCM compound formulas (Research Square preprint)."
+description: "DeepTCM1.0 — TCM LLM resource in Awesome-TCM-LLM. DeepTCM1.0: 11-expert multi-agent system on DeepSeek V3.2 for interpreting TCM formula mechanisms (Guizhi Decoction case); now …"
+seo_description: "DeepTCM1.0 — TCM LLM resource in Awesome-TCM-LLM. DeepTCM1.0: 11-expert multi-agent system on DeepSeek V3.2 for interpreting TCM formula mechanisms (Guizhi Decoction case); now …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-shennong/
-title: "ShenNong_TCM_Dataset | TCM AI"
+title: "ShenNong_TCM_Dataset | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-shennong"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-shennong/
 redirect_from:
 - /tcm-en/items/ds-shennong/
 - /pub/tcm/items/ds-shennong/
-alt_url: /zh/projects/tcm/items/ds-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShenNong TCM instruction dataset."
-seo_description: "ShenNong TCM instruction dataset."
+description: "ShenNong_TCM_Dataset — TCM LLM dataset in Awesome-TCM-LLM. ShenNong TCM instruction dataset."
+seo_description: "ShenNong_TCM_Dataset — TCM LLM dataset in Awesome-TCM-LLM. ShenNong TCM instruction dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

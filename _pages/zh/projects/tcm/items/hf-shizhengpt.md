@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-shizhengpt"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-shizhengpt/
-- /zh/tcm/items/hf-shizhengpt/
 alt_url: /projects/tcm/items/hf-shizhengpt/
+redirect_from:
+- /zh/tcm/items/hf-shizhengpt/
+- /tcm/items/hf-shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 系列"
-seo_description: "ShizhenGPT 系列"
+description: "ShizhenGPT｜中医大模型（TCM LLM）模型。ShizhenGPT 系列"
+seo_description: "ShizhenGPT｜中医大模型（TCM LLM）模型。ShizhenGPT 系列"
 keywords:
 - "中医大模型"
 - "TCM LLM"

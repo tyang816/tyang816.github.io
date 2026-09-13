@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "chatgpt-tcm-feasibility"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/chatgpt-tcm-feasibility/
-- /zh/tcm/items/chatgpt-tcm-feasibility/
 alt_url: /projects/tcm/items/chatgpt-tcm-feasibility/
+redirect_from:
+- /zh/tcm/items/chatgpt-tcm-feasibility/
+- /tcm/items/chatgpt-tcm-feasibility/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
-seo_description: "以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
+description: "ChatGPT 中医交互可行性研究｜中医大模型（TCM LLM）资源。以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
+seo_description: "ChatGPT 中医交互可行性研究｜中医大模型（TCM LLM）资源。以 ChatGPT 为例探讨交互式AI应用于中医的可行性与挑战"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-1987-functional-structure-model-o"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-1987-functional-structure-model-o/
-- /zh/tcm/items/hist-1987-functional-structure-model-o/
 alt_url: /projects/tcm/items/hist-1987-functional-structure-model-o/
+redirect_from:
+- /zh/tcm/items/hist-1987-functional-structure-model-o/
+- /tcm/items/hist-1987-functional-structure-model-o/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "早期以微分方程刻画人体五行功能子系统与经络自组织。"
-seo_description: "早期以微分方程刻画人体五行功能子系统与经络自组织。"
+description: "Functional structure model of human body and Yinyang-Wuxing equations｜中医大模型（TCM LLM）资源。早期以微分方程刻画人体五行功能子系统与经络自组织。"
+seo_description: "Functional structure model of human body and Yinyang-Wuxing equations｜中医大模型（TCM LLM）资源。早期以微分方程刻画人体五行功能子系统与经络自组织。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

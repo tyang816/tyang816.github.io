@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcm-text-exams"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcm-text-exams/
-- /zh/tcm/items/ds-tcm-text-exams/
 alt_url: /projects/tcm/items/ds-tcm-text-exams/
+redirect_from:
+- /zh/tcm/items/ds-tcm-text-exams/
+- /tcm/items/ds-tcm-text-exams/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Text-Exams 近年中医执业/考研真题文本基准"
-seo_description: "TCM-Text-Exams 近年中医执业/考研真题文本基准"
+description: "TCM-Text-Exams｜中医大模型（TCM LLM）数据集。TCM-Text-Exams 近年中医执业/考研真题文本基准"
+seo_description: "TCM-Text-Exams｜中医大模型（TCM LLM）数据集。TCM-Text-Exams 近年中医执业/考研真题文本基准"
 keywords:
 - "中医大模型"
 - "TCM LLM"

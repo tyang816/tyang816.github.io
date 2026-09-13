@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-lu2026/
-title: "Lu et al. 2026: 深度学习中医诊断方法学质量审计 | TCM AI"
+title: "Lu et al. 2026: 深度学习中医诊断方法学质量审计 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-lu2026"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-lu2026/
 redirect_from:
 - /tcm-en/items/surv-lu2026/
 - /pub/tcm/items/surv-lu2026/
-alt_url: /zh/projects/tcm/items/surv-lu2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
-seo_description: "Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
+description: "Lu et al. 2026: 深度学习中医诊断方法学质量审计 — TCM LLM survey in Awesome-TCM-LLM. Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
+seo_description: "Lu et al. 2026: 深度学习中医诊断方法学质量审计 — TCM LLM survey in Awesome-TCM-LLM. Systematic review and validation-gap analysis of deep learning for TCM disease diagnosis."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

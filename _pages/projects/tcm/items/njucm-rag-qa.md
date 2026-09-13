@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/njucm-rag-qa/
-title: "中医药问答大语言模型 | TCM AI"
+title: "中医药问答大语言模型 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "njucm-rag-qa"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/njucm-rag-qa/
 redirect_from:
 - /tcm-en/items/njucm-rag-qa/
 - /pub/tcm/items/njucm-rag-qa/
-alt_url: /zh/projects/tcm/items/njucm-rag-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
-seo_description: "TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
+description: "中医药问答大语言模型 — TCM LLM resource in Awesome-TCM-LLM. TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
+seo_description: "中医药问答大语言模型 — TCM LLM resource in Awesome-TCM-LLM. TCM QA LLM combining RAG with P-Tuning v2 fine-tuning on ChatGLM2-6B."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

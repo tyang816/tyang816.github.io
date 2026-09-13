@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/jingfang/
-title: "Jingfang | TCM AI"
+title: "Jingfang | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "jingfang"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/jingfang/
 redirect_from:
 - /tcm-en/items/jingfang/
 - /pub/tcm/items/jingfang/
-alt_url: /zh/projects/tcm/items/jingfang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
-seo_description: "LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
+description: "Jingfang — TCM LLM resource in Awesome-TCM-LLM. LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
+seo_description: "Jingfang — TCM LLM resource in Awesome-TCM-LLM. LLM-based multi-agent TCM diagnosis/treatment system reporting large relative SDT gains under the authors' protocol."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

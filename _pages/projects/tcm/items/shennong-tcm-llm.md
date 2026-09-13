@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/shennong-tcm-llm/
-title: "神农大模型 (ShenNong-TCM-LLM) | TCM AI"
+title: "神农大模型 (ShenNong-TCM-LLM) | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "shennong-tcm-llm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/shennong-tcm-llm/
 redirect_from:
 - /tcm-en/items/shennong-tcm-llm/
 - /pub/tcm/items/shennong-tcm-llm/
-alt_url: /zh/projects/tcm/items/shennong-tcm-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
-seo_description: "ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
+description: "神农大模型 (ShenNong-TCM-LLM) — TCM LLM resource in Awesome-TCM-LLM. ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
+seo_description: "神农大模型 (ShenNong-TCM-LLM) — TCM LLM resource in Awesome-TCM-LLM. ShenNong-TCM-LLM, the first TCM large language model, released with the ShenNong_TCM_Dataset and open weights."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

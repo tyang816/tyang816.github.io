@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "bigdatatcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/bigdatatcm/
-- /zh/tcm/items/bigdatatcm/
 alt_url: /projects/tcm/items/bigdatatcm/
+redirect_from:
+- /zh/tcm/items/bigdatatcm/
+- /tcm/items/bigdatatcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
-seo_description: "河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
+description: "大数中医 (BigDataTCM)｜中医大模型（TCM LLM）资源。河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
+seo_description: "大数中医 (BigDataTCM)｜中医大模型（TCM LLM）资源。河南工业大学复杂性科学研究院与阿帕斯联合研发的中医垂直领域大模型（34B），提供医疗问答、诊断支持与中医知识服务"
 keywords:
 - "中医大模型"
 - "TCM LLM"

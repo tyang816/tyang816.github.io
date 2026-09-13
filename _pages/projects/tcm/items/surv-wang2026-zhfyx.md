@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-wang2026-zhfyx/
-title: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） | TCM AI"
+title: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-wang2026-zhfyx"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-wang2026-zhfyx/
 redirect_from:
 - /tcm-en/items/surv-wang2026-zhfyx/
 - /pub/tcm/items/surv-wang2026-zhfyx/
-alt_url: /zh/projects/tcm/items/surv-wang2026-zhfyx/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and theory-integration challenges (bibliographic record only)."
-seo_description: "Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and theory-integration challenges (bibliographic record only)."
+description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and t…"
+seo_description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and t…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

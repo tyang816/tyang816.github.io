@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-sylvanl-sft/
-title: "Traditional-Chinese-Medicine-Dataset-SFT | TCM AI"
+title: "Traditional-Chinese-Medicine-Dataset-SFT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-sylvanl-sft"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-sylvanl-sft/
 redirect_from:
 - /tcm-en/items/ds-sylvanl-sft/
 - /pub/tcm/items/ds-sylvanl-sft/
-alt_url: /zh/projects/tcm/items/ds-sylvanl-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "High-quality TCM supervised fine-tuning dataset."
-seo_description: "High-quality TCM supervised fine-tuning dataset."
+description: "Traditional-Chinese-Medicine-Dataset-SFT — TCM LLM dataset in Awesome-TCM-LLM. High-quality TCM supervised fine-tuning dataset."
+seo_description: "Traditional-Chinese-Medicine-Dataset-SFT — TCM LLM dataset in Awesome-TCM-LLM. High-quality TCM supervised fine-tuning dataset."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

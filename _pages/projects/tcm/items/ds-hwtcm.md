@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-hwtcm/
-title: "HWTCMBench | TCM AI"
+title: "HWTCMBench | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-hwtcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-hwtcm/
 redirect_from:
 - /tcm-en/items/ds-hwtcm/
 - /pub/tcm/items/ds-hwtcm/
-alt_url: /zh/projects/tcm/items/ds-hwtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "HWTCMBench TCM capability evaluation set."
-seo_description: "HWTCMBench TCM capability evaluation set."
+description: "HWTCMBench — TCM LLM dataset in Awesome-TCM-LLM. HWTCMBench TCM capability evaluation set."
+seo_description: "HWTCMBench — TCM LLM dataset in Awesome-TCM-LLM. HWTCMBench TCM capability evaluation set."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

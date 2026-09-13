@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "pcdh-tcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/pcdh-tcm/
-- /zh/tcm/items/pcdh-tcm/
 alt_url: /projects/tcm/items/pcdh-tcm/
+redirect_from:
+- /zh/tcm/items/pcdh-tcm/
+- /tcm/items/pcdh-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
-seo_description: "患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
+description: "Patient-Conditioned Dual Hypergraph Reasoning｜中医大模型（TCM LLM）资源。患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
+seo_description: "Patient-Conditioned Dual Hypergraph Reasoning｜中医大模型（TCM LLM）资源。患者条件化双超图推理实现可审计的中医处方支持，将症状/舌/脉证据围绕证型与治则组织（天津大学）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

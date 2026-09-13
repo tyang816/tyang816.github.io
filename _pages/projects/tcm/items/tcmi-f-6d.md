@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcmi-f-6d/
-title: "TCMI-F-6D | TCM AI"
+title: "TCMI-F-6D | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcmi-f-6d"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcmi-f-6d/
 redirect_from:
 - /tcm-en/items/tcmi-f-6d/
 - /pub/tcm/items/tcmi-f-6d/
-alt_url: /zh/projects/tcm/items/tcmi-f-6d/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
-seo_description: "Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
+description: "TCMI-F-6D — TCM LLM resource in Awesome-TCM-LLM. Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
+seo_description: "TCMI-F-6D — TCM LLM resource in Awesome-TCM-LLM. Six-dimensional benchmark of interdisciplinary foundational competence in TCM informatics."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

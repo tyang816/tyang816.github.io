@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-yao2026/
-title: "Yao et al. 2026: LLM 与循证中医整合（Scoping Review） | TCM AI"
+title: "Yao et al. 2026: LLM 与循证中医整合（Scoping Review） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-yao2026"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-yao2026/
 redirect_from:
 - /tcm-en/items/surv-yao2026/
 - /pub/tcm/items/surv-yao2026/
-alt_url: /zh/projects/tcm/items/surv-yao2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based Chinese medicine."
-seo_description: "PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based Chinese medicine."
+description: "Yao et al. 2026: LLM 与循证中医整合（Scoping Review） — TCM LLM survey in Awesome-TCM-LLM. PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based …"
+seo_description: "Yao et al. 2026: LLM 与循证中医整合（Scoping Review） — TCM LLM survey in Awesome-TCM-LLM. PRISMA scoping review (12 studies, 2022-11 to 2026-01) on integrating LLMs with evidence-based …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

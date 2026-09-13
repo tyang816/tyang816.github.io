@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-gu2013"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-gu2013/
-- /zh/tcm/items/surv-gu2013/
 alt_url: /projects/tcm/items/surv-gu2013/
+redirect_from:
+- /zh/tcm/items/surv-gu2013/
+- /tcm/items/surv-gu2013/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "生物信息学×中医（组学、文本挖掘）历史综述"
-seo_description: "生物信息学×中医（组学、文本挖掘）历史综述"
+description: "Gu & Chen 2013: 生物信息学遇见中医｜中医大模型（TCM LLM）综述。生物信息学×中医（组学、文本挖掘）历史综述"
+seo_description: "Gu & Chen 2013: 生物信息学遇见中医｜中医大模型（TCM LLM）综述。生物信息学×中医（组学、文本挖掘）历史综述"
 keywords:
 - "中医大模型"
 - "TCM LLM"

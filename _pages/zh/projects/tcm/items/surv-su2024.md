@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-su2024"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-su2024/
-- /zh/tcm/items/surv-su2024/
 alt_url: /projects/tcm/items/surv-su2024/
+redirect_from:
+- /zh/tcm/items/surv-su2024/
+- /tcm/items/surv-su2024/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
-seo_description: "中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
+description: "苏尤丽 et al. 2024: 人工智能在中医诊疗领域的研究综述｜中医大模型（TCM LLM）综述。中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
+seo_description: "苏尤丽 et al. 2024: 人工智能在中医诊疗领域的研究综述｜中医大模型（TCM LLM）综述。中文综述：专家系统→机器学习→深度学习三阶段中医 AI 诊疗发展与挑战"
 keywords:
 - "中医大模型"
 - "TCM LLM"

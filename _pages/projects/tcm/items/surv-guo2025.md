@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-guo2025/
-title: "Guo et al. 2025: GPT 能否加速中医智能诊疗（综述+实证） | TCM AI"
+title: "Guo et al. 2025: GPT 能否加速中医智能诊疗（综述+实证） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-guo2025"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-guo2025/
 redirect_from:
 - /tcm-en/items/surv-guo2025/
 - /pub/tcm/items/surv-guo2025/
-alt_url: /zh/projects/tcm/items/surv-guo2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
-seo_description: "Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
+description: "Guo et al. 2025: GPT 能否加速中医智能诊疗（综述+实证） — TCM LLM survey in Awesome-TCM-LLM. Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
+seo_description: "Guo et al. 2025: GPT 能否加速中医智能诊疗（综述+实证） — TCM LLM survey in Awesome-TCM-LLM. Survey plus empirical analysis of whether GPTs can accelerate intelligent TCM diagnosis and treatment."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "shizhen-pretrain"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/shizhen-pretrain/
-- /zh/tcm/items/shizhen-pretrain/
 alt_url: /projects/tcm/items/shizhen-pretrain/
+redirect_from:
+- /zh/tcm/items/shizhen-pretrain/
+- /tcm/items/shizhen-pretrain/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
-seo_description: "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
+description: "TCM-Pretrain-Data-ShizhenGPT｜中医大模型（TCM LLM）数据集。ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
+seo_description: "TCM-Pretrain-Data-ShizhenGPT｜中医大模型（TCM LLM）数据集。ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

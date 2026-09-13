@@ -7,21 +7,20 @@ section: item
 tcm_item_id: "tree-organized-qa"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tree-organized-qa/
-- /zh/tcm/items/tree-organized-qa/
 alt_url: /projects/tcm/items/tree-organized-qa/
+redirect_from:
+- /zh/tcm/items/tree-organized-qa/
+- /tcm/items/tree-organized-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "树状组织语料+自反思检索的中医 QA 方法（Frontiers in Medicine 2026）"
-seo_description: "树状组织语料+自反思检索的中医 QA 方法（Frontiers in Medicine 2026）"
+description: "树状自反思检索中医问答｜中医大模型（TCM LLM）资源。树状组织语料+自反思检索的中医 QA 方法（Frontiers in Medicine 2026）"
+seo_description: "树状自反思检索中医问答｜中医大模型（TCM LLM）资源。树状组织语料+自反思检索的中医 QA 方法（Frontiers in Medicine 2026）"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
 - "rag"
 - "树状自反思检索中医问答"
 tcm_type: "resource"

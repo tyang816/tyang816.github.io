@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-shennong"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-shennong/
-- /zh/tcm/items/ds-shennong/
 alt_url: /projects/tcm/items/ds-shennong/
+redirect_from:
+- /zh/tcm/items/ds-shennong/
+- /tcm/items/ds-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医药指令数据集 ShenNong_TCM_Dataset"
-seo_description: "中医药指令数据集 ShenNong_TCM_Dataset"
+description: "ShenNong_TCM_Dataset｜中医大模型（TCM LLM）数据集。中医药指令数据集 ShenNong_TCM_Dataset"
+seo_description: "ShenNong_TCM_Dataset｜中医大模型（TCM LLM）数据集。中医药指令数据集 ShenNong_TCM_Dataset"
 keywords:
 - "中医大模型"
 - "TCM LLM"

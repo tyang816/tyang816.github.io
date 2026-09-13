@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "fcst-tcm-aug"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/fcst-tcm-aug/
-- /zh/tcm/items/fcst-tcm-aug/
 alt_url: /projects/tcm/items/fcst-tcm-aug/
+redirect_from:
+- /zh/tcm/items/fcst-tcm-aug/
+- /tcm/items/fcst-tcm-aug/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
-seo_description: "面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
+description: "中医药大模型知识增强方法｜中医大模型（TCM LLM）资源。面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
+seo_description: "中医药大模型知识增强方法｜中医大模型（TCM LLM）资源。面向中医药大模型的知识增强方法，基于约十万首经典方剂构建图谱并保持方剂结构性"
 keywords:
 - "中医大模型"
 - "TCM LLM"

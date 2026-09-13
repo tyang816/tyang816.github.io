@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-mlkg-rag/
-title: "TCM MLKG-RAG | TCM AI"
+title: "TCM MLKG-RAG | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-mlkg-rag"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-mlkg-rag/
 redirect_from:
 - /tcm-en/items/tcm-mlkg-rag/
 - /pub/tcm/items/tcm-mlkg-rag/
-alt_url: /zh/projects/tcm/items/tcm-mlkg-rag/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM intelligent diagnosis based on multi-layer knowledge graph retrieval-augmented generation."
-seo_description: "TCM intelligent diagnosis based on multi-layer knowledge graph retrieval-augmented generation."
+description: "TCM MLKG-RAG — TCM LLM resource in Awesome-TCM-LLM. TCM intelligent diagnosis based on multi-layer knowledge graph retrieval-augmented generation."
+seo_description: "TCM MLKG-RAG — TCM LLM resource in Awesome-TCM-LLM. TCM intelligent diagnosis based on multi-layer knowledge graph retrieval-augmented generation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

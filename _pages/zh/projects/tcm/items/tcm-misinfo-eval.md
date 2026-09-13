@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-misinfo-eval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-misinfo-eval/
-- /zh/tcm/items/tcm-misinfo-eval/
 alt_url: /projects/tcm/items/tcm-misinfo-eval/
+redirect_from:
+- /zh/tcm/items/tcm-misinfo-eval/
+- /tcm/items/tcm-misinfo-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "3000+中医考题×4种范式的安全性评测框架，覆盖错误选项、误导与捏造检测"
-seo_description: "3000+中医考题×4种范式的安全性评测框架，覆盖错误选项、误导与捏造检测"
+description: "中医大模型误导信息检测评测｜中医大模型（TCM LLM）资源。3000+中医考题×4种范式的安全性评测框架，覆盖错误选项、误导与捏造检测"
+seo_description: "中医大模型误导信息检测评测｜中医大模型（TCM LLM）资源。3000+中医考题×4种范式的安全性评测框架，覆盖错误选项、误导与捏造检测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

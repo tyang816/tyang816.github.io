@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "gastro-tcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/gastro-tcm/
-- /zh/tcm/items/gastro-tcm/
 alt_url: /projects/tcm/items/gastro-tcm/
+redirect_from:
+- /zh/tcm/items/gastro-tcm/
+- /tcm/items/gastro-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医消化内科大模型，基于Llama3-8B微调并结合RAG与智能体框架"
-seo_description: "中医消化内科大模型，基于Llama3-8B微调并结合RAG与智能体框架"
+description: "GastroTCM｜中医大模型（TCM LLM）资源。中医消化内科大模型，基于Llama3-8B微调并结合RAG与智能体框架。Chinese Medicine 论文署名清华大学 TCM-X 与中日友好医院等"
+seo_description: "GastroTCM｜中医大模型（TCM LLM）资源。中医消化内科大模型，基于Llama3-8B微调并结合RAG与智能体框架。Chinese Medicine 论文署名清华大学 TCM-X 与中日友好医院等"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "lingdan"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/lingdan/
-- /zh/tcm/items/lingdan/
 alt_url: /projects/tcm/items/lingdan/
+redirect_from:
+- /zh/tcm/items/lingdan/
+- /tcm/items/lingdan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医药大模型与处方推荐"
-seo_description: "中医药大模型与处方推荐"
+description: "TCMLLM / 灵丹 (Lingdan)｜中医大模型（TCM LLM）资源。中医药大模型与处方推荐"
+seo_description: "TCMLLM / 灵丹 (Lingdan)｜中医大模型（TCM LLM）资源。中医药大模型与处方推荐"
 keywords:
 - "中医大模型"
 - "TCM LLM"

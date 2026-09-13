@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmrd-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmrd-kg/
-- /zh/tcm/items/tcmrd-kg/
 alt_url: /projects/tcm/items/tcmrd-kg/
+redirect_from:
+- /zh/tcm/items/tcmrd-kg/
+- /tcm/items/tcmrd-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于古籍文献的风湿病中医知识图谱创新设计"
-seo_description: "基于古籍文献的风湿病中医知识图谱创新设计"
+description: "TCMRD-KG｜中医大模型（TCM LLM）资源。基于古籍文献的风湿病中医知识图谱创新设计"
+seo_description: "TCMRD-KG｜中医大模型（TCM LLM）资源。基于古籍文献的风湿病中医知识图谱创新设计"
 keywords:
 - "中医大模型"
 - "TCM LLM"

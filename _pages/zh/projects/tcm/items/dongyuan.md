@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "dongyuan"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/dongyuan/
-- /zh/tcm/items/dongyuan/
 alt_url: /projects/tcm/items/dongyuan/
+redirect_from:
+- /zh/tcm/items/dongyuan/
+- /tcm/items/dongyuan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理"
-seo_description: "中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理"
+description: "DongYuan｜中医大模型（TCM LLM）资源。中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理。arXiv PDF 署名河北省中医院、中科院自动化所、中科闻歌与天津大学"
+seo_description: "DongYuan｜中医大模型（TCM LLM）资源。中西医结合脾胃病诊断LLM框架，融合中医辨证与西医诊断推理。arXiv PDF 署名河北省中医院、中科院自动化所、中科闻歌与天津大学"
 keywords:
 - "中医大模型"
 - "TCM LLM"

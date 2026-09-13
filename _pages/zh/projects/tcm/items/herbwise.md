@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "herbwise"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/herbwise/
-- /zh/tcm/items/herbwise/
 alt_url: /projects/tcm/items/herbwise/
+redirect_from:
+- /zh/tcm/items/herbwise/
+- /tcm/items/herbwise/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向传统草药（THM）的领域大模型，服务草药现代化与标准化"
-seo_description: "面向传统草药（THM）的领域大模型，服务草药现代化与标准化"
+description: "HerbWise｜中医大模型（TCM LLM）资源。面向传统草药（THM）的领域大模型，服务草药现代化与标准化"
+seo_description: "HerbWise｜中医大模型（TCM LLM）资源。面向传统草药（THM）的领域大模型，服务草药现代化与标准化"
 keywords:
 - "中医大模型"
 - "TCM LLM"

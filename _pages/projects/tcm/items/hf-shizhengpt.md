@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/hf-shizhengpt/
-title: "ShizhenGPT | TCM AI"
+title: "ShizhenGPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "hf-shizhengpt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/hf-shizhengpt/
 redirect_from:
 - /tcm-en/items/hf-shizhengpt/
 - /pub/tcm/items/hf-shizhengpt/
-alt_url: /zh/projects/tcm/items/hf-shizhengpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT multimodal weight series."
-seo_description: "ShizhenGPT multimodal weight series."
+description: "ShizhenGPT — TCM LLM model in Awesome-TCM-LLM. ShizhenGPT multimodal weight series."
+seo_description: "ShizhenGPT — TCM LLM model in Awesome-TCM-LLM. ShizhenGPT multimodal weight series."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

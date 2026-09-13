@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcm-ladder/
-title: "TCM-Ladder | TCM AI"
+title: "TCM-Ladder | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcm-ladder"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcm-ladder/
 redirect_from:
 - /tcm-en/items/ds-tcm-ladder/
 - /pub/tcm/items/ds-tcm-ladder/
-alt_url: /zh/projects/tcm/items/ds-tcm-ladder/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
-seo_description: "TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
+description: "TCM-Ladder — TCM LLM dataset in Awesome-TCM-LLM. TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
+seo_description: "TCM-Ladder — TCM LLM dataset in Awesome-TCM-LLM. TCM-Ladder: a multimodal QA benchmark for comprehensively evaluating TCM multimodal LLMs on real-world tasks (arXiv 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

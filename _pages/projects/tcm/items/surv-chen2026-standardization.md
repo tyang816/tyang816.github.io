@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-chen2026-standardization/
-title: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） | TCM AI"
+title: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-chen2026-standardization"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-chen2026-standardization/
 redirect_from:
 - /tcm-en/items/surv-chen2026-standardization/
 - /pub/tcm/items/surv-chen2026-standardization/
-alt_url: /zh/projects/tcm/items/surv-chen2026-standardization/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Perspective on AI and big data for TCM standardization and internationalization (Chin. Med. Cult. 2026, ahead of print)."
-seo_description: "Perspective on AI and big data for TCM standardization and internationalization (Chin. Med. Cult. 2026, ahead of print)."
+description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. Perspective on AI and big data for TCM standardization and in…"
+seo_description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. Perspective on AI and big data for TCM standardization and in…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

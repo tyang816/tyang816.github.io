@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/atcmd-bench/
-title: "ATCMD-Bench | TCM AI"
+title: "ATCMD-Bench | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "atcmd-bench"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/atcmd-bench/
 redirect_from:
 - /tcm-en/items/atcmd-bench/
 - /pub/tcm/items/atcmd-bench/
-alt_url: /zh/projects/tcm/items/atcmd-bench/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
-seo_description: "First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
+description: "ATCMD-Bench — TCM LLM resource in Awesome-TCM-LLM. First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
+seo_description: "ATCMD-Bench — TCM LLM resource in Awesome-TCM-LLM. First agentic TCM diagnosis benchmark, evaluating LLMs through multi-agent simulated consultations."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

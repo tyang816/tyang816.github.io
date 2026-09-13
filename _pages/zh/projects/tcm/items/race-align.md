@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "race-align"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/race-align/
-- /zh/tcm/items/race-align/
 alt_url: /projects/tcm/items/race-align/
+redirect_from:
+- /zh/tcm/items/race-align/
+- /tcm/items/race-align/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索增强+CoT 式 DPO 的轻量中医对齐模型（Qwen3-1.7B），探索小模型对齐路线"
-seo_description: "检索增强+CoT 式 DPO 的轻量中医对齐模型（Qwen3-1.7B），探索小模型对齐路线"
+description: "RACE-Align｜中医大模型（TCM LLM）资源。检索增强+CoT 式 DPO 的轻量中医对齐模型（Qwen3-1.7B），探索小模型对齐路线。arXiv PDF 署名上海科技大学、河南大学与辽宁中医药大学"
+seo_description: "RACE-Align｜中医大模型（TCM LLM）资源。检索增强+CoT 式 DPO 的轻量中医对齐模型（Qwen3-1.7B），探索小模型对齐路线。arXiv PDF 署名上海科技大学、河南大学与辽宁中医药大学"
 keywords:
 - "中医大模型"
 - "TCM LLM"

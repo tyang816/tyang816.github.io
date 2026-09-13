@@ -7,21 +7,20 @@ section: item
 tcm_item_id: "tcm-prompt-framework"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-prompt-framework/
-- /zh/tcm/items/tcm-prompt-framework/
 alt_url: /projects/tcm/items/tcm-prompt-framework/
+redirect_from:
+- /zh/tcm/items/tcm-prompt-framework/
+- /tcm/items/tcm-prompt-framework/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于提示工程框架的大语言模型中医智能理解方法"
-seo_description: "基于提示工程框架的大语言模型中医智能理解方法"
+description: "中医提示工程框架｜中医大模型（TCM LLM）资源。基于提示工程框架的大语言模型中医智能理解方法"
+seo_description: "中医提示工程框架｜中医大模型（TCM LLM）资源。基于提示工程框架的大语言模型中医智能理解方法"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
 - "中医提示工程框架"
 tcm_type: "resource"
 tcm_type_label: "资源"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/qwen-tcm-dia/
-title: "Qwen-TCM-Dia | TCM AI"
+title: "Qwen-TCM-Dia | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "qwen-tcm-dia"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/qwen-tcm-dia/
 redirect_from:
 - /tcm-en/items/qwen-tcm-dia/
 - /pub/tcm/items/qwen-tcm-dia/
-alt_url: /zh/projects/tcm/items/qwen-tcm-dia/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains."
-seo_description: "Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains."
+description: "Qwen-TCM-Dia — TCM LLM resource in Awesome-TCM-LLM. Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains. Digit…"
+seo_description: "Qwen-TCM-Dia — TCM LLM resource in Awesome-TCM-LLM. Specialty fine-tuned model for TCM diarrhea care (CPT + CoT SFT) covering symptom→pathomechanism→method→formula chains. Digit…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

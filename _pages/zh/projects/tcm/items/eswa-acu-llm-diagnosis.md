@@ -7,21 +7,20 @@ section: item
 tcm_item_id: "eswa-acu-llm-diagnosis"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/eswa-acu-llm-diagnosis/
-- /zh/tcm/items/eswa-acu-llm-diagnosis/
 alt_url: /projects/tcm/items/eswa-acu-llm-diagnosis/
+redirect_from:
+- /zh/tcm/items/eswa-acu-llm-diagnosis/
+- /tcm/items/eswa-acu-llm-diagnosis/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
-seo_description: "面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
+description: "针灸大模型驯化与生成评估 (Taming LLMs for Acupuncture)｜中医大模型（TCM LLM）资源。面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
+seo_description: "针灸大模型驯化与生成评估 (Taming LLMs for Acupuncture)｜中医大模型（TCM LLM）资源。面向针灸推拿诊断的大模型驯化方法，并在语义相似度层面评估生成质量"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
 - "evaluation"
 - "针灸大模型驯化与生成评估 (Taming LLMs for Acupuncture)"
 tcm_type: "resource"

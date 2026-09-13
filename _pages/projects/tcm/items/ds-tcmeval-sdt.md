@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcmeval-sdt/
-title: "TCMEval-SDT | TCM AI"
+title: "TCMEval-SDT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcmeval-sdt"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcmeval-sdt/
 redirect_from:
 - /tcm-en/items/ds-tcmeval-sdt/
 - /pub/tcm/items/ds-tcmeval-sdt/
-alt_url: /zh/projects/tcm/items/ds-tcmeval-sdt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-differentiation reasoning, with FAIR metadata (Sci.…"
-seo_description: "TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-differentiation reasoning, with FAIR metadata (Sci.…"
+description: "TCMEval-SDT — TCM LLM dataset in Awesome-TCM-LLM. TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-d…"
+seo_description: "TCMEval-SDT — TCM LLM dataset in Awesome-TCM-LLM. TCMEval-SDT: a benchmark of 300 syndrome-diagnosis cases (web, classical texts, hospital records) for evaluating TCM syndrome-d…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

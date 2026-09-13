@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/renshu-ai/
-title: "RenShu-AI | TCM AI"
+title: "RenShu-AI | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "renshu-ai"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/renshu-ai/
 redirect_from:
 - /tcm-en/items/renshu-ai/
 - /pub/tcm/items/renshu-ai/
-alt_url: /zh/projects/tcm/items/renshu-ai/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "FastAPI + LangGraph multi-agent TCM consultation system combining GraphRAG and DeepSeek-TCM."
-seo_description: "FastAPI + LangGraph multi-agent TCM consultation system combining GraphRAG and DeepSeek-TCM."
+description: "RenShu-AI — TCM LLM resource in Awesome-TCM-LLM. FastAPI + LangGraph multi-agent TCM consultation system combining GraphRAG and DeepSeek-TCM."
+seo_description: "RenShu-AI — TCM LLM resource in Awesome-TCM-LLM. FastAPI + LangGraph multi-agent TCM consultation system combining GraphRAG and DeepSeek-TCM."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

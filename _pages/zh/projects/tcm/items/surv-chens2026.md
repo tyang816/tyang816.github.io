@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-chens2026"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-chens2026/
-- /zh/tcm/items/surv-chens2026/
 alt_url: /projects/tcm/items/surv-chens2026/
+redirect_from:
+- /zh/tcm/items/surv-chens2026/
+- /tcm/items/surv-chens2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "叙述性前瞻：多模态、Agent 与临床落地路线"
-seo_description: "叙述性前瞻：多模态、Agent 与临床落地路线"
+description: "Chen et al. 2026: LLM 在中医的下一步（叙述性综述）｜中医大模型（TCM LLM）综述。叙述性前瞻：多模态、Agent 与临床落地路线"
+seo_description: "Chen et al. 2026: LLM 在中医的下一步（叙述性综述）｜中医大模型（TCM LLM）综述。叙述性前瞻：多模态、Agent 与临床落地路线"
 keywords:
 - "中医大模型"
 - "TCM LLM"

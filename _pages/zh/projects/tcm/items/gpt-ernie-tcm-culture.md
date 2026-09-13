@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "gpt-ernie-tcm-culture"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/gpt-ernie-tcm-culture/
-- /zh/tcm/items/gpt-ernie-tcm-culture/
 alt_url: /projects/tcm/items/gpt-ernie-tcm-culture/
+redirect_from:
+- /zh/tcm/items/gpt-ernie-tcm-culture/
+- /tcm/items/gpt-ernie-tcm-culture/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
-seo_description: "以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
+description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
+seo_description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

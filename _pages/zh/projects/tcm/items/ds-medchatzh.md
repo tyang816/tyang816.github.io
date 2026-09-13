@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-medchatzh"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-medchatzh/
-- /zh/tcm/items/ds-medchatzh/
 alt_url: /projects/tcm/items/ds-medchatzh/
+redirect_from:
+- /zh/tcm/items/ds-medchatzh/
+- /tcm/items/ds-medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MedChatZH 中医问诊数据集"
-seo_description: "MedChatZH 中医问诊数据集"
+description: "MedChatZH｜中医大模型（TCM LLM）数据集。MedChatZH 中医问诊数据集"
+seo_description: "MedChatZH｜中医大模型（TCM LLM）数据集。MedChatZH 中医问诊数据集"
 keywords:
 - "中医大模型"
 - "TCM LLM"

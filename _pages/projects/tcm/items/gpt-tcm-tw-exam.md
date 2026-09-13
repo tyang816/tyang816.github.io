@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/gpt-tcm-tw-exam/
-title: "GPT 台湾中医执业考试评估 | TCM AI"
+title: "GPT 台湾中医执业考试评估 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "gpt-tcm-tw-exam"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/gpt-tcm-tw-exam/
 redirect_from:
 - /tcm-en/items/gpt-tcm-tw-exam/
 - /pub/tcm/items/gpt-tcm-tw-exam/
-alt_url: /zh/projects/tcm/items/gpt-tcm-tw-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
-seo_description: "GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
+description: "GPT 台湾中医执业考试评估 — TCM LLM resource in Awesome-TCM-LLM. GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
+seo_description: "GPT 台湾中医执业考试评估 — TCM LLM resource in Awesome-TCM-LLM. GPT-3.5/GPT-4/GPT-4o performance on the Taiwan TCM licensing examination with reliability analysis (preprint)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

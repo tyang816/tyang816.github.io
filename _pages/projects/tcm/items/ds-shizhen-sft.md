@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-shizhen-sft/
-title: "TCM-Instruction-Tuning-ShizhenGPT | TCM AI"
+title: "TCM-Instruction-Tuning-ShizhenGPT | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-shizhen-sft"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-shizhen-sft/
 redirect_from:
 - /tcm-en/items/ds-shizhen-sft/
 - /pub/tcm/items/ds-shizhen-sft/
-alt_url: /zh/projects/tcm/items/ds-shizhen-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
-seo_description: "ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
+description: "TCM-Instruction-Tuning-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
+seo_description: "TCM-Instruction-Tuning-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT multimodal SFT data (text/vision/speech/ECG etc.; ~311k items total per paper Table 3)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-llm-bias"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-llm-bias/
-- /zh/tcm/items/tcm-llm-bias/
 alt_url: /projects/tcm/items/tcm-llm-bias/
+redirect_from:
+- /zh/tcm/items/tcm-llm-bias/
+- /tcm/items/tcm-llm-bias/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "比较不同国家大模型的中医表现，论证本土化模型的必要性"
-seo_description: "比较不同国家大模型的中医表现，论证本土化模型的必要性"
+description: "LLM 中医语言文化偏差研究｜中医大模型（TCM LLM）资源。比较不同国家大模型的中医表现，论证本土化模型的必要性"
+seo_description: "LLM 中医语言文化偏差研究｜中医大模型（TCM LLM）资源。比较不同国家大模型的中医表现，论证本土化模型的必要性"
 keywords:
 - "中医大模型"
 - "TCM LLM"

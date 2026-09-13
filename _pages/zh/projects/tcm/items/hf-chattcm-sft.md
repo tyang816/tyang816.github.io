@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-chattcm-sft"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-chattcm-sft/
-- /zh/tcm/items/hf-chattcm-sft/
 alt_url: /projects/tcm/items/hf-chattcm-sft/
+redirect_from:
+- /zh/tcm/items/hf-chattcm-sft/
+- /tcm/items/hf-chattcm-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatTCM全参SFT版"
-seo_description: "ChatTCM全参SFT版"
+description: "ChatTCM-7B-SFT｜中医大模型（TCM LLM）模型。ChatTCM全参SFT版"
+seo_description: "ChatTCM-7B-SFT｜中医大模型（TCM LLM）模型。ChatTCM全参SFT版"
 keywords:
 - "中医大模型"
 - "TCM LLM"

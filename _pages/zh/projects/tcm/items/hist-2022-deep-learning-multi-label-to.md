@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2022-deep-learning-multi-label-to"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2022-deep-learning-multi-label-to/
-- /zh/tcm/items/hist-2022-deep-learning-multi-label-to/
 alt_url: /projects/tcm/items/hist-2022-deep-learning-multi-label-to/
+redirect_from:
+- /zh/tcm/items/hist-2022-deep-learning-multi-label-to/
+- /tcm/items/hist-2022-deep-learning-multi-label-to/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Faster R-CNN 多标签舌象（裂纹/齿痕/腻苔等）及体检人群关联分析。"
-seo_description: "Faster R-CNN 多标签舌象（裂纹/齿痕/腻苔等）及体检人群关联分析。"
+description: "Deep Learning Multi-label Tongue Image Analysis and Its Application in a Population Underg｜中医大模型（TCM LLM）资源。Faster R-CNN 多标签舌象（裂纹/齿痕/腻苔等）及体检人群关联分析。"
+seo_description: "Deep Learning Multi-label Tongue Image Analysis and Its Application in a Population Underg｜中医大模型（TCM LLM）资源。Faster R-CNN 多标签舌象（裂纹/齿痕/腻苔等）及体检人群关联分析。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

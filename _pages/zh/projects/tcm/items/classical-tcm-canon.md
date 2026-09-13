@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "classical-tcm-canon"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/classical-tcm-canon/
-- /zh/tcm/items/classical-tcm-canon/
 alt_url: /projects/tcm/items/classical-tcm-canon/
+redirect_from:
+- /zh/tcm/items/classical-tcm-canon/
+- /tcm/items/classical-tcm-canon/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
-seo_description: "中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
+description: "classical-tcm-canon｜中医大模型（TCM LLM）数据集。中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
+seo_description: "classical-tcm-canon｜中医大模型（TCM LLM）数据集。中医经典全文数字化语料：内经、难经、伤寒论、金匮要略及温病经典"
 keywords:
 - "中医大模型"
 - "TCM LLM"

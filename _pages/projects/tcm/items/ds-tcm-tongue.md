@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcm-tongue/
-title: "TCM-Tongue | TCM AI"
+title: "TCM-Tongue | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcm-tongue"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcm-tongue/
 redirect_from:
 - /tcm-en/items/ds-tcm-tongue/
 - /pub/tcm/items/ds-tcm-tongue/
-alt_url: /zh/projects/tcm/items/ds-tcm-tongue/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
-seo_description: "6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
+description: "TCM-Tongue — TCM LLM dataset in Awesome-TCM-LLM. 6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
+seo_description: "TCM-Tongue — TCM LLM dataset in Awesome-TCM-LLM. 6,719 standardized tongue images with 20-class multi-label pathology annotations and detection baselines."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

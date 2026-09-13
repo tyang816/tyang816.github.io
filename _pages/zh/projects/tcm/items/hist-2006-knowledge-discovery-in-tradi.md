@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2006-knowledge-discovery-in-tradi"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2006-knowledge-discovery-in-tradi/
-- /zh/tcm/items/hist-2006-knowledge-discovery-in-tradi/
 alt_url: /projects/tcm/items/hist-2006-knowledge-discovery-in-tradi/
+redirect_from:
+- /zh/tcm/items/hist-2006-knowledge-discovery-in-tradi/
+- /tcm/items/hist-2006-knowledge-discovery-in-tradi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "方剂/本草/证候/诊断四子域的早期 KDD 综述。"
-seo_description: "方剂/本草/证候/诊断四子域的早期 KDD 综述。"
+description: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives｜中医大模型（TCM LLM）资源。方剂/本草/证候/诊断四子域的早期 KDD 综述。"
+seo_description: "Knowledge discovery in traditional Chinese medicine: State of the art and perspectives｜中医大模型（TCM LLM）资源。方剂/本草/证候/诊断四子域的早期 KDD 综述。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

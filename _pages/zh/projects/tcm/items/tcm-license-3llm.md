@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-license-3llm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-license-3llm/
-- /zh/tcm/items/tcm-license-3llm/
 alt_url: /projects/tcm/items/tcm-license-3llm/
+redirect_from:
+- /zh/tcm/items/tcm-license-3llm/
+- /tcm/items/tcm-license-3llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Gemini等3个LLM在中医国家执业医师考试上的系统评估"
-seo_description: "Gemini等3个LLM在中医国家执业医师考试上的系统评估"
+description: "中医执业考试三模型评估｜中医大模型（TCM LLM）资源。Gemini等3个LLM在中医国家执业医师考试上的系统评估"
+seo_description: "中医执业考试三模型评估｜中医大模型（TCM LLM）资源。Gemini等3个LLM在中医国家执业医师考试上的系统评估"
 keywords:
 - "中医大模型"
 - "TCM LLM"

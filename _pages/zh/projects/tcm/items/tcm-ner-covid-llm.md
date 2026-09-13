@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-ner-covid-llm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-ner-covid-llm/
-- /zh/tcm/items/tcm-ner-covid-llm/
 alt_url: /projects/tcm/items/tcm-ner-covid-llm/
+redirect_from:
+- /zh/tcm/items/tcm-ner-covid-llm/
+- /tcm/items/tcm-ner-covid-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
-seo_description: "大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
+description: "中医新冠文献 LLM 命名实体识别｜中医大模型（TCM LLM）资源。大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
+seo_description: "中医新冠文献 LLM 命名实体识别｜中医大模型（TCM LLM）资源。大语言模型用于中医新冠文献命名实体识别的比较研究（预印本）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

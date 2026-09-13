@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "deeptcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/deeptcm/
-- /zh/tcm/items/deeptcm/
 alt_url: /projects/tcm/items/deeptcm/
+redirect_from:
+- /zh/tcm/items/deeptcm/
+- /tcm/items/deeptcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于通用LLM的多专家AI Agent，解析中药复方作用机制（Research Square预印本）"
-seo_description: "基于通用LLM的多专家AI Agent，解析中药复方作用机制（Research Square预印本）"
+description: "DeepTCM1.0｜中医大模型（TCM LLM）资源。基于DeepSeek V3.2的11专家多智能体，解析中药复方机制（桂枝汤验证）；Research Square后上到arXiv"
+seo_description: "DeepTCM1.0｜中医大模型（TCM LLM）资源。基于DeepSeek V3.2的11专家多智能体，解析中药复方机制（桂枝汤验证）；Research Square后上到arXiv"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2008-establishment-of-a-fuzzy-mat"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
-- /zh/tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
 alt_url: /projects/tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
+redirect_from:
+- /zh/tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
+- /tcm/items/hist-2008-establishment-of-a-fuzzy-mat/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于临床大样本的胃癌证候模糊数学模型，服务辨证客观化。"
-seo_description: "基于临床大样本的胃癌证候模糊数学模型，服务辨证客观化。"
+description: "Establishment of a fuzzy mathematical model for syndrome differentiation of gastric cancer｜中医大模型（TCM LLM）资源。基于临床大样本的胃癌证候模糊数学模型，服务辨证客观化。"
+seo_description: "Establishment of a fuzzy mathematical model for syndrome differentiation of gastric cancer｜中医大模型（TCM LLM）资源。基于临床大样本的胃癌证候模糊数学模型，服务辨证客观化。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-ai-tutor-eval/
-title: "TCM AI-tutor evaluation | TCM AI"
+title: "TCM AI-tutor evaluation | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-ai-tutor-eval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-ai-tutor-eval/
 redirect_from:
 - /tcm-en/items/tcm-ai-tutor-eval/
 - /pub/tcm/items/tcm-ai-tutor-eval/
-alt_url: /zh/projects/tcm/items/tcm-ai-tutor-eval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Multimodal LLM evaluation for TCM education across cognitive levels."
-seo_description: "Multimodal LLM evaluation for TCM education across cognitive levels."
+description: "TCM AI-tutor evaluation — TCM LLM resource in Awesome-TCM-LLM. Multimodal LLM evaluation for TCM education across cognitive levels."
+seo_description: "TCM AI-tutor evaluation — TCM LLM resource in Awesome-TCM-LLM. Multimodal LLM evaluation for TCM education across cognitive levels."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-linglan/
-title: "LingLan | TCM AI"
+title: "LingLan | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-linglan"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-linglan/
 redirect_from:
 - /tcm-en/items/ds-linglan/
 - /pub/tcm/items/ds-linglan/
-alt_url: /zh/projects/tcm/items/ds-linglan/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LingLan large multi-task TCM evaluation benchmark (2026)."
-seo_description: "LingLan large multi-task TCM evaluation benchmark (2026)."
+description: "LingLan — TCM LLM dataset in Awesome-TCM-LLM. LingLan large multi-task TCM evaluation benchmark (2026)."
+seo_description: "LingLan — TCM LLM dataset in Awesome-TCM-LLM. LingLan large multi-task TCM evaluation benchmark (2026)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

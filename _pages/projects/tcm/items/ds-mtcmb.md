@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-mtcmb/
-title: "MTCMB | TCM AI"
+title: "MTCMB | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-mtcmb"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-mtcmb/
 redirect_from:
 - /tcm-en/items/ds-mtcmb/
 - /pub/tcm/items/ds-mtcmb/
-alt_url: /zh/projects/tcm/items/ds-mtcmb/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
-seo_description: "MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
+description: "MTCMB — TCM LLM dataset in Awesome-TCM-LLM. MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
+seo_description: "MTCMB — TCM LLM dataset in Awesome-TCM-LLM. MTCMB dataset: a multi-task TCM benchmark covering knowledge, reasoning and safety, 12 subsets with ~7,100 samples (arXiv 2025)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

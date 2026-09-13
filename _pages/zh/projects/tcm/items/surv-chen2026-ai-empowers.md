@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-chen2026-ai-empowers"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-chen2026-ai-empowers/
-- /zh/tcm/items/surv-chen2026-ai-empowers/
 alt_url: /projects/tcm/items/surv-chen2026-ai-empowers/
+redirect_from:
+- /zh/tcm/items/surv-chen2026-ai-empowers/
+- /tcm/items/surv-chen2026-ai-empowers/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "单作者评论性综述：古籍挖掘、诊疗标准化、药物研发周期三痛点×AI（J Integr Med 2026）"
-seo_description: "单作者评论性综述：古籍挖掘、诊疗标准化、药物研发周期三痛点×AI（J Integr Med 2026）"
+description: "AI empowers the innovation of TCM（J Integr Med 评论）｜中医大模型（TCM LLM）综述。单作者评论性综述：古籍挖掘、诊疗标准化、药物研发周期三痛点×AI（J Integr Med 2026）"
+seo_description: "AI empowers the innovation of TCM（J Integr Med 评论）｜中医大模型（TCM LLM）综述。单作者评论性综述：古籍挖掘、诊疗标准化、药物研发周期三痛点×AI（J Integr Med 2026）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

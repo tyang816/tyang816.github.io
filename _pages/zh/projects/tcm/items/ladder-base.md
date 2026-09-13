@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ladder-base"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ladder-base/
-- /zh/tcm/items/ladder-base/
 alt_url: /projects/tcm/items/ladder-base/
+redirect_from:
+- /zh/tcm/items/ladder-base/
+- /tcm/items/ladder-base/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM"
-seo_description: "TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM"
+description: "Ladder-base (GRPO-TCM)｜中医大模型（TCM LLM）资源。TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM。arXiv PDF 署名密苏里大学与上海中医药大学等"
+seo_description: "Ladder-base (GRPO-TCM)｜中医大模型（TCM LLM）资源。TCM-Ladder团队提出的首个GRPO强化学习对齐中医LLM。arXiv PDF 署名密苏里大学与上海中医药大学等"
 keywords:
 - "中医大模型"
 - "TCM LLM"

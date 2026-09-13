@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcm-mkg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcm-mkg/
-- /zh/tcm/items/ds-tcm-mkg/
 alt_url: /projects/tcm/items/ds-tcm-mkg/
+redirect_from:
+- /zh/tcm/items/ds-tcm-mkg/
+- /tcm/items/ds-tcm-mkg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-MKG 中医药多维知识图谱"
-seo_description: "TCM-MKG 中医药多维知识图谱"
+description: "TCM-MKG｜中医大模型（TCM LLM）数据集。TCM-MKG 中医药多维知识图谱"
+seo_description: "TCM-MKG｜中医大模型（TCM LLM）数据集。TCM-MKG 中医药多维知识图谱"
 keywords:
 - "中医大模型"
 - "TCM LLM"

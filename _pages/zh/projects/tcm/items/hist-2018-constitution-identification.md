@@ -7,18 +7,18 @@ section: item
 tcm_item_id: "hist-2018-constitution-identification-"
 tcm_generated: true
 lang: zh-CN
+alt_url: /projects/tcm/items/hist-2018-constitution-identification-/
 redirect_from:
-- /tcm/items/hist-2018-constitution-identification-/
 - /zh/tcm/items/hist-2018-constitution-identification-/
-- /zh/projects/tcm/items/hist-2018-constitution-identification/
+- /tcm/items/hist-2018-constitution-identification-/
 - /zh/tcm/items/hist-2018-constitution-identification/
 - /tcm/items/hist-2018-constitution-identification/
-alt_url: /projects/tcm/items/hist-2018-constitution-identification-/
+- /zh/projects/tcm/items/hist-2018-constitution-identification/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CNN 舌象体质辨识，对比传统手工特征 ML。"
-seo_description: "CNN 舌象体质辨识，对比传统手工特征 ML。"
+description: "Constitution Identification of Tongue Image Based on CNN｜中医大模型（TCM LLM）资源。CNN 舌象体质辨识，对比传统手工特征 ML。"
+seo_description: "Constitution Identification of Tongue Image Based on CNN｜中医大模型（TCM LLM）资源。CNN 舌象体质辨识，对比传统手工特征 ML。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-shennong"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-shennong/
-- /zh/tcm/items/hf-shennong/
 alt_url: /projects/tcm/items/hf-shennong/
+redirect_from:
+- /zh/tcm/items/hf-shennong/
+- /tcm/items/hf-shennong/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "神农"
-seo_description: "神农"
+description: "ShenNong-TCM-LLM｜中医大模型（TCM LLM）模型。神农"
+seo_description: "ShenNong-TCM-LLM｜中医大模型（TCM LLM）模型。神农"
 keywords:
 - "中医大模型"
 - "TCM LLM"

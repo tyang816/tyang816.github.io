@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcpm-kg"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcpm-kg/
-- /zh/tcm/items/tcpm-kg/
 alt_url: /projects/tcm/items/tcpm-kg/
+redirect_from:
+- /zh/tcm/items/tcpm-kg/
+- /tcm/items/tcpm-kg/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM+知识图谱构建中成药知识体系"
-seo_description: "LLM+知识图谱构建中成药知识体系"
+description: "中成药知识体系构建｜中医大模型（TCM LLM）资源。LLM+知识图谱构建中成药知识体系"
+seo_description: "中成药知识体系构建｜中医大模型（TCM LLM）资源。LLM+知识图谱构建中成药知识体系"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "diagx-dt"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/diagx-dt/
-- /zh/tcm/items/diagx-dt/
 alt_url: /projects/tcm/items/diagx-dt/
+redirect_from:
+- /zh/tcm/items/diagx-dt/
+- /tcm/items/diagx-dt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
-seo_description: "辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
+description: "DiagX-DT｜中医大模型（TCM LLM）资源。辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
+seo_description: "DiagX-DT｜中医大模型（TCM LLM）资源。辨证排除式推理框架，结合思维链与外部中医知识库迭代剔除不合理证候选项"
 keywords:
 - "中医大模型"
 - "TCM LLM"

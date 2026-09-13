@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-han2026"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-han2026/
-- /zh/tcm/items/surv-han2026/
 alt_url: /projects/tcm/items/surv-han2026/
+redirect_from:
+- /zh/tcm/items/surv-han2026/
+- /tcm/items/surv-han2026/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
-seo_description: "PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
+description: "Han et al. 2026: LLM 在中医中的调优与临床应用（Scoping Review）｜中医大模型（TCM LLM）综述。PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
+seo_description: "Han et al. 2026: LLM 在中医中的调优与临床应用（Scoping Review）｜中医大模型（TCM LLM）综述。PRISMA-ScR scoping review，纳入 27 篇（至 2025-05），聚焦 LoRA/CPT/RAG 调优配方与临床应用统计"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2020-artificial-intelligence-in-t"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2020-artificial-intelligence-in-t/
-- /zh/tcm/items/hist-2020-artificial-intelligence-in-t/
 alt_url: /projects/tcm/items/hist-2020-artificial-intelligence-in-t/
+redirect_from:
+- /zh/tcm/items/hist-2020-artificial-intelligence-in-t/
+- /tcm/items/hist-2020-artificial-intelligence-in-t/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ResNet34 齿痕舌识别，强调跨设备泛化。"
-seo_description: "ResNet34 齿痕舌识别，强调跨设备泛化。"
+description: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r｜中医大模型（TCM LLM）资源。ResNet34 齿痕舌识别，强调跨设备泛化。"
+seo_description: "Artificial intelligence in tongue diagnosis: Using deep convolutional neural network for r｜中医大模型（TCM LLM）资源。ResNet34 齿痕舌识别，强调跨设备泛化。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

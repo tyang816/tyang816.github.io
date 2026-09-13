@@ -7,18 +7,18 @@ section: item
 tcm_item_id: "hist-2009-syndrome-differentiation-in-"
 tcm_generated: true
 lang: zh-CN
+alt_url: /projects/tcm/items/hist-2009-syndrome-differentiation-in-/
 redirect_from:
-- /tcm/items/hist-2009-syndrome-differentiation-in-/
 - /zh/tcm/items/hist-2009-syndrome-differentiation-in-/
-- /zh/projects/tcm/items/hist-2009-syndrome-differentiation-in/
+- /tcm/items/hist-2009-syndrome-differentiation-in-/
 - /zh/tcm/items/hist-2009-syndrome-differentiation-in/
 - /tcm/items/hist-2009-syndrome-differentiation-in/
-alt_url: /projects/tcm/items/hist-2009-syndrome-differentiation-in-/
+- /zh/projects/tcm/items/hist-2009-syndrome-differentiation-in/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "区间值直觉模糊集用于智能中医辨证决策。"
-seo_description: "区间值直觉模糊集用于智能中医辨证决策。"
+description: "Syndrome Differentiation in Intelligent TCM Diagnosis System｜中医大模型（TCM LLM）资源。区间值直觉模糊集用于智能中医辨证决策。"
+seo_description: "Syndrome Differentiation in Intelligent TCM Diagnosis System｜中医大模型（TCM LLM）资源。区间值直觉模糊集用于智能中医辨证决策。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

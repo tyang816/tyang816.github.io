@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-5ceval"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-5ceval/
-- /zh/tcm/items/tcm-5ceval/
 alt_url: /projects/tcm/items/tcm-5ceval/
+redirect_from:
+- /zh/tcm/items/tcm-5ceval/
+- /tcm/items/tcm-5ceval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
-seo_description: "在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
+description: "TCM-5CEval｜中医大模型（TCM LLM）资源。在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
+seo_description: "TCM-5CEval｜中医大模型（TCM LLM）资源。在 TCM-3CEval 基础上扩展本草与非药物疗法的五维深度评测"
 keywords:
 - "中医大模型"
 - "TCM LLM"

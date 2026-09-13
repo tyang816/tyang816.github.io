@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ming"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ming/
-- /zh/tcm/items/ming/
 alt_url: /projects/tcm/items/ming/
+redirect_from:
+- /zh/tcm/items/ming/
+- /tcm/items/ming/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
-seo_description: "中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
+description: "明医 (MING)｜中医大模型（TCM LLM）资源。中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
+seo_description: "明医 (MING)｜中医大模型（TCM LLM）资源。中文医疗问诊大模型 MING，以稀疏 LoRA 混合专家（MING-MoE）增强医疗多任务学习能力（arXiv 2024）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

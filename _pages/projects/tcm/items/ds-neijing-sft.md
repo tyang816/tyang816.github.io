@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-neijing-sft/
-title: "neijing-sft-v1.2 | TCM AI"
+title: "neijing-sft-v1.2 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-neijing-sft"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-neijing-sft/
 redirect_from:
 - /tcm-en/items/ds-neijing-sft/
 - /pub/tcm/items/ds-neijing-sft/
-alt_url: /zh/projects/tcm/items/ds-neijing-sft/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
-seo_description: "~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
+description: "neijing-sft-v1.2 — TCM LLM dataset in Awesome-TCM-LLM. ~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
+seo_description: "neijing-sft-v1.2 — TCM LLM dataset in Awesome-TCM-LLM. ~2,009 Neijing-related instruction samples for Xinghe, with thinking/output fields."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

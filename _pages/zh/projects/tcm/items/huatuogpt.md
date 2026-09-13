@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "huatuogpt"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/huatuogpt/
-- /zh/tcm/items/huatuogpt/
 alt_url: /projects/tcm/items/huatuogpt/
+redirect_from:
+- /zh/tcm/items/huatuogpt/
+- /tcm/items/huatuogpt/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文医学语料训练的大型语言模型"
-seo_description: "中文医学语料训练的大型语言模型"
+description: "华佗GPT｜中医大模型（TCM LLM）资源。中文医学语料训练的大型语言模型"
+seo_description: "华佗GPT｜中医大模型（TCM LLM）资源。中文医学语料训练的大型语言模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"

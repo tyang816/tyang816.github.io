@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/zhongjing-cmtmedqa/
-title: "仲景（CMtMedQA 线，Yang et al.） | TCM AI"
+title: "仲景（CMtMedQA 线，Yang et al.） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "zhongjing-cmtmedqa"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/zhongjing-cmtmedqa/
 redirect_from:
 - /tcm-en/items/zhongjing-cmtmedqa/
 - /pub/tcm/items/zhongjing-cmtmedqa/
-alt_url: /zh/projects/tcm/items/zhongjing-cmtmedqa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhongJing (CMtMedQA line, Yang et al.): a TCM LLM distinct from the Kang-line ZhongJingGPT—full CPT+SFT+RLHF pipeline on Ziya-LLaMA-13B over ~70K real multi-turn doctor-patient …"
-seo_description: "ZhongJing (CMtMedQA line, Yang et al.): a TCM LLM distinct from the Kang-line ZhongJingGPT—full CPT+SFT+RLHF pipeline on Ziya-LLaMA-13B over ~70K real multi-turn doctor-patient …"
+description: "仲景（CMtMedQA 线，Yang et al.） — TCM LLM resource in Awesome-TCM-LLM. ZhongJing (CMtMedQA line, Yang et al.): a TCM LLM distinct from the Kang-line ZhongJingGPT—full CPT+SFT+RLHF pi…"
+seo_description: "仲景（CMtMedQA 线，Yang et al.） — TCM LLM resource in Awesome-TCM-LLM. ZhongJing (CMtMedQA line, Yang et al.): a TCM LLM distinct from the Kang-line ZhongJingGPT—full CPT+SFT+RLHF pi…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

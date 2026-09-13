@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/xrayglm/
-title: "XrayGLM | TCM AI"
+title: "XrayGLM | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "xrayglm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/xrayglm/
 redirect_from:
 - /tcm-en/items/xrayglm/
 - /pub/tcm/items/xrayglm/
-alt_url: /zh/projects/tcm/items/xrayglm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Chinese multimodal medical LLM for chest X-ray interpretation."
-seo_description: "Chinese multimodal medical LLM for chest X-ray interpretation."
+description: "XrayGLM — TCM LLM resource in Awesome-TCM-LLM. Chinese multimodal medical LLM for chest X-ray interpretation."
+seo_description: "XrayGLM — TCM LLM resource in Awesome-TCM-LLM. Chinese multimodal medical LLM for chest X-ray interpretation."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

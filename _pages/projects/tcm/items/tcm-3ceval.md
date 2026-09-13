@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-3ceval/
-title: "TCM-3CEval | TCM AI"
+title: "TCM-3CEval | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-3ceval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-3ceval/
 redirect_from:
 - /tcm-en/items/tcm-3ceval/
 - /pub/tcm/items/tcm-3ceval/
-alt_url: /zh/projects/tcm/items/tcm-3ceval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Three-axis TCM LLM evaluation: core knowledge, classics comprehension, and clinical decision-making."
-seo_description: "Three-axis TCM LLM evaluation: core knowledge, classics comprehension, and clinical decision-making."
+description: "TCM-3CEval — TCM LLM resource in Awesome-TCM-LLM. Three-axis TCM LLM evaluation: core knowledge, classics comprehension, and clinical decision-making."
+seo_description: "TCM-3CEval — TCM LLM resource in Awesome-TCM-LLM. Three-axis TCM LLM evaluation: core knowledge, classics comprehension, and clinical decision-making."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "qingnangtcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/qingnangtcm/
-- /zh/tcm/items/qingnangtcm/
 alt_url: /projects/tcm/items/qingnangtcm/
+redirect_from:
+- /zh/tcm/items/qingnangtcm/
+- /tcm/items/qingnangtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
-seo_description: "参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
+description: "青囊 (QingNangTCM)｜中医大模型（TCM LLM）资源。参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
+seo_description: "青囊 (QingNangTCM)｜中医大模型（TCM LLM）资源。参数高效微调的中医问答与临床推理模型，构建10万条QnTCM_Dataset语料"
 keywords:
 - "中医大模型"
 - "TCM LLM"

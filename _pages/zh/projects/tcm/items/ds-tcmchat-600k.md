@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-tcmchat-600k"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-tcmchat-600k/
-- /zh/tcm/items/ds-tcmchat-600k/
 alt_url: /projects/tcm/items/ds-tcmchat-600k/
+redirect_from:
+- /zh/tcm/items/ds-tcmchat-600k/
+- /tcm/items/ds-tcmchat-600k/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMChat-dataset-600k 中药知识问答与推荐指令数据"
-seo_description: "TCMChat-dataset-600k 中药知识问答与推荐指令数据"
+description: "TCMChat-dataset-600k｜中医大模型（TCM LLM）数据集。TCMChat-dataset-600k 中药知识问答与推荐指令数据"
+seo_description: "TCMChat-dataset-600k｜中医大模型（TCM LLM）数据集。TCMChat-dataset-600k 中药知识问答与推荐指令数据"
 keywords:
 - "中医大模型"
 - "TCM LLM"

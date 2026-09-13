@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-medchatzh"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-medchatzh/
-- /zh/tcm/items/hf-medchatzh/
 alt_url: /projects/tcm/items/hf-medchatzh/
+redirect_from:
+- /zh/tcm/items/hf-medchatzh/
+- /tcm/items/hf-medchatzh/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MedChatZH"
-seo_description: "MedChatZH"
+description: "medchatzh｜中医大模型（TCM LLM）模型。MedChatZH"
+seo_description: "medchatzh｜中医大模型（TCM LLM）模型。MedChatZH"
 keywords:
 - "中医大模型"
 - "TCM LLM"

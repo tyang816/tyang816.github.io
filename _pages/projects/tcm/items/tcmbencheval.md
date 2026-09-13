@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcmbencheval/
-title: "TCMBenchEval | TCM AI"
+title: "TCMBenchEval | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcmbencheval"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcmbencheval/
 redirect_from:
 - /tcm-en/items/tcmbencheval/
 - /pub/tcm/items/tcmbencheval/
-alt_url: /zh/projects/tcm/items/tcmbencheval/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
-seo_description: "Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
+description: "TCMBenchEval — TCM LLM resource in Awesome-TCM-LLM. Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
+seo_description: "TCMBenchEval — TCM LLM resource in Awesome-TCM-LLM. Benchmark evaluating LLMs on real clinical TCM case records (ICIC 2026)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

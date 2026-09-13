@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ebitv-tcm/
-title: "Evidence-Based TCM Visualization Diagnosis System | TCM AI"
+title: "Evidence-Based TCM Visualization Diagnosis System | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ebitv-tcm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ebitv-tcm/
 redirect_from:
 - /tcm-en/items/ebitv-tcm/
 - /pub/tcm/items/ebitv-tcm/
-alt_url: /zh/projects/tcm/items/ebitv-tcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, 1,263 symptoms) with four-stage symptom matching (LLM-verified) and information-gain-driv…"
-seo_description: "Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, 1,263 symptoms) with four-stage symptom matching (LLM-verified) and information-gain-driv…"
+description: "Evidence-Based TCM Visualization Diagnosis System — TCM LLM resource in Awesome-TCM-LLM. Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, …"
+seo_description: "Evidence-Based TCM Visualization Diagnosis System — TCM LLM resource in Awesome-TCM-LLM. Evidence-based TCM visualization diagnosis system: Neo4j knowledge graph (241 patterns, …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

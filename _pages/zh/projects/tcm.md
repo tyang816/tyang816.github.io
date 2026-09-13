@@ -77,6 +77,8 @@ keywords:
     <li><a href="{{ '/zh/projects/tcm/items/shizhengpt/' | relative_url }}">ShizhenGPT</a>：支持望闻问切的中医多模态大模型（2025）</li>
     <li><a href="{{ '/zh/projects/tcm/items/baize-tcm/' | relative_url }}">白泽 (Baize-TCM-LLM)</a>：中国中医科学院基于 Qwen3 的中医问答模型系列（2025）</li>
     <li><a href="{{ '/zh/projects/tcm/items/tcmchat/' | relative_url }}">TCMChat</a>：生成式中医药大模型，配套 60 万条中药知识对话数据（2025）</li>
+    <li><a href="{{ '/zh/projects/tcm/items/xinghe/' | relative_url }}">杏核 (Xinghe)</a>：Xinghe-TCM 基于 Qwen3.5-9B 的内经推理模型，开源权重（2026）</li>
+    <li><a href="{{ '/zh/projects/tcm/items/zhifangdantai/' | relative_url }}">知方丹台 (ZhiFangDanTai)</a>：GraphRAG + 微调的方剂生成模型，首都师大与昆士兰大学，开源权重（2025）</li>
     <li><a href="{{ '/zh/projects/tcm/items/xuanhugpt/' | relative_url }}">悬壶 (XuanHuGPT)</a>：基于参数高效微调的中医领域大模型（2025）</li>
     <li><a href="{{ '/zh/projects/medchatzh/' | relative_url }}">MedChatZH</a>：本站作者一作，基于 Baichuan-7B 的中文医疗 / 中医问诊微调模型</li>
   </ul>
@@ -143,7 +145,7 @@ keywords:
   </p>
   <h3>开源的中医大模型有哪些？</h3>
   <p>
-    已公开权重的代表性工作包括神农大模型、TCMChat、ChatTCM、TCMLLM/Lingdan、MedChatZH 等，
+    已公开权重的代表性工作包括神农大模型、TCMChat、ChatTCM、杏核、知方丹台、TCMLLM/Lingdan、MedChatZH 等，
     另有扁鹊、华佗GPT、仲景、岐伯、ShizhenGPT、白泽、悬壶等论文或产品向系统。
     见<a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a>专题页。
   </p>
@@ -230,7 +232,7 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
       "name": "开源的中医大模型有哪些？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "已公开权重的代表性工作包括神农大模型、TCMChat、ChatTCM、TCMLLM/Lingdan、MedChatZH 等，另有扁鹊、华佗GPT、仲景、岐伯、ShizhenGPT、白泽、悬壶等系统。完整列表见 Awesome-TCM-LLM 开源中医大模型专题页。"
+        "text": "已公开权重的代表性工作包括神农大模型、TCMChat、ChatTCM、杏核、知方丹台、TCMLLM/Lingdan、MedChatZH 等，另有扁鹊、华佗GPT、仲景、岐伯、ShizhenGPT、白泽、悬壶等系统。完整列表见 Awesome-TCM-LLM 开源中医大模型专题页。"
       }
     },
     {

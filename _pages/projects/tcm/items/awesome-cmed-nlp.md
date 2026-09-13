@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/awesome-cmed-nlp/
-title: "awesome_Chinese_medical_NLP | TCM AI"
+title: "awesome_Chinese_medical_NLP | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "awesome-cmed-nlp"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/awesome-cmed-nlp/
 redirect_from:
 - /tcm-en/items/awesome-cmed-nlp/
 - /pub/tcm/items/awesome-cmed-nlp/
-alt_url: /zh/projects/tcm/items/awesome-cmed-nlp/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NER and QA (incl. CBLUE)."
-seo_description: "Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NER and QA (incl. CBLUE)."
+description: "awesome_Chinese_medical_NLP — TCM LLM dataset in Awesome-TCM-LLM. Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NE…"
+seo_description: "awesome_Chinese_medical_NLP — TCM LLM dataset in Awesome-TCM-LLM. Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NE…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

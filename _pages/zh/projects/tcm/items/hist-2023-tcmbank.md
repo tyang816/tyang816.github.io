@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2023-tcmbank"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2023-tcmbank/
-- /zh/tcm/items/hist-2023-tcmbank/
 alt_url: /projects/tcm/items/hist-2023-tcmbank/
+redirect_from:
+- /zh/tcm/items/hist-2023-tcmbank/
+- /tcm/items/hist-2023-tcmbank/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMBank（platform阶段历史锚点）"
-seo_description: "TCMBank（platform阶段历史锚点）"
+description: "TCMBank｜中医大模型（TCM LLM）资源。TCMBank（platform阶段历史锚点）"
+seo_description: "TCMBank｜中医大模型（TCM LLM）资源。TCMBank（platform阶段历史锚点）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,21 +7,21 @@ section: item
 tcm_item_id: "kdc-ner"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/kdc-ner/
-- /zh/tcm/items/kdc-ner/
 alt_url: /projects/tcm/items/kdc-ner/
+redirect_from:
+- /zh/tcm/items/kdc-ner/
+- /tcm/items/kdc-ner/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
-seo_description: "知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
+description: "KDC-NER｜中医大模型（TCM LLM）资源。知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
+seo_description: "KDC-NER｜中医大模型（TCM LLM）资源。知识引导数据增强+大模型微调的中医嵌套命名实体识别框架"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
+- "extract"
 - "KDC-NER"
 tcm_type: "resource"
 tcm_type_label: "资源"

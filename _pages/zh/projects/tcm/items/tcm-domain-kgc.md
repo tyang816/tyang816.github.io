@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-domain-kgc"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-domain-kgc/
-- /zh/tcm/items/tcm-domain-kgc/
 alt_url: /projects/tcm/items/tcm-domain-kgc/
+redirect_from:
+- /zh/tcm/items/tcm-domain-kgc/
+- /tcm/items/tcm-domain-kgc/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医领域知识图谱补全与质量评估研究"
-seo_description: "中医领域知识图谱补全与质量评估研究"
+description: "中医领域知识图谱补全｜中医大模型（TCM LLM）资源。中医领域知识图谱补全与质量评估研究"
+seo_description: "中医领域知识图谱补全｜中医大模型（TCM LLM）资源。中医领域知识图谱补全与质量评估研究"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-chu2020"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-chu2020/
-- /zh/tcm/items/surv-chu2020/
 alt_url: /projects/tcm/items/surv-chu2020/
+redirect_from:
+- /zh/tcm/items/surv-chu2020/
+- /tcm/items/surv-chu2020/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医知识定量表示模型（本体、规则、统计）综述"
-seo_description: "中医知识定量表示模型（本体、规则、统计）综述"
+description: "Chu et al. 2020: 中医定量知识表示模型综述｜中医大模型（TCM LLM）综述。中医知识定量表示模型（本体、规则、统计）综述"
+seo_description: "Chu et al. 2020: 中医定量知识表示模型综述｜中医大模型（TCM LLM）综述。中医知识定量表示模型（本体、规则、统计）综述"
 keywords:
 - "中医大模型"
 - "TCM LLM"

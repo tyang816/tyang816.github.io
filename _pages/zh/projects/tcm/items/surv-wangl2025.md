@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-wangl2025"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-wangl2025/
-- /zh/tcm/items/surv-wangl2025/
 alt_url: /projects/tcm/items/surv-wangl2025/
+redirect_from:
+- /zh/tcm/items/surv-wangl2025/
+- /tcm/items/surv-wangl2025/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "系统综述：AI 诊断模型（四诊客观化、辨证）"
-seo_description: "系统综述：AI 诊断模型（四诊客观化、辨证）"
+description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。系统综述：AI 诊断模型（四诊客观化、辨证）"
+seo_description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。系统综述：AI 诊断模型（四诊客观化、辨证）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

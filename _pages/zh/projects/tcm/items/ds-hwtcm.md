@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-hwtcm"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-hwtcm/
-- /zh/tcm/items/ds-hwtcm/
 alt_url: /projects/tcm/items/ds-hwtcm/
+redirect_from:
+- /zh/tcm/items/ds-hwtcm/
+- /tcm/items/ds-hwtcm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "HWTCMBench 中医能力评测集"
-seo_description: "HWTCMBench 中医能力评测集"
+description: "HWTCMBench｜中医大模型（TCM LLM）数据集。HWTCMBench 中医能力评测集"
+seo_description: "HWTCMBench｜中医大模型（TCM LLM）数据集。HWTCMBench 中医能力评测集"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-zhongjing"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-zhongjing/
-- /zh/tcm/items/hf-zhongjing/
 alt_url: /projects/tcm/items/hf-zhongjing/
+redirect_from:
+- /zh/tcm/items/hf-zhongjing/
+- /tcm/items/hf-zhongjing/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "仲景"
-seo_description: "仲景"
+description: "ZhongJing｜中医大模型（TCM LLM）模型。仲景"
+seo_description: "ZhongJing｜中医大模型（TCM LLM）模型。仲景"
 keywords:
 - "中医大模型"
 - "TCM LLM"

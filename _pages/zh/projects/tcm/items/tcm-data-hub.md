@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-data-hub"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-data-hub/
-- /zh/tcm/items/tcm-data-hub/
 alt_url: /projects/tcm/items/tcm-data-hub/
+redirect_from:
+- /zh/tcm/items/tcm-data-hub/
+- /tcm/items/tcm-data-hub/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "谊元 (YiYuan) LLM驱动的中医数据平台"
-seo_description: "谊元 (YiYuan) LLM驱动的中医数据平台"
+description: "TCM Data Hub（谊元）｜中医大模型（TCM LLM）资源。谊元 (YiYuan) LLM驱动的中医数据平台"
+seo_description: "TCM Data Hub（谊元）｜中医大模型（TCM LLM）资源。谊元 (YiYuan) LLM驱动的中医数据平台"
 keywords:
 - "中医大模型"
 - "TCM LLM"

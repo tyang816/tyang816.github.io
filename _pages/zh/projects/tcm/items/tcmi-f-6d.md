@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcmi-f-6d"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcmi-f-6d/
-- /zh/tcm/items/tcmi-f-6d/
 alt_url: /projects/tcm/items/tcmi-f-6d/
+redirect_from:
+- /zh/tcm/items/tcmi-f-6d/
+- /tcm/items/tcmi-f-6d/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医信息学跨学科基础能力六维基准"
-seo_description: "中医信息学跨学科基础能力六维基准"
+description: "TCMI-F-6D｜中医大模型（TCM LLM）资源。中医信息学跨学科基础能力六维基准"
+seo_description: "TCMI-F-6D｜中医大模型（TCM LLM）资源。中医信息学跨学科基础能力六维基准"
 keywords:
 - "中医大模型"
 - "TCM LLM"

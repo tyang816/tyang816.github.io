@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ds-tcm-5c/
-title: "TCM-5CEval | TCM AI"
+title: "TCM-5CEval | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ds-tcm-5c"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ds-tcm-5c/
 redirect_from:
 - /tcm-en/items/ds-tcm-5c/
 - /pub/tcm/items/ds-tcm-5c/
-alt_url: /zh/projects/tcm/items/ds-tcm-5c/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Five-dimension deep TCM evaluation suite."
-seo_description: "Five-dimension deep TCM evaluation suite."
+description: "TCM-5CEval — TCM LLM dataset in Awesome-TCM-LLM. Five-dimension deep TCM evaluation suite."
+seo_description: "TCM-5CEval — TCM LLM dataset in Awesome-TCM-LLM. Five-dimension deep TCM evaluation suite."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

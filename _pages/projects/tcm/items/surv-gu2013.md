@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/surv-gu2013/
-title: "Gu & Chen 2013: 生物信息学遇见中医 | TCM AI"
+title: "Gu & Chen 2013: 生物信息学遇见中医 | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "surv-gu2013"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/surv-gu2013/
 redirect_from:
 - /tcm-en/items/surv-gu2013/
 - /pub/tcm/items/surv-gu2013/
-alt_url: /zh/projects/tcm/items/surv-gu2013/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Historical review of bioinformatics meeting TCM (omics and text mining)."
-seo_description: "Historical review of bioinformatics meeting TCM (omics and text mining)."
+description: "Gu & Chen 2013: 生物信息学遇见中医 — TCM LLM survey in Awesome-TCM-LLM. Historical review of bioinformatics meeting TCM (omics and text mining)."
+seo_description: "Gu & Chen 2013: 生物信息学遇见中医 — TCM LLM survey in Awesome-TCM-LLM. Historical review of bioinformatics meeting TCM (omics and text mining)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

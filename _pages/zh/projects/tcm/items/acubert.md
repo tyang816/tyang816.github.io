@@ -7,21 +7,22 @@ section: item
 tcm_item_id: "acubert"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/acubert/
-- /zh/tcm/items/acubert/
 alt_url: /projects/tcm/items/acubert/
+redirect_from:
+- /zh/tcm/items/acubert/
+- /tcm/items/acubert/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "针灸适应证知识库的经络实体识别与分类模型"
-seo_description: "针灸适应证知识库的经络实体识别与分类模型"
+description: "ACUBERT｜中医大模型（TCM LLM）资源。针灸适应证知识库的经络实体识别与分类模型"
+seo_description: "ACUBERT｜中医大模型（TCM LLM）资源。针灸适应证知识库的经络实体识别与分类模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "资源"
-- "model"
+- "plm"
+- "extract"
 - "kg"
 - "ACUBERT"
 tcm_type: "resource"

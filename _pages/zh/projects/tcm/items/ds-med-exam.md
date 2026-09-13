@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-med-exam"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-med-exam/
-- /zh/tcm/items/ds-med-exam/
 alt_url: /projects/tcm/items/ds-med-exam/
+redirect_from:
+- /zh/tcm/items/ds-med-exam/
+- /tcm/items/ds-med-exam/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "医疗大模型中文考试评估"
-seo_description: "医疗大模型中文考试评估"
+description: "Medical-LLMs-Chinese-Exam｜中医大模型（TCM LLM）数据集。医疗大模型中文考试评估"
+seo_description: "Medical-LLMs-Chinese-Exam｜中医大模型（TCM LLM）数据集。医疗大模型中文考试评估"
 keywords:
 - "中医大模型"
 - "TCM LLM"

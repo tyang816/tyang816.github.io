@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "survey-ai-tcm-diagnosis-jtcms"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/survey-ai-tcm-diagnosis-jtcms/
-- /zh/tcm/items/survey-ai-tcm-diagnosis-jtcms/
 alt_url: /projects/tcm/items/survey-ai-tcm-diagnosis-jtcms/
+redirect_from:
+- /zh/tcm/items/survey-ai-tcm-diagnosis-jtcms/
+- /tcm/items/survey-ai-tcm-diagnosis-jtcms/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
-seo_description: "综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
+description: "AI驱动中医诊断智能化综述（JTCMS）｜中医大模型（TCM LLM）综述。综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
+seo_description: "AI驱动中医诊断智能化综述（JTCMS）｜中医大模型（TCM LLM）综述。综述多模态融合与大模型在中医四诊智能化中的应用、挑战与展望（JTCMS正式发表）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

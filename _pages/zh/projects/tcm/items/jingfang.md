@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "jingfang"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/jingfang/
-- /zh/tcm/items/jingfang/
 alt_url: /projects/tcm/items/jingfang/
+redirect_from:
+- /zh/tcm/items/jingfang/
+- /tcm/items/jingfang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
-seo_description: "基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
+description: "经方 (Jingfang)｜中医大模型（TCM LLM）资源。基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
+seo_description: "经方 (Jingfang)｜中医大模型（TCM LLM）资源。基于LLM的中医多智能体诊疗系统，辨证精度提升124%"
 keywords:
 - "中医大模型"
 - "TCM LLM"

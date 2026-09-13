@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "surv-he2026-herbal-mech"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/surv-he2026-herbal-mech/
-- /zh/tcm/items/surv-he2026-herbal-mech/
 alt_url: /projects/tcm/items/surv-he2026-herbal-mech/
+redirect_from:
+- /zh/tcm/items/surv-he2026-herbal-mech/
+- /tcm/items/surv-he2026-herbal-mech/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "主张AI从相关分析范式走向重建证候辨证与方剂配伍生物逻辑的药材机制中心宽口径综述（Research 2026;9:1224）"
-seo_description: "主张AI从相关分析范式走向重建证候辨证与方剂配伍生物逻辑的药材机制中心宽口径综述（Research 2026;9:1224）"
+description: "AI in TCM: Unraveling Herbal Medicine's Mechanisms（Research）｜中医大模型（TCM LLM）综述。主张AI从相关分析范式走向重建证候辨证与方剂配伍生物逻辑的药材机制中心宽口径综述（Research 2026;9:1224）"
+seo_description: "AI in TCM: Unraveling Herbal Medicine's Mechanisms（Research）｜中医大模型（TCM LLM）综述。主张AI从相关分析范式走向重建证候辨证与方剂配伍生物逻辑的药材机制中心宽口径综述（Research 2026;9:1224）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

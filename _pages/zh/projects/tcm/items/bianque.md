@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "bianque"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/bianque/
-- /zh/tcm/items/bianque/
 alt_url: /projects/tcm/items/bianque/
+redirect_from:
+- /zh/tcm/items/bianque/
+- /tcm/items/bianque/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中文领域生活空间主动健康大模型"
-seo_description: "中文领域生活空间主动健康大模型"
+description: "扁鹊 (BianQue)｜中医大模型（TCM LLM）资源。中文领域生活空间主动健康大模型"
+seo_description: "扁鹊 (BianQue)｜中医大模型（TCM LLM）资源。中文领域生活空间主动健康大模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"

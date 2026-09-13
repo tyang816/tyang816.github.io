@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "tcm-std-rag-qa"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/tcm-std-rag-qa/
-- /zh/tcm/items/tcm-std-rag-qa/
 alt_url: /projects/tcm/items/tcm-std-rag-qa/
+redirect_from:
+- /zh/tcm/items/tcm-std-rag-qa/
+- /tcm/items/tcm-std-rag-qa/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "检索增强技术构建中医药标准知识问答系统的探索与实践"
-seo_description: "检索增强技术构建中医药标准知识问答系统的探索与实践"
+description: "中医药标准知识问答系统｜中医大模型（TCM LLM）资源。检索增强技术构建中医药标准知识问答系统的探索与实践"
+seo_description: "中医药标准知识问答系统｜中医大模型（TCM LLM）资源。检索增强技术构建中医药标准知识问答系统的探索与实践"
 keywords:
 - "中医大模型"
 - "TCM LLM"

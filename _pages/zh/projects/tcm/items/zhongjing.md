@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "zhongjing"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/zhongjing/
-- /zh/tcm/items/zhongjing/
 alt_url: /projects/tcm/items/zhongjing/
+redirect_from:
+- /zh/tcm/items/zhongjing/
+- /tcm/items/zhongjing/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
-seo_description: "专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
+description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
+seo_description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

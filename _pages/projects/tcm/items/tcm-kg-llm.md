@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/tcm-kg-llm/
-title: "LLM-driven TCM KG construction | TCM AI"
+title: "LLM-driven TCM KG construction | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "tcm-kg-llm"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/tcm-kg-llm/
 redirect_from:
 - /tcm-en/items/tcm-kg-llm/
 - /pub/tcm/items/tcm-kg-llm/
-alt_url: /zh/projects/tcm/items/tcm-kg-llm/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LLM-driven construction and application of a TCM knowledge graph."
-seo_description: "LLM-driven construction and application of a TCM knowledge graph."
+description: "LLM-driven TCM KG construction — TCM LLM resource in Awesome-TCM-LLM. LLM-driven construction and application of a TCM knowledge graph."
+seo_description: "LLM-driven TCM KG construction — TCM LLM resource in Awesome-TCM-LLM. LLM-driven construction and application of a TCM knowledge graph."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

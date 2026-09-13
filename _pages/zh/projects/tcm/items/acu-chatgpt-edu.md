@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "acu-chatgpt-edu"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/acu-chatgpt-edu/
-- /zh/tcm/items/acu-chatgpt-edu/
 alt_url: /projects/tcm/items/acu-chatgpt-edu/
+redirect_from:
+- /zh/tcm/items/acu-chatgpt-edu/
+- /tcm/items/acu-chatgpt-edu/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatGPT 作为针灸学习工具的对照研究"
-seo_description: "ChatGPT 作为针灸学习工具的对照研究"
+description: "ChatGPT 针灸教育研究｜中医大模型（TCM LLM）资源。ChatGPT 作为针灸学习工具的对照研究"
+seo_description: "ChatGPT 针灸教育研究｜中医大模型（TCM LLM）资源。ChatGPT 作为针灸学习工具的对照研究"
 keywords:
 - "中医大模型"
 - "TCM LLM"

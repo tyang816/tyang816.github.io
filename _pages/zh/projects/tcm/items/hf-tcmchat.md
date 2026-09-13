@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hf-tcmchat"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hf-tcmchat/
-- /zh/tcm/items/hf-tcmchat/
 alt_url: /projects/tcm/items/hf-tcmchat/
+redirect_from:
+- /zh/tcm/items/hf-tcmchat/
+- /tcm/items/hf-tcmchat/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMChat"
-seo_description: "TCMChat"
+description: "TCMChat｜中医大模型（TCM LLM）模型。TCMChat"
+seo_description: "TCMChat｜中医大模型（TCM LLM）模型。TCMChat"
 keywords:
 - "中医大模型"
 - "TCM LLM"

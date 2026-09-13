@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "ds-mtcmb"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/ds-mtcmb/
-- /zh/tcm/items/ds-mtcmb/
 alt_url: /projects/tcm/items/ds-mtcmb/
+redirect_from:
+- /zh/tcm/items/ds-mtcmb/
+- /tcm/items/ds-mtcmb/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
-seo_description: "中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
+description: "MTCMB｜中医大模型（TCM LLM）数据集。中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
+seo_description: "MTCMB｜中医大模型（TCM LLM）数据集。中医多任务评测基准 MTCMB 数据，覆盖知识、推理与安全维度，12 子集约 7100 样本（arXiv 2025）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

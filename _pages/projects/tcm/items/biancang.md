@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/biancang/
-title: "BianCang | TCM AI"
+title: "BianCang | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "biancang"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/biancang/
 redirect_from:
 - /tcm-en/items/biancang/
 - /pub/tcm/items/biancang/
-alt_url: /zh/projects/tcm/items/biancang/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
-seo_description: "BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
+description: "BianCang — TCM LLM resource in Awesome-TCM-LLM. BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
+seo_description: "BianCang — TCM LLM resource in Awesome-TCM-LLM. BianCang TCM LLM series (IEEE JBHI); 14B open-weight release in Dec 2025."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

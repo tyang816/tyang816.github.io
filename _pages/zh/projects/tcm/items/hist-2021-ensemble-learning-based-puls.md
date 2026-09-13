@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2021-ensemble-learning-based-puls"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2021-ensemble-learning-based-puls/
-- /zh/tcm/items/hist-2021-ensemble-learning-based-puls/
 alt_url: /projects/tcm/items/hist-2021-ensemble-learning-based-puls/
+redirect_from:
+- /zh/tcm/items/hist-2021-ensemble-learning-based-puls/
+- /tcm/items/hist-2021-ensemble-learning-based-puls/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "SVM（时/频域结构特征）与 DCNN 决策级融合的脉象识别。"
-seo_description: "SVM（时/频域结构特征）与 DCNN 决策级融合的脉象识别。"
+description: "Ensemble Learning-Based Pulse Signal Recognition: Classification Model Development Study｜中医大模型（TCM LLM）资源。SVM（时/频域结构特征）与 DCNN 决策级融合的脉象识别。"
+seo_description: "Ensemble Learning-Based Pulse Signal Recognition: Classification Model Development Study｜中医大模型（TCM LLM）资源。SVM（时/频域结构特征）与 DCNN 决策级融合的脉象识别。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

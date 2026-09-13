@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2025-mathematical-modeling-of-chi"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2025-mathematical-modeling-of-chi/
-- /zh/tcm/items/hist-2025-mathematical-modeling-of-chi/
 alt_url: /projects/tcm/items/hist-2025-mathematical-modeling-of-chi/
+redirect_from:
+- /zh/tcm/items/hist-2025-mathematical-modeling-of-chi/
+- /tcm/items/hist-2025-mathematical-modeling-of-chi/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "复值五智能体网络统一阴阳互补与五行反馈的线性代数表述。"
-seo_description: "复值五智能体网络统一阴阳互补与五行反馈的线性代数表述。"
+description: "Mathematical modeling of Chinese medicine by complex-valued five-agent network｜中医大模型（TCM LLM）资源。复值五智能体网络统一阴阳互补与五行反馈的线性代数表述。"
+seo_description: "Mathematical modeling of Chinese medicine by complex-valued five-agent network｜中医大模型（TCM LLM）资源。复值五智能体网络统一阴阳互补与五行反馈的线性代数表述。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

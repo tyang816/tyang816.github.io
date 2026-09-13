@@ -7,15 +7,15 @@ section: item
 tcm_item_id: "hist-2014-a-disturbance-rejection-fram"
 tcm_generated: true
 lang: zh-CN
-redirect_from:
-- /tcm/items/hist-2014-a-disturbance-rejection-fram/
-- /zh/tcm/items/hist-2014-a-disturbance-rejection-fram/
 alt_url: /projects/tcm/items/hist-2014-a-disturbance-rejection-fram/
+redirect_from:
+- /zh/tcm/items/hist-2014-a-disturbance-rejection-fram/
+- /tcm/items/hist-2014-a-disturbance-rejection-fram/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "用工程控制论“抗扰”隐喻解释五行调控与治法逻辑。"
-seo_description: "用工程控制论“抗扰”隐喻解释五行调控与治法逻辑。"
+description: "A disturbance rejection framework for the study of traditional Chinese medicine｜中医大模型（TCM LLM）资源。用工程控制论“抗扰”隐喻解释五行调控与治法逻辑。"
+seo_description: "A disturbance rejection framework for the study of traditional Chinese medicine｜中医大模型（TCM LLM）资源。用工程控制论“抗扰”隐喻解释五行调控与治法逻辑。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

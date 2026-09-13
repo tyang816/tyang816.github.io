@@ -1,21 +1,21 @@
 ---
 permalink: /projects/tcm/items/ai-tcm-translation-limits/
-title: "Beyond the Poetic Bard（中医AI翻译评论） | TCM AI"
+title: "Beyond the Poetic Bard（中医AI翻译评论） | TCM LLM"
 layout: default
 project: tcm
 section: item
 tcm_item_id: "ai-tcm-translation-limits"
 tcm_generated: true
 lang: en
+alt_url: /zh/projects/tcm/items/ai-tcm-translation-limits/
 redirect_from:
 - /tcm-en/items/ai-tcm-translation-limits/
 - /pub/tcm/items/ai-tcm-translation-limits/
-alt_url: /zh/projects/tcm/items/ai-tcm-translation-limits/
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative-AI translation of TCM texts (Translation Review)."
-seo_description: "Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative-AI translation of TCM texts (Translation Review)."
+description: "Beyond the Poetic Bard（中医AI翻译评论） — TCM LLM resource in Awesome-TCM-LLM. Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative…"
+seo_description: "Beyond the Poetic Bard（中医AI翻译评论） — TCM LLM resource in Awesome-TCM-LLM. Beyond the Poetic Bard: a perspective on accuracy, epistemology, and medical-context limits of generative…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
