@@ -6,7 +6,7 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {% assign tcm_lastmod = site.data.tcm_catalog.updated_at | default: site.time | date: "%Y-%m-%d" %}
-{% assign hubs = "/projects/tcm/|/zh/projects/tcm/,/projects/tcm/models/|/zh/projects/tcm/models/,/projects/tcm/datasets/|/zh/projects/tcm/datasets/,/projects/tcm/surveys/|/zh/projects/tcm/surveys/" | split: "," %}
+{% assign hubs = "/projects/tcm/|/zh/projects/tcm/,/projects/tcm/models/|/zh/projects/tcm/models/,/projects/tcm/datasets/|/zh/projects/tcm/datasets/,/projects/tcm/surveys/|/zh/projects/tcm/surveys/,/projects/tcm/patents/|/zh/projects/tcm/patents/" | split: "," %}
 {% for pair in hubs %}
   {% assign parts = pair | split: "|" %}
   {% assign en_path = parts[0] %}

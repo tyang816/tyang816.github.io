@@ -11,12 +11,14 @@
   {% assign filter_type = "model_hf" %}
 {% elsif landing == "surveys" %}
   {% assign filter_type = "survey" %}
+{% elsif landing == "patents" %}
+  {% assign filter_type = "patent" %}
 {% else %}
   {% assign filter_type = "dataset" %}
 {% endif %}
 
 {% if is_zh %}
-  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,patent:专利,benchmark:评测" | split: "," %}
   {% assign hub_url = "/zh/projects/tcm/" %}
   {% assign back_label = "返回中医大模型目录" %}
   {% if landing == "models" %}
@@ -27,13 +29,17 @@
     {% assign kicker = "中医大模型 · 综述" %}
     {% assign h1 = "中医大模型综述" %}
     {% assign lede = "中医大模型（TCM LLM）相关综述与展望：知识组织、辅助诊疗、多模态舌脉面诊、智能体与评测体系。" %}
+  {% elsif landing == "patents" %}
+    {% assign kicker = "中医大模型 · 专利" %}
+    {% assign h1 = "中医大模型专利" %}
+    {% assign lede = "中医大模型、知识图谱、RAG、智能问诊与方剂推荐相关发明专利（含公开与授权），不是中药组方专利堆砌。" %}
   {% else %}
     {% assign kicker = "中医大模型 · 数据集" %}
     {% assign h1 = "中医大模型数据集" %}
     {% assign lede = "面向中医大模型训练与评测的公开数据集：指令微调、医案问答、方剂、古籍语料与基准评测集。" %}
   {% endif %}
 {% else %}
-  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,patent:patent,benchmark:benchmark" | split: "," %}
   {% assign hub_url = "/projects/tcm/" %}
   {% assign back_label = "Back to TCM LLM catalog" %}
   {% if landing == "models" %}
@@ -44,6 +50,10 @@
     {% assign kicker = "TCM LLM · Surveys" %}
     {% assign h1 = "TCM LLM surveys" %}
     {% assign lede = "Surveys of Traditional Chinese Medicine large language models: knowledge organization, assisted diagnosis, multimodal four examinations, agents, and evaluation." %}
+  {% elsif landing == "patents" %}
+    {% assign kicker = "TCM LLM · Patents" %}
+    {% assign h1 = "TCM LLM patents" %}
+    {% assign lede = "Invention patents on TCM LLMs, knowledge graphs, RAG, intelligent inquiry, and prescription recommendation—not a dump of herbal-formula patents." %}
   {% else %}
     {% assign kicker = "TCM LLM · Datasets" %}
     {% assign h1 = "TCM LLM datasets" %}

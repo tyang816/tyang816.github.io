@@ -10,7 +10,7 @@
 {% endfor %}
 
 {% if is_zh %}
-  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,patent:专利,benchmark:评测" | split: "," %}
   {% assign back_label = "返回资源目录" %}
   {% assign hub_url = "/zh/projects/tcm/" %}
   {% assign links_heading = "相关链接" %}
@@ -21,7 +21,7 @@
   {% assign tags_label = "标签" %}
   {% assign missing = "未找到该条目，可能已被移除。请返回目录。" %}
 {% else %}
-  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,patent:patent,benchmark:benchmark" | split: "," %}
   {% assign back_label = "Back to catalog" %}
   {% assign hub_url = "/projects/tcm/" %}
   {% assign links_heading = "Links" %}
@@ -154,9 +154,11 @@
       {% if is_zh %}
       <li><a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a></li>
       <li><a href="{{ '/zh/projects/tcm/datasets/' | relative_url }}">中医大模型数据集</a></li>
+      <li><a href="{{ '/zh/projects/tcm/patents/' | relative_url }}">中医大模型专利</a></li>
       {% else %}
       <li><a href="{{ '/projects/tcm/models/' | relative_url }}">Open TCM LLMs</a></li>
       <li><a href="{{ '/projects/tcm/datasets/' | relative_url }}">TCM LLM datasets</a></li>
+      <li><a href="{{ '/projects/tcm/patents/' | relative_url }}">TCM LLM patents</a></li>
       {% endif %}
       <li>
         {% if is_zh %}
@@ -174,6 +176,7 @@
   {% elsif type_key == "dataset" or type_key == "benchmark" %}{% assign ld_type = "Dataset" %}
   {% elsif type_key == "model_hf" %}{% assign ld_type = "SoftwareApplication" %}
   {% elsif type_key == "survey" or type_key == "resource" %}{% assign ld_type = "ScholarlyArticle" %}
+  {% elsif type_key == "patent" %}{% assign ld_type = "Patent" %}
   {% endif %}
   {% assign ld_date = item.verified_at | default: item.date %}
   {% if item.date %}

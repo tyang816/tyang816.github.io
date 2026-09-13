@@ -13,8 +13,8 @@
   {% assign hide_general_label = "隐藏通医" %}
   {% assign empty_msg = "没有匹配的资源。" %}
   {% assign blurb_all_title = "全部资源" %}
-  {% assign blurb_all = "中医大模型相关新闻、论文、综述、数据集与开源权重，按类型与年份筛选。" %}
-  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,benchmark:评测" | split: "," %}
+  {% assign blurb_all = "中医大模型相关新闻、论文、综述、数据集、开源权重与专利，按类型与年份筛选。" %}
+  {% assign type_labels = "news:新闻,resource:资源,survey:综述,dataset:数据集,model_hf:模型,tool:工具,kg:知识图谱,product:产品,patent:专利,benchmark:评测" | split: "," %}
 {% else %}
   {% assign all_label = "All" %}
   {% assign type_aria = "Resource type" %}
@@ -26,8 +26,8 @@
   {% assign hide_general_label = "Hide general-medical" %}
   {% assign empty_msg = "No matching resources." %}
   {% assign blurb_all_title = "All resources" %}
-  {% assign blurb_all = "TCM LLM news, papers, surveys, datasets, and open weights — filter by type and year." %}
-  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,benchmark:benchmark" | split: "," %}
+  {% assign blurb_all = "TCM LLM news, papers, surveys, datasets, open weights, and patents — filter by type and year." %}
+  {% assign type_labels = "news:news,resource:resource,survey:survey,dataset:dataset,model_hf:model,tool:tool,kg:kg,product:product,patent:patent,benchmark:benchmark" | split: "," %}
 {% endif %}
 
 {% assign catalog = site.data.tcm_catalog %}
@@ -46,7 +46,7 @@
 {% assign year_list = year_list | uniq | sort | reverse %}
 {% assign type_present = type_present | uniq %}
 
-{% assign type_order = "news,resource,survey,dataset,model_hf,tool,kg,product,benchmark" | split: "," %}
+{% assign type_order = "news,resource,survey,dataset,model_hf,tool,kg,product,patent,benchmark" | split: "," %}
 
 <div class="tcm-hub project-hub" data-tcm-hub data-locale="{% if is_zh %}zh{% else %}en{% endif %}">
   <div class="hub-title-row">
@@ -58,17 +58,19 @@
 {% assign n_model = 0 %}
 {% assign n_dataset = 0 %}
 {% assign n_survey = 0 %}
+{% assign n_patent = 0 %}
 {% for it in raw_items %}
   {% if it.type == "model_hf" %}{% assign n_model = n_model | plus: 1 %}{% endif %}
   {% if it.type == "dataset" %}{% assign n_dataset = n_dataset | plus: 1 %}{% endif %}
   {% if it.type == "survey" %}{% assign n_survey = n_survey | plus: 1 %}{% endif %}
+  {% if it.type == "patent" %}{% assign n_patent = n_patent | plus: 1 %}{% endif %}
 {% endfor %}
 {% if updated_at %}
   <p class="tcm-updated notes-stats" id="tcm-updated">{{ updated_prefix }}{{ updated_at }}
     {% if is_zh %}
-    · 共 {{ n_all }} 条（开源模型 {{ n_model }} · 数据集 {{ n_dataset }} · 综述 {{ n_survey }}）
+    · 共 {{ n_all }} 条（开源模型 {{ n_model }} · 数据集 {{ n_dataset }} · 综述 {{ n_survey }} · 专利 {{ n_patent }}）
     {% else %}
-    · {{ n_all }} entries ({{ n_model }} open models · {{ n_dataset }} datasets · {{ n_survey }} surveys)
+    · {{ n_all }} entries ({{ n_model }} open models · {{ n_dataset }} datasets · {{ n_survey }} surveys · {{ n_patent }} patents)
     {% endif %}
   </p>
   {% endif %}

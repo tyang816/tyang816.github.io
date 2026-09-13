@@ -33,6 +33,7 @@ TYPE_LABELS_ZH = {
     "tool": "工具",
     "kg": "知识图谱",
     "product": "产品",
+    "patent": "专利",
     "benchmark": "评测",
 }
 
@@ -45,6 +46,7 @@ TYPE_LABELS_EN = {
     "tool": "tool",
     "kg": "kg",
     "product": "product",
+    "patent": "patent",
     "benchmark": "benchmark",
 }
 
@@ -76,6 +78,7 @@ LINK_LABEL_EN = {
     "PubMed": "PubMed",
     "官网": "Website",
     "新闻稿": "Press release",
+    "专利": "Patent",
 }
 
 

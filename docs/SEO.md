@@ -16,6 +16,7 @@
 | 开源中医大模型 | `https://tyang816.github.io/zh/projects/tcm/models/` |
 | 中医大模型数据集 | `https://tyang816.github.io/zh/projects/tcm/datasets/` |
 | 中医大模型综述 | `https://tyang816.github.io/zh/projects/tcm/surveys/` |
+| 中医大模型专利 | `https://tyang816.github.io/zh/projects/tcm/patents/` |
 | 全站 sitemap | `https://tyang816.github.io/sitemap.xml` |
 | 双语优先 sitemap | `https://tyang816.github.io/sitemap_i18n.xml` |
 | TCM 专用 sitemap | `https://tyang816.github.io/sitemap_tcm.xml` |
@@ -62,7 +63,7 @@ curl -sL https://tyang816.github.io/projects/venusx/ | rg 'og:image|SoftwareSour
    - `sitemap.xml`
    - `sitemap_i18n.xml`（优先看这个）
    - `sitemap_tcm.xml`（中医大模型目录 + 全部条目）
-3. **请求编入索引**：对「重点申请索引」中的 URL 逐条「网址检查 → 请求编入索引」，并加上 `/zh/projects/tcm/models/`、`/datasets/`、`/surveys/`
+3. **请求编入索引**：对「重点申请索引」中的 URL 逐条「网址检查 → 请求编入索引」，并加上 `/zh/projects/tcm/models/`、`/datasets/`、`/surveys/`、`/patents/`
 4. 数日后在「页面」查看是否已收录；关注是否仍抓到旧 `/tcm/`、`/tcm-en/`（应 301/redirect 到新地址）
 
 ---
@@ -170,7 +171,7 @@ TCM 汇聚页数据来自本仓库 `_data/tcm_catalog.json`（由 `scripts/sync_
 ### 上线后在 GSC 做的
 
 1. 提交 `sitemap_tcm.xml`
-2. 对 `/zh/projects/tcm/`、`/zh/projects/tcm/models/`、`/datasets/`、`/surveys/` 请求编入索引
+2. 对 `/zh/projects/tcm/`、`/zh/projects/tcm/models/`、`/datasets/`、`/surveys/`、`/patents/` 请求编入索引
 3. 用「[中医大模型 site:tyang816.github.io](https://www.google.com/search?q=%E4%B8%AD%E5%8C%BB%E5%A4%A7%E6%A8%A1%E5%9E%8B+site%3Atyang816.github.io)」确认已收录
 
 ### 让 Gemini / ChatGPT 愿意点名

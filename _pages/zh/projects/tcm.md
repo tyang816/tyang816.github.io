@@ -1,7 +1,7 @@
 ---
 permalink: /zh/projects/tcm/
 title: 中医大模型资源 | TCM AI
-seo_title: 中医大模型：开源模型、论文、数据集与评测 | Awesome-TCM-LLM
+seo_title: 中医大模型：开源模型、论文、数据集、评测与专利 | Awesome-TCM-LLM
 layout: default
 project: tcm
 section: overview
@@ -17,8 +17,8 @@ redirect_from:
 - /zh/tcm/
 - /zh/tcm/items/
 - /zh/project/tcm/
-description: 中医大模型（TCM LLM）开源资源大全，Awesome-TCM-LLM 网页版。谭扬维护，持续收录扁鹊、华佗GPT、神农、仲景、ShizhenGPT 等中医药大语言模型、论文、综述、评测基准与数据集。
-seo_description: 中医大模型（TCM LLM）开源资源大全，Awesome-TCM-LLM 网页版。收录扁鹊、华佗GPT、神农、仲景、ShizhenGPT 等中医药大语言模型，以及论文、综述、评测与数据集，持续更新。
+description: 中医大模型（TCM LLM）开源资源大全，Awesome-TCM-LLM 网页版。谭扬维护，持续收录扁鹊、华佗GPT、神农、仲景、ShizhenGPT 等中医药大语言模型、论文、综述、评测基准、数据集与专利。
+seo_description: 中医大模型（TCM LLM）开源资源大全，Awesome-TCM-LLM 网页版。收录扁鹊、华佗GPT、神农、仲景、ShizhenGPT 等中医药大语言模型，以及论文、综述、评测、数据集与专利，持续更新。
 keywords:
 - 中医大模型
 - 中医药大模型
@@ -29,6 +29,7 @@ keywords:
 - Traditional Chinese Medicine
 - 中医数据集
 - 中医大模型评测
+- 中医大模型专利
 - Awesome-TCM-LLM
 ---
 
@@ -36,7 +37,7 @@ keywords:
   <p class="project-kicker">Awesome-TCM-LLM · 开源资源目录</p>
   <h1>中医大模型</h1>
   <p class="project-lede">
-    中医大模型（TCM LLM）开源资源大全：有哪些模型、论文、综述、评测基准与数据集，均可在此检索。
+    中医大模型（TCM LLM）开源资源大全：有哪些模型、论文、综述、评测基准、数据集与专利，均可在此检索。
     本页是 <a href="https://github.com/tyang816/Awesome-TCM-LLM">Awesome-TCM-LLM</a> 的网页版，由谭扬维护，与 GitHub README 共用同一目录。
   </p>
   <p class="project-authors">
@@ -62,7 +63,7 @@ keywords:
     自 2023 年扁鹊（BianQue）、华佗GPT、神农大模型等首批中医药大模型发布以来，中医 AI 大模型快速发展，
     目前已覆盖智能问诊、辅助诊疗、中医教育、执业考试评测、知识图谱构建等场景，并出现了
     ShizhenGPT 等支持舌象、面象的多模态中医大模型。本页持续追踪该领域的模型发布、学术论文、
-    评测基准与开放数据集。
+    评测基准、开放数据集与相关专利。
   </p>
 </section>
 
@@ -103,6 +104,7 @@ keywords:
     <li><a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a>：公开权重与代表性系统</li>
     <li><a href="{{ '/zh/projects/tcm/datasets/' | relative_url }}">中医大模型数据集</a>：指令数据、医案、评测集</li>
     <li><a href="{{ '/zh/projects/tcm/surveys/' | relative_url }}">中医大模型综述</a>：诊疗、多模态、智能体与评测</li>
+    <li><a href="{{ '/zh/projects/tcm/patents/' | relative_url }}">中医大模型专利</a>：问诊、方剂、知识图谱与 RAG</li>
   </ul>
 </section>
 
@@ -113,6 +115,7 @@ keywords:
     <li>开源权重与多模态中医大模型系统</li>
     <li>中医 / 中医药相关评测基准与综述</li>
     <li>预训练 / 微调数据集与知识资源</li>
+    <li>中医大模型、知识图谱与智能问诊相关发明专利</li>
   </ul>
 </section>
 
@@ -140,7 +143,7 @@ keywords:
   </p>
   <h3>这个中医大模型资源列表多久更新一次？</h3>
   <p>
-    本目录与 GitHub 开源项目 Awesome-TCM-LLM 同源维护，新发布的中医大模型、论文、评测与数据集会持续收录，
+    本目录与 GitHub 开源项目 Awesome-TCM-LLM 同源维护，新发布的中医大模型、论文、评测、数据集与专利会持续收录，
     页面顶部标注了最近更新时间。
   </p>
   <h3>开源的中医大模型有哪些？</h3>
@@ -149,16 +152,22 @@ keywords:
     另有扁鹊、华佗GPT、仲景、岐伯、ShizhenGPT、白泽、悬壶等论文或产品向系统。
     见<a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a>专题页。
   </p>
+  <h3>目录里有中医大模型相关专利吗？</h3>
+  <p>
+    有。收录的是中医大模型、知识图谱、RAG、智能问诊与方剂推荐相关发明专利（含公开与授权），
+    不是中药组方专利堆砌。完整列表见<a href="{{ '/zh/projects/tcm/patents/' | relative_url }}">中医大模型专利</a>专题页，
+    也可在本页目录中按「专利」类型筛选。
+  </p>
   <h3>Awesome-TCM-LLM 是什么？</h3>
   <p>
     Awesome-TCM-LLM 是谭扬维护的中医大模型开源资源列表，GitHub 仓库与本页同源：
-    模型、论文、综述、数据集和新闻统一收录，接受社区 Issue 投稿。
+    模型、论文、综述、数据集、专利和新闻统一收录，接受社区 Issue 投稿。
   </p>
   <h3>如何提交新的中医大模型资源？</h3>
   <p>
     欢迎通过
     <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml" target="_blank" rel="noopener noreferrer">GitHub Issue</a>
-    提交新的模型、论文、数据集或新闻，维护者审核后会同步到本页与 GitHub README。
+    提交新的模型、论文、数据集、专利或新闻，维护者审核后会同步到本页与 GitHub README。
   </p>
 </section>
 
@@ -224,7 +233,7 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
       "name": "这个中医大模型资源列表多久更新一次？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "本目录与 GitHub 开源项目 Awesome-TCM-LLM 同源维护，新发布的中医大模型、论文、评测与数据集会持续收录。"
+        "text": "本目录与 GitHub 开源项目 Awesome-TCM-LLM 同源维护，新发布的中医大模型、论文、评测、数据集与专利会持续收录。"
       }
     },
     {
@@ -237,10 +246,18 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
     },
     {
       "@type": "Question",
+      "name": "目录里有中医大模型相关专利吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。收录的是中医大模型、知识图谱、RAG、智能问诊与方剂推荐相关发明专利（含公开与授权），不是中药组方专利堆砌。完整列表见中医大模型专利专题页。"
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Awesome-TCM-LLM 是什么？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Awesome-TCM-LLM 是谭扬维护的中医大模型开源资源列表，GitHub 与网页目录同源，收录模型、论文、综述、数据集和新闻。"
+        "text": "Awesome-TCM-LLM 是谭扬维护的中医大模型开源资源列表，GitHub 与网页目录同源，收录模型、论文、综述、数据集、专利和新闻。"
       }
     },
     {
@@ -248,7 +265,7 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
       "name": "如何提交新的中医大模型资源？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "可通过 GitHub 仓库 Awesome-TCM-LLM 的 Issue 模板提交新的模型、论文、数据集或新闻，审核后会同步到资源目录与 README。"
+        "text": "可通过 GitHub 仓库 Awesome-TCM-LLM 的 Issue 模板提交新的模型、论文、数据集、专利或新闻，审核后会同步到资源目录与 README。"
       }
     }
   ]

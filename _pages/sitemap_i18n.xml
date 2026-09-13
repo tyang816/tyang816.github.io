@@ -25,8 +25,9 @@ layout: null
 {% capture pair_tcm_models %}/projects/tcm/models/|/zh/projects/tcm/models/|{{ tcm_lastmod }}{% endcapture %}
 {% capture pair_tcm_datasets %}/projects/tcm/datasets/|/zh/projects/tcm/datasets/|{{ tcm_lastmod }}{% endcapture %}
 {% capture pair_tcm_surveys %}/projects/tcm/surveys/|/zh/projects/tcm/surveys/|{{ tcm_lastmod }}{% endcapture %}
+{% capture pair_tcm_patents %}/projects/tcm/patents/|/zh/projects/tcm/patents/|{{ tcm_lastmod }}{% endcapture %}
 {% assign pairs = pairs | push: pair_home | push: pair_notes | push: pair_timeline | push: pair_project %}
-{% assign pairs = pairs | push: pair_tcm_models | push: pair_tcm_datasets | push: pair_tcm_surveys %}
+{% assign pairs = pairs | push: pair_tcm_models | push: pair_tcm_datasets | push: pair_tcm_surveys | push: pair_tcm_patents %}
 {% comment %} Note-category landing pages (/notes/bi/ ↔ /zh/notes/bi/ etc.) {% endcomment %}
 {% for c in site.data.note_categories %}
   {% assign cslug = c.id | downcase %}
@@ -44,7 +45,7 @@ layout: null
   {% assign en_path = parts[0] %}
   {% assign zh_path = parts[1] %}
   {% assign lastmod = parts[2] %}
-  {% if en_path == '/projects/tcm/' or en_path == '/projects/tcm/models/' or en_path == '/projects/tcm/datasets/' or en_path == '/projects/tcm/surveys/' %}
+  {% if en_path == '/projects/tcm/' or en_path == '/projects/tcm/models/' or en_path == '/projects/tcm/datasets/' or en_path == '/projects/tcm/surveys/' or en_path == '/projects/tcm/patents/' %}
     {% assign lastmod = tcm_lastmod %}
   {% endif %}
   <url>
