@@ -173,6 +173,7 @@
            data-search="{{ search_blob | strip_newlines | strip | escape }}">
           <div class="venue">{{ meta_bits }}</div>
           <h2>{{ card_title }}</h2>
+          {% include tcm-card-media.html type=type_key mark=card_title %}
           {% if card_summary != "" and card_summary != card_title %}
           <p>{{ card_summary }}</p>
           {% endif %}
