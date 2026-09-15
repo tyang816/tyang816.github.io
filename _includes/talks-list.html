@@ -1,0 +1,17 @@
+{% assign talks_lang = include.lang | default: page.lang | default: site.lang | default: "en" %}
+{% assign is_zh = false %}
+{% if talks_lang == "zh-CN" or talks_lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% for item in site.data.talks.items %}
+{% if is_zh %}
+{% assign talk_title = item.title_zh | default: item.title_en %}
+{% assign talk_event = item.event_zh | default: item.event_en %}
+{% assign talk_place = item.location_zh %}
+{% assign talk_sep = "，" %}
+{% else %}
+{% assign talk_title = item.title_en | default: item.title_zh %}
+{% assign talk_event = item.event_en | default: item.event_zh %}
+{% assign talk_place = item.location_en %}
+{% assign talk_sep = ", " %}
+{% endif %}
+- *{{ item.date }}* &nbsp;<a href="{{ item.url }}">{{ talk_title }}</a> · {{ talk_event }}{{ talk_sep }}{{ talk_place }}
+{% endfor %}

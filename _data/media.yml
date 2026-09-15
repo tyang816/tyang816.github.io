@@ -61,14 +61,6 @@ items:
     outlet_zh: "中国经济周刊"
     outlet_en: "China Economic Weekly"
 
-  - date: "2025.12"
-    role: speech
-    title_zh: "人工智能：昨天•今天•明天 ——交大附属黄浦实验中学举办人工智能科普讲座"
-    title_en: "Artificial Intelligence: Yesterday, Today, Tomorrow — AI Outreach Lecture at SJTU Affiliated Huangpu Experimental Middle School"
-    url: "https://mp.weixin.qq.com/s/847yJz4Wu2f2u4xbDdWZBg"
-    outlet_zh: "交大附属黄浦实验中学"
-    outlet_en: "SJTU Affiliated Huangpu Experimental Middle School"
-
   - date: "2025.06"
     role: speech
     title_zh: "信息学院 2025 届毕业典礼研究生代表发言"

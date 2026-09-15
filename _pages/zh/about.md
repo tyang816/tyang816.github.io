@@ -71,6 +71,13 @@ author_profile: true
 - *2017*，*优秀项目*，重庆市青年创新人才培育雏鹰计划，项目负责人
 - *2017/2016*，*一等奖/二等奖*，中国 FIRST Tech Challenge，队长
 
+<span class='anchor' id='-talks'></span>
+
+## 🎤 报告
+{:.home-section}
+
+{% include talks-list.html lang="zh-CN" %}
+
 <span class='anchor' id='-media-coverage'></span>
 
 ## 📰 媒体报道

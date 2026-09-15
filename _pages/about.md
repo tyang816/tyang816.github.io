@@ -90,6 +90,13 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 - *2017*, *Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
 - *2017/2016*, *First/Second Prize*, China FIRST Tech Challenge, *Team Leader*.
 
+<span class='anchor' id='-talks'></span>
+
+## 🎤 Talks
+{:.home-section}
+
+{% include talks-list.html lang="en" %}
+
 <span class='anchor' id='-media-coverage'></span>
 
 ## 📰 Media
