@@ -34,6 +34,7 @@ author_profile: true
 ## 🔥 新闻
 {:.home-section}
 - *2026.07*：&nbsp;🎉 [MatwingsVenus（晓鹜）](https://matvenus.com/) 获 **WAIC 2026 镇馆之宝**，见 [报道](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A)。
+- *2026.06*：&nbsp;🎉 [VenusFactory]({{ '/zh/projects/venusfactory/' | relative_url }}) 上线 [国家研究生智慧教育平台](https://graduate.smartedu.cn/ai-for-science)（AI for Science）。
 - *2026.04*：&nbsp;🎉 [VenusFactory2]({{ '/zh/projects/venusfactory2/' | relative_url }}) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
 - *2026.01*：&nbsp;🎉 [VenusX]({{ '/zh/projects/venusx/' | relative_url }}) 被 [ICLR 2026](https://openreview.net/forum?id=zcmL592XRG) 接收，榜单见 [VenusX Leaderboard]({{ '/projects/venusx/leaderboard/' | relative_url }})。
 - *2025.10*：&nbsp;🎉 [Awesome-TCM-LLM](https://github.com/tyang816/Awesome-TCM-LLM) 汇总中医大模型新闻与开源资源，见 [开源项目 · 中医大模型]({{ '/zh/projects/tcm/' | relative_url }})。
