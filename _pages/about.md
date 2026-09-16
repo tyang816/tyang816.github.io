@@ -73,22 +73,20 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 - *2026*, ***WAIC 2026 National Treasure***, *MatwingsVenus (晓鹜)*, *Project Leader*, Ph.D.
 - *2026*, ***Shanghai Innovation Institute Student Project (1,250,000 RMB)***, *Project Leader*, Ph.D.
 - *2025*, ***Young Science and Technology Talent Development Program (40,000 RMB)***, CAST, Ph.D.
-- *2025*, College Graduate Excellence Award of Shanghai, M.S.
-- *2025*, Huanchuang Scholarship (10 in university), M.S.
+- *2025/2022*, College Graduate Excellence Award of Shanghai, M.S./B.S.
+- *2025*, Huanchuang Corporate Scholarship (5,000 RMB, 10 in university), M.S.
 - *2024*, ***Annual Student***, East China University of Science and Technology.
-- *2024*, ***National Scholarship***, M.S.
+- *2024/2020*, ***Graduate/Undergraduate National Scholarship (20,000 / 8,000 RMB)***, M.S./B.S.
 - *2023*, *Bronze Award*, National "Challenge Cup" Competition.
 - *2022*, *Silver Award*, Shanghai "Internet+" Competition.
-- *2022*, College Graduate Excellence Award of Shanghai, B.S.
-- *2022*, Arkema Scholarship (3 in university), B.S.
+- *2022*, Arkema Bachelor Scholarship (6,000 RMB, 3 in university), B.S.
 - *2021/2020*, *Second/Third Prize*, National College Students Computer Design Competition.
-- *2021/2020*, ***Special Scholarship***, East China University of Science and Technology.
-- *2021*, National Undergraduate Innovation Training Program, *Project Leader*.
-- *2020*, ***National Scholarship***, B.S.
-- *2019*, Lingma Scholarship (4 in major), B.S.
-- *2018*, District Mayor Award for Science and Technology Innovation of Shapingba, Chongqing.
+- *2021/2020*, ***Special Prize Scholarship***, East China University of Science and Technology.
+- *2021*, National Undergraduate Innovation Training Program (20,000 RMB), *Project Leader*.
+- *2019*, Lingma Corporate Scholarship (4,000 RMB, 4 in major), B.S.
+- *2018*, Science and Technology Innovation District Mayor Award of Shapingba, Chongqing.
 - *2017*, ***Third Prize at World Championship***, American Houston FIRST Tech Challenge, *Team Leader*.
-- *2017*, *Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program, *Project Leader*.
+- *2017*, *Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program (40,000 RMB), *Project Leader*.
 - *2017/2016*, *First/Second Prize*, China FIRST Tech Challenge, *Team Leader*.
 
 <span class='anchor' id='-talks'></span>
