@@ -2,15 +2,12 @@
 {% assign is_zh = false %}
 {% if media_lang == "zh-CN" or media_lang == "zh" %}{% assign is_zh = true %}{% endif %}
 {% for item in site.data.media.items %}
-{% assign role_meta = site.data.media.roles[item.role] %}
 {% if is_zh %}
 {% assign media_title = item.title_zh | default: item.title_en %}
-{% assign media_role = role_meta.zh %}
 {% assign media_outlet = item.outlet_zh | default: item.outlet_en %}
 {% else %}
 {% assign media_title = item.title_en | default: item.title_zh %}
-{% assign media_role = role_meta.en %}
 {% assign media_outlet = item.outlet_en | default: item.outlet_zh %}
 {% endif %}
-- *{{ item.date }}* &nbsp;**【{{ media_role }}】** <a href="{{ item.url }}">{{ media_title }}</a> · {{ media_outlet }}
+- *{{ item.date }}* &nbsp;<a href="{{ item.url }}">{{ media_title }}</a> · {{ media_outlet }}
 {% endfor %}

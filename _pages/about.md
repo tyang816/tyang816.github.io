@@ -83,7 +83,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 - *2021/2020*, *Second/Third Prize*, National College Students Computer Design Competition.
 - *2021/2020*, ***Special Prize Scholarship***, East China University of Science and Technology.
 - *2021*, National Undergraduate Innovation Training Program (20,000 RMB), *Project Leader*.
-- *2019*, Lingma Corporate Scholarship (4,000 RMB, 4 in major), B.S.
+- *2019*, Lingma Corporate Scholarship (4,000 RMB, 4 in university), B.S.
 - *2018*, Science and Technology Innovation District Mayor Award of Shapingba, Chongqing.
 - *2017*, ***Third Prize at World Championship***, American Houston FIRST Tech Challenge, *Team Leader*.
 - *2017*, *Outstanding Project*, Chongqing Youth Innovation Talent Training Eaglet Program (40,000 RMB), *Project Leader*.
