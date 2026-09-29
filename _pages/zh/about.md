@@ -33,7 +33,7 @@ author_profile: true
 
 ## 🔥 新闻
 {:.home-section}
-- *2026.09*：&nbsp;🎉 发布 [VenusREM-Harness]({{ '/zh/projects/venusrem/' | relative_url }})，可增强任意 PFM 的突变预测能力；新模型 **VenusREM2** 在 ProteinGym 取得 **0.556** 新 SOTA。技术报告见 [arXiv](https://arxiv.org/abs/2609.34654)。
+- *2026.09*：&nbsp;🎉 发布 [VenusREM-Harness]({{ '/zh/projects/venusrem/' | relative_url }})，可增强任意 PFM 的突变预测能力；新模型 **VenusREM2** 在 ProteinGym 取得 **0.556** 新 SOTA。技术报告见 [arXiv](https://arxiv.org/abs/2609.34654)，仓库见 [GitHub](https://github.com/ai4protein/VenusREM-Harness)。
 - *2026.07*：&nbsp;🎉 [MatwingsVenus（晓鹜）](https://matvenus.com/) 获 **WAIC 2026 镇馆之宝**，见 [报道](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A)。
 - *2026.06*：&nbsp;🎉 [VenusFactory]({{ '/zh/projects/venusfactory/' | relative_url }}) 上线 [国家研究生智慧教育平台](https://graduate.smartedu.cn/ai-for-science)（AI for Science）。
 - *2026.04*：&nbsp;🎉 [VenusFactory2]({{ '/zh/projects/venusfactory2/' | relative_url }}) 上线免费站点 [venusfactory.bio](https://venusfactory.bio/)，技术报告见 [arXiv](https://arxiv.org/abs/2603.27303)。
