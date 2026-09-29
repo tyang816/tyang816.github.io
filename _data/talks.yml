@@ -1,4 +1,13 @@
 items:
+  - date: "2026.09.22"
+    title_zh: "AI的下一战场：从“设计一个分子”到“造出一批药”"
+    title_en: "AI’s Next Battlefield: From Designing a Molecule to Making a Drug"
+    event_zh: "S创上海2026 圆桌论坛"
+    event_en: "S-Tron Shanghai 2026 Roundtable"
+    location_zh: "中国-上海"
+    location_en: "China - Shanghai"
+    url: "https://mp.weixin.qq.com/s/9KmBXSwK1gVYBNkqaPBeqQ"
+
   - date: "2026.08.23"
     title_zh: "蛋白质研发智能体的认知推理与产业实践"
     title_en: "Cognitive Reasoning and Industrial Practice of Protein R&D Intelligent Agents"

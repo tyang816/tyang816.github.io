@@ -13,6 +13,14 @@ roles:
     zh: "报道"
 
 items:
+  - date: "2026.09"
+    role: interview
+    title_zh: "AI直接下场砍价！智能体Muse爆火，给出哪些新启示？"
+    title_en: "AI Steps In to Bargain: What Meta’s Viral Muse Agent Reveals"
+    url: "https://m.thepaper.cn/newsDetail_forward_34143900"
+    outlet_zh: "澎湃新闻"
+    outlet_en: "The Paper"
+
   - date: "2026.07"
     role: livestream_guest
     title_zh: "澎湃科技聊天室｜智能体时代的生产力变革和Token工厂"
