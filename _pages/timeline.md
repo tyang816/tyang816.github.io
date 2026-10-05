@@ -179,24 +179,25 @@ keywords:
 }
 
 .date-day {
-  font-size: 2.2em;
-  font-weight: bold;
-  color: #007acc;
-  line-height: 1;
-  margin-bottom: 3px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.2;
+  margin-bottom: 2px;
 }
 
 .date-month {
-  font-size: 1em;
-  color: #666;
-  font-weight: 500;
+  font-size: 1.15em;
+  color: #333;
+  font-weight: 600;
   margin-bottom: 2px;
 }
 
 .date-year {
-  font-size: 1.2em;
-  color: #333;
-  font-weight: 600;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #007acc;
+  line-height: 1;
 }
 
 .timeline-marker {
@@ -356,39 +357,53 @@ keywords:
   .timeline::before {
     left: 30px;
   }
+
+  .timeline-item {
+    flex-wrap: wrap;
+  }
   
   .timeline-date-left {
     position: relative;
     width: 100%;
+    flex: 0 0 100%;
+    box-sizing: border-box;
     text-align: left;
     padding-right: 0;
-    margin-bottom: 15px;
+    padding-left: 46px;
+    margin-bottom: 12px;
+    white-space: nowrap;
   }
   
   .date-day {
-    font-size: 1.8em;
+    font-size: 0.85em;
     display: inline-block;
     margin-right: 8px;
+    vertical-align: baseline;
   }
   
   .date-month {
-    font-size: 0.9em;
+    font-size: 1em;
     display: inline-block;
     margin-right: 8px;
+    vertical-align: baseline;
   }
   
   .date-year {
-    font-size: 1.1em;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #007acc;
     display: inline-block;
+    vertical-align: baseline;
   }
   
   .timeline-marker {
     left: 30px;
+    top: 4px;
   }
   
   .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 80px;
+    width: calc(100% - 46px);
+    margin-left: 46px;
   }
   
   .gallery-container {
