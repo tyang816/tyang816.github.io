@@ -77,8 +77,29 @@ LINK_LABEL_EN = {
     "ModelScope": "ModelScope",
     "PubMed": "PubMed",
     "官网": "Website",
-    "新闻稿": "Press release",
+    "原网站": "Original site",
+    "新闻稿": "Press",
+    "2.0论文": "2.0 paper",
+    "CBLUE任务": "CBLUE tasks",
+    "arXiv": "arXiv",
+    "预印本": "Preprint",
+    "公开": "Publication",
+    "授权": "Grant",
+    "Base": "Base",
+    "7B": "7B",
     "专利": "Patent",
+    "说明": "About",
+    "关于": "About",
+    "介绍": "About",
+    "数据中心": "Data",
+    "中心介绍": "About",
+    "目录": "Catalogue",
+    "汉方列表": "Formulas",
+    "药局方生药": "Crude drugs",
+    "药材": "Herbs",
+    "处方": "Formulas",
+    "病证": "Patterns",
+    "药材目录": "Herbs",
 }
 
 
@@ -120,7 +141,19 @@ def links_en(links: dict | None) -> dict:
             label = re.sub(r"[\u4e00-\u9fff]+", "", label).strip() or "Link"
         # Keep uniqueness if multiple Chinese keys map to same English label.
         if label in out and out[label] != url:
-            label = f"{label} ({key})"
+            if key == "网站":
+                alt = "Site"
+            elif key == "官网":
+                alt = "Official site"
+            else:
+                alt = label
+            if alt == label or alt in out:
+                n = 2
+                alt = f"{label} {n}"
+                while alt in out:
+                    n += 1
+                    alt = f"{label} {n}"
+            label = alt
         out[label] = url
     return out
 

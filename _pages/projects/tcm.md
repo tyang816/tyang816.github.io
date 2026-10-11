@@ -111,8 +111,9 @@ keywords:
   <ul>
     <li>Selected news on products, policy, and open releases</li>
     <li>Open-weight and multimodal TCM LLM systems</li>
+    <li>Named hospital and company TCM models, including Guangyi Qizhi, Shuzhi Qihuang, Tianhe Lingshu, and Xinhuo Zhongguoyao</li>
     <li>Benchmarks, evaluation suites, and surveys</li>
-    <li>Pretraining / SFT datasets and related resources</li>
+    <li>Pretraining and SFT datasets, institutional case libraries and classical corpora, national standards, and East Asian or ethnic-medicine databases</li>
     <li>Invention patents on TCM LLMs, knowledge graphs, and intelligent inquiry</li>
   </ul>
 </section>
