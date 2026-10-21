@@ -1,6 +1,6 @@
 ---
 permalink: /projects/tcm/items/bucm-syndrome-element-llm/
-title: "Instr-MT-TCM 协同大模型证素辨证 | TCM LLM"
+title: "基于大语言模型与文本嵌入计算的中医证素辨证自动化方法 | TCM LLM"
 layout: default
 project: tcm
 section: item
@@ -14,14 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Instr-MT-TCM 协同大模型证素辨证 — TCM LLM resource in Awesome-TCM-LLM. Instr-MT-TCM, an instruction-tuned TCM embedding model, is paired with an LLM for syndrome-element differentiation.…"
-seo_description: "Instr-MT-TCM 协同大模型证素辨证 — TCM LLM resource in Awesome-TCM-LLM. Instr-MT-TCM, an instruction-tuned TCM embedding model, is paired with an LLM for syndrome-element differentiation.…"
+description: "基于大语言模型与文本嵌入计算的中医证素辨证自动化方法 — TCM LLM resource in Awesome-TCM-LLM. Instr-MT-TCM, an instruction-tuned TCM embedding model, is paired with an LLM for syndrome-element differentiat…"
+seo_description: "基于大语言模型与文本嵌入计算的中医证素辨证自动化方法 — TCM LLM resource in Awesome-TCM-LLM. Instr-MT-TCM, an instruction-tuned TCM embedding model, is paired with an LLM for syndrome-element differentiat…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "resource"
-- "Instr-MT-TCM 协同大模型证素辨证"
+- "基于大语言模型与文本嵌入计算的中医证素辨证自动化方法"
 tcm_type: "resource"
 tcm_type_label: "resource"
 tcm_date: "2025"

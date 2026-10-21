@@ -22,7 +22,7 @@ keywords:
 - "Traditional Chinese Medicine"
 - "模型"
 - "model"
-- "open-weights"
+- "dead-site"
 - "知方丹台"
 tcm_type: "model_hf"
 tcm_type_label: "模型"

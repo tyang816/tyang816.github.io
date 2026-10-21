@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Taiyi-2 — TCM LLM resource in Awesome-TCM-LLM. Second Taiyi open biomedical model, moving from Qwen-7B to GLM4-9B with tighter data filters and task instructions; the official r…"
-seo_description: "Taiyi-2 — TCM LLM resource in Awesome-TCM-LLM. Second Taiyi open biomedical model, moving from Qwen-7B to GLM4-9B with tighter data filters and task instructions; the official r…"
+description: "Taiyi-2 — TCM LLM resource in Awesome-TCM-LLM. Second Taiyi open biomedical model, moving from Qwen-7B to GLM4-9B with tighter data filters and task instructions. The model card…"
+seo_description: "Taiyi-2 — TCM LLM resource in Awesome-TCM-LLM. Second Taiyi open biomedical model, moving from Qwen-7B to GLM4-9B with tighter data filters and task instructions. The model card…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

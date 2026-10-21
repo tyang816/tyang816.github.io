@@ -1,0 +1,31 @@
+---
+permalink: /zh/projects/tcm/items/acu-llm-jmir/
+title: "ChatGPT、DeepSeek与医师针灸方案对照 | 中医大模型"
+layout: default
+project: tcm
+section: item
+tcm_item_id: "acu-llm-jmir"
+tcm_generated: true
+lang: zh-CN
+alt_url: /projects/tcm/items/acu-llm-jmir/
+redirect_from:
+- /zh/tcm/items/acu-llm-jmir/
+- /tcm/items/acu-llm-jmir/
+author_profile: true
+sidebar_collapsed: true
+sidebar_sticky: false
+description: "ChatGPT、DeepSeek与医师针灸方案对照｜中医大模型（TCM LLM）资源。比较ChatGPT、DeepSeek和医师生成的针灸治疗方案"
+seo_description: "ChatGPT、DeepSeek与医师针灸方案对照｜中医大模型（TCM LLM）资源。比较ChatGPT、DeepSeek和医师生成的针灸治疗方案"
+keywords:
+- "中医大模型"
+- "TCM LLM"
+- "Traditional Chinese Medicine"
+- "资源"
+- "evaluation"
+- "ChatGPT、DeepSeek与医师针灸方案对照"
+tcm_type: "resource"
+tcm_type_label: "资源"
+tcm_date: "2026"
+---
+
+{% include tcm-item.html %}

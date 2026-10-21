@@ -24,7 +24,6 @@ keywords:
 - "model"
 - "rag"
 - "kg"
-- "open-weights"
 - "ZhiFangDanTai"
 tcm_type: "resource"
 tcm_type_label: "resource"

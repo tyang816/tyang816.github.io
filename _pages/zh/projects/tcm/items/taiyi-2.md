@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "太一2 (Taiyi-2)｜中医大模型（TCM LLM）资源。太一二代开源生物医学模型，底座从Qwen-7B换成GLM4-9B，重做数据过滤与任务指令；官方推荐替换Taiyi-1"
-seo_description: "太一2 (Taiyi-2)｜中医大模型（TCM LLM）资源。太一二代开源生物医学模型，底座从Qwen-7B换成GLM4-9B，重做数据过滤与任务指令；官方推荐替换Taiyi-1"
+description: "太一2 (Taiyi-2)｜中医大模型（TCM LLM）资源。太一二代开源生物医学模型，底座从Qwen-7B换成GLM4-9B，重做数据过滤与任务指令。官方模型卡仍引用太一1的JAMIA论文（10.1093/jamia/ocae037），没有单独的太一2论文"
+seo_description: "太一2 (Taiyi-2)｜中医大模型（TCM LLM）资源。太一二代开源生物医学模型，底座从Qwen-7B换成GLM4-9B，重做数据过滤与任务指令。官方模型卡仍引用太一1的JAMIA论文（10.1093/jamia/ocae037），没有单独的太一2论文"
 keywords:
 - "中医大模型"
 - "TCM LLM"

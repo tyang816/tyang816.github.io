@@ -14,14 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知方丹台 — TCM LLM model in Awesome-TCM-LLM. ZhiFangDanTai formula-generation model weights."
-seo_description: "知方丹台 — TCM LLM model in Awesome-TCM-LLM. ZhiFangDanTai formula-generation model weights."
+description: "知方丹台 — TCM LLM model in Awesome-TCM-LLM. ZhiFangDanTai formula-generation weights. The public Hugging Face page returned 404 on 2026-10-21."
+seo_description: "知方丹台 — TCM LLM model in Awesome-TCM-LLM. ZhiFangDanTai formula-generation weights. The public Hugging Face page returned 404 on 2026-10-21."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "model"
-- "open-weights"
+- "dead-site"
 - "知方丹台"
 tcm_type: "model_hf"
 tcm_type_label: "model"
