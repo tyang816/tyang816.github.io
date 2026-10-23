@@ -100,6 +100,12 @@ LINK_LABEL_EN = {
     "处方": "Formulas",
     "病证": "Patterns",
     "药材目录": "Herbs",
+    "2020通知": "2020 notice",
+    "2023通知": "2023 notice",
+    "2025通知": "2025 notice",
+    "2025PDF": "2025 PDF",
+    "PDF": "PDF",
+    "PMC": "PMC",
 }
 
 

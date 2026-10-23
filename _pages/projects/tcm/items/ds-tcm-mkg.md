@@ -14,14 +14,16 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-MKG — TCM LLM dataset in Awesome-TCM-LLM. TCM multi-dimensional knowledge graph."
-seo_description: "TCM-MKG — TCM LLM dataset in Awesome-TCM-LLM. TCM multi-dimensional knowledge graph."
+description: "TCM-MKG — TCM LLM dataset in Awesome-TCM-LLM. Open multidimensional TCM knowledge graph of terminology, herbal pieces, and medicinal properties. The companion paper uses interpr…"
+seo_description: "TCM-MKG — TCM LLM dataset in Awesome-TCM-LLM. Open multidimensional TCM knowledge graph of terminology, herbal pieces, and medicinal properties. The companion paper uses interpr…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "dataset"
 - "kg"
+- "herbal"
+- "safety"
 - "TCM-MKG"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
