@@ -26,7 +26,7 @@ keywords:
 - "中医药知识问答实验数据"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2026"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

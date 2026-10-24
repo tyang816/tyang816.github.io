@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "灵兰秘典 (LingLan)｜中医大模型（TCM LLM）资源。大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25624 实例"
-seo_description: "灵兰秘典 (LingLan)｜中医大模型（TCM LLM）资源。大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25624 实例"
+description: "灵兰秘典 (LingLan)｜中医大模型（TCM LLM）资源。大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25620 条经专家核对的实例"
+seo_description: "灵兰秘典 (LingLan)｜中医大模型（TCM LLM）资源。大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25620 条经专家核对的实例"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-NER — TCM LLM dataset in Awesome-TCM-LLM. 1,997 Chinese-medicine package inserts with 59,803 entities in 13 types for building a medication knowledge graph (OpenKG / CHIP, C…"
-seo_description: "TCM-NER — TCM LLM dataset in Awesome-TCM-LLM. 1,997 Chinese-medicine package inserts with 59,803 entities in 13 types for building a medication knowledge graph (OpenKG / CHIP, C…"
+description: "TCM-NER — TCM LLM dataset in Awesome-TCM-LLM. Named-entity data from Chinese medicine package inserts, for a medication knowledge graph. The license is CC BY-NC 2.0."
+seo_description: "TCM-NER — TCM LLM dataset in Awesome-TCM-LLM. Named-entity data from Chinese medicine package inserts, for a medication knowledge graph. The license is CC BY-NC 2.0."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

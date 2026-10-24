@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMID 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Integrative formula–herb–ingredient–target database (distinct from NUS TCM-ID). Original megabionet site is down; verify via Zeno…"
-seo_description: "TCMID 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Integrative formula–herb–ingredient–target database (distinct from NUS TCM-ID). Original megabionet site is down; verify via Zeno…"
+description: "TCMID 2.0 — TCM LLM dataset in Awesome-TCM-LLM. East China Normal University's database of formulas, herbs, ingredients, and targets. The original site no longer opens; the data…"
+seo_description: "TCMID 2.0 — TCM LLM dataset in Awesome-TCM-LLM. East China Normal University's database of formulas, herbs, ingredients, and targets. The original site no longer opens; the data…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -25,7 +25,7 @@ keywords:
 - "TCMEval-PA"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2026"
+tcm_date: "2025"
 ---
 
 {% include tcm-item.html %}

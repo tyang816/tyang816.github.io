@@ -26,7 +26,7 @@ keywords:
 - "ChatTCM"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

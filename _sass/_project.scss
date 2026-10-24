@@ -1090,6 +1090,13 @@ $project-wide: 100%;
 }
 
 /* TCM catalog hub + item pages */
+.tcm-overview-hero {
+  .project-lede {
+    max-width: none;
+    width: 100%;
+  }
+}
+
 .tcm-catalog-section {
   .hub-title-row h2 {
     font-family: Georgia, "Times New Roman", serif;

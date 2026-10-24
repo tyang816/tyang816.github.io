@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册）｜中医大模型（TCM LLM）综述。中医Agentic/知识接地LLM系统综述的OSF预注册方案（证据图谱+文本挖掘+转化就绪度），非完成版综述"
-seo_description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册）｜中医大模型（TCM LLM）综述。中医Agentic/知识接地LLM系统综述的OSF预注册方案（证据图谱+文本挖掘+转化就绪度），非完成版综述"
+description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册）｜中医大模型（TCM LLM）综述。2026 年 7 月在 OSF 登记的综述计划，准备从证据图谱、文本挖掘和能不能用到临床上，看中医里的智能体和带知识的大模型。综述还在做。"
+seo_description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册）｜中医大模型（TCM LLM）综述。2026 年 7 月在 OSF 登记的综述计划，准备从证据图谱、文本挖掘和能不能用到临床上，看中医里的智能体和带知识的大模型。综述还在做。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

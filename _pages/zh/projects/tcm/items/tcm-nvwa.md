@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "女娲 (Nüwa / TCM-Nvwa)｜中医大模型（TCM LLM）资源。中医 LLM 训练流水线（持续预训练 + SFT + 奖励模型 + RLAIF），底座写明 Ziya-LLaMA-13B；仓库只给部分 pretrain/TCM-QR/reward 数据，无独立开源权重。GitHub 创建于 2025-04，与 2411.00897 作者不同，…"
-seo_description: "女娲 (Nüwa / TCM-Nvwa)｜中医大模型（TCM LLM）资源。中医 LLM 训练流水线（持续预训练 + SFT + 奖励模型 + RLAIF），底座写明 Ziya-LLaMA-13B；仓库只给部分 pretrain/TCM-QR/reward 数据，无独立开源权重。GitHub 创建于 2025-04，与 2411.00897 作者不同，…"
+description: "女娲 (Nüwa / TCM-Nvwa)｜中医大模型（TCM LLM）资源。一套中医大模型训练流程：持续预训练、监督微调、奖励模型和 RLAIF，底座是 Ziya-LLaMA-13B。仓库放了部分预训练、问答和奖励数据，权重没有单独放出来。"
+seo_description: "女娲 (Nüwa / TCM-Nvwa)｜中医大模型（TCM LLM）资源。一套中医大模型训练流程：持续预训练、监督微调、奖励模型和 RLAIF，底座是 Ziya-LLaMA-13B。仓库放了部分预训练、问答和奖励数据，权重没有单独放出来。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

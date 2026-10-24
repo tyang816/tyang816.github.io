@@ -27,7 +27,7 @@ keywords:
 - "中医症状名识别"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2013"
+tcm_date: "2014"
 ---
 
 {% include tcm-item.html %}

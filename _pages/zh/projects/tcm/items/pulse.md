@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PULSE｜中医大模型（TCM LLM）资源。上海AI Lab OpenMEDLab的中文医疗大模型（Bloom 7B/14B），覆盖医考、报告解读、病历结构化与模拟诊疗"
-seo_description: "PULSE｜中医大模型（TCM LLM）资源。上海AI Lab OpenMEDLab的中文医疗大模型（Bloom 7B/14B），覆盖医考、报告解读、病历结构化与模拟诊疗"
+description: "PULSE｜中医大模型（TCM LLM）资源。上海人工智能实验室 OpenMEDLab 的中文医疗大模型。PULSE-7b 基于 bloomz-7b1-mt，PULSE-20b 基于 InternLM-20B，覆盖医考、报告解读、病历结构化与模拟诊疗。"
+seo_description: "PULSE｜中医大模型（TCM LLM）资源。上海人工智能实验室 OpenMEDLab 的中文医疗大模型。PULSE-7b 基于 bloomz-7b1-mt，PULSE-20b 基于 InternLM-20B，覆盖医考、报告解读、病历结构化与模拟诊疗。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

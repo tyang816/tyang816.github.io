@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "女娲 (Nüwa / TCM-Nvwa) — TCM LLM resource in Awesome-TCM-LLM. Nüwa TCM LLM training stack (continual pretraining, SFT, reward modeling, RLAIF) on Ziya-LLaMA-13B. Repo ships only p…"
-seo_description: "女娲 (Nüwa / TCM-Nvwa) — TCM LLM resource in Awesome-TCM-LLM. Nüwa TCM LLM training stack (continual pretraining, SFT, reward modeling, RLAIF) on Ziya-LLaMA-13B. Repo ships only p…"
+description: "女娲 (Nüwa / TCM-Nvwa) — TCM LLM resource in Awesome-TCM-LLM. A TCM training stack on Ziya-LLaMA-13B: continued pretraining, supervised fine-tuning, a reward model, and RLAIF. The…"
+seo_description: "女娲 (Nüwa / TCM-Nvwa) — TCM LLM resource in Awesome-TCM-LLM. A TCM training stack on Ziya-LLaMA-13B: continued pretraining, supervised fine-tuning, a reward model, and RLAIF. The…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

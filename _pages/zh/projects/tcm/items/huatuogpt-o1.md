@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "华佗GPT-o1 (HuatuoGPT-o1)｜中医大模型（TCM LLM）资源。华佗系列医疗复杂推理模型，用可验证医题+医学验证器做搜索微调与强化学习；7B/72B支持中英"
-seo_description: "华佗GPT-o1 (HuatuoGPT-o1)｜中医大模型（TCM LLM）资源。华佗系列医疗复杂推理模型，用可验证医题+医学验证器做搜索微调与强化学习；7B/72B支持中英"
+description: "华佗GPT-o1 (HuatuoGPT-o1)｜中医大模型（TCM LLM）资源。华佗系列医疗复杂推理模型，用可验证医题和医学验证器做搜索微调与强化学习。仓库给出 7B、8B 和 70B。"
+seo_description: "华佗GPT-o1 (HuatuoGPT-o1)｜中医大模型（TCM LLM）资源。华佗系列医疗复杂推理模型，用可验证医题和医学验证器做搜索微调与强化学习。仓库给出 7B、8B 和 70B。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

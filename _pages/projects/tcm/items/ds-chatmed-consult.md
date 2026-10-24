@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
-seo_description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online medical consult dataset (500k+ consults with ChatGPT replies)."
+description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online-consultation set of 110,113 pairs. The questions come from consultation sites and the answers were w…"
+seo_description: "ChatMed_Consult_Dataset — TCM LLM dataset in Awesome-TCM-LLM. Chinese online-consultation set of 110,113 pairs. The questions come from consultation sites and the answers were w…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -26,7 +26,7 @@ keywords:
 - "ChatMed_Consult_Dataset"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

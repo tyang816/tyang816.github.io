@@ -25,7 +25,7 @@ keywords:
 - "TCMChat-dataset-600k"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2025"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

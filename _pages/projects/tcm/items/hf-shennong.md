@@ -25,7 +25,7 @@ keywords:
 - "ShenNong-TCM-LLM"
 tcm_type: "model_hf"
 tcm_type_label: "model"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

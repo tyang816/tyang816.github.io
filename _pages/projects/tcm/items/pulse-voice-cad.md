@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "脉波与语音联合筛查冠心病和心衰 — TCM LLM resource in Awesome-TCM-LLM. Shanghai University of Traditional Chinese Medicine and collaborators treat radial pulse waves as pulse diagnosis and voic…"
-seo_description: "脉波与语音联合筛查冠心病和心衰 — TCM LLM resource in Awesome-TCM-LLM. Shanghai University of Traditional Chinese Medicine and collaborators treat radial pulse waves as pulse diagnosis and voic…"
+description: "脉波与语音联合筛查冠心病和心衰 — TCM LLM resource in Awesome-TCM-LLM. Shanghai University of Traditional Chinese Medicine and collaborators treat the radial pulse wave as pulse diagnosis and t…"
+seo_description: "脉波与语音联合筛查冠心病和心衰 — TCM LLM resource in Awesome-TCM-LLM. Shanghai University of Traditional Chinese Medicine and collaborators treat the radial pulse wave as pulse diagnosis and t…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. Perspective on AI and big data for TCM standardization and in…"
-seo_description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. Perspective on AI and big data for TCM standardization and in…"
+description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. An essay on how AI and big data can help standardize traditio…"
+seo_description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult） — TCM LLM survey in Awesome-TCM-LLM. An essay on how AI and big data can help standardize traditio…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

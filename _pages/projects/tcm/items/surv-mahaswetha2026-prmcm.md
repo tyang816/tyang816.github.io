@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. Broad AI-in-TCM review from multimodal data integration to pharma…"
-seo_description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. Broad AI-in-TCM review from multimodal data integration to pharma…"
+description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. An English review that runs from multimodal data and pharmacology…"
+seo_description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述） — TCM LLM survey in Awesome-TCM-LLM. An English review that runs from multimodal data and pharmacology…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "HuatuoGPT-o1 — TCM LLM resource in Awesome-TCM-LLM. HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier; 7B/72B cover Chinese and E…"
-seo_description: "HuatuoGPT-o1 — TCM LLM resource in Awesome-TCM-LLM. HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier; 7B/72B cover Chinese and E…"
+description: "HuatuoGPT-o1 — TCM LLM resource in Awesome-TCM-LLM. HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier. The repository lists 7B, 8…"
+seo_description: "HuatuoGPT-o1 — TCM LLM resource in Awesome-TCM-LLM. HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier. The repository lists 7B, 8…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

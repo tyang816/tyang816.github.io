@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "知方丹台 (ZhiFangDanTai)｜中医大模型（TCM LLM）资源。GraphRAG+LLM微调的中医方剂生成框架，输出君臣佐使/功效/禁忌等可解释信息。arXiv HTML 署名首都师范大学管理学院与昆士兰大学。Hugging Face 上的 tczzx6/ZhiFangDanTai1.0 于 2026-10-21 打开为 404，当前不能当…"
-seo_description: "知方丹台 (ZhiFangDanTai)｜中医大模型（TCM LLM）资源。GraphRAG+LLM微调的中医方剂生成框架，输出君臣佐使/功效/禁忌等可解释信息。arXiv HTML 署名首都师范大学管理学院与昆士兰大学。Hugging Face 上的 tczzx6/ZhiFangDanTai1.0 于 2026-10-21 打开为 404，当前不能当…"
+description: "知方丹台 (ZhiFangDanTai)｜中医大模型（TCM LLM）资源。用 GraphRAG 微调大模型来生成方剂，输出里带君臣佐使、功效和禁忌。作者在首都师范大学和昆士兰大学。公开的权重页面已经打不开了。"
+seo_description: "知方丹台 (ZhiFangDanTai)｜中医大模型（TCM LLM）资源。用 GraphRAG 微调大模型来生成方剂，输出里带君臣佐使、功效和禁忌。作者在首都师范大学和昆士兰大学。公开的权重页面已经打不开了。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -27,7 +27,7 @@ keywords:
 - "知方丹台 (ZhiFangDanTai)"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

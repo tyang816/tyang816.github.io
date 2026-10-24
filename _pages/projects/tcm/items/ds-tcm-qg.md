@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-QG — TCM LLM dataset in Awesome-TCM-LLM. About 5,000 TCM documents and 13,000 question-answer pairs from CHIP2020, for knowledge-base expansion and question generation (CC B…"
-seo_description: "TCM-QG — TCM LLM dataset in Awesome-TCM-LLM. About 5,000 TCM documents and 13,000 question-answer pairs from CHIP2020, for knowledge-base expansion and question generation (CC B…"
+description: "TCM-QG — TCM LLM dataset in Awesome-TCM-LLM. Question-generation data from TCM texts: 3,500 documents, with one to four human-written question-answer pairs each. The license is …"
+seo_description: "TCM-QG — TCM LLM dataset in Awesome-TCM-LLM. Question-generation data from TCM texts: 3,500 documents, with one to four human-written question-answer pairs each. The license is …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

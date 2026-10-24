@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PULSE — TCM LLM resource in Awesome-TCM-LLM. OpenMEDLab Chinese medical LLM (Bloom 7B/14B) for exams, report reading, record structuring, and simulated diagnosis."
-seo_description: "PULSE — TCM LLM resource in Awesome-TCM-LLM. OpenMEDLab Chinese medical LLM (Bloom 7B/14B) for exams, report reading, record structuring, and simulated diagnosis."
+description: "PULSE — TCM LLM resource in Awesome-TCM-LLM. OpenMEDLab Chinese medical LLM. PULSE-7b is fine-tuned from bloomz-7b1-mt and PULSE-20b from InternLM-20B, for exams, report reading…"
+seo_description: "PULSE — TCM LLM resource in Awesome-TCM-LLM. OpenMEDLab Chinese medical LLM. PULSE-7b is fine-tuned from bloomz-7b1-mt and PULSE-20b from InternLM-20B, for exams, report reading…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

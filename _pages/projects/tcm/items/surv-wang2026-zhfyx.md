@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and t…"
-seo_description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and t…"
+description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. A short essay on what AI can do for digital TCM diagnosis, and on data quality, explanations, and joining the m…"
+seo_description: "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. A short essay on what AI can do for digital TCM diagnosis, and on data quality, explanations, and joining the m…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

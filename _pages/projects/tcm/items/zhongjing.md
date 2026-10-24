@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "仲景 (ZhongJing) — TCM LLM resource in Awesome-TCM-LLM. ZhongJingGPT, an expert-knowledge-guided TCM LLM combining vertical-domain fine-tuning with cognitive-psychology insights a…"
-seo_description: "仲景 (ZhongJing) — TCM LLM resource in Awesome-TCM-LLM. ZhongJingGPT, an expert-knowledge-guided TCM LLM combining vertical-domain fine-tuning with cognitive-psychology insights a…"
+description: "仲景 (ZhongJing) — TCM LLM resource in Awesome-TCM-LLM. ZhongJingGPT is an expert-knowledge-guided TCM model. It combines domain fine-tuning with ideas from cognitive psychology a…"
+seo_description: "仲景 (ZhongJing) — TCM LLM resource in Awesome-TCM-LLM. ZhongJingGPT is an expert-knowledge-guided TCM model. It combines domain fine-tuning with ideas from cognitive psychology a…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -26,7 +26,7 @@ keywords:
 - "仲景 (ZhongJing)"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

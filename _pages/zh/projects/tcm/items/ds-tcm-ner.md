@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-NER｜中医大模型（TCM LLM）数据集。1997 篇中药说明书、13 类实体共 59803 个标注，用来自动构建用药知识图谱（CC BY-SA 4.0）"
-seo_description: "TCM-NER｜中医大模型（TCM LLM）数据集。1997 篇中药说明书、13 类实体共 59803 个标注，用来自动构建用药知识图谱（CC BY-SA 4.0）"
+description: "TCM-NER｜中医大模型（TCM LLM）数据集。中药说明书的实体识别数据，用来做用药知识图谱。许可是 CC BY-NC 2.0。"
+seo_description: "TCM-NER｜中医大模型（TCM LLM）数据集。中药说明书的实体识别数据，用来做用药知识图谱。许可是 CC BY-NC 2.0。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

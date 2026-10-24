@@ -26,7 +26,7 @@ keywords:
 - "智赋岐黄天功"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2025"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

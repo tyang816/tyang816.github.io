@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-QG｜中医大模型（TCM LLM）数据集。约 5000 篇中医文本、1.3 万问答对，用来补知识库和自动提问（CC BY-SA 4.0）"
-seo_description: "TCM-QG｜中医大模型（TCM LLM）数据集。约 5000 篇中医文本、1.3 万问答对，用来补知识库和自动提问（CC BY-SA 4.0）"
+description: "TCM-QG｜中医大模型（TCM LLM）数据集。中医文献问题生成数据，3500 篇，每篇由人标了 1 到 4 对问答。许可是 CC BY-NC 2.0。"
+seo_description: "TCM-QG｜中医大模型（TCM LLM）数据集。中医文献问题生成数据，3500 篇，每篇由人标了 1 到 4 对问答。许可是 CC BY-NC 2.0。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册） — TCM LLM survey in Awesome-TCM-LLM. OSF preregistration (not a completed review) of a systematic review on agentic and knowledge…"
-seo_description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册） — TCM LLM survey in Awesome-TCM-LLM. OSF preregistration (not a completed review) of a systematic review on agentic and knowledge…"
+description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册） — TCM LLM survey in Awesome-TCM-LLM. A review plan registered on OSF in July 2026. It will look at agentic and knowledge-grounded…"
+seo_description: "Agentic and Knowledge-Grounded LLMs in TCM（预注册） — TCM LLM survey in Awesome-TCM-LLM. A review plan registered on OSF in July 2026. It will look at agentic and knowledge-grounded…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

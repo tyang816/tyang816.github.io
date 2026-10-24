@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
-seo_description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）"
+description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。拿文化背景当线索，看 GPT 和 ERNIE 做中医执业医师考试时差在哪里。2025 年发表在 Journal of Integrative and Complementary Medicine。"
+seo_description: "GPT vs ERNIE 中医文化背景对比研究｜中医大模型（TCM LLM）资源。拿文化背景当线索，看 GPT 和 ERNIE 做中医执业医师考试时差在哪里。2025 年发表在 Journal of Integrative and Complementary Medicine。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -25,7 +25,7 @@ keywords:
 - "GPT vs ERNIE 中医文化背景对比研究"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2024"
+tcm_date: "2025"
 ---
 
 {% include tcm-item.html %}

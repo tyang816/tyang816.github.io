@@ -27,7 +27,7 @@ keywords:
 - "ChatTCM-7B-SFT"
 tcm_type: "model_hf"
 tcm_type_label: "模型"
-tcm_date: "2025"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

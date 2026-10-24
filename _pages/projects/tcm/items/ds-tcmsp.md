@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMSP — TCM LLM dataset in Awesome-TCM-LLM. Herb–ingredient–target–disease networks with ADME parameters; public site is TCMSP 2.3 with downloadable relationship tables."
-seo_description: "TCMSP — TCM LLM dataset in Awesome-TCM-LLM. Herb–ingredient–target–disease networks with ADME parameters; public site is TCMSP 2.3 with downloadable relationship tables."
+description: "TCMSP — TCM LLM dataset in Awesome-TCM-LLM. A pharmacology site for herb ingredients, targets, diseases, and ADME numbers. The site now keeps version 2.3 beside the newer 9.0.1,…"
+seo_description: "TCMSP — TCM LLM dataset in Awesome-TCM-LLM. A pharmacology site for herb ingredients, targets, diseases, and ADME numbers. The site now keeps version 2.3 beside the newer 9.0.1,…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

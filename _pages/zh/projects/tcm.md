@@ -33,7 +33,7 @@ keywords:
 - Awesome-TCM-LLM
 ---
 
-<header class="project-hero">
+<header class="project-hero tcm-overview-hero">
   <p class="project-kicker">Awesome-TCM-LLM · 开源资源目录</p>
   <h1>中医大模型</h1>
   <p class="project-lede">

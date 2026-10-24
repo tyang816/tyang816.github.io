@@ -106,6 +106,11 @@ LINK_LABEL_EN = {
     "2025PDF": "2025 PDF",
     "PDF": "PDF",
     "PMC": "PMC",
+    "方剂": "Formulas",
+    "脚本": "Script",
+    "相关论文": "Related paper",
+    "期刊": "Journal",
+    "预注册": "Preregistration",
 }
 
 

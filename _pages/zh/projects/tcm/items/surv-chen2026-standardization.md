@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult）｜中医大模型（TCM LLM）综述。AI/大数据助力中医标准化与国际化评论（Chin Med Cult 2026, ahead of print）"
-seo_description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult）｜中医大模型（TCM LLM）综述。AI/大数据助力中医标准化与国际化评论（Chin Med Cult 2026, ahead of print）"
+description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult）｜中医大模型（TCM LLM）综述。谈人工智能和大数据怎样帮助中医做标准化、走到国际上去。刊在 Chinese Medicine and Culture 2026 年第 9 卷第 3 期。"
+seo_description: "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult）｜中医大模型（TCM LLM）综述。谈人工智能和大数据怎样帮助中医做标准化、走到国际上去。刊在 Chinese Medicine and Culture 2026 年第 9 卷第 3 期。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

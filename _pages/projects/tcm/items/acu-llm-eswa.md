@@ -25,7 +25,7 @@ keywords:
 - "针灸临床决策中的大模型补偿机制"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

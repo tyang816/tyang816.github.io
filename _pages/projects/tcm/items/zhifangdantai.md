@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ZhiFangDanTai — TCM LLM resource in Awesome-TCM-LLM. GraphRAG + LLM fine-tuning for interpretable formula generation (sovereign–minister–assistant–courier, efficacy, contraindic…"
-seo_description: "ZhiFangDanTai — TCM LLM resource in Awesome-TCM-LLM. GraphRAG + LLM fine-tuning for interpretable formula generation (sovereign–minister–assistant–courier, efficacy, contraindic…"
+description: "ZhiFangDanTai — TCM LLM resource in Awesome-TCM-LLM. GraphRAG plus LLM fine-tuning for formula generation, with roles in the formula, effects, and contraindications written out.…"
+seo_description: "ZhiFangDanTai — TCM LLM resource in Awesome-TCM-LLM. GraphRAG plus LLM fine-tuning for formula generation, with roles in the formula, effects, and contraindications written out.…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -27,7 +27,7 @@ keywords:
 - "ZhiFangDanTai"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

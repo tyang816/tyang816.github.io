@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
-seo_description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）"
+description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT。它把领域微调和认知心理学放在一起，做了多种场景的中医知识指令。2026 年 7 月发表在 Tsinghua Science and Technology。"
+seo_description: "仲景 (ZhongJing)｜中医大模型（TCM LLM）资源。专家知识引导的中医大模型 ZhongJingGPT。它把领域微调和认知心理学放在一起，做了多种场景的中医知识指令。2026 年 7 月发表在 Tsinghua Science and Technology。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -26,7 +26,7 @@ keywords:
 - "仲景 (ZhongJing)"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus St…"
-seo_description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus St…"
+description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus. The paper reports 15B+ tokens — Stage 1 text 11.92B including 6.3B TCM, and Sta…"
+seo_description: "TCM-Pretrain-Data-ShizhenGPT — TCM LLM dataset in Awesome-TCM-LLM. ShizhenGPT pretraining corpus. The paper reports 15B+ tokens — Stage 1 text 11.92B including 6.3B TCM, and Sta…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

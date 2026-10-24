@@ -6,10 +6,10 @@
     "description_en": "Curated open TCM models, datasets, papers, and patents, plus a few related Chinese medical resources.",
     "repo_url": "https://github.com/tyang816/Awesome-TCM-LLM",
     "portal_url": "https://tyang816.github.io/projects/tcm/",
-    "updated_at": "2026-10-22",
+    "updated_at": "2026-10-24",
     "catalog_version": 1
   },
-  "updated_at": "2026-10-22",
+  "updated_at": "2026-10-24",
   "items": [
     {
       "id": "news-202609-27",
@@ -563,11 +563,11 @@
     },
     {
       "id": "news-202403-14",
-      "name": "数智岐黄中医药大模型发布",
+      "name": "华东师范大学联合发布数智岐黄2.0",
       "type": "news",
       "year": 2024,
-      "date": "2024.03",
-      "summary_zh": "华东师范大学、上海中医药大学、华东理工大学、海军军医大学、临港实验室、华润江中现代中药全国重点实验室联合开发了**数智岐黄**中医药大模型。所附链接为华东师范大学对数智岐黄 2.0 的后续介绍，并非 2024.03 首发公告。",
+      "date": "2024.11",
+      "summary_zh": "华东师范大学、上海中医药大学、华东理工大学、海军军医大学、临港实验室和华润江中一起做了**数智岐黄**。1.0 在 2024 年 1 月 19 日发布。2024 年 11 月 25 日，他们在上海一场论坛上介绍了 2.0。",
       "tags": [
         "product"
       ],
@@ -575,8 +575,8 @@
         "链接": "https://pharm.ecnu.edu.cn/08/27/c43775a657447/page.htm"
       },
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "ECNU, SHUTCM, ECUST, NMMU, Lingang Lab, and CR Jiangzhong jointly develop the **ShuZhi QiHuang** TCM LLM. The linked ECNU page is a later write-up of ShuZhi QiHuang 2.0, not the original 2024.03 release announcement.",
+      "verified_at": "2026-10-24",
+      "summary_en": "ECNU, Shanghai University of Traditional Chinese Medicine, East China University of Science and Technology, Naval Medical University, Lingang Laboratory, and CR Jiangzhong built **ShuZhi QiHuang**. Version 1.0 came out on 19 January 2024. On 25 November 2024 they introduced version 2.0 at a forum in Shanghai.",
       "links_en": {
         "Link": "https://pharm.ecnu.edu.cn/08/27/c43775a657447/page.htm"
       }
@@ -845,7 +845,7 @@
       "name": "灵兰秘典 (LingLan)",
       "year": 2026,
       "venue": "arXiv",
-      "summary_zh": "大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25624 实例",
+      "summary_zh": "大规模多任务中医评测基准，覆盖 5 大域、13 子任务、25620 条经专家核对的实例",
       "orgs": [
         "北京交通大学等"
       ],
@@ -860,8 +860,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,624 instances.",
+      "verified_at": "2026-10-24",
+      "summary_en": "Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,620 expert-verified items.",
       "name_en": "LingLan",
       "orgs_en": [
         "Beijing Jiaotong University et al."
@@ -1483,7 +1483,7 @@
     {
       "id": "chattcm",
       "name": "ChatTCM",
-      "year": 2025,
+      "year": 2024,
       "summary_zh": "HF 用户 SylvanL 开源的中医 LLM：Qwen2-7B 继续预训练后再全参 SFT，预训练/SFT 数据与权重均可下。页上仅留 sl18n19@soton.ac.uk，未见机构或论文",
       "tags": [
         "model",
@@ -1497,7 +1497,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
+      "verified_at": "2026-10-24",
       "summary_en": "SylvanL open TCM LLM (Qwen2-7B continual pretrain then full SFT) with public data and weights. Contact email sl18n19@soton.ac.uk only; no stated affiliation or paper.",
       "links_en": {
         "Pretrain model": "https://huggingface.co/SylvanL/ChatTCM-7B-Pretrain",
@@ -1589,7 +1589,7 @@
     {
       "id": "mtcmb",
       "name": "MTCMB",
-      "year": 2025,
+      "year": 2026,
       "venue": "Scientific Data",
       "summary_zh": "中医多任务评测基准，12子集约7100样本，覆盖知识/推理/方剂/安全",
       "tags": [
@@ -1603,7 +1603,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "Multi-task TCM benchmark (~12 subsets, ~7.1k samples) covering knowledge, reasoning, formulas, and safety.",
       "links_en": {
         "Paper": "https://arxiv.org/abs/2506.01252",
@@ -1718,7 +1718,7 @@
     {
       "id": "tcm-3ceval",
       "name": "TCM-3CEval",
-      "year": 2025,
+      "year": 2026,
       "venue": "Communications Medicine",
       "summary_zh": "中医大模型三轴评测（核心知识、经典理解、临床决策）",
       "tags": [
@@ -1730,7 +1730,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "Three-axis TCM LLM evaluation: core knowledge, classics comprehension, and clinical decision-making.",
       "links_en": {
         "Paper": "https://arxiv.org/abs/2503.07041",
@@ -1842,7 +1842,7 @@
     {
       "id": "tcm-r1",
       "name": "TCM-R1",
-      "year": 2025,
+      "year": 2026,
       "venue": "APWeb-WAIM 2025",
       "summary_zh": "通过GRPO增强中医推理能力的大模型",
       "orgs": [
@@ -1856,7 +1856,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "TCM LLM with GRPO-enhanced reasoning.",
       "orgs_en": [
         "Southwest University"
@@ -1868,7 +1868,7 @@
     {
       "id": "tcmchat",
       "name": "TCMChat",
-      "year": 2025,
+      "year": 2024,
       "venue": "Pharmacological Research",
       "summary_zh": "生成式中医药大模型，经预训练+监督微调构建，配套 60 万条中药知识对话数据 TCMChat-600k（Pharmacological Research 2024）",
       "orgs": [
@@ -1887,7 +1887,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "Generative TCM LLM built via pre-training and supervised fine-tuning, released with the 600k-sample TCMChat-600k dialogue dataset (Pharmacol. Res. 2024).",
       "links_en": {
         "Paper": "https://doi.org/10.1016/j.phrs.2024.107530",
@@ -1975,9 +1975,9 @@
     {
       "id": "zhongjing",
       "name": "仲景 (ZhongJing)",
-      "year": 2025,
+      "year": 2026,
       "venue": "Tsinghua Science and Technology",
-      "summary_zh": "专家知识引导的中医大模型 ZhongJingGPT，融合垂直领域微调策略与认知心理学洞察，构建多场景中医知识指令数据（Tsinghua Science and Technology 2025）",
+      "summary_zh": "专家知识引导的中医大模型 ZhongJingGPT。它把领域微调和认知心理学放在一起，做了多种场景的中医知识指令。2026 年 7 月发表在 Tsinghua Science and Technology。",
       "orgs": [
         "福耀科技大学，健康长三角研究院，复旦大学，同济大学"
       ],
@@ -1992,8 +1992,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "ZhongJingGPT, an expert-knowledge-guided TCM LLM combining vertical-domain fine-tuning with cognitive-psychology insights and multi-scenario TCM knowledge instructions (Tsinghua Sci. Technol. 2025).",
+      "verified_at": "2026-10-24",
+      "summary_en": "ZhongJingGPT is an expert-knowledge-guided TCM model. It combines domain fine-tuning with ideas from cognitive psychology and builds instructions for several TCM settings. It appeared in Tsinghua Science and Technology in July 2026.",
       "links_en": {
         "Paper": "https://doi.org/10.26599/TST.2025.9010046",
         "Code": "https://github.com/pariskang/CMLM-ZhongJing",
@@ -2003,9 +2003,9 @@
     {
       "id": "tianyi",
       "name": "天医 (Tianyi)",
-      "year": 2025,
+      "year": 2026,
       "venue": "Information Fusion",
-      "summary_zh": "南京中医药大学等提出约7B参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证",
+      "summary_zh": "南京中医药大学等提出 7.6B 参数中医大模型，按读书—临证—跟师多阶段训练，配套TCMEval评测与真实世界验证（Information Fusion 2026年2月）",
       "orgs": [
         "南京中医药大学"
       ],
@@ -2020,8 +2020,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
-      "summary_en": "~7B TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation.",
+      "verified_at": "2026-10-24",
+      "summary_en": "7.6-billion-parameter TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation (Information Fusion, February 2026).",
       "name_en": "Tianyi",
       "orgs_en": [
         "Nanjing University of Chinese Medicine"
@@ -2191,9 +2191,9 @@
     {
       "id": "zhifangdantai",
       "name": "知方丹台 (ZhiFangDanTai)",
-      "year": 2025,
+      "year": 2026,
       "venue": "IEEE Journal of Biomedical and Health Informatics",
-      "summary_zh": "GraphRAG+LLM微调的中医方剂生成框架，输出君臣佐使/功效/禁忌等可解释信息。arXiv HTML 署名首都师范大学管理学院与昆士兰大学。Hugging Face 上的 tczzx6/ZhiFangDanTai1.0 于 2026-10-21 打开为 404，当前不能当公开权重",
+      "summary_zh": "用 GraphRAG 微调大模型来生成方剂，输出里带君臣佐使、功效和禁忌。作者在首都师范大学和昆士兰大学。公开的权重页面已经打不开了。",
       "orgs": [
         "首都师范大学",
         "昆士兰大学"
@@ -2211,8 +2211,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "GraphRAG + LLM fine-tuning for interpretable formula generation (sovereign–minister–assistant–courier, efficacy, contraindications). Authors at Capital Normal University and the University of Queensland. The Hugging Face repo tczzx6/ZhiFangDanTai1.0 returned 404 on 2026-10-21, so the weights are not publicly available.",
+      "verified_at": "2026-10-24",
+      "summary_en": "GraphRAG plus LLM fine-tuning for formula generation, with roles in the formula, effects, and contraindications written out. The authors are at Capital Normal University and the University of Queensland. The public weight page no longer opens.",
       "name_en": "ZhiFangDanTai",
       "orgs_en": [
         "Capital Normal University",
@@ -2441,7 +2441,7 @@
     {
       "id": "tcm-eval-wise",
       "name": "TCM-Eval (WISE 2025)",
-      "year": 2025,
+      "year": 2026,
       "venue": "WISE 2025",
       "summary_zh": "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作",
       "orgs": [
@@ -2455,7 +2455,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) despite the identical name.",
       "name_en": "TCM-Eval (WISE 2025)",
       "orgs_en": [
@@ -2596,7 +2596,7 @@
     {
       "id": "tcm-5llm-comparison",
       "name": "中医临床决策5-LLM对比",
-      "year": 2025,
+      "year": 2026,
       "venue": "JMIR Formative Research",
       "summary_zh": "5个LLM中医临床决策能力对比研究",
       "orgs": [
@@ -2610,7 +2610,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "Comparative study of 5 LLMs for TCM clinical decision-making.",
       "name_en": "5-LLM TCM clinical decision comparison",
       "orgs_en": [
@@ -3317,9 +3317,9 @@
     {
       "id": "huatuo-bencao",
       "name": "本草[原名：华驼(HuaTuo)]",
-      "year": 2024,
-      "venue": "ACM Trans. Knowl. Discov. Data",
-      "summary_zh": "基于中文医学知识的大语言模型指令微调",
+      "year": 2023,
+      "venue": "arXiv",
+      "summary_zh": "哈工大社会计算与信息检索研究中心做的本草，原来叫华驼。它用中文医学知识做指令微调，论文是 2023 年的 HuaTuo。同组后来又写了知识微调的工作，2025 年 2 月登在 ACM TKDD。",
       "orgs": [
         "哈尔滨工业大学"
       ],
@@ -3328,19 +3328,23 @@
         "general-medical"
       ],
       "links": {
-        "论文": "https://arxiv.org/pdf/2309.04175.pdf",
+        "论文": "https://arxiv.org/abs/2304.06975",
+        "相关论文": "https://arxiv.org/abs/2309.04175",
+        "期刊": "https://doi.org/10.1145/3686807",
         "代码": "https://github.com/SCIR-HI/Huatuo-Llama-Med-Chinese"
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "Instruction-tuned Chinese medical LLM (BenCao / formerly HuaTuo).",
+      "verified_at": "2026-10-24",
+      "summary_en": "BenCao, first called HuaTuo, is an instruction-tuned medical model from HIT SCIR, trained with Chinese medical knowledge. The 2023 paper is HuaTuo. The same group later published a knowledge-tuning paper in ACM TKDD in February 2025.",
       "name_en": "BenCao (formerly HuaTuo)",
       "orgs_en": [
         "Harbin Institute of Technology"
       ],
       "links_en": {
-        "Paper": "https://arxiv.org/pdf/2309.04175.pdf",
+        "Paper": "https://arxiv.org/abs/2304.06975",
+        "Related paper": "https://arxiv.org/abs/2309.04175",
+        "Journal": "https://doi.org/10.1145/3686807",
         "Code": "https://github.com/SCIR-HI/Huatuo-Llama-Med-Chinese"
       }
     },
@@ -4261,7 +4265,7 @@
       "name": "华佗GPT-o1 (HuatuoGPT-o1)",
       "year": 2024,
       "venue": "arXiv",
-      "summary_zh": "华佗系列医疗复杂推理模型，用可验证医题+医学验证器做搜索微调与强化学习；7B/72B支持中英",
+      "summary_zh": "华佗系列医疗复杂推理模型，用可验证医题和医学验证器做搜索微调与强化学习。仓库给出 7B、8B 和 70B。",
       "orgs": [
         "香港中文大学(深圳)，深圳市大数据研究院"
       ],
@@ -4278,8 +4282,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier; 7B/72B cover Chinese and English.",
+      "verified_at": "2026-10-24",
+      "summary_en": "HuatuoGPT medical complex-reasoning model trained with verifiable problems and a medical verifier. The repository lists 7B, 8B, and 70B checkpoints.",
       "title_en": "HuatuoGPT-o1",
       "name_en": "HuatuoGPT-o1",
       "orgs_en": [
@@ -4368,7 +4372,7 @@
       "id": "pulse",
       "name": "PULSE",
       "year": 2023,
-      "summary_zh": "上海AI Lab OpenMEDLab的中文医疗大模型（Bloom 7B/14B），覆盖医考、报告解读、病历结构化与模拟诊疗",
+      "summary_zh": "上海人工智能实验室 OpenMEDLab 的中文医疗大模型。PULSE-7b 基于 bloomz-7b1-mt，PULSE-20b 基于 InternLM-20B，覆盖医考、报告解读、病历结构化与模拟诊疗。",
       "orgs": [
         "上海人工智能实验室"
       ],
@@ -4383,8 +4387,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "OpenMEDLab Chinese medical LLM (Bloom 7B/14B) for exams, report reading, record structuring, and simulated diagnosis.",
+      "verified_at": "2026-10-24",
+      "summary_en": "OpenMEDLab Chinese medical LLM. PULSE-7b is fine-tuned from bloomz-7b1-mt and PULSE-20b from InternLM-20B, for exams, report reading, record structuring, and simulated diagnosis.",
       "title_en": "PULSE",
       "name_en": "PULSE",
       "orgs_en": [
@@ -5095,7 +5099,7 @@
       "id": "tcm-nvwa",
       "name": "女娲 (Nüwa / TCM-Nvwa)",
       "year": 2025,
-      "summary_zh": "中医 LLM 训练流水线（持续预训练 + SFT + 奖励模型 + RLAIF），底座写明 Ziya-LLaMA-13B；仓库只给部分 pretrain/TCM-QR/reward 数据，无独立开源权重。GitHub 创建于 2025-04，与 2411.00897 作者不同，不要并条",
+      "summary_zh": "一套中医大模型训练流程：持续预训练、监督微调、奖励模型和 RLAIF，底座是 Ziya-LLaMA-13B。仓库放了部分预训练、问答和奖励数据，权重没有单独放出来。",
       "tags": [
         "model"
       ],
@@ -5105,7 +5109,7 @@
       "type": "resource",
       "status": "published",
       "verified_at": "2026-09-13",
-      "summary_en": "Nüwa TCM LLM training stack (continual pretraining, SFT, reward modeling, RLAIF) on Ziya-LLaMA-13B. Repo ships only partial pretrain/TCM-QR/reward data and no standalone weights; GitHub created April 2025, distinct from arXiv 2411.00897.",
+      "summary_en": "A TCM training stack on Ziya-LLaMA-13B: continued pretraining, supervised fine-tuning, a reward model, and RLAIF. The repository includes part of the pretraining, question-answer, and reward data. The weights are not released on their own.",
       "links_en": {
         "Code": "https://github.com/synbol/TCM-Nvwa"
       }
@@ -5494,7 +5498,7 @@
     {
       "id": "tcm-symptom-ner",
       "name": "中医症状名识别",
-      "year": 2013,
+      "year": 2014,
       "venue": "Journal of Biomedical Informatics",
       "orgs": [
         "四川大学",
@@ -5513,7 +5517,7 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "Supervised methods for symptom name recognition in free-text TCM clinical records.",
       "links_en": {
         "DOI": "https://doi.org/10.1016/j.jbi.2013.09.008"
@@ -6166,9 +6170,9 @@
         "资料": "https://github.com/GanjinZero/awesome_Chinese_medical_NLP"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "Curated list of Chinese medical NLP resources: terminologies, corpora, word vectors, pretrained models, KGs, NER and QA (incl. CBLUE).",
       "links_en": {
         "Resources": "https://github.com/GanjinZero/awesome_Chinese_medical_NLP"
@@ -6200,8 +6204,8 @@
       "id": "shizhen-pretrain",
       "name": "TCM-Pretrain-Data-ShizhenGPT",
       "section": "原始书籍 / 预训练语料",
-      "title_zh": "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）",
-      "summary_zh": "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态约 3.6B）",
+      "title_zh": "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态正文 3.8B、附录 3.84B）",
+      "summary_zh": "ShizhenGPT 中医预训练语料（论文报告共 15B+ tokens：Stage1 文本 11.92B 含 6.3B 中医语料，Stage2 多模态正文写 3.8B tokens，附录写 3.84B tokens）",
       "tags": [
         "corpus",
         "multimodal"
@@ -6212,8 +6216,8 @@
       "type": "dataset",
       "year": 2025,
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "ShizhenGPT pretraining corpus (15B+ tokens reported in the paper — Stage-1 text 11.92B incl. 6.3B TCM, plus Stage-2 multimodal ~3.6B).",
+      "verified_at": "2026-10-24",
+      "summary_en": "ShizhenGPT pretraining corpus. The paper reports 15B+ tokens — Stage 1 text 11.92B including 6.3B TCM, and Stage 2 multimodal data of 3.8B tokens in the main text and 3.84B in the appendix.",
       "title_en": "TCM-Pretrain-Data-ShizhenGPT",
       "links_en": {
         "Dataset": "https://huggingface.co/datasets/FreedomIntelligence/TCM-Pretrain-Data-ShizhenGPT"
@@ -6232,9 +6236,9 @@
         "数据集": "https://huggingface.co/datasets/SylvanL/Traditional-Chinese-Medicine-Dataset-Pretrain"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "High-quality TCM pretraining dataset from non-Internet sources (~1GB; clinical cases, classics, encyclopedia), 99% simplified Chinese.",
       "links_en": {
         "Dataset": "https://huggingface.co/datasets/SylvanL/Traditional-Chinese-Medicine-Dataset-Pretrain"
@@ -6253,9 +6257,9 @@
         "数据集": "https://huggingface.co/datasets/wangekxy/classical-tcm-canon"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2026,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "Full-text digitizations of the TCM canon: Neijing, Nanjing, Shanghan Lun, Jingui Yaolue and warm-disease classics.",
       "links_en": {
         "Dataset": "https://huggingface.co/datasets/wangekxy/classical-tcm-canon"
@@ -6347,7 +6351,7 @@
       "id": "ds-tcmeval-pa",
       "name": "TCMEval-PA",
       "type": "dataset",
-      "year": 2026,
+      "year": 2025,
       "venue": "Sci Data",
       "orgs": [
         "北京中医药大学",
@@ -6367,7 +6371,7 @@
         "代码": "https://github.com/zhuyan166/TCMEval/tree/main/evaluation/TCMEval-PA"
       },
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "328 multiple-choice items on prescription normative quality and safety auditing.",
       "title_en": "TCMEval-PA",
       "links_en": {
@@ -6389,9 +6393,9 @@
         "数据集": "https://huggingface.co/datasets/Monor/hwtcm"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "HWTCMBench TCM capability evaluation set.",
       "title_en": "HWTCMBench",
       "links_en": {
@@ -6616,10 +6620,10 @@
         "论文": "https://arxiv.org/abs/2406.01126"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "venue": "arXiv",
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "TCMBench: a comprehensive benchmark for evaluating LLMs in traditional Chinese medicine (arXiv 2024).",
       "links_en": {
         "Dataset": "https://github.com/ywjawmw/TCMBench",
@@ -6672,9 +6676,9 @@
         "数据集": "https://huggingface.co/datasets/CMLM/ZhongJing-OMNI"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ZhongJing-OMNI multimodal TCM eval (including tongue).",
       "title_en": "ZhongJing-OMNI",
       "links_en": {
@@ -6695,9 +6699,9 @@
         "数据集": "https://github.com/jingnant/Medical-LLMs-Chinese-Exam"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "Chinese medical exam evaluation for medical LLMs.",
       "title_en": "Medical-LLMs-Chinese-Exam",
       "links_en": {
@@ -6784,9 +6788,9 @@
         "数据集": "https://huggingface.co/datasets/Suprit/CMtMedQA"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2023,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ZhongJing real multi-turn doctor–patient dialogues (~70k).",
       "title_en": "CMtMedQA",
       "links_en": {
@@ -6797,8 +6801,8 @@
       "id": "ds-chatmed-consult",
       "name": "ChatMed_Consult_Dataset",
       "section": "指令/对话数据集",
-      "title_zh": "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）",
-      "summary_zh": "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）",
+      "title_zh": "中文医疗在线问诊数据集 ChatMed_Consult_Dataset（110,113 条）",
+      "summary_zh": "中文在线问诊数据，110,113 条。问题来自问诊网站，回答是 GPT-3.5 写的。",
       "tags": [
         "sft",
         "general-medical"
@@ -6807,10 +6811,10 @@
         "数据集": "https://huggingface.co/datasets/michaelwzhu/ChatMed_Consult_Dataset"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2023,
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "Chinese online medical consult dataset (500k+ consults with ChatGPT replies).",
+      "verified_at": "2026-10-24",
+      "summary_en": "Chinese online-consultation set of 110,113 pairs. The questions come from consultation sites and the answers were written by GPT-3.5.",
       "title_en": "ChatMed_Consult_Dataset",
       "links_en": {
         "Dataset": "https://huggingface.co/datasets/michaelwzhu/ChatMed_Consult_Dataset"
@@ -6830,9 +6834,9 @@
         "数据集": "https://huggingface.co/datasets/tyang816/MedChatZH"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2023,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "MedChatZH TCM consultation dataset.",
       "title_en": "MedChatZH",
       "links_en": {
@@ -6853,9 +6857,9 @@
         "数据集": "https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2023,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ShenNong TCM instruction dataset.",
       "title_en": "ShenNong_TCM_Dataset",
       "links_en": {
@@ -6898,9 +6902,9 @@
         "数据集": "https://huggingface.co/datasets/ZJUFanLab/TCMChat-dataset-600k"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "TCMChat herbal QA and recommendation instruction data (~600k).",
       "title_en": "TCMChat-dataset-600k",
       "links_en": {
@@ -6920,9 +6924,9 @@
         "数据集": "https://huggingface.co/datasets/SylvanL/Traditional-Chinese-Medicine-Dataset-SFT"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2024,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "High-quality TCM supervised fine-tuning dataset.",
       "title_en": "Traditional-Chinese-Medicine-Dataset-SFT",
       "links_en": {
@@ -7086,7 +7090,7 @@
       "year": 2022,
       "section": "知识图谱",
       "title_zh": "TCM-NER 中药说明书实体识别（OpenKG / CHIP）",
-      "summary_zh": "1997 篇中药说明书、13 类实体共 59803 个标注，用来自动构建用药知识图谱（CC BY-SA 4.0）",
+      "summary_zh": "中药说明书的实体识别数据，用来做用药知识图谱。许可是 CC BY-NC 2.0。",
       "tags": [
         "kg",
         "corpus"
@@ -7096,8 +7100,8 @@
         "资料": "http://openkg.cn/dataset/tcm-ner"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "1,997 Chinese-medicine package inserts with 59,803 entities in 13 types for building a medication knowledge graph (OpenKG / CHIP, CC BY-SA 4.0).",
+      "verified_at": "2026-10-24",
+      "summary_en": "Named-entity data from Chinese medicine package inserts, for a medication knowledge graph. The license is CC BY-NC 2.0.",
       "title_en": "TCM-NER",
       "links_en": {
         "Data": "https://tianchi.aliyun.com/dataset/dataDetail?dataId=86819",
@@ -7201,7 +7205,7 @@
       "year": 2022,
       "section": "知识图谱",
       "title_zh": "TCM-QG 中医文献问题生成（CHIP2020）",
-      "summary_zh": "约 5000 篇中医文本、1.3 万问答对，用来补知识库和自动提问（CC BY-SA 4.0）",
+      "summary_zh": "中医文献问题生成数据，3500 篇，每篇由人标了 1 到 4 对问答。许可是 CC BY-NC 2.0。",
       "tags": [
         "kg",
         "corpus"
@@ -7211,8 +7215,8 @@
         "资料": "http://openkg.cn/dataset/tcm-qg"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "About 5,000 TCM documents and 13,000 question-answer pairs from CHIP2020, for knowledge-base expansion and question generation (CC BY-SA 4.0).",
+      "verified_at": "2026-10-24",
+      "summary_en": "Question-generation data from TCM texts: 3,500 documents, with one to four human-written question-answer pairs each. The license is CC BY-NC 2.0.",
       "title_en": "TCM-QG",
       "links_en": {
         "Data": "https://tianchi.aliyun.com/dataset/dataDetail?dataId=86895",
@@ -7276,13 +7280,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2024,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ChatTCM pretrained weights.",
       "title_en": "ChatTCM",
       "links_en": {
@@ -7293,7 +7297,7 @@
       "id": "hf-chattcm-sft",
       "name": "ChatTCM-7B-SFT",
       "type": "model_hf",
-      "year": 2025,
+      "year": 2024,
       "section": "Hugging Face 开源模型（精选）",
       "title_zh": "ChatTCM全参SFT版",
       "tags": [
@@ -7305,7 +7309,7 @@
         "模型": "https://huggingface.co/SylvanL/ChatTCM-7B-SFT"
       },
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-24",
       "summary_en": "ChatTCM full-parameter SFT checkpoint.",
       "title_en": "ChatTCM-7B-SFT",
       "links_en": {
@@ -7322,13 +7326,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2024,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "Lingdan / TCMLLM weights.",
       "title_en": "Lingdan",
       "links_en": {
@@ -7345,13 +7349,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2023,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ShenNong-TCM-LLM weights.",
       "title_en": "ShenNong-TCM-LLM",
       "links_en": {
@@ -7397,13 +7401,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2024,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "TCMChat weights.",
       "title_en": "TCMChat",
       "links_en": {
@@ -7420,13 +7424,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2026,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "ZhongJing GPT weights.",
       "title_en": "ZhongJing",
       "links_en": {
@@ -7443,13 +7447,13 @@
       },
       "type": "model_hf",
       "section": "Hugging Face 开源模型（精选）",
-      "year": 2025,
+      "year": 2024,
       "tags": [
         "open-weights",
         "model"
       ],
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-24",
       "summary_en": "MedChatZH weights.",
       "title_en": "medchatzh",
       "links_en": {
@@ -7602,7 +7606,7 @@
       "name": "Agentic and Knowledge-Grounded LLMs in TCM（预注册）",
       "year": 2026,
       "date": "2026.07",
-      "summary_zh": "中医Agentic/知识接地LLM系统综述的OSF预注册方案（证据图谱+文本挖掘+转化就绪度），非完成版综述",
+      "summary_zh": "2026 年 7 月在 OSF 登记的综述计划，准备从证据图谱、文本挖掘和能不能用到临床上，看中医里的智能体和带知识的大模型。综述还在做。",
       "tags": [
         "survey",
         "agent"
@@ -7613,9 +7617,9 @@
       "type": "survey",
       "status": "published",
       "verified_at": "2026-08-03",
-      "summary_en": "OSF preregistration (not a completed review) of a systematic review on agentic and knowledge-grounded LLMs in TCM: evidence mapping, text mining, and translation readiness.",
+      "summary_en": "A review plan registered on OSF in July 2026. It will look at agentic and knowledge-grounded language models in TCM through evidence maps, text mining, and whether they are ready for clinical use. The review is still underway.",
       "links_en": {
-        "Link": "https://doi.org/10.17605/osf.io/kq8jx"
+        "Preregistration": "https://doi.org/10.17605/osf.io/kq8jx"
       }
     },
     {
@@ -7807,7 +7811,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCMSP 中药系统药理学数据库",
-      "summary_zh": "草药–成分–靶点–疾病网络与ADME参数平台，现行公开站为TCMSP 2.3，提供草药/分子/靶点关系表下载",
+      "summary_zh": "查中药成分、靶点和疾病关系的药理学库，也给 ADME 参数。网站上现在同时放着旧版 2.3 和新版 9.0.1，关系表可以下载。",
       "tags": [
         "corpus"
       ],
@@ -7816,8 +7820,8 @@
         "DOI": "https://doi.org/10.1186/1758-2946-6-13"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Herb–ingredient–target–disease networks with ADME parameters; public site is TCMSP 2.3 with downloadable relationship tables.",
+      "verified_at": "2026-10-24",
+      "summary_en": "A pharmacology site for herb ingredients, targets, diseases, and ADME numbers. The site now keeps version 2.3 beside the newer 9.0.1, and the relationship tables can be downloaded.",
       "title_en": "TCMSP",
       "links_en": {
         "Website": "https://www.tcmsp-e.com/tcmsp.php",
@@ -7835,7 +7839,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCMID 2.0 中医药整合数据库",
-      "summary_zh": "上海团队的方剂–草药–成分–靶点整合库（与NUS的TCM-ID不是同一库）；官网megabionet已不可达，公开核验走Zenodo摘录与NAR论文",
+      "summary_zh": "华东师范大学团队做的方剂、草药、成分和靶点库。原网站已经打不开，数据和介绍还留在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。",
       "tags": [
         "corpus",
         "dead-site"
@@ -7848,7 +7852,7 @@
       },
       "status": "published",
       "verified_at": "2026-09-13",
-      "summary_en": "Integrative formula–herb–ingredient–target database (distinct from NUS TCM-ID). Original megabionet site is down; verify via Zenodo extract and the NAR paper.",
+      "summary_en": "East China Normal University's database of formulas, herbs, ingredients, and targets. The original site no longer opens; the data and the paper remain on Zenodo and in Nucleic Acids Research. It is a different database from NUS TCM-ID.",
       "title_en": "TCMID 2.0",
       "links_en": {
         "Original site": "http://www.megabionet.org/tcmid/",
@@ -9224,7 +9228,7 @@
       "id": "surv-chen2026-standardization",
       "name": "AI and Big Data in TCM Standardization and Internationalization（Chin Med Cult）",
       "year": 2026,
-      "summary_zh": "AI/大数据助力中医标准化与国际化评论（Chin Med Cult 2026, ahead of print）",
+      "summary_zh": "谈人工智能和大数据怎样帮助中医做标准化、走到国际上去。刊在 Chinese Medicine and Culture 2026 年第 9 卷第 3 期。",
       "tags": [
         "survey",
         "policy"
@@ -9234,12 +9238,12 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-03",
+      "verified_at": "2026-10-24",
       "venue": "Chinese Medicine and Culture",
       "orgs": [
         "南洋理工大学"
       ],
-      "summary_en": "Perspective on AI and big data for TCM standardization and internationalization (Chin. Med. Cult. 2026, ahead of print).",
+      "summary_en": "An essay on how AI and big data can help standardize traditional Chinese medicine and carry it abroad. Chinese Medicine and Culture, 2026, volume 9, issue 3.",
       "links_en": {
         "DOI": "https://doi.org/10.1097/mc9.0000000000000203"
       }
@@ -9275,7 +9279,7 @@
       "id": "surv-wang2026-zhfyx",
       "name": "人工智能赋能中医数字化诊断：现状与挑战（中华中医药学刊）",
       "year": 2026,
-      "summary_zh": "中文短篇综述：AI在海量数据处理、辅助诊断、疾病预测的应用现状与数据质量/可解释性/理论融合三挑战（北大核心，题录级）",
+      "summary_zh": "短文，写人工智能在中医数字化诊断里能做什么，也写了数据质量、说得清说不清、以及和中医理论怎么接上。刊在《中华中医药学刊》。",
       "tags": [
         "survey"
       ],
@@ -9286,7 +9290,7 @@
       "status": "published",
       "verified_at": "2026-08-03",
       "venue": "中华中医药学刊",
-      "summary_en": "Short Chinese review of AI-empowered digital TCM diagnosis: applications, data-quality, interpretability, and theory-integration challenges (bibliographic record only).",
+      "summary_en": "A short essay on what AI can do for digital TCM diagnosis, and on data quality, explanations, and joining the models to TCM theory. Published in Chinese Archives of Traditional Chinese Medicine.",
       "links_en": {
         "DOI": "https://doi.org/10.13193/j.issn.1673-7717.2026.01.004"
       }
@@ -9295,7 +9299,7 @@
       "id": "surv-jiao2025-sizhen",
       "name": "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊）",
       "year": 2025,
-      "summary_zh": "四诊AI客观化现状-问题-路径分析：面舌采集、电子鼻、脉象传感、四诊合参融合度低（北大核心，题录级）",
+      "summary_zh": "写人工智能做中医四诊现在走到哪、卡在哪。面舌采集、电子鼻、脉象传感和四诊合在一起看，都还比较弱。刊在《中华中医药学刊》。",
       "tags": [
         "survey",
         "multimodal"
@@ -9307,7 +9311,7 @@
       "status": "published",
       "verified_at": "2026-08-03",
       "venue": "中华中医药学刊",
-      "summary_en": "Short Chinese review of AI-based four-diagnosis objectification: face/tongue acquisition, electronic nose, pulse sensing, and low fusion of multi-diagnosis data (bibliographic record only).",
+      "summary_en": "On where AI stands in the four TCM examinations, and where it gets stuck: face and tongue capture, electronic noses, pulse sensors, and putting the four together. Published in Chinese Archives of Traditional Chinese Medicine.",
       "links_en": {
         "Paper": "https://www.sinomed.ac.cn/article.do?ui=2026106036"
       }
@@ -9486,13 +9490,13 @@
     {
       "id": "gpt-ernie-tcm-culture",
       "name": "GPT vs ERNIE 中医文化背景对比研究",
-      "year": 2024,
+      "year": 2025,
       "venue": "J Integr Complement Med",
       "orgs": [
         "北京大学",
         "College of Engineering, Boston University, Boston, MA, USA."
       ],
-      "summary_zh": "以文化背景为框架对比 GPT 与 ERNIE 在中医任务上的表现（J Integr Complement Med 2024）",
+      "summary_zh": "拿文化背景当线索，看 GPT 和 ERNIE 做中医执业医师考试时差在哪里。2025 年发表在 Journal of Integrative and Complementary Medicine。",
       "tags": [
         "evaluation"
       ],
@@ -9501,8 +9505,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-08",
-      "summary_en": "A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024).",
+      "verified_at": "2026-10-24",
+      "summary_en": "Looks at how cultural background changes the way GPT and ERNIE handle the national TCM licensing exam. Journal of Integrative and Complementary Medicine, 2025.",
       "links_en": {
         "DOI": "https://doi.org/10.1089/jicm.2024.0902"
       }
@@ -10491,7 +10495,7 @@
       "id": "surv-mahaswetha2026-prmcm",
       "name": "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述）",
       "year": 2026,
-      "summary_zh": "宽口径 AI×TCM 英文综述：多模态数据整合→药理研究→临床决策支持（Pharmacol Res Mod Chin Med 2026；第三轮扫描新发现，无基准矩阵/开源编目/历史谱系）",
+      "summary_zh": "一篇英文综述，从多模态数据、药理研究写到临床决策。2026 年发表在 Pharmacological Research - Modern Chinese Medicine。",
       "tags": [
         "survey",
         "multimodal"
@@ -10506,16 +10510,16 @@
       "orgs": [
         "Saveetha University"
       ],
-      "summary_en": "Broad AI-in-TCM review from multimodal data integration to pharmacological research and clinical decision support (Pharmacol. Res. Mod. Chin. Med. 2026; found in the third-round scan).",
+      "summary_en": "An English review that runs from multimodal data and pharmacology to clinical decisions. Pharmacological Research - Modern Chinese Medicine, 2026.",
       "links_en": {
         "DOI": "https://doi.org/10.1016/j.prmcm.2026.100842"
       }
     },
     {
       "id": "surv-cai-osf",
-      "name": "Cai R et al. TCM×LLM scoping review（OSF 预印本）",
+      "name": "Cai R et al. 中医辨证分类范围综述（OSF 预注册）",
       "year": 2026,
-      "summary_zh": "OSF 平台中医×LLM 范围综述预印本（未经同行评议，存档用）",
+      "summary_zh": "2026 年 4 月 3 日在 OSF 登记的一份范围综述计划，准备梳理大模型怎样做中医辨证、证素和辨证推理，并按 PRISMA-ScR 来写。综述还在做。",
       "tags": [
         "survey"
       ],
@@ -10524,18 +10528,18 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-08",
-      "venue": "OSF Preprints",
-      "summary_en": "OSF-preprint scoping review of LLMs in TCM (not peer-reviewed; archival).",
+      "verified_at": "2026-10-24",
+      "venue": "OSF Registries",
+      "summary_en": "A scoping-review plan registered on OSF on 3 April 2026. It will map how large language models do TCM syndrome differentiation, syndrome elements, and syndrome reasoning, and will be written to PRISMA-ScR. The review is still underway.",
       "links_en": {
         "DOI": "https://doi.org/10.17605/osf.io/2hyeq"
       }
     },
     {
       "id": "surv-cong-osf",
-      "name": "Cong H et al. TCM×LLM 综述（OSF 预印本）",
+      "name": "Cong H et al. 中医古籍知识挖掘范围综述（OSF 预注册）",
       "year": 2026,
-      "summary_zh": "OSF 平台中医×LLM 综述预印本（未经同行评议，存档用）",
+      "summary_zh": "2026 年 4 月 15 日在 OSF 登记的一份范围综述计划，准备梳理知识图谱、大模型和两者结合的框架怎样从中医古籍里整理知识。综述还在做。",
       "tags": [
         "survey"
       ],
@@ -10544,9 +10548,9 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-08",
-      "venue": "OSF Preprints",
-      "summary_en": "OSF-preprint review of LLMs in TCM (not peer-reviewed; archival).",
+      "verified_at": "2026-10-24",
+      "venue": "OSF Registries",
+      "summary_en": "A scoping-review plan registered on OSF on 15 April 2026. It will map how knowledge graphs, large language models, and the two together are used to draw knowledge out of TCM classics, following PRISMA-ScR. The review is still underway.",
       "links_en": {
         "DOI": "https://doi.org/10.17605/osf.io/5z367"
       }
@@ -11591,7 +11595,7 @@
       "id": "model-zhifu-qihuang-tiangong",
       "name": "智赋岐黄天功",
       "type": "resource",
-      "year": 2025,
+      "year": 2024,
       "summary_zh": "**智赋岐黄天功**是智赋岐黄与哈尔滨工业大学联合研发的中医大模型，用医案和名医验方训练多种辨证体系，作为四诊仪体质辨识的算法底座并已完成算法备案。",
       "tags": [
         "model",
@@ -11606,7 +11610,7 @@
         "哈尔滨工业大学"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
+      "verified_at": "2026-10-24",
       "summary_en": "Zhifu Qihuang Tiangong is a TCM model from Zhifu Qihuang and Harbin Institute of Technology, trained on cases and famous-doctor formulas for several syndrome systems, and it backs four-diagnostic constitution reports under algorithm filing.",
       "links_en": {
         "Website": "https://qihuang-ai.com/ai-platform/tiangong",
@@ -13984,7 +13988,7 @@
       "id": "acu-llm-eswa",
       "name": "针灸临床决策中的大模型补偿机制",
       "type": "resource",
-      "year": 2025,
+      "year": 2026,
       "venue": "Expert Systems with Applications",
       "summary_zh": "分析大语言模型在针灸临床决策中的补偿机制",
       "tags": [
@@ -13994,7 +13998,7 @@
         "DOI": "https://doi.org/10.1016/j.eswa.2025.130870"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
+      "verified_at": "2026-10-24",
       "summary_en": "Studies compensation mechanisms of large language models in acupuncture clinical decision-making.",
       "links_en": {
         "DOI": "https://doi.org/10.1016/j.eswa.2025.130870"
@@ -17189,7 +17193,7 @@
       "id": "ds-tcm-chole-metab",
       "name": "胆石症中医证候代谢组",
       "type": "dataset",
-      "year": 2025,
+      "year": 2026,
       "venue": "Scientific Data",
       "section": "临床结构化 / 处方",
       "summary_zh": "胆石症患者肝郁气滞与肝胆湿热两种证候的血清和尿液代谢组数据。",
@@ -17200,7 +17204,7 @@
         "论文": "https://doi.org/10.1038/s41597-025-06537-w"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
+      "verified_at": "2026-10-24",
       "summary_en": "Serum and urine metabolomics for two TCM syndromes in cholelithiasis: liver qi stagnation and liver-gallbladder damp-heat.",
       "links_en": {
         "Paper": "https://doi.org/10.1038/s41597-025-06537-w"
@@ -17274,7 +17278,7 @@
       "id": "ds-tcm-qa-sdb",
       "name": "中医药知识问答实验数据",
       "type": "dataset",
-      "year": 2026,
+      "year": 2024,
       "venue": "ScienceDB",
       "section": "指令/对话数据集",
       "summary_zh": "中医药问答数据集，并带提示工程用的知识图谱、知识库和实验结果。",
@@ -17286,7 +17290,7 @@
         "数据集": "https://doi.org/10.57760/sciencedb.j00133.00319"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
+      "verified_at": "2026-10-24",
       "summary_en": "Traditional Chinese medicine question-answering set plus the knowledge graph, prompt-engineering code, and experiment outputs.",
       "links_en": {
         "Dataset": "https://doi.org/10.57760/sciencedb.j00133.00319"
@@ -17317,7 +17321,7 @@
       "id": "ds-cn-article-llm-index",
       "name": "四模型中文医学文献标引测试集",
       "type": "dataset",
-      "year": 2026,
+      "year": 2024,
       "venue": "ScienceDB",
       "section": "通用中文医疗",
       "summary_zh": "从100篇随机中文医学研究论文抽取要点，由四个大模型做抽取和摘要并打准确分。",
@@ -17329,7 +17333,7 @@
         "数据集": "https://doi.org/10.57760/sciencedb.o00130.03231"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
+      "verified_at": "2026-10-24",
       "summary_en": "Key-information extraction and summary scores from four large models on 100 Chinese medical research articles.",
       "links_en": {
         "Dataset": "https://doi.org/10.57760/sciencedb.o00130.03231"
@@ -20190,7 +20194,7 @@
       "type": "resource",
       "year": 2024,
       "venue": "Digital Chinese Medicine",
-      "summary_zh": "采集健康人的全身站立图像，按中医体质量表标注体质，再用面色、体型和深度图像特征做识别。论文写了带标签的图像集，没有给出公开下载地址。",
+      "summary_zh": "采集健康人的全身站立图像，按中医体质量表标上体质，再用面色、体型和深度图像来辨认。图像没有公开。",
       "tags": [
         "multimodal"
       ],
@@ -20199,7 +20203,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-22",
-      "summary_en": "Full-body standing images of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire, classified from facial complexion, body shape, and depth features. No public download is given.",
+      "summary_en": "Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire, and classified from complexion, body shape, and depth. The images are not public.",
       "links_en": {
         "DOI": "https://doi.org/10.1016/j.dcmed.2024.09.002"
       }
@@ -20290,7 +20294,7 @@
       "type": "resource",
       "year": 2025,
       "venue": "International Conference on Digital Transformation and Management",
-      "summary_zh": "用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。摘要没有给样本量和公开下载地址。",
+      "summary_zh": "用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。样本量和记录都没有公开。",
       "tags": [
         "multimodal"
       ],
@@ -20299,7 +20303,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-22",
-      "summary_en": "A convolutional network recognizes common TCM pulse patterns from multichannel radial-artery signals after denoising and feature extraction. The abstract gives no sample size and no public download.",
+      "summary_en": "A convolutional network reads common pulse patterns from multichannel radial-artery signals after denoising and feature extraction. The sample size and the recordings are not public.",
       "links_en": {
         "DOI": "https://doi.org/10.1145/3795546.3795575"
       }
@@ -20354,7 +20358,7 @@
       "type": "resource",
       "year": 2026,
       "venue": "BMC Medical Informatics and Decision Making",
-      "summary_zh": "上海中医药大学等把桡动脉脉搏波当作脉诊、把语音当作闻诊，用来筛查冠心病和心力衰竭。摘要没有给样本量和公开数据地址。",
+      "summary_zh": "上海中医药大学等把桡动脉脉搏波当作脉诊，把语音当作闻诊，用来筛查冠心病和心力衰竭。同步记了 553 人，包括健康人、冠心病和心衰，另有 194 人做外部验证。",
       "tags": [
         "multimodal"
       ],
@@ -20362,8 +20366,8 @@
         "DOI": "https://doi.org/10.1186/s12911-026-03518-w"
       },
       "status": "published",
-      "verified_at": "2026-10-22",
-      "summary_en": "Shanghai University of Traditional Chinese Medicine and collaborators treat radial pulse waves as pulse diagnosis and voice as auscultation, to screen for coronary artery disease and heart failure. The abstract gives no sample size and no public data link.",
+      "verified_at": "2026-10-24",
+      "summary_en": "Shanghai University of Traditional Chinese Medicine and collaborators treat the radial pulse wave as pulse diagnosis and the voice as auscultation, to screen for coronary artery disease and heart failure. They recorded 553 people (healthy, coronary disease, and heart failure) and checked the model on another 194.",
       "links_en": {
         "DOI": "https://doi.org/10.1186/s12911-026-03518-w"
       }
@@ -20622,6 +20626,1014 @@
       "summary_en": "A neural network trained on 261 formulae and 173 herbs extracted from the Shanghan Lun and the Synopsis of Prescriptions of the Golden Chamber. Given only the medicinal composition, it names the classical formula, and it is tested on modified formulae from different meridians.",
       "links_en": {
         "DOI": "https://doi.org/10.1145/3529836.3529897"
+      }
+    },
+    {
+      "id": "ds-tcm-suite",
+      "name": "TCM-Suite",
+      "type": "dataset",
+      "year": 2022,
+      "venue": "iMeta",
+      "section": "中药组方 / 提取物",
+      "summary_zh": "把药材鉴定和网络药理放在同一个网站上。Watson 这边现在列着方剂 6692 首、药材 7322 味、化合物 704321 个、蛋白 19319 个、疾病 15437 种。Holmes 用标记基因做药材鉴定。2022 年发表在 iMeta。",
+      "tags": [
+        "tool",
+        "herbal"
+      ],
+      "links": {
+        "网站": "https://tcm-suite.geneis.cn/",
+        "DOI": "https://doi.org/10.1002/imt2.47"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A site that joins herb identification with network pharmacology. The Watson section currently lists 6,692 formulas, 7,322 herbs, 704,321 compounds, 19,319 proteins, and 15,437 diseases. Holmes identifies herbs with marker genes. Described in iMeta in 2022.",
+      "links_en": {
+        "Website": "https://tcm-suite.geneis.cn/",
+        "DOI": "https://doi.org/10.1002/imt2.47"
+      }
+    },
+    {
+      "id": "ds-npass",
+      "name": "NPASS",
+      "type": "dataset",
+      "year": 2025,
+      "venue": "Nucleic Acids Research",
+      "section": "中药组方 / 提取物",
+      "summary_zh": "天然产物的实验活性库。这一版有天然产物 204023 个、来源生物 48940 个、靶点 8764 个、活性记录 1048756 条，活性数值来自 ChEMBL 和文献。物种来源接过 TCM-ID、TCMID、TCMSP、TM-MC 等库。2026 年更新的论文在 2025 年 11 月登在 Nucleic Acids Research。",
+      "tags": [
+        "tool",
+        "herbal"
+      ],
+      "links": {
+        "网站": "https://bidd.group/NPASS/",
+        "说明": "https://bidd.group/NPASS/about.php",
+        "DOI": "https://doi.org/10.1093/nar/gkaf1196"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A database of measured activity for natural products. This version lists 204,023 natural products, 48,940 source organisms, 8,764 targets, and 1,048,756 activity records, with values drawn from ChEMBL and the literature. Species records were also taken from TCM-ID, TCMID, TCMSP, and TM-MC. The 2026 update appeared in Nucleic Acids Research in November 2025.",
+      "links_en": {
+        "Website": "https://bidd.group/NPASS/",
+        "About": "https://bidd.group/NPASS/about.php",
+        "DOI": "https://doi.org/10.1093/nar/gkaf1196"
+      }
+    },
+    {
+      "id": "ds-zhongyishijia",
+      "name": "中医世家",
+      "type": "dataset",
+      "year": 2026,
+      "venue": "中医世家",
+      "section": "中药组方 / 提取物",
+      "summary_zh": "在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。原来的网站已经打不开，现在用的是新网址。",
+      "tags": [
+        "tool",
+        "herbal",
+        "prescription"
+      ],
+      "links": {
+        "网站": "https://www.zysjw.com.cn/",
+        "方剂": "https://www.zysjw.com.cn/zhongyaofang/index.html",
+        "药材": "https://www.zysjw.com.cn/zhongyaocai/index.html"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "An online reader for TCM classics, herbs, formulas, and case records. The formula index has 25,425 entries, browsable by initial character or pinyin, and the herb index has 11,307 entries. The old site no longer opens; this is the new address.",
+      "links_en": {
+        "Website": "https://www.zysjw.com.cn/",
+        "Formulas": "https://www.zysjw.com.cn/zhongyaofang/index.html",
+        "Herbs": "https://www.zysjw.com.cn/zhongyaocai/index.html"
+      }
+    },
+    {
+      "id": "pharmmapper",
+      "name": "PharmMapper",
+      "type": "resource",
+      "year": 2017,
+      "venue": "Nucleic Acids Research",
+      "summary_zh": "上传一个分子的三维结构，反查它可能落到哪些蛋白上。2017 版根据 2016 年 1 月 1 日前的 PDB 建库，有 7000 多个受体药效团，覆盖 1627 个药物靶点，其中 459 个是人的蛋白。中药成分只有结构、还没有实验靶点时可以用。",
+      "tags": [
+        "tool",
+        "herbal"
+      ],
+      "links": {
+        "网站": "https://www.lilab-ecust.cn/pharmmapper/",
+        "说明": "https://www.lilab-ecust.cn/pharmmapper/help.php",
+        "DOI": "https://doi.org/10.1093/nar/gkx374"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Upload a 3D molecular structure and get possible protein targets. The 2017 release, built from PDB entries released before 1 January 2016, holds over 7,000 receptor pharmacophores covering 1,627 drug targets, 459 of them human proteins. Useful when a herb constituent has a structure but no measured target.",
+      "links_en": {
+        "Website": "https://www.lilab-ecust.cn/pharmmapper/",
+        "About": "https://www.lilab-ecust.cn/pharmmapper/help.php",
+        "DOI": "https://doi.org/10.1093/nar/gkx374"
+      }
+    },
+    {
+      "id": "tcm-cli",
+      "name": "tcm-cli",
+      "type": "resource",
+      "year": 2026,
+      "venue": "GitHub",
+      "summary_zh": "在终端里用自然语言查中医。可以问方剂组成、从症状看证候，也可以核配伍。需要 Python 3.10 以上和一个大模型接口密钥。本地数据可以用命令拉下来，包括药材、方剂，以及 TCMSP、TCMID 等。许可是 MIT。仓库建于 2026 年 2 月。",
+      "tags": [
+        "tool"
+      ],
+      "links": {
+        "代码": "https://github.com/tigerneil/tcm-cli"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A terminal tool for asking TCM questions in natural language, including formula composition, syndrome questions, and compatibility checks. It needs Python 3.10 or newer and an LLM API key. Local data can be pulled for herbs, formulas, TCMSP, TCMID, and related sets. MIT license. The repository was created in February 2026.",
+      "links_en": {
+        "Code": "https://github.com/tigerneil/tcm-cli"
+      }
+    },
+    {
+      "id": "pro-tcmllm",
+      "name": "pro_TCMLLM",
+      "type": "resource",
+      "year": 2025,
+      "venue": "GitHub",
+      "summary_zh": "一份把神农指令数据接到 ChatGLM-6B 上的 P-Tuning 脚本。正在启用的命令把前缀长度设为 128、学习率 2e-2，训练和验证文件放在 ShenNong_TCM_Dataset 目录，最长 3000 步，单卡 batch 为 4，梯度累积为 2，并打开 fp16。仓库建于 2025 年 11 月。",
+      "tags": [
+        "tool"
+      ],
+      "links": {
+        "代码": "https://github.com/GT-Kai/TCMLLM",
+        "脚本": "https://github.com/GT-Kai/TCMLLM/blob/main/BaseModels/ChatGLM-6B/ptuning/train.sh"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A P-Tuning script that trains ChatGLM-6B on the ShenNong instruction files. The active command uses prefix length 128, learning rate 2e-2, the ShenNong train and test files, 3,000 steps, batch size 4, gradient accumulation 2, and fp16. The repository was created in November 2025.",
+      "links_en": {
+        "Code": "https://github.com/GT-Kai/TCMLLM",
+        "Script": "https://github.com/GT-Kai/TCMLLM/blob/main/BaseModels/ChatGLM-6B/ptuning/train.sh"
+      }
+    },
+    {
+      "id": "ds-tao-shanghan",
+      "name": "Tao-Shanghan-Corpus",
+      "type": "dataset",
+      "year": 2026,
+      "venue": "Zenodo",
+      "section": "原始书籍 / 预训练语料",
+      "summary_zh": "可下载的《伤寒论》文献语料，把条文、注文和异文分开。2026 年 8 月 11 日发布的 1.0 版有条文记录 681 条，其中正条文 398 条，对齐的历史注文 2958 条，异文 616 条。许可是 CC BY 4.0。",
+      "tags": [
+        "corpus",
+        "ancient-books"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.5281/zenodo.21889089",
+        "数据": "https://zenodo.org/records/21889089"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A downloadable Shanghan Lun corpus that keeps clauses, commentaries, and textual variants apart. Version 1.0, released 11 August 2026, has 681 clause records, including 398 canonical clauses, 2,958 aligned commentaries, and 616 variants. CC BY 4.0.",
+      "links_en": {
+        "DOI": "https://doi.org/10.5281/zenodo.21889089",
+        "Data": "https://zenodo.org/records/21889089"
+      }
+    },
+    {
+      "id": "ds-shanghan-five-kg",
+      "name": "五部伤寒书知识图谱",
+      "type": "dataset",
+      "year": 2024,
+      "venue": "ScienceDB",
+      "section": "知识图谱",
+      "summary_zh": "从《伤寒论》《伤寒类方》《伤寒悬解》《伤寒论浅注》《伤寒九十论》抽出的知识图谱。节点 26771 个，关系 8272 条，CSV 可以导入 Neo4j。2024 年发布在 ScienceDB。",
+      "tags": [
+        "kg",
+        "ancient-books"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.57760/sciencedb.j00133.00432"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A knowledge graph drawn from Shanghan Lun, Shanghan Leifang, Shanghan Xuanjie, Shanghan Lun Qianzhu, and Shanghan Jiushi Lun. It has 26,771 nodes and 8,272 relations in CSV files that can be loaded into Neo4j. Released on ScienceDB in 2024.",
+      "links_en": {
+        "DOI": "https://doi.org/10.57760/sciencedb.j00133.00432"
+      }
+    },
+    {
+      "id": "jingfang-pingren",
+      "name": "经方按症状排序（平人）",
+      "type": "resource",
+      "year": 2021,
+      "venue": "Zenodo",
+      "summary_zh": "把《伤寒杂病论》里某一方对应的证当作应有证，把病人当下的证当作现有证，两边匹配后给出 0% 到 100% 的适用性，并做成在线程序《平人》。输入用的是书里描述症状和病程的词。2021 年 12 月发布，许可 CC BY 4.0。",
+      "tags": [
+        "prescription",
+        "ancient-books"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.5281/zenodo.5804283",
+        "数据": "https://zenodo.org/records/5804283"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Matches the pattern expected by a formula in the Shanghan zabing lun with the patient's present pattern and scores the fit from 0% to 100%. The method is implemented as the online program Pingren. Inputs are the book's own words for symptoms and course. Released December 2021, CC BY 4.0.",
+      "links_en": {
+        "DOI": "https://doi.org/10.5281/zenodo.5804283",
+        "Data": "https://zenodo.org/records/5804283"
+      }
+    },
+    {
+      "id": "ds-ccmq-score",
+      "name": "中医体质量表计分代码",
+      "type": "dataset",
+      "year": 2021,
+      "venue": "Zenodo",
+      "section": "公开资料整理",
+      "summary_zh": "中医体质量表 CCMQ 的 SAS 代码、SPSS 语法和一份 Excel 测试表，用来按问卷计算体质。2021 年 1 月发布，许可 CC BY 4.0。",
+      "tags": [
+        "evaluation"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.5281/zenodo.4431679",
+        "数据": "https://zenodo.org/records/4431679"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "SAS code, SPSS syntax, and an Excel test sheet for scoring the Constitution in Chinese Medicine Questionnaire. Released January 2021, CC BY 4.0.",
+      "links_en": {
+        "DOI": "https://doi.org/10.5281/zenodo.4431679",
+        "Data": "https://zenodo.org/records/4431679"
+      }
+    },
+    {
+      "id": "who-tcm-terms-2022",
+      "name": "WHO 中医药国际标准术语",
+      "type": "resource",
+      "year": 2022,
+      "venue": "World Health Organization",
+      "summary_zh": "世界卫生组织 2022 年公布的中医药术语标准，给临床、政策和病历使用同一套概念。出版物页面提供 PDF，用来对照证、证候和四诊的中英文说法。",
+      "tags": [
+        "glossary"
+      ],
+      "links": {
+        "网站": "https://www.who.int/publications/i/item/9789240042322",
+        "PDF": "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "The World Health Organization's 2022 terminology standard for traditional Chinese medicine, so clinics, policy, and records can share the same concepts. The publications page offers a PDF for checking Chinese and English wording of patterns and the four examinations.",
+      "links_en": {
+        "Website": "https://www.who.int/publications/i/item/9789240042322",
+        "PDF": "https://iris.who.int/bitstream/handle/10665/352306/9789240042322-eng.pdf"
+      }
+    },
+    {
+      "id": "wujutong-skill",
+      "name": "吴鞠通温病技能",
+      "type": "resource",
+      "year": 2026,
+      "venue": "GitHub",
+      "summary_zh": "把《温病条辨》《医医病书》《吴鞠通医案》和《温热经纬》整理成温病派技能，方便和六经方证对照。仓库简介写有医案 359 案、温病方 22 首，辨证用三焦和卫气营血。",
+      "tags": [
+        "ancient-books"
+      ],
+      "links": {
+        "代码": "https://github.com/jangviktor-web/wujutong"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A warm-disease skill set drawn from Wenbing Tiaobian, Yiyi Bingshu, Wu Jutong's case records, and Wenre Jingwei, set beside six-meridian formula patterns. The repository description lists 359 cases and 22 warm-disease formulas, using sanjiao and wei-qi-ying-xue.",
+      "links_en": {
+        "Code": "https://github.com/jangviktor-web/wujutong"
+      }
+    },
+    {
+      "id": "aconite-tci",
+      "name": "附子毒性成分指数",
+      "type": "resource",
+      "year": 2016,
+      "venue": "Frontiers in Pharmacology",
+      "summary_zh": "用乌头碱、新乌头碱和次乌头碱的最小致死量做加权，提出附子的毒性成分指数，避免把三种双酯型生物碱的含量直接相加。2016 年发表在 Frontiers in Pharmacology。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3389/fphar.2016.00164"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Weights aconitine, mesaconitine, and hypaconitine by minimum lethal dose and defines a toxic-constituents index for aconite, instead of adding the three diester-alkaloid contents directly. Frontiers in Pharmacology, 2016.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3389/fphar.2016.00164"
+      }
+    },
+    {
+      "id": "xiyanping-vip",
+      "name": "喜炎平严重不良事件的投影重要性",
+      "type": "resource",
+      "year": 2023,
+      "venue": "Chinese Medicine",
+      "summary_zh": "用变量投影重要性分析年龄和中西药联用，对喜炎平注射液不良事件严重程度的影响。2023 年发表在 Chinese Medicine。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1186/s13020-023-00718-8"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Uses variable-importance-for-projection scores to see how age and herb-drug combinations contribute to the severity of adverse events linked to Xiyanping injection. Chinese Medicine, 2023.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1186/s13020-023-00718-8"
+      }
+    },
+    {
+      "id": "xiyanping-allergy",
+      "name": "喜炎平联用药物与疑似过敏",
+      "type": "resource",
+      "year": 2022,
+      "venue": "Frontiers in Pharmacology",
+      "summary_zh": "用国家医保抽样做巢式病例对照，看喜炎平注射液和其他药一起用时，疑似过敏的风险怎么变。2022 年发表在 Frontiers in Pharmacology。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3389/fphar.2022.883407"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A nested case-control study in a national medical-insurance sample on concomitant drugs and suspected allergic reactions with Xiyanping injection. Frontiers in Pharmacology, 2022.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3389/fphar.2022.883407"
+      }
+    },
+    {
+      "id": "hubei-tcm-inj-adr",
+      "name": "湖北中药注射剂自发报告",
+      "type": "resource",
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "summary_zh": "分析湖北省 2014 到 2019 年中药注射剂不良反应自发报告，看哪些品种和表现更值得留意。2021 年发表在 Scientific Reports。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1038/s41598-021-88339-9"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Analyzes spontaneous adverse-reaction reports for traditional Chinese medicine injections in Hubei from 2014 to 2019. Scientific Reports, 2021.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1038/s41598-021-88339-9"
+      }
+    },
+    {
+      "id": "tcm-adr-tree",
+      "name": "中药不良反应信号的决策树分类",
+      "type": "resource",
+      "year": 2018,
+      "venue": "BMC Medical Informatics and Decision Making",
+      "summary_zh": "用决策树给中药药物警戒里的信号检测做分类。2018 年发表在 BMC Medical Informatics and Decision Making。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1186/s12911-018-0599-5"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Decision-tree classification for signal detection in traditional Chinese medicine pharmacovigilance. BMC Medical Informatics and Decision Making, 2018.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1186/s12911-018-0599-5"
+      }
+    },
+    {
+      "id": "msat-cmm-adr",
+      "name": "MSAT：中药物不良反应预测",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Frontiers in Pharmacology",
+      "summary_zh": "用 FAERS 自发报告训练异构图神经网络，预测中药相关的不良反应。2026 年发表在 Frontiers in Pharmacology。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3389/fphar.2026.1774128"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A heterogeneous graph neural network trained on FAERS spontaneous reports to predict adverse reactions associated with Chinese materia medica. Frontiers in Pharmacology, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3389/fphar.2026.1774128"
+      }
+    },
+    {
+      "id": "tcmlm-pr",
+      "name": "强化学习的可解释中医处方推荐",
+      "type": "resource",
+      "year": 2025,
+      "venue": "Chinese Medicine",
+      "summary_zh": "用强化学习做可解释的中医处方推荐，并把较小语言模型里的隐含偏好用上。2025 年发表在 Chinese Medicine。",
+      "tags": [
+        "prescription",
+        "reasoning"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1186/s13020-025-01250-7"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Reinforcement learning for explainable traditional Chinese medicine prescription recommendation, using implicit preferences from a smaller language model. Chinese Medicine, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1186/s13020-025-01250-7"
+      }
+    },
+    {
+      "id": "tcmpcsd-bert",
+      "name": "胰腺癌病历的证型识别",
+      "type": "resource",
+      "year": 2025,
+      "venue": "JMIR Formative Research",
+      "summary_zh": "从胰腺癌电子病历的自由文本里识别中医证型。2025 年发表在 JMIR Formative Research。",
+      "tags": [
+        "syndrome",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.2196/70602",
+        "代码": "https://github.com/wangzaimieyoutou/PCSD_Bert"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Identifies TCM syndrome types from free text in electronic records of people with pancreatic cancer. JMIR Formative Research, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.2196/70602",
+        "Code": "https://github.com/wangzaimieyoutou/PCSD_Bert"
+      }
+    },
+    {
+      "id": "dg-spantcm",
+      "name": "中医病历嵌套实体识别",
+      "type": "resource",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "summary_zh": "识别中医电子病历里套在一起的实体，比如症状和它所在的部位。2025 年发表在 Scientific Reports。",
+      "tags": [
+        "extract",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1038/s41598-025-22283-w"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Recognizes nested entities in traditional Chinese medicine electronic medical records, such as a symptom and the body site it belongs to. Scientific Reports, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1038/s41598-025-22283-w"
+      }
+    },
+    {
+      "id": "tcm-ner-distill",
+      "name": "中医命名实体识别的知识蒸馏",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Scientific Reports",
+      "summary_zh": "用知识蒸馏做中医命名实体识别，把大模型的识别能力收进更小的模型。2026 年发表在 Scientific Reports。",
+      "tags": [
+        "extract"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1038/s41598-026-56313-y"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Knowledge distillation for named-entity recognition in traditional Chinese medicine, moving the skill into a smaller model. Scientific Reports, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1038/s41598-026-56313-y"
+      }
+    },
+    {
+      "id": "tcm-span-ds-ner",
+      "name": "远程监督的中医跨度实体抽取",
+      "type": "resource",
+      "year": 2021,
+      "venue": "JMIR Medical Informatics",
+      "summary_zh": "用远程监督做跨度一级的中医实体抽取，从文本里直接抽出一段实体，而不是逐字标注。2021 年发表在 JMIR Medical Informatics。",
+      "tags": [
+        "extract"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.2196/28219"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Span-level named-entity extraction for traditional Chinese medicine, trained with distant supervision. JMIR Medical Informatics, 2021.",
+      "links_en": {
+        "DOI": "https://doi.org/10.2196/28219"
+      }
+    },
+    {
+      "id": "gam-tcm-cdss",
+      "name": "人工智能中医辅助诊断系统验证",
+      "type": "resource",
+      "year": 2020,
+      "venue": "JMIR Medical Informatics",
+      "summary_zh": "验证一套基于人工智能的中医辅助诊断系统。2020 年发表在 JMIR Medical Informatics。",
+      "tags": [
+        "clinical",
+        "evaluation"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.2196/17608"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Validation of an artificial-intelligence assistive diagnostic system for traditional Chinese medicine. JMIR Medical Informatics, 2020.",
+      "links_en": {
+        "DOI": "https://doi.org/10.2196/17608"
+      }
+    },
+    {
+      "id": "cpm-rx-monitor",
+      "name": "基于知识图谱的中成药处方监测",
+      "type": "resource",
+      "year": 2021,
+      "venue": "Evidence-Based Complementary and Alternative Medicine",
+      "summary_zh": "用知识图谱做中成药处方监测，用来发现联用和剂量上的问题。2021 年发表。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1155/2021/9970063"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A prescription-monitoring program for Chinese patent medicines built on a knowledge graph. Evidence-Based Complementary and Alternative Medicine, 2021.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1155/2021/9970063"
+      }
+    },
+    {
+      "id": "tcm-dose-titration",
+      "name": "中药复方剂量调整方法",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Frontiers in Pharmacology",
+      "summary_zh": "讨论怎样把经验用药收成可调整的复方剂量，往更精细的用法走。2026 年发表在 Frontiers in Pharmacology。",
+      "tags": [
+        "prescription"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3389/fphar.2026.1815285"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A method for adjusting the dosage of traditional Chinese medicine formulas, moving from empirical practice toward more precise use. Frontiers in Pharmacology, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3389/fphar.2026.1815285"
+      }
+    },
+    {
+      "id": "tcm-decoction-textcnn",
+      "name": "复方煎煮时长分类",
+      "type": "resource",
+      "year": 2024,
+      "venue": "Computer Methods in Biomechanics and Biomedical Engineering",
+      "summary_zh": "按多维特征给中药复方的煎煮时长做分类。2024 年发表。",
+      "tags": [
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1080/10255842.2024.2302225"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Classifies how long a traditional Chinese medicine compound should be decocted, using multi-dimensional features. Computer Methods in Biomechanics and Biomedical Engineering, 2024.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1080/10255842.2024.2302225"
+      }
+    },
+    {
+      "id": "dhhngdp-dosage",
+      "name": "方剂推荐中的剂量预测",
+      "type": "resource",
+      "year": 2025,
+      "venue": "IEEE BIBM",
+      "summary_zh": "在推荐中药方剂的同时预测剂量，用了扩散模型和异构层次网络。2025 年 IEEE BIBM。",
+      "tags": [
+        "prescription"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1109/bibm66473.2025.11357222"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Predicts doses while recommending a traditional Chinese medicine formula, using a diffusion model and a heterogeneous hierarchical network. IEEE BIBM, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1109/bibm66473.2025.11357222"
+      }
+    },
+    {
+      "id": "imgateway-hdi",
+      "name": "中西药相互作用专论库",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Evidence-Based Chinese Medicine and Technology Assessment",
+      "summary_zh": "为临床决策支持库整理有证据的中西药相互作用专论。2026 年发表。",
+      "tags": [
+        "safety",
+        "herbal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.26599/ecmta.2026.9570040",
+        "网站": "https://www.imgateway.net"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Evidence-based monographs of Chinese herb–drug interactions for a clinical decision-support database. Evidence-Based Chinese Medicine and Technology Assessment, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.26599/ecmta.2026.9570040",
+        "Website": "https://www.imgateway.net"
+      }
+    },
+    {
+      "id": "ccrin-tcm-emr",
+      "name": "中医临床命名实体与关系联合识别",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Artificial Intelligence in Medicine",
+      "summary_zh": "用字符级卷积循环交互网络，同时做中医临床命名实体识别和关系抽取。2026 年发表在 Artificial Intelligence in Medicine。",
+      "tags": [
+        "extract",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1016/j.artmed.2026.103372"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Joint named-entity and relation extraction for traditional Chinese medicine clinical text, with a character-level convolutional recurrent network. Artificial Intelligence in Medicine, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1016/j.artmed.2026.103372"
+      }
+    },
+    {
+      "id": "lip-color-svm",
+      "name": "唇色的中医望诊分类",
+      "type": "resource",
+      "year": 2012,
+      "venue": "BMC Complementary and Alternative Medicine",
+      "summary_zh": "用多类支持向量机，按唇色做中医望诊。2012 年发表。",
+      "tags": [
+        "multimodal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1186/1472-6882-12-127"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Classifies lip color for traditional Chinese medicine inspection with multi-class support vector machines. BMC Complementary and Alternative Medicine, 2012.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1186/1472-6882-12-127"
+      }
+    },
+    {
+      "id": "face-control-transformer",
+      "name": "可控 Transformer 面诊",
+      "type": "resource",
+      "year": 2026,
+      "venue": "IEEE Journal of Biomedical and Health Informatics",
+      "summary_zh": "用一个可控的 Transformer，同时做多项中医面诊任务。2026 年发表。",
+      "tags": [
+        "multimodal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1109/jbhi.2026.3706751"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A controllable Transformer for several traditional Chinese medicine facial-inspection tasks at once. IEEE Journal of Biomedical and Health Informatics, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1109/jbhi.2026.3706751"
+      }
+    },
+    {
+      "id": "auscult-wpt-svm",
+      "name": "小波包分形维的闻诊",
+      "type": "resource",
+      "year": 2014,
+      "venue": "Evidence-Based Complementary and Alternative Medicine",
+      "summary_zh": "用小波包分形维和支持向量机，把中医闻诊里的声音做成可计算的证候判断。2014 年发表。",
+      "tags": [
+        "multimodal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1155/2014/502348"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Turns traditional Chinese medicine listening into a computable syndrome task with wavelet-packet fractal dimension and a support vector machine. 2014.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1155/2014/502348"
+      }
+    },
+    {
+      "id": "voice-constitution-acoustic",
+      "name": "用声学特征辨体质",
+      "type": "resource",
+      "year": 2013,
+      "venue": "Journal of Alternative and Complementary Medicine",
+      "summary_zh": "从语音的声学特征辨认中医体质。2013 年发表。",
+      "tags": [
+        "multimodal"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1089/acm.2012.0478"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Uses acoustic features of the voice to identify constitutions in traditional Chinese medicine. Journal of Alternative and Complementary Medicine, 2013.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1089/acm.2012.0478"
+      }
+    },
+    {
+      "id": "inquiry-chd-mll",
+      "name": "冠心病问诊的多标签学习",
+      "type": "resource",
+      "year": 2010,
+      "venue": "BMC Complementary and Alternative Medicine",
+      "summary_zh": "用多标签学习给冠心病的中医问诊诊断建模。2010 年发表。",
+      "tags": [
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1186/1472-6882-10-37"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Models inquiry-based diagnosis of coronary heart disease in traditional Chinese medicine with multi-label learning. BMC Complementary and Alternative Medicine, 2010.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1186/1472-6882-10-37"
+      }
+    },
+    {
+      "id": "t2dm-inquiry-lsm",
+      "name": "上海 2 型糖尿病问诊证候识别",
+      "type": "resource",
+      "year": 2022,
+      "venue": "Evidence-Based Complementary and Alternative Medicine",
+      "summary_zh": "用上海的中医问诊信息，识别 2 型糖尿病的证候。2022 年发表。",
+      "tags": [
+        "syndrome",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1155/2022/2843218"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Recognizes traditional Chinese medicine syndromes of type 2 diabetes from inquiry information collected in Shanghai. 2022.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1155/2022/2843218"
+      }
+    },
+    {
+      "id": "pcos-pattern-ml",
+      "name": "多囊卵巢证型的多标签预测",
+      "type": "resource",
+      "year": 2024,
+      "venue": "Heliyon",
+      "summary_zh": "比较不同特征选择和多标签模型，预测多囊卵巢综合征患者的中医证型。2024 年发表在 Heliyon。",
+      "tags": [
+        "syndrome",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1016/j.heliyon.2024.e35283"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Compares feature selection and multi-label models for predicting traditional Chinese medicine patterns in polycystic ovary syndrome. Heliyon, 2024.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1016/j.heliyon.2024.e35283"
+      }
+    },
+    {
+      "id": "dysmenorrhea-svm",
+      "name": "痛经辨证的机器学习模型",
+      "type": "resource",
+      "year": 2025,
+      "venue": "Combinatorial Chemistry & High Throughput Screening",
+      "summary_zh": "用机器学习给痛经做中医辨证。2025 年发表。",
+      "tags": [
+        "syndrome",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.2174/0113862073293191240212091028"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A machine-learning model for traditional Chinese medicine syndrome differentiation in dysmenorrhea. Combinatorial Chemistry and High Throughput Screening, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.2174/0113862073293191240212091028"
+      }
+    },
+    {
+      "id": "pediatric-tuina-adhd",
+      "name": "儿童多动症推拿的特征选择",
+      "type": "resource",
+      "year": 2025,
+      "venue": "Bioengineering",
+      "summary_zh": "用机器学习挑选特征，并预测注意缺陷多动障碍儿童的中医推拿方案。2025 年发表在 Bioengineering。",
+      "tags": [
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3390/bioengineering12101012"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Selects features and predicts pediatric tuina choices for children with attention deficit hyperactivity disorder. Bioengineering, 2025.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3390/bioengineering12101012"
+      }
+    },
+    {
+      "id": "breast-tcm-nn",
+      "name": "乳腺癌中医证型的神经网络区分",
+      "type": "resource",
+      "year": 2020,
+      "venue": "Frontiers in Pharmacology",
+      "summary_zh": "用神经网络和聚类，区分乳腺癌患者的中医证型。2020 年发表在 Frontiers in Pharmacology。",
+      "tags": [
+        "syndrome",
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.3389/fphar.2020.00670"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Uses a neural network and clustering to separate traditional Chinese medicine patterns in people with breast cancer. Frontiers in Pharmacology, 2020.",
+      "links_en": {
+        "DOI": "https://doi.org/10.3389/fphar.2020.00670"
+      }
+    },
+    {
+      "id": "ggn-tcm-risk",
+      "name": "肺磨玻璃结节的中医症状风险模型",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Journal of Integrative Medicine",
+      "summary_zh": "把中医临床症状和影像进展合在一起，评估肺磨玻璃结节往后发展的风险。2026 年发表在 Journal of Integrative Medicine。",
+      "tags": [
+        "clinical"
+      ],
+      "links": {
+        "DOI": "https://doi.org/10.1016/j.joim.2026.01.002"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Assesses how pulmonary ground-glass nodules may progress, combining imaging with traditional Chinese medicine symptoms. Journal of Integrative Medicine, 2026.",
+      "links_en": {
+        "DOI": "https://doi.org/10.1016/j.joim.2026.01.002"
+      }
+    },
+    {
+      "id": "tcm-qwen25-7b-sft",
+      "name": "TCM-Qwen2.5-7B-SFT",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Hugging Face",
+      "summary_zh": "基于 Qwen2.5-7B 的中医监督微调权重，模型文件是完整的 safetensors，许可 Apache-2.0。2026 年 10 月上传。",
+      "tags": [
+        "model",
+        "open-weights"
+      ],
+      "links": {
+        "模型": "https://huggingface.co/Xxiao2023/TCM-Qwen2.5-7B-SFT-V1"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A traditional Chinese medicine supervised-fine-tuning checkpoint of Qwen2.5-7B. The weights are full safetensors files under Apache-2.0, uploaded in October 2026.",
+      "links_en": {
+        "Model": "https://huggingface.co/Xxiao2023/TCM-Qwen2.5-7B-SFT-V1"
+      }
+    },
+    {
+      "id": "qwen35-9b-tcm-cpt",
+      "name": "Qwen3.5-9B 中医继续预训练",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Hugging Face",
+      "summary_zh": "在 Qwen3.5-9B 上做的中医继续预训练 LoRA，许可 Apache-2.0。2026 年 7 月上传。",
+      "tags": [
+        "model",
+        "open-weights"
+      ],
+      "links": {
+        "模型": "https://huggingface.co/arthur789/qwen3.5-9b-tcm-cpt"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "A continued-pretraining LoRA for traditional Chinese medicine on Qwen3.5-9B, under Apache-2.0. Uploaded in July 2026.",
+      "links_en": {
+        "Model": "https://huggingface.co/arthur789/qwen3.5-9b-tcm-cpt"
+      }
+    },
+    {
+      "id": "tcm-constitution-gguf",
+      "name": "中医体质 Qwen3-8B 量化权重",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Hugging Face",
+      "summary_zh": "面向中医体质的 Qwen3-8B 量化权重，仓库里有 q4、q5 和 q8 三份 GGUF，许可 Apache-2.0。2026 年 9 月上传。",
+      "tags": [
+        "model",
+        "open-weights"
+      ],
+      "links": {
+        "模型": "https://huggingface.co/chenhaodev/tcm-constitution-qwen3-8b-gguf"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Quantized Qwen3-8B weights for traditional Chinese medicine constitution, with q4, q5, and q8 GGUF files under Apache-2.0. Uploaded in September 2026.",
+      "links_en": {
+        "Model": "https://huggingface.co/chenhaodev/tcm-constitution-qwen3-8b-gguf"
+      }
+    },
+    {
+      "id": "tcmdata",
+      "name": "TCMDATA",
+      "type": "resource",
+      "year": 2026,
+      "venue": "Current Molecular Pharmacology",
+      "summary_zh": "面向靶点的中医网络药理分析和人工智能解读的 R 包。2026 年发表在 Current Molecular Pharmacology。",
+      "tags": [
+        "tool",
+        "herbal"
+      ],
+      "links": {
+        "代码": "https://github.com/YuLab-SMU/TCMDATA",
+        "DOI": "https://doi.org/10.1016/j.cmp.2026.09.003"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "An R package for target-oriented network pharmacology and AI-assisted interpretation in traditional Chinese medicine. Current Molecular Pharmacology, 2026.",
+      "links_en": {
+        "Code": "https://github.com/YuLab-SMU/TCMDATA",
+        "DOI": "https://doi.org/10.1016/j.cmp.2026.09.003"
+      }
+    },
+    {
+      "id": "who-wpro-tm-2007",
+      "name": "WHO 西太区传统医学术语",
+      "type": "resource",
+      "year": 2007,
+      "venue": "World Health Organization",
+      "summary_zh": "世界卫生组织西太平洋区 2007 年的传统医学国际标准术语，是 2022 年中医药术语之前的一版。PDF 可以从 IRIS 打开。",
+      "tags": [
+        "glossary"
+      ],
+      "links": {
+        "网站": "https://iris.who.int/handle/10665/206952",
+        "PDF": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "The World Health Organization Western Pacific terminology for traditional medicine, the 2007 predecessor of the 2022 Chinese-medicine terminology. The PDF is on IRIS.",
+      "links_en": {
+        "Website": "https://iris.who.int/handle/10665/206952",
+        "PDF": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+      }
+    },
+    {
+      "id": "syndrome-element-term-map",
+      "name": "融合证素知识的中医证候术语映射",
+      "type": "resource",
+      "year": 2025,
+      "venue": "情报科学",
+      "summary_zh": "用证素知识，把临床里的证候说法映射到标准证候名。刊在《情报科学》2025 年第 43 卷第 7 期。",
+      "tags": [
+        "syndrome",
+        "glossary"
+      ],
+      "links": {
+        "论文": "https://journal12.magtechjournal.com/jwk3_qbkx/CN/Y2025/V43/I7/48"
+      },
+      "status": "published",
+      "verified_at": "2026-10-24",
+      "summary_en": "Maps clinical wordings of TCM syndromes onto standard syndrome names with syndrome-element knowledge. Information Science, 2025, volume 43, issue 7.",
+      "links_en": {
+        "Paper": "https://journal12.magtechjournal.com/jwk3_qbkx/CN/Y2025/V43/I7/48"
       }
     }
   ]

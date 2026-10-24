@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMSP｜中医大模型（TCM LLM）数据集。草药–成分–靶点–疾病网络与ADME参数平台，现行公开站为TCMSP 2.3，提供草药/分子/靶点关系表下载"
-seo_description: "TCMSP｜中医大模型（TCM LLM）数据集。草药–成分–靶点–疾病网络与ADME参数平台，现行公开站为TCMSP 2.3，提供草药/分子/靶点关系表下载"
+description: "TCMSP｜中医大模型（TCM LLM）数据集。查中药成分、靶点和疾病关系的药理学库，也给 ADME 参数。网站上现在同时放着旧版 2.3 和新版 9.0.1，关系表可以下载。"
+seo_description: "TCMSP｜中医大模型（TCM LLM）数据集。查中药成分、靶点和疾病关系的药理学库，也给 ADME 参数。网站上现在同时放着旧版 2.3 和新版 9.0.1，关系表可以下载。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

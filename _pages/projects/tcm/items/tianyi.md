@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Tianyi — TCM LLM resource in Awesome-TCM-LLM. ~7B TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation."
-seo_description: "Tianyi — TCM LLM resource in Awesome-TCM-LLM. ~7B TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validation."
+description: "Tianyi — TCM LLM resource in Awesome-TCM-LLM. 7.6-billion-parameter TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validat…"
+seo_description: "Tianyi — TCM LLM resource in Awesome-TCM-LLM. 7.6-billion-parameter TCM LLM from NJUCM et al. with reading–clinic–apprenticeship training stages, TCMEval, and real-world validat…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -26,7 +26,7 @@ keywords:
 - "Tianyi"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

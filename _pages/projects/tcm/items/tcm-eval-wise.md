@@ -25,7 +25,7 @@ keywords:
 - "TCM-Eval (WISE 2025)"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

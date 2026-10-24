@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多通道桡动脉信号的脉象识别｜中医大模型（TCM LLM）资源。用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。摘要没有给样本量和公开下载地址。"
-seo_description: "多通道桡动脉信号的脉象识别｜中医大模型（TCM LLM）资源。用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。摘要没有给样本量和公开下载地址。"
+description: "多通道桡动脉信号的脉象识别｜中医大模型（TCM LLM）资源。用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。样本量和记录都没有公开。"
+seo_description: "多通道桡动脉信号的脉象识别｜中医大模型（TCM LLM）资源。用多通道设备采集桡动脉搏动，去噪并提取特征后，用卷积神经网络识别常见脉象。样本量和记录都没有公开。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

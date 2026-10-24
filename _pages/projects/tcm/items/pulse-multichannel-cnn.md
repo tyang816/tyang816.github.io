@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "多通道桡动脉信号的脉象识别 — TCM LLM resource in Awesome-TCM-LLM. A convolutional network recognizes common TCM pulse patterns from multichannel radial-artery signals after denoising and fea…"
-seo_description: "多通道桡动脉信号的脉象识别 — TCM LLM resource in Awesome-TCM-LLM. A convolutional network recognizes common TCM pulse patterns from multichannel radial-artery signals after denoising and fea…"
+description: "多通道桡动脉信号的脉象识别 — TCM LLM resource in Awesome-TCM-LLM. A convolutional network reads common pulse patterns from multichannel radial-artery signals after denoising and feature extr…"
+seo_description: "多通道桡动脉信号的脉象识别 — TCM LLM resource in Awesome-TCM-LLM. A convolutional network reads common pulse patterns from multichannel radial-artery signals after denoising and feature extr…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

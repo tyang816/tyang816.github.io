@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
-seo_description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. A culture-framed comparison of GPT versus ERNIE on TCM tasks (J. Integr. Complement. Med. 2024)."
+description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. Looks at how cultural background changes the way GPT and ERNIE handle the national TCM licensing exam. Journal of …"
+seo_description: "GPT vs ERNIE 中医文化背景对比研究 — TCM LLM resource in Awesome-TCM-LLM. Looks at how cultural background changes the way GPT and ERNIE handle the national TCM licensing exam. Journal of …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -25,7 +25,7 @@ keywords:
 - "GPT vs ERNIE 中医文化背景对比研究"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2024"
+tcm_date: "2025"
 ---
 
 {% include tcm-item.html %}

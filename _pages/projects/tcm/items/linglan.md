@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LingLan — TCM LLM resource in Awesome-TCM-LLM. Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,624 instances."
-seo_description: "LingLan — TCM LLM resource in Awesome-TCM-LLM. Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,624 instances."
+description: "LingLan — TCM LLM resource in Awesome-TCM-LLM. Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,620 expert-verified items."
+seo_description: "LingLan — TCM LLM resource in Awesome-TCM-LLM. Large multi-task TCM benchmark: 5 domains, 13 subtasks, 25,620 expert-verified items."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

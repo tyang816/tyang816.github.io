@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
-seo_description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文医疗在线问诊数据集 ChatMed_Consult_Dataset（50w+在线问诊+ChatGPT回复）"
+description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文在线问诊数据，110,113 条。问题来自问诊网站，回答是 GPT-3.5 写的。"
+seo_description: "ChatMed_Consult_Dataset｜中医大模型（TCM LLM）数据集。中文在线问诊数据，110,113 条。问题来自问诊网站，回答是 GPT-3.5 写的。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -26,7 +26,7 @@ keywords:
 - "ChatMed_Consult_Dataset"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

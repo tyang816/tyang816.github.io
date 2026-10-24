@@ -25,7 +25,7 @@ keywords:
 - "中医临床决策5-LLM对比"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

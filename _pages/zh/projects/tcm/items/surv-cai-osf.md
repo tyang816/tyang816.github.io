@@ -1,6 +1,6 @@
 ---
 permalink: /zh/projects/tcm/items/surv-cai-osf/
-title: "Cai R et al. TCM×LLM scoping review（OSF 预印本） | 中医大模型"
+title: "Cai R et al. 中医辨证分类范围综述（OSF 预注册） | 中医大模型"
 layout: default
 project: tcm
 section: item
@@ -14,15 +14,15 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Cai R et al. TCM×LLM scoping review（OSF 预印本）｜中医大模型（TCM LLM）综述。OSF 平台中医×LLM 范围综述预印本（未经同行评议，存档用）"
-seo_description: "Cai R et al. TCM×LLM scoping review（OSF 预印本）｜中医大模型（TCM LLM）综述。OSF 平台中医×LLM 范围综述预印本（未经同行评议，存档用）"
+description: "Cai R et al. 中医辨证分类范围综述（OSF 预注册）｜中医大模型（TCM LLM）综述。2026 年 4 月 3 日在 OSF 登记的一份范围综述计划，准备梳理大模型怎样做中医辨证、证素和辨证推理，并按 PRISMA-ScR 来写。综述还在做。"
+seo_description: "Cai R et al. 中医辨证分类范围综述（OSF 预注册）｜中医大模型（TCM LLM）综述。2026 年 4 月 3 日在 OSF 登记的一份范围综述计划，准备梳理大模型怎样做中医辨证、证素和辨证推理，并按 PRISMA-ScR 来写。综述还在做。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "综述"
 - "survey"
-- "Cai R et al. TCM×LLM scoping review（OSF 预印本）"
+- "Cai R et al. 中医辨证分类范围综述（OSF 预注册）"
 tcm_type: "survey"
 tcm_type_label: "综述"
 tcm_date: "2026"

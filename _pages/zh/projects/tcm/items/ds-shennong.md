@@ -25,7 +25,7 @@ keywords:
 - "ShenNong_TCM_Dataset"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

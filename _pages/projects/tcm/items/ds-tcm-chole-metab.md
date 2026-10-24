@@ -24,7 +24,7 @@ keywords:
 - "胆石症中医证候代谢组"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2025"
+tcm_date: "2026"
 ---
 
 {% include tcm-item.html %}

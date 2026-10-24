@@ -26,7 +26,7 @@ keywords:
 - "四模型中文医学文献标引测试集"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2026"
+tcm_date: "2024"
 ---
 
 {% include tcm-item.html %}

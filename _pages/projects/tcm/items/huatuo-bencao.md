@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "BenCao (formerly HuaTuo) — TCM LLM resource in Awesome-TCM-LLM. Instruction-tuned Chinese medical LLM (BenCao / formerly HuaTuo)."
-seo_description: "BenCao (formerly HuaTuo) — TCM LLM resource in Awesome-TCM-LLM. Instruction-tuned Chinese medical LLM (BenCao / formerly HuaTuo)."
+description: "BenCao (formerly HuaTuo) — TCM LLM resource in Awesome-TCM-LLM. BenCao, first called HuaTuo, is an instruction-tuned medical model from HIT SCIR, trained with Chinese medical kn…"
+seo_description: "BenCao (formerly HuaTuo) — TCM LLM resource in Awesome-TCM-LLM. BenCao, first called HuaTuo, is an instruction-tuned medical model from HIT SCIR, trained with Chinese medical kn…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -26,7 +26,7 @@ keywords:
 - "BenCao (formerly HuaTuo)"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2024"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

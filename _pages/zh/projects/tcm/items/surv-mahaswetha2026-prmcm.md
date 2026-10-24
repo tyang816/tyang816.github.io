@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述）｜中医大模型（TCM LLM）综述。宽口径 AI×TCM 英文综述：多模态数据整合→药理研究→临床决策支持（Pharmacol Res Mod Chin Med 2026；第三轮扫描新发现，无基准矩阵/开源…"
-seo_description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述）｜中医大模型（TCM LLM）综述。宽口径 AI×TCM 英文综述：多模态数据整合→药理研究→临床决策支持（Pharmacol Res Mod Chin Med 2026；第三轮扫描新发现，无基准矩阵/开源…"
+description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述）｜中医大模型（TCM LLM）综述。一篇英文综述，从多模态数据、药理研究写到临床决策。2026 年发表在 Pharmacological Research - Modern Chinese Medicine。"
+seo_description: "AI in TCM: multimodal data to pharmacology and clinical decision（PRMCM 综述）｜中医大模型（TCM LLM）综述。一篇英文综述，从多模态数据、药理研究写到临床决策。2026 年发表在 Pharmacological Research - Modern Chinese Medicine。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

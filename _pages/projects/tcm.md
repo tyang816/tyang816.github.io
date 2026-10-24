@@ -27,7 +27,7 @@ keywords:
 - patent
 ---
 
-<header class="project-hero">
+<header class="project-hero tcm-overview-hero">
   <p class="project-kicker">Awesome-TCM-LLM · Catalog</p>
   <h1>TCM LLMs</h1>
   <p class="project-lede">
