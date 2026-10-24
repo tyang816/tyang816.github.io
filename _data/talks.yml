@@ -1,4 +1,13 @@
 items:
+  - date: "2026.10.18"
+    title_zh: "蛋白质研发智能体的认知推理"
+    title_en: "Cognitive Reasoning for Protein R&D Agents"
+    event_zh: "ISCB-China AI驱动蛋白质科学国际研讨会"
+    event_en: "ISCB-China Workshop on AI for Protein Science"
+    location_zh: "中国-北京"
+    location_en: "China - Beijing"
+    url: "https://mp.weixin.qq.com/s/TFeUxiOJuzka--NARLEc_g"
+
   - date: "2026.10.13"
     title_zh: "蛋白质研发 AI 智能体的认知推理与产业实践"
     title_en: "Cognitive Reasoning and Industrial Practice of AI Agents for Protein R&D"
