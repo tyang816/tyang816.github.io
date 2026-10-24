@@ -244,8 +244,7 @@
       "@id": "{{ canonical_url }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": {% if is_zh_ld %}"首页"{% else %}"Home"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/{% else %}{{ seo_url }}/{% endif %}" },
-        { "@type": "ListItem", "position": 2, "name": {% if is_zh_ld %}"开源项目"{% else %}"Projects"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/projects/{% else %}{{ seo_url }}/projects/{% endif %}" },
-        { "@type": "ListItem", "position": 3, "name": {% if is_zh_ld %}"中医大模型"{% else %}"TCM LLMs"{% endif %}, "item": "{{ canonical_url }}" }
+        { "@type": "ListItem", "position": 2, "name": {% if is_zh_ld %}"中医大模型"{% else %}"TCM LLMs"{% endif %}, "item": "{{ canonical_url }}" }
       ]
     }{% endif %}{% if page.project == "tcm" and page.section == "landing" %},
     {
@@ -253,9 +252,8 @@
       "@id": "{{ canonical_url }}#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": {% if is_zh_ld %}"首页"{% else %}"Home"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/{% else %}{{ seo_url }}/{% endif %}" },
-        { "@type": "ListItem", "position": 2, "name": {% if is_zh_ld %}"开源项目"{% else %}"Projects"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/projects/{% else %}{{ seo_url }}/projects/{% endif %}" },
-        { "@type": "ListItem", "position": 3, "name": {% if is_zh_ld %}"中医大模型"{% else %}"TCM LLMs"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/projects/tcm/{% else %}{{ seo_url }}/projects/tcm/{% endif %}" },
-        { "@type": "ListItem", "position": 4, "name": {{ ld_name | jsonify }}, "item": "{{ canonical_url }}" }
+        { "@type": "ListItem", "position": 2, "name": {% if is_zh_ld %}"中医大模型"{% else %}"TCM LLMs"{% endif %}, "item": "{% if is_zh_ld %}{{ seo_url }}/zh/projects/tcm/{% else %}{{ seo_url }}/projects/tcm/{% endif %}" },
+        { "@type": "ListItem", "position": 3, "name": {{ ld_name | jsonify }}, "item": "{{ canonical_url }}" }
       ]
     }{% endif %}{% if page.project != "tcm" and seo_project and seo_project.code %},
     {

@@ -58,6 +58,7 @@
 - name: TCM AI
   name_zh: 中医大模型
   slug: tcm
+  listed: false
   image: "/images/papers/tcm.png"
   category: llm
   venue: News hub

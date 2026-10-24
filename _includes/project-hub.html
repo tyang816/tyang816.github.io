@@ -24,6 +24,7 @@
 
 {% assign project_years = "" | split: "" %}
 {% for p in sorted_projects %}
+  {% if p.listed == false %}{% continue %}{% endif %}
   {% if p.date %}
     {% assign y = p.date | slice: 0, 4 %}
     {% assign project_years = project_years | push: y %}
@@ -80,6 +81,7 @@
   <div class="project-hub-results">
     <div class="project-grid project-grid--entries" data-projects-grid>
       {% for p in sorted_projects %}
+        {% if p.listed == false %}{% continue %}{% endif %}
         {% assign p_year = p.date | slice: 0, 4 %}
         {% if is_zh %}
           {% assign p_url = p.url_zh | default: p.url %}

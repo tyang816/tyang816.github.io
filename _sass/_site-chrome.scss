@@ -51,6 +51,7 @@ $chrome-bg: rgba(255, 255, 255, 0.92);
   z-index: 90;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 0.4rem;
 
   &[hidden] {
@@ -61,6 +62,88 @@ $chrome-bg: rgba(255, 255, 255, 0.92);
     right: 1.5rem;
     bottom: 1.75rem;
   }
+}
+
+.site-scroll-float__sections {
+  position: relative;
+}
+
+.site-scroll-float__bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  width: 13px;
+
+  span {
+    display: block;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+  }
+}
+
+.site-scroll-float__sections-panel {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.28rem;
+  padding: 0 0.15rem 0.55rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+
+  a {
+    color: #7c8594;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-align: right;
+    text-decoration: none;
+    white-space: nowrap;
+    background: transparent;
+    text-shadow: 0 0 6px #fff, 0 0 2px #fff;
+
+    &:hover,
+    &:focus {
+      color: $chrome-ink;
+      text-decoration: none;
+    }
+
+    &.is-active {
+      color: $chrome-ink;
+      font-weight: 600;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(26, 35, 50, 0.25);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.site-scroll-float__sections:hover .site-scroll-float__sections-panel,
+.site-scroll-float__sections:focus-within .site-scroll-float__sections-panel,
+.site-scroll-float__sections.is-open .site-scroll-float__sections-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+.site-scroll-float__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .site-scroll-float__btn {
@@ -102,7 +185,9 @@ $chrome-bg: rgba(255, 255, 255, 0.92);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-scroll-float__btn {
+  .site-scroll-float__btn,
+  .site-scroll-float__sections a,
+  .site-scroll-float__sections-panel {
     transition: none;
   }
 }

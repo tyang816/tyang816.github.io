@@ -8,12 +8,41 @@
   {% assign label_top = site.data.i18n.en.scroll_top | default: "Top" %}
   {% assign label_bottom = site.data.i18n.en.scroll_bottom | default: "Bottom" %}
 {% endif %}
+{% assign home_path = page.url | replace: "index.html", "" %}
+{% assign is_home = false %}
+{% if home_path == "/" or home_path == "/zh/" %}{% assign is_home = true %}{% endif %}
 
 <div class="site-scroll-float" data-scroll-float hidden>
-  <button type="button" class="site-scroll-float__btn" data-scroll="top" aria-label="{{ label_top }}" title="{{ label_top }}">
-    <span aria-hidden="true">↑</span>
-  </button>
-  <button type="button" class="site-scroll-float__btn" data-scroll="bottom" aria-label="{{ label_bottom }}" title="{{ label_bottom }}">
-    <span aria-hidden="true">↓</span>
-  </button>
+  {% if is_home %}
+  <nav class="site-scroll-float__sections" aria-label="{% if is_zh %}本页栏目{% else %}On this page{% endif %}">
+    <div class="site-scroll-float__sections-panel" id="home-section-nav">
+      {% if is_zh %}
+        <a href="#-news">新闻</a>
+        <a href="#-selected-publications">代表性论文</a>
+        <a href="#-honors-and-awards">荣誉奖项</a>
+        <a href="#-talks">报告</a>
+        <a href="#-media-coverage">媒体报道</a>
+        <a href="#-educations">教育经历</a>
+      {% else %}
+        <a href="#-news">News</a>
+        <a href="#-selected-publications">Publications</a>
+        <a href="#-honors-and-awards">Honors</a>
+        <a href="#-talks">Talks</a>
+        <a href="#-media-coverage">Media</a>
+        <a href="#-educations">Education</a>
+      {% endif %}
+    </div>
+    <button type="button" class="site-scroll-float__btn site-scroll-float__sections-toggle" aria-expanded="false" aria-controls="home-section-nav" aria-label="{% if is_zh %}本页栏目{% else %}On this page{% endif %}">
+      <span class="site-scroll-float__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </nav>
+  {% endif %}
+  <div class="site-scroll-float__actions">
+    <button type="button" class="site-scroll-float__btn" data-scroll="top" aria-label="{{ label_top }}" title="{{ label_top }}">
+      <span aria-hidden="true">↑</span>
+    </button>
+    <button type="button" class="site-scroll-float__btn" data-scroll="bottom" aria-label="{{ label_bottom }}" title="{{ label_bottom }}">
+      <span aria-hidden="true">↓</span>
+    </button>
+  </div>
 </div>

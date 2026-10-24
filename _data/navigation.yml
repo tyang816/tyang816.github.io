@@ -1,19 +1,13 @@
 # English nav (default)
 main:
-  - title: "News"
+  - title: "My News"
     url: "/#-news"
-
-  - title: "Selected Publications"
-    url: "/#-selected-publications"
-
-  - title: "Honors"
-    url: "/#-honors-and-awards"
-
-  - title: "Educations"
-    url: "/#-educations"
 
   - title: "Paper Notes"
     url: "/notes/"
+
+  - title: "TCM LLMs"
+    url: "/projects/tcm/"
 
   - title: "Open Projects"
     url: "/projects/"
@@ -23,20 +17,14 @@ main:
 
 # Chinese nav
 main_zh:
-  - title: "新闻"
+  - title: "我的新闻"
     url: "/zh/#-news"
-
-  - title: "代表性论文"
-    url: "/zh/#-selected-publications"
-
-  - title: "荣誉奖项"
-    url: "/zh/#-honors-and-awards"
-
-  - title: "教育与媒体"
-    url: "/zh/#-educations"
 
   - title: "论文笔记"
     url: "/zh/notes/"
+
+  - title: "中医大模型"
+    url: "/zh/projects/tcm/"
 
   - title: "开源项目"
     url: "/zh/projects/"
