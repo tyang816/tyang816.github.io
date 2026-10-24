@@ -24,7 +24,7 @@ timeline_items:
     image3: "/images/timeline/switzerland/2026/person1.jpg"
     image4: "/images/timeline/switzerland/2026/scape1.jpg"
     image5: "/images/timeline/switzerland/2026/person2.jpg"
-    category: "travel"
+    category: "person"
     location: "Basel, Switzerland"
     location_zh: "瑞士巴塞尔"
 
@@ -42,6 +42,19 @@ timeline_items:
     category: "travel"
     location: "Istanbul, Turkey"
     location_zh: "土耳其伊斯坦布尔"
+
+  - date: "2026-10-04"
+    title: "Vladivostok Trip"
+    title_zh: "海参崴之旅"
+    description: "A trip to Vladivostok."
+    description_zh: "海参崴之行。"
+    image: "/images/timeline/russia/2026/person1.jpg"
+    image2: "/images/timeline/russia/2026/person2.jpg"
+    image3: "/images/timeline/russia/2026/building1.jpg"
+    image4: "/images/timeline/russia/2026/person3.jpg"
+    category: "travel"
+    location: "Vladivostok, Russia"
+    location_zh: "俄罗斯海参崴"
 
   - date: "2026-07-17"
     title: "WAIC 2026"
