@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "讯飞星火医疗｜中医大模型（TCM LLM）资源。科大讯飞闭源医疗大模型（星火医疗X1/X2），落地智医助理与讯飞晓医；无公开权重，只作产业对照"
-seo_description: "讯飞星火医疗｜中医大模型（TCM LLM）资源。科大讯飞闭源医疗大模型（星火医疗X1/X2），落地智医助理与讯飞晓医；无公开权重，只作产业对照"
+description: "讯飞星火医疗｜中医大模型（TCM LLM）资源。科大讯飞的星火医疗大模型X1，2025年3月发布，用在讯飞晓医上。报道里的测试数据来自讯飞晓医、智医助理等真实场景。"
+seo_description: "讯飞星火医疗｜中医大模型（TCM LLM）资源。科大讯飞的星火医疗大模型X1，2025年3月发布，用在讯飞晓医上。报道里的测试数据来自讯飞晓医、智医助理等真实场景。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

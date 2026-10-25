@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMID 2.0｜中医大模型（TCM LLM）数据集。华东师范大学团队做的方剂、草药、成分和靶点库。原网站已经打不开，数据和介绍还留在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。"
-seo_description: "TCMID 2.0｜中医大模型（TCM LLM）数据集。华东师范大学团队做的方剂、草药、成分和靶点库。原网站已经打不开，数据和介绍还留在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。"
+description: "TCMID 2.0｜中医大模型（TCM LLM）数据集。华东师范大学团队做的方剂、草药、成分和靶点库。数据和介绍在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。原站 megabionet.org/tcmid 这次打开超时。"
+seo_description: "TCMID 2.0｜中医大模型（TCM LLM）数据集。华东师范大学团队做的方剂、草药、成分和靶点库。数据和介绍在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。原站 megabionet.org/tcmid 这次打开超时。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

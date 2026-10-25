@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Ant Afu — TCM LLM resource in Awesome-TCM-LLM. Closed Ant multimodal medical LLM, first shipped as Alipay AQ and later rebranded Afu for consults, report and pill-box reading; a…"
-seo_description: "Ant Afu — TCM LLM resource in Awesome-TCM-LLM. Closed Ant multimodal medical LLM, first shipped as Alipay AQ and later rebranded Afu for consults, report and pill-box reading; a…"
+description: "Ant Afu — TCM LLM resource in Awesome-TCM-LLM. On 5 July 2024, Alipay released a multimodal medical model at the World Artificial Intelligence Conference, built on Bailing and a…"
+seo_description: "Ant Afu — TCM LLM resource in Awesome-TCM-LLM. On 5 July 2024, Alipay released a multimodal medical model at the World Artificial Intelligence Conference, built on Bailing and a…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -28,7 +28,7 @@ keywords:
 - "Ant Afu"
 tcm_type: "resource"
 tcm_type_label: "resource"
-tcm_date: "2024"
+tcm_date: "2025"
 ---
 
 {% include tcm-item.html %}

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMLCM — TCM LLM resource in Awesome-TCM-LLM. KG2T-based intelligent QA model for TCM lung cancer."
-seo_description: "TCMLCM — TCM LLM resource in Awesome-TCM-LLM. KG2T-based intelligent QA model for TCM lung cancer."
+description: "TCMLCM — TCM LLM resource in Awesome-TCM-LLM. KG2TRAG-based intelligent QA model for TCM lung cancer."
+seo_description: "TCMLCM — TCM LLM resource in Awesome-TCM-LLM. KG2TRAG-based intelligent QA model for TCM lung cancer."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

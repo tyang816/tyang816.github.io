@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "YaTCM｜中医大模型（TCM LLM）数据集。约1813首方、6220味药、4.7万天然产物及靶点/通路分析工具；南开官网当前403，核验走开放论文"
-seo_description: "YaTCM｜中医大模型（TCM LLM）数据集。约1813首方、6220味药、4.7万天然产物及靶点/通路分析工具；南开官网当前403，核验走开放论文"
+description: "YaTCM｜中医大模型（TCM LLM）数据集。1813 首方、6220 味药、47696 个天然产物，并带靶点和通路分析。南开原站这次返回 403。"
+seo_description: "YaTCM｜中医大模型（TCM LLM）数据集。1813 首方、6220 味药、47696 个天然产物，并带靶点和通路分析。南开原站这次返回 403。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

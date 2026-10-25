@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "阿尔茨海默病指南知识库问答（ChatGLM3）｜中医大模型（TCM LLM）资源。用 LangChain 把 ChatGLM3-6B 接到本地库，库含中华中医药学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。"
-seo_description: "阿尔茨海默病指南知识库问答（ChatGLM3）｜中医大模型（TCM LLM）资源。用 LangChain 把 ChatGLM3-6B 接到本地库，库含中华中医药学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。"
+description: "阿尔茨海默病指南知识库问答（ChatGLM3）｜中医大模型（TCM LLM）资源。用 LangChain 把 ChatGLM3-6B 接到本地库，库含中国中西医结合学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。"
+seo_description: "阿尔茨海默病指南知识库问答（ChatGLM3）｜中医大模型（TCM LLM）资源。用 LangChain 把 ChatGLM3-6B 接到本地库，库含中国中西医结合学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

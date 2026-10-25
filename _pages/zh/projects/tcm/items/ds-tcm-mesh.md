@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Mesh｜中医大模型（TCM LLM）数据集。草药–化合物–基因–疾病网络与毒副作用记录（约6235味药）；官网当前403，核验走开放论文"
-seo_description: "TCM-Mesh｜中医大模型（TCM LLM）数据集。草药–化合物–基因–疾病网络与毒副作用记录（约6235味药）；官网当前403，核验走开放论文"
+description: "TCM-Mesh｜中医大模型（TCM LLM）数据集。做中药复方的网络药理。库里有 6235 味药、383840 个化合物、14298 个基因、6204 种疾病，以及 163221 条副作用记录和 71 条毒性记录。原站这次返回 403。"
+seo_description: "TCM-Mesh｜中医大模型（TCM LLM）数据集。做中药复方的网络药理。库里有 6235 味药、383840 个化合物、14298 个基因、6204 种疾病，以及 163221 条副作用记录和 71 条毒性记录。原站这次返回 403。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

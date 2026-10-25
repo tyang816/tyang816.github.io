@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "面色与体型的中医体质图像辨识 — TCM LLM resource in Awesome-TCM-LLM. Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire, and classifie…"
-seo_description: "面色与体型的中医体质图像辨识 — TCM LLM resource in Awesome-TCM-LLM. Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire, and classifie…"
+description: "面色与体型的中医体质图像辨识 — TCM LLM resource in Awesome-TCM-LLM. Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire. Complexion an…"
+seo_description: "面色与体型的中医体质图像辨识 — TCM LLM resource in Awesome-TCM-LLM. Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire. Complexion an…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

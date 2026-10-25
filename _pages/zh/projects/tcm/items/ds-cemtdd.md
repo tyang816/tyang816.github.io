@@ -14,15 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CEMTDD｜中医大模型（TCM LLM）数据集。以新疆维吾尔/哈萨克等民族药为主的草药–化合物–靶点–疾病库（约621草药）；原域名cemtdd.com已改作他用，核验走PMC论文"
-seo_description: "CEMTDD｜中医大模型（TCM LLM）数据集。以新疆维吾尔/哈萨克等民族药为主的草药–化合物–靶点–疾病库（约621草药）；原域名cemtdd.com已改作他用，核验走PMC论文"
+description: "CEMTDD｜中医大模型（TCM LLM）数据集。以维吾尔药、哈萨克药等民族药为主的草药、化合物、靶点和疾病库，论文写约 621 味草药。"
+seo_description: "CEMTDD｜中医大模型（TCM LLM）数据集。以维吾尔药、哈萨克药等民族药为主的草药、化合物、靶点和疾病库，论文写约 621 味草药。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "数据集"
 - "corpus"
-- "dead-site"
 - "CEMTDD"
 tcm_type: "dataset"
 tcm_type_label: "数据集"

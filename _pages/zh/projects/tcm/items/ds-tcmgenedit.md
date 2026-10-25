@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMGeneDIT｜中医大模型（TCM LLM）数据集。从文献挖掘中药、基因、疾病、功效与成分关联，并接入通路与PPI；官网tcm.lifescience.ntu.edu.tw已无法解析"
-seo_description: "TCMGeneDIT｜中医大模型（TCM LLM）数据集。从文献挖掘中药、基因、疾病、功效与成分关联，并接入通路与PPI；官网tcm.lifescience.ntu.edu.tw已无法解析"
+description: "TCMGeneDIT｜中医大模型（TCM LLM）数据集。从文献里把中药、基因、疾病、功效和成分对上，并接上通路和蛋白相互作用。tcm.lifescience.ntu.edu.tw 这次域名解析不到。"
+seo_description: "TCMGeneDIT｜中医大模型（TCM LLM）数据集。从文献里把中药、基因、疾病、功效和成分对上，并接上通路和蛋白相互作用。tcm.lifescience.ntu.edu.tw 这次域名解析不到。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

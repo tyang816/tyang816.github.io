@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "PharmMapper — TCM LLM resource in Awesome-TCM-LLM. Upload a 3D molecular structure and get possible protein targets. The 2017 release, built from PDB entries released before 1 J…"
-seo_description: "PharmMapper — TCM LLM resource in Awesome-TCM-LLM. Upload a 3D molecular structure and get possible protein targets. The 2017 release, built from PDB entries released before 1 J…"
+description: "PharmMapper — TCM LLM resource in Awesome-TCM-LLM. Upload a 3D molecular structure and get possible protein targets. The 2017 update covers 23,236 proteins, with 16,159 druggabl…"
+seo_description: "PharmMapper — TCM LLM resource in Awesome-TCM-LLM. Upload a 3D molecular structure and get possible protein targets. The 2017 update covers 23,236 proteins, with 16,159 druggabl…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

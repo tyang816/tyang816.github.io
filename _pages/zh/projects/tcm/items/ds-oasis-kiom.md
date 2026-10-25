@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "OASIS (KIOM)｜中医大模型（TCM LLM）数据集。韩国韩医学研究院的传统医学文献与资源门户，可检索韩医论文与本草资料"
-seo_description: "OASIS (KIOM)｜中医大模型（TCM LLM）数据集。韩国韩医学研究院的传统医学文献与资源门户，可检索韩医论文与本草资料"
+description: "OASIS (KIOM)｜中医大模型（TCM LLM）数据集。韩国韩医学研究院的传统医学文献与资源门户。2007年6月以韩医论文检索系统上线，2009年7月改版为传统医学信息门户，可检索韩医论文与本草资料"
+seo_description: "OASIS (KIOM)｜中医大模型（TCM LLM）数据集。韩国韩医学研究院的传统医学文献与资源门户。2007年6月以韩医论文检索系统上线，2009年7月改版为传统医学信息门户，可检索韩医论文与本草资料"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -27,7 +27,7 @@ keywords:
 - "OASIS (KIOM)"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2010"
+tcm_date: "2007"
 ---
 
 {% include tcm-item.html %}

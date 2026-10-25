@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM_KG — TCM LLM dataset in Awesome-TCM-LLM. ChatMed knowledge graph."
-seo_description: "TCM_KG — TCM LLM dataset in Awesome-TCM-LLM. ChatMed knowledge graph."
+description: "TCM_KG — TCM LLM dataset in Awesome-TCM-LLM. A TCM knowledge graph built with Neo4j community edition. The sample query starts from the symptom node for constipation and returns…"
+seo_description: "TCM_KG — TCM LLM dataset in Awesome-TCM-LLM. A TCM knowledge graph built with Neo4j community edition. The sample query starts from the symptom node for constipation and returns…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -25,7 +25,7 @@ keywords:
 - "TCM_KG"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

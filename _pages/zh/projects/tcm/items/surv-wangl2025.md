@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。系统综述：AI 诊断模型（四诊客观化、辨证）"
-seo_description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。系统综述：AI 诊断模型（四诊客观化、辨证）"
+description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。综述：AI 诊断模型（四诊客观化、辨证）"
+seo_description: "Wang et al. 2025: AI 驱动中医诊断模型进展｜中医大模型（TCM LLM）综述。综述：AI 诊断模型（四诊客观化、辨证）"
 keywords:
 - "中医大模型"
 - "TCM LLM"

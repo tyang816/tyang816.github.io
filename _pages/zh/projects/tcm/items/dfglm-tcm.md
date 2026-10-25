@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "DFGLM-TCM｜中医大模型（TCM LLM）资源。北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同；论文已发，权重未公开"
-seo_description: "DFGLM-TCM｜中医大模型（TCM LLM）资源。北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同；论文已发，权重未公开"
+description: "DFGLM-TCM｜中医大模型（TCM LLM）资源。北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同。论文已发；代码和训练、验证数据未公开，合格研究者可向通讯作者申请。"
+seo_description: "DFGLM-TCM｜中医大模型（TCM LLM）资源。北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同。论文已发；代码和训练、验证数据未公开，合格研究者可向通讯作者申请。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

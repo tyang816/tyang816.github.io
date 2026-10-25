@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-AQA61 — TCM LLM dataset in Awesome-TCM-LLM. Dual-view acupuncture and Tuina action-quality videos from 61 subjects each (first- and third-person), with expert categorical an…"
-seo_description: "TCM-AQA61 — TCM LLM dataset in Awesome-TCM-LLM. Dual-view acupuncture and Tuina action-quality videos from 61 subjects each (first- and third-person), with expert categorical an…"
+description: "TCM-AQA61 — TCM LLM dataset in Awesome-TCM-LLM. Synchronized first- and third-person videos of acupuncture and Tuina, 61 subjects each. Two experienced TCM physical therapists a…"
+seo_description: "TCM-AQA61 — TCM LLM dataset in Awesome-TCM-LLM. Synchronized first- and third-person videos of acupuncture and Tuina, 61 subjects each. Two experienced TCM physical therapists a…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

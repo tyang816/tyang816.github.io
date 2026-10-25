@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMCPD — TCM LLM dataset in Awesome-TCM-LLM. Structured case-derived tables: 4,895 patients, 12,900 visits, 712 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. D…"
-seo_description: "TCMCPD — TCM LLM dataset in Awesome-TCM-LLM. Structured case-derived tables: 4,895 patients, 12,900 visits, 712 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. D…"
+description: "TCMCPD — TCM LLM dataset in Awesome-TCM-LLM. Structured case-derived tables: 4,895 patients, 12,900 visits, 703 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. D…"
+seo_description: "TCMCPD — TCM LLM dataset in Awesome-TCM-LLM. Structured case-derived tables: 4,895 patients, 12,900 visits, 703 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. D…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

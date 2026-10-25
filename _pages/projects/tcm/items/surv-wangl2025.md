@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Wang et al. 2025: AI 驱动中医诊断模型进展 — TCM LLM survey in Awesome-TCM-LLM. Systematic review of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
-seo_description: "Wang et al. 2025: AI 驱动中医诊断模型进展 — TCM LLM survey in Awesome-TCM-LLM. Systematic review of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
+description: "Wang et al. 2025: AI 驱动中医诊断模型进展 — TCM LLM survey in Awesome-TCM-LLM. Overview of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
+seo_description: "Wang et al. 2025: AI 驱动中医诊断模型进展 — TCM LLM survey in Awesome-TCM-LLM. Overview of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation)."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

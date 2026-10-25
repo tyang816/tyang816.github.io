@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Sowa Rigpa Materia Medica Dataset｜中医大模型（TCM LLM）数据集。Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文写明从《四部医典》等经典和嘎务多吉本草分类中选取约700种常用药物，给出藏文、Wylie转写和拉丁学名，补充材料随文发布。作者单位包括甘肃中医药大学藏医学院、青…"
-seo_description: "Sowa Rigpa Materia Medica Dataset｜中医大模型（TCM LLM）数据集。Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文写明从《四部医典》等经典和嘎务多吉本草分类中选取约700种常用药物，给出藏文、Wylie转写和拉丁学名，补充材料随文发布。作者单位包括甘肃中医药大学藏医学院、青…"
+description: "Sowa Rigpa Materia Medica Dataset｜中医大模型（TCM LLM）数据集。Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文从《四部医典》等经典和嘎务多吉的本草分类里选出近 700 种常用药，给出藏文、Wylie 转写和拉丁学名，补充材料随文发布。作者来自甘肃中医药大学藏医学院、威斯…"
+seo_description: "Sowa Rigpa Materia Medica Dataset｜中医大模型（TCM LLM）数据集。Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文从《四部医典》等经典和嘎务多吉的本草分类里选出近 700 种常用药，给出藏文、Wylie 转写和拉丁学名，补充材料随文发布。作者来自甘肃中医药大学藏医学院、威斯…"
 keywords:
 - "中医大模型"
 - "TCM LLM"

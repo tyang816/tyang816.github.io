@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "中医世家｜中医大模型（TCM LLM）数据集。在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。原来的网站已经打不开，现在用的是新网址。"
-seo_description: "中医世家｜中医大模型（TCM LLM）数据集。在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。原来的网站已经打不开，现在用的是新网址。"
+description: "中医世家｜中医大模型（TCM LLM）数据集。在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。"
+seo_description: "中医世家｜中医大模型（TCM LLM）数据集。在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

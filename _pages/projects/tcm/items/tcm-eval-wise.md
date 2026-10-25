@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Eval (WISE 2025) — TCM LLM resource in Awesome-TCM-LLM. Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) …"
-seo_description: "TCM-Eval (WISE 2025) — TCM LLM resource in Awesome-TCM-LLM. Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) …"
+description: "TCM-Eval (WISE 2025) — TCM LLM resource in Awesome-TCM-LLM. Multi-dimensional TCM evaluation framework from Tianjin University, its Fuzhou joint institute, Tianjin University of…"
+seo_description: "TCM-Eval (WISE 2025) — TCM LLM resource in Awesome-TCM-LLM. Multi-dimensional TCM evaluation framework from Tianjin University, its Fuzhou joint institute, Tianjin University of…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

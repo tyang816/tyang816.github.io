@@ -14,15 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TM-MC｜中医大模型（TCM LLM）数据集。韩国韩医学研究院从文献抽取的东北亚药材–化合物库；2015初版约536种药材，2024的2.0扩到约3.4万化合物；官网当前超时"
-seo_description: "TM-MC｜中医大模型（TCM LLM）数据集。韩国韩医学研究院从文献抽取的东北亚药材–化合物库；2015初版约536种药材，2024的2.0扩到约3.4万化合物；官网当前超时"
+description: "TM-MC｜中医大模型（TCM LLM）数据集。韩国韩医学研究院从文献抽取的东北亚药材和化合物库。2015 年初版约 536 种药材，2024 年的 2.0 扩到约 3.4 万个化合物。旧网址写明数据和服务已迁到 tm-mc.kr。"
+seo_description: "TM-MC｜中医大模型（TCM LLM）数据集。韩国韩医学研究院从文献抽取的东北亚药材和化合物库。2015 年初版约 536 种药材，2024 年的 2.0 扩到约 3.4 万个化合物。旧网址写明数据和服务已迁到 tm-mc.kr。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "数据集"
 - "corpus"
-- "dead-site"
 - "east-asian-tm"
 - "TM-MC"
 tcm_type: "dataset"

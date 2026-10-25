@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM Database@Taiwan｜中医大模型（TCM LLM）数据集。453味药材中约2万个分离化合物的2D/3D结构库，面向虚拟筛选；原站tcm.cmu.edu.tw已不可达，核验走PLOS论文页"
-seo_description: "TCM Database@Taiwan｜中医大模型（TCM LLM）数据集。453味药材中约2万个分离化合物的2D/3D结构库，面向虚拟筛选；原站tcm.cmu.edu.tw已不可达，核验走PLOS论文页"
+description: "TCM Database@Taiwan｜中医大模型（TCM LLM）数据集。从 453 味药材里收了 2 万多种纯化合物，每种都有二维和三维结构，用来做虚拟筛选。原站 tcm.cmu.edu.tw 这次打开超时。"
+seo_description: "TCM Database@Taiwan｜中医大模型（TCM LLM）数据集。从 453 味药材里收了 2 万多种纯化合物，每种都有二维和三维结构，用来做虚拟筛选。原站 tcm.cmu.edu.tw 这次打开超时。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

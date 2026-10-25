@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TradMPD — TCM LLM dataset in Awesome-TCM-LLM. Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. The English about page s…"
-seo_description: "TradMPD — TCM LLM dataset in Awesome-TCM-LLM. Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. The English about page s…"
+description: "TradMPD — TCM LLM dataset in Awesome-TCM-LLM. Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. A MEXT regional innovati…"
+seo_description: "TradMPD — TCM LLM dataset in Awesome-TCM-LLM. Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. A MEXT regional innovati…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -23,6 +23,7 @@ keywords:
 - "dataset"
 - "herbal"
 - "east-asian-tm"
+- "dead-site"
 - "TradMPD"
 tcm_type: "dataset"
 tcm_type_label: "dataset"

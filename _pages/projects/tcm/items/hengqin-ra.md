@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Hengqin-RA-v1 — TCM LLM resource in Awesome-TCM-LLM. LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv/DOI page lists Chinese Medicine Gua…"
-seo_description: "Hengqin-RA-v1 — TCM LLM resource in Awesome-TCM-LLM. LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv/DOI page lists Chinese Medicine Gua…"
+description: "Hengqin-RA-v1 — TCM LLM resource in Awesome-TCM-LLM. LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv has withdrawn the preprint because …"
+seo_description: "Hengqin-RA-v1 — TCM LLM resource in Awesome-TCM-LLM. LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv has withdrawn the preprint because …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

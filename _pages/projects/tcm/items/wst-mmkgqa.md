@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "MMKGQA（海洋中药知识图谱问答） — TCM LLM resource in Awesome-TCM-LLM. MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On six comm…"
-seo_description: "MMKGQA（海洋中药知识图谱问答） — TCM LLM resource in Awesome-TCM-LLM. MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On six comm…"
+description: "MMKGQA（海洋中药知识图谱问答） — TCM LLM resource in Awesome-TCM-LLM. MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On a questi…"
+seo_description: "MMKGQA（海洋中药知识图谱问答） — TCM LLM resource in Awesome-TCM-LLM. MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On a questi…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

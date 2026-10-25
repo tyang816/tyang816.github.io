@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. On where AI stands in the four TCM examinations, and where it gets stuck: face and tongue capture, electron…"
-seo_description: "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. On where AI stands in the four TCM examinations, and where it gets stuck: face and tongue capture, electron…"
+description: "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Reviews where AI stands across the four TCM examinations. Inspection photographs the face, tongue, sublingu…"
+seo_description: "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊） — TCM LLM survey in Awesome-TCM-LLM. Reviews where AI stands across the four TCM examinations. Inspection photographs the face, tongue, sublingu…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

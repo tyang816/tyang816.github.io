@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Qwen3.5-9B 中医继续预训练 — TCM LLM resource in Awesome-TCM-LLM. A continued-pretraining LoRA for traditional Chinese medicine on Qwen3.5-9B, under Apache-2.0. Uploaded in July 2026."
-seo_description: "Qwen3.5-9B 中医继续预训练 — TCM LLM resource in Awesome-TCM-LLM. A continued-pretraining LoRA for traditional Chinese medicine on Qwen3.5-9B, under Apache-2.0. Uploaded in July 2026."
+description: "Qwen3.5-9B 中医继续预训练 — TCM LLM resource in Awesome-TCM-LLM. Full weights after continued pretraining of Qwen3.5-9B on traditional Chinese medicine: one bfloat16 safetensors file o…"
+seo_description: "Qwen3.5-9B 中医继续预训练 — TCM LLM resource in Awesome-TCM-LLM. Full weights after continued pretraining of Qwen3.5-9B on traditional Chinese medicine: one bfloat16 safetensors file o…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

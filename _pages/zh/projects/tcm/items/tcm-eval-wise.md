@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
-seo_description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
+description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津大学、天津大学福州国际联合学院、天津中医药大学及其第一附属医院、天津大学国际工程师学院合作的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
+seo_description: "TCM-Eval (WISE 2025)｜中医大模型（TCM LLM）资源。天津大学、天津大学福州国际联合学院、天津中医药大学及其第一附属医院、天津大学国际工程师学院合作的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作"
 keywords:
 - "中医大模型"
 - "TCM LLM"

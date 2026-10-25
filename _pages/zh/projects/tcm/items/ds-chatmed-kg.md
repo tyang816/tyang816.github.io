@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM_KG｜中医大模型（TCM LLM）数据集。ChatMed 知识图谱"
-seo_description: "TCM_KG｜中医大模型（TCM LLM）数据集。ChatMed 知识图谱"
+description: "TCM_KG｜中医大模型（TCM LLM）数据集。用 Neo4j 社区版搭建的中医知识图谱。示例从症状节点「便秘」出发，查与它相连的节点。"
+seo_description: "TCM_KG｜中医大模型（TCM LLM）数据集。用 Neo4j 社区版搭建的中医知识图谱。示例从症状节点「便秘」出发，查与它相连的节点。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -25,7 +25,7 @@ keywords:
 - "TCM_KG"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2025"
+tcm_date: "2023"
 ---
 
 {% include tcm-item.html %}

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-AQA61｜中医大模型（TCM LLM）数据集。针灸（A）与推拿（T）各 61 名受试者的第一人称+第三人称同步视频，两位中医师标注分类与连续指标；配套跨视角多模态评估框架 CME-AQA"
-seo_description: "TCM-AQA61｜中医大模型（TCM LLM）数据集。针灸（A）与推拿（T）各 61 名受试者的第一人称+第三人称同步视频，两位中医师标注分类与连续指标；配套跨视角多模态评估框架 CME-AQA"
+description: "TCM-AQA61｜中医大模型（TCM LLM）数据集。针灸和推拿各 61 名受试者的第一人称、第三人称同步视频。两位有经验的中医物理治疗师各自评估全部受试者，再讨论达成一致。配套跨视角评估框架 CME-AQA。"
+seo_description: "TCM-AQA61｜中医大模型（TCM LLM）数据集。针灸和推拿各 61 名受试者的第一人称、第三人称同步视频。两位有经验的中医物理治疗师各自评估全部受试者，再讨论达成一致。配套跨视角评估框架 CME-AQA。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

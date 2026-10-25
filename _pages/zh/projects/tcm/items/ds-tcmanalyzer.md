@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMAnalyzer｜中医大模型（TCM LLM）数据集。中山大学RCDD的方剂/药材/成分网络分析与骨架检索服务（约1493方、618味药）；官网rcdd.org.cn当前超时"
-seo_description: "TCMAnalyzer｜中医大模型（TCM LLM）数据集。中山大学RCDD的方剂/药材/成分网络分析与骨架检索服务（约1493方、618味药）；官网rcdd.org.cn当前超时"
+description: "TCMAnalyzer｜中医大模型（TCM LLM）数据集。中山大学药物研发中心的网络分析工具。可以按骨架查一味药里可能有活性的成分，也能把分子、靶点、通路和疾病连成图。rcdd.org.cn 这次打开超时。"
+seo_description: "TCMAnalyzer｜中医大模型（TCM LLM）数据集。中山大学药物研发中心的网络分析工具。可以按骨架查一味药里可能有活性的成分，也能把分子、靶点、通路和疾病连成图。rcdd.org.cn 这次打开超时。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

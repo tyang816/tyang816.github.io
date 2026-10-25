@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LTM-TCM — TCM LLM dataset in Awesome-TCM-LLM. Symptom–prescription–plant–ingredient–target platform linking 14 source databases plus clinical and classical records (~48k formula…"
-seo_description: "LTM-TCM — TCM LLM dataset in Awesome-TCM-LLM. Symptom–prescription–plant–ingredient–target platform linking 14 source databases plus clinical and classical records (~48k formula…"
+description: "LTM-TCM — TCM LLM dataset in Awesome-TCM-LLM. Links 14 TCM databases with clinical records and classical books across symptoms, prescriptions, plants, ingredients, and targets: …"
+seo_description: "LTM-TCM — TCM LLM dataset in Awesome-TCM-LLM. Links 14 TCM databases with clinical records and classical books across symptoms, prescriptions, plants, ingredients, and targets: …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

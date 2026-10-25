@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CVDHD｜中医大模型（TCM LLM）数据集。面向心血管病的本草化合物三维结构、靶点与通路库，用于虚拟筛选与网络药理；原北大站点当前超时"
-seo_description: "CVDHD｜中医大模型（TCM LLM）数据集。面向心血管病的本草化合物三维结构、靶点与通路库，用于虚拟筛选与网络药理；原北大站点当前超时"
+description: "CVDHD｜中医大模型（TCM LLM）数据集。收心血管相关本草里分出来的天然产物，用来做虚拟筛选和网络药理。有 35230 个化合物的三维结构，并对接到 2395 个靶蛋白，同时连着疾病、通路和临床标志物。原北大站点这次打开超时。"
+seo_description: "CVDHD｜中医大模型（TCM LLM）数据集。收心血管相关本草里分出来的天然产物，用来做虚拟筛选和网络药理。有 35230 个化合物的三维结构，并对接到 2395 个靶蛋白，同时连着疾病、通路和临床标志物。原北大站点这次打开超时。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

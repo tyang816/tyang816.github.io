@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "OASIS (KIOM) — TCM LLM dataset in Awesome-TCM-LLM. KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources."
-seo_description: "OASIS (KIOM) — TCM LLM dataset in Awesome-TCM-LLM. KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources."
+description: "OASIS (KIOM) — TCM LLM dataset in Awesome-TCM-LLM. KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources. The Korean-medicine paper search …"
+seo_description: "OASIS (KIOM) — TCM LLM dataset in Awesome-TCM-LLM. KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources. The Korean-medicine paper search …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -27,7 +27,7 @@ keywords:
 - "OASIS (KIOM)"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2010"
+tcm_date: "2007"
 ---
 
 {% include tcm-item.html %}

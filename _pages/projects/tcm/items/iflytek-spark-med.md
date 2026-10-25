@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "iFlytek Spark Medical — TCM LLM resource in Awesome-TCM-LLM. Closed iFlytek medical LLM (Spark Medical X1/X2) behind Zhiyi Assistant and Xiaoyi; no public weights, listed as an …"
-seo_description: "iFlytek Spark Medical — TCM LLM resource in Awesome-TCM-LLM. Closed iFlytek medical LLM (Spark Medical X1/X2) behind Zhiyi Assistant and Xiaoyi; no public weights, listed as an …"
+description: "iFlytek Spark Medical — TCM LLM resource in Awesome-TCM-LLM. iFlytek Spark Medical X1, released in March 2025 and used in Xiaoyi. The reported tests draw on Xiaoyi, Zhiyi Assist…"
+seo_description: "iFlytek Spark Medical — TCM LLM resource in Awesome-TCM-LLM. iFlytek Spark Medical X1, released in March 2025 and used in Xiaoyi. The reported tests draw on Xiaoyi, Zhiyi Assist…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

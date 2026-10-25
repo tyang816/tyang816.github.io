@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CVDHD — TCM LLM dataset in Awesome-TCM-LLM. Cardiovascular herbal database of 3D compound structures, targets, and pathways for virtual screening and network pharmacology. Origi…"
-seo_description: "CVDHD — TCM LLM dataset in Awesome-TCM-LLM. Cardiovascular herbal database of 3D compound structures, targets, and pathways for virtual screening and network pharmacology. Origi…"
+description: "CVDHD — TCM LLM dataset in Awesome-TCM-LLM. 3D structures of 35,230 natural products from cardiovascular herbs, docked to 2,395 target proteins, with related diseases, pathways,…"
+seo_description: "CVDHD — TCM LLM dataset in Awesome-TCM-LLM. 3D structures of 35,230 natural products from cardiovascular herbs, docked to 2,395 target proteins, with related diseases, pathways,…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

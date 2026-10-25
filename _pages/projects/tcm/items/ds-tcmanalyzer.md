@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMAnalyzer — TCM LLM dataset in Awesome-TCM-LLM. RCDD chemo-/bioinformatics service for formula/herb/ingredient networks and scaffold search (~1,493 formulas, 618 herbs). Offic…"
-seo_description: "TCMAnalyzer — TCM LLM dataset in Awesome-TCM-LLM. RCDD chemo-/bioinformatics service for formula/herb/ingredient networks and scaffold search (~1,493 formulas, 618 herbs). Offic…"
+description: "TCMAnalyzer — TCM LLM dataset in Awesome-TCM-LLM. Sun Yat-sen University toolkit for scaffold search of bioactive ingredients and for networks of molecules, targets, pathways, a…"
+seo_description: "TCMAnalyzer — TCM LLM dataset in Awesome-TCM-LLM. Sun Yat-sen University toolkit for scaffold search of bioactive ingredients and for networks of molecules, targets, pathways, a…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "基于雅意大模型的中医智能预问诊 — TCM LLM resource in Awesome-TCM-LLM. Liu et al. fine-tune YAYI 2-30B and couple it to a weighted symptom graph agent. Practitioner-exam accuracy is 94.09%, and…"
-seo_description: "基于雅意大模型的中医智能预问诊 — TCM LLM resource in Awesome-TCM-LLM. Liu et al. fine-tune YAYI 2-30B and couple it to a weighted symptom graph agent. Practitioner-exam accuracy is 94.09%, and…"
+description: "基于雅意大模型的中医智能预问诊 — TCM LLM resource in Awesome-TCM-LLM. Liu et al. fine-tune YAYI 2-30B with DeepSpeed ZeRO-3 and couple it to a weighted symptom-graph agent. On the simulated te…"
+seo_description: "基于雅意大模型的中医智能预问诊 — TCM LLM resource in Awesome-TCM-LLM. Liu et al. fine-tune YAYI 2-30B with DeepSpeed ZeRO-3 and couple it to a weighted symptom-graph agent. On the simulated te…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

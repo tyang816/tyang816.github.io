@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM Database@Taiwan — TCM LLM dataset in Awesome-TCM-LLM. About 20k isolated-compound 2D/3D structures from 453 TCM materials for virtual screening. Original tcm.cmu.edu.tw is u…"
-seo_description: "TCM Database@Taiwan — TCM LLM dataset in Awesome-TCM-LLM. About 20k isolated-compound 2D/3D structures from 453 TCM materials for virtual screening. Original tcm.cmu.edu.tw is u…"
+description: "TCM Database@Taiwan — TCM LLM dataset in Awesome-TCM-LLM. More than 20,000 pure compounds isolated from 453 TCM ingredients, each in 2D and 3D, for virtual screening. tcm.cmu.ed…"
+seo_description: "TCM Database@Taiwan — TCM LLM dataset in Awesome-TCM-LLM. More than 20,000 pure compounds isolated from 453 TCM ingredients, each in 2D and 3D, for virtual screening. tcm.cmu.ed…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

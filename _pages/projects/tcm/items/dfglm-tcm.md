@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "DFGLM-TCM — TCM LLM resource in Awesome-TCM-LLM. Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules; pa…"
-seo_description: "DFGLM-TCM — TCM LLM resource in Awesome-TCM-LLM. Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules; pa…"
+description: "DFGLM-TCM — TCM LLM resource in Awesome-TCM-LLM. Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules. Th…"
+seo_description: "DFGLM-TCM — TCM LLM resource in Awesome-TCM-LLM. Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules. Th…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

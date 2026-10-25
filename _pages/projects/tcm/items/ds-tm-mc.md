@@ -14,15 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TM-MC — TCM LLM dataset in Awesome-TCM-LLM. KIOM literature-derived Northeast Asian medicinal-material–compound database; the 2015 release covers ~536 materials, and the 2024 2.…"
-seo_description: "TM-MC — TCM LLM dataset in Awesome-TCM-LLM. KIOM literature-derived Northeast Asian medicinal-material–compound database; the 2015 release covers ~536 materials, and the 2024 2.…"
+description: "TM-MC — TCM LLM dataset in Awesome-TCM-LLM. KIOM's literature-derived database of Northeast Asian medicinal materials and compounds. The 2015 release covers about 536 materials,…"
+seo_description: "TM-MC — TCM LLM dataset in Awesome-TCM-LLM. KIOM's literature-derived database of Northeast Asian medicinal materials and compounds. The 2015 release covers about 536 materials,…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "dataset"
 - "corpus"
-- "dead-site"
 - "east-asian-tm"
 - "TM-MC"
 tcm_type: "dataset"

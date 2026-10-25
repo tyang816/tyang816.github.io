@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "灵丹-V2 (Lingdan-V2)｜中医大模型（TCM LLM）资源。北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）；ModelScope有权重但需申请，未标可自由下载"
-seo_description: "灵丹-V2 (Lingdan-V2)｜中医大模型（TCM LLM）资源。北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）；ModelScope有权重但需申请，未标可自由下载"
+description: "灵丹-V2 (Lingdan-V2)｜中医大模型（TCM LLM）资源。北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）。ModelScope 上的权重许可为 Apache-2.0。"
+seo_description: "灵丹-V2 (Lingdan-V2)｜中医大模型（TCM LLM）资源。北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）。ModelScope 上的权重许可为 Apache-2.0。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

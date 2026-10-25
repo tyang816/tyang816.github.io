@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "韩医药素材银行药材目录 (KMMB) — TCM LLM dataset in Awesome-TCM-LLM. Searchable crude-drug holdings of the Korean Medicine Material Bank at the National Institute for Korean Medicine Develo…"
-seo_description: "韩医药素材银行药材目录 (KMMB) — TCM LLM dataset in Awesome-TCM-LLM. Searchable crude-drug holdings of the Korean Medicine Material Bank at the National Institute for Korean Medicine Develo…"
+description: "韩医药素材银行药材目录 (KMMB) — TCM LLM dataset in Awesome-TCM-LLM. Korean Medicine Material Bank at the National Institute for Korean Medicine Development. On 1 January 2016 it was formed…"
+seo_description: "韩医药素材银行药材目录 (KMMB) — TCM LLM dataset in Awesome-TCM-LLM. Korean Medicine Material Bank at the National Institute for Korean Medicine Development. On 1 January 2016 it was formed…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

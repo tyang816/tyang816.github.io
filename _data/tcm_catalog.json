@@ -6,10 +6,10 @@
     "description_en": "Curated open TCM models, datasets, papers, and patents, plus a few related Chinese medical resources.",
     "repo_url": "https://github.com/tyang816/Awesome-TCM-LLM",
     "portal_url": "https://tyang816.github.io/projects/tcm/",
-    "updated_at": "2026-10-24",
+    "updated_at": "2026-10-25",
     "catalog_version": 1
   },
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-25",
   "items": [
     {
       "id": "news-202609-27",
@@ -2193,7 +2193,7 @@
       "name": "知方丹台 (ZhiFangDanTai)",
       "year": 2026,
       "venue": "IEEE Journal of Biomedical and Health Informatics",
-      "summary_zh": "用 GraphRAG 微调大模型来生成方剂，输出里带君臣佐使、功效和禁忌。作者在首都师范大学和昆士兰大学。公开的权重页面已经打不开了。",
+      "summary_zh": "用 GraphRAG 和微调生成方剂，输出里有君臣佐使、功效、禁忌，以及舌象和脉象。作者在首都师范大学和昆士兰大学。论文写权重和数据已开源，给出的地址现在打开是 404，目前没有可下载的公开权重。",
       "orgs": [
         "首都师范大学",
         "昆士兰大学"
@@ -2211,8 +2211,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-10-24",
-      "summary_en": "GraphRAG plus LLM fine-tuning for formula generation, with roles in the formula, effects, and contraindications written out. The authors are at Capital Normal University and the University of Queensland. The public weight page no longer opens.",
+      "verified_at": "2026-10-25",
+      "summary_en": "GraphRAG plus fine-tuning for TCM formula generation, including sovereign-minister-assistant-courier roles, efficacy, contraindications, and tongue and pulse signs. The authors are at Capital Normal University and the University of Queensland. The paper says the weights and dataset are open; those addresses now return 404, so there is no downloadable public release.",
       "name_en": "ZhiFangDanTai",
       "orgs_en": [
         "Capital Normal University",
@@ -2443,9 +2443,13 @@
       "name": "TCM-Eval (WISE 2025)",
       "year": 2026,
       "venue": "WISE 2025",
-      "summary_zh": "天津国际生物医药联合研究院提出的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作",
+      "summary_zh": "天津大学、天津大学福州国际联合学院、天津中医药大学及其第一附属医院、天津大学国际工程师学院合作的多维中医评测框架；与智明堂TCM-Eval（arXiv 2511.07148）同名但为不同工作",
       "orgs": [
-        "天津国际生物医药联合研究院"
+        "天津大学",
+        "天津大学福州国际联合学院",
+        "天津中医药大学",
+        "天津中医药大学第一附属医院",
+        "天津大学国际工程师学院"
       ],
       "tags": [
         "benchmark"
@@ -2455,11 +2459,15 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-10-24",
-      "summary_en": "Multi-dimensional TCM evaluation framework (WISE 2025); a different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) despite the identical name.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Multi-dimensional TCM evaluation framework from Tianjin University, its Fuzhou joint institute, Tianjin University of Chinese Medicine and its First Teaching Hospital, and Tianjin International Engineering Institute (WISE 2025). A different work from the ZMT-M1 TCM-Eval (arXiv 2511.07148) despite the identical name.",
       "name_en": "TCM-Eval (WISE 2025)",
       "orgs_en": [
-        "Tianjin International Joint Academy of Biomedicine"
+        "Tianjin University",
+        "International Joint Institute of Tianjin University",
+        "Tianjin University of Traditional Chinese Medicine",
+        "First Teaching Hospital of Tianjin University of Traditional Chinese Medicine",
+        "Tianjin International Engineering Institute"
       ],
       "links_en": {
         "DOI": "https://doi.org/10.1007/978-981-95-7251-9_15"
@@ -2518,7 +2526,7 @@
       "name": "TCMLCM",
       "year": 2025,
       "venue": "Digital Chinese Medicine",
-      "summary_zh": "基于KG2T的中医肺癌智能问答模型",
+      "summary_zh": "基于KG2TRAG的中医肺癌智能问答模型",
       "orgs": [
         "南京中医药大学"
       ],
@@ -2530,8 +2538,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-08-02",
-      "summary_en": "KG2T-based intelligent QA model for TCM lung cancer.",
+      "verified_at": "2026-10-25",
+      "summary_en": "KG2TRAG-based intelligent QA model for TCM lung cancer.",
       "orgs_en": [
         "Nanjing University of Chinese Medicine"
       ],
@@ -3023,11 +3031,7 @@
       "name": "Hengqin-RA-v1",
       "year": 2025,
       "venue": "arXiv",
-      "summary_zh": "类风湿关节炎中医诊疗大模型及配套数据集。arXiv/DOI 页署名中医广东省实验室与南方科技大学",
-      "orgs": [
-        "中医广东省实验室",
-        "南方科技大学"
-      ],
+      "summary_zh": "类风湿关节炎中医诊疗大模型及配套数据集。这篇预印本已由 arXiv 撤回，撤回说明是作者身份和单位无法核实；当前作者栏为 Yishen Liu。",
       "tags": [
         "model"
       ],
@@ -3036,12 +3040,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv/DOI page lists Chinese Medicine Guangdong Laboratory and Southern University of Science and Technology.",
-      "orgs_en": [
-        "Chinese Medicine Guangdong Laboratory",
-        "Southern University of Science and Technology"
-      ],
+      "verified_at": "2026-10-25",
+      "summary_en": "LLM and companion dataset for TCM diagnosis and treatment of rheumatoid arthritis. arXiv has withdrawn the preprint because the authorship and affiliation could not be verified; the author line now lists Yishen Liu.",
       "links_en": {
         "Paper": "https://arxiv.org/abs/2501.02471"
       }
@@ -3204,7 +3204,7 @@
       "id": "lingdan-v2",
       "name": "灵丹-V2 (Lingdan-V2)",
       "year": 2026,
-      "summary_zh": "北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）；ModelScope有权重但需申请，未标可自由下载",
+      "summary_zh": "北交大灵丹二代中医推理家族（Qwen3 4B/8B/14B，CPT+SFT+处方GRPO）。ModelScope 上的权重许可为 Apache-2.0。",
       "orgs": [
         "北京交通大学"
       ],
@@ -3220,8 +3220,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). ModelScope checkpoints exist but require access requests, so they are not marked freely downloadable.",
+      "verified_at": "2026-10-25",
+      "summary_en": "BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). The ModelScope weights are under Apache-2.0.",
       "title_en": "Lingdan-V2",
       "name_en": "Lingdan-V2",
       "orgs_en": [
@@ -3238,7 +3238,7 @@
       "name": "DFGLM-TCM",
       "year": 2026,
       "venue": "Chinese Medicine",
-      "summary_zh": "北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同；论文已发，权重未公开",
+      "summary_zh": "北京中医药大学东方医院与智谱等的中医临床系统，把通用中医知识与名医经验分模块建模后多任务协同。论文已发；代码和训练、验证数据未公开，合格研究者可向通讯作者申请。",
       "orgs": [
         "北京中医药大学",
         "智谱华章"
@@ -3251,8 +3251,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules; paper is out, weights are not.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Dongfang Hospital / Zhipu TCM clinical system that models textbook knowledge and practitioner experience in separate modules. The paper is out. The code and the training and validation datasets are not public; qualified researchers can request them from the corresponding author.",
       "title_en": "DFGLM-TCM",
       "name_en": "DFGLM-TCM",
       "orgs_en": [
@@ -4880,7 +4880,7 @@
       "id": "iflytek-spark-med",
       "name": "讯飞星火医疗",
       "year": 2025,
-      "summary_zh": "科大讯飞闭源医疗大模型（星火医疗X1/X2），落地智医助理与讯飞晓医；无公开权重，只作产业对照",
+      "summary_zh": "科大讯飞的星火医疗大模型X1，2025年3月发布，用在讯飞晓医上。报道里的测试数据来自讯飞晓医、智医助理等真实场景。",
       "orgs": [
         "科大讯飞"
       ],
@@ -4895,8 +4895,8 @@
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Closed iFlytek medical LLM (Spark Medical X1/X2) behind Zhiyi Assistant and Xiaoyi; no public weights, listed as an industry baseline.",
+      "verified_at": "2026-10-25",
+      "summary_en": "iFlytek Spark Medical X1, released in March 2025 and used in Xiaoyi. The reported tests draw on Xiaoyi, Zhiyi Assistant, and other real clinical settings.",
       "title_en": "iFlytek Spark Medical",
       "name_en": "iFlytek Spark Medical",
       "orgs_en": [
@@ -4975,8 +4975,8 @@
     {
       "id": "ant-afu",
       "name": "蚂蚁阿福 / 蚂蚁医疗大模型",
-      "year": 2024,
-      "summary_zh": "蚂蚁闭源多模态医疗大模型，先作支付宝AQ后升级为阿福，做问诊、报告与药盒识别；WAIC 2024发布，无公开权重",
+      "year": 2025,
+      "summary_zh": "2024年7月5日，支付宝在世界人工智能大会发布多模态医疗大模型，基座是百灵，能看药品、报告和影像。2025年12月15日，健康应用AQ升级为蚂蚁阿福，可以拍皮肤、检查报告和药盒来问。",
       "orgs": [
         "蚂蚁集团"
       ],
@@ -4988,12 +4988,13 @@
       ],
       "links": {
         "官网": "https://www.antafu.com/",
-        "新闻稿": "https://www.antgroup.com/news-media/press-releases/1720166400000"
+        "新闻稿": "https://www.antgroup.com/news-media/press-releases/1720166400000",
+        "新闻": "https://www.antgroup.com/news-media/press-releases/1765785600000"
       },
       "type": "resource",
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Closed Ant multimodal medical LLM, first shipped as Alipay AQ and later rebranded Afu for consults, report and pill-box reading; announced at WAIC 2024, no public weights.",
+      "verified_at": "2026-10-25",
+      "summary_en": "On 5 July 2024, Alipay released a multimodal medical model at the World Artificial Intelligence Conference, built on Bailing and able to read medicines, reports, and images. On 15 December 2025 its health app AQ was renamed Ant Afu; users can photograph skin, lab reports, and medicine boxes.",
       "title_en": "Ant Afu / Ant Medical LLM",
       "name_en": "Ant Afu",
       "orgs_en": [
@@ -5001,7 +5002,8 @@
       ],
       "links_en": {
         "Website": "https://www.antafu.com/",
-        "Press": "https://www.antgroup.com/news-media/press-releases/1720166400000"
+        "Press": "https://www.antgroup.com/news-media/press-releases/1720166400000",
+        "News": "https://www.antgroup.com/news-media/press-releases/1765785600000"
       }
     },
     {
@@ -5850,7 +5852,7 @@
         "清华大学",
         "南京大学"
       ],
-      "summary_zh": "系统综述：AI 诊断模型（四诊客观化、辨证）",
+      "summary_zh": "综述：AI 诊断模型（四诊客观化、辨证）",
       "tags": [
         "survey"
       ],
@@ -5859,8 +5861,8 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-02",
-      "summary_en": "Systematic review of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Overview of AI-driven TCM diagnostic models (four-diagnosis objectification, pattern differentiation).",
       "links_en": {
         "DOI": "https://doi.org/10.1142/S0192415X25500259"
       }
@@ -5891,7 +5893,7 @@
     },
     {
       "id": "surv-li2024",
-      "name": "李欣桐 et al. 2024: 中医药领域大语言模型研究进展与展望",
+      "name": "李欣桐 et al. 2024: 中医药领域大语言模型的研究进展与应用前景",
       "year": 2024,
       "venue": "南京中医药大学学报",
       "summary_zh": "中文综述：中医药 LLM 研究过程、前沿技术（提示工程/RAG/RLHF）与应用前景",
@@ -5903,9 +5905,9 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-02",
+      "verified_at": "2026-10-25",
       "summary_en": "Chinese-language review of TCM LLM pipelines, frontier techniques (prompting/RAG/RLHF), and application prospects.",
-      "name_en": "Li et al. 2024 — Research progress and prospects of LLMs in TCM (Chinese)",
+      "name_en": "Li et al. 2024: Research progress and application prospects of large language models in TCM",
       "links_en": {
         "DOI": "https://doi.org/10.14148/j.issn.1672-0482.2024.1393"
       }
@@ -6192,9 +6194,9 @@
         "数据集": "https://github.com/xiaopangxia/TCM-Ancient-Books"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2018,
       "status": "published",
-      "verified_at": "2026-07-19",
+      "verified_at": "2026-10-25",
       "summary_en": "A corpus of nearly 700 TCM ancient-book texts.",
       "links_en": {
         "Dataset": "https://github.com/xiaopangxia/TCM-Ancient-Books"
@@ -6321,7 +6323,7 @@
       "year": 2026,
       "section": "评测基准",
       "title_zh": "TCM-AQA61 / CME-AQA 针灸推拿动作质量评估",
-      "summary_zh": "针灸（A）与推拿（T）各 61 名受试者的第一人称+第三人称同步视频，两位中医师标注分类与连续指标；配套跨视角多模态评估框架 CME-AQA",
+      "summary_zh": "针灸和推拿各 61 名受试者的第一人称、第三人称同步视频。两位有经验的中医物理治疗师各自评估全部受试者，再讨论达成一致。配套跨视角评估框架 CME-AQA。",
       "tags": [
         "benchmark",
         "multimodal"
@@ -6337,8 +6339,8 @@
         "数据": "https://researchdata.durham.ac.uk/collections/r1jm214p229"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Dual-view acupuncture and Tuina action-quality videos from 61 subjects each (first- and third-person), with expert categorical and continuous ratings; paired with the CME-AQA cross-view multimodal assessment framework.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Synchronized first- and third-person videos of acupuncture and Tuina, 61 subjects each. Two experienced TCM physical therapists assessed every subject independently, then reconciled disagreements. Paired with the CME-AQA cross-view assessment framework.",
       "title_en": "TCM-AQA61 / CME-AQA",
       "links_en": {
         "Paper": "https://arxiv.org/abs/2606.28104",
@@ -7065,8 +7067,8 @@
       "id": "ds-chatmed-kg",
       "name": "TCM_KG",
       "section": "知识图谱",
-      "title_zh": "ChatMed 知识图谱",
-      "summary_zh": "ChatMed 知识图谱",
+      "title_zh": "中医 Neo4j 知识图谱",
+      "summary_zh": "用 Neo4j 社区版搭建的中医知识图谱。示例从症状节点「便秘」出发，查与它相连的节点。",
       "tags": [
         "kg"
       ],
@@ -7074,10 +7076,10 @@
         "数据集": "https://github.com/ywjawmw/TCM_KG"
       },
       "type": "dataset",
-      "year": 2025,
+      "year": 2023,
       "status": "published",
-      "verified_at": "2026-07-19",
-      "summary_en": "ChatMed knowledge graph.",
+      "verified_at": "2026-10-25",
+      "summary_en": "A TCM knowledge graph built with Neo4j community edition. The sample query starts from the symptom node for constipation and returns its neighbors.",
       "title_en": "TCM_KG",
       "links_en": {
         "Dataset": "https://github.com/ywjawmw/TCM_KG"
@@ -7485,29 +7487,6 @@
       }
     },
     {
-      "id": "hf-zhifangdantai",
-      "name": "知方丹台",
-      "type": "model_hf",
-      "year": 2025,
-      "section": "Hugging Face 开源模型（精选）",
-      "title_zh": "知方丹台方剂生成模型",
-      "tags": [
-        "model",
-        "dead-site"
-      ],
-      "links": {
-        "模型": "https://huggingface.co/tczzx6/ZhiFangDanTai1.0"
-      },
-      "align_note": "2026-10-21 公开模型页为 Hugging Face 404",
-      "status": "published",
-      "verified_at": "2026-08-02",
-      "summary_en": "ZhiFangDanTai formula-generation weights. The public Hugging Face page returned 404 on 2026-10-21.",
-      "title_en": "ZhiFangDanTai",
-      "links_en": {
-        "Model": "https://huggingface.co/tczzx6/ZhiFangDanTai1.0"
-      }
-    },
-    {
       "id": "pcdh-tcm",
       "name": "Patient-Conditioned Dual Hypergraph Reasoning",
       "year": 2026,
@@ -7839,7 +7818,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCMID 2.0 中医药整合数据库",
-      "summary_zh": "华东师范大学团队做的方剂、草药、成分和靶点库。原网站已经打不开，数据和介绍还留在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。",
+      "summary_zh": "华东师范大学团队做的方剂、草药、成分和靶点库。数据和介绍在 Zenodo 与 Nucleic Acids Research 的论文里。名字和新加坡的 TCM-ID 容易看混，这是两个库。原站 megabionet.org/tcmid 这次打开超时。",
       "tags": [
         "corpus",
         "dead-site"
@@ -7852,7 +7831,7 @@
       },
       "status": "published",
       "verified_at": "2026-09-13",
-      "summary_en": "East China Normal University's database of formulas, herbs, ingredients, and targets. The original site no longer opens; the data and the paper remain on Zenodo and in Nucleic Acids Research. It is a different database from NUS TCM-ID.",
+      "summary_en": "East China Normal University's database of formulas, herbs, ingredients, and targets. The data and the paper are on Zenodo and in Nucleic Acids Research. It is a different database from NUS TCM-ID. megabionet.org/tcmid timed out on this check.",
       "title_en": "TCMID 2.0",
       "links_en": {
         "Original site": "http://www.megabionet.org/tcmid/",
@@ -7954,10 +7933,10 @@
       "id": "ds-symmap",
       "name": "SymMap 2.0",
       "type": "dataset",
-      "year": 2019,
+      "year": 2022,
       "section": "中药组方 / 提取物",
       "title_zh": "SymMap 2.0 症状映射中医药数据库",
-      "summary_zh": "草药–中医症状–西医症状–成分–靶点–疾病整合库，2.0按新版药典扩草药/证候并开放关系表下载",
+      "summary_zh": "草药、中医症状、西医症状、成分、靶点和疾病的整合库。网站现为 2.0，按《中国药典》2020 年版补充，关系表可以下载。页脚署 2022 年。",
       "tags": [
         "corpus",
         "kg"
@@ -7968,8 +7947,8 @@
         "论文": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6323958/"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Herb–TCM symptom–modern symptom–ingredient–target–disease maps, expanded with newer pharmacopoeia records and downloadable relationship tables.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Maps among herbs, TCM symptoms, modern symptoms, ingredients, targets, and diseases. The site is now version 2.0, updated with the 2020 Chinese Pharmacopoeia, and the relationship tables can be downloaded. The footer is dated 2022.",
       "title_en": "SymMap 2.0",
       "links_en": {
         "Website": "http://www.symmap.org/",
@@ -8022,7 +8001,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCM Database@Taiwan 中药三维结构库",
-      "summary_zh": "453味药材中约2万个分离化合物的2D/3D结构库，面向虚拟筛选；原站tcm.cmu.edu.tw已不可达，核验走PLOS论文页",
+      "summary_zh": "从 453 味药材里收了 2 万多种纯化合物，每种都有二维和三维结构，用来做虚拟筛选。原站 tcm.cmu.edu.tw 这次打开超时。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8033,8 +8012,8 @@
         "DOI": "https://doi.org/10.1371/journal.pone.0015939"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "About 20k isolated-compound 2D/3D structures from 453 TCM materials for virtual screening. Original tcm.cmu.edu.tw is unreachable; verify via the PLOS paper.",
+      "verified_at": "2026-10-25",
+      "summary_en": "More than 20,000 pure compounds isolated from 453 TCM ingredients, each in 2D and 3D, for virtual screening. tcm.cmu.edu.tw timed out on this check.",
       "title_en": "TCM Database@Taiwan",
       "links_en": {
         "Original site": "http://tcm.cmu.edu.tw/",
@@ -8087,7 +8066,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "LTM-TCM 中西医分子表型链接库",
-      "summary_zh": "整合十四个权威库与临床/古籍记录的症状–方剂–植物–成分–靶点平台（约4.8万方）；官网cloud.tasly.com域名已无法解析，核验走论文DOI",
+      "summary_zh": "把十四个中药库，以及临床记录和古籍，接到症状、方剂、植物、成分和靶点上。库里有 1928 个症状、48126 首方、9122 种植物、34967 个成分和 13109 个靶点。cloud.tasly.com 这次域名解析不到。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8097,8 +8076,8 @@
         "DOI": "https://doi.org/10.1016/j.phrs.2022.106185"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Symptom–prescription–plant–ingredient–target platform linking 14 source databases plus clinical and classical records (~48k formulas). Official Tasly cloud no longer resolves; verify via the paper DOI.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Links 14 TCM databases with clinical records and classical books across symptoms, prescriptions, plants, ingredients, and targets: 1,928 symptoms, 48,126 prescriptions, 9,122 plants, 34,967 ingredients, and 13,109 targets. cloud.tasly.com does not resolve on this check.",
       "title_en": "LTM-TCM",
       "links_en": {
         "Original site": "http://cloud.tasly.com/#/tcm/home",
@@ -8149,18 +8128,17 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "CEMTDD 中国少数民族传统药物数据库",
-      "summary_zh": "以新疆维吾尔/哈萨克等民族药为主的草药–化合物–靶点–疾病库（约621草药）；原域名cemtdd.com已改作他用，核验走PMC论文",
+      "summary_zh": "以维吾尔药、哈萨克药等民族药为主的草药、化合物、靶点和疾病库，论文写约 621 味草药。",
       "tags": [
-        "corpus",
-        "dead-site"
+        "corpus"
       ],
       "links": {
         "论文": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4627337/",
         "DOI": "https://doi.org/10.18632/oncotarget.3789"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Ethnic-minority herbal–compound–target–disease resource (~621 herbs, mainly Uygur/Kazakh). Original cemtdd.com now hosts something else; verify via the PMC paper.",
+      "verified_at": "2026-10-25",
+      "summary_en": "An herbal–compound–target–disease resource centered on Uygur and Kazakh medicines. The paper reports about 621 herbs.",
       "title_en": "CEMTDD",
       "links_en": {
         "Paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4627337/",
@@ -8178,7 +8156,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "YaTCM 中药方剂–成分–靶点库",
-      "summary_zh": "约1813首方、6220味药、4.7万天然产物及靶点/通路分析工具；南开官网当前403，核验走开放论文",
+      "summary_zh": "1813 首方、6220 味药、47696 个天然产物，并带靶点和通路分析。南开原站这次返回 403。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8189,8 +8167,8 @@
         "DOI": "https://doi.org/10.1016/j.csbj.2018.11.002"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "About 1,813 prescriptions, 6,220 herbs, and 47k natural products with target/pathway tools. Nankai site currently returns 403; verify via the open-access paper.",
+      "verified_at": "2026-10-25",
+      "summary_en": "1,813 prescriptions, 6,220 herbs, and 47,696 natural products, with target and pathway tools. The Nankai site returned 403 on this check.",
       "title_en": "YaTCM",
       "links_en": {
         "Original site": "http://cadd.pharmacy.nankai.edu.cn/yatcm/home",
@@ -8327,7 +8305,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "SuperTCM 中药生物文化数据库",
-      "summary_zh": "Charité团队整合药典与多源数据的中药–物种–成分–靶点–通路–疾病库（约6516味药）；官网tcm.charite.de已无法解析",
+      "summary_zh": "Charité 把药典和多来源资料收成一个库：6516 味中药、5372 个植物物种、55772 个活性成分、543 个靶点、254 条 KEGG 通路、8634 种疾病。tcm.charite.de 这次域名解析不到。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8338,8 +8316,8 @@
         "DOI": "https://doi.org/10.1016/j.biopha.2021.112315"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Charité biocultural TCM resource linking drugs, botanical species, ingredients, targets, KEGG pathways, and diseases (~6,516 drugs). Official tcm.charite.de no longer resolves.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Charité resource of 6,516 TCM drugs, 5,372 botanical species, 55,772 active ingredients, 543 targets, 254 KEGG pathways, and 8,634 diseases. tcm.charite.de does not resolve on this check.",
       "title_en": "SuperTCM",
       "links_en": {
         "Original site": "http://tcm.charite.de/supertcm",
@@ -8359,7 +8337,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCMAnalyzer 中药化学信息学分析平台",
-      "summary_zh": "中山大学RCDD的方剂/药材/成分网络分析与骨架检索服务（约1493方、618味药）；官网rcdd.org.cn当前超时",
+      "summary_zh": "中山大学药物研发中心的网络分析工具。可以按骨架查一味药里可能有活性的成分，也能把分子、靶点、通路和疾病连成图。rcdd.org.cn 这次打开超时。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8370,8 +8348,8 @@
         "DOI": "https://doi.org/10.1021/acs.jcim.7b00549"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "RCDD chemo-/bioinformatics service for formula/herb/ingredient networks and scaffold search (~1,493 formulas, 618 herbs). Official rcdd.org.cn currently times out.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Sun Yat-sen University toolkit for scaffold search of bioactive ingredients and for networks of molecules, targets, pathways, and diseases. rcdd.org.cn timed out on this check.",
       "title_en": "TCMAnalyzer",
       "links_en": {
         "Original site": "http://www.rcdd.org.cn/tcmanalyzer",
@@ -8390,7 +8368,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCM-Mesh 中药网络药理学分析库",
-      "summary_zh": "草药–化合物–基因–疾病网络与毒副作用记录（约6235味药）；官网当前403，核验走开放论文",
+      "summary_zh": "做中药复方的网络药理。库里有 6235 味药、383840 个化合物、14298 个基因、6204 种疾病，以及 163221 条副作用记录和 71 条毒性记录。原站这次返回 403。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8401,8 +8379,8 @@
         "DOI": "https://doi.org/10.1038/s41598-017-03039-7"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Herb–compound–gene–disease network with toxicity/side-effect records (~6,235 herbs). Official portal currently returns 403; verify via the open paper.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Network-pharmacology resource with 6,235 herbs, 383,840 compounds, 14,298 genes, 6,204 diseases, 163,221 side-effect records, and 71 toxicity records. The old site returned 403 on this check.",
       "title_en": "TCM-Mesh",
       "links_en": {
         "Original site": "http://mesh.tcm.microbioinformatics.org/",
@@ -8422,7 +8400,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TCMGeneDIT 中药–基因–疾病文本挖掘库",
-      "summary_zh": "从文献挖掘中药、基因、疾病、功效与成分关联，并接入通路与PPI；官网tcm.lifescience.ntu.edu.tw已无法解析",
+      "summary_zh": "从文献里把中药、基因、疾病、功效和成分对上，并接上通路和蛋白相互作用。tcm.lifescience.ntu.edu.tw 这次域名解析不到。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8433,8 +8411,8 @@
         "DOI": "https://doi.org/10.1186/1472-6882-8-58"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Text-mined associations among TCM, genes, diseases, effects, and ingredients, with pathway and PPI links. Official NTU site no longer resolves.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Text-mined links among TCM, genes, diseases, effects, and ingredients, joined to pathways and protein interactions. tcm.lifescience.ntu.edu.tw does not resolve on this check.",
       "title_en": "TCMGeneDIT",
       "links_en": {
         "Original site": "http://tcm.lifescience.ntu.edu.tw/",
@@ -8455,7 +8433,7 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "CVDHD 心血管病本草数据库",
-      "summary_zh": "面向心血管病的本草化合物三维结构、靶点与通路库，用于虚拟筛选与网络药理；原北大站点当前超时",
+      "summary_zh": "收心血管相关本草里分出来的天然产物，用来做虚拟筛选和网络药理。有 35230 个化合物的三维结构，并对接到 2395 个靶蛋白，同时连着疾病、通路和临床标志物。原北大站点这次打开超时。",
       "tags": [
         "corpus",
         "dead-site"
@@ -8465,8 +8443,8 @@
         "DOI": "https://doi.org/10.1186/1758-2946-5-51"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "Cardiovascular herbal database of 3D compound structures, targets, and pathways for virtual screening and network pharmacology. Original Peking University site currently times out.",
+      "verified_at": "2026-10-25",
+      "summary_en": "3D structures of 35,230 natural products from cardiovascular herbs, docked to 2,395 target proteins, with related diseases, pathways, and clinical biomarkers. The original Peking University site timed out on this check.",
       "title_en": "CVDHD",
       "links_en": {
         "Original site": "http://pkuxxj.pku.edu.cn/CVDHD",
@@ -8486,22 +8464,23 @@
       ],
       "section": "中药组方 / 提取物",
       "title_zh": "TM-MC 东北亚传统药物成分库",
-      "summary_zh": "韩国韩医学研究院从文献抽取的东北亚药材–化合物库；2015初版约536种药材，2024的2.0扩到约3.4万化合物；官网当前超时",
+      "summary_zh": "韩国韩医学研究院从文献抽取的东北亚药材和化合物库。2015 年初版约 536 种药材，2024 年的 2.0 扩到约 3.4 万个化合物。旧网址写明数据和服务已迁到 tm-mc.kr。",
       "tags": [
         "corpus",
-        "dead-site",
         "east-asian-tm"
       ],
       "links": {
+        "网站": "https://tm-mc.kr",
         "原网站": "http://informatics.kiom.re.kr/compound/",
         "DOI": "https://doi.org/10.1186/s12906-015-0758-5",
         "2.0论文": "https://doi.org/10.1186/s12906-023-04331-y"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "KIOM literature-derived Northeast Asian medicinal-material–compound database; the 2015 release covers ~536 materials, and the 2024 2.0 paper expands to ~34k compounds. Official site currently times out.",
+      "verified_at": "2026-10-25",
+      "summary_en": "KIOM's literature-derived database of Northeast Asian medicinal materials and compounds. The 2015 release covers about 536 materials, and the 2024 version 2.0 expands to about 34,000 compounds. The old address says the data and services have moved to tm-mc.kr.",
       "title_en": "TM-MC",
       "links_en": {
+        "Website": "https://tm-mc.kr",
         "Original site": "http://informatics.kiom.re.kr/compound/",
         "DOI": "https://doi.org/10.1186/s12906-015-0758-5",
         "2.0 paper": "https://doi.org/10.1186/s12906-023-04331-y"
@@ -8920,10 +8899,10 @@
       "id": "ds-oasis-kiom",
       "name": "OASIS (KIOM)",
       "type": "dataset",
-      "year": 2010,
+      "year": 2007,
       "section": "东亚传统医学",
       "title_zh": "OASIS 韩国传统医学信息门户",
-      "summary_zh": "韩国韩医学研究院的传统医学文献与资源门户，可检索韩医论文与本草资料",
+      "summary_zh": "韩国韩医学研究院的传统医学文献与资源门户。2007年6月以韩医论文检索系统上线，2009年7月改版为传统医学信息门户，可检索韩医论文与本草资料",
       "tags": [
         "corpus",
         "tool",
@@ -8933,8 +8912,8 @@
         "网站": "https://oasis.kiom.re.kr/"
       },
       "status": "published",
-      "verified_at": "2026-09-13",
-      "summary_en": "KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources.",
+      "verified_at": "2026-10-25",
+      "summary_en": "KIOM traditional-medicine literature portal for Korean-medicine papers and herbal resources. The Korean-medicine paper search went online in June 2007 and was rebuilt as a traditional-medicine portal in July 2009.",
       "title_en": "OASIS (KIOM)",
       "links_en": {
         "Website": "https://oasis.kiom.re.kr/"
@@ -9299,7 +9278,7 @@
       "id": "surv-jiao2025-sizhen",
       "name": "人工智能实现中医四诊的发展现状、问题及解决路径（中华中医药学刊）",
       "year": 2025,
-      "summary_zh": "写人工智能做中医四诊现在走到哪、卡在哪。面舌采集、电子鼻、脉象传感和四诊合在一起看，都还比较弱。刊在《中华中医药学刊》。",
+      "summary_zh": "从望、闻、问、切看人工智能做中医四诊走到哪。望诊用摄像头拍面、舌、舌下、唇和眼睛，结合分割和颜色模型做量化；闻诊采集异常声音和气味，用神经网络和电子鼻做分析。刊在《中华中医药学刊》2025年第43卷第11期。",
       "tags": [
         "survey",
         "multimodal"
@@ -9309,9 +9288,9 @@
       },
       "type": "survey",
       "status": "published",
-      "verified_at": "2026-08-03",
+      "verified_at": "2026-10-25",
       "venue": "中华中医药学刊",
-      "summary_en": "On where AI stands in the four TCM examinations, and where it gets stuck: face and tongue capture, electronic noses, pulse sensors, and putting the four together. Published in Chinese Archives of Traditional Chinese Medicine.",
+      "summary_en": "Reviews where AI stands across the four TCM examinations. Inspection photographs the face, tongue, sublingual vessels, lips, and eyes and quantifies them with segmentation and color models; auscultation and olfaction capture abnormal sounds and odors and analyze them with neural networks and electronic noses. Published in Chinese Archives of Traditional Chinese Medicine, 2025, 43(11).",
       "links_en": {
         "Paper": "https://www.sinomed.ac.cn/article.do?ui=2026106036"
       }
@@ -10884,7 +10863,7 @@
       "year": 2025,
       "date": "2025.12",
       "venue": "CN120690391B",
-      "summary_zh": "口语到术语的语义映射 + 体质过滤 + 多症状协同，推荐经典名方（已授权）",
+      "summary_zh": "口语到术语的语义映射 + 体质过滤 + 多症状协同，推荐经典名方。2025年12月16日授权。",
       "orgs": [
         "顺福科技集团"
       ],
@@ -10896,8 +10875,8 @@
         "专利": "https://patents.google.com/patent/CN120690391B/zh"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Maps colloquial symptoms to terms, filters by constitution, and recommends classic formulas (granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Maps colloquial symptoms to terms, filters by constitution, and recommends classic formulas. Granted on 16 December 2025.",
       "name_en": "Knowledge-graph recommendation of classic TCM formulas",
       "orgs_en": [
         "Shunfu Technology Group"
@@ -10943,7 +10922,7 @@
       "year": 2025,
       "date": "2025.06",
       "venue": "CN120067279B",
-      "summary_zh": "面舌形体图像、语音气息与病症库融合的多模态问诊系统（已授权）",
+      "summary_zh": "面舌形体图像、语音气息与病症库融合的多模态问诊系统。2025年6月27日授权。",
       "orgs": [
         "医脉人工智能医疗科技（天津）"
       ],
@@ -10955,8 +10934,8 @@
         "专利": "https://patents.google.com/patent/CN120067279B/zh"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Multimodal inquiry fusing face/body/tongue images, speech prosody, and a disease library (granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Multimodal inquiry fusing face, body, and tongue images, speech prosody, and a disease library. Granted on 27 June 2025.",
       "name_en": "AI-LLM method and system for intelligent TCM inquiry",
       "orgs_en": [
         "Yi Mai Artificial Intelligence Medical Technology (Tianjin)"
@@ -11058,7 +11037,7 @@
       "year": 2024,
       "date": "2024.12",
       "venue": "CN119092157B",
-      "summary_zh": "在 Baichuan2-7B-Chat 上做中药问答（2025.02 授权）",
+      "summary_zh": "在 Baichuan2-7B-Chat 上做中药问答。2025年2月7日授权。",
       "orgs": [
         "浙江大学",
         "长三角智慧绿洲创新中心"
@@ -11070,8 +11049,8 @@
         "专利": "https://patents.google.com/patent/CN119092157B/zh"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Chinese-materia-medica QA fine-tuned from Baichuan2-7B-Chat (granted February 2025).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Chinese-materia-medica QA fine-tuned from Baichuan2-7B-Chat. Granted on 7 February 2025.",
       "name_en": "LLM-based Chinese-materia-medica question answering",
       "orgs_en": [
         "Zhejiang University",
@@ -11179,7 +11158,7 @@
       "year": 2024,
       "date": "2024.07",
       "venue": "CN117828050B",
-      "summary_zh": "长文档 RAG（扩展、召回、重排序、来源标注）做中医问答（2024.07 授权；申请公布日 2024-04-05）",
+      "summary_zh": "长文档 RAG（扩展、召回、重排序、来源标注）做中医问答。2024年4月5日公开，2024年7月9日授权。",
       "orgs": [
         "北京智谱华章科技"
       ],
@@ -11191,8 +11170,8 @@
         "专利": "https://patents.google.com/patent/CN117828050B/zh"
       },
       "status": "published",
-      "verified_at": "2026-09-12",
-      "summary_en": "Long-document RAG (expansion, recall, reranking, source citations) for TCM QA (granted July 2024).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Long-document RAG for TCM question answering, with expansion, recall, reranking, and source citations. Published on 5 April 2024 and granted on 9 July 2024.",
       "name_en": "Long-document retrieval-augmented generation for TCM question answering",
       "orgs_en": [
         "Beijing Zhipu Huazhang Technology"
@@ -12152,11 +12131,12 @@
       "type": "dataset",
       "year": 2012,
       "section": "东亚传统医学",
-      "summary_zh": "富山大学和汉医药学综合研究所的传统医药数据库。英文说明页写明由文部科学省区域创新集群计划于2008–2012年资助，收录生药基原、性味归经与汉方组成、适应及文献；处方文献一万余篇。和汉药实验文库含近80个化合物，以及80种生药热水提取物和80个汉方提取物的化学与生物测定，2024年起提供生物测定下载。",
+      "summary_zh": "富山大学和汉医药学综合研究所的传统医药数据库。文部科学省区域创新集群计划在2008–2012年资助。库里有生药基原、性味归经、汉方组成、适应和文献，处方文献一万余篇。和汉药实验文库含近80个化合物，以及80种生药热水提取物和80个汉方提取物的化学与生物测定，2024年起提供生物测定下载。数据库站点这次返回 503，研究所门户仍列出这个地址。",
       "tags": [
         "dataset",
         "herbal",
-        "east-asian-tm"
+        "east-asian-tm",
+        "dead-site"
       ],
       "links": {
         "网站": "https://dentomed.toyama-wakan.net/en/",
@@ -12167,8 +12147,8 @@
         "Institute of Natural Medicine"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. The English about page says it was supported by a MEXT regional innovation cluster grant for 2008–2012. It covers crude-drug identity, properties, Kampo composition and indications, and more than 10,000 Kampo papers. The Wakanyaku Library holds nearly 80 compounds plus chemical and bioassay data for hot-water extracts of 80 crude drugs and 80 Kampo extracts, with bioassay downloads from 2024.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Traditional Medical and Pharmaceutical Database at the University of Toyama Institute of Natural Medicine. A MEXT regional innovation cluster grant supported it in 2008–2012. It covers crude-drug identity, properties, Kampo composition and indications, and more than 10,000 Kampo papers. The Wakanyaku Library holds nearly 80 compounds plus chemical and bioassay data for hot-water extracts of 80 crude drugs and 80 Kampo extracts, with bioassay downloads from 2024. The database site returned 503 on this check; the institute portal still lists the address.",
       "links_en": {
         "Website": "https://dentomed.toyama-wakan.net/en/",
         "About": "https://dentomed.toyama-wakan.net/index_en"
@@ -12265,11 +12245,12 @@
       "type": "dataset",
       "year": 2000,
       "section": "东亚传统医学",
-      "summary_zh": "富山大学和汉医药学综合研究所民族药物资料馆的生药标本库。首页表格写明和汉药461种、8942点，日文公开始于2000年4月；同站另有英文和汉药以及尤纳尼、泰药、阿育吠陀、印度尼西亚生药分库。最终更新说明为2018年3月30日的第7版。",
+      "summary_zh": "富山大学和汉医药学综合研究所民族药物资料馆的生药标本库。首页表格写明和汉药461种、8942点，日文公开始于2000年4月；同站另有英文和汉药以及尤纳尼、泰药、阿育吠陀、印度尼西亚生药分库。最终更新说明为2018年3月30日的第7版。站点这次返回 503，研究所门户仍列出这个地址。",
       "tags": [
         "dataset",
         "herbal",
-        "east-asian-tm"
+        "east-asian-tm",
+        "dead-site"
       ],
       "links": {
         "网站": "https://ethmed.toyama-wakan.net/"
@@ -12280,8 +12261,8 @@
         "Museum of Materia Medica"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Ethnomedicine specimen database of the Museum of Materia Medica at the University of Toyama. The home-page table lists 461 kinds and 8,942 Japanese–Chinese crude-drug specimens, opened in Japanese in April 2000. The same site also has an English crude-drug list and separate Unani, Thai, Ayurvedic, and Indonesian collections. The latest note is a version-7 rebuild on 30 March 2018.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Ethnomedicine specimen database of the Museum of Materia Medica at the University of Toyama. The home-page table lists 461 kinds and 8,942 Japanese–Chinese crude-drug specimens, opened in Japanese in April 2000. The same site also has an English crude-drug list and separate Unani, Thai, Ayurvedic, and Indonesian collections. The latest note is a version-7 rebuild on 30 March 2018. The site returned 503 on this check; the institute portal still lists the address.",
       "links_en": {
         "Website": "https://ethmed.toyama-wakan.net/"
       }
@@ -12325,7 +12306,7 @@
       "type": "dataset",
       "year": 2016,
       "section": "东亚传统医学",
-      "summary_zh": "韩国韩医药振兴院韩医药素材银行的在库药材检索。打开的药材页写明检索结果共691条，字段有药材名、异名、学名、基原植物和反应酶。振兴院事业文件记载2016年1月1日由天然物物质银行与韩方生物素材银行合并为本事业。",
+      "summary_zh": "韩国韩医药振兴院的韩医药素材银行。2016年1月1日由天然物物质银行与韩方生物素材银行合并而成。药材检索页现有 691 条，字段有药材名、异名、学名、基原植物和反应酶。",
       "tags": [
         "dataset",
         "herbal",
@@ -12338,8 +12319,8 @@
         "National Institute for Korean Medicine Development"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Searchable crude-drug holdings of the Korean Medicine Material Bank at the National Institute for Korean Medicine Development. The open herb page reports 691 results, with name, synonym, scientific name, botanical source, and reacting enzymes. An institute project file records that the bank was formed on 1 January 2016 by merging the natural-substance bank and the herbal biomaterial bank.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Korean Medicine Material Bank at the National Institute for Korean Medicine Development. On 1 January 2016 it was formed by merging the natural-substance bank and the herbal biomaterial bank. The herb page lists 691 items, with name, synonym, scientific name, botanical source, and reacting enzymes.",
       "links_en": {
         "Herbs": "https://kminfra.nikom.or.kr/kmmb/module/herbs/index.do?menu_idx=11"
       }
@@ -12403,7 +12384,7 @@
       "type": "dataset",
       "year": 2020,
       "section": "中药组方 / 提取物",
-      "summary_zh": "Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文写明从《四部医典》等经典和嘎务多吉本草分类中选取约700种常用药物，给出藏文、Wylie转写和拉丁学名，补充材料随文发布。作者单位包括甘肃中医药大学藏医学院、青海民族大学药学院和成都中医药大学民族医药学术传承创新研究中心。",
+      "summary_zh": "Data in Brief 公开的藏医（Sowa Rigpa）常用本草拉丁学名数据集。论文从《四部医典》等经典和嘎务多吉的本草分类里选出近 700 种常用药，给出藏文、Wylie 转写和拉丁学名，补充材料随文发布。作者来自甘肃中医药大学藏医学院、威斯康星大学麦迪逊分校和青海民族大学药学院。数据来源地写的是成都中医药大学民族医药学术传承创新研究中心。",
       "tags": [
         "dataset",
         "herbal"
@@ -12414,13 +12395,12 @@
       },
       "orgs": [
         "Gansu University of Chinese Medicine",
-        "Qinghai Nationalities University",
-        "Chengdu University of Traditional Chinese Medicine",
-        "University of Wisconsin-Madison"
+        "University of Wisconsin-Madison",
+        "Qinghai Nationalities University"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Open Data in Brief table of Latin identifications for commonly used Sowa Rigpa materia medica. The paper says about 700 commonly used items were selected from the Four Medical Treatises and Gawé Dorjé’s classification, with Tibetan script, Wylie transliteration, and Latin names; the supplement is published with the article. Affiliations include the School of Tibetan Medicine at Gansu University of Chinese Medicine, the College of Pharmacy at Qinghai Nationalities University, and the ethnic-medicine center at Chengdu University of Traditional Chinese Medicine.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Open Data in Brief table of Latin identifications for commonly used Sowa Rigpa materia medica. The paper says about 700 commonly used items were selected from the Four Medical Treatises and Gawé Dorjé’s classification, with Tibetan script, Wylie transliteration, and Latin names; the supplement is published with the article. The authors are at the School of Tibetan Medicine, Gansu University of Chinese Medicine, the University of Wisconsin-Madison, and the College of Pharmacy at Qinghai Nationalities University. The data-source location is the ethnic-medicine center at Chengdu University of Traditional Chinese Medicine.",
       "links_en": {
         "Paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7689029/",
         "DOI": "https://doi.org/10.1016/j.dib.2020.106498"
@@ -12457,7 +12437,7 @@
       "type": "dataset",
       "year": 2023,
       "section": "公开资料整理",
-      "summary_zh": "内蒙古自治区医疗保障局公开的民族药目录PDF（蒙医成方为主）。文件名为2023年12月25日的政府公开稿，正文标题为内蒙古自治区民族药目录，备注写明目录内民族药按乙类管理。这是医保收载目录，不是蒙药研究型成分库；2026年发布的蒙医药知识库平台未见可打开的网址。",
+      "summary_zh": "内蒙古自治区医疗保障局公开的民族药目录，以蒙医成方为主。公开稿日期为2023年12月25日。正文标题是内蒙古自治区民族药目录，备注写明目录内民族药按乙类管理。这是医保收载目录，不是蒙药成分研究库。",
       "tags": [
         "dataset"
       ],
@@ -12468,8 +12448,8 @@
         "Inner Mongolia Healthcare Security Administration"
       ],
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Public ethnic-medicine catalogue PDF from the Inner Mongolia Healthcare Security Administration, mainly finished Mongolian formulas. The government filename is dated 25 December 2023. The extracted text is titled the Inner Mongolia ethnic-medicine catalogue and notes that listed drugs are managed as class B. It is a reimbursement list, not a research compound database. The 2026 Mongolian-medicine knowledge-base launch has no open platform URL.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Public ethnic-medicine catalogue PDF from the Inner Mongolia Healthcare Security Administration, mainly finished Mongolian formulas. The government filename is dated 25 December 2023. The extracted text is titled the Inner Mongolia ethnic-medicine catalogue and notes that listed drugs are managed as class B. It is a reimbursement list, not a research compound database.",
       "links_en": {
         "Catalogue": "https://ylbzj.nmg.gov.cn/zwgk/zfxxgk/fdzdgknr/bmwj/202312/P020231225623619008689.pdf"
       }
@@ -12508,7 +12488,7 @@
         "中国中医科学院中医药信息研究所",
         "南京中医药大学人工智能与信息技术学院"
       ],
-      "summary_zh": "用《黄帝内经》《伤寒论》等文言—白话平行语料，对 DeepSeek、Qwen、Baichuan 做 LoRA 微调并融合注释，得到命名模型 TCM Classic-Translator。BLEU-4、ROUGE-1、ROUGE-2、ROUGE-L 分别为 39.35、55.05、35.81、54.66。未见公开权重。",
+      "summary_zh": "用《黄帝内经》《伤寒论》等文言—白话平行语料，对 DeepSeek、Qwen、Baichuan 做 LoRA 微调并融合注释，得到 TCM Classic-Translator。BLEU-4、ROUGE-1、ROUGE-2、ROUGE-L 分别为 39.3534、55.0474、35.8099、54.6551。",
       "tags": [
         "model"
       ],
@@ -12516,8 +12496,8 @@
         "DOI": "https://doi.org/10.11842/wst.20250916005"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "TCM Classic-Translator is a named LoRA model for classical-to-modern TCM translation, trained on Huangdi Neijing and Shanghan Lun parallels with commentary augmentation. Reported scores are BLEU-4 39.35 and ROUGE-L 54.66. No public weights were found.",
+      "verified_at": "2026-10-25",
+      "summary_en": "TCM Classic-Translator is a LoRA model for classical-to-modern TCM translation, trained on Huangdi Neijing and Shanghan Lun parallels with commentary augmentation. BLEU-4, ROUGE-1, ROUGE-2, and ROUGE-L are 39.3534, 55.0474, 35.8099, and 54.6551.",
       "links_en": {
         "DOI": "https://doi.org/10.11842/wst.20250916005"
       }
@@ -12539,7 +12519,7 @@
         "DOI": "https://doi.org/10.11842/wst.20250327010"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
+      "verified_at": "2026-10-25",
       "summary_en": "XingLin-NER is a generative NER framework that instruction-tunes structured and reasoning prompts for variable TCM clinical terms, scored with TCM-BERT semantic similarity. It is an extraction method, not a general TCM chat model.",
       "links_en": {
         "DOI": "https://doi.org/10.11842/wst.20250327010"
@@ -12626,7 +12606,7 @@
       "orgs": [
         "湖南中医药大学信息科学与工程学院"
       ],
-      "summary_zh": "用 LangChain 把 ChatGLM3-6B 接到本地库，库含中华中医药学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。",
+      "summary_zh": "用 LangChain 把 ChatGLM3-6B 接到本地库，库含中国中西医结合学会、中华医学会认证的阿尔茨海默病诊疗指南、规范和教科书。相对裸 ChatGLM3-6B，事实准确性 Win 88.09%、完整性 Win 85.71%。",
       "tags": [
         "rag"
       ],
@@ -12634,8 +12614,8 @@
         "DOI": "https://doi.org/10.11842/wst.20240329007"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the China Association of Chinese Medicine and the Chinese Medical Association. Against bare ChatGLM3-6B, factual-accuracy wins are 88.09% and completeness wins 85.71%.",
+      "verified_at": "2026-10-25",
+      "summary_en": "LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the Chinese Association of Integrative Medicine and the Chinese Medical Association. Against bare ChatGLM3-6B, factual-accuracy wins are 88.09% and completeness wins 85.71%.",
       "links_en": {
         "DOI": "https://doi.org/10.11842/wst.20240329007"
       }
@@ -12649,7 +12629,7 @@
       "orgs": [
         "南京中医药大学人工智能与信息技术学院"
       ],
-      "summary_zh": "以细粒度海洋中药图谱 MMKG 为库，用 Aho-Corasick 与 Word2Vec 做实体识别和问题分类，建成 MMKGQA。六类常见问题上平均精确率 97.93%、召回率 83.41%、F1 89.10%。不是大语言模型系统。",
+      "summary_zh": "以细粒度海洋中药图谱 MMKG 为库，用 Aho-Corasick 与 Word2Vec 做实体识别和问题分类，建成 MMKGQA。问卷调查语料上平均精确率 97.93%、召回率 83.41%、F1 89.10%。不是大语言模型系统。",
       "tags": [
         "kg"
       ],
@@ -12657,8 +12637,8 @@
         "DOI": "https://doi.org/10.11842/wst.20220514002"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On six common question types, mean precision, recall, and F1 are 97.93%, 83.41%, and 89.10%. It is not an LLM system.",
+      "verified_at": "2026-10-25",
+      "summary_en": "MMKGQA answers marine Chinese materia medica questions from the MMKG graph using Aho-Corasick and Word2Vec. On a questionnaire corpus, mean precision, recall, and F1 are 97.93%, 83.41%, and 89.10%. It is not an LLM system.",
       "links_en": {
         "DOI": "https://doi.org/10.11842/wst.20220514002"
       }
@@ -12723,7 +12703,7 @@
         "天津中科闻歌科技有限公司",
         "中国中医科学院中医基础理论研究所"
       ],
-      "summary_zh": "刘奕清、李迎、杨洪军等用 DeepSpeed ZeRO-3 微调 YAYI 2-30B，并用症状关系带权无向图做智能体辨证。专业知识测试中执业医师题正确率 94.09%；360 例临床测试辨证准确率 88.33%，问诊轮次和时间少于主治医师。2025 年第 66 卷第 9 期 895–900 页。",
+      "summary_zh": "刘奕清、李迎、杨洪军等用 DeepSpeed ZeRO-3 微调 YAYI 2-30B，并用症状关系带权无向图做智能体辨证。模拟测试里，执业医师题正确率 94.09%，执业中药师 78.00%，症状术语 87.50%，经络 68.80%。临床测试辨证准确率 88.33%，问诊轮次和时间少于主治医师。2025年第 66 卷第 9 期 895–900 页。",
       "tags": [
         "agent"
       ],
@@ -12732,8 +12712,8 @@
         "论文": "https://link.cnki.net/doi/10.13288/j.11-2166/r.2025.09.005"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Liu et al. fine-tune YAYI 2-30B and couple it to a weighted symptom graph agent. Practitioner-exam accuracy is 94.09%, and on the clinical test syndrome accuracy is 88.33% with fewer turns and less time than attending physicians.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Liu et al. fine-tune YAYI 2-30B with DeepSpeed ZeRO-3 and couple it to a weighted symptom-graph agent. On the simulated tests, practitioner-exam accuracy is 94.09%, licensed Chinese-pharmacy exam accuracy 78.00%, symptom-term recognition 87.50%, and meridian recognition 68.80%. In the clinical test, syndrome accuracy is 88.33%, with fewer turns and less time than attending physicians.",
       "links_en": {
         "DOI": "https://doi.org/10.13288/j.11-2166/r.2025.09.005",
         "Paper": "https://link.cnki.net/doi/10.13288/j.11-2166/r.2025.09.005"
@@ -12890,7 +12870,7 @@
       "year": 2026,
       "date": "2026.06",
       "venue": "CN122135923A",
-      "summary_zh": "病历与诊疗思路分四路召回、融合排序后，由大模型生成中医诊断、证型和参考处方（公开，未授权）",
+      "summary_zh": "病历和诊疗思路各走向量与文本两路，四路召回后融合排序，由大模型生成中医诊断、证型、西医诊断和中药处方。2026年6月2日公开，尚未授权。",
       "orgs": [
         "浙江固生智能科技有限公司"
       ],
@@ -12903,8 +12883,8 @@
         "专利": "https://eureka.patsnap.com/patent/CN122135923A"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Recalls similar records and treatment rationales on four paths, then a large model drafts TCM diagnosis, syndrome pattern, and a reference prescription (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Recalls case records and treatment rationales through vector and text paths, four routes in all, then a large model drafts TCM diagnosis, syndrome pattern, a Western diagnosis, and a herbal prescription. Published on 2 June 2026 and not yet granted.",
       "links_en": {
         "Patent": "https://eureka.patsnap.com/patent/CN122135923A"
       }
@@ -12916,7 +12896,7 @@
       "year": 2025,
       "date": "2025.07",
       "venue": "CN120299726A",
-      "summary_zh": "把非结构化医案做成结构化知识，再用大模型智能体协作模拟中医诊断流程（公开，未授权）",
+      "summary_zh": "把非结构化医案做成结构化知识，再用患者、医生、助手和专家几类大模型智能体协作，模拟中医诊断流程。2025年7月11日公开，尚未授权。",
       "orgs": [
         "华南理工大学"
       ],
@@ -12928,8 +12908,8 @@
         "专利": "https://eureka.patsnap.com/patent/CN120299726A"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "Turns unstructured case records into structured knowledge, then large-model agents collaborate to simulate a TCM diagnostic encounter (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Turns unstructured case records into structured knowledge, then patient, doctor, assistant, and expert agents collaborate to simulate a TCM diagnostic encounter. Published on 11 July 2025 and not yet granted.",
       "links_en": {
         "Patent": "https://eureka.patsnap.com/patent/CN120299726A"
       }
@@ -12941,7 +12921,7 @@
       "year": 2025,
       "date": "2025.06",
       "venue": "CN120148827A",
-      "summary_zh": "用预训练大模型融合中医证候知识与西医病理图谱，生成含中医方剂的心血管决策方案（公开，未授权）",
+      "summary_zh": "用预训练大模型融合中医证候知识和西医病理图谱，生成含西药、中医方剂和非药物干预的心血管决策方案。2025年6月13日公开，尚未授权。",
       "orgs": [
         "溧阳市中医医院"
       ],
@@ -12954,8 +12934,8 @@
         "专利": "https://eureka.patsnap.com/patent/CN120148827A"
       },
       "status": "published",
-      "verified_at": "2026-10-10",
-      "summary_en": "A pretrained large model fuses TCM syndrome knowledge with a Western pathology graph to propose cardiovascular decisions that include Chinese herbal formulas (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "A pretrained large model fuses TCM syndrome knowledge with a Western pathology graph and proposes cardiovascular decisions that include Western drugs, Chinese herbal formulas, and non-drug measures. Published on 13 June 2025 and not yet granted.",
       "links_en": {
         "Patent": "https://eureka.patsnap.com/patent/CN120148827A"
       }
@@ -12967,7 +12947,7 @@
       "year": 2026,
       "date": "2026.06",
       "venue": "CN120913881B",
-      "summary_zh": "用舌象、语音和问诊文本训练多模态中医大模型，输出初步中医分析（2026.06 授权）",
+      "summary_zh": "用舌象、语音和问诊文本训练多模态中医大模型，输出初步中医分析。2026年6月12日授权。",
       "orgs": [
         "深圳心语心言智能技术有限公司"
       ],
@@ -12979,8 +12959,8 @@
         "专利": "https://eureka.patsnap.com/patent/CN120913881B"
       },
       "status": "published",
-      "verified_at": "2026-10-11",
-      "summary_en": "Trains a multimodal TCM large model on tongue images, speech, and inquiry text, then outputs a preliminary TCM analysis (granted June 2026).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Trains a multimodal TCM large model on tongue images, speech, and inquiry text, then outputs a preliminary TCM analysis. Granted on 12 June 2026.",
       "links_en": {
         "Patent": "https://eureka.patsnap.com/patent/CN120913881B"
       }
@@ -13234,7 +13214,7 @@
       "year": 2026,
       "date": "2026.05",
       "venue": "CN120913769B",
-      "summary_zh": "用大模型根据舌象生成病症描述并推荐药饮（2026.05授权；申请公布日2025-11-07）",
+      "summary_zh": "用大模型根据舌象生成病症描述并推荐药饮。2025年11月7日公开，2026年5月29日授权。",
       "orgs": [
         "天大智图（天津）科技有限公司",
         "桂林电子科技大学"
@@ -13248,8 +13228,8 @@
         "专利": "https://patents.google.com/patent/CN120913769B/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "A multimodal model turns a tongue image into a condition description and a medicinal-drink recommendation (granted May 2026).",
+      "verified_at": "2026-10-25",
+      "summary_en": "A multimodal model turns a tongue image into a condition description and a medicinal-drink recommendation. Published on 7 November 2025 and granted on 29 May 2026.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120913769B/zh"
       }
@@ -14619,9 +14599,9 @@
       "name": "以大语言模型为先验的智能中医系统",
       "type": "patent",
       "year": 2024,
-      "date": "2024.08",
-      "venue": "CN117786590B",
-      "summary_zh": "用大语言模型优化患者诊断文本，再做语义理解，预测中医证候和病因并给出治疗建议（已授权）",
+      "date": "2024.04",
+      "venue": "CN117786590A",
+      "summary_zh": "用大语言模型优化患者诊断文本，再做语义理解，预测中医证候和病因并给出治疗建议。2024年4月1日公开。",
       "orgs": [
         "上海源庐加佳信息科技有限公司"
       ],
@@ -14629,13 +14609,13 @@
         "patent"
       ],
       "links": {
-        "专利": "https://patents.google.com/patent/CN117786590B/zh"
+        "专利": "https://patents.google.com/patent/CN117786590A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "An LLM rewrites patient diagnostic text, which is then semantically interpreted to predict TCM syndromes and causes and to suggest treatment (granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "An LLM rewrites patient diagnostic text, which is then semantically interpreted to predict TCM syndromes and causes and to suggest treatment. Published on 1 April 2024.",
       "links_en": {
-        "Patent": "https://patents.google.com/patent/CN117786590B/zh"
+        "Patent": "https://patents.google.com/patent/CN117786590A/zh"
       }
     },
     {
@@ -14645,7 +14625,7 @@
       "year": 2024,
       "date": "2024.11",
       "venue": "CN118899077A",
-      "summary_zh": "用舌面象指令数据微调LLaMA等通用大语言模型，形成TongueLMM，用于舌诊解读、多轮问答和体质推理（公开，未授权）",
+      "summary_zh": "用云诊 TongueAI 生成舌面象解读、多轮问答和体质推理数据，指令微调得到 TongueLMM，用于舌诊解读、多轮问答和体质推理。2024年11月8日公开。",
       "orgs": [
         "合肥云诊信息科技有限公司"
       ],
@@ -14657,8 +14637,8 @@
         "专利": "https://patents.google.com/patent/CN118899077A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Tongue- and face-image instructions fine-tune a general LLM such as LLaMA into TongueLMM for tongue interpretation, multi-turn QA, and constitution reasoning (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "TongueAI builds tongue- and face-image readings, multi-turn questions, and constitution-reasoning data, then instruction-tunes TongueLMM for those three tasks. Published on 8 November 2024.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN118899077A/zh"
       }
@@ -14670,7 +14650,7 @@
       "year": 2025,
       "date": "2025.02",
       "venue": "CN119446558A",
-      "summary_zh": "以中药和诊察治疗数据训练模型，按患者信息可视化输出治疗方案，并用疗效反馈继续更新模型（公开，未授权）",
+      "summary_zh": "以中药和诊察治疗数据训练模型，按患者信息可视化输出治疗方案，并用疗效反馈继续更新模型。2025年2月17日公开。",
       "orgs": [
         "中国中医科学院中医药信息研究所"
       ],
@@ -14683,7 +14663,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "A model trained on herbal and consultation data visualizes treatment options for a patient and is updated from outcome ratings (published, not granted).",
+      "summary_en": "A model trained on herbal and consultation data visualizes treatment options for a patient and is updated from outcome ratings. Published on 17 February 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN119446558A/zh"
       }
@@ -14695,7 +14675,7 @@
       "year": 2025,
       "date": "2025.02",
       "venue": "CN119517372A",
-      "summary_zh": "从中医药文献构建数据集并训练大语言模型，接收用户医学问题后生成对话回答（公开，未授权）",
+      "summary_zh": "从中医药文献构建数据集并训练大语言模型，接收用户医学问题后生成对话回答。2025年2月27日公开。",
       "orgs": [
         "郑新翰"
       ],
@@ -14707,7 +14687,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "A dataset built from TCM literature trains an LLM that takes a user's medical question and returns a dialogue answer (published, not granted).",
+      "summary_en": "A dataset built from TCM literature trains an LLM that takes a user's medical question and returns a dialogue answer. Published on 27 February 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN119517372A/zh"
       }
@@ -14717,9 +14697,9 @@
       "name": "一种用于智能中医系统的大语言模型的构建方法",
       "type": "patent",
       "year": 2025,
-      "date": "2025.04",
-      "venue": "CN119252469B",
-      "summary_zh": "用舌诊图像标记和历史病历训练舌诊问诊模型，并据此构建用于智能中医系统的大语言模型（已授权）",
+      "date": "2025.01",
+      "venue": "CN119252469A",
+      "summary_zh": "用舌诊图像标记和历史病历训练舌诊问诊模型，并据此构建用于智能中医系统的大语言模型。2025年1月7日公开。",
       "orgs": [
         "深圳问止中医健康科技有限公司"
       ],
@@ -14728,13 +14708,13 @@
         "multimodal"
       ],
       "links": {
-        "专利": "https://patents.google.com/patent/CN119252469B/zh"
+        "专利": "https://patents.google.com/patent/CN119252469A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Labeled tongue images and historical records train a tongue-inquiry model used to construct an LLM for an intelligent TCM system (granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Labeled tongue images and historical records train a tongue-inquiry model used to construct an LLM for an intelligent TCM system. Published on 7 January 2025.",
       "links_en": {
-        "Patent": "https://patents.google.com/patent/CN119252469B/zh"
+        "Patent": "https://patents.google.com/patent/CN119252469A/zh"
       }
     },
     {
@@ -14743,8 +14723,8 @@
       "type": "patent",
       "year": 2025,
       "date": "2025.04",
-      "venue": "CN119811630B",
-      "summary_zh": "用大语言模型从泌尿科中医问诊描述预测病灶核心关键词，并按反馈数据实时调整模型参数（2026.03 授权；申请公布日 2025-04-11）",
+      "venue": "CN119811630A",
+      "summary_zh": "用大语言模型从泌尿科中医问诊描述预测病灶核心关键词，并按反馈数据实时调整模型参数。2025年4月11日公开。",
       "orgs": [
         "中医药广东省实验室"
       ],
@@ -14752,13 +14732,13 @@
         "patent"
       ],
       "links": {
-        "专利": "https://patents.google.com/patent/CN119811630B/zh"
+        "专利": "https://patents.google.com/patent/CN119811630A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "An LLM predicts core lesion keywords from urological TCM inquiry text and adjusts its parameters from recorded feedback (granted 6 March 2026; application published 11 April 2025).",
+      "verified_at": "2026-10-25",
+      "summary_en": "An LLM predicts core lesion keywords from urological TCM inquiry text and adjusts its parameters from recorded feedback. Published on 11 April 2025.",
       "links_en": {
-        "Patent": "https://patents.google.com/patent/CN119811630B/zh"
+        "Patent": "https://patents.google.com/patent/CN119811630A/zh"
       }
     },
     {
@@ -14767,8 +14747,8 @@
       "type": "patent",
       "year": 2025,
       "date": "2025.04",
-      "venue": "CN119811698B",
-      "summary_zh": "对手写中药方做OCR，把相冲、用量和服药建议拼成提示词送入大模型，生成处方综合判断（2025.06 授权；申请公布日 2025-04-11）",
+      "venue": "CN119811698A",
+      "summary_zh": "对手写中药方做OCR，把相冲、用量和服药建议拼成提示词送入大模型，生成处方综合判断。2025年4月11日公开。",
       "orgs": [
         "同力天合（北京）管理软件股份有限公司"
       ],
@@ -14777,13 +14757,13 @@
         "prescription"
       ],
       "links": {
-        "专利": "https://patents.google.com/patent/CN119811698B/zh"
+        "专利": "https://patents.google.com/patent/CN119811698A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Handwritten herbal prescriptions are OCR'd into prompts on incompatibility, dosage, and administration, which a large model scores into an overall judgment (granted 20 June 2025; application published 11 April 2025).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Handwritten herbal prescriptions are OCR'd into prompts on incompatibility, dosage, and administration, which a large model scores into an overall judgment. Published on 11 April 2025.",
       "links_en": {
-        "Patent": "https://patents.google.com/patent/CN119811698B/zh"
+        "Patent": "https://patents.google.com/patent/CN119811698A/zh"
       }
     },
     {
@@ -14793,7 +14773,7 @@
       "year": 2025,
       "date": "2025.06",
       "venue": "CN120108651A",
-      "summary_zh": "用多知识域共享微调胸肺科中医问诊大语言模型，输出体质和症状参数，并推荐药食同源方剂（公开，未授权）",
+      "summary_zh": "用多知识域共享微调胸肺科中医问诊大语言模型，输出体质和症状参数，并推荐药食同源方剂。2025年6月5日公开。",
       "orgs": [
         "澳门科技大学"
       ],
@@ -14806,7 +14786,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "Shared knowledge domains fine-tune a chest-and-lung TCM inquiry LLM that outputs constitution and symptom parameters and recommends food-medicine formulas (published, not granted).",
+      "summary_en": "Shared knowledge domains fine-tune a chest-and-lung TCM inquiry LLM that outputs constitution and symptom parameters and recommends food-medicine formulas. Published on 5 June 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120108651A/zh"
       }
@@ -14818,7 +14798,7 @@
       "year": 2025,
       "date": "2025.06",
       "venue": "CN120216657A",
-      "summary_zh": "建立中药知识库并训练药物警戒检索增强模型PV-RAG，按自然语言提问生成中药安全回答（公开，未授权）",
+      "summary_zh": "建立中药知识库并训练药物警戒检索增强模型PV-RAG，按自然语言提问生成中药安全回答。2025年6月27日公开。",
       "orgs": [
         "南京邮电大学"
       ],
@@ -14831,7 +14811,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "A Chinese-materia-medica knowledge base trains the pharmacovigilance RAG model PV-RAG to answer natural-language safety questions (published, not granted).",
+      "summary_en": "A Chinese-materia-medica knowledge base trains the pharmacovigilance RAG model PV-RAG to answer natural-language safety questions. Published on 27 June 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120216657A/zh"
       }
@@ -14843,7 +14823,7 @@
       "year": 2025,
       "date": "2025.07",
       "venue": "CN120337029A",
-      "summary_zh": "对多源中药数据做实体识别并映射现代药理指标，再自适应微调预训练大模型完成中药分类（公开，未授权）",
+      "summary_zh": "对多源中药数据做实体识别并映射现代药理指标，再自适应微调预训练大模型完成中药分类。2025年7月18日公开。",
       "orgs": [
         "湖南省中医药研究院"
       ],
@@ -14855,7 +14835,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "Entities from multi-source herbal data are mapped to modern pharmacological indicators, then a pretrained large model is adaptively fine-tuned to classify herbs (published, not granted).",
+      "summary_en": "Entities from multi-source herbal data are mapped to modern pharmacological indicators, then a pretrained large model is adaptively fine-tuned to classify herbs. Published on 18 July 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120337029A/zh"
       }
@@ -14867,7 +14847,7 @@
       "year": 2025,
       "date": "2025.10",
       "venue": "CN120809097A",
-      "summary_zh": "先用大语言模型做中医辨证，再在五音特征约束下生成个性化五音治疗音乐（公开，未授权）",
+      "summary_zh": "先用大语言模型做中医辨证，再在五音特征约束下生成个性化五音治疗音乐。2025年10月17日公开。",
       "orgs": [
         "苏州昂升网络科技有限公司"
       ],
@@ -14879,7 +14859,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "An LLM first performs TCM syndrome differentiation, then generates personalized five-tone therapy music under tonal constraints (published, not granted).",
+      "summary_en": "An LLM first performs TCM syndrome differentiation, then generates personalized five-tone therapy music under tonal constraints. Published on 17 October 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120809097A/zh"
       }
@@ -14891,7 +14871,7 @@
       "year": 2025,
       "date": "2025.11",
       "venue": "CN121034544A",
-      "summary_zh": "动态更新针灸知识图谱，结合患者时序临床特征，用图注意力和强化学习辨证并生成针灸方案（公开，未授权）",
+      "summary_zh": "动态更新针灸知识图谱，结合患者时序临床特征，用图注意力和强化学习辨证并生成针灸方案。2025年11月28日公开。",
       "orgs": [
         "广东中科凯泽信息科技有限公司"
       ],
@@ -14905,7 +14885,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "A dynamically updated acupuncture knowledge graph is combined with time-series clinical features, graph attention, and reinforcement learning to differentiate syndromes and draft acupuncture plans (published, not granted).",
+      "summary_en": "A dynamically updated acupuncture knowledge graph is combined with time-series clinical features, graph attention, and reinforcement learning to differentiate syndromes and draft acupuncture plans. Published on 28 November 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN121034544A/zh"
       }
@@ -14917,7 +14897,7 @@
       "year": 2025,
       "date": "2025.12",
       "venue": "CN121096596A",
-      "summary_zh": "融合舌象视觉特征与临床文本，检索相似病例后，由多模态大语言模型生成证候、诊断、中药处方和推理过程（公开，未授权）",
+      "summary_zh": "融合舌象视觉特征与临床文本，检索相似病例后，由多模态大语言模型生成证候、诊断、中药处方和推理过程。2025年12月9日公开。",
       "orgs": [
         "清华大学深圳国际研究生院"
       ],
@@ -14932,7 +14912,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "Tongue-image features are fused with clinical text, similar cases are retrieved, and a multimodal LLM drafts syndrome, diagnosis, herbal prescription, and reasoning (published, not granted).",
+      "summary_en": "Tongue-image features are fused with clinical text, similar cases are retrieved, and a multimodal LLM drafts syndrome, diagnosis, herbal prescription, and reasoning. Published on 9 December 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN121096596A/zh"
       }
@@ -14944,7 +14924,7 @@
       "year": 2025,
       "date": "2025.12",
       "venue": "CN121210613A",
-      "summary_zh": "训练针灸大语言模型，问答请求做知识库向量检索后生成回答，诊断请求再检索针灸方案库给出治疗条目（公开，未授权）",
+      "summary_zh": "训练针灸大语言模型，问答请求做知识库向量检索后生成回答，诊断请求再检索针灸方案库给出治疗条目。2025年12月26日公开。",
       "orgs": [
         "北京科技大学"
       ],
@@ -14958,7 +14938,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "An acupuncture LLM answers questions from vector-retrieved knowledge snippets and, for diagnosis requests, retrieves treatment entries from an acupuncture-plan library (published, not granted).",
+      "summary_en": "An acupuncture LLM answers questions from vector-retrieved knowledge snippets and, for diagnosis requests, retrieves treatment entries from an acupuncture-plan library. Published on 26 December 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN121210613A/zh"
       }
@@ -14970,7 +14950,7 @@
       "year": 2025,
       "date": "2025.12",
       "venue": "CN121212280A",
-      "summary_zh": "用大语言模型按中药术语和关系约束从制造文本抽取三元组，再按人-信息-物理本体构建中药制造知识图谱（公开，未授权）",
+      "summary_zh": "用大语言模型按中药术语和关系约束从制造文本抽取三元组，再按人-信息-物理本体构建中药制造知识图谱。2025年12月25日公开。",
       "orgs": [
         "北京中医药大学"
       ],
@@ -14983,7 +14963,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-21",
-      "summary_en": "An LLM extracts triples from manufacturing text under TCM term and relation constraints, then a human-cyber-physical ontology assembles a manufacturing knowledge graph (published, not granted).",
+      "summary_en": "An LLM extracts triples from manufacturing text under TCM term and relation constraints, then a human-cyber-physical ontology assembles a manufacturing knowledge graph. Published on 25 December 2025.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN121212280A/zh"
       }
@@ -14995,9 +14975,8 @@
       "year": 2026,
       "date": "2026.01",
       "venue": "CN121393746A",
-      "summary_zh": "把多源诊疗数据量化并提质后，结合经络辨证知识库和大语言模型生成针灸方案（公开，未授权）",
+      "summary_zh": "把多源诊疗数据量化并提质后，结合经络辨证知识库和大语言模型生成针灸方案。2026年1月23日公开。",
       "orgs": [
-        "广东中科凯泽信息科技有限公司",
         "广州双龙脉健康产业科技有限公司"
       ],
       "tags": [
@@ -15008,8 +14987,8 @@
         "专利": "https://patents.google.com/patent/CN121393746A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Multi-source clinical data are quantified and cleaned, then a meridian-syndrome knowledge base and an LLM generate acupuncture plans (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Multi-source clinical data are quantified and cleaned, then a meridian-syndrome knowledge base and an LLM generate acupuncture plans. Published on 23 January 2026.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN121393746A/zh"
       }
@@ -15021,10 +15000,9 @@
       "year": 2026,
       "date": "2026.05",
       "venue": "CN122050683A",
-      "summary_zh": "把中药处方生成转为多标签分类，用图注意力网络和大语言模型建模药物协同与禁忌（公开，未授权）",
+      "summary_zh": "把中药处方生成转为多标签分类，用图注意力网络和大语言模型建模药物协同与禁忌。2026年5月15日公开。",
       "orgs": [
-        "杭州市第一人民医院（西湖大学附属杭州市第一人民医院）",
-        "浙江工商大学"
+        "杭州市第一人民医院（西湖大学附属杭州市第一人民医院）"
       ],
       "tags": [
         "patent",
@@ -15034,8 +15012,8 @@
         "专利": "https://patents.google.com/patent/CN122050683A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Herbal prescription generation is cast as multi-label classification, with graph attention and an LLM modeling drug synergy and contraindications (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Herbal prescription generation is cast as multi-label classification, with graph attention and an LLM modeling drug synergy and contraindications. Published on 15 May 2026.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN122050683A/zh"
       }
@@ -17503,7 +17481,7 @@
       "type": "resource",
       "year": 2026,
       "venue": "AI Engineering",
-      "summary_zh": "用 2528 道东方医学针灸理论与操作题、100 道针灸相关感染题，比较 ChatGPT、Claude、Copilot、Gemini 和 Perplexity 的免费版与订阅版；针灸理论中位分 75%，低于感染题的 86%。",
+      "summary_zh": "用 2528 道东方医学针灸理论与操作题、100 道针灸相关感染题，比较五个免费聊天机器人（ChatGPT、Claude、Copilot、Gemini、Perplexity）和三个订阅版（ChatGPT、Claude、Perplexity）。针灸理论中位分 75%，低于感染题的 86%。",
       "orgs": [
         "National Chung Hsing University",
         "Tung Wah College",
@@ -17518,8 +17496,8 @@
         "DOI": "https://doi.org/10.53941/aieng.2026.100004"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Compares free and subscribed ChatGPT, Claude, Copilot, Gemini, and Perplexity on 2,528 oriental-medicine acupuncture theory items and 100 acupuncture-infection items; the median theory score was 75%, below 86% on the infection items.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Compares five free chatbots (ChatGPT, Claude, Copilot, Gemini, and Perplexity) and three subscribed ones (ChatGPT, Claude, and Perplexity) on 2,528 oriental-medicine acupuncture theory items and 100 acupuncture-infection items. The median theory score was 75%, below 86% on the infection items.",
       "links_en": {
         "DOI": "https://doi.org/10.53941/aieng.2026.100004"
       }
@@ -17554,9 +17532,9 @@
       "name": "中医药多模态LLM训练方法及其应用",
       "type": "patent",
       "year": 2025,
-      "date": "2025.10",
-      "venue": "CN119941636B",
-      "summary_zh": "分别提取舌苔与脉象特征，经跨模态注意力与文本特征融合后接入大语言模型，训练中医药多模态LLM（已授权）",
+      "date": "2025.05",
+      "venue": "CN119941636A",
+      "summary_zh": "分别提取舌苔与脉象特征，经跨模态注意力与文本特征融合后接入大语言模型，训练中医药多模态LLM。2025年5月6日公开。",
       "orgs": [
         "粤港澳大湾区精准医学研究院（广州）"
       ],
@@ -17565,13 +17543,13 @@
         "multimodal"
       ],
       "links": {
-        "专利": "https://patents.google.com/patent/CN119941636B/zh"
+        "专利": "https://patents.google.com/patent/CN119941636A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "Extracts tongue-coating and pulse features, fuses them with text by cross-modal attention, and trains a multimodal TCM large language model (granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "Extracts tongue-coating and pulse features, fuses them with text by cross-modal attention, and trains a multimodal TCM large language model. Published on 6 May 2025.",
       "links_en": {
-        "Patent": "https://patents.google.com/patent/CN119941636B/zh"
+        "Patent": "https://patents.google.com/patent/CN119941636A/zh"
       }
     },
     {
@@ -17606,9 +17584,8 @@
       "year": 2025,
       "date": "2025.11",
       "venue": "CN120998428A",
-      "summary_zh": "用方剂优化大语言模型给出宏观优化方，再用药效物质小模型溯源药材并调整组成，综合后形成最终方剂推荐（公开，未授权）",
+      "summary_zh": "用方剂优化大语言模型给出宏观优化方，再用药效物质小模型溯源药材并调整组成，综合后形成最终方剂推荐。2025年11月20日公开，尚未授权。",
       "orgs": [
-        "现代中医药海河实验室",
         "天津中医药大学"
       ],
       "tags": [
@@ -17619,8 +17596,8 @@
         "专利": "https://patents.google.com/patent/CN120998428A/zh"
       },
       "status": "published",
-      "verified_at": "2026-10-21",
-      "summary_en": "A formula-optimization LLM proposes a macro revision, a smaller pharmacologic model traces constituent herbs, and the two are merged into a final formula (published, not granted).",
+      "verified_at": "2026-10-25",
+      "summary_en": "A formula-optimization LLM proposes a macro revision, a smaller pharmacologic model traces constituent herbs, and the two are merged into a final formula. Published on 20 November 2025 and not yet granted.",
       "links_en": {
         "Patent": "https://patents.google.com/patent/CN120998428A/zh"
       }
@@ -18321,7 +18298,7 @@
       "name": "BioBERT-HDI：草药与化学药相互作用预测",
       "type": "resource",
       "year": 2025,
-      "venue": "ICAC 2025",
+      "venue": "ACAIB 2025",
       "summary_zh": "用 BioBERT 从文献文本预测草药和化学药的相互作用，并与其他机器学习模型比较。",
       "tags": [
         "safety"
@@ -18330,7 +18307,7 @@
         "DOI": "https://doi.org/10.1145/3760269.3760325"
       },
       "status": "published",
-      "verified_at": "2026-10-22",
+      "verified_at": "2026-10-25",
       "summary_en": "BioBERT predicts herb–drug interactions from the literature and is compared with other machine-learning models.",
       "links_en": {
         "DOI": "https://doi.org/10.1145/3760269.3760325"
@@ -18839,7 +18816,7 @@
       "year": 2026,
       "venue": "Zenodo",
       "section": "临床结构化 / 处方",
-      "summary_zh": "从病案整理的结构化库：4895 名患者、12900 次就诊、712 味中药，就诊–证候 11879 条，就诊–药味 63192 条。剂量单位以克为主（61386），另有钱 1067、枚 364、片 240、两 69、分 64、毫升 2。并连接症状、成分和靶点，附 Neo4j 节点和边。作者说明不转发受版权限制的医案原文。描述稿目前是 Research Square 预印本。",
+      "summary_zh": "从病案整理的结构化库：4895 名患者、12900 次就诊、703 味中药，就诊–证候 11879 条，就诊–药味 63192 条。剂量单位以克为主（61386），另有钱 1067、枚 364、片 240、两 69、分 64、毫升 2。并连接症状、成分和靶点，附 Neo4j 节点和边。作者说明不转发受版权限制的医案原文。描述稿目前是 Research Square 预印本。",
       "tags": [
         "clinical",
         "herbal",
@@ -18850,8 +18827,8 @@
         "数据集": "https://doi.org/10.5281/zenodo.20929034"
       },
       "status": "published",
-      "verified_at": "2026-10-22",
-      "summary_en": "Structured case-derived tables: 4,895 patients, 12,900 visits, 712 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. Dose units are mostly grams (61,386), plus 1,067 qian, 364 pieces, 240 tablets, 69 liang, 64 fen, and 2 millilitres. Rows also link symptoms, ingredients, and targets, with Neo4j files. Full copyrighted case texts are not redistributed. The describing manuscript is a Research Square preprint.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Structured case-derived tables: 4,895 patients, 12,900 visits, 703 herbs, 11,879 visit–syndrome links, and 63,192 visit–herb rows. Dose units are mostly grams (61,386), plus 1,067 qian, 364 pieces, 240 tablets, 69 liang, 64 fen, and 2 millilitres. Rows also link symptoms, ingredients, and targets, with Neo4j files. Full copyrighted case texts are not redistributed. The describing manuscript is a Research Square preprint.",
       "links_en": {
         "Dataset": "https://doi.org/10.5281/zenodo.20929034"
       }
@@ -20194,7 +20171,7 @@
       "type": "resource",
       "year": 2024,
       "venue": "Digital Chinese Medicine",
-      "summary_zh": "采集健康人的全身站立图像，按中医体质量表标上体质，再用面色、体型和深度图像来辨认。图像没有公开。",
+      "summary_zh": "给健康人拍全身站立照，按中医体质量表标上体质。面色和体型用颜色空间和局部二值模式提取，全身图像再用双分支网络提取深度特征，合在一起用随机森林辨认体质。准确率 0.842，精确率 0.868，F1 0.790。",
       "tags": [
         "multimodal"
       ],
@@ -20202,8 +20179,8 @@
         "DOI": "https://doi.org/10.1016/j.dcmed.2024.09.002"
       },
       "status": "published",
-      "verified_at": "2026-10-22",
-      "summary_en": "Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire, and classified from complexion, body shape, and depth. The images are not public.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Full-body standing photos of healthy people, labeled with the Constitution in Chinese Medicine Questionnaire. Complexion and body shape come from a color space and local binary patterns; a dual-branch network adds deep features from the whole-body image; a random forest then identifies the constitution. Accuracy 0.842, precision 0.868, F1 0.790.",
       "links_en": {
         "DOI": "https://doi.org/10.1016/j.dcmed.2024.09.002"
       }
@@ -20274,7 +20251,7 @@
       "type": "resource",
       "year": 2026,
       "venue": "Journal of Traditional Chinese Medicine",
-      "summary_zh": "对 51 名健康人在空腹前、空腹第 4 天和第 7 天采集左寸、右寸和右关脉图，比较与胃肠虚实有关的脉象参数。脉图没有公开。",
+      "summary_zh": "51 名健康人在空腹前（第 0 天）、空腹中（第 4 天）和空腹后（第 7 天）采集左寸、右寸和右关脉图，比较与胃肠虚实有关的脉象参数。",
       "tags": [
         "multimodal"
       ],
@@ -20282,8 +20259,8 @@
         "DOI": "https://doi.org/10.19852/j.cnki.jtcm.2026.02.019"
       },
       "status": "published",
-      "verified_at": "2026-10-22",
-      "summary_en": "Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting and on fasting days 4 and 7. The recordings are not public.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting (day 0), during fasting (day 4), and after fasting (day 7).",
       "links_en": {
         "DOI": "https://doi.org/10.19852/j.cnki.jtcm.2026.02.019"
       }
@@ -20685,7 +20662,7 @@
       "year": 2026,
       "venue": "中医世家",
       "section": "中药组方 / 提取物",
-      "summary_zh": "在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。原来的网站已经打不开，现在用的是新网址。",
+      "summary_zh": "在线查阅中医古籍、药材、方剂和医案。方剂索引 25425 项，可按首字或拼音找；药材索引 11307 项。",
       "tags": [
         "tool",
         "herbal",
@@ -20698,7 +20675,7 @@
       },
       "status": "published",
       "verified_at": "2026-10-24",
-      "summary_en": "An online reader for TCM classics, herbs, formulas, and case records. The formula index has 25,425 entries, browsable by initial character or pinyin, and the herb index has 11,307 entries. The old site no longer opens; this is the new address.",
+      "summary_en": "An online reader for TCM classics, herbs, formulas, and case records. The formula index has 25,425 entries, browsable by initial character or pinyin, and the herb index has 11,307 entries.",
       "links_en": {
         "Website": "https://www.zysjw.com.cn/",
         "Formulas": "https://www.zysjw.com.cn/zhongyaofang/index.html",
@@ -20711,7 +20688,7 @@
       "type": "resource",
       "year": 2017,
       "venue": "Nucleic Acids Research",
-      "summary_zh": "上传一个分子的三维结构，反查它可能落到哪些蛋白上。2017 版根据 2016 年 1 月 1 日前的 PDB 建库，有 7000 多个受体药效团，覆盖 1627 个药物靶点，其中 459 个是人的蛋白。中药成分只有结构、还没有实验靶点时可以用。",
+      "summary_zh": "上传一个分子的三维结构，反查它可能落到哪些蛋白上。2017 年这一版扩到 23236 个蛋白，含 16159 个可成药药效团模型和 51431 个可配体药效团模型，序列聚类用的是 2016 年 1 月 1 日的 PDB 快照。中药成分只有结构、还没有实验靶点时可以用。",
       "tags": [
         "tool",
         "herbal"
@@ -20722,8 +20699,8 @@
         "DOI": "https://doi.org/10.1093/nar/gkx374"
       },
       "status": "published",
-      "verified_at": "2026-10-24",
-      "summary_en": "Upload a 3D molecular structure and get possible protein targets. The 2017 release, built from PDB entries released before 1 January 2016, holds over 7,000 receptor pharmacophores covering 1,627 drug targets, 459 of them human proteins. Useful when a herb constituent has a structure but no measured target.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Upload a 3D molecular structure and get possible protein targets. The 2017 update covers 23,236 proteins, with 16,159 druggable pharmacophore models and 51,431 ligandable ones, clustered from the 1 January 2016 PDB snapshot. Useful when a herb constituent has a structure but no measured target.",
       "links_en": {
         "Website": "https://www.lilab-ecust.cn/pharmmapper/",
         "About": "https://www.lilab-ecust.cn/pharmmapper/help.php",
@@ -21534,7 +21511,7 @@
       "type": "resource",
       "year": 2026,
       "venue": "Hugging Face",
-      "summary_zh": "在 Qwen3.5-9B 上做的中医继续预训练 LoRA，许可 Apache-2.0。2026 年 7 月上传。",
+      "summary_zh": "Qwen3.5-9B 做完中医继续预训练后的全量权重，一个约 17.9 GB 的 bfloat16 safetensors 文件，许可 Apache-2.0。2026 年 7 月上传。模型卡仍把这一阶段叫 LoRA，仓库里没有单独的适配器文件。",
       "tags": [
         "model",
         "open-weights"
@@ -21543,8 +21520,8 @@
         "模型": "https://huggingface.co/arthur789/qwen3.5-9b-tcm-cpt"
       },
       "status": "published",
-      "verified_at": "2026-10-24",
-      "summary_en": "A continued-pretraining LoRA for traditional Chinese medicine on Qwen3.5-9B, under Apache-2.0. Uploaded in July 2026.",
+      "verified_at": "2026-10-25",
+      "summary_en": "Full weights after continued pretraining of Qwen3.5-9B on traditional Chinese medicine: one bfloat16 safetensors file of about 17.9 GB, Apache-2.0, uploaded in July 2026. The model card still calls this stage a LoRA, but the repository has no separate adapter file.",
       "links_en": {
         "Model": "https://huggingface.co/arthur789/qwen3.5-9b-tcm-cpt"
       }
@@ -21605,14 +21582,14 @@
       ],
       "links": {
         "网站": "https://iris.who.int/handle/10665/206952",
-        "PDF": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        "PDF": "https://iris.who.int/server/api/core/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/content"
       },
       "status": "published",
-      "verified_at": "2026-10-24",
+      "verified_at": "2026-10-25",
       "summary_en": "The World Health Organization Western Pacific terminology for traditional medicine, the 2007 predecessor of the 2022 Chinese-medicine terminology. The PDF is on IRIS.",
       "links_en": {
         "Website": "https://iris.who.int/handle/10665/206952",
-        "PDF": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
+        "PDF": "https://iris.who.int/server/api/core/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/content"
       }
     },
     {

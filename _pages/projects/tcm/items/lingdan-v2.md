@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Lingdan-V2 — TCM LLM resource in Awesome-TCM-LLM. BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). ModelScope checkpoints exist…"
-seo_description: "Lingdan-V2 — TCM LLM resource in Awesome-TCM-LLM. BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). ModelScope checkpoints exist…"
+description: "Lingdan-V2 — TCM LLM resource in Awesome-TCM-LLM. BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). The ModelScope weights are u…"
+seo_description: "Lingdan-V2 — TCM LLM resource in Awesome-TCM-LLM. BJTU's second Lingdan TCM reasoning family (Qwen3 4B/8B/14B with CPT, SFT, and prescription GRPO). The ModelScope weights are u…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

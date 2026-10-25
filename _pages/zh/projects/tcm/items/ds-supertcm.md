@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "SuperTCM｜中医大模型（TCM LLM）数据集。Charité团队整合药典与多源数据的中药–物种–成分–靶点–通路–疾病库（约6516味药）；官网tcm.charite.de已无法解析"
-seo_description: "SuperTCM｜中医大模型（TCM LLM）数据集。Charité团队整合药典与多源数据的中药–物种–成分–靶点–通路–疾病库（约6516味药）；官网tcm.charite.de已无法解析"
+description: "SuperTCM｜中医大模型（TCM LLM）数据集。Charité 把药典和多来源资料收成一个库：6516 味中药、5372 个植物物种、55772 个活性成分、543 个靶点、254 条 KEGG 通路、8634 种疾病。tcm.charite.de 这次域名解析不到。"
+seo_description: "SuperTCM｜中医大模型（TCM LLM）数据集。Charité 把药典和多来源资料收成一个库：6516 味中药、5372 个植物物种、55772 个活性成分、543 个靶点、254 条 KEGG 通路、8634 种疾病。tcm.charite.de 这次域名解析不到。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

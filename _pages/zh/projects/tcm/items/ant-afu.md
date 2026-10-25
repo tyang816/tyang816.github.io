@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "蚂蚁阿福 / 蚂蚁医疗大模型｜中医大模型（TCM LLM）资源。蚂蚁闭源多模态医疗大模型，先作支付宝AQ后升级为阿福，做问诊、报告与药盒识别；WAIC 2024发布，无公开权重"
-seo_description: "蚂蚁阿福 / 蚂蚁医疗大模型｜中医大模型（TCM LLM）资源。蚂蚁闭源多模态医疗大模型，先作支付宝AQ后升级为阿福，做问诊、报告与药盒识别；WAIC 2024发布，无公开权重"
+description: "蚂蚁阿福 / 蚂蚁医疗大模型｜中医大模型（TCM LLM）资源。2024年7月5日，支付宝在世界人工智能大会发布多模态医疗大模型，基座是百灵，能看药品、报告和影像。2025年12月15日，健康应用AQ升级为蚂蚁阿福，可以拍皮肤、检查报告和药盒来问。"
+seo_description: "蚂蚁阿福 / 蚂蚁医疗大模型｜中医大模型（TCM LLM）资源。2024年7月5日，支付宝在世界人工智能大会发布多模态医疗大模型，基座是百灵，能看药品、报告和影像。2025年12月15日，健康应用AQ升级为蚂蚁阿福，可以拍皮肤、检查报告和药盒来问。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -28,7 +28,7 @@ keywords:
 - "蚂蚁阿福 / 蚂蚁医疗大模型"
 tcm_type: "resource"
 tcm_type_label: "资源"
-tcm_date: "2024"
+tcm_date: "2025"
 ---
 
 {% include tcm-item.html %}

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMGeneDIT — TCM LLM dataset in Awesome-TCM-LLM. Text-mined associations among TCM, genes, diseases, effects, and ingredients, with pathway and PPI links. Official NTU site no l…"
-seo_description: "TCMGeneDIT — TCM LLM dataset in Awesome-TCM-LLM. Text-mined associations among TCM, genes, diseases, effects, and ingredients, with pathway and PPI links. Official NTU site no l…"
+description: "TCMGeneDIT — TCM LLM dataset in Awesome-TCM-LLM. Text-mined links among TCM, genes, diseases, effects, and ingredients, joined to pathways and protein interactions. tcm.lifescie…"
+seo_description: "TCMGeneDIT — TCM LLM dataset in Awesome-TCM-LLM. Text-mined links among TCM, genes, diseases, effects, and ingredients, joined to pathways and protein interactions. tcm.lifescie…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

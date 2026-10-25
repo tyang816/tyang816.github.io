@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "LTM-TCM｜中医大模型（TCM LLM）数据集。整合十四个权威库与临床/古籍记录的症状–方剂–植物–成分–靶点平台（约4.8万方）；官网cloud.tasly.com域名已无法解析，核验走论文DOI"
-seo_description: "LTM-TCM｜中医大模型（TCM LLM）数据集。整合十四个权威库与临床/古籍记录的症状–方剂–植物–成分–靶点平台（约4.8万方）；官网cloud.tasly.com域名已无法解析，核验走论文DOI"
+description: "LTM-TCM｜中医大模型（TCM LLM）数据集。把十四个中药库，以及临床记录和古籍，接到症状、方剂、植物、成分和靶点上。库里有 1928 个症状、48126 首方、9122 种植物、34967 个成分和 13109 个靶点。cloud.tasly.com 这次域名解析不到。"
+seo_description: "LTM-TCM｜中医大模型（TCM LLM）数据集。把十四个中药库，以及临床记录和古籍，接到症状、方剂、植物、成分和靶点上。库里有 1928 个症状、48126 首方、9122 种植物、34967 个成分和 13109 个靶点。cloud.tasly.com 这次域名解析不到。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

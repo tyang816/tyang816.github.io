@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。arXiv/DOI 页署名中医广东省实验室与南方科技大学"
-seo_description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。arXiv/DOI 页署名中医广东省实验室与南方科技大学"
+description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。这篇预印本已由 arXiv 撤回，撤回说明是作者身份和单位无法核实；当前作者栏为 Yishen Liu。"
+seo_description: "Hengqin-RA-v1｜中医大模型（TCM LLM）资源。类风湿关节炎中医诊疗大模型及配套数据集。这篇预印本已由 arXiv 撤回，撤回说明是作者身份和单位无法核实；当前作者栏为 Yishen Liu。"
 keywords:
 - "中医大模型"
 - "TCM LLM"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "SuperTCM — TCM LLM dataset in Awesome-TCM-LLM. Charité biocultural TCM resource linking drugs, botanical species, ingredients, targets, KEGG pathways, and diseases (~6,516 drugs…"
-seo_description: "SuperTCM — TCM LLM dataset in Awesome-TCM-LLM. Charité biocultural TCM resource linking drugs, botanical species, ingredients, targets, KEGG pathways, and diseases (~6,516 drugs…"
+description: "SuperTCM — TCM LLM dataset in Awesome-TCM-LLM. Charité resource of 6,516 TCM drugs, 5,372 botanical species, 55,772 active ingredients, 543 targets, 254 KEGG pathways, and 8,634…"
+seo_description: "SuperTCM — TCM LLM dataset in Awesome-TCM-LLM. Charité resource of 6,516 TCM drugs, 5,372 botanical species, 55,772 active ingredients, 543 targets, 254 KEGG pathways, and 8,634…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

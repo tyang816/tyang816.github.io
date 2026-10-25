@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM-Mesh — TCM LLM dataset in Awesome-TCM-LLM. Herb–compound–gene–disease network with toxicity/side-effect records (~6,235 herbs). Official portal currently returns 403; verify…"
-seo_description: "TCM-Mesh — TCM LLM dataset in Awesome-TCM-LLM. Herb–compound–gene–disease network with toxicity/side-effect records (~6,235 herbs). Official portal currently returns 403; verify…"
+description: "TCM-Mesh — TCM LLM dataset in Awesome-TCM-LLM. Network-pharmacology resource with 6,235 herbs, 383,840 compounds, 14,298 genes, 6,204 diseases, 163,221 side-effect records, and …"
+seo_description: "TCM-Mesh — TCM LLM dataset in Awesome-TCM-LLM. Network-pharmacology resource with 6,235 herbs, 383,840 compounds, 14,298 genes, 6,204 diseases, 163,221 side-effect records, and …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

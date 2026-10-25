@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "YaTCM — TCM LLM dataset in Awesome-TCM-LLM. About 1,813 prescriptions, 6,220 herbs, and 47k natural products with target/pathway tools. Nankai site currently returns 403; verify…"
-seo_description: "YaTCM — TCM LLM dataset in Awesome-TCM-LLM. About 1,813 prescriptions, 6,220 herbs, and 47k natural products with target/pathway tools. Nankai site currently returns 403; verify…"
+description: "YaTCM — TCM LLM dataset in Awesome-TCM-LLM. 1,813 prescriptions, 6,220 herbs, and 47,696 natural products, with target and pathway tools. The Nankai site returned 403 on this ch…"
+seo_description: "YaTCM — TCM LLM dataset in Awesome-TCM-LLM. 1,813 prescriptions, 6,220 herbs, and 47,696 natural products, with target and pathway tools. The Nankai site returned 403 on this ch…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "阿尔茨海默病指南知识库问答（ChatGLM3） — TCM LLM resource in Awesome-TCM-LLM. LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the China Assoc…"
-seo_description: "阿尔茨海默病指南知识库问答（ChatGLM3） — TCM LLM resource in Awesome-TCM-LLM. LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the China Assoc…"
+description: "阿尔茨海默病指南知识库问答（ChatGLM3） — TCM LLM resource in Awesome-TCM-LLM. LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the Chinese Ass…"
+seo_description: "阿尔茨海默病指南知识库问答（ChatGLM3） — TCM LLM resource in Awesome-TCM-LLM. LangChain grounds ChatGLM3-6B on a local library of Alzheimer guidelines and textbooks endorsed by the Chinese Ass…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

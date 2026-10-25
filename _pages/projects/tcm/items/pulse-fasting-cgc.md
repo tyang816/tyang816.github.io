@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "空腹过程的寸关尺脉图定量 — TCM LLM resource in Awesome-TCM-LLM. Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting and on fasting days 4 and 7. The recor…"
-seo_description: "空腹过程的寸关尺脉图定量 — TCM LLM resource in Awesome-TCM-LLM. Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting and on fasting days 4 and 7. The recor…"
+description: "空腹过程的寸关尺脉图定量 — TCM LLM resource in Awesome-TCM-LLM. Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting (day 0), during fasting (day 4), and a…"
+seo_description: "空腹过程的寸关尺脉图定量 — TCM LLM resource in Awesome-TCM-LLM. Records Left Cun, Right Cun, and Right Guan pulses in 51 healthy adults before fasting (day 0), during fasting (day 4), and a…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

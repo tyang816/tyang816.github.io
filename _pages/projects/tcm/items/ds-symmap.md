@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "SymMap 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Herb–TCM symptom–modern symptom–ingredient–target–disease maps, expanded with newer pharmacopoeia records and downloadable relat…"
-seo_description: "SymMap 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Herb–TCM symptom–modern symptom–ingredient–target–disease maps, expanded with newer pharmacopoeia records and downloadable relat…"
+description: "SymMap 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Maps among herbs, TCM symptoms, modern symptoms, ingredients, targets, and diseases. The site is now version 2.0, updated with t…"
+seo_description: "SymMap 2.0 — TCM LLM dataset in Awesome-TCM-LLM. Maps among herbs, TCM symptoms, modern symptoms, ingredients, targets, and diseases. The site is now version 2.0, updated with t…"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
@@ -26,7 +26,7 @@ keywords:
 - "SymMap 2.0"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
-tcm_date: "2019"
+tcm_date: "2022"
 ---
 
 {% include tcm-item.html %}

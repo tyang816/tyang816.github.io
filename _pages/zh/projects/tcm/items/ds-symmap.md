@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "SymMap 2.0｜中医大模型（TCM LLM）数据集。草药–中医症状–西医症状–成分–靶点–疾病整合库，2.0按新版药典扩草药/证候并开放关系表下载"
-seo_description: "SymMap 2.0｜中医大模型（TCM LLM）数据集。草药–中医症状–西医症状–成分–靶点–疾病整合库，2.0按新版药典扩草药/证候并开放关系表下载"
+description: "SymMap 2.0｜中医大模型（TCM LLM）数据集。草药、中医症状、西医症状、成分、靶点和疾病的整合库。网站现为 2.0，按《中国药典》2020 年版补充，关系表可以下载。页脚署 2022 年。"
+seo_description: "SymMap 2.0｜中医大模型（TCM LLM）数据集。草药、中医症状、西医症状、成分、靶点和疾病的整合库。网站现为 2.0，按《中国药典》2020 年版补充，关系表可以下载。页脚署 2022 年。"
 keywords:
 - "中医大模型"
 - "TCM LLM"
@@ -26,7 +26,7 @@ keywords:
 - "SymMap 2.0"
 tcm_type: "dataset"
 tcm_type_label: "数据集"
-tcm_date: "2019"
+tcm_date: "2022"
 ---
 
 {% include tcm-item.html %}

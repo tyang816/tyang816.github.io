@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCMLCM｜中医大模型（TCM LLM）资源。基于KG2T的中医肺癌智能问答模型"
-seo_description: "TCMLCM｜中医大模型（TCM LLM）资源。基于KG2T的中医肺癌智能问答模型"
+description: "TCMLCM｜中医大模型（TCM LLM）资源。基于KG2TRAG的中医肺癌智能问答模型"
+seo_description: "TCMLCM｜中医大模型（TCM LLM）资源。基于KG2TRAG的中医肺癌智能问答模型"
 keywords:
 - "中医大模型"
 - "TCM LLM"

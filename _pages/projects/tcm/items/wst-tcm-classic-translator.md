@@ -14,8 +14,8 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "TCM Classic-Translator（中医古籍今译） — TCM LLM resource in Awesome-TCM-LLM. TCM Classic-Translator is a named LoRA model for classical-to-modern TCM translation, trained on Huangdi Ne…"
-seo_description: "TCM Classic-Translator（中医古籍今译） — TCM LLM resource in Awesome-TCM-LLM. TCM Classic-Translator is a named LoRA model for classical-to-modern TCM translation, trained on Huangdi Ne…"
+description: "TCM Classic-Translator（中医古籍今译） — TCM LLM resource in Awesome-TCM-LLM. TCM Classic-Translator is a LoRA model for classical-to-modern TCM translation, trained on Huangdi Neijing …"
+seo_description: "TCM Classic-Translator（中医古籍今译） — TCM LLM resource in Awesome-TCM-LLM. TCM Classic-Translator is a LoRA model for classical-to-modern TCM translation, trained on Huangdi Neijing …"
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"

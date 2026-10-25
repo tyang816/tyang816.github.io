@@ -14,15 +14,14 @@ redirect_from:
 author_profile: true
 sidebar_collapsed: true
 sidebar_sticky: false
-description: "CEMTDD — TCM LLM dataset in Awesome-TCM-LLM. Ethnic-minority herbal–compound–target–disease resource (~621 herbs, mainly Uygur/Kazakh). Original cemtdd.com now hosts something e…"
-seo_description: "CEMTDD — TCM LLM dataset in Awesome-TCM-LLM. Ethnic-minority herbal–compound–target–disease resource (~621 herbs, mainly Uygur/Kazakh). Original cemtdd.com now hosts something e…"
+description: "CEMTDD — TCM LLM dataset in Awesome-TCM-LLM. An herbal–compound–target–disease resource centered on Uygur and Kazakh medicines. The paper reports about 621 herbs."
+seo_description: "CEMTDD — TCM LLM dataset in Awesome-TCM-LLM. An herbal–compound–target–disease resource centered on Uygur and Kazakh medicines. The paper reports about 621 herbs."
 keywords:
 - "TCM LLM"
 - "Traditional Chinese Medicine"
 - "Awesome-TCM-LLM"
 - "dataset"
 - "corpus"
-- "dead-site"
 - "CEMTDD"
 tcm_type: "dataset"
 tcm_type_label: "dataset"
