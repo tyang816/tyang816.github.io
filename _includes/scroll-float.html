@@ -11,12 +11,40 @@
 {% assign home_path = page.url | replace: "index.html", "" %}
 {% assign is_home = false %}
 {% if home_path == "/" or home_path == "/zh/" %}{% assign is_home = true %}{% endif %}
+{% assign is_tcm = false %}
+{% if page.project == "tcm" and page.section == "overview" %}{% assign is_tcm = true %}{% endif %}
+{% assign section_label = "On this page" %}
+{% if is_zh %}{% assign section_label = "本页栏目" %}{% endif %}
 
 <div class="site-scroll-float" data-scroll-float hidden>
-  {% if is_home %}
-  <nav class="site-scroll-float__sections" aria-label="{% if is_zh %}本页栏目{% else %}On this page{% endif %}">
-    <div class="site-scroll-float__sections-panel" id="home-section-nav">
-      {% if is_zh %}
+  {% if is_home or is_tcm %}
+  <nav class="site-scroll-float__sections" aria-label="{{ section_label }}">
+    <div class="site-scroll-float__sections-panel" id="page-section-nav">
+      {% if is_tcm %}
+        {% if is_zh %}
+          <a href="#tcm-about">定义</a>
+          <a href="#tcm-models">代表模型</a>
+          <a href="#tcm-benchmarks">评测数据</a>
+          <a href="#tcm-topics">主题</a>
+          <a href="#tcm-scope">收录范围</a>
+          <a href="#tcm-catalog">目录</a>
+          <a href="#tcm-faq">问答</a>
+          <a href="#tcm-cite">引用</a>
+          <a href="#tcm-related">相关工作</a>
+          <a href="#tcm-contribute">贡献</a>
+        {% else %}
+          <a href="#tcm-about">Overview</a>
+          <a href="#tcm-models">Models</a>
+          <a href="#tcm-benchmarks">Benchmarks</a>
+          <a href="#tcm-topics">Topics</a>
+          <a href="#tcm-scope">Scope</a>
+          <a href="#tcm-catalog">Catalog</a>
+          <a href="#tcm-faq">FAQ</a>
+          <a href="#tcm-cite">Cite</a>
+          <a href="#tcm-related">Related</a>
+          <a href="#tcm-contribute">Contribute</a>
+        {% endif %}
+      {% elsif is_zh %}
         <a href="#-news">新闻</a>
         <a href="#-selected-publications">代表性论文</a>
         <a href="#-honors-and-awards">荣誉奖项</a>
@@ -32,7 +60,7 @@
         <a href="#-educations">Education</a>
       {% endif %}
     </div>
-    <button type="button" class="site-scroll-float__btn site-scroll-float__sections-toggle" aria-expanded="false" aria-controls="home-section-nav" aria-label="{% if is_zh %}本页栏目{% else %}On this page{% endif %}">
+    <button type="button" class="site-scroll-float__btn site-scroll-float__sections-toggle" aria-expanded="false" aria-controls="page-section-nav" aria-label="{{ section_label }}">
       <span class="site-scroll-float__bars" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
   </nav>

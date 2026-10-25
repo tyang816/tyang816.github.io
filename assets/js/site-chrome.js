@@ -93,9 +93,15 @@
       if (!nav.contains(event.target)) setOpen(false);
     });
     items.forEach(function (item) {
-      item.link.addEventListener('click', function () {
+      item.link.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
         setOpen(false);
-      });
+        var mast = document.querySelector('.masthead');
+        var offset = (mast ? mast.getBoundingClientRect().height : 56) + 16;
+        var top = item.el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }, true);
     });
   }
 

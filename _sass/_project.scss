@@ -1090,6 +1090,19 @@ $project-wide: 100%;
 }
 
 /* TCM catalog hub + item pages */
+#tcm-about,
+#tcm-models,
+#tcm-benchmarks,
+#tcm-topics,
+#tcm-scope,
+#tcm-catalog,
+#tcm-faq,
+#tcm-cite,
+#tcm-related,
+#tcm-contribute {
+  scroll-margin-top: 4.75rem;
+}
+
 .tcm-overview-hero {
   .project-lede {
     max-width: none;

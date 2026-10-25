@@ -52,7 +52,7 @@ keywords:
 </header>
 
 <section class="project-section">
-  <h2>什么是中医大模型？</h2>
+  <h2 id="tcm-about">什么是中医大模型？</h2>
   <p>
     中医大模型（TCM LLM，Traditional Chinese Medicine Large Language Model）是指面向中医药领域训练或微调的大语言模型。
     这类模型通常在通用中文大模型（如 Qwen、ChatGLM、Baichuan、LLaMA 等）的基础上，使用中医经典古籍、名医医案、
@@ -68,7 +68,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>代表性中医大模型</h2>
+  <h2 id="tcm-models">代表性中医大模型</h2>
   <ul>
     <li><a href="{{ '/zh/projects/tcm/items/bianque/' | relative_url }}">扁鹊 (BianQue)</a>：中文领域生活空间主动健康大模型（2023）</li>
     <li><a href="{{ '/zh/projects/tcm/items/huatuogpt/' | relative_url }}">华佗GPT</a>：中文医学语料训练的大型语言模型（2023）</li>
@@ -87,7 +87,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>中医大模型评测基准与数据集</h2>
+  <h2 id="tcm-benchmarks">中医大模型评测基准与数据集</h2>
   <ul>
     <li><a href="{{ '/zh/projects/tcm/items/ds-tcmbench/' | relative_url }}">TCMBench</a>：面向中医领域的综合性大模型评测基准</li>
     <li><a href="{{ '/zh/projects/tcm/items/mtcmb/' | relative_url }}">MTCMB</a>：中医多任务评测基准，12 个子集约 7100 样本，覆盖知识 / 推理 / 方剂 / 安全</li>
@@ -99,7 +99,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>按主题浏览</h2>
+  <h2 id="tcm-topics">按主题浏览</h2>
   <ul>
     <li><a href="{{ '/zh/projects/tcm/models/' | relative_url }}">开源中医大模型</a>：公开权重与代表性系统</li>
     <li><a href="{{ '/zh/projects/tcm/datasets/' | relative_url }}">中医大模型数据集</a>：指令数据、医案、评测集</li>
@@ -109,7 +109,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>你能找到什么</h2>
+  <h2 id="tcm-scope">你能找到什么</h2>
   <ul>
     <li>产业动态、政策与产品发布相关精选新闻</li>
     <li>开源权重与多模态中医大模型系统</li>
@@ -120,12 +120,12 @@ keywords:
   </ul>
 </section>
 
-<section class="project-section tcm-catalog-section">
+<section class="project-section tcm-catalog-section" id="tcm-catalog">
   {% include tcm-hub.html %}
 </section>
 
 <section class="project-section">
-  <h2>常见问题</h2>
+  <h2 id="tcm-faq">常见问题</h2>
   <h3>什么是中医大模型？</h3>
   <p>
     中医大模型（TCM LLM）是面向中医药领域的大语言模型，通过中医古籍、医案、方剂与临床语料的持续预训练或指令微调，
@@ -173,7 +173,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>如何引用</h2>
+  <h2 id="tcm-cite">如何引用</h2>
   <p>若本目录对论文或综述有帮助，建议引用 GitHub 仓库，便于检索系统与大模型将「中医大模型」与 Awesome-TCM-LLM 对齐：</p>
   <pre class="tcm-cite"><code>Yang Tan. Awesome-TCM-LLM: curated Traditional Chinese Medicine large language models.
 https://github.com/tyang816/Awesome-TCM-LLM
@@ -181,7 +181,7 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
 </section>
 
 <section class="project-section">
-  <h2>相关一作工作</h2>
+  <h2 id="tcm-related">相关一作工作</h2>
   <p>
     <a href="{{ '/zh/projects/medchatzh/' | relative_url }}">MedChatZH</a>
     是基于 Baichuan-7B、面向中文医疗 / 中医问诊的微调模型，与本资源汇聚互补。
@@ -189,7 +189,7 @@ Web catalog: https://tyang816.github.io/zh/projects/tcm/</code></pre>
 </section>
 
 <section class="project-section">
-  <h2>贡献</h2>
+  <h2 id="tcm-contribute">贡献</h2>
   <p>
     可通过
     <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml" target="_blank" rel="noopener noreferrer">GitHub Issue</a>

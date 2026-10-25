@@ -46,7 +46,7 @@ keywords:
 </header>
 
 <section class="project-section">
-  <h2>What is a TCM LLM?</h2>
+  <h2 id="tcm-about">What is a TCM LLM?</h2>
   <p>
     A TCM LLM (Traditional Chinese Medicine large language model) is a large language model trained or fine-tuned
     for the domain of Traditional Chinese Medicine. These models are typically built on general-purpose Chinese
@@ -66,7 +66,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>Representative TCM LLMs</h2>
+  <h2 id="tcm-models">Representative TCM LLMs</h2>
   <ul>
     <li><a href="{{ '/projects/tcm/items/bianque/' | relative_url }}">BianQue (扁鹊)</a>: proactive-health large language model for Chinese living spaces (2023)</li>
     <li><a href="{{ '/projects/tcm/items/huatuogpt/' | relative_url }}">HuaTuoGPT</a>: large language model trained on Chinese medical corpora (2023)</li>
@@ -85,7 +85,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>TCM LLM benchmarks &amp; datasets</h2>
+  <h2 id="tcm-benchmarks">TCM LLM benchmarks &amp; datasets</h2>
   <ul>
     <li><a href="{{ '/projects/tcm/items/ds-tcmbench/' | relative_url }}">TCMBench</a>: comprehensive benchmark for evaluating LLMs in the TCM domain</li>
     <li><a href="{{ '/projects/tcm/items/mtcmb/' | relative_url }}">MTCMB</a>: multi-task TCM benchmark — 12 subsets, ~7,100 samples covering knowledge, reasoning, formulas, and safety</li>
@@ -97,7 +97,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>Browse by topic</h2>
+  <h2 id="tcm-topics">Browse by topic</h2>
   <ul>
     <li><a href="{{ '/projects/tcm/models/' | relative_url }}">Open TCM LLMs</a>: public weights and representative systems</li>
     <li><a href="{{ '/projects/tcm/datasets/' | relative_url }}">TCM LLM datasets</a>: instruction data, cases, benchmarks</li>
@@ -107,7 +107,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>What you will find</h2>
+  <h2 id="tcm-scope">What you will find</h2>
   <ul>
     <li>Selected news on products, policy, and open releases</li>
     <li>Open-weight and multimodal TCM LLM systems</li>
@@ -118,12 +118,12 @@ keywords:
   </ul>
 </section>
 
-<section class="project-section tcm-catalog-section">
+<section class="project-section tcm-catalog-section" id="tcm-catalog">
   {% include tcm-hub.html %}
 </section>
 
 <section class="project-section">
-  <h2>FAQ</h2>
+  <h2 id="tcm-faq">FAQ</h2>
   <h3>What is a TCM LLM?</h3>
   <p>
     A TCM LLM is a large language model adapted to Traditional Chinese Medicine through continued pretraining or
@@ -174,7 +174,7 @@ keywords:
 </section>
 
 <section class="project-section">
-  <h2>Cite this catalog</h2>
+  <h2 id="tcm-cite">Cite this catalog</h2>
   <p>If the list is useful in a paper or survey, please cite the GitHub repository so search engines and LLM assistants can align “TCM LLM” with Awesome-TCM-LLM:</p>
   <pre class="tcm-cite"><code>Yang Tan. Awesome-TCM-LLM: curated Traditional Chinese Medicine large language models.
 https://github.com/tyang816/Awesome-TCM-LLM
@@ -182,7 +182,7 @@ Web catalog: https://tyang816.github.io/projects/tcm/</code></pre>
 </section>
 
 <section class="project-section">
-  <h2>Related first-author work</h2>
+  <h2 id="tcm-related">Related first-author work</h2>
   <p>
     <a href="{{ '/projects/medchatzh/' | relative_url }}">MedChatZH</a>
     is a Baichuan-7B model fine-tuned for Chinese medical / TCM consultation — a concrete model release alongside this curated hub.
@@ -190,7 +190,7 @@ Web catalog: https://tyang816.github.io/projects/tcm/</code></pre>
 </section>
 
 <section class="project-section">
-  <h2>Contribute</h2>
+  <h2 id="tcm-contribute">Contribute</h2>
   <p>
     Suggest a resource via
     <a href="https://github.com/tyang816/Awesome-TCM-LLM/issues/new?template=resource.yml" target="_blank" rel="noopener noreferrer">GitHub Issue</a>.
