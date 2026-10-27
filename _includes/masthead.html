@@ -19,14 +19,14 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+        <button type="button" aria-expanded="false" aria-controls="site-nav-menu" aria-label="{% if is_zh %}打开导航菜单{% else %}Open menu{% endif %}"><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="{{ home_url | relative_url }}">{{ home_label }}</a></li>
           {% for link in nav_links %}
             <li class="masthead__menu-item"><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
-        <ul class="hidden-links hidden"></ul>
+        <ul class="hidden-links hidden" id="site-nav-menu"></ul>
       </nav>
     </div>
     <div class="masthead__lang" aria-label="Language">

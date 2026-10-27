@@ -83,10 +83,11 @@
 }
 
 .masthead__menu-home-item {
-  @include breakpoint($medium) {
-    display: block !important;
-  }
   display: none !important;
+
+  @include breakpoint($medium) {
+    display: table-cell !important;
+  }
 }
 
 .masthead__menu-item {
