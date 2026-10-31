@@ -15,7 +15,6 @@ lang                     : "en"
 url                      : "https://tyang816.github.io"
 baseurl                  : ""
 repository               : "tyang816/tyang816.github.io"
-google_scholar_stats_use_cdn : true
 keywords:
   - Yang Tan
   - 谭扬
@@ -88,7 +87,6 @@ include:
   - files
 exclude:
   - docs
-  - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
