@@ -23,7 +23,14 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="{{ home_url | relative_url }}">{{ home_label }}</a></li>
           {% for link in nav_links %}
-            <li class="masthead__menu-item"><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+            {% assign link_url = link.url %}
+            {% assign link_external = false %}
+            {% if link_url contains "://" %}
+              {% assign link_external = true %}
+            {% else %}
+              {% assign link_url = link_url | relative_url %}
+            {% endif %}
+            <li class="masthead__menu-item"><a href="{{ link_url }}"{% if link_external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden" id="site-nav-menu"></ul>

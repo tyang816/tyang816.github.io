@@ -3,11 +3,17 @@ main:
   - title: "My News"
     url: "/#-news"
 
-  - title: "Paper Notes"
-    url: "/notes/"
+  - title: "Matvenus"
+    url: "https://matvenus.com/"
+
+  - title: "VenusFactory"
+    url: "https://venusfactory.bio/"
 
   - title: "TCM LLMs"
     url: "/projects/tcm/"
+
+  - title: "Paper Notes"
+    url: "/notes/"
 
   - title: "Open Projects"
     url: "/projects/"
@@ -20,11 +26,17 @@ main_zh:
   - title: "我的新闻"
     url: "/zh/#-news"
 
-  - title: "论文笔记"
-    url: "/zh/notes/"
+  - title: "Matvenus"
+    url: "https://matvenus.com/"
+
+  - title: "VenusFactory"
+    url: "https://venusfactory.bio/"
 
   - title: "中医大模型"
     url: "/zh/projects/tcm/"
+
+  - title: "论文笔记"
+    url: "/zh/notes/"
 
   - title: "开源项目"
     url: "/zh/projects/"
