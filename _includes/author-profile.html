@@ -11,6 +11,11 @@
   <div class="author__content">
     {% assign profile_lang = page.lang | default: site.lang | default: "en" %}
     {% if profile_lang == "zh-CN" or profile_lang == "zh" %}
+      {% assign xiaohongshu_label = "小红书" %}
+    {% else %}
+      {% assign xiaohongshu_label = "RED" %}
+    {% endif %}
+    {% if profile_lang == "zh-CN" or profile_lang == "zh" %}
       <h3 class="author__name">{{ author.name_zh | default: author.name }}{% if author.name_zh %} <span style="font-weight:400;opacity:.75;">({{ author.name }})</span>{% endif %}</h3>
       {% if author.bio_zh or author.bio %}<p class="author__bio">{{ author.bio_zh | default: author.bio }}</p>{% endif %}
     {% else %}
@@ -60,6 +65,9 @@
       {% endif %}
       {% if author.instagram %}
         <li><a href="https://instagram.com/{{ author.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+      {% endif %}
+      {% if author.xiaohongshu %}
+        <li><a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer"><i class="fa-fw xiaohongshu-mark" aria-hidden="true"></i> {{ xiaohongshu_label }}</a></li>
       {% endif %}
       {% if author.tumblr %}
         <li><a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr</a></li>
@@ -158,6 +166,9 @@
       {% endif %}
       {% if author.instagram %}
         <a href="https://instagram.com/{{ author.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i></a>
+      {% endif %}
+      {% if author.xiaohongshu %}
+        <a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer" aria-label="{{ xiaohongshu_label }}"><span class="xiaohongshu-compact">{{ xiaohongshu_label }}</span></a>
       {% endif %}
       {% if author.tumblr %}
         <a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i></a>

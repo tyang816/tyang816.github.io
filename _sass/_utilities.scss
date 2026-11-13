@@ -284,6 +284,26 @@ body:hover .visually-hidden button {
   }
 }
 
+.xiaohongshu-mark {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 0.16em;
+    background: #ff2442;
+    vertical-align: -0.05em;
+  }
+}
+
+.xiaohongshu-compact {
+  font-size: 0.42em;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ff2442;
+  vertical-align: 0.7em;
+}
+
 
 /*
    Navicons

@@ -135,6 +135,11 @@
     "https://twitter.com/{{ site.author.twitter }}"
     {%- assign same_as_first = false -%}
   {%- endif -%}
+  {%- if site.author.xiaohongshu -%}
+    {%- unless same_as_first -%},{%- endunless -%}
+    {{ site.author.xiaohongshu | jsonify }}
+    {%- assign same_as_first = false -%}
+  {%- endif -%}
   {%- if site.author.dblp -%}
     {%- unless same_as_first -%},{%- endunless -%}
     {{ site.author.dblp | jsonify }}
