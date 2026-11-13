@@ -43,7 +43,7 @@
         <li><a href="https://keybase.io/{{ author.keybase }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
       {% endif %}
        {% if author.researchgate %}
-        <li><a href="{{ author.researchgate }}"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
+        <li><a href="{{ author.researchgate }}" target="_blank" rel="noopener noreferrer">{% include researchgate-logo.html %} ResearchGate</a></li>
       {% endif %}
       {% if author.twitter %}
         <li><a href="https://twitter.com/{{ author.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
@@ -67,7 +67,7 @@
         <li><a href="https://instagram.com/{{ author.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
       {% endif %}
       {% if author.xiaohongshu %}
-        <li><a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer"><i class="fa-fw xiaohongshu-mark" aria-hidden="true"></i> {{ xiaohongshu_label }}</a></li>
+        <li><a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer">{% include xiaohongshu-logo.html %} {{ xiaohongshu_label }}</a></li>
       {% endif %}
       {% if author.tumblr %}
         <li><a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr</a></li>
@@ -79,7 +79,7 @@
         <li><a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
       {% endif %}
       {% if author.huggingface %}
-        <li><a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-smile" aria-hidden="true"></i> Hugging Face</a></li>
+        <li><a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer">{% include huggingface-logo.html %} Hugging Face</a></li>
       {% endif %}
       {% if author.stackoverflow %}
         <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>
@@ -118,7 +118,7 @@
         <li><a href="https://vine.co/u/{{ author.vine }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-vine" aria-hidden="true"></i> Vine</a></li>
       {% endif %}
       {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        <li><a href="{{ author.googlescholar }}" target="_blank" rel="noopener noreferrer">{% include googlescholar-logo.html %} Google Scholar</a></li>
       {% endif %}
       {% if author.pubmed %}
         <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
@@ -144,7 +144,7 @@
         <a href="https://keybase.io/{{ author.keybase }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-key" aria-hidden="true"></i></a>
       {% endif %}
        {% if author.researchgate %}
-        <a href="{{ author.researchgate }}"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i></a>
+        <a href="{{ author.researchgate }}" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">{% include researchgate-logo.html %}</a>
       {% endif %}
       {% if author.twitter %}
         <a href="https://twitter.com/{{ author.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i></a>
@@ -168,7 +168,7 @@
         <a href="https://instagram.com/{{ author.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.xiaohongshu %}
-        <a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer" aria-label="{{ xiaohongshu_label }}"><span class="xiaohongshu-compact">{{ xiaohongshu_label }}</span></a>
+        <a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer" aria-label="{{ xiaohongshu_label }}">{% include xiaohongshu-logo.html %}</a>
       {% endif %}
       {% if author.tumblr %}
         <a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i></a>
@@ -180,7 +180,7 @@
         <a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.huggingface %}
-        <a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-smile" aria-hidden="true"></i></a>
+        <a href="https://huggingface.co/{{ author.huggingface }}" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face">{% include huggingface-logo.html %}</a>
       {% endif %}
       {% if author.stackoverflow %}
         <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i></a>
@@ -219,7 +219,7 @@
         <a href="https://vine.co/u/{{ author.vine }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-vine" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.googlescholar %}
-        <a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i></a>
+        <a href="{{ author.googlescholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">{% include googlescholar-logo.html %}</a>
       {% endif %}
       {% if author.pubmed %}
         <a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i></a>

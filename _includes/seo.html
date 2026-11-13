@@ -79,15 +79,42 @@
 {% endif %}
 
 {% assign seo_description = page.description | default: page.seo_description %}
-{% unless seo_description %}
-  {% if seo_project %}
-    {% if is_zh_page %}
-      {% assign seo_description = seo_project.summary_zh | default: seo_project.summary %}
+{% if seo_project and page.tcm_item_id == nil and page.section != "leaderboard" %}
+  {% if is_zh_page %}
+    {% assign project_summary = seo_project.summary_zh | default: seo_project.summary %}
+  {% else %}
+    {% assign project_summary = seo_project.summary %}
+  {% endif %}
+  {% assign project_summary = project_summary | strip %}
+  {% assign page_desc_plain = seo_description | default: "" | strip %}
+  {% assign prefer_summary = false %}
+  {% if project_summary != "" %}
+    {% if page_desc_plain == "" %}
+      {% assign prefer_summary = true %}
     {% else %}
-      {% assign seo_description = seo_project.summary %}
+      {% assign name_colon = seo_project.name | append: ":" %}
+      {% assign name_colon_fw = seo_project.name | append: "：" %}
+      {% assign name_dash = seo_project.name | append: " —" %}
+      {% assign name_dash_fw = seo_project.name | append: "——" %}
+      {% if page_desc_plain contains name_colon or page_desc_plain contains name_colon_fw or page_desc_plain contains name_dash or page_desc_plain contains name_dash_fw %}
+        {% if page_desc_plain.size < 180 %}
+          {% assign prefer_summary = true %}
+        {% endif %}
+      {% elsif page_desc_plain.size < project_summary.size %}
+        {% assign prefer_summary = true %}
+      {% endif %}
     {% endif %}
   {% endif %}
-{% endunless %}
+  {% if prefer_summary %}
+    {% assign seo_description = project_summary %}
+  {% endif %}
+{% elsif seo_project and seo_description == nil %}
+  {% if is_zh_page %}
+    {% assign seo_description = seo_project.summary_zh | default: seo_project.summary %}
+  {% else %}
+    {% assign seo_description = seo_project.summary %}
+  {% endif %}
+{% endif %}
 {% unless seo_description %}
   {% if seo_notecat %}
     {% if is_zh_page %}
@@ -106,42 +133,108 @@
   {% endif %}
 {% endunless %}
 {% unless seo_description %}
-  {% assign excerpt_plain = page.excerpt | default: "" | markdownify | strip_html | strip_newlines | strip %}
-  {% assign excerpt_is_linkdump = false %}
-  {% if excerpt_plain contains "论文地址" or excerpt_plain contains "论文实现" %}
-    {% assign excerpt_is_linkdump = true %}
-  {% endif %}
-  {% if is_post and excerpt_plain contains "Paper:" %}
-    {% assign excerpt_is_linkdump = true %}
-  {% endif %}
-  {% if excerpt_plain != "" and excerpt_is_linkdump == false %}
-    {% assign seo_description = excerpt_plain | truncate: 160 %}
-  {% elsif is_post %}
-    {% comment %} Strip the leading link-dump blockquote (Paper:/论文地址…) before extracting text {% endcomment %}
-    {% assign post_html = page.content %}
-    {% assign bq_parts = post_html | split: "</blockquote>" %}
-    {% if bq_parts.size > 1 %}
-      {% assign first_bq_text = bq_parts[0] | strip_html %}
+  {% if is_post %}
+    {% comment %} Markdown first, then keep only the abstract (stop at the next heading). {% endcomment %}
+    {% assign post_html = page.content | markdownify %}
+    {% if post_html contains "</blockquote>" %}
+      {% assign first_bq_text = post_html | split: "</blockquote>" | first | strip_html %}
       {% if first_bq_text contains "Paper:" or first_bq_text contains "Project:" or first_bq_text contains "论文地址" or first_bq_text contains "论文实现" or first_bq_text contains "项目地址" %}
-        {% assign post_html = bq_parts | slice: 1, 999 | join: " " %}
+        {% assign post_html = post_html | split: "</blockquote>" | last %}
       {% endif %}
     {% endif %}
-    {% assign content_plain = post_html | strip_html | strip_newlines | strip %}
-    {% assign desc_candidate = "" %}
-    {% if content_plain contains "Abstract" %}
-      {% assign abs_parts = content_plain | split: "Abstract" %}
-      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% assign chunk = post_html %}
+    {% if post_html contains 'id="abstract"' %}
+      {% assign after_id = post_html | split: 'id="abstract"' | last %}
+      {% assign h3_parts = after_id | split: "</h3>" %}
+      {% assign chunk = h3_parts[1] %}
+    {% elsif post_html contains ">摘要<" %}
+      {% assign after_id = post_html | split: ">摘要<" | last %}
+      {% assign h3_parts = after_id | split: "</h3>" %}
+      {% assign chunk = h3_parts[1] %}
+    {% elsif post_html contains "</h2>" %}
+      {% assign h2_parts = post_html | split: "</h2>" %}
+      {% assign chunk = h2_parts[1] %}
     {% endif %}
-    {% if desc_candidate == blank and content_plain contains "摘要" %}
-      {% assign abs_parts = content_plain | split: "摘要" %}
-      {% assign desc_candidate = abs_parts[1] | default: "" | strip %}
+    {% assign chunk = chunk | default: post_html | split: "<h2" | first | split: "<h3" | first %}
+    {% assign desc_candidate = chunk | replace: "</p>", " " | replace: "</li>", " " | replace: "<br />", " " | replace: "<br>", " " | strip_html | newline_to_br | replace: "<br />", " " | replace: "<br>", " " | strip %}
+    {% assign desc_candidate = desc_candidate | replace: "  ", " " | replace: "  ", " " | replace: "  ", " " | replace: " 。", "。" | replace: " ，", "，" %}
+    {% assign lead = desc_candidate | slice: 0, 1 %}
+    {% if lead == "." or lead == "。" or lead == ":" %}
+      {% assign desc_candidate = desc_candidate | remove_first: lead | strip %}
     {% endif %}
-    {% if desc_candidate == blank %}
-      {% assign desc_candidate = content_plain %}
+    {% assign clip = "" %}
+    {% assign joiner = ". " %}
+    {% if desc_candidate contains "。" %}
+      {% assign pieces = desc_candidate | split: "。" %}
+      {% assign joiner = "。" %}
+    {% else %}
+      {% assign pieces = desc_candidate | split: ". " %}
     {% endif %}
-    {% assign seo_description = desc_candidate | truncate: 160 %}
-  {% elsif excerpt_plain != "" %}
-    {% assign seo_description = excerpt_plain | truncate: 160 %}
+    {% for piece in pieces %}
+      {% assign piece = piece | strip %}
+      {% if piece == blank %}{% continue %}{% endif %}
+      {% if clip == blank %}
+        {% assign trial = piece %}
+      {% else %}
+        {% assign trial = clip | append: joiner | append: piece %}
+      {% endif %}
+      {% if trial.size > 155 and clip != blank %}
+        {% break %}
+      {% endif %}
+      {% if trial.size > 170 and clip == blank %}
+        {% assign short = "" %}
+        {% assign cjoiner = ", " %}
+        {% assign bits = piece | split: ", " %}
+        {% if bits.size == 1 %}
+          {% assign bits = piece | split: "，" %}
+          {% assign cjoiner = "，" %}
+        {% endif %}
+        {% for bit in bits %}
+          {% assign bit = bit | strip %}
+          {% if bit == blank %}{% continue %}{% endif %}
+          {% if short == blank %}
+            {% assign bit_trial = bit %}
+          {% else %}
+            {% assign bit_trial = short | append: cjoiner | append: bit %}
+          {% endif %}
+          {% if bit_trial.size > 150 and short != blank %}{% break %}{% endif %}
+          {% if bit_trial.size > 170 %}
+            {% assign short = bit | truncate: 150 %}
+            {% break %}
+          {% endif %}
+          {% assign short = bit_trial %}
+        {% endfor %}
+        {% if short == blank %}
+          {% assign clip = piece | truncate: 155 %}
+        {% else %}
+          {% assign clip = short %}
+        {% endif %}
+        {% break %}
+      {% endif %}
+      {% assign clip = trial %}
+    {% endfor %}
+    {% if clip == blank %}
+      {% assign clip = desc_candidate | truncate: 155 %}
+    {% endif %}
+    {% unless clip contains "…" or clip contains "..." %}
+      {% assign clip = clip | strip %}
+      {% assign last_char = clip | slice: -1, 1 %}
+      {% if last_char != "." and last_char != "。" and last_char != "!" and last_char != "?" and last_char != "？" %}
+        {% if is_zh_page %}
+          {% assign clip = clip | append: "。" %}
+        {% elsif joiner == "。" %}
+          {% assign clip = clip | append: "。" %}
+        {% else %}
+          {% assign clip = clip | append: "." %}
+        {% endif %}
+      {% endif %}
+    {% endunless %}
+    {% assign seo_description = clip %}
+  {% else %}
+    {% assign excerpt_plain = page.excerpt | default: "" | markdownify | strip_html | replace: ">", "> " | strip | replace: "  ", " " %}
+    {% if excerpt_plain != "" %}
+      {% assign seo_description = excerpt_plain | truncate: 160 %}
+    {% endif %}
   {% endif %}
 {% endunless %}
 {% if page.project == "tcm" and page.tcm_item_id %}
