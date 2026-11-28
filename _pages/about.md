@@ -44,6 +44,7 @@ I have published over 20 papers in the field of AI4Bio such as [***NeurIPS***](h
 
 ## 🔥 News
 {:.home-section}
+- *2026.11*: &nbsp;🎉 Joined the [Dayan AI4S Community](https://science.tencent.com/dayanAI4S/person/af8fb36b6b06a418003c36847a8acaa2) (Tencent Cloud Education).
 - *2026.09*: &nbsp;🎉 We release [VenusREM-Harness]({{ '/projects/venusrem-harness/' | relative_url }}), which can enhance mutation-effect prediction for any PFM, and **VenusREM2** reaches a new ProteinGym SOTA of **0.556**. Technical report [here](https://arxiv.org/abs/2609.34654). Code is available at [GitHub](https://github.com/ai4protein/VenusREM-Harness).
 - *2026.07*: &nbsp;🎉 [MatwingsVenus (晓鹜)](https://matvenus.com/) wins the **WAIC 2026 National Treasure** and is featured at the [WAIC 2026](https://mp.weixin.qq.com/s/xOOBUqEMyoeONBsGV4vh-A).
 - *2026.06*: &nbsp;🎉 [VenusFactory]({{ '/projects/venusfactory/' | relative_url }}) is now available on the [National Graduate Smart Education Platform](https://graduate.smartedu.cn/ai-for-science) (AI for Science).
