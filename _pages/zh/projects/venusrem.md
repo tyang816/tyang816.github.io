@@ -72,6 +72,7 @@ redirect_from:
     VenusREM 已集成进
     <a href="{{ '/zh/projects/venusfactory2/' | relative_url }}">VenusFactory2</a>
     （<a href="https://venusfactory.bio" target="_blank" rel="noopener noreferrer">venusfactory.bio</a>）。
+    <a href="{{ '/zh/projects/venusrem-harness/' | relative_url }}">VenusREM-Harness</a> 随后把这一检索思路推广到任意冻结的蛋白质基础模型。
   </p>
 </section>
 

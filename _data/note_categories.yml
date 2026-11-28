@@ -6,7 +6,7 @@
   name_zh: 生物信息
   blurb: Protein models, molecular design, and biomedical AI
   blurb_zh: 蛋白质模型、分子设计与生物医学 AI
-  projects: [prosst, protssn, venusx, venusrem, venusfactory, venusfactory2, protloca, protsolm, venusvaccine, ses-adapter, peta]
+  projects: [venusrem-harness, prosst, protssn, venusx, venusrem, venusfactory, venusfactory2, protloca, protsolm, venusvaccine, ses-adapter, peta]
 
 - id: CL
   name: NLP / Agents

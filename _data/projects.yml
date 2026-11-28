@@ -2,6 +2,22 @@
 # category: llm | plm | agents | fitness | benchmark | platform
 # date: YYYY-MM (used for newest-first sorting on the hub)
 
+- name: VenusREM-Harness
+  name_zh: VenusREM-Harness
+  slug: venusrem-harness
+  image: "/images/papers/venusrem-harness.png"
+  category: fitness
+  venue: arXiv 2026
+  venue_zh: arXiv 2026
+  tagline: A general harness for protein foundation model fitness prediction
+  tagline_zh: 蛋白质基础模型适应度预测的通用增强框架
+  summary: Training-free harness that improves any frozen protein foundation model by fusing MSA evidence with structural confidence; VenusREM2 reaches ProteinGym Spearman 0.556.
+  summary_zh: 免训练框架，用 MSA 证据和结构置信度增强任意冻结的蛋白质基础模型；VenusREM2 在 ProteinGym 达到 Spearman 0.556。
+  url: /projects/venusrem-harness/
+  url_zh: /zh/projects/venusrem-harness/
+  paper: https://arxiv.org/abs/2609.34654
+  code: https://github.com/ai4protein/VenusREM-Harness
+  date: 2026-09
 - name: VenusFactory2
   name_zh: VenusFactory2
   slug: venusfactory2

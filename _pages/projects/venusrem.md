@@ -97,6 +97,7 @@ description: 'VenusREM: retrieval-enhanced mutation effect prediction (ISMB/ECCB
     (<a href="https://venusfactory.bio" target="_blank" rel="noopener noreferrer">venusfactory.bio</a>);
     open-source stack on GitHub:
     <a href="https://github.com/ai4protein/VenusFactory2" target="_blank" rel="noopener noreferrer">ai4protein/VenusFactory2</a>.
+    <a href="{{ '/projects/venusrem-harness/' | relative_url }}">VenusREM-Harness</a> later generalizes this retrieval idea to any frozen protein foundation model.
   </p>
 </section>
 
